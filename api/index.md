@@ -11,7 +11,7 @@ ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
 ms.translationtype: HT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 10/29/2019
-ms.locfileid: "72999087"
+ms.locfileid: "73056968"
 ---
 # <a name="q-standard-libraries"></a><span data-ttu-id="88dd0-103">Q#-standardbibliotek</span><span class="sxs-lookup"><span data-stu-id="88dd0-103">Q# standard libraries</span></span> #
 
