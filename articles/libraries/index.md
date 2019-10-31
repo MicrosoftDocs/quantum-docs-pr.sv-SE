@@ -9,8 +9,8 @@ ms.openlocfilehash: 5a5b28f7e8c1669d26d1064753f20551a6b0d036
 ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/28/2019
-ms.locfileid: "72970396"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73056455"
 ---
 Det finns flera bibliotek som medföljer Quantum Development Kit och gör det enklare att utveckla kvantprogram i Q#.
 I det här avsnittet av dokumentationen beskriver vi dessa bibliotek och hur du använder dem i dina program.
