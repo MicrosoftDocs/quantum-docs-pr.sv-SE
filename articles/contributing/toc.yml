@@ -1,0 +1,10 @@
+- name: Rapportera buggar
+  href: reporting-bugs.md
+- name: Bidra till dokumentationen
+  href: docs.md
+- name: Öppna pull-begäranden
+  href: pull-requests.md
+- name: Bidra med kod
+  href: code.md
+- name: Stilguide
+  href: style-guide.md

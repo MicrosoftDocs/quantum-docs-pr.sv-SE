@@ -1,0 +1,22 @@
+- name: OSS-licensiering
+  href: licensing.md
+- name: Inledningen
+  href: prelude.md
+- name: Klassisk matematik
+  href: math.md
+- name: Typkonverteringar
+  href: convert.md
+- name: Kontrollflöde på högre nivå
+  href: control-flow.md
+- name: Datastrukturer och modellering
+  href: data-structures.md
+- name: Kvantalgoritmer
+  href: algorithms.md
+- name: Diagnostik
+  href: diagnostics.md
+- name: Karaktärisering
+  href: characterization.md
+- name: Felkorrigering
+  href: error-correction.md
+- name: Program
+  href: applications.md

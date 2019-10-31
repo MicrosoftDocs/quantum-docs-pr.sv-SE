@@ -1,0 +1,99 @@
+### YamlMime:Landing
+title: Microsoft Quantum-dokumentation
+summary: Lär dig att använda Microsoft Quantum Developer Kit och Q#, ett språk för kvantalgoritmer. Lär dig viktiga begrepp och skriv ditt första kvantprogram.
+metadata:
+  title: Microsoft Quantum-dokumentation – Q# API-referens
+  description: Lär dig att använda Microsoft Quantum Developer Kit och Q#, ett språk för kvantalgoritmer. Lär dig viktiga begrepp och skriv ditt första kvantprogram.
+  ms.prod: quantum
+  ms.topic: landing-page
+  ms.collection: collection
+  author: cjgronlund
+  ms.author: cgronlun
+  ms.date: 09/30/2019
+  ms.openlocfilehash: 692456cb6b117b206d202b01967202b7ac89e59d
+  ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+  ms.translationtype: HT
+  ms.contentlocale: sv-SE
+  ms.lasthandoff: 10/30/2019
+  ms.locfileid: "73065069"
+landingContent:
+- title: Kom igång med Microsoft Quantum
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Välkommen till Microsoft Quantum Developer Kit
+      url: welcome.md
+  - linkListType: get-started
+    links:
+    - text: Installera QDK
+      url: install-guide/index.md
+    - text: Uppdatera QDK
+      url: install-guide/update.md
+  - linkListType: quickstart
+    links:
+    - text: Skriva ditt första kvantprogram
+      url: quickstart.md
+- title: Information om kvantberäkning
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Vad är kvantberäkning?
+      url: concepts/index.md
+    - text: Vektorer och matriser
+      url: concepts/vectors-and-matrices.md
+    - text: Avancerade matrisbegrepp
+      url: concepts/advanced-matrices.md
+    - text: Kvantbiten
+      url: concepts/the-qubit.md
+    - text: Programvarustack
+      url: concepts/software-stack.md
+- title: Kvantutvecklingstekniker
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Vad är Q#?
+      url: techniques/file-structure.md
+    - text: Åtgärder och funktioner
+      url: techniques/operations-and-functions.md
+    - text: Lokala variabler
+      url: techniques/local-variables.md
+    - text: Arbeta med kvantbitar
+      url: techniques/working-with-qubits.md
+    - text: 'Lägga ihop det: Teleportering'
+      url: techniques/putting-it-all-together.md
+- title: Hantera datorer och drivrutiner
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Klassiska drivrutiner och datorer
+      url: machines/index.md
+    - text: QDK-simulator med fullständigt tillstånd
+      url: machines/full-state-simulator.md
+    - text: Resursberäknare
+      url: machines/resources-estimator.md
+    - text: Kvantspårningssimulator
+      url: machines/qc-trace-simulator/index.md
+    - text: QDK Toffoli-simulator
+      url: machines/toffoli-simulator.md
+- title: Q#-språk och bibliotek
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Introduktion till Q#-språk
+      url: language/index.md
+    - text: Viktig information
+      url: relnotes/index.md
+  - linkListType: reference
+    links:
+    - text: Standardbibliotek
+      url: libraries/standard/index.md
+    - text: Kemibibliotek
+      url: libraries/chemistry/index.md
+    - text: Matematikbibliotek
+      url: libraries/numerics/index.md
+  - linkListType: reference
+    links:
+    - text: Q#-referens
+      url: https://docs.microsoft.com/qsharp/api/qsharp/microsoft.quantum.bitwise?view=qsharp-preview
+    - text: C#-komponenter
+      url: https://docs.microsoft.com/dotnet/api/microsoft.quantum.simulation.simulators.qctracesimulators?view=quantum-dotnet-latest
