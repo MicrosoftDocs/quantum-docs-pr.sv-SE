@@ -1,0 +1,9 @@
+- name: Installation och validering
+  href: installation.md
+- name: Begrepp inom kvantkemi
+  href: concepts/toc.yml
+- name: Anropa kemibiblioteket
+  topicHref: samples/index.md
+  href: samples/toc.yml
+- name: Schema
+  href: schema/toc.yml

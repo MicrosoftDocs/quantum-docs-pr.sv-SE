@@ -1,0 +1,20 @@
+- name: Vad är kvantberäkning?
+  href: index.md
+- name: Vektorer och matriser
+  href: vectors-and-matrices.md
+- name: Avancerade matrisbegrepp
+  href: advanced-matrices.md
+- name: Kvantbiten
+  href: the-qubit.md
+- name: Flera kvantbitar
+  href: multiple-qubits.md
+- name: Dirac-notation
+  href: dirac-notation.md
+- name: Pauli-mått
+  href: pauli-measurements.md
+- name: Kvantkretsar
+  href: circuits.md
+- name: Kvantorakel
+  href: oracles.md
+- name: Programvarustack
+  href: software-stack.md

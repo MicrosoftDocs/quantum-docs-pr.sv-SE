@@ -1,0 +1,11 @@
+- name: Klassiska datorer och drivrutiner
+  href: index.md
+- name: Kvantsimulator
+  href: full-state-simulator.md
+- name: Resursberäknare
+  href: resources-estimator.md
+- name: Spårningssimulator för kvantdator
+  topicHref: qc-trace-simulator/index.md
+  href: qc-trace-simulator/toc.yml
+- name: Toffoli-simulator
+  href: toffoli-simulator.md
