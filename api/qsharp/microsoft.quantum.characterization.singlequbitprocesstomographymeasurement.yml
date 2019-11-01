@@ -1,0 +1,45 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.characterization.singlequbitprocesstomographymeasurement
+name: SingleQubitProcessTomographyMeasurement
+type: operation
+namespace: Microsoft.Quantum.Characterization
+summary: Utför en qubit process tomography mått i Pauli-basen, med tanke på en viss kanal av intresse.
+remarks: Distributionen över resultaten som returneras av den här åtgärden är ett specialfall av qubit status tomography. Låt $ \rho = J (\Lambda)/$2 vara Choi – Jamiłkowski-tillstånd för $ \Lambda $. Sedan är fördelningen ovan identisk med $ $ \begin{align} \Pr (\texttt{Zero} | \rho; M) = \operatorname{Tr} (M \rho), \end{align} $ $ där $M = 2 (\boldone + P) ^ \mathrm{T}/2 \cdot (\boldone + Q)/$2 är den effektiva mätning som motsvarar $P $ och $Q $.
+syntax: 'operation SingleQubitProcessTomographyMeasurement (preparation : Pauli, measurement : Pauli, channel : (Qubit => Unit)) : Result'
+input:
+  content: '(preparation : Pauli, measurement : Pauli, channel : (Qubit => Unit))'
+  types:
+  - name: preparation
+    summary: Pauli-basen $P $ där en qubit ska förberedas.
+    isPrimitive: true
+    uid: Pauli
+  - name: measurement
+    summary: Pauli-basen $Q $ i vilken en qubit ska mätas.
+    isPrimitive: true
+    uid: Pauli
+  - name: channel
+    summary: En enda qubit-kanal $ \Lambda $ vars beteende beräknas med process tomography.
+    isOperation: true
+    input:
+      types:
+      - isPrimitive: true
+        uid: Qubit
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+output:
+  content: Result
+  types:
+  - summary: >-
+      Resultatet `Zero` med sannolikhet $ $ \begin{align} \Pr (\texttt{Zero} | \Lambda; P, Q) = \operatorname{Tr}\left (\frac{\boldone + Q}{2} \Lambda\left [\frac{\boldone + P}{2} \right] \right).
+
+      \end{align} $ $
+    isPrimitive: true
+    uid: Result
+ms.openlocfilehash: 48da4cd4d16a3466591c0c93710eed6b27a68fab
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73229029"

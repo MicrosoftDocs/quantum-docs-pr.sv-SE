@@ -1,0 +1,33 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.diagnostics.dumpmachine
+name: DumpMachine
+type: function
+namespace: Microsoft.Quantum.Diagnostics
+summary: Dumpar den aktuella mål datorns status.
+remarks: >-
+  Med den här metoden kan du dumpa information om mål datorns aktuella status till en fil eller någon annan plats.
+
+  Den faktiska informationen som skapas och semantiken för `location` är specifika för varje måldator. Du kan dock ange en tom tupel som en plats (`()`) eller utesluta parametern `location` som vanligt vis innebär att du genererar utdata till-konsolen.
+
+
+  För att den lokala fullständiga tillstånds simulatorn ska distribueras som en del av Quantum Development Kit förväntar den här metoden en sträng med sökvägen till en fil där den skriver vågen som en endimensionell matris med komplexa tal, där varje element representerar amplituder av sannolikheten för att mäta motsvarande tillstånd.
+syntax: "function DumpMachine (location : 'T) : Unit"
+input:
+  content: "(location : 'T)"
+  types:
+  - name: location
+    summary: Innehåller information om var datorns dump ska genereras.
+    uid: "'T"
+    isLocal: true
+output:
+  content: Unit
+  types:
+  - summary: Inget.
+    isPrimitive: true
+    uid: Unit
+ms.openlocfilehash: 7d268127c56dc5554e7c99494ae90b2bc14b336c
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73227074"
