@@ -1,0 +1,21 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.simulation.identitytimedependentgeneratorsystem
+name: IdentityTimeDependentGeneratorSystem
+type: function
+namespace: Microsoft.Quantum.Simulation
+summary: Returnerar ett tids beroende Generator system som är konsekvent med Hamiltonian-`H(s) = 0`.
+syntax: 'function IdentityTimeDependentGeneratorSystem () : Microsoft.Quantum.Simulation.TimeDependentGeneratorSystem'
+input:
+  content: ()
+  types: []
+output:
+  content: Microsoft. Quantum. simulering. TimeDependentGeneratorSystem
+  types:
+  - summary: Ett system för tids beroende generator som representerar utvecklingen under Hamiltonian-$H (s) = $0 för alla $s $.
+    uid: microsoft.quantum.simulation.timedependentgeneratorsystem
+ms.openlocfilehash: 348b97223c63422bf7ab9ea08e5a1e0ee3e31738
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73065562"

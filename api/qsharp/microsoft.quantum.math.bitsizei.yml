@@ -1,0 +1,30 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.math.bitsizei
+name: BitSizeI
+type: function
+namespace: Microsoft.Quantum.Math
+summary: >-
+  För ett icke-negativt heltal `a`returnerar antalet bitar som krävs för att representera `a`.
+
+
+  Det vill säga returnerar det minsta $n $ som $a < 2 ^ n $.
+syntax: 'function BitSizeI (a : Int) : Int'
+input:
+  content: '(a : Int)'
+  types:
+  - name: a
+    summary: Det heltal vars bit-storlek ska beräknas.
+    isPrimitive: true
+    uid: Int
+output:
+  content: Int
+  types:
+  - summary: '`a`ens bit storlek.'
+    isPrimitive: true
+    uid: Int
+ms.openlocfilehash: 5faf7961011c666b333cc9befc3da9af4872330d
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73230185"

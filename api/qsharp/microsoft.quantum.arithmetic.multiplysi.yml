@@ -1,0 +1,33 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.arithmetic.multiplysi
+name: MultiplySI
+type: operation
+namespace: Microsoft.Quantum.Arithmetic
+summary: Multiplicera signerat heltal `xs` genom signerat heltal `ys` och lagra resultatet i `result`, som måste vara noll först.
+syntax: 'operation MultiplySI (xs : Microsoft.Quantum.Arithmetic.SignedLittleEndian, ys : Microsoft.Quantum.Arithmetic.SignedLittleEndian, result : Microsoft.Quantum.Arithmetic.SignedLittleEndian) : Unit'
+input:
+  content: '(xs : Microsoft.Quantum.Arithmetic.SignedLittleEndian, ys : Microsoft.Quantum.Arithmetic.SignedLittleEndian, result : Microsoft.Quantum.Arithmetic.SignedLittleEndian)'
+  types:
+  - name: xs
+    summary: n-bitars multiplicand (SignedLittleEndian)
+    uid: microsoft.quantum.arithmetic.signedlittleendian
+  - name: ys
+    summary: n-bitars multiplikator (SignedLittleEndian)
+    uid: microsoft.quantum.arithmetic.signedlittleendian
+  - name: result
+    summary: 2N-bitars resultat (SignedLittleEndian) måste vara i tillstånd $ \ket{0}$ initialt.
+    uid: microsoft.quantum.arithmetic.signedlittleendian
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+functors:
+- Adjoint
+- Controlled
+ms.openlocfilehash: 154e870416e47547a115fcc5533d187b3ed67213
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73214817"

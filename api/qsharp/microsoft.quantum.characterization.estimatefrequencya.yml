@@ -1,0 +1,57 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.characterization.estimatefrequencya
+name: EstimateFrequencyA
+type: operation
+namespace: Microsoft.Quantum.Characterization
+summary: Med tanke på en förberedelse som är adjointable och mätning, beräknar den frekvens med vilken mätningen lyckas (returnerar `Zero`) genom att utföra ett angivet antal utvärderings versioner.
+remarks: För adjointable-åtgärder kan vissa antaganden, till exempel genom att anropa åtgärden, förbereda qubits till exakt samma tillstånd, vilket gör det möjligt för mål datorer att göra vissa prestanda optimeringar.
+syntax: 'operation EstimateFrequencyA (preparation : (Qubit[] => Unit is Adj), measurement : (Qubit[] => Result), nQubits : Int, nMeasurements : Int) : Double'
+input:
+  content: '(preparation : (Qubit[] => Unit is Adj), measurement : (Qubit[] => Result), nQubits : Int, nMeasurements : Int)'
+  types:
+  - name: preparation
+    summary: En adjointable-åtgärd $P $ som förbereder ett angivet tillstånd $ \rho $ på sin ingående registrering.
+    isOperation: true
+    input:
+      types:
+      - isArray: true
+        isPrimitive: true
+        uid: Qubit
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    functors:
+    - Adjoint
+  - name: measurement
+    summary: En åtgärd $M $ som representerar uppskattning av ränta.
+    isOperation: true
+    input:
+      types:
+      - isArray: true
+        isPrimitive: true
+        uid: Qubit
+    output:
+      types:
+      - isPrimitive: true
+        uid: Result
+  - name: nQubits
+    summary: Antalet qubits som förberedelsen och mätar varje åtgärd för.
+    isPrimitive: true
+    uid: Int
+  - name: nMeasurements
+    summary: Antalet gånger som mätningen ska utföras för att uppskatta ränte frekvensen.
+    isPrimitive: true
+    uid: Int
+output:
+  content: Double
+  types:
+  - summary: En uppskattning av $ \hat{p} $ i den frekvens med vilken $M (P (\ket{00 \cdots 0} \bra{00 \cdots 0})) $ returnerar `Zero`, som erhålls med hjälp av den ej prioriterade binomialfördelningen $ \hat{p} = n\_{\uparrow}/n\_{\text{Measurements}} $, där $n\_{\ nedåtpil} $ är antalet `Zero` resultat som har observerats.
+    isPrimitive: true
+    uid: Double
+ms.openlocfilehash: cfc90cee0b98b88391ee23218489669600a97920
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73229182"

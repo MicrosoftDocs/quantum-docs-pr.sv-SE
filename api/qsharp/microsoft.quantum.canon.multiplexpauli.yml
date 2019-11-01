@@ -1,0 +1,48 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.canon.multiplexpauli
+name: MultiplexPauli
+type: operation
+namespace: Microsoft.Quantum.Canon
+summary: >-
+  Använder en Pauli-rotation som är villkorlig på en matris med qubits.
+
+
+  Detta tillämpar den multiplicering-kontrollerade enhetliga åtgärden $U $ som utför rotationer efter vinkeln $ \theta_j $ om Single-qubit Pauli-operatorn $P $ när den styrs av $n $-qubit Number State $ \ket{j} $.
+
+
+  $U = \sum ^ {2 ^ n-1} _ {j = 0} \ket{j}\bra{j}\otimes e ^ {i P \theta_j} $.
+remarks: '`coefficients` fylls med elementen $ \theta_j = $0,0 om färre än $2 ^ n $ har angetts.'
+syntax: 'operation MultiplexPauli (coefficients : Double[], pauli : Pauli, control : Microsoft.Quantum.Arithmetic.LittleEndian, target : Qubit) : Unit'
+input:
+  content: '(coefficients : Double[], pauli : Pauli, control : Microsoft.Quantum.Arithmetic.LittleEndian, target : Qubit)'
+  types:
+  - name: coefficients
+    summary: Matris med upp till $2 ^ n $ koefficienter $ \theta_j $. $J $ koefficienten indexerar Number State $ \ket{j} $ kodat i litet endian-format.
+    isArray: true
+    isPrimitive: true
+    uid: Double
+  - name: pauli
+    summary: Pauli-operator $P $ som bestämmer rotations axeln.
+    isPrimitive: true
+    uid: Pauli
+  - name: control
+    summary: $n $-qubit Control register som kodar nummer tillstånden $ \ket{j} $ i litet endian-format.
+    uid: microsoft.quantum.arithmetic.littleendian
+  - name: target
+    summary: Enda qubit-register som roteras av $e ^ {i P \theta_j} $.
+    isPrimitive: true
+    uid: Qubit
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+functors:
+- Adjoint
+- Controlled
+ms.openlocfilehash: efc5e1cef8574528eeb124100c4d5f875fc2e0e3
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73227754"

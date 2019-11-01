@@ -1,0 +1,188 @@
+### YamlMime:QSharpNamespace
+uid: microsoft.quantum.intrinsic
+name: Microsoft. Quantum. inbyggt
+functions:
+- uid: microsoft.quantum.intrinsic.message
+  summary: Loggar ett meddelande.
+operations:
+- uid: microsoft.quantum.intrinsic.assert
+  summary: Förutsätter att mätningen av den aktuella qubits i den aktuella Pauli-basen alltid har det aktuella resultatet.
+- uid: microsoft.quantum.intrinsic.assertprob
+  summary: Förutsätter att mätningen av den aktuella qubits i den aktuella Pauli-grunden har det resultat som har givit den sannolikheten, inom viss tolerans.
+- uid: microsoft.quantum.intrinsic.ccnot
+  summary: Använder den dubbla styrda, inte (CCNOT) porten till tre qubits.
+- uid: microsoft.quantum.intrinsic.cnot
+  summary: >-
+    Tillämpar CNOT-porten (styrd-NOT) till ett par med qubits.
+
+
+    \begin{align} \operatorname{CNOT} \mathrel{: =} \begin{bmatrix} 1 & 0 & 0 & 0 \\\\ 0 & 1 & 0 & 0 \\\\ 0 & 0 & 0 & 1 \\\\ 0 & 0 & 1 & 0 \end{bmatrix} , \end{align}
+
+
+    var rader och kolumner sorteras som i Quantum Concepts-guiden.
+- uid: microsoft.quantum.intrinsic.exp
+  summary: >-
+    Använder exponenten för en multi-qubit Pauli-operator.
+
+
+    \begin{align} e ^ {i \theta [P_0 \otimes P_1 \cdots P_ {N-1}]}, \end{align} där $P _i $ är det $i $ th-elementet i `paulis`och där $N = $`Length(paulis)`.
+- uid: microsoft.quantum.intrinsic.expfrac
+  summary: >-
+    Använder exponenten för en multi-qubit Pauli-operator med ett argument som angetts av en dyadic-fraktion.
+
+
+    \begin{align} e ^ {i \pi k [P_0 \otimes P_1 \cdots P_ {N-1}]/2 ^ N}, \end{align} där $P _i $ är det $i $ th-elementet i `paulis`och där $N = $`Length(paulis)`.
+- uid: microsoft.quantum.intrinsic.h
+  summary: >-
+    Tillämpar Hadamard-omvandlingen på en enda qubit.
+
+
+    \begin{align} H \mathrel{: =} \frac{1}{\sqrt{2}} \begin{bmatrix} 1 & 1 \\\\ 1 &-1 \end{bmatrix}.
+
+    \end{align}
+- uid: microsoft.quantum.intrinsic.i
+  summary: Utför identitets åtgärden (inga-OP) på en enda qubit.
+- uid: microsoft.quantum.intrinsic.m
+  summary: >-
+    Utför en mätning av en enskild qubit i Pauli-$Z $ bas.
+
+
+    Resultatet av utdata anges av distributionen \begin{align} \Pr (\texttt{Zero} | \ket{\psi}) = \braket{\psi | 0} \braket{0 | \psi}.
+
+    \end{align}
+- uid: microsoft.quantum.intrinsic.measure
+  summary: >-
+    Utför en gemensam mätning av en eller flera qubits i de angivna Pauli-baserna.
+
+
+    Resultatet erhålls av distributionen: \begin{align} \Pr (\texttt{Zero} | \ket{\psi}) = \frac12 \braket{\psi \mid | \left (\boldone + P_0 \otimes P_1 \otimes \cdots \otimes P_ {N-1} \right) \mid | \psi}, \end{align} där $P _i $ är det $i $ th-elementet i @no__ t_0_ och WHERE $N = \texttt{Length} (\texttt{Bases}) $.
+
+    Det vill säga att måttet returnerar en `Result` $d $ så att eigenvalue för den observerade mått resultatet är $ (-1) ^ d $.
+- uid: microsoft.quantum.intrinsic.r
+  summary: >-
+    Använder en rotation om den aktuella Pauli-axeln.
+
+
+    \begin{align} R_ {\mu} (\theta) \mathrel{: =} e ^ {-i \theta \sigma_{\mu}/2}, \end{align} där $ \mu \in \{I, X, Y, Z\}$.
+- uid: microsoft.quantum.intrinsic.r1
+  summary: >-
+    Använder en rotation om $ \ket{1}$ State med en viss vinkel.
+
+
+    \begin{align} R_1 (\theta) \mathrel{: =} \operatorname{diag} (1, e ^ {i\theta}).
+
+    \end{align}
+- uid: microsoft.quantum.intrinsic.r1frac
+  summary: >-
+    Använder en rotation om $ \ket{1}$ State med en vinkel angiven som en dyadic fraktion.
+
+
+    \begin{align} R_1 (n, k) \mathrel{: =} \operatorname{diag} (1, e ^ {i \pi k/2 ^ n}).
+
+    \end{align}
+
+
+    > [!WARNING]
+
+    > Den här åtgärden använder **motsatt** inloggnings konvention från @"microsoft.quantum.intrinsic.r"och inkluderar inte faktorn på $1/2 $ som ingår i @"microsoft.quantum.intrinsic.r1".
+- uid: microsoft.quantum.intrinsic.random
+  summary: >-
+    Den slumpmässiga åtgärden tar en matris med dubbla värden som indatatyper och returnerar ett slumpmässigt markerat index i matrisen som en `Int`.
+
+    Sannolikheten för att välja ett speciellt index är proportionerlig till värdet för mat ris elementet i det indexet.
+
+    Mat ris element som är lika med noll ignoreras och deras index returneras aldrig. Om något mat ris element är mindre än noll, eller om inget mat ris element är större än noll, så Miss lyckas åtgärden.
+- uid: microsoft.quantum.intrinsic.reset
+  summary: Med en enda qubit, mäter den och ser till att den är i ⟩-läget | 0, så att den kan släppas på ett säkert sätt.
+- uid: microsoft.quantum.intrinsic.resetall
+  summary: Om du har en matris med qubits kan du mäta dem och se till att de är i ⟩-läget | 0 så att de kan släppas på ett säkert sätt.
+- uid: microsoft.quantum.intrinsic.rfrac
+  summary: >-
+    Använder en rotation om den angivna Pauli-axeln med en vinkel angiven som en dyadic fraktion.
+
+
+    \begin{align} R_ {\mu} (n, k) \mathrel{: =} e ^ {i \pi n \sigma_{\mu}/2 ^ k}, \end{align} där $ \mu \in \{I, X, Y, Z\}$.
+
+
+    > [!WARNING]
+
+    > Den här åtgärden använder **motsatt** inloggnings konvention från @"microsoft.quantum.intrinsic.r".
+- uid: microsoft.quantum.intrinsic.rx
+  summary: >-
+    Använder en rotation om $x $-axeln med en viss vinkel.
+
+
+    \begin{align} R_x (\theta) \mathrel{: =} e ^ {-i \theta \sigma_x/2} = \begin{bmatrix} \cos \frac{\theta}{2} &-i\sin \frac{\theta}{2}\\\\-i\sin \frac{\theta}{2} & \cos \frac{\theta}{2} \end{bmatrix}.
+
+    \end{align}
+- uid: microsoft.quantum.intrinsic.ry
+  summary: >-
+    Använder en rotation om $y $-axeln med en viss vinkel.
+
+
+    \begin{align} R_y (\theta) \mathrel{: =} e ^ {-i \theta \sigma_y/2} = \begin{bmatrix} \cos \frac{\theta}{2} &-\sin \frac{\theta}{2}\\\\ \sin \frac{\theta}{2} & \cos \frac{\theta}{2} \end{bmatrix}.
+
+    \end{align}
+- uid: microsoft.quantum.intrinsic.rz
+  summary: >-
+    Använder en rotation om $z $-axeln med en viss vinkel.
+
+
+    \begin{align} R_z (\theta) \mathrel{: =} e ^ {-i \theta \sigma_z/2} = \begin{bmatrix} e ^ {-i \theta/2} & 0 \\\\ 0 & e ^ {i \theta/2} \end{bmatrix}.
+
+    \end{align}
+- uid: microsoft.quantum.intrinsic.s
+  summary: >-
+    Använder fas porten π/4 till en enda qubit.
+
+
+    \begin{align} S \mathrel{: =} \begin{bmatrix} 1 & 0 \\\\ 0 & i \end{bmatrix}.
+
+    \end{align}
+- uid: microsoft.quantum.intrinsic.swap
+  summary: >-
+    Tillämpar VÄXLINGs porten på ett par med qubits.
+
+
+    \begin{align} \operatorname{SWAP} \mathrel{: =} \begin{bmatrix} 1 & 0 & 0 & 0 \\\\ 0 & 0 & 1 & 0 \\\\ 0 & 1 & 0 & 0 \\\\ 0 & 0 & 0 & 1 \end{bmatrix} , \end{align}
+
+
+    var rader och kolumner sorteras som i Quantum Concepts-guiden.
+- uid: microsoft.quantum.intrinsic.t
+  summary: >-
+    Tillämpar π/8-porten på en enda qubit.
+
+
+    \begin{align} T \mathrel{: =} \begin{bmatrix} 1 & 0 \\\\ 0 & e ^ {i \pi/4} \end{bmatrix}.
+
+    \end{align}
+- uid: microsoft.quantum.intrinsic.x
+  summary: >-
+    Tillämpar Pauli-$X $-grind.
+
+
+    \begin{align} \sigma_x \mathrel{: =} \begin{bmatrix} 0 & 1 \\\\ 1 & 0 \end{bmatrix}.
+
+    \end{align}
+- uid: microsoft.quantum.intrinsic.y
+  summary: >-
+    Tillämpar Pauli-$Y $-grind.
+
+
+    \begin{align} \sigma_y \mathrel{: =} \begin{bmatrix} 0 &-i \\\\ i & 0 \end{bmatrix}.
+
+    \end{align}
+- uid: microsoft.quantum.intrinsic.z
+  summary: >-
+    Tillämpar Pauli-$Z $-grind.
+
+
+    \begin{align} \sigma_z \mathrel{: =} \begin{bmatrix} 1 & 0 \\\\ 0 &-1 \end{bmatrix}.
+
+    \end{align}
+ms.openlocfilehash: a2f80ca98d86e5a1457efb6dad34c60d6ef75a2e
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73056351"

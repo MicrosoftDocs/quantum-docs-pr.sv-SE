@@ -1,0 +1,117 @@
+### YamlMime:QSharpNamespace
+uid: microsoft.quantum.errorcorrection
+name: Microsoft. Quantum. ErrorCorrection
+summary: " # <a name=\"summary\"></a>Sammanfattning\n Det här namn området innehåller funktioner, åtgärder och användardefinierade typer för en Quantum-fel korrigering."
+functions:
+- uid: microsoft.quantum.errorcorrection.bitflipcode
+  summary: Returnerar ett QECC-värde som representerar ⟦ 3, 1, 1 ⟧ bit flip Code och decoder med mått på plats syndrome.
+- uid: microsoft.quantum.errorcorrection.bitfliprecoveryfn
+  summary: Funktion för återställnings Pauli åtgärder för angivet Syndrome mått efter tabells ökning för ⟦ 3, 1, 1 ⟧ bit flip-kod.
+- uid: microsoft.quantum.errorcorrection.fivequbitcode
+  summary: Returnerar ett QECC-värde som representerar ⟦ 5, 1, 3 ⟧ kod kodare och avkodare med Syndrome på plats.
+- uid: microsoft.quantum.errorcorrection.fivequbitcoderecoveryfn
+  summary: Returnerar funktion som mappar fel Syndrome mätningar till rätt fel – korrigera Pauli-operatorer efter tabells ökning för ⟦ 5, 1, 3 ⟧ Quantum Code.
+- uid: microsoft.quantum.errorcorrection.steanecode
+  summary: Returnerar ett CSS-värde som representerar ⟦ 7, 1, 3 ⟧ Steane Code och decoder med mått på plats syndrome.
+- uid: microsoft.quantum.errorcorrection.steanecoderecoveryfns
+  summary: Avkodare för kombinerade X-och Z-delar av stabiliserings gruppen i ⟦ 7, 1, 3 ⟧ Steane Quantum Code.
+- uid: microsoft.quantum.errorcorrection.steanecoderecoveryx
+  summary: Avkodare för X-delen av stabiliserings gruppen i ⟦ 7, 1, 3 ⟧ Steane Quantum Code.
+- uid: microsoft.quantum.errorcorrection.steanecoderecoveryz
+  summary: Avkodare för Z-delen av stabiliserings gruppen för ⟦ 7, 1, 3 ⟧ Steane Quantum Code.
+- uid: microsoft.quantum.errorcorrection.tablelookuprecovery
+  summary: Den här funktionen returnerar ett objekt av typen `RecoveryFn` som innehåller all information som krävs för att utföra en tabells öknings avkodning för en specifik tabell med Pauli-åtgärder för en specifik qubits-åtgärd.
+operations:
+- uid: microsoft.quantum.errorcorrection.bitflipdecoder
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.errorcorrection.encodeintobitflipcode"som föråldrad.
+- uid: microsoft.quantum.errorcorrection.bitflipencoder
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.errorcorrection.encodeintobitflipcode"som föråldrad.
+- uid: microsoft.quantum.errorcorrection.decodefrombitflipcode
+  summary: Avkodar från [3, 1, 3]/⟦ 3, 1, 1 ⟧ bit-flip-kod.
+- uid: microsoft.quantum.errorcorrection.decodefromfivequbitcode
+  summary: Avkodar Quantum-koden för ⟦ 5, 1, 3 ⟧.
+- uid: microsoft.quantum.errorcorrection.decodefromsteanecode
+  summary: En inverterad kodnings åtgärd som mappar ett kodat Quantum-register till en kodad Quantum-register under ⟦ 7, 1, 3 ⟧ Steane Quantum Code.
+- uid: microsoft.quantum.errorcorrection.encodeintobitflipcode
+  summary: Kodar till [3, 1, 3]/⟦ 3, 1, 1 ⟧ bit-flip-kod.
+- uid: microsoft.quantum.errorcorrection.encodeintofivequbitcode
+  summary: Kodar till ⟦ 5, 1, 3 ⟧, Quantum-koden.
+- uid: microsoft.quantum.errorcorrection.encodeintosteanecode
+  summary: En kodnings åtgärd som mappar ett kodat Quantum-register till ett kodat Quantum-register under ⟦ 7, 1, 3 ⟧ Steane Quantum Code.
+- uid: microsoft.quantum.errorcorrection.fivequbitcodedecoder
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.errorcorrection.decodefromfivequbitcode"som föråldrad.
+- uid: microsoft.quantum.errorcorrection.fivequbitcodeencoder
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.errorcorrection.encodeintofivequbitcode"som föråldrad.
+- uid: microsoft.quantum.errorcorrection.injectpi4yrotation
+  summary: >-
+    Utför en π/4-rotation om `Y`.
+
+
+    Rotationen utförs genom att konsumera ett magiskt tillstånd; det vill säga en kopia av tillstånd $ $ \begin{align} \cos\frac{\pi}{8} \ket{0} + \sin \frac{\pi}{8} \ket{1}.
+
+    \end{align} $ $
+- uid: microsoft.quantum.errorcorrection.knilldistill
+  summary: >-
+    Implementerar algoritmen för Knill Magic State.
+
+
+    Med 15 ungefärliga kopior av ett Magic State $ $ \begin{align} \cos\frac{\pi}{8} \ket{0} + \sin \frac{\pi}{8} \ket{1} \end{align}, $ $ ger en kopia av högre kvalitet.
+- uid: microsoft.quantum.errorcorrection.measurestabilizergenerators
+  summary: Mäter den angivna uppsättningen generatorer för en stabiliserings grupp.
+- uid: microsoft.quantum.errorcorrection.recover
+  summary: Utför en enskild avrundning av fel korrigering med en Quantum-kod som beskrivs av en `QECC` typ.
+- uid: microsoft.quantum.errorcorrection.recovercss
+  summary: Utför en enskild avrundning av fel korrigering med en Quantum-kod som beskrivs av en `CSS` typ.
+- uid: microsoft.quantum.errorcorrection.steanecodedecoder
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.errorcorrection.decodefromfivequbitcode"som föråldrad.
+- uid: microsoft.quantum.errorcorrection.steanecodeencoder
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.errorcorrection.decodefromfivequbitcode"som föråldrad.
+newtypes:
+- uid: microsoft.quantum.errorcorrection.css
+  summary: Representerar en kod för Calderbank – Shor – Steane (CSS) som definieras av dess kodare, avkodare och dess Syndrome mätnings procedurer för `X` respektive `Z` fel.
+- uid: microsoft.quantum.errorcorrection.decodeop
+  summary: >-
+    Representerar en åtgärd som avkodar en kodad register till ett fysiskt register och den Scratch-qubits som används för att registrera en syndrome.
+
+
+    Argumentet till en DecodeOp är detsamma som returvärdet från en EncodeOp och vice versa.
+- uid: microsoft.quantum.errorcorrection.encodeop
+  summary: >-
+    Representerar en åtgärd som kodar ett fysiskt register i ett logiskt register med hjälp av det tillhandahållna qubits.
+
+
+    Det första argumentet är att vara det fysiska register som kommer att kodas, medan det andra argumentet tas som det första registret som ska användas.
+- uid: microsoft.quantum.errorcorrection.logicalregister
+  summary: Typ för registrering av fysisk qubits `Qubit[]` som kodar den logiska qubits.
+- uid: microsoft.quantum.errorcorrection.qecc
+  summary: Representerar en fel korrigerings kod som definieras av dess kodare, avkodare och Syndrome mått procedur.
+- uid: microsoft.quantum.errorcorrection.recoveryfn
+  summary: Typ av funktion som mappar ett fel Syndrome till en sekvens med `Pauli[]` åtgärder som korrigerar det identifierade felet.
+- uid: microsoft.quantum.errorcorrection.syndrome
+  summary: Typ för mått resultat `Result[]` som anger ett fel Syndrome av en Quantum-kod.
+- uid: microsoft.quantum.errorcorrection.syndromemeasop
+  summary: Representerar en åtgärd som används för att mäta Syndrome för ett felkorrigerande kod block.
+ms.openlocfilehash: 6e1ef3ba9f22dac172e4edfb93bf1012e7bb21b4
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73056786"

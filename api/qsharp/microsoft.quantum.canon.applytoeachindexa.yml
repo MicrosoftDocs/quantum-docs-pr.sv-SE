@@ -1,0 +1,51 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.canon.applytoeachindexa
+name: ApplyToEachIndexA
+type: operation
+namespace: Microsoft.Quantum.Canon
+summary: >-
+  Tillämpar en enskild qubit-åtgärd på varje indexerat element i en register.
+
+  Modifieraren `A` anger att åtgärden för en qubit är adjointable.
+syntax: "operation ApplyToEachIndexA (singleElementOperation : ((Int, 'T) => Unit is Adj), register : 'T[]) : Unit"
+input:
+  content: "(singleElementOperation: ((int, t) = > enhet är just), registrera: ' ' [])"
+  types:
+  - name: singleElementOperation
+    summary: Åtgärd att tillämpa på varje qubit.
+    isOperation: true
+    input:
+      types:
+      - isPrimitive: true
+        uid: Int
+      - uid: "'T"
+        isLocal: true
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    functors:
+    - Adjoint
+  - name: Registrera dig
+    summary: Matris för qubits som den aktuella åtgärden ska tillämpas på.
+    isArray: true
+    uid: "'T"
+    isLocal: true
+output:
+  content: Enhet
+  types:
+  - isPrimitive: true
+    uid: Unit
+typeParameters:
+- uid: "'T"
+  summary: Målet som varje åtgärd agerar på.
+functors:
+- Adjoint
+seeAlso:
+- microsoft.quantum.canon.applytoeachindex
+ms.openlocfilehash: 6b99e977120a417780875475b35094a44d1c4e08
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73068486"

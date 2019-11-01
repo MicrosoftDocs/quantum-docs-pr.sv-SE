@@ -1,0 +1,42 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.arithmetic.applyreversedoplec
+name: ApplyReversedOpLEC
+type: operation
+namespace: Microsoft.Quantum.Arithmetic
+summary: Använder en åtgärd som tar lite-endian-inmatad till en register kodning av ett osignerat heltal med big-endian-format.
+syntax: 'operation ApplyReversedOpLEC (op : (Microsoft.Quantum.Arithmetic.LittleEndian => Unit is Ctl), register : Microsoft.Quantum.Arithmetic.BigEndian) : Unit'
+input:
+  content: '(OP: (Microsoft. Quantum. aritmetiskt. LittleEndian = > enhet är CTL), registrera: Microsoft. Quantum. aritmetiskt. BigEndian)'
+  types:
+  - name: öpp
+    summary: Åtgärd som agerar på ett litet-endian-register.
+    isOperation: true
+    input:
+      types:
+      - uid: microsoft.quantum.arithmetic.littleendian
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    functors:
+    - Controlled
+  - name: Registrera dig
+    summary: Ett big-endian-register som ska omvandlas.
+    uid: microsoft.quantum.arithmetic.bigendian
+output:
+  content: Enhet
+  types:
+  - isPrimitive: true
+    uid: Unit
+functors:
+- Controlled
+seeAlso:
+- applyreversedople
+- applyreversedoplea
+- applyreversedopleca
+ms.openlocfilehash: 0e517509a79a6740f1369b8c477bc94ae3b617c7
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73057145"

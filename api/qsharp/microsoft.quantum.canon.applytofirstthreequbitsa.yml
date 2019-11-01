@@ -1,0 +1,59 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.canon.applytofirstthreequbitsa
+name: ApplyToFirstThreeQubitsA
+type: operation
+namespace: Microsoft.Quantum.Canon
+summary: >-
+  Tillämpar en åtgärd på de första tre qubits i registret.
+
+  Modifieraren `A` visar att åtgärden är adjointable.
+remarks: >-
+  Detta motsvarar:
+
+
+  ```qsharp
+
+  op(register[0], register[1], register[2]);
+
+  ```
+syntax: 'operation ApplyToFirstThreeQubitsA (op : ((Qubit, Qubit, Qubit) => Unit is Adj), register : Qubit[]) : Unit'
+input:
+  content: '(op : ((Qubit, Qubit, Qubit) => Unit is Adj), register : Qubit[])'
+  types:
+  - name: op
+    summary: En åtgärd som ska tillämpas på de första tre qubits
+    isOperation: true
+    input:
+      types:
+      - isPrimitive: true
+        uid: Qubit
+      - isPrimitive: true
+        uid: Qubit
+      - isPrimitive: true
+        uid: Qubit
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    functors:
+    - Adjoint
+  - name: register
+    summary: Qubit-matrisen till de tre första qubits som åtgärden tillämpas på.
+    isArray: true
+    isPrimitive: true
+    uid: Qubit
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+functors:
+- Adjoint
+seeAlso:
+- microsoft.quantum.canon.applytofirstthreequbits
+ms.openlocfilehash: 1915d304889509d90d8522a4aa92b70e757c3f27
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73213406"

@@ -1,0 +1,53 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.arrays.zip3
+name: Zip3
+type: function
+namespace: Microsoft.Quantum.Arrays
+summary: Med tre matriser returnerar en ny matris med 3-tupler, så att varje 3-tupel innehåller ett element från varje ursprunglig matris.
+syntax: "function Zip3 (first : 'T1[], second : 'T2[], third : 'T3[]) : ('T1, 'T2, 'T3)[]"
+input:
+  content: "(first : 'T1[], second : 'T2[], third : 'T3[])"
+  types:
+  - name: first
+    summary: En matris som innehåller värden för det första elementet i varje tupel.
+    isArray: true
+    uid: "'T1"
+    isLocal: true
+  - name: second
+    summary: En matris som innehåller värden för det andra elementet i varje tupel.
+    isArray: true
+    uid: "'T2"
+    isLocal: true
+  - name: third
+    summary: En matris som innehåller värden för det tredje elementet i varje tupel.
+    isArray: true
+    uid: "'T3"
+    isLocal: true
+output:
+  content: ('T1, 'T2, 'T3)[]
+  types:
+  - summary: En matris som innehåller 3 tupler av formuläret `(first[idx], second[idx], third[idx])` för varje `idx`. Om de tre matriserna inte är lika långa blir utdata så länge som det kortare indata.
+    isArray: true
+    types:
+    - uid: "'T1"
+      isLocal: true
+    - uid: "'T2"
+      isLocal: true
+    - uid: "'T3"
+      isLocal: true
+typeParameters:
+- uid: "'T1"
+  summary: Typen för de första mat ris elementen.
+- uid: "'T2"
+  summary: Typ av andra mat ris element.
+- uid: "'T3"
+  summary: Typen för de tredje mat ris elementen.
+seeAlso:
+- zip
+- zip4
+ms.openlocfilehash: 1a4f3a533178e089d975d5a510d202afe004d999
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73214188"

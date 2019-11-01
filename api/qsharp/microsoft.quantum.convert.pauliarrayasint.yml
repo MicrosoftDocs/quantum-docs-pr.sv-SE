@@ -1,0 +1,34 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.convert.pauliarrayasint
+name: PauliArrayAsInt
+type: function
+namespace: Microsoft.Quantum.Convert
+summary: Kodar en qubit Pauli-operatör som representeras som en matris med qubit Pauli-operatörer till ett heltal.
+remarks: >-
+  Varje Pauli-operatör kan kodas med två bitar: $ $ \begin{align} \boldone \mapsto 00, \quad X \mapsto 01, \quad Y \mapsto 11, \quad Z \mapsto 10.
+
+  \end{align} $ $
+
+
+  Med en matris med Pauli-operatörer `[P0, ..., Pn]`, returnerar den här funktionen ett heltal med binär expansion utformad genom att sammanfoga mappningarna för varje Pauli-operator i big-endian-`bits(Pn) ... bits(P0)`.
+syntax: 'function PauliArrayAsInt (paulis : Pauli[]) : Int'
+input:
+  content: '(paulis : Pauli[])'
+  types:
+  - name: paulis
+    summary: En matris med högst 31 Single-qubit Pauli-operatörer.
+    isArray: true
+    isPrimitive: true
+    uid: Pauli
+output:
+  content: Int
+  types:
+  - summary: Ett heltal som unikt identifierar `paulis`, enligt beskrivningen nedan.
+    isPrimitive: true
+    uid: Int
+ms.openlocfilehash: 0c211075d07147b1c1392fe3f3e4ceb110364bb3
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73230763"

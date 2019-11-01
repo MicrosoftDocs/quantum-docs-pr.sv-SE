@@ -1,0 +1,26 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.oracles.stateoracle
+name: StateOracle
+type: newtype
+namespace: Microsoft.Quantum.Oracles
+summary: >-
+  Representerar en Oracle för tillstånds förberedelse.
+
+
+  Indata till Oracle-$O $ är:
+
+
+  - Ett heltal som indexerar flaggan qubit $f $.
+
+  - Systemet registrerar $s $ som kommer att lagra det önskade Quantum-läget $ \ket{\psi}\_s $.
+remarks: >-
+  Den här Oracle definieras av $ $ O\ket{0}\_{f} \ket{0}\_s = \lambda\ket{1}\_f\ket {\ PSI}\_s + \sqrt{1-| \lambda | ^ 2} \ket{0}\_f\cdots , $ $ reagerar på beräknings bas tillstånd $ \ket{0}\_{f} \ket{0}\_s $ för att skapa mål tillstånd $ \ket{\psi}\_s $ med amplitud $ \lambda $ i den bas som flaggats av $ \ket{1}\_f $.
+
+  Den första parametern är ett index för qubit-registret för $ \ket{0}\_f $. Den andra parametern omfattar båda registren.
+syntax: newtype StateOracle = ((Int, Qubit[]) => Unit is Adj + Ctl);
+ms.openlocfilehash: 1faa47c21e43355ed036498adf4e823ff3f8a0e4
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73067228"

@@ -1,0 +1,46 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.arithmetic.multiplybymodularinteger
+name: MultiplyByModularInteger
+type: operation
+namespace: Microsoft.Quantum.Arithmetic
+summary: >-
+  Utför modulär multiplikation med en heltalskonstant i ett qubit-register.
+
+
+  Låt oss ange Modulus av N och constMultiplier av en och implementera sedan den här åtgärden en enhetlig definition av följande karta vid beräknings bas: | y ⟩ ↦ | a ⋅ y (mod N) ⟩ för alla y mellan 0 och N-1
+remarks: >-
+  - För krets diagrammet och förklaring, se figur 7 på [sidan 8 av arXiv: Quant-pH/0205095v3](https://arxiv.org/pdf/quant-ph/0205095v3.pdf#page=8)
+
+  - Den här åtgärden motsvarar U ₐ i [arXiv: Quant-pH/0205095v3](https://arxiv.org/pdf/quant-ph/0205095v3.pdf)
+syntax: 'operation MultiplyByModularInteger (constMultiplier : Int, modulus : Int, multiplier : Microsoft.Quantum.Arithmetic.LittleEndian) : Unit'
+input:
+  content: '(constMultiplier : Int, modulus : Int, multiplier : Microsoft.Quantum.Arithmetic.LittleEndian)'
+  types:
+  - name: constMultiplier
+    summary: Konstant enligt vilken multiplikatorn multipliceras. Måste vara co-primtal till Modulus.
+    isPrimitive: true
+    uid: Int
+  - name: modulus
+    summary: Multiplikations åtgärden utförs med modulo `modulus`
+    isPrimitive: true
+    uid: Int
+  - name: multiplier
+    summary: >-
+      Talet multipliceras med en konstant.
+
+      Detta är en matris med qubits som representerar heltal i litet endian-bitars ordning.
+    uid: microsoft.quantum.arithmetic.littleendian
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+functors:
+- Adjoint
+- Controlled
+ms.openlocfilehash: 4a99aff903b22ad4edcd96f2a980bd65c740025f
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73218761"

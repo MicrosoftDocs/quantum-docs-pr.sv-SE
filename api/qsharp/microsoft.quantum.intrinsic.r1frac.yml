@@ -1,0 +1,58 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.intrinsic.r1frac
+name: R1Frac
+type: operation
+namespace: Microsoft.Quantum.Intrinsic
+summary: >-
+  Använder en rotation om $ \ket{1}$ State med en vinkel angiven som en dyadic fraktion.
+
+
+  \begin{align} R_1 (n, k) \mathrel{: =} \operatorname{diag} (1, e ^ {i \pi k/2 ^ n}).
+
+  \end{align}
+
+
+  > [!WARNING]
+
+  > Den här åtgärden använder **motsatt** inloggnings konvention från @"microsoft.quantum.intrinsic.r"och inkluderar inte faktorn på $1/2 $ som ingår i @"microsoft.quantum.intrinsic.r1".
+remarks: >-
+  Motsvarar:
+
+
+  ```qsharp
+
+  RFrac(PauliZ, -numerator, denominator + 1, qubit);
+
+  RFrac(PauliI, numerator, denominator + 1, qubit);
+
+  ```
+syntax: 'operation R1Frac (numerator : Int, power : Int, qubit : Qubit) : Unit'
+input:
+  content: '(numerator : Int, power : Int, qubit : Qubit)'
+  types:
+  - name: numerator
+    summary: Täljare i dyadic fraktions representation av den vinkel som qubit ska roteras med.
+    isPrimitive: true
+    uid: Int
+  - name: power
+    summary: Kraften hos två anger nämnaren för den vinkel som qubit ska roteras med.
+    isPrimitive: true
+    uid: Int
+  - name: qubit
+    summary: Qubit som porten ska tillämpas på.
+    isPrimitive: true
+    uid: Qubit
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+functors:
+- Adjoint
+- Controlled
+ms.openlocfilehash: c91aa9424abd038fa3a5a22fd23ac92cce171414
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73233993"

@@ -1,0 +1,26 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.canon.isresultzero
+name: IsResultZero
+type: function
+namespace: Microsoft.Quantum.Canon
+summary: Testar om ett angivet resultat värde är lika med `Zero`.
+syntax: 'function IsResultZero (input : Result) : Bool'
+input:
+  content: '(input : Result)'
+  types:
+  - name: input
+    summary: '`Result` värde som ska testas.'
+    isPrimitive: true
+    uid: Result
+output:
+  content: Bool
+  types:
+  - summary: Returnerar `true` om `input` är lika med `Zero`.
+    isPrimitive: true
+    uid: Bool
+ms.openlocfilehash: 8a7d10424bebb7abc65722d738cfd1945ddf0901
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73225272"

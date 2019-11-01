@@ -1,0 +1,26 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.oracles.obliviousoracle
+name: ObliviousOracle
+type: newtype
+namespace: Microsoft.Quantum.Oracles
+summary: >-
+  Representerar en Oblivious amplitud-förstärkning för Oracle.
+
+
+  Indata till Oracle-$O $ är:
+
+
+  - Ancilla registrera $a $ som $O $ agerar på.
+
+  - Systemet registrerar $s $ som du vill att den önskade enhetliga $U $ ska tillämpas på, efter att du har valt att registrera $a $ i tillstånd $ \ket{t}\_en $.
+remarks: >-
+  Den här Oracle definieras av $ $ O\ket {s}\_a\ket {\ PSI}\_s = \lambda\ket{t}\_a U \ket{\psi}\_s + \sqrt{1-| \lambda | ^ 2} \ket{t ^ \perp}\_a\cdots $ $ agerar på Ancilla State $ \ket{s}\_a $ till implementera den enhetliga $U $ i alla system tillstånd $ \ket{\psi}\_s $ med amplitud $ \lambda $ i den bas som flaggats av $ \ket{t}\_a $.
+
+  Den första parametern är qubit-registret för $ \ket{s}\_a $. Den andra parametern är qubit-registret för $ \ket{\psi}\_s $.
+syntax: newtype ObliviousOracle = ((Qubit[], Qubit[]) => Unit is Adj + Ctl);
+ms.openlocfilehash: f06527701dfad61843df66faca5dd265525b6aa6
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73231069"

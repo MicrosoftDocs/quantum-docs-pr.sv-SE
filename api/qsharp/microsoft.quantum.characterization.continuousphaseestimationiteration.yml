@@ -1,0 +1,43 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.characterization.continuousphaseestimationiteration
+name: ContinuousPhaseEstimationIteration
+type: operation
+namespace: Microsoft.Quantum.Characterization
+summary: Utför en enkel upprepning av en iterativ (klassisk) fas uppskattnings algoritm med godtyckliga verkliga befogenheter hos en enhetlig Oracle.
+syntax: 'operation ContinuousPhaseEstimationIteration (oracle : Microsoft.Quantum.Oracles.ContinuousOracle, time : Double, theta : Double, targetState : Qubit[], controlQubit : Qubit) : Unit'
+input:
+  content: '(oracle : Microsoft.Quantum.Oracles.ContinuousOracle, time : Double, theta : Double, targetState : Qubit[], controlQubit : Qubit)'
+  types:
+  - name: oracle
+    summary: Åtgärder som utförs på en dubbel $t $ och ett register, t. ex. $U ^ t $ tillämpas på den aktuella registreringen, där $U $ är den kraft vars fas är att uppskatta, och där $t $ är den heltals effekt som ges till Oracle
+    uid: microsoft.quantum.oracles.continuousoracle
+  - name: time
+    summary: Antal gånger som den erhållna Oracle-gruppen ska tillämpas.
+    isPrimitive: true
+    uid: Double
+  - name: theta
+    summary: Vinkel för vilken du vill invertera fasen i kontrollen qubit innan du agerar på mål tillstånd.
+    isPrimitive: true
+    uid: Double
+  - name: targetState
+    summary: Registrera dig för det tillstånd som har åtgärd ATS av den enhetliga Oracle.
+    isArray: true
+    isPrimitive: true
+    uid: Qubit
+  - name: controlQubit
+    isPrimitive: true
+    uid: Qubit
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+functors:
+- Adjoint
+- Controlled
+ms.openlocfilehash: 21fcfda2373e145d9565a73af5a89b7fe061d4f8
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73229250"

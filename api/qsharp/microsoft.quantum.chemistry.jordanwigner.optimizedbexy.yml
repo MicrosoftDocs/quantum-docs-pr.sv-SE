@@ -1,0 +1,37 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.chemistry.jordanwigner.optimizedbexy
+name: OptimizedBEXY
+type: operation
+namespace: Microsoft.Quantum.Chemistry.JordanWigner
+summary: En enhetlig $U $ som tillämpar Pauli-strängen på $ (X ^ {z + 1}\_pY ^ {z}\_p) Z\_{p-1}... Z_0 $ på qubits $0. p $ villkorligt på ett index $z \in\{0, 1\}$ och $p $. Det vill säga $ $ \begin{align} U\ket {z} \ ket {p} \ ket {\ PSI} = \ket{z}\ket{p} (X ^ {z + 1}\_pY ^ {z}\_p) Z\_{p-1}... Z_0\ket {\ PSI} \end{align} $ $
+syntax: 'operation OptimizedBEXY (pauliBasis : Qubit, indexRegister : Microsoft.Quantum.Arithmetic.LittleEndian, targetRegister : Qubit[]) : Unit'
+references: '- Koda elektroniska Spectra i Quantum-kretsar med linjär T-komplexitet Ryan Babbush, Craig Gidney, Dominic W. bär, Nathan Wiebe, Jarrod McClean, Alexandru mattare, Austin Fowler, Hartmut Neven https://arxiv.org/abs/1805.03662'
+input:
+  content: '(pauliBasis : Qubit, indexRegister : Microsoft.Quantum.Arithmetic.LittleEndian, targetRegister : Qubit[])'
+  types:
+  - name: pauliBasis
+    summary: När den här qubit är i tillstånd $ \ket{0}$ tillämpas $X $. När det är i tillstånd $ \ket{1}$ tillämpas $Y $.
+    isPrimitive: true
+    uid: Qubit
+  - name: indexRegister
+    summary: I status $ \ket{p} $ i detta register bestäms den qubit som $X $ eller $Y $ tillämpas på.
+    uid: microsoft.quantum.arithmetic.littleendian
+  - name: targetRegister
+    summary: Registrera qubits som Pauli-operatörerna tillämpas på.
+    isArray: true
+    isPrimitive: true
+    uid: Qubit
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+functors:
+- Adjoint
+- Controlled
+ms.openlocfilehash: e0ac3f2f050ed584053f7da7a310f1855e992141
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73228468"

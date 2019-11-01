@@ -1,0 +1,17 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.amplitudeamplification.rotationphases
+name: RotationPhases
+type: newtype
+namespace: Microsoft.Quantum.AmplitudeAmplification
+summary: Faser för en sekvens med en qubit rotation i amplitud förstärkning.
+remarks: >-
+  Den första parametern är en matris med faser för reflektioner, uttryckt som en produkt av en qubit rotation.
+
+  [ G.H. Låg, I. L. Chuang, https://arxiv.org/abs/1707.05391].
+syntax: newtype RotationPhases = Double[];
+ms.openlocfilehash: 1ad6a80a10cc3880122303a7bbd708087976f906
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73215463"

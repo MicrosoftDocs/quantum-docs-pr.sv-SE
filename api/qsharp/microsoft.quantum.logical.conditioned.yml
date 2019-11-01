@@ -1,0 +1,48 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.logical.conditioned
+name: Conditioned
+type: function
+namespace: Microsoft.Quantum.Logical
+summary: Returnerar ett av två värden, beroende på värdet för ett booleskt villkor.
+remarks: >-
+  Till skillnad från `?|`-operatorn är den här funktionen inte en kort krets, så att båda indatana utvärderas fullständigt.
+
+
+  Till följd av kort slutning är följande motsvarigheter:
+
+
+  ```Q#
+
+  let x = condition ? ifTrue | ifFalse;
+
+  let x = Conditioned(condition, ifTrue, ifFalse);
+
+  ```
+syntax: "function Conditioned (condition : Bool, ifTrue : 'T, ifFalse : 'T) : 'T"
+input:
+  content: "(condition : Bool, ifTrue : 'T, ifFalse : 'T)"
+  types:
+  - name: condition
+    summary: Ett villkor som används för att styra vilka indatatyper som returneras.
+    isPrimitive: true
+    uid: Bool
+  - name: ifTrue
+    summary: Värdet som ska returneras när `condition` är `true`.
+    uid: "'T"
+    isLocal: true
+  - name: ifFalse
+    summary: Värdet som ska returneras när `condition` är `false`.
+    uid: "'T"
+    isLocal: true
+output:
+  content: "'T"
+  types:
+  - summary: '`ifTrue` om `condition` är `true`och `ifFalse` på annat sätt.'
+    uid: "'T"
+    isLocal: true
+ms.openlocfilehash: f26e540b181ce405125dbf80cd97c3e177ad9531
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73233347"

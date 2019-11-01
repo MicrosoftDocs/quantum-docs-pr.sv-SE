@@ -1,0 +1,74 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.canon.boundc
+name: BoundC
+type: function
+namespace: Microsoft.Quantum.Canon
+summary: >-
+  Med en matris med åtgärder som agerar på samma indatamängd skapar en ny åtgärd som utför varje åtgärd i följd.
+
+  Modifieraren `C` visar att alla åtgärder i matrisen är kontrollerbara.
+examples: >-
+  The following are equivalent:
+
+
+  ```qsharp
+
+  let bound = BoundC([U, V]);
+
+  bound(x);
+
+  ```
+
+
+  and
+
+
+  ```qsharp
+
+  U(x); V(x);
+
+  ```
+syntax: "function BoundC (operations : ('T => Unit is Ctl)[]) : ('T => Unit is Ctl)"
+input:
+  content: '(åtgärder: (t = > enhet är CTL) [])'
+  types:
+  - name: operations
+    summary: En sekvens med åtgärder som ska utföras på en specifik Indatatyp.
+    isArray: true
+    isOperation: true
+    input:
+      types:
+      - uid: "'T"
+        isLocal: true
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    functors:
+    - Controlled
+output:
+  content: (T = > enhet är CTL)
+  types:
+  - summary: En ny åtgärd som utför varje åtgärd i följd av dess inaktuella Indatatyp.
+    isOperation: true
+    input:
+      types:
+      - uid: "'T"
+        isLocal: true
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    functors:
+    - Controlled
+typeParameters:
+- uid: "'T"
+  summary: Målet som varje åtgärd i matrisen agerar på.
+seeAlso:
+- microsoft.quantum.canon.bound
+ms.openlocfilehash: 46a82065b3a236ad0e0a02894d6b1b3e2a1ceba1
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73068180"

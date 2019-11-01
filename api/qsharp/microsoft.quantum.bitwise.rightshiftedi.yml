@@ -1,0 +1,41 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.bitwise.rightshiftedi
+name: RightShiftedI
+type: function
+namespace: Microsoft.Quantum.Bitwise
+summary: Skiftar den bitvisa representationen av ett tal direkt med ett angivet antal bitar.
+remarks: >-
+  Följande är likvärdiga:
+
+
+  ```Q#
+
+  let c = a >>> b;
+
+  let c = RightShiftedI(a, b);
+
+  ```
+syntax: 'function RightShiftedI (value : Int, amount : Int) : Int'
+input:
+  content: '(value : Int, amount : Int)'
+  types:
+  - name: value
+    summary: Det tal vars bitvisa representation ska flyttas till höger (mindre signifikant).
+    isPrimitive: true
+    uid: Int
+  - name: amount
+    summary: Antalet bitar som `value` ska flyttas till höger.
+    isPrimitive: true
+    uid: Int
+output:
+  content: Int
+  types:
+  - summary: Värdet för `value`, flyttas direkt med `amount` bitar.
+    isPrimitive: true
+    uid: Int
+ms.openlocfilehash: 801e07c06b8af34385fb80badf4dfebb503c982d
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73217758"

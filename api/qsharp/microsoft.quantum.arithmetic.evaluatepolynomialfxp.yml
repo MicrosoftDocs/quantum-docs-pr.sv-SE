@@ -1,0 +1,35 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.arithmetic.evaluatepolynomialfxp
+name: EvaluatePolynomialFxP
+type: operation
+namespace: Microsoft.Quantum.Arithmetic
+summary: Utvärderar en polynom i en fast punkts representation.
+syntax: 'operation EvaluatePolynomialFxP (coefficients : Double[], fpx : Microsoft.Quantum.Arithmetic.FixedPoint, result : Microsoft.Quantum.Arithmetic.FixedPoint) : Unit'
+input:
+  content: '(coefficients : Double[], fpx : Microsoft.Quantum.Arithmetic.FixedPoint, result : Microsoft.Quantum.Arithmetic.FixedPoint)'
+  types:
+  - name: coefficients
+    summary: Koefficienter för polynomen som en dubbel matris, d.v.s. matrisen $ [a_0, A_1,..., a_d] $ för polynom $P (x) = a_0 + A_1 x + \cdots + a_d x ^ d $.
+    isArray: true
+    isPrimitive: true
+    uid: Double
+  - name: fpx
+    summary: Inmatat punkt nummer för vilket polynomen ska utvärderas.
+    uid: microsoft.quantum.arithmetic.fixedpoint
+  - name: result
+    summary: Anger ett fast punkt-värde för utdata som innehåller $P (x) $. Måste vara i läget $ \ket{0}$ initialt.
+    uid: microsoft.quantum.arithmetic.fixedpoint
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+functors:
+- Adjoint
+- Controlled
+ms.openlocfilehash: 8a3531860001c09fa3dadd5ba4db276f0a20d06a
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73221005"

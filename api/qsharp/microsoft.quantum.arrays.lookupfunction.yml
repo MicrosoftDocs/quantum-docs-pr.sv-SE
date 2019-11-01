@@ -1,0 +1,38 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.arrays.lookupfunction
+name: LookupFunction
+type: function
+namespace: Microsoft.Quantum.Arrays
+summary: Med en matris returneras en funktion som returnerar element i matrisen.
+remarks: Den här funktionen är främst användbar för att samar beta med funktioner och åtgärder som tar `Int -> 'T` Functions som argument. Detta är vanligt, t. ex. i Generator biblioteket, där Functions används för att undvika att behöva registrera en hel matris i minnet.
+syntax: "function LookupFunction (array : 'T[]) : (Int -> 'T)"
+input:
+  content: "(array : 'T[])"
+  types:
+  - name: array
+    summary: Matrisen som ska visas som en lookup-funktion.
+    isArray: true
+    uid: "'T"
+    isLocal: true
+output:
+  content: (Int -> 'T)
+  types:
+  - summary: En funktion `f` som `f(idx) == f[idx]`.
+    isFunction: true
+    input:
+      types:
+      - isPrimitive: true
+        uid: Int
+    output:
+      types:
+      - uid: "'T"
+        isLocal: true
+typeParameters:
+- uid: "'T"
+  summary: Typ av element i matrisen som representeras som en lookup-funktion.
+ms.openlocfilehash: b4f509de7137377465f1e76e59a04abfd9a22fd1
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73218115"

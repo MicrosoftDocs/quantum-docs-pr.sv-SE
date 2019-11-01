@@ -1,0 +1,37 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.arithmetic.cascadeccnot
+name: CascadeCCNOT
+type: operation
+namespace: Microsoft.Quantum.Arithmetic
+summary: >-
+  Implementerar en överlappande av CCNOT-grindar som styrs på motsvarande bitar av två qubit-register, och fungerar på nästa qubit i en av registren.
+
+  Från qubits vid position 0 i båda registren register som kontroller, tillämpas CCNOT på qubit vid position 1 i mål registret, sedan styrs av qubits vid position 1 på qubit vid position 2 i mål registret, osv., som avslutas med en åtgärd på mål qubit i position `Length(nQubits)-1`.
+remarks: Mål qubit-registret måste ha en qubit över det andra registret.
+syntax: 'operation CascadeCCNOT (register : Qubit[], targets : Qubit[]) : Unit'
+input:
+  content: '(register : Qubit[], targets : Qubit[])'
+  types:
+  - name: register
+    summary: Qubit-registrering, används endast för kontroller.
+    isArray: true
+    isPrimitive: true
+    uid: Qubit
+  - name: targets
+    isArray: true
+    isPrimitive: true
+    uid: Qubit
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+functors:
+- Adjoint
+- Controlled
+ms.openlocfilehash: 02ef9028070a0922b6644bf4cd20ef2f6ec9d04e
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73221328"

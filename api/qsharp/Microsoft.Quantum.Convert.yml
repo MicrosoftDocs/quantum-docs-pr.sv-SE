@@ -1,0 +1,65 @@
+### YamlMime:QSharpNamespace
+uid: microsoft.quantum.convert
+name: Microsoft.Quantum.Convert
+summary: " # <a name=\"summary\"></a>Sammanfattning\n Det här namn området innehåller funktioner för att konvertera mellan olika Q #-data typer."
+functions:
+- uid: microsoft.quantum.convert.bigintasboolarray
+  summary: >-
+    Konverterar ett angivet stort heltal till en matris med booleska värden.
+
+    Elementet 0 i matrisen är den minst signifikanta biten av Big-heltalet.
+- uid: microsoft.quantum.convert.boolarrayasbigint
+  summary: >-
+    Konverterar en matris med booleska värden till ett motsvarande stort heltal.
+
+    Elementet 0 i matrisen är den minst signifikanta biten av Big-heltalet.
+- uid: microsoft.quantum.convert.boolarrayasint
+  summary: Genererar ett positivt heltal från en sträng med bitar i little endian format.
+- uid: microsoft.quantum.convert.boolarrayaspauli
+  summary: Med en bit-sträng returnerar en qubit Pauli-operator som representeras som en matris med qubit Pauli-operatörer.
+- uid: microsoft.quantum.convert.boolarrayasresultarray
+  summary: Konverterar en `Bool[]`-typ till en `Result[]` typ där `true` mappas till `One` och `false` mappas till `Zero`.
+- uid: microsoft.quantum.convert.boolasresult
+  summary: Konverterar en `Bool`-typ till en `Result` typ där `true` mappas till `One` och `false` mappas till `Zero`.
+- uid: microsoft.quantum.convert.boolasstring
+  summary: Konverterar ett angivet booleskt värde till en motsvarande sträng representation.
+- uid: microsoft.quantum.convert.doubleasstring
+  summary: Konverterar ett angivet flyttal med dubbel precision till en motsvarande sträng representation.
+- uid: microsoft.quantum.convert.doubleasstringwithformat
+  summary: Konverterar ett angivet flyttal med dubbel precision till en motsvarande sträng representation med angivet format.
+- uid: microsoft.quantum.convert.functionasoperation
+  summary: Konverterar funktioner till åtgärder.
+- uid: microsoft.quantum.convert.intasbigint
+  summary: Konverterar ett angivet heltal till ett motsvarande stort heltal.
+- uid: microsoft.quantum.convert.intasboolarray
+  summary: Genererar en binär representation av ett positivt heltal med hjälp av en liten endian-representation för den returnerade matrisen.
+- uid: microsoft.quantum.convert.intasdouble
+  summary: Konverterar ett angivet heltal till ett motsvarande flyttal med dubbel precision.
+- uid: microsoft.quantum.convert.intasstring
+  summary: Konverterar ett angivet heltals värde till en motsvarande sträng representation.
+- uid: microsoft.quantum.convert.intasstringwithformat
+  summary: Konverterar ett angivet heltals värde till en motsvarande sträng representation med angivet format.
+- uid: microsoft.quantum.convert.maybebigintasint
+  summary: >-
+    Konverterar ett angivet stort heltal till ett motsvarande heltal, om möjligt.
+
+    Funktionen returnerar ett par av det resulterande heltalet och en boolesk flagga som är true, om och endast om konverteringen var möjlig.
+- uid: microsoft.quantum.convert.pauliarrayasint
+  summary: Kodar en qubit Pauli-operatör som representeras som en matris med qubit Pauli-operatörer till ett heltal.
+- uid: microsoft.quantum.convert.rangeasintarray
+  summary: Skapar en matris `arr` av heltal som räknas upp av start.. steg... ändamål.
+- uid: microsoft.quantum.convert.resultarrayasboolarray
+  summary: Konverterar en `Result[]`-typ till en `Bool[]` typ där `One` mappas till `true` och `Zero` mappas till `false`.
+- uid: microsoft.quantum.convert.resultarrayasint
+  summary: Genererar ett positivt heltal från en sträng med resultat i little endian format.
+- uid: microsoft.quantum.convert.resultasbool
+  summary: Konverterar en `Result`-typ till en `Bool` typ där `One` mappas till `true` och `Zero` mappas till `false`.
+operations:
+- uid: microsoft.quantum.convert.call
+  summary: Anropar en funktion med en specifik Indatatyp.
+ms.openlocfilehash: a0c347d8004b8f8bd35fc1b7f7eaf52e6230cee0
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73210975"

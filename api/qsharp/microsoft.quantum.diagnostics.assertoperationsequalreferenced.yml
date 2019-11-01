@@ -1,0 +1,63 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.diagnostics.assertoperationsequalreferenced
+name: AssertOperationsEqualReferenced
+type: operation
+namespace: Microsoft.Quantum.Diagnostics
+summary: >-
+  Två åtgärder förutsätter att de fungerar identiskt för alla ingångs tillstånd.
+
+
+  Den här kontrollen implementeras med hjälp av Choi – Jamiłkowski-isomorphism för att minska försäkran till en qubit-tillstånds kontroll på två Entangled-register.
+
+  Den här åtgärden behöver därför bara ett enda anrop till varje åtgärd som testas, men kräver två gånger så många qubits som ska allokeras.
+
+  Denna kontroll kan användas för att se till att en optimerad version av en åtgärd fungerar identiskt med dess naïve-implementering, eller att en åtgärd som agerar på ett intervall av icke-Quantum-indata accepterar kända fall.
+remarks: >-
+  Den här åtgärden kräver att den förväntade åtgärden är adjointable, så att inversen kan utföras i själva mål registret.
+
+  Formellt, en kan ange en transponering-åtgärd, vilket innebär att detta krav uppfylls, men transponering-åtgärden är inte i allmänt fysiskt realizable för valfria Quantum-åtgärder och ingår därför inte här som ett alternativ.
+syntax: 'operation AssertOperationsEqualReferenced (nQubits : Int, actual : (Qubit[] => Unit), expected : (Qubit[] => Unit is Adj)) : Unit'
+input:
+  content: '(nQubits: int, faktiskt: (qubit [] = > enhet), förväntat: (qubit [] = för > enhet är just))'
+  types:
+  - name: nQubits
+    summary: Antalet qubits som ska skickas till varje åtgärd.
+    isPrimitive: true
+    uid: Int
+  - name: arbete
+    summary: Åtgärd som ska testas.
+    isOperation: true
+    input:
+      types:
+      - isArray: true
+        isPrimitive: true
+        uid: Qubit
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+  - name: avsett
+    summary: Åtgärd som definierar det förväntade beteendet för åtgärden under test.
+    isOperation: true
+    input:
+      types:
+      - isArray: true
+        isPrimitive: true
+        uid: Qubit
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    functors:
+    - Adjoint
+output:
+  content: Enhet
+  types:
+  - isPrimitive: true
+    uid: Unit
+ms.openlocfilehash: 0dfadb6be785c7ba4eaa517c725b79955e037a32
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73066582"

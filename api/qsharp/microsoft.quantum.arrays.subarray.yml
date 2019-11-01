@@ -1,0 +1,45 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.arrays.subarray
+name: Subarray
+type: function
+namespace: Microsoft.Quantum.Arrays
+summary: Tar en matris och en lista med platser och skapar en ny matris som är utformad från elementen i den ursprungliga matrisen som matchar de tilldelade platserna.
+remarks: >-
+  Funktionen definieras för generiska typer, d.v.s. När vi har en matris `'T[]` och en lista över platser som `Int[]` definierar undermatrisen.
+
+  Undermatrisens konstruktion är en baserad på att skapa en ny, djupgående kopia av den aktuella matrisen i stället för att behålla referenser.
+
+
+  Om `Length(indices) < Length(array)`kommer den här funktionen att returnera en delmängd av `array`. Å andra sidan, om `indices` innehåller upprepade element, kommer motsvarande element i `array` också att upprepas.
+
+  Om `indices` och `array` har samma längd tillhandahåller den här funktionen permutationer av `array`.
+syntax: "function Subarray (indices : Int[], array : 'T[]) : 'T[]"
+input:
+  content: "(indices : Int[], array : 'T[])"
+  types:
+  - name: indices
+    summary: En lista med heltal som används för att definiera undermatrisen.
+    isArray: true
+    isPrimitive: true
+    uid: Int
+  - name: array
+    summary: En matris med element över `'T`.
+    isArray: true
+    uid: "'T"
+    isLocal: true
+output:
+  content: "'T[]"
+  types:
+  - summary: En matris `out` av element vars index motsvarar undermatrisen, t. ex. `out[idx] == array[indices[idx]]`.
+    isArray: true
+    uid: "'T"
+    isLocal: true
+typeParameters:
+- uid: "'T"
+  summary: Typ av `array` element.
+ms.openlocfilehash: 1590e5c24dad56db8c6a0f5dc433bf060d8ac175
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73217860"

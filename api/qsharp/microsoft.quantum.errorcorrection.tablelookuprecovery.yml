@@ -1,0 +1,28 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.errorcorrection.tablelookuprecovery
+name: TableLookupRecovery
+type: function
+namespace: Microsoft.Quantum.ErrorCorrection
+summary: Den här funktionen returnerar ett objekt av typen `RecoveryFn` som innehåller all information som krävs för att utföra en tabells öknings avkodning för en specifik tabell med Pauli-åtgärder för en specifik qubits-åtgärd.
+syntax: 'function TableLookupRecovery (table : Pauli[][]) : Microsoft.Quantum.ErrorCorrection.RecoveryFn'
+input:
+  content: '(table : Pauli[][])'
+  types:
+  - name: table
+    summary: Tabell med Pauli-åtgärder som fungerar på en specifik qubit-registrering
+    isArray: true
+    types:
+    - isArray: true
+      isPrimitive: true
+      uid: Pauli
+output:
+  content: Microsoft.Quantum.ErrorCorrection.RecoveryFn
+  types:
+  - summary: Ett objekt av typen `RecoveryFn`, dvs. ett kart `Syndrome -> Pauli[]` som associeras med en specifik Syndrome-matris motsvarande Pauli korrigerings åtgärd.
+    uid: microsoft.quantum.errorcorrection.recoveryfn
+ms.openlocfilehash: cd84c24f5a50574a9bc2ab189832ada6516f12a8
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73232225"

@@ -1,0 +1,41 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.bitwise.leftshiftedi
+name: LeftShiftedI
+type: function
+namespace: Microsoft.Quantum.Bitwise
+summary: Växlar den bitvisa representationen av ett tal till vänster med ett angivet antal bitar.
+remarks: >-
+  Följande är likvärdiga:
+
+
+  ```Q#
+
+  let c = a <<< b;
+
+  let c = LeftShiftedI(a, b);
+
+  ```
+syntax: 'function LeftShiftedI (value : Int, amount : Int) : Int'
+input:
+  content: '(value : Int, amount : Int)'
+  types:
+  - name: value
+    summary: Det tal vars bitvisa representation ska flyttas till vänster (mer signifikant).
+    isPrimitive: true
+    uid: Int
+  - name: amount
+    summary: Antalet bitar som `value` ska flyttas till vänster.
+    isPrimitive: true
+    uid: Int
+output:
+  content: Int
+  types:
+  - summary: Värdet för `value`, flyttas till vänster med `amount` bitar.
+    isPrimitive: true
+    uid: Int
+ms.openlocfilehash: d260f2d39e94d0448df739f324f9760013d9bbd3
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73214103"

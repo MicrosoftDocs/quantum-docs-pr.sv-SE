@@ -1,0 +1,53 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.arrays.padded
+name: Padded
+type: function
+namespace: Microsoft.Quantum.Arrays
+summary: Returnerar en matris som är utfyllnadad vid med angivna värden upp till en angiven längd.
+examples: >-
+  ```qsharp
+
+  let array = [10, 11, 12];
+
+  // The following line returns [10, 12, 15, 2, 2, 2].
+
+  let output = Padded(-6, array, 2);
+
+  // The following line returns [2, 2, 2, 10, 12, 15].
+
+  let output = Padded(6, array, 2);
+
+  ```
+syntax: "function Padded (nElementsTotal : Int, defaultElement : 'T, inputArray : 'T[]) : 'T[]"
+input:
+  content: "(nElementsTotal : Int, defaultElement : 'T, inputArray : 'T[])"
+  types:
+  - name: nElementsTotal
+    summary: Längden på den utfyllda matrisen. Om detta är positivt fylls `inputArray` på huvudet. Om detta är negativt är `inputArray` utfyllt på slutet.
+    isPrimitive: true
+    uid: Int
+  - name: defaultElement
+    summary: Standardvärde som ska användas för fyllnads element.
+    uid: "'T"
+    isLocal: true
+  - name: inputArray
+    summary: Matris vars värden finns i huvudet i den utgående matrisen.
+    isArray: true
+    uid: "'T"
+    isLocal: true
+output:
+  content: "'T[]"
+  types:
+  - summary: Ett mat ris `output` som är `inputArray` utfyllt i huvudet med `defaultElement`s tills `output` har längden `nElementsTotal`
+    isArray: true
+    uid: "'T"
+    isLocal: true
+typeParameters:
+- uid: "'T"
+  summary: Typ av mat ris element.
+ms.openlocfilehash: 3fb999af73e68de9143ddc051b8a43247f5282f0
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73218064"

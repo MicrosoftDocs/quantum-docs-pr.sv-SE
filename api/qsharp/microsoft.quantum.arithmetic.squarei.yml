@@ -1,0 +1,31 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.arithmetic.squarei
+name: SquareI
+type: operation
+namespace: Microsoft.Quantum.Arithmetic
+summary: Beräknar kvadraten av heltals `xs` i `result`, som först måste vara noll.
+remarks: Använder en vanlig Shift-och-Lägg-metod för att beräkna fyr kanten. Sparar $n-$1-qubits jämfört med den enkla lösningen som först kopierar x x innan en vanlig multiplikator appliceras och sedan ångrar kopierings åtgärden.
+syntax: 'operation SquareI (xs : Microsoft.Quantum.Arithmetic.LittleEndian, result : Microsoft.Quantum.Arithmetic.LittleEndian) : Unit'
+input:
+  content: '(xs : Microsoft.Quantum.Arithmetic.LittleEndian, result : Microsoft.Quantum.Arithmetic.LittleEndian)'
+  types:
+  - name: xs
+    summary: $n $-bit Number till Square (LittleEndian)
+    uid: microsoft.quantum.arithmetic.littleendian
+  - name: result
+    summary: $2N $-bit result (LittleEndian) måste vara i tillstånd $ \ket{0}$ initialt.
+    uid: microsoft.quantum.arithmetic.littleendian
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+functors:
+- Adjoint
+- Controlled
+ms.openlocfilehash: ae55cd24a5dad065c010006f01484f7e903e76f6
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73218438"

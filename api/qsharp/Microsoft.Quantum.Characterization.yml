@@ -1,0 +1,33 @@
+### YamlMime:QSharpNamespace
+uid: microsoft.quantum.characterization
+name: Microsoft. Quantum. karakterisering
+summary: " # <a name=\"summary\"></a>Sammanfattning\n Det här namn området innehåller funktioner och åtgärder för utbildnings egenskaper för Quantum-tillstånd och processer, inklusive tomography och fas uppskattning."
+operations:
+- uid: microsoft.quantum.characterization.continuousphaseestimationiteration
+  summary: Utför en enkel upprepning av en iterativ (klassisk) fas uppskattnings algoritm med godtyckliga verkliga befogenheter hos en enhetlig Oracle.
+- uid: microsoft.quantum.characterization.discretephaseestimationiteration
+  summary: Utför en enkel upprepning av en iterativ (klassisk) fas uppskattnings algoritm med hjälp av heltals befogenheter för en enhetlig Oracle.
+- uid: microsoft.quantum.characterization.estimatefrequency
+  summary: Med tanke på förberedelse och mätning beräknar den frekvens med vilken mätningen lyckades (returnerar `Zero`) genom att utföra ett angivet antal utvärderings versioner.
+- uid: microsoft.quantum.characterization.estimatefrequencya
+  summary: Med tanke på en förberedelse som är adjointable och mätning, beräknar den frekvens med vilken mätningen lyckas (returnerar `Zero`) genom att utföra ett angivet antal utvärderings versioner.
+- uid: microsoft.quantum.characterization.measureallz
+  summary: >-
+    I gemensamma fall åtgärdas ett register över qubits i Pauli Z.
+
+
+    Med andra ord mäter åtgärden $Z \otimes Z \otimes \cdots \otimes Z $ på ett angivet register.
+- uid: microsoft.quantum.characterization.measureidentity
+  summary: Mäter identitets operatören på ett register över qubits.
+- uid: microsoft.quantum.characterization.quantumphaseestimation
+  summary: Utför en beräknings algoritm för Quantum-fasen för en specifik Oracle-`U` och `targetState`, och läser fasen till en big-endian Quantum-registrering.
+- uid: microsoft.quantum.characterization.robustphaseestimation
+  summary: Utför den robusta uppskattnings algoritmen för en icke-iterativ Quantum-fas för en viss Oracle-`U` och eigenstate och ger en enda verklig uppskattning av fasen med avvikelse skalning vid Heisenberg-gränsen.
+- uid: microsoft.quantum.characterization.singlequbitprocesstomographymeasurement
+  summary: Utför en qubit process tomography mått i Pauli-basen, med tanke på en viss kanal av intresse.
+ms.openlocfilehash: f6ca8c97c1e44950fb87da8ed7335c885cabc425
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73056953"

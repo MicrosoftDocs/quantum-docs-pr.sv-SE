@@ -1,0 +1,44 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.canon.approximateqft
+name: ApproximateQFT
+type: operation
+namespace: Microsoft.Quantum.Canon
+summary: Använd den ungefärliga AQFT-transformeringen (Quantum Fourier Transform) till ett Quantum-register.
+remarks: >-
+  AQFT kräver Z-rotations grindar av formatet 2π/2 000 och Hadamard Gates.
+
+
+  Indata och utdata antas vara kodade i big endian encoding.
+syntax: 'operation ApproximateQFT (a : Int, qs : Microsoft.Quantum.Arithmetic.BigEndian) : Unit'
+references: >-
+  - [*M. Roetteler, Th. Beth*, anv. algebra eng. Commune. Compute. 19 (3): 177-193 (2008)](http://doi.org/10.1007/s00200-008-0072-2)
+
+  - [*D. Coppersmith* arXiv: Quant-pH/0201067v1](https://arxiv.org/abs/quant-ph/0201067)
+input:
+  content: '(a : Int, qs : Microsoft.Quantum.Arithmetic.BigEndian)'
+  types:
+  - name: a
+    summary: >-
+      Ungefärlig parameter som avgör på vilken nivå de kontrollerade Z-rotationer som sker i QFT-kretsen rensas.
+
+
+      Den ungefärliga parametern a bestämmer rensnings nivån för Z-rotationer, d.v.s. en ∈ {0.. n} och alla Z-rotationer 2π/2 000 där k > a tas bort från QFT-kretsen. Det är känt att för k > = log ₂ (n) + log ₂ (1/ε) + 3 en kan vara kopplad | | QFT-AQFT | | < ε.
+    isPrimitive: true
+    uid: Int
+  - name: qs
+    summary: Quantum-register för n-qubits som den ungefärliga Quantum Fourier-transformeringen tillämpas på.
+    uid: microsoft.quantum.arithmetic.bigendian
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+functors:
+- Adjoint
+- Controlled
+ms.openlocfilehash: 6d650d4c1d80e747df7560c630543189513d252a
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73212539"

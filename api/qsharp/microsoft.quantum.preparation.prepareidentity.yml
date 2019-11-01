@@ -1,0 +1,32 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.preparation.prepareidentity
+name: PrepareIdentity
+type: operation
+namespace: Microsoft.Quantum.Preparation
+summary: >-
+  Med en registrerad registrering förbereder vi registreringen i maximally blandat läge.
+
+
+  Registret förbereds i läget $ \boldone/2 ^ N $ genom att tillämpa den fullständiga avpolarisering-kanalen på varje qubit, där $N $ är registrerings längden.
+syntax: 'operation PrepareIdentity (register : Qubit[]) : Unit'
+input:
+  content: '(register : Qubit[])'
+  types:
+  - name: register
+    summary: Ett register vars tillstånd ska avsättas på det sätt som beskrivs ovan.
+    isArray: true
+    isPrimitive: true
+    uid: Qubit
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+seeAlso:
+- microsoft.quantum.canon.preparesinglequbitidentity
+ms.openlocfilehash: 3242bb0249f26e78ac33f0d16eb7b7c9dcd86ee8
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73226615"

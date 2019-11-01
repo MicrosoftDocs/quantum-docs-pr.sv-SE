@@ -1,0 +1,30 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.core.rangeend
+name: RangeEnd
+type: function
+namespace: Microsoft.Quantum.Core
+summary: Returnerar det definierade slutvärdet för det angivna intervallet, som inte nödvändigt vis är det sista elementet i sekvensen.
+remarks: >-
+  Ett intervall uttrycks första element är `start`, dess andra element är `start+step`, det tredje elementet `start+step+step`osv., tills `end` skickas.
+
+
+  Observera att det definierade slutvärdet för ett intervall kan skilja sig från det sista elementet i den sekvens som anges av intervallet; till exempel i intervallet 0... 2.. 5 det sista elementet är 4 men end-värdet är 5.
+syntax: 'function RangeEnd (range : Range) : Int'
+input:
+  content: '(intervall: intervall)'
+  types:
+  - name: intervall
+    isPrimitive: true
+    uid: Range
+output:
+  content: int
+  types:
+  - summary: Det definierade slutvärdet för det angivna intervallet.
+    isPrimitive: true
+    uid: Int
+ms.openlocfilehash: c7436046b6be7d4d0801471ecc6c78e36421e54a
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73066650"

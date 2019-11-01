@@ -1,0 +1,45 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.intrinsic.assert
+name: Assert
+type: operation
+namespace: Microsoft.Quantum.Intrinsic
+summary: Förutsätter att mätningen av den aktuella qubits i den aktuella Pauli-basen alltid har det aktuella resultatet.
+remarks: Observera att det inte går att kontrol lera villkoret i intilliggande och kontrollerade versioner av den här åtgärden.
+syntax: 'operation Assert (bases : Pauli[], qubits : Qubit[], result : Result, msg : String) : Unit'
+input:
+  content: '(bases : Pauli[], qubits : Qubit[], result : Result, msg : String)'
+  types:
+  - name: bases
+    summary: En mätnings funktion som försäkrar sannolikheten för, uttryckt som en Pauli-operatör med flera qubit.
+    isArray: true
+    isPrimitive: true
+    uid: Pauli
+  - name: qubits
+    summary: En register som ska göra försäkran.
+    isArray: true
+    isPrimitive: true
+    uid: Qubit
+  - name: result
+    summary: Det förväntade resultatet av `Measure(bases, qubits)`.
+    isPrimitive: true
+    uid: Result
+  - name: msg
+    summary: Ett meddelande som ska rapporteras om kontrollen Miss lyckas.
+    isPrimitive: true
+    uid: String
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+functors:
+- Adjoint
+- Controlled
+seeAlso:
+- assertprob
+ms.openlocfilehash: 214ec7f96a5a486d0e6025e53cca1dbf4f121795
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73235659"

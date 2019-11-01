@@ -1,0 +1,43 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.canon.applypaulifrombitstring
+name: ApplyPauliFromBitString
+type: operation
+namespace: Microsoft.Quantum.Canon
+summary: Använder en Pauli-operator för varje qubit i en matris om motsvarande bit i en boolesk matris matchar ett angivet inflöde.
+remarks: Den booleska matrisen och Quantum-registret måste vara lika långa.
+syntax: 'operation ApplyPauliFromBitString (pauli : Pauli, bitApply : Bool, bits : Bool[], qubits : Qubit[]) : Unit'
+input:
+  content: '(pauli : Pauli, bitApply : Bool, bits : Bool[], qubits : Qubit[])'
+  types:
+  - name: pauli
+    summary: Pauli-operatör som ska gälla för `qubits[idx]` där `bitsApply == bits[idx]`
+    isPrimitive: true
+    uid: Pauli
+  - name: bitApply
+    summary: Använd Pauli om biten är det här värdet
+    isPrimitive: true
+    uid: Bool
+  - name: bits
+    summary: Boolesk register som anger vilka motsvarande qubit i `qubits` ska användas
+    isArray: true
+    isPrimitive: true
+    uid: Bool
+  - name: qubits
+    summary: Quantum register som den angivna Pauli-operatorn ska tillämpas på selektivt
+    isArray: true
+    isPrimitive: true
+    uid: Qubit
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+functors:
+- Adjoint
+- Controlled
+ms.openlocfilehash: a39d19c11a0ce48b2901097ac497c2ad9c707bba
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73220682"

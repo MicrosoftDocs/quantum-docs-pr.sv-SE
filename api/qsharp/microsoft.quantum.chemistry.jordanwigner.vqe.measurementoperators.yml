@@ -1,0 +1,38 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.chemistry.jordanwigner.vqe.measurementoperators
+name: MeasurementOperators
+type: function
+namespace: Microsoft.Quantum.Chemistry.JordanWigner.VQE
+summary: Beräknar alla mät operatorer som krävs för att beräkna förväntat en Jordanien-Wigner-period.
+syntax: 'function MeasurementOperators (nQubits : Int, indices : Int[], termType : Int) : Pauli[][]'
+input:
+  content: '(nQubits : Int, indices : Int[], termType : Int)'
+  types:
+  - name: nQubits
+    summary: Antalet qubits som krävs för att simulera molekyl systemet.
+    isPrimitive: true
+    uid: Int
+  - name: indices
+    summary: En matris som innehåller index för qubit varje Pauli-operator tillämpas på.
+    isArray: true
+    isPrimitive: true
+    uid: Int
+  - name: termType
+    summary: Typen av Jordanien-Wigner-termen.
+    isPrimitive: true
+    uid: Int
+output:
+  content: Pauli[][]
+  types:
+  - summary: En matris med mått operatorer (var och en är en matris med Pauli).
+    isArray: true
+    types:
+    - isArray: true
+      isPrimitive: true
+      uid: Pauli
+ms.openlocfilehash: e22af035b43d8b3ebeea22c8c4bfa0f7289ab82c
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73227533"

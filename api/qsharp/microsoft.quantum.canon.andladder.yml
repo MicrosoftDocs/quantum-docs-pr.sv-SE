@@ -1,0 +1,50 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.canon.andladder
+name: AndLadder
+type: operation
+namespace: Microsoft.Quantum.Canon
+summary: >-
+  Utför en kontrollerad och stege på mål-qubits.
+
+
+  Detta gäller en enhetlig som angetts av följande karta om beräknings bas vektorer: $ $ \begin{align} \ket{x\_1, \dots, x\_n} \ket{y\_1, \dots, y\_{n-1}} \mapsto \ket{x\_1 , \dots, x\_n} \ket{y\_1 \oplus (x\_1 \land x\_2), \dots, y\_{n-1} \oplus (x\_1 \land x\_2 \land \cdots \land x\_{n-1}} , \end{align} $ $ WHERE $ \ket{x\_1, \dots, x\_n} $ refererar till beräknings bas tillstånden för `controls`och där $ \ket{y\_1, \dots, y\_{n-1}} $ refererar till `targets`s beräknings underlag.
+remarks: >-
+  - Används som en del av <xref:microsoft.quantum.canon.applymulticontrolledc> och <xref:microsoft.quantum.canon.applymulticontrolledca>.
+
+  - För förklarings diagrammet och krets diagrammet ser du bild 4,10, avsnitt 4,3 i Nielsen & Chuang.
+syntax: 'operation AndLadder (ccnot : Microsoft.Quantum.Canon.CCNOTop, controls : Qubit[], targets : Qubit[]) : Unit'
+references: '- [*Michael A. Nielsen, Isak L. Chuang*, Quantum-beräkning och Quantum-information](http://doi.org/10.1017/CBO9780511976667)'
+input:
+  content: '(ccnot : Microsoft.Quantum.Canon.CCNOTop, controls : Qubit[], targets : Qubit[])'
+  types:
+  - name: ccnot
+    summary: CCNOT-porten som ska användas för byggnaden.
+    uid: microsoft.quantum.canon.ccnotop
+  - name: controls
+    summary: >-
+      Ett register över qubits som ska användas som kontroller för och steg-för-steg-exempel.
+
+      Den här åtgärden lämnar beräknings bas tillstånd för `controls` invariant.
+
+      Längden på `controls` måste vara minst 2 och måste vara lika med en plus längden på `targets`.
+    isArray: true
+    isPrimitive: true
+    uid: Qubit
+  - name: targets
+    summary: Längden på `targets` måste vara minst 1 och lika med längden på `controls` minus ett.
+    isArray: true
+    isPrimitive: true
+    uid: Qubit
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+functors:
+- Adjoint
+ms.openlocfilehash: 2970f9c783ea233f2f1ceb4089802320efe82602
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73217724"

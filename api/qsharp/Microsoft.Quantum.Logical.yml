@@ -1,0 +1,73 @@
+### YamlMime:QSharpNamespace
+uid: microsoft.quantum.logical
+name: Microsoft. Quantum. Logical
+summary: " # <a name=\"summary\"></a>Sammanfattning\n Innehåller funktioner för att arbeta med logiska uttryck och boolesk logik."
+functions:
+- uid: microsoft.quantum.logical.and
+  summary: Returnerar den booleska samningen av två värden.
+- uid: microsoft.quantum.logical.conditioned
+  summary: Returnerar ett av två värden, beroende på värdet för ett booleskt villkor.
+- uid: microsoft.quantum.logical.equalb
+  summary: Returnerar true om och bara om två indata är lika.
+- uid: microsoft.quantum.logical.equalc
+  summary: Returnerar true om och bara om två indata är lika.
+- uid: microsoft.quantum.logical.equalcp
+  summary: Returnerar true om och bara om två indata är lika.
+- uid: microsoft.quantum.logical.equald
+  summary: Returnerar true om och bara om två indata är lika.
+- uid: microsoft.quantum.logical.equali
+  summary: Returnerar true om och bara om två indata är lika.
+- uid: microsoft.quantum.logical.equall
+  summary: Returnerar true om och bara om två indata är lika.
+- uid: microsoft.quantum.logical.equalr
+  summary: Returnerar true om och bara om två indata är lika.
+- uid: microsoft.quantum.logical.greaterthand
+  summary: Returnerar true om och endast om ett tal är större än ett annat tal.
+- uid: microsoft.quantum.logical.greaterthani
+  summary: Returnerar true om och endast om ett tal är större än ett annat tal.
+- uid: microsoft.quantum.logical.greaterthanl
+  summary: Returnerar true om och endast om ett tal är större än ett annat tal.
+- uid: microsoft.quantum.logical.greaterthanorequald
+  summary: Returnerar true om och endast om ett tal är större än eller lika med ett annat tal.
+- uid: microsoft.quantum.logical.greaterthanorequali
+  summary: Returnerar true om och endast om ett tal är större än eller lika med ett annat tal.
+- uid: microsoft.quantum.logical.greaterthanorequall
+  summary: Returnerar true om och endast om ett tal är större än eller lika med ett annat tal.
+- uid: microsoft.quantum.logical.lessthand
+  summary: Returnerar true om och endast om ett tal är mindre än ett annat tal.
+- uid: microsoft.quantum.logical.lessthani
+  summary: Returnerar true om och endast om ett tal är mindre än ett annat tal.
+- uid: microsoft.quantum.logical.lessthanl
+  summary: Returnerar true om och endast om ett tal är mindre än ett annat tal.
+- uid: microsoft.quantum.logical.lessthanorequald
+  summary: Returnerar true om och endast om ett tal är mindre än eller lika med ett annat tal.
+- uid: microsoft.quantum.logical.lessthanorequali
+  summary: Returnerar true om och endast om ett tal är mindre än eller lika med ett annat tal.
+- uid: microsoft.quantum.logical.lessthanorequall
+  summary: Returnerar true om och endast om ett tal är mindre än eller lika med ett annat tal.
+- uid: microsoft.quantum.logical.not
+  summary: Returnerar den booleska negationen av ett värde.
+- uid: microsoft.quantum.logical.notequalb
+  summary: Returnerar true om och endast om två indata är inte lika.
+- uid: microsoft.quantum.logical.notequalc
+  summary: Returnerar true om och endast om två indata är inte lika.
+- uid: microsoft.quantum.logical.notequalcp
+  summary: Returnerar true om och endast om två indata är inte lika.
+- uid: microsoft.quantum.logical.notequald
+  summary: Returnerar true om och endast om två indata är inte lika.
+- uid: microsoft.quantum.logical.notequali
+  summary: Returnerar true om och endast om två indata är inte lika.
+- uid: microsoft.quantum.logical.notequall
+  summary: Returnerar true om och endast om två indata är inte lika.
+- uid: microsoft.quantum.logical.notequalr
+  summary: Returnerar true om och endast om två indata är inte lika.
+- uid: microsoft.quantum.logical.or
+  summary: Returnerar den booleska disknuten av två värden.
+- uid: microsoft.quantum.logical.xor
+  summary: Returnerar den booleska exklusiva disknuten av två värden.
+ms.openlocfilehash: 12f462356dfe7ae4bf7c60110e71a9928bc8c178
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73056284"

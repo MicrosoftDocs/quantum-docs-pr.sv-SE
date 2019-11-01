@@ -1,0 +1,81 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.research.randomwalkphaseestimation.randomwalkphaseestimation
+name: RandomWalkPhaseEstimation
+type: operation
+namespace: Microsoft.Quantum.Research.RandomWalkPhaseEstimation
+summary: Utför iterativ fas uppskattning med en slumpmässig genom gång för att approximera Bayesian-härledningen på de klassiska mått resultaten från en specifik Oracle och eigenstate.
+remarks: >-
+  ### <a name="iterative-phase-estimation-and-eigenstates"></a>Uppskattning av iterativa faser och Eigenstates
+
+
+  I allmänhet behöver ingångs registreringen `eigenstate` inte vara en eigenstate $ \ket{\phi} $ av $U $, men kan vara en superposition framför eigenstates. Anta att indatamängden anges av \begin{align} \ket{\psi} & = \sum\_{j} \alpha\_j \ket{\phi\_j}, \end{align} där $\{\alpha\_j\}$ är komplexa koefficienter som $ \sum\_j | \alpha @no__ t_7_ j | ^ 2 = $1 och Where $U \ket{\phi\_j} = \phi\_j\ket {\ Fi\_j} $.
+
+
+  Sedan konvergerar periodiska fas uppskattningar till en enda eigenstate enligt beskrivningen i [utvecklings guiden](xref:microsoft.quantum.libraries.characterization#iterative-phase-estimation-without-eigenstates).
+
+
+  ### <a name="experiment-design"></a>Experiment design
+
+
+  Mätnings tiderna $t $ och inversions vinklar $ \theta $ som skickas till `oracle` väljs enligt *partikel gissa heuristik*, \begin{align} \Theta \sim \Pr (\phi), \quad t \approx \frac{1}{\variance{\phi}}.
+
+  \end{align} den här heuristiken är optimal för att minska den förväntade föregående avvikelsen i upprepnings fas uppskattningen under antagandet av en normal tidigare period.
+
+
+  ### <a name="optimality"></a>Optimalhet
+
+
+  Den här åtgärden uppskattar den optimala uppskattningen för fasen $ \phi $, som utvärderas med hjälp av kvadratisk förlust $L (\phi, \hat{\phi}) \mathrel{: =} (\phi-\hat{\phi}) ^ 2 $.
+
+
+  Se [uppskattning av Bayesian-fasen](xref:microsoft.quantum.libraries.characterization#bayesian-phase-estimation) för mer information om statistik för uppskattning av iterativa faser.
+syntax: 'operation RandomWalkPhaseEstimation (initialMean : Double, initialStdDev : Double, nMeasurements : Int, maxMeasurements : Int, unwind : Int, oracle : Microsoft.Quantum.Oracles.ContinuousOracle, targetState : Qubit[]) : Double'
+references: >-
+  - Uppskjuten *et al.* 2011 [Doi: 10/TFX](https://doi.org/10.1007/s11128-012-0407-6), [arXiv: 1110.3067](https://arxiv.org/abs/1110.3067).
+
+  - Wiebe *et al.* 2013 [Doi: 10/TF3](https://doi.org/10.1103/PhysRevLett.112.190501), [arXiv: 1309.0876](https://arxiv.org/abs/1309.0876)
+
+  - Wiebe och granade 2018 *(i förberedelse)*.
+input:
+  content: '(initialMean : Double, initialStdDev : Double, nMeasurements : Int, maxMeasurements : Int, unwind : Int, oracle : Microsoft.Quantum.Oracles.ContinuousOracle, targetState : Qubit[])'
+  types:
+  - name: initialMean
+    summary: Medelvärde för den första normala tidigare distributionen över $ \phi $.
+    isPrimitive: true
+    uid: Double
+  - name: initialStdDev
+    summary: Standard avvikelse för den initiala normal tidigare distributionen över $ \phi $.
+    isPrimitive: true
+    uid: Double
+  - name: nMeasurements
+    summary: Antalet mätningar som ska godkännas i den slutliga beräkningen i efterhand.
+    isPrimitive: true
+    uid: Int
+  - name: maxMeasurements
+    summary: Det totala antalet mätningar som kan vidtas innan åtgärden anses ha misslyckats.
+    isPrimitive: true
+    uid: Int
+  - name: unwind
+    summary: Antal resultat som ska glömmas när konsekvens kontroller misslyckats.
+    isPrimitive: true
+    uid: Int
+  - name: oracle
+    summary: En åtgärd som representerar en enhetlig $U $ t. ex. $U (t) \ket{\phi} = e ^ {i t \phi}\ket{\phi} $ för eigenstates $ \ket{\phi} $ med okänd fas $ \phi \in \mathbb{R} ^ + $.
+    uid: microsoft.quantum.oracles.continuousoracle
+  - name: targetState
+    summary: Ett register som $U $ handlar om.
+    isArray: true
+    isPrimitive: true
+    uid: Qubit
+output:
+  content: Double
+  types:
+  - summary: 'Den slutliga uppskattningen $ \hat{\phi} \mathrel{: =} \expect [\phi] $, där förväntat sker över alla accepterade data.'
+    isPrimitive: true
+    uid: Double
+ms.openlocfilehash: 795849b617a7d47ff5b304e8d2aa5f2f26eee308
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73232055"
