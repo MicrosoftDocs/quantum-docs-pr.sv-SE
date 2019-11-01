@@ -1,0 +1,21 @@
+### YamlMime:QSharpNamespace
+uid: microsoft.quantum.core
+name: Microsoft. Quantum. Core
+summary: " # <a name=\"summary\"></a>Sammanfattning\n Det här namn området innehåller Q # Core-funktioner och-åtgärder.\n\n # <a name=\"remarks\"></a>Kommentarer\n Det här namn området öppnas automatiskt av Q #-kompilatorn, så alla element i namn området är alltid tillgängliga."
+functions:
+- uid: microsoft.quantum.core.length
+  summary: Returnerar antalet element i en matris.
+- uid: microsoft.quantum.core.rangeend
+  summary: Returnerar det definierade slutvärdet för det angivna intervallet, som inte nödvändigt vis är det sista elementet i sekvensen.
+- uid: microsoft.quantum.core.rangereverse
+  summary: Returnerar ett nytt intervall som är omvänt från det angivna intervallet.
+- uid: microsoft.quantum.core.rangestart
+  summary: Returnerar det definierade startvärdet för det angivna intervallet.
+- uid: microsoft.quantum.core.rangestep
+  summary: Returnerar det heltal som anger hur nästa värde i ett intervall beräknas.
+ms.openlocfilehash: 41c28f8e8e11990ec1cf9b315478996a1e0811f4
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73056892"

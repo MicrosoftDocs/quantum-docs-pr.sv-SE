@@ -1,0 +1,82 @@
+### YamlMime:QSharpNamespace
+uid: microsoft.quantum.diagnostics
+name: Microsoft. Quantum. Diagnostics
+functions:
+- uid: microsoft.quantum.diagnostics.allequalityfactb
+  summary: Förutsätter att två matriser med booleska värden är lika.
+- uid: microsoft.quantum.diagnostics.dumpmachine
+  summary: Dumpar den aktuella mål datorns status.
+- uid: microsoft.quantum.diagnostics.dumpregister
+  summary: Dumpar den aktuella mål datorns status som är associerad med den angivna qubits.
+- uid: microsoft.quantum.diagnostics.equalityfactb
+  summary: Förutsätter att en klassisk bool-variabel har det förväntade värdet.
+- uid: microsoft.quantum.diagnostics.equalityfactc
+  summary: Förutsätter att ett komplext tal har det förväntade värdet.
+- uid: microsoft.quantum.diagnostics.equalityfactcp
+  summary: Förutsätter att ett komplext tal har det förväntade värdet.
+- uid: microsoft.quantum.diagnostics.equalityfacti
+  summary: Förutsätter att en klassisk int-variabel har det förväntade värdet.
+- uid: microsoft.quantum.diagnostics.equalityfactl
+  summary: Förutsätter att en klassisk BigInt-variabel har det förväntade värdet.
+- uid: microsoft.quantum.diagnostics.equalityfactr
+  summary: Förutsätter att en klassisk resultat variabel har det förväntade värdet.
+- uid: microsoft.quantum.diagnostics.equalitywithintolerancefact
+  summary: Representerar anspråket att ett klassiskt flytt ALS värde har det förväntade värdet upp till en viss absolut tolerans.
+- uid: microsoft.quantum.diagnostics.fact
+  summary: Deklarerar att ett klassiskt villkor är sant.
+- uid: microsoft.quantum.diagnostics.nearequalityfactc
+  summary: Garanterar att ett klassiskt komplext tal har det förväntade värdet upp till en liten tolerans för 1e-10.
+- uid: microsoft.quantum.diagnostics.nearequalityfactcp
+  summary: Garanterar att ett klassiskt komplext tal har det förväntade värdet upp till en liten tolerans för 1e-10.
+- uid: microsoft.quantum.diagnostics.nearequalityfactd
+  summary: Garanterar att ett klassiskt flytt ALS värde har det förväntade värdet upp till en liten tolerans för 1e-10.
+operations:
+- uid: microsoft.quantum.diagnostics.assertallzero
+  summary: Assert att de aktuella qubits är alla i \ket{0}$ State.
+- uid: microsoft.quantum.diagnostics.assertallzerowithintolerance
+  summary: Assert att de aktuella qubits är alla i $ \ket{0}$ State upp till en specifik tolerans.
+- uid: microsoft.quantum.diagnostics.assertoperationsequalinplace
+  summary: >-
+    Två åtgärder förutsätter att de fungerar identiskt för alla ingångs tillstånd.
+
+
+    Den här kontrollen implementeras genom att kontrol lera åtgärds åtgärderna för alla tillstånd i formuläret $V _0 \otimes... \otimes V_ {n-1} $, där $V _k $ är ett av tillstånden $ \ket{0}$, $ \ket{1}$, $ \ket{+} $ och $ \ket{i} $ (+ 1 eigenstate av Pauli Y-operatorn).
+
+
+    Den här kontrollen använder $n $ qubits och kräver flera anrop av de åtgärder som jämförs.
+- uid: microsoft.quantum.diagnostics.assertoperationsequalinplacecompbasis
+  summary: >-
+    Kontrollerar om åtgärden `givenU` är lika med åtgärden `expectedU` på den angivna indata-storleken genom att kontrol lera åtgärdens åtgärder endast på vektorerna från beräknings basen.
+
+    Detta är ett nödvändigt, men inte tillräckligt, villkor för likheten av två unitaries.
+- uid: microsoft.quantum.diagnostics.assertoperationsequalreferenced
+  summary: >-
+    Två åtgärder förutsätter att de fungerar identiskt för alla ingångs tillstånd.
+
+
+    Den här kontrollen implementeras med hjälp av Choi – Jamiłkowski-isomorphism för att minska försäkran till en qubit-tillstånds kontroll på två Entangled-register.
+
+    Den här åtgärden behöver därför bara ett enda anrop till varje åtgärd som testas, men kräver två gånger så många qubits som ska allokeras.
+
+    Denna kontroll kan användas för att se till att en optimerad version av en åtgärd fungerar identiskt med dess naïve-implementering, eller att en åtgärd som agerar på ett intervall av icke-Quantum-indata accepterar kända fall.
+- uid: microsoft.quantum.diagnostics.assertqubit
+  summary: Garanterar att qubit `q` finns i den förväntade eigenstate för Pauli Z-operatorn.
+- uid: microsoft.quantum.diagnostics.assertqubitisinstatewithintolerance
+  summary: >-
+    Förutsätter att en qubit förväntas i det förväntade läget.
+
+
+    `expected` representerar en komplex Vector, $ \ket{\psi} = \begin{bmatrix}a & b\end {bmatrix} ^ {\mathrm{T}} $.
+
+    Det första elementet i tuppeln som representerar var och en av $a $, $b $ är den reella delen av det komplexa talet, medan det andra är den imaginära delen.
+
+    Det sista argumentet definierar toleransen för vilken kontroll görs.
+- uid: microsoft.quantum.diagnostics.assertqubitwithintolerance
+  summary: Förutsätter att qubit `q` finns i den förväntade eigenstate för Pauli Z-operatören upp till en bestämd tolerans.
+summary: " # <a name=\"summary\"></a>Sammanfattning\n Det här namn området innehåller funktioner och åtgärder som är användbara för diagnostiska orsaker, inklusive assert-åtgärder och anspråks funktioner."
+ms.openlocfilehash: c387a7dc3b2e997d00d54457b0af89a04fa918d3
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73056863"

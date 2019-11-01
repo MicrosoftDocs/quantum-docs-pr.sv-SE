@@ -1,0 +1,41 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.arithmetic.ripplecarryadderttk
+name: RippleCarryAdderTTK
+type: operation
+namespace: Microsoft.Quantum.Arithmetic
+summary: >-
+  Reversibel, "på plats"-tillägg av två heltal.
+
+  Med två $n $-bitars heltal som är kodade i LittleEndian registrerar `xs` och `ys`och en qubit-aktivitet, beräknar åtgärden summan av de två heltalen där $n $ minst betydande bitar av resultatet hålls i `ys` och den framställda biten är XoReD till qubit `carry`.
+remarks: Den här åtgärden har samma funktioner som RippleCarryAdderD och RippleCarryAdderCDKM men använder inte några Ancilla-qubits.
+syntax: 'operation RippleCarryAdderTTK (xs : Microsoft.Quantum.Arithmetic.LittleEndian, ys : Microsoft.Quantum.Arithmetic.LittleEndian, carry : Qubit) : Unit'
+references: >-
+  - Yasuhiro Takahashi, Seiichiro Tani, Noboru Kunihiro: "Quantum addition-kretsar och obegränsade fläktning", Quantum information och beräkning, Vol. 10, 2010.
+    https://arxiv.org/abs/0910.2530
+input:
+  content: '(xs : Microsoft.Quantum.Arithmetic.LittleEndian, ys : Microsoft.Quantum.Arithmetic.LittleEndian, carry : Qubit)'
+  types:
+  - name: xs
+    summary: LittleEndian qubit register encoding First Integer summand.
+    uid: microsoft.quantum.arithmetic.littleendian
+  - name: ys
+    summary: LittleEndian qubit register encoding det andra heltalet summand har ändrats för att innehålla $n $ minst signifikanta bitar av summan.
+    uid: microsoft.quantum.arithmetic.littleendian
+  - name: carry
+    summary: Bär qubit, är XoReD med den mest signifikanta biten av summan.
+    isPrimitive: true
+    uid: Qubit
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+functors:
+- Adjoint
+- Controlled
+ms.openlocfilehash: 9c27164d8245c587b03c43606acebd0d156626bd
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73214494"

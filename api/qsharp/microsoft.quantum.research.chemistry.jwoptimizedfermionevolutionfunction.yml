@@ -1,0 +1,28 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.research.chemistry.jwoptimizedfermionevolutionfunction
+name: JWOptimizedFermionEvolutionFunction
+type: function
+namespace: Microsoft.Quantum.Research.Chemistry
+summary: Representerar en dynamisk generator som en uppsättning simulerade grindar och en expansion i JWOptimized-basen.
+syntax: 'function JWOptimizedFermionEvolutionFunction (generatorIndex : Microsoft.Quantum.Simulation.GeneratorIndex, parityQubit : Qubit) : Microsoft.Quantum.Simulation.EvolutionUnitary'
+input:
+  content: '(generatorIndex : Microsoft.Quantum.Simulation.GeneratorIndex, parityQubit : Qubit)'
+  types:
+  - name: generatorIndex
+    summary: Ett Generator index som återges som en enhetlig utveckling i JWOptimized-basen.
+    uid: microsoft.quantum.simulation.generatorindex
+  - name: parityQubit
+    summary: Qubit som avgör tids utvecklingen.
+    isPrimitive: true
+    uid: Qubit
+output:
+  content: Microsoft.Quantum.Simulation.EvolutionUnitary
+  types:
+  - summary: En `EvolutionUnitary` som visar tids utvecklingen efter den period som refereras i ' generatorIndex.
+    uid: microsoft.quantum.simulation.evolutionunitary
+ms.openlocfilehash: 0e85f9be6001d71980a442ebbc04b88ba4240166
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73228026"

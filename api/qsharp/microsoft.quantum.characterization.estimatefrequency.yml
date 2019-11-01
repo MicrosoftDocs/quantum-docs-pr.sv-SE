@@ -1,0 +1,58 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.characterization.estimatefrequency
+name: EstimateFrequency
+type: operation
+namespace: Microsoft.Quantum.Characterization
+summary: Med tanke på förberedelse och mätning beräknar den frekvens med vilken mätningen lyckades (returnerar `Zero`) genom att utföra ett angivet antal utvärderings versioner.
+syntax: 'operation EstimateFrequency (preparation : (Qubit[] => Unit), measurement : (Qubit[] => Result), nQubits : Int, nMeasurements : Int) : Double'
+input:
+  content: '(preparation : (Qubit[] => Unit), measurement : (Qubit[] => Result), nQubits : Int, nMeasurements : Int)'
+  types:
+  - name: preparation
+    summary: En åtgärd $P $ som förbereder ett angivet tillstånd $ \rho $ på sin ingående registrering.
+    isOperation: true
+    input:
+      types:
+      - isArray: true
+        isPrimitive: true
+        uid: Qubit
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+  - name: measurement
+    summary: En åtgärd $M $ som representerar uppskattning av ränta.
+    isOperation: true
+    input:
+      types:
+      - isArray: true
+        isPrimitive: true
+        uid: Qubit
+    output:
+      types:
+      - isPrimitive: true
+        uid: Result
+  - name: nQubits
+    summary: Antalet qubits som förberedelsen och mätar varje åtgärd för.
+    isPrimitive: true
+    uid: Int
+  - name: nMeasurements
+    summary: Antalet gånger som mätningen ska utföras för att uppskatta ränte frekvensen.
+    isPrimitive: true
+    uid: Int
+output:
+  content: Double
+  types:
+  - summary: >-
+      En uppskattning av $ \hat{p} $ i den frekvens med vilken $M (P (\ket{00 \cdots 0} \bra{00 \cdots 0})) $ returnerar `Zero`, som erhålls med hjälp av den ej prioriterade binomialfördelningen $ \hat{p} = n\_{\uparrow}/n\_{\text{Measurements}} $, där $n\_{\ nedåtpil} $ är antalet `Zero` resultat som har observerats.
+
+
+      Detta är särskilt viktigt på mål datorer som respekterar fysiska begränsningar, så att sannolikheten inte kan mätas.
+    isPrimitive: true
+    uid: Double
+ms.openlocfilehash: 1c27d38983f9fa9c1a1dc5c80548e307b7c36ffe
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73229199"

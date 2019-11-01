@@ -1,0 +1,44 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.logical.and
+name: And
+type: function
+namespace: Microsoft.Quantum.Logical
+summary: Returnerar den booleska samningen av två värden.
+remarks: >-
+  Till skillnad från `and`-operatorn är den här funktionen inte en kort krets, så att båda indatana utvärderas fullständigt.
+
+
+  Till följd av kort slutning är följande motsvarigheter:
+
+
+  ```Q#
+
+  let x = a and b;
+
+  let x = And(a, b);
+
+  ```
+syntax: 'function And (a : Bool, b : Bool) : Bool'
+input:
+  content: '(a : Bool, b : Bool)'
+  types:
+  - name: a
+    summary: Det första värdet som ska beaktas.
+    isPrimitive: true
+    uid: Bool
+  - name: b
+    summary: Det andra värdet som ska beaktas.
+    isPrimitive: true
+    uid: Bool
+output:
+  content: Bool
+  types:
+  - summary: '`true` om och bara om `a` och `b` båda är `true`.'
+    isPrimitive: true
+    uid: Bool
+ms.openlocfilehash: 22e884f8041ecd66aba875c38f0b8af234aee0e5
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73233381"

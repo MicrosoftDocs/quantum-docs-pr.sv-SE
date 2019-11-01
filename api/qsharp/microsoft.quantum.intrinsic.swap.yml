@@ -1,0 +1,52 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.intrinsic.swap
+name: SWAP
+type: operation
+namespace: Microsoft.Quantum.Intrinsic
+summary: >-
+  Tillämpar VÄXLINGs porten på ett par med qubits.
+
+
+  \begin{align} \operatorname{SWAP} \mathrel{: =} \begin{bmatrix} 1 & 0 & 0 & 0 \\\\ 0 & 0 & 1 & 0 \\\\ 0 & 1 & 0 & 0 \\\\ 0 & 0 & 0 & 1 \end{bmatrix} , \end{align}
+
+
+  var rader och kolumner sorteras som i Quantum Concepts-guiden.
+remarks: >-
+  Motsvarar:
+
+
+  ```qsharp
+
+  CNOT(qubit1, qubit2);
+
+  CNOT(qubit2, qubit1);
+
+  CNOT(qubit1, qubit2);
+
+  ```
+syntax: 'operation SWAP (qubit1 : Qubit, qubit2 : Qubit) : Unit'
+input:
+  content: '(qubit1 : Qubit, qubit2 : Qubit)'
+  types:
+  - name: qubit1
+    summary: Första qubit som ska växlas.
+    isPrimitive: true
+    uid: Qubit
+  - name: qubit2
+    summary: Andra qubit som ska växlas.
+    isPrimitive: true
+    uid: Qubit
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+functors:
+- Adjoint
+- Controlled
+ms.openlocfilehash: 32a379b784d0be0084b00a80edf8607ccf760f9e
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73216364"

@@ -1,0 +1,31 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.characterization.measureallz
+name: MeasureAllZ
+type: operation
+namespace: Microsoft.Quantum.Characterization
+summary: >-
+  I gemensamma fall åtgärdas ett register över qubits i Pauli Z.
+
+
+  Med andra ord mäter åtgärden $Z \otimes Z \otimes \cdots \otimes Z $ på ett angivet register.
+syntax: 'operation MeasureAllZ (register : Qubit[]) : Result'
+input:
+  content: '(register : Qubit[])'
+  types:
+  - name: register
+    summary: Registret som ska mätas.
+    isArray: true
+    isPrimitive: true
+    uid: Qubit
+output:
+  content: Result
+  types:
+  - summary: Resultatet av mätningen $Z \otimes Z \otimes \cdots \otimes Z $.
+    isPrimitive: true
+    uid: Result
+ms.openlocfilehash: d9582f1656cbee854600eaf37bf3a0effa52869f
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73229148"

@@ -1,0 +1,55 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.canon.multiplexoperations
+name: MultiplexOperations
+type: operation
+namespace: Microsoft.Quantum.Canon
+summary: >-
+  Tillämpar en matris med åtgärder som styrs av en matris med tal tillstånd.
+
+
+  Det vill säga använder en multiplicering-kontrollerad enhetlig åtgärd $U $ som tillämpar en enhetlig $V _J $ när den styrs av $n $-qubit Number State $ \ket{j} $.
+
+
+  $U = \sum ^ {2 ^ n-1} _ {j = 0} \ket{j}\bra{j}\otimes V_j $.
+remarks: '`coefficients` fylls i automatiskt med identitets element om färre än $2 ^ n $ anges. Den här implementeringen använder $n-$1 Ancilla-qubits.'
+syntax: "operation MultiplexOperations (unitaries : ('T => Unit is Adj + Ctl)[], index : Microsoft.Quantum.Arithmetic.LittleEndian, target : 'T) : Unit"
+references: '- Mot den första Quantum-simuleringen med Quantum SpeedUp Andrew M. Child, Dmitri Maslov, Yunseongt, Neil J. Värskogsnätverksväxling, Yuan Su https://arxiv.org/abs/1711.10980'
+input:
+  content: "(unitaries : ('T => Unit is Adj + Ctl)[], index : Microsoft.Quantum.Arithmetic.LittleEndian, target : 'T)"
+  types:
+  - name: unitaries
+    summary: Matris med upp till $2 ^ n $-åtgärder. $J $ th indexeras av Number State $ \ket{j} $ som kodats i litet endian-format.
+    isArray: true
+    isOperation: true
+    input:
+      types:
+      - uid: "'T"
+        isLocal: true
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    functors:
+    - Adjoint
+    - Controlled
+  - name: index
+    summary: $n $-qubit Control register som kodar nummer tillstånden $ \ket{j} $ i litet endian-format.
+    uid: microsoft.quantum.arithmetic.littleendian
+  - name: target
+    summary: Allmän qubit-registrering som $V _J $ reagerar på.
+    uid: "'T"
+    isLocal: true
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+functors:
+- Adjoint
+- Controlled
+ms.openlocfilehash: bd248ece9d76729a33db3dfead177fa68909f438
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73223504"

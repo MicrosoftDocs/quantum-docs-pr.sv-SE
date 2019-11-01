@@ -1,0 +1,55 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.canon.cx
+name: CX
+type: operation
+namespace: Microsoft.Quantum.Canon
+summary: >-
+  Tillämpar den kontrollerade X (CX)-porten på ett par med qubits.
+
+
+  $ $ \begin{align} 1 & 0 & 0 & 0 \\\\ 0 & 1 & 0 & 0 \\\\ 0 & 0 & 0 & 1 \\\\ 0 & 0 & 1 & 0 \end{align} , $ $ där rader och kolumner organiseras som i guiden Quantum Concepts.
+remarks: >-
+  Motsvarar:
+
+
+  ```qsharp
+
+  Controlled X([control], target);
+
+  ```
+
+
+  och för att:
+
+
+  ```qsharp
+
+  CNOT(control, target);
+
+  ```
+syntax: 'operation CX (control : Qubit, target : Qubit) : Unit'
+input:
+  content: '(kontroll: qubit, mål: qubit)'
+  types:
+  - name: Reglering
+    summary: Kontrol lera qubit för CX-grinden.
+    isPrimitive: true
+    uid: Qubit
+  - name: fokusera
+    summary: Mål-qubit för CX-grinden.
+    isPrimitive: true
+    uid: Qubit
+output:
+  content: Enhet
+  types:
+  - isPrimitive: true
+    uid: Unit
+functors:
+- Adjoint
+- Controlled
+ms.openlocfilehash: 26cbc8dc2f22cdf8583d453b84e53b0151619f5d
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73067874"

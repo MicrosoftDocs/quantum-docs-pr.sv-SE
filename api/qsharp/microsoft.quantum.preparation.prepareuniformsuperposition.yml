@@ -1,0 +1,53 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.preparation.prepareuniformsuperposition
+name: PrepareUniformSuperposition
+type: operation
+namespace: Microsoft.Quantum.Preparation
+summary: >-
+  Skapar en enhetlig överplacering över tillstånd som kodar 0 till `nIndices`.
+
+
+  Det vill säga den här enhetliga $U $ skapar en enhetlig överplacering över alla nummer tillstånd $0 $ till $M-$1, med ingångs tillstånd $ \ket{0\cdots 0} $. Med andra ord, $ $ \begin{align} U\ket{0}= \frac{1}{\sqrt{M}}\sum_{j = 0} ^ {M-1} \ket{j}.
+
+  \end{align} $ $.
+examples: >-
+  I följande exempel förbereds tillstånd $ \frac{1}{\sqrt{6}} \sum_{j = 0} ^{5}\ket{j} $ på $3 $ qubits.
+
+
+  ```Q#
+
+  let nIndices = 6;
+
+  using(indexRegister = Qubit[3]) {
+      PrepareUniformSuperposition(nIndices, LittleEndian(indexRegister));
+  }
+
+  ```
+syntax: 'operation PrepareUniformSuperposition (nIndices : Int, indexRegister : Microsoft.Quantum.Arithmetic.LittleEndian) : Unit'
+input:
+  content: '(nIndices : Int, indexRegister : Microsoft.Quantum.Arithmetic.LittleEndian)'
+  types:
+  - name: nIndices
+    summary: Det önskade antalet tillstånd $M $ i enhetlig överposition.
+    isPrimitive: true
+    uid: Int
+  - name: indexRegister
+    summary: >-
+      Qubit-registret som lagrar nummer tillstånden i `LittleEndian` format.
+
+      Detta register måste kunna lagra numret $M-$1 och antas vara initierat i status $ \ket{0\cdots 0} $.
+    uid: microsoft.quantum.arithmetic.littleendian
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+functors:
+- Adjoint
+- Controlled
+ms.openlocfilehash: 4bb7c83382f8d48f132fbd91acfd2184a570aea4
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73226496"

@@ -1,0 +1,39 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.arithmetic.applyleoperationonphasele
+name: ApplyLEOperationOnPhaseLE
+type: operation
+namespace: Microsoft.Quantum.Arithmetic
+summary: Tillämpar en åtgärd som tar en <xref:microsoft.quantum.arithmetic.phaselittleendian> registrera sig som inloggade på ett mål register av typen <xref:microsoft.quantum.arithmetic.littleendian>.
+remarks: Registret omvandlas till `LittleEndian` när <xref:microsoft.quantum.canon.qftle> används och skickas sedan tillbaka till den ursprungliga representationen efter program varan `op`.
+syntax: 'operation ApplyLEOperationOnPhaseLE (op : (Microsoft.Quantum.Arithmetic.LittleEndian => Unit), target : Microsoft.Quantum.Arithmetic.PhaseLittleEndian) : Unit'
+input:
+  content: '(OP: (Microsoft. Quantum. aritmetiskt. LittleEndian = > Unit), mål: Microsoft. Quantum. aritmetiskt. PhaseLittleEndian)'
+  types:
+  - name: öpp
+    summary: Åtgärden som ska tillämpas.
+    isOperation: true
+    input:
+      types:
+      - uid: microsoft.quantum.arithmetic.littleendian
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+  - name: fokusera
+    summary: Registret som åtgärden tillämpas på.
+    uid: microsoft.quantum.arithmetic.phaselittleendian
+output:
+  content: Enhet
+  types:
+  - isPrimitive: true
+    uid: Unit
+seeAlso:
+- microsoft.quantum.canon.applyleoperationonphaselea
+- microsoft.quantum.canon.applyleoperationonphaselea
+- microsoft.quantum.canon.applyleoperationonphaseleca
+ms.openlocfilehash: 9364435896dc43710eb37238b00f8139f9e6b62d
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73056711"

@@ -1,0 +1,61 @@
+### YamlMime:QSharpNamespace
+uid: microsoft.quantum.extensions.convert
+name: Microsoft. Quantum. Extensions. convert
+summary: " # <a name=\"summary\"></a>Sammanfattning\n Detta är några av funktionerna från system. convert-namnrymden för .NET CLR som är relevanta i Q # typ system.\n\n # <a name=\"remarks\"></a>Kommentarer\n Om det finns flera versioner av funktionen för bool-, int-och Double-typer, har motsvarande funktioner suffix B, I och D."
+functions:
+- uid: microsoft.quantum.extensions.convert.biginttobools
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.convert.bigintasboolarray"som föråldrad.
+- uid: microsoft.quantum.extensions.convert.boolstobigint
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.convert.boolarrayasbigint"som föråldrad.
+- uid: microsoft.quantum.extensions.convert.pauliarraytoint
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.convert.pauliarrayasint"som föråldrad.
+- uid: microsoft.quantum.extensions.convert.tobigint
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.convert.intasbigint"som föråldrad.
+- uid: microsoft.quantum.extensions.convert.todouble
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.convert.intasdouble"som föråldrad.
+- uid: microsoft.quantum.extensions.convert.tostringb
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.convert.boolasstring"som föråldrad.
+- uid: microsoft.quantum.extensions.convert.tostringd
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.convert.doubleasstring"som föråldrad.
+- uid: microsoft.quantum.extensions.convert.tostringdformat
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.convert.doubleasstringwithformat"som föråldrad.
+- uid: microsoft.quantum.extensions.convert.tostringi
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.convert.intasstring"som föråldrad.
+- uid: microsoft.quantum.extensions.convert.tostringiformat
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.convert.intasstringwithformat"som föråldrad.
+ms.openlocfilehash: 57f341ec6e8f82cfa9fc4bb958a580743a350218
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73056492"

@@ -1,0 +1,58 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.canon.delayc
+name: DelayC
+type: operation
+namespace: Microsoft.Quantum.Canon
+summary: >-
+  Tillämpar en viss åtgärd med en fördröjning.
+
+
+  Vid en åtgärd och indata för åtgärden tillämpas åtgärden när ytterligare indata har angetts.
+
+  I synnerhet är uttrycket `Delay(op, arg, _)` en åtgärd som gäller `op` till `arg` vid anrop.
+
+  Med uttrycket `Delay(op,arg,_)` kan du fördröja program `op`.
+syntax: "operation DelayC (op : ('T => Unit is Ctl), arg : 'T, aux : Unit) : Unit"
+input:
+  content: "(op : ('T => Unit is Ctl), arg : 'T, aux : Unit)"
+  types:
+  - name: op
+    summary: En åtgärd som ska tillämpas.
+    isOperation: true
+    input:
+      types:
+      - uid: "'T"
+        isLocal: true
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    functors:
+    - Controlled
+  - name: arg
+    summary: De indatatyper som åtgärden tillämpas på.
+    uid: "'T"
+    isLocal: true
+  - name: aux
+    summary: Argumentet som används för att försena programmets åtgärd genom att använda partiellt program.
+    isPrimitive: true
+    uid: Unit
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+typeParameters:
+- uid: "'T"
+  summary: Indatatypen för den åtgärd som ska fördröjas.
+functors:
+- Controlled
+seeAlso:
+- microsoft.quantum.canon.delay
+- microsoft.quantum.canon.delayed
+ms.openlocfilehash: bbba9e29e35702d21f4c34a869b4cc1f0046b6ad
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73219679"

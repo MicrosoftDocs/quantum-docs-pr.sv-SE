@@ -1,0 +1,190 @@
+### YamlMime:QSharpNamespace
+uid: microsoft.quantum.extensions.math
+name: Microsoft. Quantum. Extensions. matematik
+functions:
+- uid: microsoft.quantum.extensions.math.absb
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.math.absl"som föråldrad.
+- uid: microsoft.quantum.extensions.math.absd
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.math.absd"som föråldrad.
+- uid: microsoft.quantum.extensions.math.absi
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.math.absi"som föråldrad.
+- uid: microsoft.quantum.extensions.math.arccos
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.math.arccos"som föråldrad.
+- uid: microsoft.quantum.extensions.math.arcsin
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.math.arcsin"som föråldrad.
+- uid: microsoft.quantum.extensions.math.arctan
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.math.arctan"som föråldrad.
+- uid: microsoft.quantum.extensions.math.arctan2
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.math.arctan2"som föråldrad.
+- uid: microsoft.quantum.extensions.math.ceiling
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.math.ceiling"som föråldrad.
+- uid: microsoft.quantum.extensions.math.cos
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.math.cos"som föråldrad.
+- uid: microsoft.quantum.extensions.math.cosh
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.math.cosh"som föråldrad.
+- uid: microsoft.quantum.extensions.math.divremb
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.math.divreml"som föråldrad.
+- uid: microsoft.quantum.extensions.math.e
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.math.e"som föråldrad.
+- uid: microsoft.quantum.extensions.math.expd
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.math.expd"som föråldrad.
+- uid: microsoft.quantum.extensions.math.floor
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.math.floor"som föråldrad.
+- uid: microsoft.quantum.extensions.math.ieeeremainder
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.math.ieeeremainder"som föråldrad.
+- uid: microsoft.quantum.extensions.math.log
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.math.log"som föråldrad.
+- uid: microsoft.quantum.extensions.math.log10
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.math.log10"som föråldrad.
+- uid: microsoft.quantum.extensions.math.maxb
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.math.maxl"som föråldrad.
+- uid: microsoft.quantum.extensions.math.maxd
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.math.maxd"som föråldrad.
+- uid: microsoft.quantum.extensions.math.maxi
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.math.maxi"som föråldrad.
+- uid: microsoft.quantum.extensions.math.minb
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.math.minl"som föråldrad.
+- uid: microsoft.quantum.extensions.math.mind
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.math.mind"som föråldrad.
+- uid: microsoft.quantum.extensions.math.mini
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.math.mini"som föråldrad.
+- uid: microsoft.quantum.extensions.math.modpowb
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.math.modpowl"som föråldrad.
+- uid: microsoft.quantum.extensions.math.pi
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.math.pi"som föråldrad.
+- uid: microsoft.quantum.extensions.math.powd
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.math.powd"som föråldrad.
+- uid: microsoft.quantum.extensions.math.round
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.math.round"som föråldrad.
+- uid: microsoft.quantum.extensions.math.signb
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.math.signl"som föråldrad.
+- uid: microsoft.quantum.extensions.math.signd
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.math.signd"som föråldrad.
+- uid: microsoft.quantum.extensions.math.signi
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.math.signi"som föråldrad.
+- uid: microsoft.quantum.extensions.math.sin
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.math.sin"som föråldrad.
+- uid: microsoft.quantum.extensions.math.sinh
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.math.sinh"som föråldrad.
+- uid: microsoft.quantum.extensions.math.sqrt
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.math.sqrt"som föråldrad.
+- uid: microsoft.quantum.extensions.math.tan
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.math.tan"som föråldrad.
+- uid: microsoft.quantum.extensions.math.tanh
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.math.tanh"som föråldrad.
+- uid: microsoft.quantum.extensions.math.truncate
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.math.truncate"som föråldrad.
+ms.openlocfilehash: a1a8cda192f7e95141eb2e34baa37ddaae4cb8c9
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73056339"

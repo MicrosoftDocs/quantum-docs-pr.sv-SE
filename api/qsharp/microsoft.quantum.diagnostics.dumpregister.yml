@@ -1,0 +1,40 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.diagnostics.dumpregister
+name: DumpRegister
+type: function
+namespace: Microsoft.Quantum.Diagnostics
+summary: Dumpar den aktuella mål datorns status som är associerad med den angivna qubits.
+remarks: >-
+  Med den här metoden kan du dumpa den information som är associerad med statusen för den aktuella qubits till en fil eller någon annan plats.
+
+  Den faktiska informationen som skapas och semantiken för `location` är specifika för varje måldator. Men att tillhandahålla en tom tupel som en plats (`()`) innebär vanligt vis att generera utdata till-konsolen.
+
+
+  För att den lokala fullständiga tillstånds simulatorn ska distribueras som en del av Quantum Development Kit förväntar den här metoden en sträng med sökvägen till en fil där den skriver den angivna qubits (d.v.s. våg funktionen i motsvarande del system) som en endimensionell p.a. Ray med komplexa tal där varje element representerar amplituderna i sannolikheten för att mäta motsvarande tillstånd.
+
+  Om den aktuella qubits är Entangled med vissa andra qubit och deras status inte kan avgränsas, så rapporterar den bara att qubits är Entangled.
+syntax: "function DumpRegister (location : 'T, qubits : Qubit[]) : Unit"
+input:
+  content: "(location : 'T, qubits : Qubit[])"
+  types:
+  - name: location
+    summary: Innehåller information om var tillståndets dump ska skapas.
+    uid: "'T"
+    isLocal: true
+  - name: qubits
+    summary: Listan över qubits som ska rapporteras.
+    isArray: true
+    isPrimitive: true
+    uid: Qubit
+output:
+  content: Unit
+  types:
+  - summary: Inget.
+    isPrimitive: true
+    uid: Unit
+ms.openlocfilehash: 6d553a95bfa619d142b681e2830fc0375c6bcae5
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73227040"

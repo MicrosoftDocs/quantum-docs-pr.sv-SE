@@ -1,0 +1,151 @@
+### YamlMime:QSharpNamespace
+uid: microsoft.quantum.primitive
+name: Microsoft.Quantum.Primitive
+functions:
+- uid: microsoft.quantum.primitive.message
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.intrinsic.message"som föråldrad.
+operations:
+- uid: microsoft.quantum.primitive.assert
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.intrinsic.assert"som föråldrad.
+- uid: microsoft.quantum.primitive.assertprob
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.intrinsic.assertprob"som föråldrad.
+- uid: microsoft.quantum.primitive.ccnot
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.intrinsic.ccnot"som föråldrad.
+- uid: microsoft.quantum.primitive.cnot
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.intrinsic.cnot"som föråldrad.
+- uid: microsoft.quantum.primitive.exp
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.intrinsic.exp"som föråldrad.
+- uid: microsoft.quantum.primitive.expfrac
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.intrinsic.expfrac"som föråldrad.
+- uid: microsoft.quantum.primitive.h
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.intrinsic.h"som föråldrad.
+- uid: microsoft.quantum.primitive.i
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.intrinsic.i"som föråldrad.
+- uid: microsoft.quantum.primitive.m
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.intrinsic.m"som föråldrad.
+- uid: microsoft.quantum.primitive.measure
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.intrinsic.measure"som föråldrad.
+- uid: microsoft.quantum.primitive.multix
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.canon.applytoeachca"som föråldrad.
+- uid: microsoft.quantum.primitive.r
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.intrinsic.r"som föråldrad.
+- uid: microsoft.quantum.primitive.r1
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.intrinsic.r1"som föråldrad.
+- uid: microsoft.quantum.primitive.r1frac
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.intrinsic.r1frac"som föråldrad.
+- uid: microsoft.quantum.primitive.random
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.intrinsic.random"som föråldrad.
+- uid: microsoft.quantum.primitive.reset
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.intrinsic.reset"som föråldrad.
+- uid: microsoft.quantum.primitive.resetall
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.intrinsic.resetall"som föråldrad.
+- uid: microsoft.quantum.primitive.rfrac
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.intrinsic.rfrac"som föråldrad.
+- uid: microsoft.quantum.primitive.rx
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.intrinsic.rx"som föråldrad.
+- uid: microsoft.quantum.primitive.ry
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.intrinsic.ry"som föråldrad.
+- uid: microsoft.quantum.primitive.rz
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.intrinsic.rz"som föråldrad.
+- uid: microsoft.quantum.primitive.s
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.intrinsic.s"som föråldrad.
+- uid: microsoft.quantum.primitive.swap
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.intrinsic.swap"som föråldrad.
+- uid: microsoft.quantum.primitive.t
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.intrinsic.t"som föråldrad.
+- uid: microsoft.quantum.primitive.x
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.intrinsic.x"som föråldrad.
+- uid: microsoft.quantum.primitive.y
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.intrinsic.y"som föråldrad.
+- uid: microsoft.quantum.primitive.z
+  summary: >-
+    > [!WARNING]
+
+    > Använd @"microsoft.quantum.intrinsic.z"som föråldrad.
+ms.openlocfilehash: 87dc52b15f7fb17c6e9c3c11ec04a91e775a36ef
+ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.translationtype: MT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 10/31/2019
+ms.locfileid: "73216041"
