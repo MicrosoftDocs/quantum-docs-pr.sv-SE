@@ -6,12 +6,12 @@ ms.date: 9/30/2019
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.install
-ms.openlocfilehash: 090cf98612c6c549c733e54f9dcbf74442b30fbd
-ms.sourcegitcommit: aa5e6f4a2deb4271a333d3f1b1eb69b5bb9a7bad
+ms.openlocfilehash: 2a098d89f13278d7137bf182a184a74afb9393be
+ms.sourcegitcommit: 2ca4755d1a63431e3cb2d2918a10ad477ec2e368
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73442252"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73462864"
 ---
 # <a name="install-the-microsoft-quantum-development-kit-qdk"></a>Installera Microsoft Quantum Development Kit (QDK)
 
@@ -177,8 +177,6 @@ I Visual Studio finns en omfattande miljö för att utveckla Q#-program, med fan
 > * Om du har flera projekt i en Visual Studio-lösning måste alla projekt i lösningen finnas i samma mapp som lösningen, eller i en av dess undermappar.  
 
 ## <a name="develop-with-c-using-visual-studio-code"></a>Utveckla med C# och Visual Studio Code
-
-I Visual Studio Code (VS Code) finns en omfattande miljö för att utveckla Q#-program i många olika datormiljöer, bland annat Windows, Linux och Mac. Det finns även användningsbara funktioner som kodifyllning och syntaxmarkering som hjälper utvecklarna att skapa sina program.  Q# VS Code-tillägget innehåller syntaxmarkering och Q#-kodfragment.
 
 I Visual Studio Code (VS Code) finns en omfattande miljö för att utveckla Q#-program i många olika datormiljöer, bland annat Windows, Linux och Mac. Det finns även användningsbara funktioner som kodifyllning och syntaxmarkering som hjälper utvecklarna att skapa sina program.  Q# VS Code-tillägget innehåller syntaxmarkering och Q#-kodfragment.
 

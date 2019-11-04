@@ -6,27 +6,23 @@ ms.author: chgranad
 ms.date: 10/12/2018
 ms.topic: article
 uid: microsoft.quantum.contributing.style
-ms.openlocfilehash: 56455e9d5cd452b8620ee794f40563d1d3040193
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
-ms.translationtype: HT
+ms.openlocfilehash: 4050e2ee9e516aed7a8ba1398792562926808ee0
+ms.sourcegitcommit: c93fea5980d1d46fbda1e7c7153831b9337134bf
+ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "73183853"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73463317"
 ---
 # <a name="q-style-guide"></a>Stil guide för Q # #
 ## <a name="general-conventions"></a>Allmänna konventioner ##
 
 De konventioner som föreslås i den här guiden är avsedda att hjälpa till att göra program och bibliotek skrivna i Q # lättare att läsa och förstå.
 
-# <a name="guidancetabguidance"></a>[Riktlinjer](#tab/guidance)
+## <a name="guidance"></a>Vägledning
 
 Vi rekommenderar:
 
 - Bortse aldrig från en konvention om du inte gör det avsiktligt för att tillhandahålla mer läsbar och begriplig kod för dina användare.
-
-# <a name="examplestabexamples"></a>[Exempel](#tab/examples)
-
-***
 
 ## <a name="naming-conventions"></a>Namngivnings konventioner ##
 
@@ -67,9 +63,9 @@ Andra verb kan vara användbara även i det här fallet, som i `IterateThroughCa
 | Verb | Förväntad påverkan |
 | ---- | ------ |
 | Ansök | En åtgärd som angetts som indata kallas |
-| Kontrollen | En hypotes om resultatet av en möjlig Quantum-mätning kontrol leras av en simulator |
+| Assert | En hypotes om resultatet av en möjlig Quantum-mätning kontrol leras av en simulator |
 | Beräkningen | Ett klassiskt värde returneras som representerar en uppskattning som skapats från en eller flera mätningar |
-| Åtgärder | En Quantum-mätning utförs och resultatet returneras till användaren |
+| Mått | En Quantum-mätning utförs och resultatet returneras till användaren |
 | Förbered dig | Ett visst register av qubits initieras i ett visst tillstånd |
 | Exempel | Ett klassiskt värde returneras slumpmässigt från en distribution |
 

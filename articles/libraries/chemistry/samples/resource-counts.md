@@ -6,16 +6,16 @@ ms.author: gulow
 ms.date: 10/23/2018
 ms.topic: article-type-from-white-list
 uid: microsoft.quantum.chemistry.examples.resourcecounts
-ms.openlocfilehash: b28a27c4c1f1e64644fcfb074a731ff7b65cacb6
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
-ms.translationtype: HT
+ms.openlocfilehash: f9311c1987ced4336c4e98bdb984fbee009e9acc
+ms.sourcegitcommit: aa5e6f4a2deb4271a333d3f1b1eb69b5bb9a7bad
+ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "73184091"
+ms.lasthandoff: 11/02/2019
+ms.locfileid: "73442459"
 ---
-## <a name="obtaining-resource-counts"></a>Erhåll resurs antal
+# <a name="obtaining-resource-counts"></a>Få resursantal
 
-Kostnaden för att simulera $n $ qubits på en klassisk dator skalas exponentiellt med $n $. Detta begränsar storleken på en Quantum kemi-simulering som vi kan utföra med full tillstånds simulatorn. För stora instanser av kemi kan vi ändå få värdefull information. Här kan vi se hur resurs kostnader, till exempel antalet T-grindar eller CNOT-grindar, för att simulera kemi kan erhållas på ett automatiserat sätt med hjälp av [spårnings simulatorn](xref:microsoft.quantum.machines.qc-trace-simulator.intro). Sådan information informerar oss om att quantum-datorer kan vara tillräckligt stora för att köra dessa Quantum kemi-algoritmer. En referens finns i det tillhandahållna `GetGateCount` exemplet.
+Kostnaden för att simulera $n $ qubits på klassiska datorer skalas exponentiellt med $n $. Detta begränsar storleken på en Quantum kemi-simulering som vi kan utföra med hela tillstånds simulatorn. För stora instanser av kemi kan vi ändå få värdefull information. Här kan vi se hur resurs kostnader, till exempel antalet T-grindar eller CNOT-grindar, för att simulera kemi kan erhållas på ett automatiserat sätt med hjälp av [spårnings simulatorn](xref:microsoft.quantum.machines.qc-trace-simulator.intro). Sådan information informerar oss om att quantum-datorer kan vara tillräckligt stora för att köra dessa Quantum kemi-algoritmer. En referens finns i det tillhandahållna `GetGateCount` exemplet.
 
 Låt oss anta att vi redan har en `FermionHamiltonian` instans, t. ex. inläst från Broombridge-schemat enligt beskrivningen i exemplet [inläsnings-från-fil](xref:microsoft.quantum.chemistry.examples.loadhamiltonian) . 
 
@@ -83,7 +83,7 @@ operation RunQubitizationStep (qSharpData: JordanWignerEncodingData) : Double {
 }
 ```
 
-Nu konfigurerar vi spårnings simulatorn för att spåra de resurser vi är intresserade av. I det här fallet räknar vi primitiva Quantum-åtgärder genom att ange `usePrimitiveOperationsCounter` flagga till `true`. Ett tekniskt informations `throwOnUnconstraintMeasurement` är inställt på `false` för att undvika undantag i fall där Q #-koden inte är korrekt försäkran om probabiltiy av mått resultat, om sådana utförs.
+Nu konfigurerar vi spårnings simulatorn för att spåra de resurser vi är intresserade av. I det här fallet räknar vi primitiva Quantum-åtgärder genom att ange `usePrimitiveOperationsCounter` flagga till `true`. Ett tekniskt informations `throwOnUnconstraintMeasurement` är inställt på `false` för att undvika undantag i fall där Q #-koden inte är korrekt försäkrad om sannolikheten för Mät resultat, om sådana utförs.
 
 ```csharp
 private static QCTraceSimulator CreateAndConfigureTraceSim()

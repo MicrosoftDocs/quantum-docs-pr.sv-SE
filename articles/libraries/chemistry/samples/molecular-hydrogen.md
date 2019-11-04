@@ -6,14 +6,14 @@ ms.author: gulow
 ms.date: 10/23/2018
 ms.topic: article-type-from-white-list
 uid: microsoft.quantum.chemistry.examples.energyestimate
-ms.openlocfilehash: 32f18ea479a2c65eee2b0e16788dc9f0fabd5372
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
-ms.translationtype: HT
+ms.openlocfilehash: 0fd457b152083af364d924502c18bc0813e34b83
+ms.sourcegitcommit: aa5e6f4a2deb4271a333d3f1b1eb69b5bb9a7bad
+ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73185553"
+ms.lasthandoff: 11/02/2019
+ms.locfileid: "73442583"
 ---
-## <a name="obtaining-energy-level-estimates"></a>Erhåller energi nivå uppskattningar
+# <a name="obtaining-energy-level-estimates"></a>Få beräkningar av energinivå
 Att uppskatta värdena för energi nivåer är ett av de viktigaste programmen i Quantum kemi. Här kan vi disponera hur detta kan utföras för det kanoniska exemplet på molekylen väte. Exemplet som refereras i det här avsnittet är `MolecularHydrogen` i databasen för kemi-exempel. Ett mer visuellt exempel som ritar utdata är `MolecularHydrogenGUI` demonstrationen.
 
 Vårt första steg är att skapa Hamiltonian som representerar molekylen väte. Även om detta kan konstrueras via NWChem-verktyget lägger vi manuellt till Hamiltonian-villkor för det kortfattat i det här exemplet.

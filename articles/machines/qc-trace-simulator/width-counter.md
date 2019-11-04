@@ -1,17 +1,17 @@
 ---
 title: Bredd räknare | Quantum Computer trace Simulator | Microsoft Docs
-description: Översikt över Quantum Computer trace Simulator
+description: Översikt över spårningssimulator för kvantdator
 author: vadym-kl
 ms.author: vadym@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
 uid: microsoft.quantum.machines.qc-trace-simulator.width-counter
-ms.openlocfilehash: e202c527e7e26751361e0c46355ffcefa9c95091
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
-ms.translationtype: HT
+ms.openlocfilehash: ae0c0ec2e677be03dc8dc1497dc62ad9034295a4
+ms.sourcegitcommit: aa5e6f4a2deb4271a333d3f1b1eb69b5bb9a7bad
+ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73184924"
+ms.lasthandoff: 11/02/2019
+ms.locfileid: "73442413"
 ---
 # <a name="width-counter"></a>Bredd räknare
 
@@ -29,7 +29,7 @@ operation MultiControlledXDriver( numberOfQubits : Int ) : Unit {
 }
 ```
 
-# <a name="using-width-counter-within-a-c-program"></a>Använda en bredd räknare i C# ett program
+## <a name="using-width-counter-within-a-c-program"></a>Använda en bredd räknare i C# ett program
 
 Om du multiplicerar kontrollerade `X` hur du får totalt 5 qubits allokeras 2 hjälp qubits och dess ingångs bredd är 5. Vi kan använda följande C# program för att kontrol lera att detta är fallet:
 

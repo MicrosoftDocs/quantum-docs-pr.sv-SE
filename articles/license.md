@@ -1,21 +1,18 @@
 ---
-title: Microsoft Quantum Development Kit licens | Microsoft Docs
+title: Microsoft Quantum Development Kit licens
 description: Microsoft Quantum Development Kit licens
-services: service-name-with-dashes-AZURE-ONLY
-keywords: Lägg inte till eller redigera nyckelord utan att först kontakta den SEO-ansvarige.
 author: QuantumWriter
-ms.author: MSFT-alias-person-or-DL
-ms.date: 10/09/2017
-ms.topic: article-type-from-white-list
-ms.openlocfilehash: e14720143144d4890358a1c6167541a0ea5a8362
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
-ms.translationtype: HT
+ms.author: cpalmer
+ms.date: 11/04/2019
+ms.openlocfilehash: d864c3e4ecefa6f998b9a893ecc4a3995d67dac4
+ms.sourcegitcommit: c93fea5980d1d46fbda1e7c7153831b9337134bf
+ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73184941"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73463364"
 ---
 # <a name="microsoft-software-license-terms"></a>LICENSVILLKOR FÖR PROGRAMVARA FRÅN MICROSOFT 
-# <a name="microsoft-quantum-development-kit-preview"></a>MICROSOFT QUANTUM DEVELOPMENT KIT (FÖR HANDS VERSION)
+## <a name="microsoft-quantum-development-kit-preview"></a>MICROSOFT QUANTUM DEVELOPMENT KIT (FÖR HANDS VERSION)
 
 
 * * *
@@ -61,13 +58,13 @@ OM DU FÖLJER DESSA LICENS VILLKOR HAR DU BEHÖRIGHETERNA NEDAN. GENOM ATT ANVÄ
     
     e. Dela, publicera, distribuera eller låna ut program varan, ange program varan som en fristående värdbaserad lösning som andra kan använda, eller överför program varan eller detta avtal till tredje part.
 
-1. **export begränsningar**. Du måste följa alla nationella och internationella export lagar och förordningar som gäller för program varan, som omfattar begränsningar för destinationer, slutanvändare och slutanvändning. Mer information om export begränsningar finns http://aka.ms/exporting.
+1. **export begränsningar**. Du måste följa alla nationella och internationella export lagar och förordningar som gäller för program varan, som omfattar begränsningar för destinationer, slutanvändare och slutanvändning. Mer information om export begränsningar finns https://aka.ms/exporting.
 
 1. **Support tjänster**. Microsoft är inte obligatoriskt enligt detta avtal för att tillhandahålla support tjänster för program varan. All support som tillhandahålls är "i befintligt skick", "med alla fel" och utan garanti av något slag.
 
 1. **Uppdateringar**. Program varan kan regelbundet söka efter uppdateringar och ladda ned och installera dem åt dig. Du får bara hämta uppdateringar från Microsoft eller auktoriserade källor. Microsoft kan behöva uppdatera systemet för att ge dig uppdateringar. Du samtycker till att ta emot dessa automatiska uppdateringar utan ytterligare meddelande. Uppdateringar kanske inte innehåller eller har stöd för alla befintliga program varu funktioner, tjänster eller kring utrustnings enheter.
 
-1. **bindning av medlings-och klass åtgärds undantag. Det här avsnittet gäller om du bor i (eller, om ett företag, din huvudsakliga verksamhets plats är i) USA**.  Om du och Microsoft har en tvist, samtycker du till att försöka med 60 dagar för att lösa det informat. Om du och Microsoft inte kan det, samtycker du och Microsoft samtycker till att **binda en individuell medling före den amerikanska skiljedoms föreningen** enligt Federal skiljedom Act ("FAA") och **inte till Sue i domstol framför en domare eller jury**. I stället kommer en neutral skiljeman att bestämma. **Åtgärds processer för klass åtgärder, klass-och skiljedomare, privat jurist – allmänna åtgärder**och andra åtgärder där någon agerar i en representativ kapacitet **inte tillåts**. eller kombinerar inte enskilda förfaranden utan medgivande från alla parter. Hela skiljedoms avtalet innehåller fler villkor och finns på http://aka.ms/arb-agreement-1. Du och Microsoft samtycker till dessa villkor.
+1. **bindning av medlings-och klass åtgärds undantag. Det här avsnittet gäller om du bor i (eller, om ett företag, din huvudsakliga verksamhets plats är i) USA**.  Om du och Microsoft har en tvist, samtycker du till att försöka med 60 dagar för att lösa det informat. Om du och Microsoft inte kan det, samtycker du och Microsoft samtycker till att **binda en individuell medling före den amerikanska skiljedoms föreningen** enligt Federal skiljedom Act ("FAA") och **inte till Sue i domstol framför en domare eller jury**. I stället kommer en neutral skiljeman att bestämma. **Åtgärds processer för klass åtgärder, klass-och skiljedomare, privat jurist – allmänna åtgärder**och andra åtgärder där någon agerar i en representativ kapacitet **inte tillåts**. eller kombinerar inte enskilda förfaranden utan medgivande från alla parter. Hela skiljedoms avtalet innehåller fler villkor och finns på https://aka.ms/arb-agreement-1. Du och Microsoft samtycker till dessa villkor.
 
 1. **hela avtalet**. Detta avtal och andra villkor som Microsoft kan ge för tillägg, uppdateringar eller tredjepartsprogram, är hela avtalet för program varan.
 
