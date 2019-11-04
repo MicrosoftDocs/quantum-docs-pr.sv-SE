@@ -1,0 +1,40 @@
+- name: Microsoft Quantum-dokumentation
+  href: index.yml
+- name: Översikt
+  href: welcome.md
+- name: Snabbstarter
+  items:
+    - name: Installera QDK
+      href: install-guide/index.md
+    - name: Uppdatera QDK
+      href: install-guide/update.md
+    - name: Skriv ditt första kvantprogram
+      href: quickstart.md
+- name: Begrepp
+  items:
+    - name: Kvantutvecklingstekniker
+      topicHref: techniques/index.md
+      href: techniques/toc.yml
+    - name: 'Q#-programmeringsspråket'
+      topicHref: language/index.md
+      href: language/toc.yml
+    - name: 'Q#-bibliotek'
+      href: libraries/toc.yml
+    - name: Begrepp inom kvantberäkning
+      href: concepts/toc.yml
+    - name: Såhär är du värd för en kvantdator
+      href: machines/toc.yml
+- name: Resurser
+  items:
+    - name: Viktig QDK-information
+      topicHref: relnotes/index.md
+      href: relnotes/toc.yml
+    - name: Bidra till QDK
+      href: contributing/toc.yml
+      topicHref: contributing/index.md
+    - name: Ordlista
+      href: Glossary.md
+    - name: Mer information
+      href: for-more-info.md
+    - name: Licens
+      href: license.md

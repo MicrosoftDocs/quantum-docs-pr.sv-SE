@@ -1,0 +1,4 @@
+name: Viktig information
+items:
+  - name: 0.3-molnmigreringsguide
+    href: 0.3-migration.md

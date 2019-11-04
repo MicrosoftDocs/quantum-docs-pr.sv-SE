@@ -1,4 +1,4 @@
-- name: Klassiska datorer och drivrutiner
+- name: Översikt
   href: index.md
 - name: Kvantsimulator
   href: full-state-simulator.md

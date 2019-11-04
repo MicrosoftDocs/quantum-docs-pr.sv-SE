@@ -1,0 +1,16 @@
+- name: Kvantdynamik
+  href: quantum-dynamics.md
+- name: Kvantmodeller för elektroniska system
+  href: quantum-models.md
+- name: Andra kvantisering
+  href: second-quantization.md
+- name: Symmetrier med molekylintegraler
+  href: symmetries-molecular.md
+- name: Jordan-Wigner-representation
+  href: jordan-wigner.md
+- name: Simulera hamiltonsk dynamik
+  href: algorithms.md
+- name: Hartree-Fock-teori
+  href: hartree-fock.md
+- name: Korrelerade vågfunktioner
+  href: multireference.md
