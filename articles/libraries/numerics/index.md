@@ -6,14 +6,14 @@ ms.author: thhaner
 ms.date: 5/14/2019
 ms.topic: article
 uid: microsoft.quantum.numerics.intro
-ms.openlocfilehash: 0bffe0c2adeacce514fd9985c9206f6f9c3157be
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: efd1a712616534ac281433fc008f0983271881d7
+ms.sourcegitcommit: aa5e6f4a2deb4271a333d3f1b1eb69b5bb9a7bad
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73056435"
+ms.lasthandoff: 11/02/2019
+ms.locfileid: "73442443"
 ---
-# <a name="introduction"></a>Introduktion
+# <a name="introduction-to-the-quantum-numerics-library"></a>Introduktion till kvantmatematikbiblioteket
 
 Många kvantalgoritmer använder [orakel](xref:microsoft.quantum.concepts.oracles) som utvärderar matematiska funktioner på en superposition av indata.
 Till utvärderar huvudkomponenten i Shors algoritm $f(x) = a^x\operatornamn{mod} N$ för en fast $a$, numret att faktorisera $N$ samt $x$ ett $2n$-kvantbitheltal i en enhetlig superposition över alla $2n$-bitssträngar.

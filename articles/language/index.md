@@ -6,16 +6,16 @@ ms.author: Alan.Geller@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
 uid: microsoft.quantum.language.intro
-ms.openlocfilehash: d8759b9f043d2e13f4b0c97d54bd824c7e87d6de
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: 560926f6f3e05c32a935f01ca5107a614e743ee2
+ms.sourcegitcommit: aa5e6f4a2deb4271a333d3f1b1eb69b5bb9a7bad
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73035263"
+ms.lasthandoff: 11/02/2019
+ms.locfileid: "73442473"
 ---
 # <a name="the-q-programming-language"></a>Q#-programmeringsspråket
 
-# <a name="introduction"></a>Introduktion
+## <a name="introduction"></a>Introduktion
 
 En naturlig modell för kvantberäkning är att behandla kvantdatorn som en coprocessor, liknande den som används för GPU, FPGA och andra kompletterande processorer.
 Den primära kontrollogiken kör en klassisk kod på en klassisk ”värddator”.
@@ -36,7 +36,7 @@ I följande avsnitt beskrivs:
 - [Instruktioner](xref:microsoft.quantum.language.statements)
 - [Filstruktur](xref:microsoft.quantum.language.file-structure)
 
-# <a name="conventions"></a>Konventioner
+## <a name="conventions"></a>Konventioner
 
 Vi försöker säkerställa att vanliga skiljetecken används konsekvent i alla situationer.
 Vi tänker oss att det blir enklare att lära sig Q# när dessa tecken alltid betyder samma sak, och att samma begrepp alltid representeras på samma sätt.

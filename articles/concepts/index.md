@@ -1,23 +1,23 @@
 ---
-title: Begrepp inom kvantberäkning
-description: Vad är kvantberäkning?
+title: Historik och bakgrund för kvantberäkning
+description: Läs mer om kvantberäkningens historia, få bakgrundsinformation som beskriver hur det fungerar och lär dig mer om Microsoft Quantum Development Kit.
 author: QuantumWriter
-ms.author: nawiebe@microsoft.com
+ms.author: nawiebe
 uid: microsoft.quantum.concepts.intro
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 37f5181f2d9e4e11efa29811c24116ca7d64f81b
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: fb1df9e3460c18d0cdc0ff430fa236192b3aa2fa
+ms.sourcegitcommit: aa5e6f4a2deb4271a333d3f1b1eb69b5bb9a7bad
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/28/2019
-ms.locfileid: "72978955"
+ms.lasthandoff: 11/02/2019
+ms.locfileid: "73442309"
 ---
-# <a name="what-is-quantum-computing"></a>Vad är kvantberäkning?
+# <a name="quantum-computing-history-and-background"></a>Historik och bakgrund för kvantberäkning
 
 Ett flertal nya datortekniker har växt fram under de senaste åren och kvantberäkning är utan tvekan den teknik som kan medföra det största paradigmskiftet för utvecklarna.  Kvantdatorer presenterades på 1980-talet av [Richard Feynman](https://en.wikipedia.org/wiki/Richard_Feynman) och [Yuri Manin](https://en.wikipedia.org/wiki/Yuri_Manin).  Drivkraften bakom kvantberäkning fanns i det som ofta setts som något av det mest genanta inom fysik: En otrolig vetenskaplig utveckling som står inför en anmärkningsvärd oförmåga att utforma ens de enklaste systemen för den. Kvantmekanik utvecklades mellan 1900 och 1925 och det är fortfarande hörnstenen som kemi, kondenserad materia och teknik för allt från datorchip till LED-ljus vilar på.  Men trots dessa framgångar verkade det vara bortom mänsklig förmåga att skapa modeller med kvantmekanik.  Detta beror på att simulerade system för så lite som några dussin interagerande partiklar, kräver mer datorkraft än vad en konventionell dator kan åstadkomma under tusentals år!
 
-Man kan förklara varför kvantmekanik är så svårt att simulera på flera olika sätt.  Kanske är det enklast att tolka kvantteori av materia som att den, på kvantnivå, finns i olika möjliga konfigurationer (så kallade *tillstånd*) samtidigt.  Till skillnad från klassisk sannolikhetsteori kan dessa många konfigurationer av kvanttillståndet som kan observeras, påverka varandra som vågor i en tidvattensbassäng.  Denna påverkan förhindrar användningen av statistisk sampling när kvanttillståndskonfigurationer ska hämtas.  Vi måste i stället spåra *varje möjlig* konfiguration som ett kvantsystem kan finnas i om vi vill förstå kvantutvecklingen.  
+Man kan förklara varför kvantmekanik är så svårt att simulera på flera olika sätt.  Kanske är det enklast att tolka kvantteori av materia som att den, på kvantnivå, finns i olika möjliga konfigurationer (så kallade *tillstånd*) samtidigt.  Till skillnad från klassisk sannolikhetsteori kan de många konfigurationer av kvanttillståndet som kan observeras, påverka varandra som vågor i en tidvattensbassäng.  Denna påverkan förhindrar användningen av statistisk sampling när kvanttillståndskonfigurationer ska hämtas.  Vi måste i stället spåra *varje möjlig* konfiguration som ett kvantsystem kan finnas i om vi vill förstå kvantutvecklingen.  
 
 Tänk dig ett system med elektroner där elektronerna kan finnas på någon av $40$ positioner.  Elektronerna kan därför finnas i någon av $2^{40}$ konfigurationer (eftersom det på varje position antingen finns eller inte finns en elektron). Om vi vill lagra kvanttillståndet för elektronerna i ett konventionellt datorminne krävs mer än $130$ GB minne!  Det är mycket, men det ligger inom räckhåll för vissa datorer.  Om vi har tillåtit att partiklarna är i någon av de $41$ positionerna, finns det två gånger så många konfigurationer i $2^{41}$, vilket i sin tur kräver mer än $260$ GB minne för att lagra kvanttillståndet. Det går inte att öka antalet positioner hur mycket som helst om vi vill lagra tillståndet på konventionellt sätt, eftersom vi snabbt överskrider minneskapaciteten hos världens mest kraftfulla datorer.  Vid några hundra elektroner överskrider det minne som krävs för att lagra systemet antalet partiklar i universum. Det finns därför ingen chans att våra konventionella datorer någonsin ska kunna simulera denna kvantdynamik. Och ändå kan det i naturen utvecklas sådana system enligt kvantmekaniska lagar, fullständigt omedvetet om att vi inte kan simulera denna utveckling med konventionell datorkraft.
 

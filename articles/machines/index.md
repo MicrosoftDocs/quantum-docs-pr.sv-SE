@@ -1,19 +1,19 @@
 ---
-title: Kvantsimulatorer och klassiska drivrutiner | Microsoft Docs
+title: Kvantsimulatorer och värdprogram | Microsoft Docs
 description: Beskriver hur du använder kvantsimulatorer med ett klassiskt .NET-språk, vanligtvis antingen C# eller Q#.
 author: QuantumWriter
 ms.author: Alan.Geller@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
 uid: microsoft.quantum.machines
-ms.openlocfilehash: 5ac79280669ae0acfe993a1c2ae1c069b0c01848
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: 14aed75ed0ed192f88699b1c7dbacfae23f74642
+ms.sourcegitcommit: aa5e6f4a2deb4271a333d3f1b1eb69b5bb9a7bad
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73035107"
+ms.lasthandoff: 11/02/2019
+ms.locfileid: "73442228"
 ---
-# <a name="classical-drivers-and-machines"></a>Klassiska drivrutiner och datorer
+# <a name="quantum-simulators-and-host-applications"></a>Kvantsimulatorer och värdprogram
 
 ## <a name="what-youll-learn"></a>Detta får du lära dig
 
@@ -52,7 +52,7 @@ Alla definieras i namnområdet `Microsoft.Quantum.Simulation.Simulators`.
 * En [spårningsbaserad resursberäknare](xref:microsoft.quantum.machines.qc-trace-simulator.intro), `QCTraceSimulator`-klassen. Beräknaren möjliggör avancerad analys av resursförbrukningen för algoritmens hela anropsgraf.
 * En [Toffoli-simulator](xref:microsoft.quantum.machines.toffoli-simulator), `ToffoliSimulator`-klassen.
 
-## <a name="writing-a-classical-driver-program"></a>Skriva ett klassiskt drivrutinsprogram
+## <a name="writing-a-host-application"></a>Skriva ett värdprogram
 
 I [Att skriva ett kvantprogram](xref:microsoft.quantum.write-program) skrev vi en enkel C#-drivrutin för vår teleporteringsalgoritm. En C#-drivrutin har fyra huvudsakliga syften:
 
@@ -94,7 +94,7 @@ Det finns vissa saker att tänka på när argument skickas till en `Run`-metod:
 * Matriser måste vara omslutna i ett `Microsoft.Quantum.Simulation.Core.QArray<T>`-objekt.
     En `QArray`-klass har en konstruktor som kan hantera alla sorterade samlingar (`IEnumerable<T>`) med lämpliga objekt.
 * Den tomma tuppeln, `()` i Q#, representeras av `QVoid.Instance` i C#.
-* Tupplar som inte är tomma representeras som `ValueType`-instanser i .NET.
+* Tupplar som inte är tomma representeras som `ValueTuple`-instanser i .NET.
 * Q#-användardefinierade typer skickas som bastypen.
 * Om du vill skicka en åtgärd eller en funktion till en `Run`-metod, måste du hämta en instans av åtgärdens eller funktionens klass med hjälp av simulatorns `Get<>`-metod.
 

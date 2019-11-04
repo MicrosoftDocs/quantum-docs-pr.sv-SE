@@ -6,12 +6,12 @@ ms.author: nakersha
 ms.date: 09/30/2019
 ms.topic: article
 uid: microsoft.quantum.relnotes
-ms.openlocfilehash: 169a8ac31c53f2892624618a227d8bdbdc458458
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: f8d7071b4917aba7ba7eec4e84ba4f46dff3618a
+ms.sourcegitcommit: aa5e6f4a2deb4271a333d3f1b1eb69b5bb9a7bad
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "72958887"
+ms.lasthandoff: 11/02/2019
+ms.locfileid: "73442173"
 ---
 # <a name="microsoft-quantum-development-kit-release-notes"></a>Viktig information för Microsoft Quantum Development Kit
 
@@ -20,6 +20,19 @@ Den här artikeln innehåller information om varje version av Quantum Developmen
 Installationsanvisningar finns i [installationsguiden](xref:microsoft.quantum.install).
 
 Uppdateringsanvisningar finns i [uppdateringsguiden](xref:microsoft.quantum.update).
+
+## <a name="version-01019103107"></a>Version 0.10.1910.3107
+
+*Utgivningsdatum: 1 november 2019*
+
+Den här versionen innehåller följande:
+
+- Uppdateringar av Visual Studio Code- och Visual Studio-tillägg som distribuerar språkservern som en fristående körbar fil, vilket eliminerar beroendet av .NET Core SDK-versionen  
+- Migrering till .NET Core 3.0
+- Banbrytande ändring av Microsoft.Quantum.Simulation.Core.IOperationFactory med den nya `Fail`-metoden. Den påverkar endast anpassade simulatorer som inte utökar SimulatorBase. Mer information finns i [Visa pull-begäran i GitHub](https://github.com/microsoft/qsharp-runtime/pull/59).
+- Nytt stöd för inaktuella attribut
+
+Se den fullständiga listan med stängda PR:er för [bibliotek](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed), [kompilator](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+is%3Aclosed), [runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+is%3Aclosed), [exempel](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed) och [Katas](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+is%3Aclosed).  
 
 ## <a name="version-0919093002"></a>Version 0.9.1909.3002
 

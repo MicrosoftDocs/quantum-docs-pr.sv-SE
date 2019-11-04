@@ -1,0 +1,12 @@
+- name: Referens
+  items:
+    - name: 'Q#-bibliotek'
+      href: qsharp/toc.yml
+    - name: .NET-bibliotek
+      items:
+        - name: Spårningssimulator
+          href: 'https://docs.microsoft.com/dotnet/api/microsoft.quantum.simulation.simulators.qctracesimulators'
+        - name: Kvantkemi
+          href: 'https://docs.microsoft.com/dotnet/api/microsoft.quantum.chemistry'
+    - name: Python-bibliotek
+      href: 'https://docs.microsoft.com/python/qsharp'
