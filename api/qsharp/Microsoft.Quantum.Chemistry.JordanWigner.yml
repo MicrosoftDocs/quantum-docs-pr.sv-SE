@@ -52,9 +52,10 @@ newtypes:
   summary: Funktion som returnerar `OptimizedBETermIndex` data för termen `n` fått ett heltals `n`, tillsammans med antalet termer i den första `Int` och summan av absoluta värden för alla term koefficienter i `Double`.
 - uid: microsoft.quantum.chemistry.jordanwigner.optimizedbetermindex
   summary: Term data i den optimerade algoritmen för block kodning.
-ms.openlocfilehash: d84c4f8bf74f902cdffc19dc7e489f80c63d7949
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
-ms.translationtype: MT
-ms.contentlocale: sv-SE
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73210941"
+metadata:
+  ms.openlocfilehash: d84c4f8bf74f902cdffc19dc7e489f80c63d7949
+  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.translationtype: MT
+  ms.contentlocale: sv-SE
+  ms.lasthandoff: 11/05/2019
+  ms.locfileid: "73210941"

@@ -10,18 +10,18 @@ summary: >-
   Det vill säga en matris $x $ av typen `Double[]`, returnerar detta en matris där alla element delas av $p $-norm $\|x\|_p $.
 syntax: 'function PNormalized (p : Double, array : Double[]) : Double[]'
 input:
-  content: '(p: dubbel, matris: dubbel [])'
+  content: '(p : Double, array : Double[])'
   types:
-  - name: D
+  - name: p
     summary: Exponenten $p $ i $p $-norm.
     isPrimitive: true
     uid: Double
-  - name: matris
+  - name: array
     isArray: true
     isPrimitive: true
     uid: Double
 output:
-  content: Dubbel []
+  content: Double[]
   types:
   - summary: Matrisen $x $ normaliseras av $p $-norm $\|x\|_p $.
     isArray: true
@@ -29,9 +29,10 @@ output:
     uid: Double
 seeAlso:
 - pnorm
-ms.openlocfilehash: 5fd219b866b14d3d6faf58cdf4f1ce2b9fbadf9d
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
-ms.translationtype: MT
-ms.contentlocale: sv-SE
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73067296"
+metadata:
+  ms.openlocfilehash: 5fd219b866b14d3d6faf58cdf4f1ce2b9fbadf9d
+  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.translationtype: MT
+  ms.contentlocale: sv-SE
+  ms.lasthandoff: 11/05/2019
+  ms.locfileid: "73067296"
