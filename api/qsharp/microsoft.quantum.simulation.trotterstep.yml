@@ -7,7 +7,7 @@ summary: Implementerar en enda tids period – steg-för-steg-utveckling i syste
 remarks: Mer information om Trotter – Suzuki diskomposition finns i [Tidssorterad sammansättning](/quantum/libraries/control-flow#time-ordered-composition).
 syntax: 'function TrotterStep (evolutionGenerator : Microsoft.Quantum.Simulation.EvolutionGenerator, trotterOrder : Int, trotterStepSize : Double) : (Qubit[] => Unit is Adj + Ctl)'
 input:
-  content: '(evolutionGenerator: Microsoft. Quantum. simulering. EvolutionGenerator, trotterOrder: int, trotterStepSize: Double)'
+  content: '(evolutionGenerator : Microsoft.Quantum.Simulation.EvolutionGenerator, trotterOrder : Int, trotterStepSize : Double)'
   types:
   - name: evolutionGenerator
     summary: En fullständig beskrivning av systemet som ska simuleras.
@@ -21,7 +21,7 @@ input:
     isPrimitive: true
     uid: Double
 output:
-  content: (Qubit [] = > enhet är just + CTL)
+  content: (Qubit[] => Unit is Adj + Ctl)
   types:
   - summary: Enhetlig drift som uppskattar ett enda steg i tids utvecklingen för varaktighet `trotterStepSize`.
     isOperation: true
@@ -37,9 +37,10 @@ output:
     functors:
     - Adjoint
     - Controlled
-ms.openlocfilehash: 0605c7de832286b8b7a11b82af50b528d233d18c
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
-ms.translationtype: MT
-ms.contentlocale: sv-SE
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73065222"
+metadata:
+  ms.openlocfilehash: 0605c7de832286b8b7a11b82af50b528d233d18c
+  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.translationtype: MT
+  ms.contentlocale: sv-SE
+  ms.lasthandoff: 11/05/2019
+  ms.locfileid: "73065222"

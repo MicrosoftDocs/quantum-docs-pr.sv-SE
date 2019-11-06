@@ -1,6 +1,6 @@
 ### YamlMime:QSharpNamespace
 uid: microsoft.quantum.arithmetic
-name: Microsoft. Quantum. aritmetiskt
+name: Microsoft.Quantum.Arithmetic
 summary: " # <a name=\"summary\"></a>Sammanfattning\n Det här namn området innehåller funktioner och åtgärder som används för konsekvent beräkning av beräkningar."
 functions:
 - uid: microsoft.quantum.arithmetic.bigendianaslittleendian
@@ -215,9 +215,10 @@ newtypes:
     Om t. ex. $ \ket{x} $ är den lilla endian-kodningen av heltals-$x $ i beräknings basen, är $ \operatorname{QFTLE} \ket{x} $ kodningen för $x $ i QFT-basen.
 - uid: microsoft.quantum.arithmetic.signedlittleendian
   summary: Typ av ett signerat heltal lagrat i little endian (se LittleEndian).
-ms.openlocfilehash: 95a399e09ad5c1617c34a68302f9212a8ec4e0ad
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
-ms.translationtype: MT
-ms.contentlocale: sv-SE
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73065154"
+metadata:
+  ms.openlocfilehash: 95a399e09ad5c1617c34a68302f9212a8ec4e0ad
+  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.translationtype: MT
+  ms.contentlocale: sv-SE
+  ms.lasthandoff: 11/05/2019
+  ms.locfileid: "73065154"

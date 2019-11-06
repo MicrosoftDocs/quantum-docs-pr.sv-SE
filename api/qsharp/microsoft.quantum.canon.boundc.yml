@@ -8,7 +8,7 @@ summary: >-
 
   Modifieraren `C` visar att alla åtgärder i matrisen är kontrollerbara.
 examples: >-
-  The following are equivalent:
+  Följande är likvärdiga:
 
 
   ```qsharp
@@ -20,7 +20,7 @@ examples: >-
   ```
 
 
-  and
+  och
 
 
   ```qsharp
@@ -30,7 +30,7 @@ examples: >-
   ```
 syntax: "function BoundC (operations : ('T => Unit is Ctl)[]) : ('T => Unit is Ctl)"
 input:
-  content: '(åtgärder: (t = > enhet är CTL) [])'
+  content: "(operations : ('T => Unit is Ctl)[])"
   types:
   - name: operations
     summary: En sekvens med åtgärder som ska utföras på en specifik Indatatyp.
@@ -47,7 +47,7 @@ input:
     functors:
     - Controlled
 output:
-  content: (T = > enhet är CTL)
+  content: ('T => Unit is Ctl)
   types:
   - summary: En ny åtgärd som utför varje åtgärd i följd av dess inaktuella Indatatyp.
     isOperation: true
@@ -66,9 +66,10 @@ typeParameters:
   summary: Målet som varje åtgärd i matrisen agerar på.
 seeAlso:
 - microsoft.quantum.canon.bound
-ms.openlocfilehash: 46a82065b3a236ad0e0a02894d6b1b3e2a1ceba1
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
-ms.translationtype: MT
-ms.contentlocale: sv-SE
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73068180"
+metadata:
+  ms.openlocfilehash: 46a82065b3a236ad0e0a02894d6b1b3e2a1ceba1
+  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.translationtype: MT
+  ms.contentlocale: sv-SE
+  ms.lasthandoff: 11/05/2019
+  ms.locfileid: "73068180"
