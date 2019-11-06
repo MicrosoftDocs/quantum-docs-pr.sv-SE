@@ -6,9 +6,9 @@ namespace: Microsoft.Quantum.Arithmetic
 summary: Tillämpar en åtgärd som tar big-endian-inläsningar till ett register som kodar ett osignerat heltal med litet endian-format.
 syntax: 'operation ApplyReversedOpBEC (op : (Microsoft.Quantum.Arithmetic.BigEndian => Unit is Ctl), register : Microsoft.Quantum.Arithmetic.LittleEndian) : Unit'
 input:
-  content: '(OP: (Microsoft. Quantum. aritmetiskt. BigEndian = > enhet är CTL), registrera: Microsoft. Quantum. aritmetiskt. LittleEndian)'
+  content: '(op : (Microsoft.Quantum.Arithmetic.BigEndian => Unit is Ctl), register : Microsoft.Quantum.Arithmetic.LittleEndian)'
   types:
-  - name: öpp
+  - name: op
     summary: Åtgärd som agerar på ett big-endian-register.
     isOperation: true
     input:
@@ -20,11 +20,11 @@ input:
         uid: Unit
     functors:
     - Controlled
-  - name: Registrera dig
+  - name: register
     summary: Ett litet endian-register som ska omvandlas.
     uid: microsoft.quantum.arithmetic.littleendian
 output:
-  content: Enhet
+  content: Unit
   types:
   - isPrimitive: true
     uid: Unit
@@ -34,9 +34,10 @@ seeAlso:
 - applyreversedopbe
 - applyreversedopbea
 - applyreversedopbeca
-ms.openlocfilehash: fcf4110845e43426b7f2e1ec882bce75159ef789
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
-ms.translationtype: MT
-ms.contentlocale: sv-SE
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73057175"
+metadata:
+  ms.openlocfilehash: fcf4110845e43426b7f2e1ec882bce75159ef789
+  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.translationtype: MT
+  ms.contentlocale: sv-SE
+  ms.lasthandoff: 11/05/2019
+  ms.locfileid: "73057175"

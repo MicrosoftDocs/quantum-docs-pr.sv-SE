@@ -54,9 +54,10 @@ typeParameters:
   summary: Utdatatypen för den första funktionen som ska användas och indatatypen för den andra funktionen som ska användas.
 - uid: "'V"
   summary: Utdatatypen för den andra funktionen som ska användas.
-ms.openlocfilehash: 69fbd6a4fafbc61a63e41257b7100303fd48d4d4
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
-ms.translationtype: MT
-ms.contentlocale: sv-SE
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73223079"
+metadata:
+  ms.openlocfilehash: 69fbd6a4fafbc61a63e41257b7100303fd48d4d4
+  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.translationtype: MT
+  ms.contentlocale: sv-SE
+  ms.lasthandoff: 11/05/2019
+  ms.locfileid: "73223079"
