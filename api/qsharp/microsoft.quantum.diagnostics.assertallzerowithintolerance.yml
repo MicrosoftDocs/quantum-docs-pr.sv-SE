@@ -6,19 +6,19 @@ namespace: Microsoft.Quantum.Diagnostics
 summary: Assert att de aktuella qubits är alla i $ \ket{0}$ State upp till en specifik tolerans.
 syntax: 'operation AssertAllZeroWithinTolerance (qubits : Qubit[], tolerance : Double) : Unit'
 input:
-  content: '(qubits: qubit [], tolerans: Double)'
+  content: '(qubits : Qubit[], tolerance : Double)'
   types:
   - name: qubits
     summary: Qubits som är försäkrade att vara i $ \ket{0}$ State.
     isArray: true
     isPrimitive: true
     uid: Qubit
-  - name: nivå
+  - name: tolerance
     summary: Noggrannhet med vilken staten ska vara i $ \ket{0}$ State
     isPrimitive: true
     uid: Double
 output:
-  content: Enhet
+  content: Unit
   types:
   - isPrimitive: true
     uid: Unit
@@ -27,9 +27,10 @@ functors:
 - Controlled
 seeAlso:
 - assertqubitwithintolerance
-ms.openlocfilehash: 0e3b560d08077bb353147d98a921a2c2ca3ae202
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
-ms.translationtype: MT
-ms.contentlocale: sv-SE
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73066548"
+metadata:
+  ms.openlocfilehash: 0e3b560d08077bb353147d98a921a2c2ca3ae202
+  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.translationtype: MT
+  ms.contentlocale: sv-SE
+  ms.lasthandoff: 11/05/2019
+  ms.locfileid: "73066548"
