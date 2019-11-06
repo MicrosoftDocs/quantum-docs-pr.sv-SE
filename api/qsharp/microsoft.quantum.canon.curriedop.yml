@@ -26,9 +26,9 @@ remarks: >-
   ```
 syntax: "function CurriedOp (op : (('T, 'U) => Unit)) : ('T -> ('U => Unit))"
 input:
-  content: '(OP: (t, U) = > enhet))'
+  content: "(op : (('T, 'U) => Unit))"
   types:
-  - name: öpp
+  - name: op
     summary: En åtgärd vars indatamängd är ett par.
     isOperation: true
     input:
@@ -42,7 +42,7 @@ input:
       - isPrimitive: true
         uid: Unit
 output:
-  content: (T-> (U = > enhet))
+  content: ('T -> ('U => Unit))
   types:
   - summary: En åtgärd som accepterar det första elementet i ett par och returnerar en åtgärd som accepterar den andra delen av den ursprungliga åtgärdens Indatatyp.
     isFunction: true
@@ -66,9 +66,10 @@ typeParameters:
   summary: Typen för den första komponenten i en funktion som definieras i par.
 - uid: "'U"
   summary: Typen för den andra komponenten i en funktion som definieras i par.
-ms.openlocfilehash: 788648d24ba536926504caba92e768ecb34e001a
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
-ms.translationtype: MT
-ms.contentlocale: sv-SE
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73067908"
+metadata:
+  ms.openlocfilehash: 788648d24ba536926504caba92e768ecb34e001a
+  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.translationtype: MT
+  ms.contentlocale: sv-SE
+  ms.lasthandoff: 11/05/2019
+  ms.locfileid: "73067908"

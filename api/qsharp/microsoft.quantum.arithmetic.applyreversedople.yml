@@ -6,9 +6,9 @@ namespace: Microsoft.Quantum.Arithmetic
 summary: Använder en åtgärd som tar lite-endian-inmatad till en register kodning av ett osignerat heltal med big-endian-format.
 syntax: 'operation ApplyReversedOpLE (op : (Microsoft.Quantum.Arithmetic.LittleEndian => Unit), register : Microsoft.Quantum.Arithmetic.BigEndian) : Unit'
 input:
-  content: '(OP: (Microsoft. Quantum. aritmetiskt. LittleEndian = > enhet), registrera: Microsoft. Quantum. aritmetiskt. BigEndian)'
+  content: '(op : (Microsoft.Quantum.Arithmetic.LittleEndian => Unit), register : Microsoft.Quantum.Arithmetic.BigEndian)'
   types:
-  - name: öpp
+  - name: op
     summary: Åtgärd som agerar på ett litet-endian-register.
     isOperation: true
     input:
@@ -18,11 +18,11 @@ input:
       types:
       - isPrimitive: true
         uid: Unit
-  - name: Registrera dig
+  - name: register
     summary: Ett big-endian-register som ska omvandlas.
     uid: microsoft.quantum.arithmetic.bigendian
 output:
-  content: Enhet
+  content: Unit
   types:
   - isPrimitive: true
     uid: Unit
@@ -30,9 +30,10 @@ seeAlso:
 - applyreversedoplea
 - applyreversedoplec
 - applyreversedopleca
-ms.openlocfilehash: a48900eba6a7afce3cb57c0514dbfd58bf11633c
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
-ms.translationtype: MT
-ms.contentlocale: sv-SE
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73057110"
+metadata:
+  ms.openlocfilehash: a48900eba6a7afce3cb57c0514dbfd58bf11633c
+  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.translationtype: MT
+  ms.contentlocale: sv-SE
+  ms.lasthandoff: 11/05/2019
+  ms.locfileid: "73057110"
