@@ -6,12 +6,12 @@ ms.author: megbrow@microsoft.com
 ms.date: 10/25/2019
 ms.topic: article
 uid: microsoft.quantum.quickstarts.qrng
-ms.openlocfilehash: a7c077eda3e46430cbe6598cb899adb460451f75
-ms.sourcegitcommit: aa5e6f4a2deb4271a333d3f1b1eb69b5bb9a7bad
+ms.openlocfilehash: c3039b92c4b3235a397d5cf31280ac2673706e9d
+ms.sourcegitcommit: 2ca4755d1a63431e3cb2d2918a10ad477ec2e368
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73443927"
+ms.lasthandoff: 11/03/2019
+ms.locfileid: "73462831"
 ---
 # <a name="quickstart-implement-a-quantum-random-number-generator-in-q"></a>Snabbstart: Implementera en kvantgenerator för slumptal i Q#
 Ett enkelt exempel på en kvantalgoritm som skrivs i Q# och som är en kvantgenerator för slumptal. Den här algoritmen använder kvantmekanik till att generera ett slumptal. 
@@ -69,4 +69,4 @@ Vi kan använda den här representationen till att visualisera vad koden gör:
 
 <img src="./Measurement2.svg" width="450">
 
-Eftersom resultatet av mätningen är helt slumpmässigt har vi fått en slumpmässig bit. Vi kan anropa den här funktionen flera gånger för att skapa heltal. Om vi till exempel anropar funktionen tre gånger för att få tre slumpmässiga bitar, kan vi bygga slumpmässiga 3-bitarstal (det vill säga ett slumptal mellan 0 och 7).
+Eftersom resultatet av mätningen är helt slumpmässigt har vi fått en slumpmässig bit. Vi kan anropa den här åtgärden flera gånger för att skapa heltal. Om vi till exempel anropar åtgärden tre gånger för att få tre slumpmässiga bitar, kan vi bygga slumpmässiga 3-bitarstal (det vill säga ett slumptal mellan 0 och 7).

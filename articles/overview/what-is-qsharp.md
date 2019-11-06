@@ -6,31 +6,33 @@ ms.author: nakersha
 ms.date: 10/22/2019
 ms.topic: article
 uid: microsoft.quantum.overview.qsharp
-ms.openlocfilehash: e04228ff62092a15c529297bd56b9ee48399f4a5
-ms.sourcegitcommit: aa5e6f4a2deb4271a333d3f1b1eb69b5bb9a7bad
+ms.openlocfilehash: 3fd288439c7db7f939240b4388c9cdb114b6535c
+ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73443961"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73529976"
 ---
 # <a name="what-is-q"></a>Vad är Q#?
 
-Q# är ett programmeringsspråk med funktioner som är specifika vid kvantberäkning. Q# ger kvantprogrammerare ett ramverk som gör att de kan fokusera på algoritmerna utan att behöva tänka på teknisk information, till exempel optimering av grindar eller den fysiska implementeringen av en kvantdator.
+Q# är ett programmeringsspråk med funktioner som är specifika vid kvantberäkning.
+
+Q# ger kvantprogrammerare ett ramverk som gör att de kan fokusera på algoritmerna utan att behöva tänka på teknisk information, till exempel optimering av grindar eller den fysiska implementeringen av en kvantdator.
 
 Med programmeringsspråket Q# får du en intuitiv uppsättning typer, åtgärder och logiska uttryck när du ska utveckla algoritmer, utan att du behöver oroa dig för den interna logiken i kvantdatorn.
 
 ## <a name="code-algorithms"></a>Kodalgoritmer
 
-I början när kvantberäkningsalgoritmerna visualiserades som diagram som liknade kretsdiagram i klassisk databehandling.  Även om kretsmodellen har varit mycket användbar under många år vid kvantberäkning, tror vi på Microsoft att utvecklarna kan ta sig utanför kvantkretsarna och utveckla kvantalgoritmer och program med hjälp av Q#. Q#-språket har skapats för att vi ska kunna dra nytta av vad vi lärt oss under årtionden av klassisk programvaruutveckling och ge kvantutvecklarna en språkfunktionalitet på hög nivå som specifikt inriktar sig på kvantberäkning.
+I början när kvantberäkningsalgoritmerna visualiserades som diagram som liknade kretsdiagram i klassisk databehandling.  Även om kretsmodellen har varit användbar under många år vid kvantberäkning, tror vi på Microsoft att utvecklarna kan ta sig utanför kvantkretsarna och utveckla kvantalgoritmer och program med hjälp av Q#. Q#-språket har skapats för att vi ska kunna dra nytta av vad vi lärt oss under årtionden av klassisk programvaruutveckling och ge kvantutvecklarna en språkfunktionalitet på hög nivå som inriktar sig på kvantberäkning.
 
 
 ## <a name="how-does-q-work"></a>Hur fungerar Q#?
 
 En av de grundläggande byggstenarna i Q# är `Qubit`-typen, som inte kan kopieras eller nås direkt, precis som en riktig kvantbit. I stället kan vi mäta den och lagra resultatet av mätningen i en `Result`-variabel, som är en Q#-typ med två möjliga värden: `Zero` och `One`. Konstruktioner som denna garanterar att algoritmerna alltid följer lagarna inom kvantfysik och kan köras utan problem på kvantdatorer eller i simulatorer.
 
-Q# innehåller även klassiska logiska funktioner som villkor eller loopar med vissa delar som ser till att alla kvantregler följs. Till exempel måste kvantåtgärder kunna omvändas. Detta ger vissa begränsningar i hur looparna körs.
+Q# innehåller även klassiska logiska funktioner som villkor eller loopar med vissa delar som ser till att alla kvantregler följs. Du kan till exempel begränsa hur slingor körs för att säkerställa kvantåtgärderna.
 
-Q#-program är ofta kopplade till ett värdprogram som skrivits C# i eller Python, vilket kan ge en bekväm organisation av klassisk kod och kvantkod. Förutom stödet för .NET-språk som C# och Python, har QDK stöd för Jupyter Notebook med Jupyter-kärnan IQ#.
+Q#-program är ofta kopplade till ett värdprogram som skrivits C# i eller Python, vilket kan ge en bekväm organisation av klassisk kod och kvantkod. Förutom stödet för språk som C# och Python, har QDK stöd för Jupyter Notebook med Jupyter-kärnan IQ#.
 
 ## <a name="use-q-to-learn-quantum-computing"></a>Använda Q# för att lära sig kvantberäkning
 
@@ -42,11 +44,11 @@ Med Q# får du ett växande antal bibliotek och användardefinierade typer som h
 
 ## <a name="use-q-to-estimate-quantum-resources"></a>Beräkna kvantresurser med hjälp av Q#
 
-Du kan simulera körningen av ditt Q#-program med kvantsimulatorn för tillstånd som medföljer Quantum Development Kit (QDK).  QDK innehåller också resursberäknare som ger dig insikter om prestandan för Q#-program som är för stora för att kunna köras på en simulator.  Detta är mycket värdefullt för algoritmkonstruktörer, eftersom de kan justera sina program till att använda färre resurser (t.ex. att färre kvantbitar körs i färre åtgärder) så att de kan köras på en kvantdator i mindre skala.   
+Du kan simulera körningen av ditt Q#-program med kvantsimulatorn för tillstånd som medföljer Quantum Development Kit (QDK).  QDK innehåller också resursberäknare som ger dig insikter om prestandan för Q#-program som är för stora för att kunna köras på en simulator.  Detta är mycket värdefullt för algoritmkonstruktörer, eftersom de kan justera sina program till att använda färre resurser (t.ex. att färre kvantbitar körs i färre åtgärder) så att de kan köras på en kvantdator i mindre skala.
 
 ## <a name="use-q-to-validate-hardware-performance"></a>Använda Q# till att validera maskinvaruprestanda
 
-Fördelen med att använda Q# är att ett program kan skrivas en gång och köras på kvantsimulatorer för felsökning och sedan köras på flera kvantdatorer.  Benchmark-program som skrivits i Q# kan köras för att validera maskinvaruprestanda och jämföra resultat, när kvantdatorer utvecklas och nya kvantdatorer blir tillgängliga.  
+Fördelen med att använda Q# är att ett program kan skrivas en gång och köras på kvantsimulatorer för felsökning och sedan köras på olika kvantdatorer.  Benchmark-program som skrivits i Q# kan köras för att validera maskinvaruprestanda och jämföra resultat, när kvantdatorer utvecklas och nya kvantdatorer blir tillgängliga.  
 
 ## <a name="next-steps"></a>Nästa steg
 

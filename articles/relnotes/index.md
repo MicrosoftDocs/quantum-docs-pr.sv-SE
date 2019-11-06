@@ -6,12 +6,12 @@ ms.author: nakersha
 ms.date: 09/30/2019
 ms.topic: article
 uid: microsoft.quantum.relnotes
-ms.openlocfilehash: f8d7071b4917aba7ba7eec4e84ba4f46dff3618a
-ms.sourcegitcommit: aa5e6f4a2deb4271a333d3f1b1eb69b5bb9a7bad
+ms.openlocfilehash: 868d256270516cf99c228a757a11c6dc1a6319df
+ms.sourcegitcommit: c93fea5980d1d46fbda1e7c7153831b9337134bf
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73442173"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73463333"
 ---
 # <a name="microsoft-quantum-development-kit-release-notes"></a>Viktig information för Microsoft Quantum Development Kit
 
@@ -21,7 +21,7 @@ Installationsanvisningar finns i [installationsguiden](xref:microsoft.quantum.in
 
 Uppdateringsanvisningar finns i [uppdateringsguiden](xref:microsoft.quantum.update).
 
-## <a name="version-01019103107"></a>Version 0.10.1910.3107
+## <a name="version-0101911307"></a>Version 0.10.1911.307
 
 *Utgivningsdatum: 1 november 2019*
 
