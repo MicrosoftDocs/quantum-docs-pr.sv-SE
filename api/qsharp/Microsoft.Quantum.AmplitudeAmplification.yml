@@ -1,6 +1,6 @@
 ### YamlMime:QSharpNamespace
 uid: microsoft.quantum.amplitudeamplification
-name: Microsoft. Quantum. AmplitudeAmplification
+name: Microsoft.Quantum.AmplitudeAmplification
 summary: " # <a name=\"summary\"></a>Sammanfattning\n Det här namn området innehåller funktioner och åtgärder för att utföra amplitud-förstärkning.\n\n # <a name=\"description\"></a>Beskrivning\n Oblivious amplitud-förstärkning med partiella reflektioner är den mest generella formen av amplitud-förstärkning som implementeras här.\n\n Detta anropas via åtgärden AmpAmpObliviousByReflectionPhases.\n\n Detta har två register: `ancillaRegister` och `systemRegister`.\n\n Detta godkänner två Oracle för dessa reflektioner av typen `ReflectionOracle` som bara agerar på `ancillaRegister`-registreringen.\n\n Detta godkänner en Oracle-specifik till Oblivious amplitud-förstärkning av typen `ObliviousOracle` som fungerar tillsammans i båda registren.\n\n Ingångs läget till `ancillaRegister` antas vara den unika $-$1-eigenstate för den första reflektions operatorn $I-2 \\ ket {s} \\ bra {s} $.\n\n Reflektioner om ett mål Quantum-tillstånd implementeras ofta genom att man antar åtkomst till en Oracle som förbereder detta tillstånd från beräknings basen $ \\ket{0\\cdots 0} $.\n\n Vår konvention för dessa Oracle kräver två register: en qubit `flagQubit` registrera dig och ett register för allt annat i ancillaRegister-registret.\n\n Oracle av typ `StateOracle` fungerar tillsammans i båda registren för att skapa mål tillstånd som flaggats av $ \\ket{1}$ i `flagQubit` registrera med en riktig amplitud.\n\n Reflektions `ReflectionOracle` om det här flagg läget genereras av åtgärden `TargetStateReflectionOracle`.\n\n Reflektions `ReflectionOracle` om ingångs läget till `ancillaRegister` genereras av den inverterande StateOracle och visar sedan ungefär $ \\ket{0\\cdots 0} $ med ReflectionStart ().\n\n Oracle av typen `DeterministicStateOracle` agerar i `qubitState` registren för att skapa mål tillstånd exakt utan flagga.\n\n `AmpAmpObliviousByOraclePhases` är en version av Oblivious amplitud-förstärkning som godkänner Oracle `StateOracle` och `ObliviousOracle` i stället för att avspeglas.\n\n Observera att amplitud förstärkning är ett specialfall av Oblivious amplitud-förstärkning där `ObliviousOracle` är identitets operatorn, och det finns inga system qubits, d.v.s. `systemRegister` är tomt.\n\n Detta anropas genom åtgärden `AmpAmByReflectionPhases` och `AmpAmpByOraclePhases`.\n\n Faserna för partiella reflektioner i standard fallet för Grover-sökning tillhandahålls av funktionen AmpAmpPhasesStandard.\n\n Vi har till exempel följande beroenden: AmpAmpByOracle-> AmpAmpByOraclePhases-> AmpAmpObliviousByOraclePhases-> AmpAmpObliviousByReflectionPhases."
 functions:
 - uid: microsoft.quantum.amplitudeamplification.ampampbyoracle
@@ -35,9 +35,10 @@ newtypes:
   summary: Faser för en sekvens av partiella reflektioner i amplitud förstärkning.
 - uid: microsoft.quantum.amplitudeamplification.rotationphases
   summary: Faser för en sekvens med en qubit rotation i amplitud förstärkning.
-ms.openlocfilehash: acec4d085e42811618228c8e120842dc400c50b4
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
-ms.translationtype: MT
-ms.contentlocale: sv-SE
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73057196"
+metadata:
+  ms.openlocfilehash: acec4d085e42811618228c8e120842dc400c50b4
+  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.translationtype: MT
+  ms.contentlocale: sv-SE
+  ms.lasthandoff: 11/05/2019
+  ms.locfileid: "73057196"
