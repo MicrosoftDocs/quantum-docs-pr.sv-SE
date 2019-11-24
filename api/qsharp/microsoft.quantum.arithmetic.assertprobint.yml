@@ -7,7 +7,7 @@ summary: >-
   Förutsätter att sannolikheten för ett enskilt tillstånd för ett Quantum-register har det förväntade värdet.
 
 
-  Med en $n $-qubit Quantum State $ \ket{\psi} = \sum ^ {2 ^ n-1} _ {j = 0} \alpha_j \ket{j} $, förutsätter att sannolikheten $ | \alpha_j | ^ 2 $ för tillstånd $ \ket{j} $ indexerad av $j $ har det förväntade värdet.
+  Med en $n $-qubit Quantum State $ \ket{\psi} = \sum ^ {2 ^ n-1} _ {j = 0} \ alpha_j \ket{j} $, förutsätter att sannolikheten $ | \ alpha_j | ^ 2 $ för tillstånd $ \ket{j} $ som har indexerats av $j $ har det förväntade värdet.
 examples: >-
   Anta att `qubits` registrerar sig för att koda ett 3-qubit Quantum-tillstånd $ \ket{\psi} = \ sqrt {1/8} \ ket{0}+ \ sqrt {7/8} \ ket{6}$ i litet endian-format.
 
@@ -26,7 +26,7 @@ input:
     isPrimitive: true
     uid: Int
   - name: expected
-    summary: Det förväntade värdet $ | \alpha_j | ^ 2 $.
+    summary: Det förväntade värdet för $ | \ alpha_j | ^ 2 $.
     isPrimitive: true
     uid: Double
   - name: qubits

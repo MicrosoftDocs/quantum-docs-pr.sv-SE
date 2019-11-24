@@ -9,7 +9,7 @@ input:
   content: '(coefficients : Double[], fpx : Microsoft.Quantum.Arithmetic.FixedPoint, result : Microsoft.Quantum.Arithmetic.FixedPoint)'
   types:
   - name: coefficients
-    summary: Koefficienter för polynomen som en dubbel matris, d.v.s. matrisen $ [a_0, A_1,..., a_d] $ för polynom $P (x) = a_0 + A_1 x + \cdots + a_d x ^ d $.
+    summary: Koefficienter för polynomen som en dubbel matris, d.v.s. matrisen $ [a_0, a_1,..., a_d] $ för polynom $P (x) = a_0 + a_1 x + \cdots + a_d x ^ d $.
     isArray: true
     isPrimitive: true
     uid: Double

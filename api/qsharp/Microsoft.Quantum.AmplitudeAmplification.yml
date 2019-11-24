@@ -26,7 +26,7 @@ functions:
     Skapar en `ReflectionOracle` om mål tillstånd som unikt marker ATS av flaggan qubit.
 
 
-    Mål tillstånd har en enda qubit inställd på 1, och alla andra 0: $ \ket{1}_F $.
+    Mål tillstånd har en enda qubit inställd på 1, och alla andra 0: $ \ket{1}_f $.
 operations:
 - uid: microsoft.quantum.amplitudeamplification.ampamprusbyoracle
   summary: Algoritm för Amplituds förstärkning med fast punkt

@@ -15,7 +15,7 @@ input:
 output:
   content: Double
   types:
-  - summary: Basen 2 logaritmen $y = \log_2 (x) $, t. ex. $x = 2 ^ y $.
+  - summary: Basen 2 logaritm $y = \ log_2 (x) $, till exempel $x = 2 ^ y $.
     isPrimitive: true
     uid: Double
 metadata:

@@ -83,16 +83,16 @@ operations:
     Förutsätter att sannolikheten för ett enskilt tillstånd för ett Quantum-register har det förväntade värdet.
 
 
-    Med en $n $-qubit Quantum State $ \ket{\psi} = \sum ^ {2 ^ n-1} _ {j = 0} \alpha_j \ket{j} $, förutsätter att sannolikheten $ | \alpha_j | ^ 2 $ för tillstånd $ \ket{j} $ indexerad av $j $ har det förväntade värdet.
+    Med en $n $-qubit Quantum State $ \ket{\psi} = \sum ^ {2 ^ n-1} _ {j = 0} \ alpha_j \ket{j} $, förutsätter att sannolikheten $ | \ alpha_j | ^ 2 $ för tillstånd $ \ket{j} $ som har indexerats av $j $ har det förväntade värdet.
 - uid: microsoft.quantum.arithmetic.carry
   summary: Implementerar en omvänd bär grind. Med en inställd bit som är kodad i qubit `carryIn` och två summand-bitar som är kodade i `summand1` och `summand2`, beräknar den bitvisa XOR av `carryIn`, `summand1` och `summand2` i qubit `summand2` och XoReD till qubit `carryOut`.
 - uid: microsoft.quantum.arithmetic.cascadeccnot
   summary: >-
     Implementerar en överlappande av CCNOT-grindar som styrs på motsvarande bitar av två qubit-register, och fungerar på nästa qubit i en av registren.
 
-    Från qubits vid position 0 i båda registren register som kontroller, tillämpas CCNOT på qubit vid position 1 i mål registret, sedan styrs av qubits vid position 1 på qubit vid position 2 i mål registret, osv., som avslutas med en åtgärd på mål qubit i position `Length(nQubits)-1`.
+    Från qubits vid position 0 i båda registren register som kontroller, tillämpas CCNOT på qubit vid position 1 i mål registret, sedan styrs av qubits vid position 1 på qubit vid position 2 i mål registret, osv., och avslutas med en åtgärd på mål qubit i position `Length(nQubits)-1`.
 - uid: microsoft.quantum.arithmetic.cascadecnot
-  summary: Implementerar en överlappande av CNOT-portar på intilliggande qubits i ett angivet qubit-register, från qubit vid position 0 som kontroll till qubit vid position 1 som mål, sedan från qubit vid position 1 som kontroll till qubit vid position 2 som mål osv. slutar med qubit i position `Length(register)-1` som mål.
+  summary: Implementerar en överlappande av CNOT-portar på intilliggande qubits i ett angivet qubit-register, från qubit vid position 0 som kontroll till qubit vid position 1 som mål, sedan från qubit vid position 1 som kontroll till qubit vid position 2 som mål, och slutar med qubit i position `Length(register)-1` som målet.
 - uid: microsoft.quantum.arithmetic.comparegreaterthanfxp
   summary: Jämför två tal med fasta punkter som lagras i Quantum-registren och styr en vändning på resultatet.
 - uid: microsoft.quantum.arithmetic.comparegti
@@ -179,19 +179,19 @@ operations:
   summary: >-
     Reversibel, "på plats"-tillägg av två heltal.
 
-    Med två $n $-bitars heltal som är kodade i LittleEndian registrerar `xs` och `ys`och en qubit-aktivitet, beräknar åtgärden summan av de två heltalen där $n $ minst betydande bitar av resultatet hålls i `ys` och den framställda biten är XoReD till qubit `carry`.
+    Med två $n $-bitars heltal som är kodade i LittleEndian registrerar `xs` och `ys`, och en qubit bär åtgärd, beräknar åtgärden summan av de två heltalen där $n $ minst betydande bitar av resultatet hålls i `ys` och den framställda biten är XoReD till qubit `carry`.
 - uid: microsoft.quantum.arithmetic.ripplecarryadderd
   summary: >-
     Reversibel, "på plats"-tillägg av två heltal.
 
-    Med två $n $-bitars heltal som är kodade i LittleEndian registrerar `xs` och `ys`och en qubit-aktivitet, beräknar åtgärden summan av de två heltalen där $n $ minst betydande bitar av resultatet hålls i `ys` och den framställda biten är XoReD till qubit `carry`.
+    Med två $n $-bitars heltal som är kodade i LittleEndian registrerar `xs` och `ys`, och en qubit bär åtgärd, beräknar åtgärden summan av de två heltalen där $n $ minst betydande bitar av resultatet hålls i `ys` och den framställda biten är XoReD till qubit `carry`.
 - uid: microsoft.quantum.arithmetic.ripplecarryaddernocarryttk
   summary: Reversibel, på plats krusning – tillsats av två heltal utan att utföra. Med två $n $-bitars heltal som är kodade i LittleEndian registrerar `xs` och `ys`, beräknar åtgärden summan av de två heltalen modulo $2 ^ n $, där $n $ är bit storleken för indata `xs` och `ys`. Den utför inte den framfattande biten.
 - uid: microsoft.quantum.arithmetic.ripplecarryadderttk
   summary: >-
     Reversibel, "på plats"-tillägg av två heltal.
 
-    Med två $n $-bitars heltal som är kodade i LittleEndian registrerar `xs` och `ys`och en qubit-aktivitet, beräknar åtgärden summan av de två heltalen där $n $ minst betydande bitar av resultatet hålls i `ys` och den framställda biten är XoReD till qubit `carry`.
+    Med två $n $-bitars heltal som är kodade i LittleEndian registrerar `xs` och `ys`, och en qubit bär åtgärd, beräknar åtgärden summan av de två heltalen där $n $ minst betydande bitar av resultatet hålls i `ys` och den framställda biten är XoReD till qubit `carry`.
 - uid: microsoft.quantum.arithmetic.squarefxp
   summary: Kvadraterar ett fast punkts nummer.
 - uid: microsoft.quantum.arithmetic.squarei

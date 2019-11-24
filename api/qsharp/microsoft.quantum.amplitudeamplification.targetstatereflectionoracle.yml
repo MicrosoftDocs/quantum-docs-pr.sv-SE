@@ -7,7 +7,7 @@ summary: >-
   Skapar en `ReflectionOracle` om mål tillstånd som unikt marker ATS av flaggan qubit.
 
 
-  Mål tillstånd har en enda qubit inställd på 1, och alla andra 0: $ \ket{1}_F $.
+  Mål tillstånd har en enda qubit inställd på 1, och alla andra 0: $ \ket{1}_f $.
 syntax: 'function TargetStateReflectionOracle (idxFlagQubit : Int) : Microsoft.Quantum.Oracles.ReflectionOracle'
 input:
   content: '(idxFlagQubit : Int)'
@@ -19,7 +19,7 @@ input:
 output:
   content: Microsoft.Quantum.Oracles.ReflectionOracle
   types:
-  - summary: En `ReflectionOracle` som visar om status har marker ATS med $ \ket{1}_F $.
+  - summary: En `ReflectionOracle` som visar om tillstånd som har marker ATS med $ \ket{1}_f $.
     uid: microsoft.quantum.oracles.reflectionoracle
 seeAlso:
 - microsoft.quantum.canon.reflectionoracle

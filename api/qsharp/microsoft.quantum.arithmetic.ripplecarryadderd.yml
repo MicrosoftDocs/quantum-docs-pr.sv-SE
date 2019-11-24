@@ -6,7 +6,7 @@ namespace: Microsoft.Quantum.Arithmetic
 summary: >-
   Reversibel, "på plats"-tillägg av två heltal.
 
-  Med två $n $-bitars heltal som är kodade i LittleEndian registrerar `xs` och `ys`och en qubit-aktivitet, beräknar åtgärden summan av de två heltalen där $n $ minst betydande bitar av resultatet hålls i `ys` och den framställda biten är XoReD till qubit `carry`.
+  Med två $n $-bitars heltal som är kodade i LittleEndian registrerar `xs` och `ys`, och en qubit bär åtgärd, beräknar åtgärden summan av de två heltalen där $n $ minst betydande bitar av resultatet hålls i `ys` och den framställda biten är XoReD till qubit `carry`.
 remarks: Den angivna kontrollerade åtgärden använder symmetri och ömsesidig annullering av åtgärder för att förbättra standard implementeringen som lägger till en kontroll i varje åtgärd.
 syntax: 'operation RippleCarryAdderD (xs : Microsoft.Quantum.Arithmetic.LittleEndian, ys : Microsoft.Quantum.Arithmetic.LittleEndian, carry : Qubit) : Unit'
 references: >-

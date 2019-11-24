@@ -8,7 +8,7 @@ remarks: >-
   ### <a name="iterative-phase-estimation-and-eigenstates"></a>Uppskattning av iterativa faser och Eigenstates
 
 
-  I allmänhet behöver ingångs registreringen `eigenstate` inte vara en eigenstate $ \ket{\phi} $ av $U $, men kan vara en superposition framför eigenstates. Anta att indatamängden anges av \begin{align} \ket{\psi} & = \sum\_{j} \alpha\_j \ket{\phi\_j}, \end{align} där $\{\alpha\_j\}$ är komplexa koefficienter som $ \sum\_j | \alpha @no__ t_7_ j | ^ 2 = $1 och Where $U \ket{\phi\_j} = \phi\_j\ket {\ Fi\_j} $.
+  I allmänhet behöver ingångs registreringen `eigenstate` inte vara en eigenstate $ \ket{\phi} $ av $U $, men kan vara en superposition framför eigenstates. Anta att indatamängden anges av \begin{align} \ket{\psi} & = \sum\_{j} \alpha\_j \ket{\phi\_j}, \end{align} där $\{\alpha\_j\}$ är komplexa koefficienter som $ \sum\_j | \alpha\_j | ^ 2 = $1 och där $U \ket{\phi\_j} = \phi\_j\ket {\ Fi\_j} $.
 
 
   Sedan konvergerar periodiska fas uppskattningar till en enda eigenstate enligt beskrivningen i [utvecklings guiden](xref:microsoft.quantum.libraries.characterization#iterative-phase-estimation-without-eigenstates).

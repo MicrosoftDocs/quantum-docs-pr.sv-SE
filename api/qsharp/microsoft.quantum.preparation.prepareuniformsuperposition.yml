@@ -7,11 +7,11 @@ summary: >-
   Skapar en enhetlig överplacering över tillstånd som kodar 0 till `nIndices`.
 
 
-  Det vill säga den här enhetliga $U $ skapar en enhetlig överplacering över alla nummer tillstånd $0 $ till $M-$1, med ingångs tillstånd $ \ket{0\cdots 0} $. Med andra ord, $ $ \begin{align} U\ket{0}= \frac{1}{\sqrt{M}}\sum_{j = 0} ^ {M-1} \ket{j}.
+  Det vill säga den här enhetliga $U $ skapar en enhetlig överplacering över alla nummer tillstånd $0 $ till $M-$1, med ingångs tillstånd $ \ket{0\cdots 0} $. Med andra ord, $ $ \begin{align} U\ket{0}= \frac{1}{\sqrt{M}}\ sum_ {j = 0} ^ {M-1} \ket{j}.
 
   \end{align} $ $.
 examples: >-
-  I följande exempel förbereds tillstånd $ \frac{1}{\sqrt{6}} \sum_{j = 0} ^{5}\ket{j} $ på $3 $ qubits.
+  I följande exempel förbereds tillstånd $ \frac{1}{\sqrt{6}} \ sum_ {j = 0} ^{5}\ket{j} $ på $3 $ qubits.
 
 
   ```Q#

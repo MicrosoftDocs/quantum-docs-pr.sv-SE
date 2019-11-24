@@ -7,7 +7,7 @@ summary: >-
   Två åtgärder förutsätter att de fungerar identiskt för alla ingångs tillstånd.
 
 
-  Den här kontrollen implementeras genom att kontrol lera åtgärds åtgärderna för alla tillstånd i formuläret $V _0 \otimes... \otimes V_ {n-1} $, där $V _k $ är ett av tillstånden $ \ket{0}$, $ \ket{1}$, $ \ket{+} $ och $ \ket{i} $ (+ 1 eigenstate av Pauli Y-operatorn).
+  Den här kontrollen implementeras genom att kontrol lera åtgärdens åtgärder på alla stater i formuläret $V _0 \otimes... \otimes V_ {n-1} $, där $V _k $ är ett av tillstånden $ \ket{0}$, $ \ket{1}$, $ \ket{+} $ och $ \ket{i} $ (+ 1 eigenstate av Pauli Y-operatorn).
 
 
   Den här kontrollen använder $n $ qubits och kräver flera anrop av de åtgärder som jämförs.

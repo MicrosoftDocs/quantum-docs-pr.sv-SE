@@ -3,7 +3,7 @@ uid: microsoft.quantum.arithmetic.cascadecnot
 name: CascadeCNOT
 type: operation
 namespace: Microsoft.Quantum.Arithmetic
-summary: Implementerar en överlappande av CNOT-portar på intilliggande qubits i ett angivet qubit-register, från qubit vid position 0 som kontroll till qubit vid position 1 som mål, sedan från qubit vid position 1 som kontroll till qubit vid position 2 som mål osv. slutar med qubit i position `Length(register)-1` som mål.
+summary: Implementerar en överlappande av CNOT-portar på intilliggande qubits i ett angivet qubit-register, från qubit vid position 0 som kontroll till qubit vid position 1 som mål, sedan från qubit vid position 1 som kontroll till qubit vid position 2 som mål, och slutar med qubit i position `Length(register)-1` som målet.
 syntax: 'operation CascadeCNOT (register : Qubit[]) : Unit'
 input:
   content: '(register : Qubit[])'

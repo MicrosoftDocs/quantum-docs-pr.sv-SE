@@ -22,7 +22,7 @@ input:
 output:
   content: Unit
   types:
-  - summary: Inget.
+  - summary: Ingen.
     isPrimitive: true
     uid: Unit
 metadata:
