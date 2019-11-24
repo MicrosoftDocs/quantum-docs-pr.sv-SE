@@ -7,10 +7,10 @@ summary: >-
   Representerar en topp där en operator av intresse är kodad i det övre vänstra blocket.
 
 
-  Det vill säga att en `BlockEncoding` är en enhetlig $U $ där en godtycklig operatör $H $ ränta som agerar på System register `s` är kodad i det övre vänstra blocket som motsvarar hjälp tillstånd $ \ket{0}_A $. Det är
+  Det vill säga att en `BlockEncoding` är en enhetlig $U $ där en godtycklig operatör $H $ ränta som agerar på System register `s` är kodad i det övre vänstra blocket som motsvarar hjälp tillstånd $ \ket{0}_a $. Det är
 
 
-  $ $ \begin{align} (\bra{0}_A \ otimes I_s) U (\ket{0}_A \ otimes I_s) = H \end{align} $ $.
+  $ $ \begin{align} (\bra{0}_a \otimes I_s) U (\ket{0}_a \otimes I_s) = H \end{align} $ $.
 syntax: newtype BlockEncoding = ((Qubit[], Qubit[]) => Unit is Adj + Ctl);
 metadata:
   ms.openlocfilehash: 0991b1b54cdd8e908f60fc104edf588ae08e12e7

@@ -12,7 +12,7 @@ summary: >-
   Mer information finns i.
 
 
-  Den här åtgärden representeras av den enhetliga operatorn \begin{align} f_ {swap} \mathrel{: =} \begin{bmatrix} 1 & 0 & 0 & 0 \\\\ 0 & 0 & 1 & 0 \\\\ 0 & 1 & 0 & \\\\ 0 & 0 & 0 &-1 \\\\ \end{bmatrix}.
+  Den här åtgärden representeras av den enhetliga operatorn \begin{align} f_ {swap} \mathrel{: =} \begin{bmatrix} 1 & 0 & 0 & 0 \\\\ 0 & 0 & 1 & 0 \\\\ 0 & 0 & 0 & \\\\ 0 & 0 & 0 &-1 \\\\ \end{bmatrix}.
 
   \end{align}
 syntax: 'operation ApplyFermionicSWAP (qubit1 : Qubit, qubit2 : Qubit) : Unit'

@@ -7,13 +7,13 @@ summary: >-
   Returnerar en åtgärd som förbereder angivet Quantum-tillstånd.
 
 
-  Den returnerade åtgärden $U $ förbereder ett godtyckligt Quantum-tillstånd $ \ket{\psi} $ med positiva koefficienter $ \alpha_j\ge $0 från $n $-qubit beräknings bas tillstånd $ \ket{0...0} $.
+  Den returnerade åtgärden $U $ förbereder ett godtyckligt Quantum-tillstånd $ \ket{\psi} $ med positiva koefficienter $ \ alpha_j \ge $0 från $n $-qubit beräknings bas tillstånd $ \ket{0...0} $.
 
 
-  Åtgärden för U i ett nytilldelat register erhålls av $ $ \begin{align} U \ket{0\cdots 0} = \ket{\psi} = \frac{\sum_{j = 0} ^ {2 ^ n-1} \alpha_j \ket{j}}{\sqrt{\sum_{j = 0} ^ {2 ^ n-1} | \alpha_j | ^ 2}}.
+  Åtgärden för U i ett nytilldelat register erhålls av $ $ \begin{align} U \ket{0\cdots 0} = \ket{\psi} = \frac{\ sum_ {j = 0} ^ {2 ^ n-1} \ alpha_j \ket{j}}{\sqrt{\ sum_ {j = 0} ^ {2 ^ n-1} | \ alpha_j | ^ 2}}.
 
   \end{align} $ $
-remarks: Negativa ingångs-koefficienter $ \alpha_j < $0 behandlas som om det är positivt med värdet $ | \alpha_j | $. `coefficients` fylls med elementen $ \alpha_j = $0,0 om färre än $2 ^ n $ har angetts.
+remarks: Negativa ingångs-koefficienter $ \ alpha_j < $0 behandlas som om det är positivt med värdet $ | \ alpha_j | $. `coefficients` fylls med elementen $ \ alpha_j = $0,0 om färre än $2 ^ n $ anges.
 examples: >-
   Följande kodfragment förbereder Quantum-tillstånd $ \ket{\psi} = \ sqrt {1/8} \ ket{0}+ \ sqrt {7/8} \ ket{2}$ i qubit-registrera `qubitsLE`.
 
@@ -35,7 +35,7 @@ input:
   content: '(coefficients : Double[])'
   types:
   - name: coefficients
-    summary: Matris med upp till $2 ^ n $ koefficienter $ \alpha_j $. $J $ koefficienten indexerar Number State $ \ket{j} $ kodat i litet endian-format.
+    summary: Matris med upp till $2 ^ n $ koefficienter $ \ alpha_j $. $J $ koefficienten indexerar Number State $ \ket{j} $ kodat i litet endian-format.
     isArray: true
     isPrimitive: true
     uid: Double
