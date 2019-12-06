@@ -3,55 +3,25 @@ uid: microsoft.quantum.extensions.testing
 name: Microsoft.Quantum.Extensions.Testing
 operations:
 - uid: microsoft.quantum.extensions.testing.assertallzero
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.diagnostics.assertallzero"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nAssertAllZero är föråldrad. Använd @\"microsoft.quantum.diagnostics.assertallzero\" i stället.\nAnvänd @\"microsoft.quantum.diagnostics.assertallzero\"."
 - uid: microsoft.quantum.extensions.testing.assertallzerotol
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.diagnostics.assertallzerowithintolerance"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nAssertAllZeroTol är föråldrad. Använd @\"microsoft.quantum.diagnostics.assertallzerowithintolerance\" i stället.\nAnvänd @\"microsoft.quantum.diagnostics.assertallzerowithintolerance\"."
 - uid: microsoft.quantum.extensions.testing.assertoperationsequalinplace
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.diagnostics.assertoperationsequalinplace"som föråldrad.
-
-    Observera att ordningen på argumenten för åtgärden har ändrats.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nAssertOperationsEqualInPlace är föråldrad. Använd @\"microsoft.quantum.diagnostics.assertoperationsequalinplace\" i stället.\nAnvänd @\"microsoft.quantum.diagnostics.assertoperationsequalinplace\".\nObservera att ordningen på argumenten för åtgärden har ändrats."
 - uid: microsoft.quantum.extensions.testing.assertoperationsequalinplacecompbasis
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.diagnostics.assertoperationsequalinplaceCompBasis"som föråldrad.
-
-    Observera att ordningen på argumenten för åtgärden har ändrats.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nAssertOperationsEqualInPlaceCompBasis är föråldrad. Använd @\"microsoft.quantum.diagnostics.assertoperationsequalinplacecompbasis\" i stället.\nAnvänd @\"microsoft.quantum.diagnostics.assertoperationsequalinplaceCompBasis\".\nObservera att ordningen på argumenten för åtgärden har ändrats."
 - uid: microsoft.quantum.extensions.testing.assertoperationsequalreferenced
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.diagnostics.assertoperationsequalreferenced"som föråldrad.
-
-    Observera att ordningen på argumenten för åtgärden har ändrats.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nAssertOperationsEqualReferenced är föråldrad. Använd @\"microsoft.quantum.diagnostics.assertoperationsequalreferenced\" i stället.\nAnvänd @\"microsoft.quantum.diagnostics.assertoperationsequalreferenced\".\nObservera att ordningen på argumenten för åtgärden har ändrats."
 - uid: microsoft.quantum.extensions.testing.assertqubit
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.diagnostics.assertqubit"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nAssertQubit är föråldrad. Använd @\"microsoft.quantum.diagnostics.assertqubit\" i stället.\nAnvänd @\"microsoft.quantum.diagnostics.assertqubit\"."
 - uid: microsoft.quantum.extensions.testing.assertqubitstate
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.diagnostics.assertqubitisinstatewithintolerance"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nAssertQubitState är föråldrad. Använd @\"microsoft.quantum.diagnostics.assertqubitisinstatewithintolerance\" i stället.\nAnvänd @\"microsoft.quantum.diagnostics.assertqubitisinstatewithintolerance\"."
 - uid: microsoft.quantum.extensions.testing.assertqubittol
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.diagnostics.assertqubitwithintolerance"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nAssertQubitTol är föråldrad. Använd @\"microsoft.quantum.diagnostics.assertqubitwithintolerance\" i stället.\nAnvänd @\"microsoft.quantum.diagnostics.assertqubitwithintolerance\"."
 metadata:
-  ms.openlocfilehash: 031bbd476ac37f113f9fb692ccd6fca916612ac3
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 0d06129c66f13c8c5ee9158ef6be41bf447791f9
+  ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73210355"
+  ms.lasthandoff: 12/05/2019
+  ms.locfileid: "74858422"

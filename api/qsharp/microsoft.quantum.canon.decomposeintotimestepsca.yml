@@ -37,7 +37,7 @@ input:
     summary: >-
       Väljer den ordning för Trotter – Suzuki Integrator som ska användas.
 
-      Ordning 1 och 2 stöds för närvarande.
+      Order 1 och till och med order 2, 4, 6,... stöds för närvarande.
     isPrimitive: true
     uid: Int
 output:
@@ -62,9 +62,9 @@ typeParameters:
 - uid: "'T"
   summary: Typen som varje tidpunkt ska agera på. normalt är antingen `Qubit[]` eller `Qubit`.
 metadata:
-  ms.openlocfilehash: 328db9b314320c724cf03adb19ee59d63a33e56e
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: ac9e4b4359c77205b7a823c334222a049ff49c10
+  ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73067840"
+  ms.lasthandoff: 12/05/2019
+  ms.locfileid: "74863972"

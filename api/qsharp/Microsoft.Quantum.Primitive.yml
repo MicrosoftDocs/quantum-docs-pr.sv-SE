@@ -3,150 +3,66 @@ uid: microsoft.quantum.primitive
 name: Microsoft.Quantum.Primitive
 functions:
 - uid: microsoft.quantum.primitive.message
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.intrinsic.message"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nMeddelandet är inaktuellt. Använd @\"microsoft.quantum.intrinsic.message\" i stället.\nAnvänd @\"microsoft.quantum.intrinsic.message\"."
 operations:
 - uid: microsoft.quantum.primitive.assert
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.intrinsic.assert"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nAssert är inaktuell. Använd @\"microsoft.quantum.intrinsic.assert\" i stället.\nAnvänd @\"microsoft.quantum.intrinsic.assert\"."
 - uid: microsoft.quantum.primitive.assertprob
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.intrinsic.assertprob"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nAssertProb är föråldrad. Använd @\"microsoft.quantum.intrinsic.assertprob\" i stället.\nAnvänd @\"microsoft.quantum.intrinsic.assertprob\"."
 - uid: microsoft.quantum.primitive.ccnot
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.intrinsic.ccnot"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nCCNOT är föråldrad. Använd @\"microsoft.quantum.intrinsic.ccnot\" i stället.\nAnvänd @\"microsoft.quantum.intrinsic.ccnot\"."
 - uid: microsoft.quantum.primitive.cnot
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.intrinsic.cnot"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nCNOT är föråldrad. Använd @\"microsoft.quantum.intrinsic.cnot\" i stället.\nAnvänd @\"microsoft.quantum.intrinsic.cnot\"."
 - uid: microsoft.quantum.primitive.exp
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.intrinsic.exp"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nEXP är inaktuell. Använd @\"microsoft.quantum.intrinsic.exp\" i stället.\nAnvänd @\"microsoft.quantum.intrinsic.exp\"."
 - uid: microsoft.quantum.primitive.expfrac
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.intrinsic.expfrac"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nExpFrac är föråldrad. Använd @\"microsoft.quantum.intrinsic.expfrac\" i stället.\nAnvänd @\"microsoft.quantum.intrinsic.expfrac\"."
 - uid: microsoft.quantum.primitive.h
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.intrinsic.h"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nH är föråldrad. Använd @\"microsoft.quantum.intrinsic.h\" i stället.\nAnvänd @\"microsoft.quantum.intrinsic.h\"."
 - uid: microsoft.quantum.primitive.i
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.intrinsic.i"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nJag är inaktuell. Använd @\"microsoft.quantum.intrinsic.i\" i stället.\nAnvänd @\"microsoft.quantum.intrinsic.i\"."
 - uid: microsoft.quantum.primitive.m
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.intrinsic.m"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nM är föråldrad. Använd @\"microsoft.quantum.intrinsic.m\" i stället.\nAnvänd @\"microsoft.quantum.intrinsic.m\"."
 - uid: microsoft.quantum.primitive.measure
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.intrinsic.measure"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nMåttet är föråldrat. Använd @\"microsoft.quantum.intrinsic.measure\" i stället.\nAnvänd @\"microsoft.quantum.intrinsic.measure\"."
 - uid: microsoft.quantum.primitive.multix
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.canon.applytoeachca"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nMultiX är föråldrad. Använd @ \"applytoeachca (x, _)\" i stället.\nAnvänd @\"microsoft.quantum.canon.applytoeachca\"."
 - uid: microsoft.quantum.primitive.r
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.intrinsic.r"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nR är föråldrad. Använd @\"microsoft.quantum.intrinsic.r\" i stället.\nAnvänd @\"microsoft.quantum.intrinsic.r\"."
 - uid: microsoft.quantum.primitive.r1
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.intrinsic.r1"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nR1 är föråldrad. Använd @\"microsoft.quantum.intrinsic.r1\" i stället.\nAnvänd @\"microsoft.quantum.intrinsic.r1\"."
 - uid: microsoft.quantum.primitive.r1frac
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.intrinsic.r1frac"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nR1Frac är föråldrad. Använd @\"microsoft.quantum.intrinsic.r1frac\" i stället.\nAnvänd @\"microsoft.quantum.intrinsic.r1frac\"."
 - uid: microsoft.quantum.primitive.random
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.intrinsic.random"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nSlumpmässig är inaktuell. Använd @\"microsoft.quantum.intrinsic.random\" i stället.\nAnvänd @\"microsoft.quantum.intrinsic.random\"."
 - uid: microsoft.quantum.primitive.reset
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.intrinsic.reset"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nÅterställningen är inaktuell. Använd @\"microsoft.quantum.intrinsic.reset\" i stället.\nAnvänd @\"microsoft.quantum.intrinsic.reset\"."
 - uid: microsoft.quantum.primitive.resetall
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.intrinsic.resetall"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nResetAll är föråldrad. Använd @\"microsoft.quantum.intrinsic.resetall\" i stället.\nAnvänd @\"microsoft.quantum.intrinsic.resetall\"."
 - uid: microsoft.quantum.primitive.rfrac
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.intrinsic.rfrac"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nRFrac är föråldrad. Använd @\"microsoft.quantum.intrinsic.rfrac\" i stället.\nAnvänd @\"microsoft.quantum.intrinsic.rfrac\"."
 - uid: microsoft.quantum.primitive.rx
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.intrinsic.rx"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nRX är inaktuell. Använd @\"microsoft.quantum.intrinsic.rx\" i stället.\nAnvänd @\"microsoft.quantum.intrinsic.rx\"."
 - uid: microsoft.quantum.primitive.ry
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.intrinsic.ry"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nNätverk är föråldrad. Använd @\"microsoft.quantum.intrinsic.ry\" i stället.\nAnvänd @\"microsoft.quantum.intrinsic.ry\"."
 - uid: microsoft.quantum.primitive.rz
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.intrinsic.rz"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nRZ är föråldrad. Använd @\"microsoft.quantum.intrinsic.rz\" i stället.\nAnvänd @\"microsoft.quantum.intrinsic.rz\"."
 - uid: microsoft.quantum.primitive.s
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.intrinsic.s"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nS är föråldrad. Använd @\"microsoft.quantum.intrinsic.s\" i stället.\nAnvänd @\"microsoft.quantum.intrinsic.s\"."
 - uid: microsoft.quantum.primitive.swap
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.intrinsic.swap"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nVÄXLINGen är inaktuell. Använd @\"microsoft.quantum.intrinsic.swap\" i stället.\nAnvänd @\"microsoft.quantum.intrinsic.swap\"."
 - uid: microsoft.quantum.primitive.t
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.intrinsic.t"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nT är föråldrad. Använd @\"microsoft.quantum.intrinsic.t\" i stället.\nAnvänd @\"microsoft.quantum.intrinsic.t\"."
 - uid: microsoft.quantum.primitive.x
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.intrinsic.x"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nX är föråldrad. Använd @\"microsoft.quantum.intrinsic.x\" i stället.\nAnvänd @\"microsoft.quantum.intrinsic.x\"."
 - uid: microsoft.quantum.primitive.y
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.intrinsic.y"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nY är föråldrad. Använd @\"microsoft.quantum.intrinsic.y\" i stället.\nAnvänd @\"microsoft.quantum.intrinsic.y\"."
 - uid: microsoft.quantum.primitive.z
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.intrinsic.z"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nZ är föråldrad. Använd @\"microsoft.quantum.intrinsic.z\" i stället.\nAnvänd @\"microsoft.quantum.intrinsic.z\"."
 metadata:
-  ms.openlocfilehash: 87dc52b15f7fb17c6e9c3c11ec04a91e775a36ef
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: d3eef5b065a00cee2b31ea1a99e8814b5ca11ae0
+  ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73216041"
+  ms.lasthandoff: 12/05/2019
+  ms.locfileid: "74858249"

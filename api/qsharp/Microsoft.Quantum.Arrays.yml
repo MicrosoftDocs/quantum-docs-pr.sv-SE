@@ -45,8 +45,12 @@ functions:
   summary: Hämta en matris med heltal inom ett angivet intervall.
 - uid: microsoft.quantum.arrays.subarray
   summary: Tar en matris och en lista med platser och skapar en ny matris som är utformad från elementen i den ursprungliga matrisen som matchar de tilldelade platserna.
+- uid: microsoft.quantum.arrays.swapped
+  summary: Använder en växling av två element i en matris.
 - uid: microsoft.quantum.arrays.tail
   summary: Returnerar det sista elementet i matrisen.
+- uid: microsoft.quantum.arrays.tuplearrayasnestedarray
+  summary: Förvandlar en lista med 2-tupler till en kapslad matris.
 - uid: microsoft.quantum.arrays.zip
   summary: Två matriser returnerar en ny uppsättning par, så att varje par innehåller ett element från varje ursprunglig matris.
 - uid: microsoft.quantum.arrays.zip3
@@ -57,9 +61,9 @@ operations:
 - uid: microsoft.quantum.arrays.foreach
   summary: Med en matris och en åtgärd som har definierats för elementen i matrisen returnerar en ny matris som består av de avbildningar av den ursprungliga matrisen under åtgärden.
 metadata:
-  ms.openlocfilehash: 7c377d5df0e32be0da75f133b08c778ec94c6a39
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 12835bef2608d979809027cb9a271f2cda864b10
+  ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73057183"
+  ms.lasthandoff: 12/05/2019
+  ms.locfileid: "74858878"
