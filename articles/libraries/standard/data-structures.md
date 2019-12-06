@@ -6,12 +6,12 @@ uid: microsoft.quantum.libraries.data-structures
 ms.author: martinro@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: e8b28561f1aba37cb5bf41c6176386d19bfacf06
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: 6eb47de84fdfbb9d35fdfc2988883f8e1cffa332
+ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2019
-ms.locfileid: "73184516"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74864363"
 ---
 # <a name="data-structures-and-modeling"></a>Data strukturer och modeller #
 
@@ -20,7 +20,7 @@ ms.locfileid: "73184516"
 Tillsammans med användardefinierade typer för att representera Quantum-koncept, innehåller Canon även åtgärder, funktioner och typer för att arbeta med klassiska data som används i kontrollen över Quantum Systems.
 Till exempel tar funktionen <xref:microsoft.quantum.arrays.reversed> en matris som inmatad och returnerar samma matris i omvänd ordning.
 Detta kan sedan användas på en matris av typen `Qubit[]` för att undvika att behöva tillämpa onödiga $ \operatorname{SWAP} $-portar vid konvertering mellan Quantum-representationer av heltal.
-På samma sätt såg vi i föregående avsnitt att typer av formulär `(Int, Int -> T)` kan vara användbara för att representera slumpmässiga åtkomst samlingar, så att <xref:microsoft.quantum.arrays.lookupfunction>-funktionen ger ett convienent sätt att konstruera sådana typer från mat ris typer.
+På samma sätt såg vi i föregående avsnitt att typer av formulär `(Int, Int -> T)` kan vara användbara för att representera slumpmässiga åtkomst samlingar, så att <xref:microsoft.quantum.arrays.lookupfunction>-funktionen ger ett bekvämt sätt att konstruera sådana typer från mat ris typer.
 
 ### <a name="pairs"></a>Stod ###
 
@@ -31,7 +31,7 @@ let pair = (PauliZ, register); // type (Pauli, Qubit[])
 ApplyToEach(H, Snd(pair)); // No need to deconstruct to access the register.
 ```
 
-### <a name="arrays"></a>lagringsmatriser ###
+### <a name="arrays"></a>Matriser ###
 
 Canon innehåller flera funktioner för att ändra matriser.
 Dessa funktioner är Type-parametered och kan därför användas med matriser av valfri Q #-typ.
@@ -77,7 +77,7 @@ Dessutom används användardefinierade typer för att märka olika Oracle-repres
 
 Sådana Oracle visas i ett antal olika kontexter, inklusive berömda-exempel, till exempel [Grover search](https://en.wikipedia.org/wiki/Grover%27s_algorithm) -och Quantum simulering-algoritmer.
 Här fokuserar vi på de Oracle som behövs för bara två program: amplitud förstärkning och fas uppskattning.
-Vi börjar med att diskutera amplituds förstärknings Oracle innan proceding till fas uppskattning.
+Vi ska först diskutera amplituds förstärknings Oracle innan du fortsätter till fas uppskattningen.
 
 ### <a name="amplitude-amplification-oracles"></a>Oracle-förstärkning för amplitud ###
 
@@ -94,7 +94,7 @@ Vi anger den första Oracle som vi behöver för amplitud-förstärkning för at
 Oracle som markerar mål under utrymmet, $P _1 $, tar exakt samma formulär.
 För alla tillstånd $ \ket{x} $ i mål under utrymmet (dvs. för alla tillstånd som du vill att algoritmen ska mata ut), $P _1 \ ket {x} =-\ket{x} $.
 På samma sätt gäller för alla tillstånd $ \ket{y} $ som inte finns i mål under utrymmet $P _1 \ ket {y} = \ket{y} $.
-Dessa två reflektioner kombineras sedan för att bilda en operatör som agerar i ett enda steg av amplitud-förstärkningen $Q =-P_0 P_1 $, där det totala minus tecknet bara är viktigt att tänka på i kontrollerade program.
+Dessa två reflektioner kombineras sedan för att bilda en operatör som agerar i ett enda steg av amplitud-förstärkning, $Q =-P_0 P_1 $, där det totala minus tecknet bara är viktigt att tänka på i kontrollerade program.
 Amplitud-förstärkningen fortsätter sedan genom att göra ett ursprungligt tillstånd, $ \ket{\psi} $ som är i det första under utrymmet och sedan utföra $ \ket{\psi} \mapsto Q ^ m \ket{\psi} $.
 Att utföra en sådan upprepning garanterar att om en börjar med ett ursprungligt tillstånd som har överlappande $ \sin ^ 2 (\theta) $ med det markerade utrymmet $m kommer den överlappande att bli $ \sin ^ 2 ([2 m + 1] \theta) $.
 Vi vill därför vanligt vis välja $m $ som en kostnads fri parameter som $ [2 m + 1] \theta = \ Pi/2 $; sådana fasta val är dock inte lika viktiga för vissa former av amplitud förstärkning, till exempel amplitud förstärkning av fast punkt.
@@ -145,20 +145,20 @@ is Adj + Ctl {
 }
 ```
 
-Vi kan sedan kombinera dessa två Oracle-grupper för att rotera mellan de två tillstånden och deterministiskt Transform $ \ket{+} ^ {\otimes n} $ till $ \ket{0}$ med ett antal lager av Hadamard-portar som är proportionella till $ \sqrt{2 ^ n} $ (IE $m \propto \sqrt{2 ^ n} $) jämfört med de ungefär $2 ^ n $-lager som skulle behövas för icke-deterministiskt förbereder du $ \ket{0}$ State genom att förbereda och mäta det ursprungliga läget tills resultatet $0 $ observeras.
+Vi kan sedan kombinera dessa två Oracle-grupper för att rotera mellan de två tillstånden och deterministiskt Transform $ \ket{+} ^ {\otimes n} $ till $ \ket{0}$ med ett antal lager av Hadamard-portar som är proportionella till $ \sqrt{2 ^ n} $ (IE $m \propto \sqrt{2 ^ n} $) jämfört med de ungefär $2 ^ n $-lager som skulle behövas för att icke-deterministiskt ska förbereda $ \ket{0}$-tillstånd genom att förbereda och mäta det ursprungliga läget tills resultatet $0 $ observeras.
 
 ### <a name="phase-estimation-oracles"></a>Fas uppskattning i Oracle ###
 
 För fas uppskattning är Oracle-formerna något mer naturliga.
 Syftet med fas uppskattning är att utforma en subrutin som kan sampla från Eigenvalues i en enhetlig matris.
-Den här metoden är indispensible i Quantum-simuleringen eftersom för många fysiska problem i kemi-och material vetenskap de här Eigenvalues ger Energies i för Quantum Systems som ger oss värdefull information om fas diagrammen i material och reaktion Dynamics för molekyler.
+Den här metoden är inte användbar i Quantum-simuleringen eftersom det för många fysiska problem i kemi-och material vetenskap i dessa Eigenvalues ger Energies av Quantum-system som ger oss värdefull information om fas diagrammen i material och reaktion Dynamics för molekyler.
 Varje smak av fas uppskattning behöver en enhetlighet.
 Den här enhetliga beskrivningen beskrivs av en av två typer av Oracle.
 
 > [!TIP]
 > Båda typerna av Oracle som beskrivs nedan beskrivs i exemplen.
-> Om du vill veta mer om kontinuerliga frågor och Oracle kan du se [ **PhaseEstimation** -exemplet](https://github.com/Microsoft/Quantum/tree/master/Samples/src/PhaseEstimation).
-> Om du vill veta mer om diskreta frågor och Oracle kan du se [ **IsingPhaseEstimation** -exemplet](https://github.com/Microsoft/Quantum/tree/master/Samples/src/IsingPhaseEstimation).
+> Om du vill veta mer om kontinuerliga frågor och Oracle kan du se [ **PhaseEstimation** -exemplet](https://github.com/microsoft/Quantum/tree/master/samples/characterization/phase-estimation).
+> Om du vill veta mer om diskreta frågor och Oracle kan du se [ **IsingPhaseEstimation** -exemplet](https://github.com/microsoft/Quantum/tree/master/samples/simulation/ising/phase-estimation).
 
 Den första typen av Oracle, som vi anropar en diskret fråga i Oracle och representerar den användardefinierade typen <xref:microsoft.quantum.oracles.discreteoracle>, omfattar helt enkelt en enhetlig matris.
 Om $U $ är den höga vars Eigenvalues vi vill uppskatta, är Oracle för $U $ helt enkelt ett enda sätt att använda en subrutin som implementerar $U $.
@@ -166,7 +166,7 @@ Det kan till exempel ta $U $ att vara den Oracle $Q $ som definieras ovan för a
 Eigenvalues för den här matrisen kan användas för att uppskatta överlappningen mellan de initiala och mål tillstånden, $ \sin ^ 2 (\theta) $, med en kvadratiskt färre sampel än en som annars skulle behövas.
 Detta är programmet för fas uppskattning med hjälp av Grover Oracle $Q $ som inmatade moniker för amplitud-uppskattning.
 Ett annat vanligt program, som ofta används i Quantum metrologi, innebär en liten rotations vinkel.
-Med andra ord vill vi uppskatta $ \theta $ för en okänd rotations grind av formen $R _z (\theta) $.
+Med andra ord vill vi uppskatta $ \theta $ för en okänd rotations grind av formuläret $R _z (\theta) $.
 I sådana fall är underrutinen som vi skulle interagera med för att lära sig detta fasta värde på $ \theta $ för porten $ $ \begin{align} U & = R_z (\theta) \\\\ & = \begin{bmatrix} e ^ {-i \theta/2} & 0 \\\\ 0 & e ^ {i \ theta/2} \end{bmatrix}.
 \end{align} $ $
 
@@ -199,17 +199,17 @@ Ett primärt mål för dynamisk simulering är att implementera tids utvecklings
 
 $ $ \begin{align} H & = \sum ^ {d-1} _ {j = 0} H_j, \end{align} $ $
 
-där tids utvecklingen för varje enskilt fall är lätt att implementera på en Quantum-dator. Om $H _J $ till exempel är en Pauli $X _1X_2 $-operator som agerar på de första och andra elementen i qubit-registreringen `qubits`, kan tids utvecklingen av den vara så länge $t $ implementeras genom att du anropar åtgärden `Exp([PauliX,PauliX], t, qubits[1..2])`, som har signatur `((Pauli[], Double, Qubit[]) => Unit is Adj + Ctl)`. Som vi diskuterade senare i Hamiltonian-simuleringen är det en lösning som sedan är att uppskatta tids utvecklingen genom $H $ med en sekvens med enklare åtgärder
+där tids utvecklingen för varje enskilt fall är lätt att implementera på en Quantum-dator. Om $H _j $ till exempel är en Pauli $X _1X_2 $-operatör som agerar på de första och andra elementen i qubit-registren kan du, när som helst, `qubits`$ implementeras genom att anropa åtgärden $t, som har signatur `Exp([PauliX,PauliX], t, qubits[1..2])`. Som vi diskuterade senare i Hamiltonian-simuleringen är det en lösning som sedan är att uppskatta tids utvecklingen genom $H $ med en sekvens med enklare åtgärder
 
-$ $ \begin{align} U (t) & = \left (e ^ {-iH\_0 t/r} e ^ {-iH\_1 t/r} \cdots e ^ {-iH\_{d-1} t/r} \right) ^ {r} + \mathcal{O} (d ^ 2 \max_j \\| H\_j\\| ^ 2 t ^ 2/r), \end{align} $ $
+$ $ \begin{align} U (t) & = \left (e ^ {-iH\_0 t/r} e ^ {-iH\_1 t/r} \cdots e ^ {-iH\_{d-1} t/r} \right) ^ {r} + \mathcal{O} (d ^ 2 \ max_j \\| H\_j\\| ^ 2 t ^ 2/r), \end{align} $ $
 
 där heltals $r > $0 styr det ungefärliga felet.
 
 Modell biblioteket för dynamisk generator ger ett ramverk för att systematiskt koda komplicerade generatorer i termer av enklare generatorer. En sådan beskrivning kan sedan skickas till, till exempel bibliotek för simulering för att implementera tids utveckling med en vald simulerings algoritm, med många detaljer som automatiskt tar hand om.
 
 > [!TIP]
-> Det dynamiska Generator biblioteket som beskrivs nedan beskrivs i exemplen. Ett exempel som baseras på Ising-modellen finns i [ **IsingGenerators** -exemplet](https://github.com/Microsoft/Quantum/tree/master/Samples/src/IsingGenerators).
-> Ett exempel som baseras på molekylen väte finns i exemplen [**H2SimulationCmdLine**](https://github.com/Microsoft/Quantum/tree/master/Samples/src/H2SimulationCmdLine) och [**H2SimulationGUI**](https://github.com/Microsoft/Quantum/tree/master/Samples/src/H2SimulationGUI) .
+> Det dynamiska Generator biblioteket som beskrivs nedan beskrivs i exemplen. Ett exempel som baseras på Ising-modellen finns i [ **IsingGenerators** -exemplet](https://github.com/microsoft/Quantum/tree/master/samples/simulation/ising/generators).
+> Ett exempel som baseras på molekylen väte finns i exemplen [**H2SimulationCmdLine**](https://github.com/microsoft/Quantum/tree/master/samples/simulation/h2/command-line) och [**H2SimulationGUI**](https://github.com/microsoft/Quantum/tree/master/samples/simulation/h2/gui) .
 
 ### <a name="complete-description-of-a-generator"></a>Fullständig beskrivning av en generator ###
 
@@ -244,7 +244,7 @@ $ $ \begin{align} H & = \sum ^ {d-1} _ {j = 0} a_j H_j, \end{align} $ $ där var
 newtype GeneratorIndex = ((Int[], Double[]), Int[]);
 ```
 
-I vår kodning anger den första parametern `Int[]` en Pauli-sträng där $ \hat I\rightarrow $0, $ \hat X\rightarrow $1, $ \hat Y\rightarrow $2 och $ \hat Z\rightarrow $3. Den andra parametern `Double[]` lagrar koefficienten för Pauli-strängen i Hamiltonian. Observera att endast det första elementet i matrisen används. Den tredje parametern `Int[]` indexerar qubits som den här Pauli-strängen agerar på och får inte ha några dubbla element. Därför kan Hamiltonian-termen $0,4 \hat X_0 \hat Y_8\hat I_2\hat Z_1 $ visas som
+I vår kodning anger den första parametern `Int[]` en Pauli-sträng där $ \hat I\rightarrow $0, $ \hat X\rightarrow $1, $ \hat Y\rightarrow $2 och $ \hat Z\rightarrow $3. Den andra parametern `Double[]` lagrar koefficienten för Pauli-strängen i Hamiltonian. Observera att endast det första elementet i matrisen används. Den tredje parametern `Int[]` indexerar qubits som den här Pauli-strängen agerar på och får inte ha några dubbla element. Därför kan Hamiltonian-termen $0,4 \hat X_0 \hat Y_8 \hat I_2 \hat Z_1 $ visas som
 
 ```qsharp
 let generatorIndexExample = GeneratorIndex(([1,2,0,3], [0.4]]), [0,8,2,1]);

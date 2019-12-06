@@ -5,18 +5,17 @@ author: QuantumWriter
 ms.author: Christopher.Granade@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 4677b0f9c4f64a9c1bc46d34e8a883dc006ba8f0
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: c079364f8808304e0132fa2a4226cd6400e81339
+ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "73183309"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74863154"
 ---
 # <a name="going-further"></a>Gå vidare #
 
 Nu när du har sett hur du skriver intressanta Quantum-program i Q # går det här avsnittet vidare genom att introducera några fler avancerade ämnen som bör vara användbara i framtiden.
 
-<!-- Moved Debugging and Testing Quantum Programs section to a separate article -->
 
 ## <a name="generic-operations-and-functions"></a>Allmänna åtgärder och funktioner ##
 
@@ -178,6 +177,6 @@ is Adj + Ctl {
 }
 ```
 
-Observera att den omfattande användningen av `With` Combinator----i formulär som är tillämplig för åtgärder som stöder intilliggande, d.v.s. `WithA`---har gjorts i det här exemplet, vilket är ett lämpligt programmerings format som att lägga till kontrollen till strukturer som bara omfattar `With` sprider kontroll till den inre åtgärden. Ytterligare information om detta utöver `body` av åtgärden är att en implementering av åtgärdens `controlled`s huvuddel uttryckligen tillhandahölls, i stället för att en `controlled auto`-instruktion används. Orsaken till detta är att vi vet från strukturen på kretsen som gör det enkelt att lägga till ytterligare kontroller som är fördelaktiga jämfört med att lägga till kontrollen till varje enskild grind i `body`. 
+Observera att den omfattande användningen av `With` Combinator----i formulär som är tillämplig för åtgärder som stöder intilliggande, d.v.s. `WithA`---har gjorts i det här exemplet, vilket är ett användbart programmerings format som att lägga till kontrollen till strukturer som inbegriper `With` bara sprider kontrollen till den inre åtgärden. Ytterligare information om detta utöver `body` av åtgärden är att en implementering av åtgärdens `controlled`s huvuddel uttryckligen tillhandahölls, i stället för att en `controlled auto`-instruktion används. Orsaken till detta är att vi vet från strukturen på kretsen som gör det enkelt att lägga till ytterligare kontroller som är fördelaktiga jämfört med att lägga till kontrollen till varje enskild grind i `body`. 
 
 Det är ett sätt att jämföra den här koden med en annan Canon Function-`MultiControlledXClean` som uppnår samma mål för att implementera en multiplicering-kontrollerad `X`-åtgärd, men som använder flera rena qubits med `using` mekanismen. 

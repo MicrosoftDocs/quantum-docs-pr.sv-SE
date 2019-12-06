@@ -5,12 +5,12 @@ author: cgranade
 uid: microsoft.quantum.libraries.diagnostics
 ms.author: chgranad@microsoft.com
 ms.topic: article
-ms.openlocfilehash: b59f91b660281167eab182529b415b6d379e3d63
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: d5889b8d5a92801b0ada65f7a17c655c959fc57f
+ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2019
-ms.locfileid: "73184499"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74864346"
 ---
 # <a name="diagnostics"></a>Diagnostik #
 
@@ -42,7 +42,7 @@ Som jämförelse ger [Toffoli Simulator](xref:microsoft.quantum.machines.toffoli
 
 ## <a name="facts-and-assertions"></a>Fakta och intyg ##
 
-Som beskrivs i [testa och felsöka](xref:microsoft.quantum.techniques.testing-and-debugging), kan en funktion eller åtgärd med signatur `Unit -> Unit` eller `Unit => Unit`anropas som ett *enhets test*.
+Som du ser i [testa och felsöka](xref:microsoft.quantum.techniques.testing-and-debugging), kan en funktion eller åtgärd med signaturen `Unit -> Unit` respektive `Unit => Unit`markeras som ett *enhets test*.
 Varje enhets test består vanligt vis av ett litet Quantum-program, tillsammans med ett eller flera villkor som kontrollerar att programmet är korrekt.
 Dessa villkor kan komma i form av antingen _fakta_, som kontrollerar värdena för deras indata, eller _intyg_, som kontrollerar tillstånden för en eller flera qubits som skickas som indata.
 
@@ -109,7 +109,7 @@ På grund av den globala fasen kan vi dock välja $a\_i = $0, så att vi bara be
 Därför måste vi ange tre intyg som är oberoende av varandra för att fastställa det tillstånd som vi förväntar sig.
 Vi gör detta genom att ta reda på sannolikheten för att observera `Zero` för varje Pauli-mätning, som har getts $ \alpha $ och $ \beta $, och som garanterar var och en oberoende.
 Låt $x $, $y $ och $z $ vara `Result` värden för Pauli $X $, $Y $ och $Z $.
-Sedan använder du funktionen sannolikhet för Quantum-mätningar, \begin{align} \Pr (x = \texttt{Zero} | \alpha, \beta) & = \frac12 + a\_r b\_r + a\_i b\_\\\\ \Pr (y = \texttt{Zero} | \alpha , \beta) & = \frac12 + a\_r b\_i-a\_i b\_r \\\\ \Pr (z = \texttt{Zero} | \alpha, \beta) & = \frac12\left (1 + a\_r ^ 2 + en\_i ^ 2 + b\_r ^ 2 + b\_i ^ 2 \right).
+Sedan använder du funktionen sannolikhet för Quantum-mätningar, \begin{align} \Pr (x = \texttt{Zero} | \alpha, \beta) & = \frac12 + a\_r b\_r + a\_i b\_\\\\ \Pr (y = \texttt{Zero} | \alpha, \beta) & = \frac12 + a\_r b\_i-a\_i b\_r \\\\ \Pr (z = \texttt{Zero} | \alpha, \beta) & = \frac12\left (1 + a\_r ^ 2 + a\_i ^ 2 + b\_r ^ 2 + b\_i ^ 2 \right).
 \end{align}
 
 Åtgärden <xref:microsoft.quantum.diagnostics.assertqubitisinstatewithintolerance> implementerar de här försäkrarna om $ \alpha $ och $ \beta $ som värden av typen <xref:microsoft.quantum.math.complex>.
@@ -129,7 +129,7 @@ Dessa strategier implementeras av Canon-åtgärderna <xref:microsoft.quantum.dia
 
 > [!NOTE]
 > Den refererade kontrollen som diskuteras ovan fungerar baserat på [Choi – Jamiłkowski isomorphism](https://en.wikipedia.org/wiki/Channel-state_duality), ett matematiskt ramverk som relaterar åtgärder på $n $ qubits till Entangled-tillstånd på $2n $ qubits.
-> I synnerhet representeras identitets åtgärden på $n $ qubits av $n $-kopior av Entangled-tillstånd $ \ket{\beta_{00}} \mathrel{: =} (\ket{00} + \ket{11})/\sqrt{2}$.
+> I synnerhet representeras identitets åtgärden på $n $ qubits av $n $-kopior av Entangled-tillstånd $ \ket{\ beta_{00}} \mathrel{: =} (\ket{00} + \ket{11})/\sqrt{2}$.
 > Åtgärden <xref:microsoft.quantum.preparation.preparechoistate> implementerar den här isomorphism och förbereder ett tillstånd som representerar en specifik åtgärd.
 
 Den här typen av strategier särskiljs ungefär i en tid – utrymmes kompromisser.
@@ -146,7 +146,7 @@ Den refererade kontrollen anropar däremot varje åtgärd exakt en gång, så at
 Båda dessa tester är användbara för att säkerställa att Quantum program är korrekta.
 
 
-## <a name="further-reading"></a>Mer läsning ##
+## <a name="further-reading"></a>Mer information ##
 
 - <xref:microsoft.quantum.techniques.testing-and-debugging>
 - <xref:microsoft.quantum.diagnostics>

@@ -6,12 +6,12 @@ uid: microsoft.quantum.libraries.error-correction
 ms.author: martinro@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 5aac40686ba9b45a51e0274a1828f2ff7cce6fc3
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: e1b78cf94ae0a043ad275d4cb06b230eafd7fc85
+ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2019
-ms.locfileid: "73184448"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74863205"
 ---
 # <a name="error-correction"></a>Fel korrigering #
 
@@ -28,7 +28,7 @@ I inställningen Quantum ser vi att mätningen är problematisk. Vi kan fortfara
 Det är praktiskt att göra detta för att se hur vi kan generalisera fel korrigering i Quantum-fallet.
 Låt säga att $ \ket{\overline{0}} = \ket{000} = \ket{0} \otimes \ket{0} \otimes \ket{0}$, och låt $ \ket{\overline{1}} = \ket{111}$.
 Efter linearitet har vi definierat vår upprepnings kod för alla indata. till exempel $ \ket{\overline{+}} = (\ket{\overline{0}} + \ket{\overline{1}})/\sqrt{2} = (\ket{000} + \ket{111})/\sqrt{2}$.
-I synnerhet, med ett fel $X _1 $ Act på den mellersta qubit, ser vi att den korrigering som behövs i båda grenarna är exakt $X _1 $: $ $ \begin{align} X_1 \ket{\overline{+}} & = \frac{1}{\sqrt{2}} \left (X_1 \ket{000} + X_1 \ket @no__ t_3_ \right) \\\\ & = \frac{1}{\sqrt{2}} \left (\ket{010} + \ket{101} \right).
+Särskilt, genom att göra ett fel $X _1 $ Act på den mellersta qubit, ser vi att den korrigering som behövs i båda grenarna är exakt $X _1 $: $ $ \begin{align} X_1 \ket{\overline{+}} & = \frac{1}{\sqrt{2}} \left (X_1 \ket{000} + X_1 \ket{111} \right) \\\\ & = \frac{1}{\sqrt{2}} \left (\ket{010} \ket{101} \right).
 \end{align} $ $
 
 Om du vill se hur vi kan identifiera att detta är fallet utan att mäta det mycket tillstånd vi försöker skydda, är det bra att skriva ned vad de olika bit vändningarna gör till våra logiska tillstånd:
@@ -44,7 +44,7 @@ För att skydda det tillstånd som vi kodar måste vi kunna särskilja de tre fe
 Om vi t. ex. mäter $Z _0 $ får vi ett annat resultat för $ \ket{\overline{0}} $ och $ \ket{\overline{1}} $ i fel fallet, så att komprimerar det kodade läget.
 Å andra sidan kan du överväga att mäta $Z _0 Z_1 $, pariteten för de två första bitarna i varje beräknings grund tillstånd.
 Kom ihåg att varje mätning av en Pauli-operatör kontrollerar vilken eigenvalue som det tillstånd som mäts motsvarar, så för varje tillstånd $ \ket{\psi} $ i tabellen ovan kan vi beräkna $Z _0 Z_1 \ket{\psi} $ för att se om vi får $ \pm\ket{\psi} $.
-Observera att $Z _0 Z_1 \ket{000} = \ket{000}$ och att $Z _0 Z_1 \ket{111} = \ket{111}$, så att den här mätningen gör samma sak i både kodade tillstånd.
+Observera att $Z _0 Z_1 \ket{000} = \ket{000}$ och att $Z _0 Z_1 \ket{111} = \ket{111}$, så att det här måttet gör samma sak i både kodade tillstånd.
 Å andra sidan $Z _0 Z_1 \ket{100} =-\ket{100}$ och $Z _0 Z_1 \ket{011} =-\ket{011}$, så resultatet av att mäta $Z _0 Z_1 $ visar användbar information om vilket fel som har inträffat.
 
 För att framhäva detta upprepas tabellen ovan, men du kan lägga till resultaten från Mät $Z _0 Z_1 $ och $Z _1 Z_2 $ på varje rad.
@@ -67,7 +67,7 @@ I synnerhet betonar vi att återställningen är en *klassisk* härlednings proc
 > På samma sätt kan du använda en åtgärd för att vända fasen `Z` mappar $ \ket{\overline{1}} $ till $-\ket{\overline{1}} $, och kommer därför att mappa $ \ket{\overline{+}} $ till $ \ket{\overline{-}} $.
 > Ofta kan koder skapas för att hantera större antal fel och för att hantera $Z $-fel samt $X $-fel.
 
-Insikter om att vi kan beskriva mätningar i en Quantum-fel korrigering som fungerar på samma sätt i alla kod lägen, är ESSENSE av *stabiliserings*-och.
+Insikter om att vi kan beskriva mätningar i en Quantum-fel korrigering som fungerar på samma sätt i alla kod stater, är grunden för den *stabiliseringsbaserade formaliteten*.
 I Q # Canon finns ett ramverk för att beskriva kodning i och avkodning från stabiliserings koder och för att beskriva hur en återställning av fel uppstår.
 I det här avsnittet beskriver vi det här ramverket och dess program till några vanliga Quantum Error-felkorrigerings koder.
 
@@ -117,6 +117,6 @@ using (scratch = Qubit[nScratch]) {
 }
 ```
 
-Vi utforskar detta mer detaljerat i [kod exemplet bit flip](https://github.com/Microsoft/Quantum/tree/master/Samples/src/BitFlipCode).
+Vi utforskar detta mer detaljerat i [kod exemplet bit flip](https://github.com/microsoft/Quantum/tree/master/samples/error-correction/bit-flip-code).
 
-Från bit-flip-koden tillhandahålls Q # Canon med implementeringar av den [qubit perfekta koden](https://arxiv.org/abs/1305.08)och den [sju qubit koden](https://arxiv.org/abs/quant-ph/9705052), som båda kan korrigera ett godtyckligt qubit-fel.
+Från bit-flip-koden tillhandahålls Q # Canon med implementeringar av den [qubit perfekta koden](https://arxiv.org/abs/quant-ph/9602019)och den [sju qubit koden](https://arxiv.org/abs/quant-ph/9705052), som båda kan korrigera ett godtyckligt qubit-fel.

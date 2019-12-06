@@ -7,12 +7,12 @@ ms.date: 10/19/2019
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.howto.createproject
-ms.openlocfilehash: b4bec5e7a174b7e2d588331dd2093c7b23a728b0
-ms.sourcegitcommit: aa5e6f4a2deb4271a333d3f1b1eb69b5bb9a7bad
+ms.openlocfilehash: 10b1048501c2de055f5711fc0fdbc4bac76e8f77
+ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73444182"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74864414"
 ---
 # <a name="create-a-q-project-in-your-development-environment"></a>Skapa ett Q #-projekt i utvecklings miljön
 
@@ -99,15 +99,15 @@ Nu kan du fortsätta att utveckla ditt Quantum-program.
 
 1. Markera **Cell** > **köra celler** för att köra antecknings boken. `SayHello` kommer snart att visas i cellens utdata:
 
-    ![Jupyter Notebook-cell med Q # Code](~/media/install-guide-jupyter.png)
+    ![Jupyter Notebook-cell med Q#-kod](~/media/install-guide-jupyter.png)
 
     När du kör i Jupyter-anteckningsböcker kompileras Q #-koden och antecknings boken visar namnet på den eller de åtgärder som den hittar.
 
-1. I en ny cell simulerar du körningen i en Quantum-dator för den åtgärd som du nyss skapade med hjälp av `%simulate` Magic:
+1. I en ny cell simulerar du körningen i en kvantdator för den åtgärd som du nyss skapade med hjälp av `%simulate`-magic:
 
-    ![Jupyter Notebook-cell med% simulera Magic](~/media/install-guide-jupyter-simulate.png)
+    ![Jupyter Notebook-cell med %simulate magic](~/media/install-guide-jupyter-simulate.png)
 
-    Du bör se meddelandet som skrivs ut på skärmen tillsammans med resultatet av den åtgärd du anropade (i det här fallet tomt).
+    Du bör se meddelandet på skärmen tillsammans med resultatet av den åtgärd du anropade (i det här fallet är det tomt).
 
 Nu kan du lägga till andra Q #-åtgärder för att fortsätta din Quantum-utveckling.
 
@@ -150,12 +150,14 @@ Nu kan du fortsätta med din Quantum-utveckling med Visual Studio
 
     * Gå till **Visa** -> **Kommandopaletten**
     * Välj **Q #: skapa nytt projekt**
+    * Välj **fristående konsol program**
     * Gå till den plats i filsystemet där du vill skapa programmet
     * Klicka på knappen **Öppna nytt projekt...** när projektet har skapats
 
 1. Kör programmet:
 
-    * Gå till **Felsökning** -> **Starta utan felsökning**
+    * Gå till **terminal** -> **ny terminal**
+    * Ange `dotnet run`
     * Du bör se följande text i utdatafönstret `Hello quantum world!`
 
 Nu kan du fortsätta med din Quantum-utveckling med Visual Studio Code.

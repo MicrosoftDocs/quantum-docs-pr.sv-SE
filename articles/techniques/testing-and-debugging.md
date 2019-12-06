@@ -6,12 +6,12 @@ ms.author: mamykhai@microsoft.com
 uid: microsoft.quantum.techniques.testing-and-debugging
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 25679331f1bed9f98b86c6eb20f511c891bac1af
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: d352ffa315b654cfcf8991fa116465d3dad49f0a
+ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "73183496"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74864278"
 ---
 # <a name="testing-and-debugging"></a>Testning och fel sökning
 
@@ -30,7 +30,7 @@ Q # stöder skapande av enhets test för Quantum-program och som kan köras som 
 #### <a name="visual-studio-2019tabtabid-vs2019"></a>[Visual Studio 2019](#tab/tabid-vs2019)
 
 Öppna Visual Studio 2019. Gå till `File`-menyn och välj `New` > `Project...`.
-Välj `Q# Test Project` mall under `Installed` > `Visual C#`i Utforskaren.
+I det övre högra hörnet söker du efter `Q#`och väljer `Q# Test Project`s mal len.
 
 #### <a name="command-line--visual-studio-codetabtabid-vscode"></a>[Kommandorad/Visual Studio Code](#tab/tabid-vscode)
 
@@ -43,12 +43,13 @@ $ code . # To open in Visual Studio Code
 
 ****
 
-I båda fallen kommer det nya projektet att ha två öppna filer.
-Den första filen `Tests.qs`, är en lämplig plats för att definiera nya Q # Unit-tester.
-Inlednings vis innehåller den här filen en test `AllocateQubitTest` som kontrollerar att en nyligen allokerad qubit är i läget $ \ket{0}$ och skriver ut ett meddelande:
+Det nya projektet kommer att ha en enda fil `Tests.qs`, vilket ger en bra plats för att definiera nya Q # Unit-tester.
+Inlednings vis innehåller den här filen en test `AllocateQubit` som kontrollerar att en nyligen allokerad qubit är i läget $ \ket{0}$ och skriver ut ett meddelande:
 
 ```qsharp
-    operation AllocateQubitTest () : Unit {
+    @Test("QuantumSimulator")
+    operation AllocateQubit () : Unit {
+
         using (q = Qubit()) {
             Assert([PauliZ], [q], Zero, "Newly allocated qubit must be in the |0⟩ state.");
         }
@@ -57,28 +58,16 @@ Inlednings vis innehåller den här filen en test `AllocateQubitTest` som kontro
     }
 ```
 
-Alla Q #-åtgärder som är kompatibla med typen `(Unit => Unit)` eller funktionen som är kompatibla med `(Unit -> Unit)` kan köras som ett enhets test. 
-
-Den andra filen `TestSuiteRunner.cs` innehåller en metod som används för att identifiera och köra Q # Unit-tester. Detta är metoden `TestTarget` som är kommenterad med `OperationDriver` attribut.
-`OperationDriver`-attributet ingår i Xunit-tilläggs biblioteket Microsoft. Quantum. simulering. Xunit.
-Enhets test ramverket anropar `TestTarget` metod för varje Q # enhets test som har identifierats.
-Ramverket skickar beskrivningen av enhets test till metoden via `op` argument. Följande kodrad:
-```csharp
-op.TestOperationRunner(sim);
+: ny: varje Q #-åtgärd eller funktion som tar ett argument av typen `Unit` och returnerar `Unit` kan markeras som ett enhets test via `@Test("...")`-attributet. Argumentet till detta attribut, `"QuantumSimulator"` ovan, anger målet som testet körs på. Ett enda test kan köras på flera mål. Lägg till exempel till ett attribut `@Test("ResourcesEstimator")` ovan `AllocateQubit`. 
+```qsharp
+    @Test("QuantumSimulator")
+    @Test("ResourcesEstimator")
+    operation AllocateQubit () : Unit {
+        ...
 ```
-Kör enhets testet på `QuantumSimulator`.
+Spara filen och kör alla tester. Det bör nu finnas två enhets test, en där AllocateQubit körs på QuantumSimulator och en där den körs i ResourceEstimator. 
 
-Som standard söker mekanismen för enhets test identifiering efter alla Q #-funktioner eller-åtgärder av kompatibel typ som uppfyller följande egenskaper:
-* Placeras i samma sammansättning som metoden som är kommenterad med `OperationDriver`-attributet.
-* Finns i samma namnrymd som metoden som är kommenterad med `OperationDriver`-attributet.
-* Har ett namn som slutar med `Test`.
-
-En sammansättning, ett namn område och ett suffix för enhets test funktioner och åtgärder kan anges med valfria parametrar för attributet `OperationDriver`:
-* `AssemblyName` parameter anger namnet på sammansättningen som genomsöks efter tester.
-* `TestNamespace` parameter anger namnet på namn området som söks efter tester.
-* `Suffix` anger suffixet för åtgärds-eller funktions namn som anses vara enhets test.
-
-Dessutom kan du med `TestCasePrefix` valfria parametern ange ett prefix för namnet på test ärendet. Prefixet framför åtgärds namnet visas i listan över test fall. `TestCasePrefix = "QSim:"` kan till exempel göra att `AllocateQubitTest` visas som `QSim:AllocateQubitTest` i listan med hittade tester. Detta kan vara användbart för att indikera till exempel vilken simulator som används för att köra ett test.
+I Q #-kompilatorn identifieras de inbyggda målen "QuantumSimulator", "ToffoliSimulator" och "ResourcesEstimator" som giltiga körnings mål för enhets tester. Det är också möjligt att ange ett fullständigt kvalificerat namn för att definiera ett anpassat körnings mål. 
 
 ### <a name="running-q-unit-tests"></a>Köra Q # enhets test
 
@@ -90,7 +79,7 @@ Som en konfiguration per lösning går du till `Test`-menyn och väljer `Test Se
 > Standardinställningen för processor arkitektur för Visual Studio lagras i lösnings alternativ filen (`.suo`) för varje lösning.
 > Om du tar bort den här filen måste du välja `X64` som processor arkitektur igen.
 
-Bygg projektet, gå till `Test`-menyn och välj `Windows` > `Test Explorer`. `AllocateQubitTest` visas i listan med tester i `Not Run Tests`s gruppen. Välj `Run All` eller kör det här enskilda testet så bör det passas!
+Bygg projektet, gå till `Test`-menyn och välj `Windows` > `Test Explorer`. `AllocateQubit` visas i listan med tester i `Not Run Tests`s gruppen. Välj `Run All` eller kör det här enskilda testet så bör det passas!
 
 #### <a name="command-line--visual-studio-codetabtabid-vscode"></a>[Kommandorad/Visual Studio Code](#tab/tabid-vscode)
 
@@ -122,30 +111,17 @@ Test Run Successful.
 Test execution time: 1.9607 Seconds
 ```
 
+Enhets test kan filtreras efter namn och/eller körnings mål:
+
+```bash 
+$ dotnet test --filter "Target=QuantumSimulator"
+$ dotnet test --filter "Name=AllocateQubit"
+```
+
+
 ***
 
-## <a name="logging-and-assertions"></a>Loggning och intyg
-
-En viktig följd av det faktum att funktioner i Q # inte har några sido effekter är att alla effekter av att köra en funktion vars Utdatatyp är den tomma tuppeln `()` aldrig kan observeras i ett Q #-program.
-Det innebär att en måldator kan välja att inte köra någon funktion som returnerar `()` med garantin att detta utelämnande inte ändrar beteendet för någon av följande Q #-koder.
-Detta gör att funktioner returnerar `()` ett användbart verktyg för att bädda in kontroller och fel söknings logik i Q #-program. 
-
-### <a name="logging"></a>Loggning
-
 Den inbyggda funktionen <xref:microsoft.quantum.intrinsic.message> har typen `(String -> Unit)` och gör det möjligt att skapa diagnostiska meddelanden.
-
-`onLog` åtgärden för `QuantumSimulator` kan användas för att definiera åtgärder som utförs när Q # Code-anrop `Message`. Som standard skrivs loggade meddelanden ut till standardutdata.
-
-När du definierar en enhets tests Suite kan de loggade meddelandena dirigeras till test resultatet. När ett projekt skapas från en test projekt mal len för Q #, är denna omdirigering förkonfigurerad för sviten och skapas som standard enligt följande:
-
-```qsharp
-using (var sim = new QuantumSimulator())
-{
-    // OnLog defines action(s) performed when Q# test calls operation Message
-    sim.OnLog += (msg) => { output.WriteLine(msg); };
-    op.TestOperationRunner(sim);
-}
-```
 
 #### <a name="visual-studio-2019tabtabid-vs2019"></a>[Visual Studio 2019](#tab/tabid-vs2019)
 
@@ -156,11 +132,15 @@ När du har kört ett test i test Utforskaren och klickar på testet visas en pa
 #### <a name="command-line--visual-studio-codetabtabid-vscode"></a>[Kommandorad/Visual Studio Code](#tab/tabid-vscode)
 
 Status för pass/misslyckande för varje test skrivs ut till-konsolen med `dotnet test`.
-Vid misslyckade tester skrivs utdata som loggats till följd av `output.WriteLine(msg)` anropet ovan också till-konsolen för att hjälpa till att diagnostisera felet.
+Vid misslyckade tester skrivs utdata också ut till-konsolen för att hjälpa till att diagnostisera felet.
 
 ***
 
-### <a name="assertions"></a>Intyg
+## <a name="assertions"></a>Intyg
+
+Eftersom funktioner i Q # inte har några _logiska_ sid effekter, kan alla _andra typer_ av effekter av att köra en funktion vars datatyp är den tomma tuppeln `()` aldrig observeras i ett Q #-program.
+Det innebär att en måldator kan välja att inte köra någon funktion som returnerar `()` med garantin att detta utelämnande inte ändrar beteendet för någon av följande Q #-koder.
+Detta gör att funktioner returnerar `()` ett användbart verktyg för att bädda in kontroller och fel söknings logik i Q #-program. 
 
 Samma logik kan användas för att implementera kontroller. Vi ska tänka på ett enkelt exempel:
 
@@ -203,7 +183,7 @@ För att hjälpa till att felsöka Quantum-program erbjuder <xref:microsoft.quan
 
 ### <a name="dumpmachine"></a>DumpMachine
 
-Den fullständiga Quantum-simulatorn som distribueras som en del av Quantum Development Kit skriver till filen [Wave-funktionen](https://en.wikipedia.org/wiki/Wave_function) i hela Quantum-systemet, som en endimensionell matris med komplexa tal, där varje element representerar amplituden för sannolikhet för mätning av beräknings bas tillstånd $ \ket{n} $, där $ \ket{n} = \ket{b_{n-1}... b_1b_0} $ för BITS $\{b_i\}$. Till exempel på en dator som bara har två qubits allokerade och i Quantum-tillstånd $ $ \begin{align} \ket{\psi} = \frac{1}{\sqrt{2}} \ket{00}-\frac{(1 + i)}{2} \ket{10}, \end{align} $ $ Calling <xref:microsoft.quantum.diagnostics.dumpmachine> genererar dessa utdata :
+Den fullständiga Quantum-simulatorn som distribueras som en del av Quantum Development Kit skriver till filen [Wave-funktionen](https://en.wikipedia.org/wiki/Wave_function) i hela Quantum-systemet, som en endimensionell matris med komplexa tal, där varje element representerar amplituden av sannolikheten för att mäta beräknings bas status $ \ket{n} $, där $ \ket{n} = \ket{b_ {n-1}... b_1b_0} $ för BITS $\{b_i\}$. Till exempel på en dator som bara har två qubits tilldelade och i Quantum-tillstånd $ $ \begin{align} \ket{\psi} = \frac{1}{\sqrt{2}} \ket{00}-\frac{(1 + i)}{2} \ket{10}, \end{align} $ $ anropa <xref:microsoft.quantum.diagnostics.dumpmachine> genererar följande utdata:
 
 ```
 # wave function for qubits with ids (least to most significant): 0;1
@@ -333,7 +313,7 @@ namespace Samples {
 
 <xref:microsoft.quantum.diagnostics.dumpregister> fungerar som <xref:microsoft.quantum.diagnostics.dumpmachine>, förutom att det också tar en matris med qubits för att begränsa den mängd information som är relevant för motsvarande qubits.
 
-Precis som med <xref:microsoft.quantum.diagnostics.dumpmachine>är den information som genereras av <xref:microsoft.quantum.diagnostics.dumpregister> beroende av mål datorn. För den fulla tillstånds Quantum simulatorn skrivs den till filen Wave-funktionen till en global fas av det Quantum-underordnade systemet som genererats av den angivna qubits i samma format som <xref:microsoft.quantum.diagnostics.dumpmachine>.  Ta till exempel en dator med endast två qubits tilldelade och i Quantum-tillstånd $ $ \begin{align} \ket{\psi} = \frac{1}{\sqrt{2}} \ket{00}-\frac{(1 + i)}{2} \ket{10} =-e ^ {-i \ PI/4} ((\frac{1}{\sqrt{2}} \ ket{0}-\frac{(1 + i)}{2} \ket{1}) \otimes \frac{-(1 + i)} {\sqrt{2}} \ket{0}), \end{align} $ $ anropa <xref:microsoft.quantum.diagnostics.dumpregister> för `qubit[0]` genererar följande utdata:
+Precis som med <xref:microsoft.quantum.diagnostics.dumpmachine>är den information som genereras av <xref:microsoft.quantum.diagnostics.dumpregister> beroende av mål datorn. För den fulla tillstånds Quantum simulatorn skrivs den till filen Wave-funktionen till en global fas av det Quantum-underordnade systemet som genererats av den angivna qubits i samma format som <xref:microsoft.quantum.diagnostics.dumpmachine>.  Ta till exempel en dator med endast två qubits tilldelade och i Quantum-tillstånd $ $ \begin{align} \ket{\psi} = \frac{1}{\sqrt{2}} \ket{00}-\frac{(1 + i)}{2} \ket{10} =-e ^ {-i \ PI/4} ((\frac{1}{\sqrt{2}} \ket{0}-\frac{(1 + i)}{2} \ket{1}) \otimes \frac{-(1 + i)} {\sqrt{2}} \ket{0}). \end{align} $ $ som anropar <xref:microsoft.quantum.diagnostics.dumpregister> för `qubit[0]` genererar utdata :
 
 ```
 # wave function for qubits with ids (least to most significant): 0
@@ -382,7 +362,6 @@ namespace app
 
 ## <a name="debugging"></a>Felsökning
 
-Utöver `Assert` och `Dump` funktioner och åtgärder stöder Q # en delmängd av standard funktioner för Visual Studio-fel sökning: [Ange rad Bryt punkter](https://docs.microsoft.com/visualstudio/debugger/using-breakpoints), [stega genom kod med hjälp av F10](https://docs.microsoft.com/visualstudio/debugger/navigating-through-code-with-the-debugger) och [inspektera värden för klassiska variabler ](https://docs.microsoft.com/visualstudio/debugger/autos-and-locals-windows)är allt möjligt vid kod körning i simulatorn.
+I början av `Assert` och `Dump` funktioner och åtgärder har Q # stöd för en delmängd vanliga fel söknings funktioner i Visual Studio: att [ställa in rad Bryt punkter](https://docs.microsoft.com/visualstudio/debugger/using-breakpoints), [stega igenom kod med hjälp av F10](https://docs.microsoft.com/visualstudio/debugger/navigating-through-code-with-the-debugger) och [kontrol lera värden för klassiska variabler](https://docs.microsoft.com/visualstudio/debugger/autos-and-locals-windows) är alla möjliga vid kod körning i simulatorn.
 
-Det finns ännu inte stöd för fel sökning i Visual Studio Code.
-
+Fel sökning i Visual Studio Code utnyttjar de fel söknings funktioner som tillhandahålls av C# för Visual Studio Code-tillägget som drivs av OmniSharp och kräver att den [senaste versionen](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp)installeras. 

@@ -6,12 +6,12 @@ ms.author: nawiebe@microsoft.com
 ms.date: 10/09/2017
 ms.topic: article-type-from-white-list
 uid: microsoft.quantum.chemistry.concepts.simulationalgorithms
-ms.openlocfilehash: 905b03478d453e475fc1e49ea5f88dd0cd2704bc
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: 4d1924386eadb427e8f53bc0a177453a341f185f
+ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "73184074"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74864465"
 ---
 # <a name="simulating-hamiltonian-dynamics"></a>Simulera Hamiltonian Dynamics
 
@@ -22,20 +22,20 @@ Vi förklarar dessa tre metoder och ger konkreta Q #-exempel på hur du implemen
 
 ## <a name="trottersuzuki-formulas"></a>Trotter – Suzuki formler
 Idén bakom Trotter – Suzuki formler är enkla: uttrycka Hamiltonian som en summa av enkel för att simulera Hamiltonians och sedan uppskatta den totala utvecklingen som en följd av dessa enklare utvecklingar.
-I synnerhet ska $H = \sum_{j = 1} ^ m H_j $ vara Hamiltonian.
-Sedan, $ $ e ^ {-i\sum_ {j = 1} ^ m H_j t} = \prod_{j = 1} ^ m e ^ {-iH_j t} + O (m ^ 2 t ^ 2), $ $ som är att säga att om $t \ll $1, blir felet i den här uppskattningen försumbar.
+I synnerhet ska $H = \ sum_ {j = 1} ^ m H_j $ vara Hamiltonian.
+Sedan $ $ e ^ {-i \ sum_ {j = 1} ^ m H_j t} = \ prod_ {j = 1} ^ m e ^ {-iH_j t} + O (m ^ 2 t ^ 2), $ $, vilket innebär att om $t \ll $1, blir felet i den här uppskattningen försumbar.
 Observera att om $e ^ {-i H t} $ var en vanlig exponent, skulle felet i den här uppskattningen inte vara $O (m ^ 2 t ^ 2) $: det skulle vara noll.
-Det här felet beror på att $e ^ {-iHt} $ är en operator exponentiell och därför att det uppstår ett fel när du använder den här formeln på grund av att det faktum att $H _J $-villkoren inte går ut (*d.v.s.* $H _J H_k \Ne H_k H_j $ i allmänhet).
+Det här felet beror på att $e ^ {-iHt} $ är en operator exponentiell och därför att det uppstår ett fel när du använder den här formeln på grund av att $H _j $-villkoren inte går ut (*d.v.s.* $H _J H_k \ne H_k $ i allmänhet).
 
 Om $t $ är stor kan Trotter – Suzuki-formler fortfarande användas för att simulera Dynamicset korrekt genom att dela upp det i en sekvens med korta tids steg.
 Låt $r $ vara det antal steg som har vidtagits under utvecklingen av tiden.
-Sedan har vi den $ $ e ^ {-i\sum_ {j = 1} ^ m H_j t} = \left (\prod_{j = 1} ^ m e ^ {-iH_j t/r} \ Right) ^ r + O (m ^ 2 t ^ 2/r). $ $ som innebär att om $r $ skalas som $m ^ 2 t ^ 2/\ Epsilon $ kan felet göras högst $ \epsilon $ för alla $ \epsilon > 0 $.
+Sedan har vi den $ $ e ^ {-i \ sum_ {j = 1} ^ m H_j t} = \left (\ prod_ {j = 1} ^ m e ^ {-iH_j t/r} \ höger) ^ r + O (m ^ 2 t ^ 2/r). $ $ som innebär att om $r $ skalas som $m ^ 2 t ^ 2/\ Epsilon $ kan felet göras högst $ \epsilon $ för alla $ \epsilon > 0 $.
 
 Mer exakta uppskattningar kan byggas genom att skapa en sekvens med operatorer exponentiella så att fel villkoren avbryts.
-Den enklaste formeln, den symmetriska Trotter-formeln eller Strang-delningen, tar formuläret $ $ U_1 (t) = \prod_{j = 1} ^ m e ^ {-iH_j t/2} \ prod_ {j = m} ^ 1 e ^ {-iH_j t} = e ^ {-iHt} + O (m ^ 3 t ^ 3), $ $ som kan göras mindre än $ \epsilon $ för alla $ \epsilon > 0 $ genom att välja $ r $ för att skala som $m ^ {3/2} t ^ {3/2}/\sqrt {\ Epsilon} $.
+Den enklaste formeln, den symmetriska Trotter-formeln eller Strang-delningen, tar formuläret $ $ U_1 (t) = \ prod_ {j = 1} ^ m e ^ {-iH_j t/2} \ prod_ {j = m} ^ 1 e ^ {-iH_j t} = e ^ {-iHt} + O (m ^ 3 t ^ 3), $ $ som kan göras mindre än $ \epsilon $ för alla $ \epsilon > 0 $ genom att välja $r $ för att skala som $m ^ {3/2} t ^ {3/2}/\sqrt {\ Epsilon} $.
 
 Även Trotter formler med högre ordning kan skapas baserat på $U _1 $.
-Det enklaste är följande fjärde order formel, introducerades ursprungligen av Suzuki: $ $ U_2 (t) = U_1 ^ 2 (s_1t) U_1 ([1-4s_1] t) U_1 ^ 2 (s_1 t) = e ^ {-iHt} + O (m ^ 5T ^ 5), $ $ WHERE $s _1 = (4-4 ^ {1/3}) ^{-1}$.
+Det enklaste är följande fjärde order formel, introducerades ursprungligen av Suzuki: $ $ U_2 (t) = U_1 ^ 2 (s_1t) U_1 ([1-4s_1] t) U_1 ^ 2 (s_1 t) = e ^ {-iHt} + O (m ^ 5T ^ 5), $ $ där $s _1 = (4-4 ^ {1/3}) ^{-1}$.
 I allmänhet kan godtyckliga formler med hög ordning skapas på samma sätt; kostnaderna för att använda mer komplexa integrerare uppväger dock ofta fördelarna bortom den fjärde ordningen för de flesta praktiska problemen.
 
 För att se till att strategierna ovan fungerar måste vi ha en metod för att simulera en bred klass $e ^ {-iH_j t} $.
@@ -86,7 +86,7 @@ Vår start punkt är en [Jordanien – Wigner kodning](xref:microsoft.quantum.ch
     var qSharpData = jordanWignerEncoding.ToQSharpFormat();
 ```
 
-Det här formatet på den Jordanien – Wigner-reprsentation som kan förbrukas av algoritmerna för Q #-simulering är en användardefinierad typ `JordanWignerEncodingData`.
+Det här formatet på den Jordanien – Wigner-representation som används av algoritmerna för Q #-simulering är en användardefinierad typ `JordanWignerEncodingData`.
 I Q # skickas det här formatet till en bekvämlighets funktion `TrotterStepOracle` som returnerar en operator som uppskattar tids utvecklingen med hjälp av Trotter – Suzuki Integrator, förutom andra parametrar som krävs för att köra den.
 
 ```qsharp
@@ -101,7 +101,7 @@ let integratorOrder = 4;
 
 // `oracle` is an operation that applies a single time-step of evolution for duration `stepSize`.
 // `rescale` is just `1.0/stepSize` -- the number of steps required to simulate unit-time evolution.
-// `nQubits` is the number of qubits that must be allocated to run the `oracle` operatrion.
+// `nQubits` is the number of qubits that must be allocated to run the `oracle` operation.
 let (nQubits, (rescale, oracle)) =  TrotterStepOracle (qSharpData, stepSize, integratorOrder);
 
 // Let us now apply a single time-step.
@@ -115,7 +115,7 @@ using(qubits = Qubit[nQubits]){
 }
 ```
 
-För den här implementeringen används vissa optimeringar som diskuteras i [simuleringen av elektroniska Hamiltonians med Quantum Computers](https://arxiv.org/abs/1001.3855) och [förbättrad Quantum-algoritmer för Quantum kemi](https://arxiv.org/abs/1403.1539) för att minimera antalet qubit-rotationer krävs, samt för att minska simulerings fel.
+För den här implementeringen används till exempel vissa optimeringar som diskuteras i [simuleringen av elektronisk struktur Hamiltonians med Quantum Computers](https://arxiv.org/abs/1001.3855) och [förbättrar Quantum-algoritmer för Quantum kemi](https://arxiv.org/abs/1403.1539) för att minimera antalet enskilda qubit-rotationer, samt minska simulerings fel.
 
 ## <a name="qubitization"></a>Qubitization
 
@@ -124,8 +124,8 @@ Medan qubitization kräver fler qubits än Trotter-formler, lovar metoden optima
 Därför har det blivit en prioriterad metod för att simulera Hamiltonian Dynamics i allmänhet och för att lösa det elektroniska struktur problemet i synnerhet.
 
 På hög nivå uppnår qubitization detta genom följande steg.
-Börja med att låta $H = \sum_j h_j H_j $ för enhetlig och Hermitian $H _J $ och $h _J \ ge $0.
-Genom att utföra ett par av reflektioner implementerar qubitization en operator som motsvarar $ $W = e ^ {\pm i \cos ^{-1}(H/| h | _1)}, $ $ där $ | H | _1 = \sum_j | h_j | $.
+Börja med att låta $H = \ sum_j h_j H_j $ för välHermitiane och $H _j $ och $h _j \ge $0.
+Genom att utföra ett par av reflektioner implementerar qubitization en operator som motsvarar $ $W = e ^ {\pm i \cos ^{-1}(H/| h | _1)}, $ $ där $ | H | _1 = \ sum_j | h_j | $.
 Nästa steg är att transformera Eigenvalues av en LED-operator från $e ^ {i\pm \cos ^{-1}(E_k/| h | _1)} $, där $E _k $ är Eigenvalues $H $ till $e ^ {-iE_k t} $.
 Detta kan uppnås med hjälp av en mängd olika metoder för att omvandla Quantum-värden, inklusive [bearbetning av Quantum-signaler](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.118.010501).
 
@@ -135,26 +135,26 @@ Detta är viktigt eftersom det gör att Spectral-transformeringen kan utföras k
 På en mer detaljerad nivå kräver implementeringen av qubitization två under rutiner som tillhandahåller gränssnitten för Hamiltonian.
 Till skillnad från Trotter – Suzuki-metoder är dessa underrutinerna Quantum inte för klassisk användning och implementeringen kommer att kräva att logarithmically fler qubits än skulle krävas för en Trotter-baserad simulering.
 
-Den första Quantum-underrutinen som qubitization använder kallas $ \operatorname{Select} $ och det är lovat att ge \begin{Equation} \operatorname{Select} \ket{j} \ket{\psi} = \ket{j} H_j \ket{\psi}, \end{Equation} där varje $H _J $ antas vara Hermitian och enhetlighet.
+Den första Quantum-underrutinen som qubitization använder kallas $ \operatorname{Select} $ och det är lovat att ge \begin{Equation} \operatorname{Select} \ket{j} \ket{\psi} = \ket{j} H_j \ket{\psi}, \end{Equation} där varje $H _j $ antas vara Hermitian och enhetlighet.
 Även om det kan förefalla vara restriktivt, kom ihåg att Pauli-operatörerna är Hermitian och på samma sätt och att program som Quantum kemi-simulering i naturlig utsträckning omfattas av detta ramverk.
 $ \Operatorname{Select} $-åtgärden, kanske överraskande, är i själva verket en reflektions åtgärd.
-Detta kan ses från det faktum att $ \operatorname{Select} ^ 2 \ ket {j} \ket{\psi} = \ket{j} \ket{\psi} $, eftersom varje $H _J $ är enhetlig och Hermitian och därför har Eigenvalues $ \pm $1.
+Detta kan ses från det faktum att $ \operatorname{Select} ^ 2 \ ket {j} \ket{\psi} = \ket{j} \ket{\psi} $, eftersom varje $H _j $ är enhetlig och Hermitian och därför har Eigenvalues $ \pm $1.
 
 Den andra subrutinen kallas $ \operatorname{Prepare} $.
-Medan Select-åtgärden ger en enhetlig åtkomst till var och en av Hamiltonian-termerna $H _J $, ger en metod för att komma åt koefficienterna $h _J $, \begin{Equation} \operatorname{Prepare}\ket{0} = \sum_j \sqrt{\frac{h_j}{ | h | _1}} \ket{j}.
+Medan Select-åtgärden ger en konsekvent åtkomst till var och en av Hamiltonian termer $H _j $, ger en metod för att komma åt koefficienterna $h _j $, \begin{Equation} \operatorname{Prepare}\ket{0} = \ sum_j \sqrt{\frac{h_j} {| H | _1}} \ket{j}.
 \end{Equation}, med hjälp av en multiplicering-kontrollerad fas grind, ser vi att $ $ \Lambda\ket{0}^ {\otimes n} = \begin{Cases} \-\ket{x} & \text{IF} x = 0 \\\
         \ket{x} & \text{otherwise} \end{cases}.
 $$
 
-$ \Operatorname{Prepare} $-åtgärden används inte direkt i qubitization, utan används i stället för att implementera en reflektion om det tillstånd som $ \operatorname{Prepare} $ skapar $ $ \begin{align} R &amp; = 1-2 \ operatorname {prepare} \ket{0}\bra @no_ _t_2_ \operatorname{Prepare} ^{-1} \\\\ &amp; = \operatorname{Prepare} \Lambda \operatorname{Prepare} ^{-1}.
+$ \Operatorname{Prepare} $-åtgärden används inte direkt i qubitization, utan används i stället för att implementera en reflektion om det tillstånd som $ \operatorname{Prepare} $ skapar $ $ \begin{align} R &amp; = 1-2 \ operatorname {prepare} \ket{0}\bra{0} \operatorname{Prepare} ^{-1} \\\\ &amp; = \operatorname{Prepare} \Lambda \operatorname{Prepare} ^{-1}.
 \end{align} $ $
 
 Operatorn guida, $W $, kan uttryckas som $ \operatorname{Select} $ och $R $-åtgärder som $ $ W = \operatorname{Select} R, $ $ som återigen kan ses för att implementera en operatör som är likvärdig (upp till en isometry) att $e ^ {\pm i \cos ^{-1}(H/| H | _1)} $.
 
 Dessa under rutiner är enkla att konfigurera i Q #.
-Som exempel bör du tänka på den enkla qubit transversella-Ising Hamiltonian där $H = X_1 + X_2 + Z_1 Z_2 $.
+Som exempel bör du överväga den enkla qubit-Ising Hamiltonian där $H = X_1 + X_2 + Z_1 Z_2 $.
 I det här fallet anropas den Q #-kod som implementerar $ \operatorname{Select} $-åtgärden av <xref:microsoft.quantum.canon.multiplexoperations>, medan $ \operatorname{Prepare} $-åtgärden kan implementeras med hjälp av <xref:microsoft.quantum.preparation.preparearbitrarystate>.
-Ett exempel som inbegriper simulering av Hubbard-modellen finns som ett [Q #-exempel](https://github.com/Microsoft/Quantum/tree/master/Samples/src/HubbardSimulation).
+Ett exempel som inbegriper simulering av Hubbard-modellen finns som ett [Q #-exempel](https://github.com/microsoft/Quantum/tree/master/samples/simulation/hubbard).
 
 Att manuellt ange dessa steg för valfria kemi-problem skulle kräva mycket ansträngning, vilket undviks med hjälp av kemi-biblioteket.
 På samma sätt som för Trotter – Suzuki simulerings algoritmen ovan skickas `JordanWignerEncodingData` till den bekvämlighets funktion `QubitizationOracle` som returnerar en funktions Operator, förutom andra parametrar som krävs för körningen.
@@ -165,7 +165,7 @@ let qSharpData = ...
 
 // `oracle` is an operation that applies a single time-step of evolution for duration `stepSize`.
 // `rescale` is just `1.0/oneNorm`, where oneNorm is the sum of absolute values of all probabilities in state prepared by `Prepare`.
-// `nQubits` is the number of qubits that must be allocated to run the `oracle` operatrion.
+// `nQubits` is the number of qubits that must be allocated to run the `oracle` operation.
 let (nQubits, (rescale, oracle)) =  QubitizationOracle (qSharpData, stepSize, integratorOrder);
 
 // Let us now apply a single step of the quantum walk.

@@ -6,12 +6,12 @@ ms.author: Christopher.Granade@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
 uid: microsoft.quantum.techniques.qubits
-ms.openlocfilehash: d1a8ccc9423a9a04e12bc98e3783790232b2f5d8
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: 477b358c3eba58b62926b4e9094770c9741cac92
+ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "73183479"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74864261"
 ---
 # <a name="working-with-qubits"></a>Arbeta med qubits #
 
@@ -43,7 +43,7 @@ Vi kommer att se dessa åtgärder i detalj i de [inre driften och funktionerna](
 
 För det första visas qubit Pauli-operatörer $X $, $Y $ och $Z $ i Q # av de inre åtgärderna `X`, `Y`och `Z`, som var och en har typen `(Qubit => Unit is Adj + Ctl)`.
 Som det beskrivs i [inbyggda funktioner och funktioner](xref:microsoft.quantum.libraries.standard.prelude)kan vi tänka på $X $ och därmed `X` som en åtgärd för att vända eller inte Gate.
-Detta gör att vi kan förbereda tillstånd av formatet $ \ket{s_0 s_1 \dots s_n} $ för en viss klassisk bit-sträng $s $:
+Detta gör att vi kan förbereda tillstånd av formatet $ \ket{s_0 s_1 \dots s_n} $ för viss klassisk bit-sträng $s $:
 
 ```qsharp
 operation PrepareBitString(bitstring : Bool[], register : Qubit[]) : Unit 
@@ -72,7 +72,7 @@ operation Example() : Unit {
 > [!TIP]
 > Senare kommer vi att se fler kompakta sätt att skriva den här åtgärden som inte kräver manuell flödes kontroll.
 
-Vi kan också förbereda tillstånd som $ \ket{+} = \left (\ket{0} + \ket{1}\right)/\sqrt{2}$ och $ \ket{-} = \left (\ket{0}-\ket{1}\right)/\sqrt{2}$ med hjälp av Hadamard Transform $H $ , som representeras i Q # av den inbyggda åtgärden `H : (Qubit => Unit is Adj + Ctl)`:
+Vi kan också förbereda tillstånd som $ \ket{+} = \left (\ket{0} + \ket{1}\right)/\sqrt{2}$ och $ \ket{-} = \left (\ket{0}-\ket{1}\right)/\sqrt{2}$ genom att använda Hadamard Transform $H $, som representeras i Q # av den inre åtgärden `H : (Qubit => Unit is Adj + Ctl)`:
 
 ```qsharp
 operation PreparePlusMinusState(bitstring : Bool[], register : Qubit[]) : Unit {
@@ -90,7 +90,7 @@ operation PreparePlusMinusState(bitstring : Bool[], register : Qubit[]) : Unit {
 
 ## <a name="measurements"></a>Mått ##
 
-Med hjälp av `Measure`-åtgärden, som är en inbyggd icke-enhetlig åtgärd, kan vi extrahera klassisk information från ett objekt av typen `Qubit` och tilldela ett klassiskt värde som ett resultat, som har en reserverad typ `Result`, vilket indikerar att resultatet inte är det längre ett Quantum-tillstånd. Indatamängden till `Measure` är en Pauli axel på Bloch-sfären som representeras av ett objekt av typen `Pauli` (t. ex., till exempel `PauliX`) och ett objekt av typen `Qubit`. 
+Med hjälp av `Measure`-åtgärden, som är en inbyggd icke-enhetlig åtgärd, kan vi extrahera klassisk information från ett objekt av typen `Qubit` och tilldela ett klassiskt värde som ett resultat, som har en reserverad typ `Result`som anger att resultatet inte längre är ett Quantum-tillstånd. Indatamängden till `Measure` är en Pauli axel på Bloch-sfären som representeras av ett objekt av typen `Pauli` (t. ex., till exempel `PauliX`) och ett objekt av typen `Qubit`. 
 
 Ett enkelt exempel är följande åtgärd som skapar en qubit i $ \ket{0}$ State, och som sedan tillämpar en Hadamard-grind ``H`` till den och sedan mäter resultatet i `PauliZ`-basen. 
 
@@ -129,7 +129,7 @@ operation AllMeasurementsZero (qs : Qubit[], pauli : Pauli) : Bool {
 }
 ```
 
-Q #-språket tillåter beroenden av klassiskt kontroll flöde på mätnings resultatet av qubits. På så sätt kan du implementera kraftfulla Probabilistic-gadgetar som kan minska beräknings kostnaden för att implementera unitaries. Som exempel är det enkelt att implementera så att det anropas *upprepas tills det lyckas* i Q #, som är Probabilistic-kretsar som har en *förväntad* låg kostnad i termer av elementära grindar, men som den faktiska kostnaden beror på för en faktisk körning och en faktisk Interfoliering av olika möjliga grenar. 
+Q #-språket tillåter beroenden av klassiskt kontroll flöde på mätnings resultatet av qubits. På så sätt kan du implementera kraftfulla Probabilistic-gadgetar som kan minska beräknings kostnaden för att implementera unitaries. Som exempel är det enkelt att implementera så kallade *REPEAT-until-lyckades* i Q #, som är Probabilistic-kretsar som har en *förväntad* låg kostnad i termer av elementära grindar, men för vilka den faktiska kostnaden beror på en faktisk körning och en faktisk Interfoliering av olika möjliga grenar. 
 
 För att under lätta upprepnings-tills-lyckat (ru: er) mönster, stöder Q # konstruktionen
 ```qsharp
@@ -167,7 +167,7 @@ operation RUScircuit (qubit : Qubit) : Unit {
 
 I det här exemplet visas användningen av en föränderligt-variabel `finished` som ligger inom omfånget för hela upprepnings-tills-korrigering-slingan och som initieras före loopen och uppdateras i korrigerings steget.
 
-Slutligen visar vi ett exempel på ett ru: er-mönster för att förbereda ett Quantum-tillstånd $ \frac{1}{\sqrt{3}} \left (\sqrt{2}\ket{0}+ \ket{1}\right) $, med början från $ \ket{+} $ State. Se även [exempel på enhets testning som tillhandahålls med standard biblioteket](https://github.com/Microsoft/Quantum/blob/master/Samples/src/UnitTesting/RepeatUntilSuccessCircuits.qs): 
+Slutligen visar vi ett exempel på ett ru: er-mönster för att förbereda ett Quantum-tillstånd $ \frac{1}{\sqrt{3}} \left (\sqrt{2}\ket{0}+ \ket{1}\right) $, med början från $ \ket{+} $ State. Se även [exempel på enhets testning som tillhandahålls med standard biblioteket](https://github.com/microsoft/Quantum/blob/master/samples/diagnostics/unit-testing/RepeatUntilSuccessCircuits.qs): 
 
 ```qsharp
 operation RepeatUntilSuccessStatePreparation( target : Qubit ) : Unit {
@@ -212,4 +212,4 @@ operation RepeatUntilSuccessStatePreparation( target : Qubit ) : Unit {
 }
 ```
  
-Viktiga programmerings funktioner som visas i den här åtgärden är en mer komplex `fixup` del av slingan som inbegriper Quantum-åtgärder och användningen av `AssertProb`-uttryck för att fastställa sannolikheten för att mäta Quantum-tillstånd vid vissa angivna punkter i hämtas. Mer information om `Assert` och `AssertProb`-instruktioner finns i [testa och felsöka](xref:microsoft.quantum.techniques.testing-and-debugging) . 
+Viktiga programmerings funktioner som visas i den här åtgärden är en mer komplex `fixup` del av slingan som inbegriper Quantum-åtgärder och användningen av `AssertProb`-uttryck för att fastställa sannolikheten för att mäta Quantum-tillstånd vid vissa angivna punkter i programmet. Mer information om `Assert` och `AssertProb`-instruktioner finns i [testa och felsöka](xref:microsoft.quantum.techniques.testing-and-debugging) . 

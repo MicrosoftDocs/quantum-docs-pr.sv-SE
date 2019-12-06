@@ -1,17 +1,17 @@
 ---
 title: Kontroll av distinkta ingångar | Quantum Computer trace Simulator | Microsoft Docs
-description: Översikt över Quantum Computer trace Simulator
+description: Översikt över spårningssimulator för kvantdator
 author: vadym-kl
 ms.author: vadym@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
 uid: microsoft.quantum.machines.qc-trace-simulator.distinct-inputs
-ms.openlocfilehash: 0df28f6d74279db4678c3485a23a9341680eec52
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: ce3f156a84a4509781a74c9276b953c79670a756
+ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73184703"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74864312"
 ---
 # <a name="distinct-inputs-checker"></a>Kontroll av distinkt indata
 
@@ -28,7 +28,7 @@ operation DoBoth(q1 : Qubit, q2 : Qubit, op1 : (Qubit => Unit), op2 : (Qubit => 
 När användaren tittar på det här programmet antar de att ordningen i vilken `op1` och `op2` anropas inte beror på att `q1` och `q2` är olika qubits och åtgärder som fungerar på olika qubits. Nu ska vi överväga ett exempel där den här åtgärden används:
 
 ```qsharp
-operation DisctinctQubitCaptured2Test () : Unit {
+operation CapturedQubits () : Unit {
 
     using (q = Qubit[3]) {
         let op1 = CNOT(_, q[1]);

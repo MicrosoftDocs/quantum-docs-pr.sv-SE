@@ -1,21 +1,21 @@
 ---
 title: 'Q # standard bibliotek – program | Microsoft Docs'
-description: 'Q # standard bibliotek'
+description: Q#-standardbibliotek
 author: QuantumWriter
 uid: microsoft.quantum.libraries.applications
 ms.author: martinro@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: e6eca45dd67b3566340c2a2a4fded0f6e7c3c5c3
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: ef22460a5bca63ebaf32c0ba21984e103ec8ebdd
+ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73185179"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74864397"
 ---
 # <a name="applications"></a>Appar #
 
-## <a name="hamiltonian-simulation"></a>Simulering av Hamiltonian ##
+## <a name="hamiltonian-simulation"></a>Hamiltonsk simulering ##
 
 Simuleringen av Quantum Systems är ett av de mest spännande programmen i Quantum-beräkningen.
 På en klassisk dator skalas svårigheten att simulera Quantum Mechanics i allmänhet med dimensions $N $ för sin tillstånds vektor representation.
@@ -24,18 +24,18 @@ I takt med att den här representationen ökar exponentiellt med antalet $n $ qu
 Situationen kan dock vara mycket annorlunda på Quantum-maskinvara. Den vanligaste variationen av Quantum-simulering kallas för tids oberoende Hamiltonian simulerings problem. Det finns en beskrivning av systemets Hamiltonian $H $, som är en Hermitian-matris och vissa inledande Quantum-tillstånd $ \ket{\psi (0)} $ som är kodade i vissa fall på $n $ qubits på en Quantum-dator. I takt med att de stängda systemen utvecklas under Schrödinger ekvation $ $ \begin{align} i\frac {d \ket{\psi (t)}} {d t} & = H \ket{\psi (t)}, \end{align} $ $ målet är att implementera den enhetliga tids utvecklings operatören $U (t) = e ^ {-iHt} $ vid vissa bestämda tidpunkter $t $ , där $ \ket{\psi (t)} = U (t) \ket{\psi (0)} $ matchar Schrödinger-ekvationen.
 Analogously, den tids beroende Hamiltonian simulerings problemet matchar samma formel, men med $H (t) $ nu en funktion av tiden.
 
-Hamiltonian-simulering är en stor del av många andra problem med Quantum-simulering och lösningar på Hamiltonian-simulerings problem är algoritmer som beskriver en sekvens med primitiva Quantum-grindar för att syntetisera en ungefärlig \tilde{U} $ med fel $\\| \tilde{U}-U (t)\\| \le \epsilon $ i [Spectral-normen](xref:microsoft.quantum.concepts.matrix-advanced). De här algoritmernas komplexitet är mycket starkt beroende av hur en beskrivning av Hamiltonian av intresse görs tillgänglig för en Quantum-dator. I värsta fall, om $H $ som agerar på $n $ qubits skulle tillhandahållas som en lista över $2 ^ n \times 2 ^ n $ Numbers, ett för varje mat ris element skulle det redan kräva exponentiell tid att läsa data. I det bästa fallet kan det vara bra att ha till gång till en svart box som $O \ket{t}\ket{\psi (0)} = \ket{t}U (t) \ket{\psi (0)} $ löser problemet enkelt. Ingen av dessa ingångs modeller är särskilt intressanta – den tidigare versionen är inte bättre än klassiska metoder och den senare som den svarta rutan döljer den primitiva gaten för dess implementering, vilket kan vara exponentiellt i antalet qubits.
+Hamiltonian-simulering är en viktig komponent i många andra problem med Quantum-simulering och lösningar på Hamiltonian simulerings problem är algoritmer som beskriver en sekvens med primitiva Quantum-grindar för att syntetisera en ungefärlig \tilde{U} $ med fel $\\| \tilde{U}-U (t)\\| \le \epsilon $ i [Spectral-normen](xref:microsoft.quantum.concepts.matrix-advanced). De här algoritmernas komplexitet är mycket starkt beroende av hur en beskrivning av Hamiltonian av intresse görs tillgänglig för en Quantum-dator. I värsta fall, om $H $ som agerar på $n $ qubits skulle tillhandahållas som en lista över $2 ^ n \times 2 ^ n $ Numbers, ett för varje mat ris element skulle det redan kräva exponentiell tid att läsa data. I det bästa fallet kan det vara bra att ha till gång till en svart box som $O \ket{t}\ket{\psi (0)} = \ket{t}U (t) \ket{\psi (0)} $ löser problemet enkelt. Ingen av dessa ingångs modeller är särskilt intressanta – den tidigare versionen är inte bättre än klassiska metoder och den senare som den svarta rutan döljer den primitiva gaten för dess implementering, vilket kan vara exponentiellt i antalet qubits.
 
 ### <a name="descriptions-of-hamiltonians"></a>Beskrivningar av Hamiltonians ###
 
 Det krävs ytterligare antaganden om formatet på indatamängden. En fin balans måste ligga mellan ingångs modeller som är tillräckligt beskrivande för att omfatta intressanta Hamiltonians, t. ex. för realistiska fysiska system eller intressanta beräknings problem och ingående modeller som är tillräckligt begränsade för att effektivt kunna implementeras på en Quantum-dator. En mängd olika icke-triviala ingångs modeller finns i dokumentationen, och de sträcker sig från Quantum till klassisk. 
 
-Som exempel på Quantum-ingångs modeller antar den [exempelbaserade Hamiltonian-simuleringen](http://www.nature.com/articles/s41534-017-0013-7) svart-Box till Quantum-åtgärder som producerar kopior av en densitets mat ris $ \rho $, som är Hamiltonian $H $. I den [enhetliga åtkomst modellen](https://arxiv.org/abs/1202.5822) förutsätter Hamiltonian i stället att i stället delas in i summan av unitaries $ $ \begin{align} H & = \sum ^ {d-1}\_{j = 0} a\_j \hat{U}\_j, \end{align} $ $ där $a\_j > 0 $ är koefficienter , och $ \hat{U}\_j $ är unitaries. Det förutsätts att en har svart-Box till gång till den enhetliga Oracle $V = \sum ^ {d-1}\_{j = 0} \ket{j}\bra{j}\otimes \hat{U}\_j $ som väljer den önskade $ \hat{U}\_j $ och Oracle $A \ket{0}= \sum ^ {d-1}\_{ j = 0} \sqrt{a\_j/\ sum ^ {d-1}\_{k = 0} \alpha\_j} \ket{j} $ som skapar en kodning av Quantum-tillstånd för dessa koefficienter. I händelse av en [optimerad Hamiltonian-simulering](https://arxiv.org/abs/quant-ph/0301023)förutsätter det att Hamiltonian är en sparse-matris med endast $d = \mathcal{O} (\Text{polylog} (N)) $ element som inte är noll i varje rad. Dessutom förutsätter en förekomst av effektiva Quantum-kretsar som utvärderar platsen för dessa icke-noll-element, samt deras värden. Komplexiteten för [algoritmerna för Hamiltonian simulering](xref:microsoft.quantum.more-information) utvärderas som antalet frågor till dessa svarta rutor, och den primitiva grinden av porten är sedan mycket stor på svårigheten att implementera dessa svarta rutor.
+Som exempel på Quantum-ingångs modeller antar den [exempelbaserade Hamiltonian-simuleringen](http://www.nature.com/articles/s41534-017-0013-7) svart-Box till Quantum-åtgärder som producerar kopior av en densitets mat ris $ \rho $, som är Hamiltonian $H $. I den [enhetliga åtkomst modellen](https://arxiv.org/abs/1202.5822) förutsätter att Hamiltonian i stället dedelas i summan av unitaries $ $ \begin{align} H & = \sum ^ {d-1}\_{j = 0} a\_j \hat{U}\_j, \end{align} $ $ där $a\_j > 0 $ är koefficienter, och $ \hat{U}\_j $ är unitaries. Det förutsätts att en har svart-Box till gång till den enhetliga Oracle-$V = \sum ^ {d-1}\_{j = 0} \ket{j}\bra{j}\otimes \hat{U}\_j $ som väljer önskad $ \hat{U}\_j $, och Oracle-$A \ket{0}= \sum ^ {d-1}\_{j = 0} \sqrt{a\_j/\ sum ^ {d-1}\_{k = 0} \alpha\_j} \ket{j} $ som skapar en kodning av Quantum-tillstånd. I händelse av en [optimerad Hamiltonian-simulering](https://arxiv.org/abs/quant-ph/0301023)förutsätter det att Hamiltonian är en sparse-matris med endast $d = \mathcal{O} (\Text{polylog} (N)) $ element som inte är noll i varje rad. Dessutom förutsätter en förekomst av effektiva Quantum-kretsar som utvärderar platsen för dessa icke-noll-element, samt deras värden. Komplexiteten för [algoritmerna för Hamiltonian simulering](xref:microsoft.quantum.more-information) utvärderas som antalet frågor till dessa svarta rutor, och den primitiva grinden av porten är sedan mycket stor på svårigheten att implementera dessa svarta rutor.
 
 > [!NOTE]
 > Big-O-notationen används ofta för att beskriva komplexitets skalningen för algoritmer. Med två verkliga Functions $f, g $, uttrycket $g (x) = \mathcal{O} (f (x)) $ betyder det att det finns en absolut positiv konstant $x\_0, c > 0 $ så $g (x) \le c f (x) $ för alla $x \ge x\_$0. 
 
-I de flesta praktiska program som ska implementeras på en Quantum-dator måste dessa svarta rutor vara effektiva att implementera, det vill säga med $ \mathcal{O} (\text{polylog} (N)) $ primitiva Quantum-grindar. Mer starkt simulable Hamiltonians måste ha en viss tillräckligt optimerad klassisk beskrivning. I en sådan formulering förutsätter vi att Hamiltonian i en summa av Hermitian-delarna $ $ \begin{align} H & = \sum ^ {d-1} _ {j = 0} H_j.
+I de flesta praktiska program som ska implementeras på en Quantum-dator måste dessa svarta rutor vara effektiva att implementera, det vill säga med $ \mathcal{O} (\text{polylog} (N)) $ primitiva Quantum-grindar. Mer starkt simulable Hamiltonians måste ha en viss tillräckligt optimerad klassisk beskrivning. I en sådan formulering förutsätts det att Hamiltonian i en summa av Hermitian-delarna $ $ \begin{align} H & = \sum ^ {d-1} _ {j = 0} H_j.
 \end{align} $ $, det förutsätts dessutom att varje del, en Hamiltonian $H\_j $, är lätt att simulera. Det innebär att den enhetliga $e ^ {-iH\_j t} $ när som helst $t $ kan implementeras exakt med $ \mathcal{O} (1) $ primitiva Quantum-grindar. Detta är till exempel sant i det särskilda fallet där varje $H\_j $ är lokala Pauli-operatörer, vilket innebär att de är av \mathcal{O} produkter av $ (1) $ Pauli-operatörer som agerar på rums qubits. Den här modellen är särskilt tillämplig på fysiska system med gräns och lokal interaktion, eftersom antalet villkor är $d = \mathcal{O} (\text{polylog} (N)) $, och det kan tydligt skrivas ned, vilket beskrivs i polynom tid.
 
 > [!TIP]
@@ -45,15 +45,15 @@ I de flesta praktiska program som ska implementeras på en Quantum-dator måste 
 
 En algoritm för Quantum simulering konverterar en specifik Beskrivning av en Hamiltonian till en sekvens med primitiva Quantum-grindar som, som helhet, närmar sig tids utvecklingen av Hamiltonian.
 
-I det särskilda fallet där Hamiltonian delas upp i en summa av Hermitian delar, är Trotter-Suzuki-dekompositionen en särskilt enkel och intuitiv algoritm för att simulera Hamiltonians som sammanställer till en summa av Hermitian-komponenter. Till exempel är en första order integrerare i denna familj ungefär $ $ \begin{align} U (t) & = \left (e ^ {-iH\_0 t/r} e ^ {-iH\_1 t/r} \cdots e ^ {-iH\_{d-1} t/r} \right) ^ {r} + \mathcal{O} (d ^ 2 \max_j\\| H\_j\\| ^ 2 t ^ 2/r), \end{align} $ $ med en produkt av $r d $-villkor. 
+I det särskilda fallet där Hamiltonian delas upp i en summa av Hermitian delar, är Trotter-Suzuki-dekompositionen en särskilt enkel och intuitiv algoritm för att simulera Hamiltonians som sammanställer till en summa av Hermitian-komponenter. Till exempel är en första ordning integrerare i den här familjen ungefär $ $ \begin{align} U (t) & = \left (e ^ {-iH\_0 t/r} e ^ {-iH\_1 t/r} \cdots e ^ {-iH\_{d-1} t/r} \right) ^ {r} + \mathcal{O} (d ^ 2 \ max_j\\| H\_j\\| ^ 2 t ^ 2/r), \end{align} $ $ med en produkt av $r d $-villkor. 
 
 > [!TIP]
 > Program av algoritmen Trotter-Suzuki simulering beskrivs i exemplen.
-> För Ising-modellen som bara använder de inbyggda åtgärder som tillhandahålls av varje måldator, se [ **SimpleIsing** -exemplet](https://github.com/Microsoft/Quantum/tree/master/Samples/src/SimpleIsing).
-> Ising-modellen med hjälp av Trotter-Suzuki biblioteks kontroll struktur finns i [ **IsingTrotter** -exemplet](https://github.com/Microsoft/Quantum/tree/master/Samples/src/IsingTrotterEvolution).
-> För molekyliga väte med Trotter-Suzuki biblioteks kontroll struktur kan du se [exempel på **H2-simulering** ](https://github.com/Microsoft/Quantum/tree/master/Samples/src/H2SimulationCmdLine).
+> För Ising-modellen som bara använder de inbyggda åtgärder som tillhandahålls av varje måldator, se [ **SimpleIsing** -exemplet](https://github.com/microsoft/Quantum/blob/master/samples/simulation/ising/simple).
+> Ising-modellen med hjälp av Trotter-Suzuki biblioteks kontroll struktur finns i [ **IsingTrotter** -exemplet](https://github.com/microsoft/Quantum/tree/master/samples/simulation/ising/trotter-evolution).
+> För molekyliga väte med Trotter-Suzuki biblioteks kontroll struktur kan du se [exempel på **H2-simulering** ](https://github.com/microsoft/Quantum/tree/master/samples/simulation/h2/command-line).
 
-I många fall vill vi implementera simulerings algoritmen, men den är inte intresse rad av implementeringens information. Till exempel, den andra ordnings integreraren uppskattar $ $ \begin{align} U (t) & = \left (e ^ {-iH\_0 t/2R} e ^ {-iH\_1 t/2R} \cdots e ^ {-iH\_{d-1} t/2R} e ^ {-iH\_{d-1} t/2R} \cdots e ^ {-iH\_1 t/2R} e ^ {- iH\_0 t/2R} \right) ^ {r} + \mathcal{O} (d ^ 3 \max_j\\| H\_j\\| ^ 3 t ^ 3/r ^ 2), \end{align} $ $ med en produkt av $2rd $-villkor. Större beställningar innebär ännu fler villkor och optimerade varianter kan kräva hög icke-trivial ordningsföljd på exponenterna. Andra avancerade algoritmer kan också innebära användning av Ancilla-qubits i mellanliggande steg. Därför har vi paket simulerings algoritmer i filen Canon som användardefinierad typ
+I många fall vill vi implementera simulerings algoritmen, men den är inte intresse rad av implementeringens information. Till exempel, den andra ordnings integreraren uppskattar $ $ \begin{align} U (t) & = \left (e ^ {-iH\_0 t/2R} e ^ {-iH\_1 t/2R} \cdots e ^ {-iH\_{d-1} t/2R} e ^ {-iH\_{d-1} t/2R} \cdots e ^ {-iH\_1 t/2R} e ^ {-iH\_0 t/2R} \right) ^ {r} + \mathcal{O} (d ^ 3 \ max_j\\| H\_j\\| ^ 3 t ^ 3/r ^ 2), \end{align} $ $ med en produkt av $2rd $-villkor. Större beställningar innebär ännu fler villkor och optimerade varianter kan kräva hög icke-trivial ordningsföljd på exponenterna. Andra avancerade algoritmer kan också innebära användning av Ancilla-qubits i mellanliggande steg. Därför har vi paket simulerings algoritmer i filen Canon som användardefinierad typ
 
 ```qsharp
 newtype SimulationAlgorithm = ((Double, EvolutionGenerator, Qubit[]) => Unit is Adj + Ctl);
@@ -83,13 +83,13 @@ function TimeDependentTrotterSimulationAlgorithm(
 ```
 
 > [!TIP]
-> Program för simulerings biblioteket beskrivs i exemplen. För fas uppskattning i Ising-modellen med hjälp av `SimulationAlgorithm`, se [ **IsingPhaseEstimation** -exemplet](https://github.com/Microsoft/Quantum/tree/master/Samples/src/IsingPhaseEstimation).
-> För förberedelse av adiabatic-tillstånd i Ising-modellen med hjälp av `TimeDependentSimulationAlgorithm`, se exemplet på [ **AdiabaticIsing** ](https://github.com/Microsoft/Quantum/tree/master/Samples/src/AdiabaticIsing).
+> Program för simulerings biblioteket beskrivs i exemplen. För fas uppskattning i Ising-modellen med hjälp av `SimulationAlgorithm`, se [ **IsingPhaseEstimation** -exemplet](https://github.com/microsoft/Quantum/tree/master/samples/simulation/ising/phase-estimation).
+> För förberedelse av adiabatic-tillstånd i Ising-modellen med hjälp av `TimeDependentSimulationAlgorithm`, se exemplet på [ **AdiabaticIsing** ](https://github.com/microsoft/Quantum/tree/master/samples/simulation/ising/adiabatic).
 
 
 ### <a name="adiabatic-state-preparation--phase-estimation"></a>Adiabatic för att förbereda & fas uppskattning ###
 
-Ett vanligt program för Hamiltonian-simulering är adiabatic-tillstånds förberedelse. Här följer två Hamiltonians-$H\_{\text{start}} $ och $H\_{\text{End}} $ och ett Quantum-tillstånd $ \ket{\psi (0)} $ som är ett mark läge för start Hamiltonian $H\_{\text{start}} $. Vanligt vis väljs $H\_{\text{start}} $ så att $ \ket{\psi (0)} $ är enkelt att förbereda från beräknings bas tillstånd $ \ket{0\cdots 0} $. Genom interpolating mellan dessa Hamiltonians i det tids beroende simulerings problemet, är det möjligt att uppnå hög sannolikhet i det slutliga Hamiltonian $H\_{\text{End}} $. Även om det går att förbereda en utmärkt uppskattning av Hamiltonian-länder kan du gå vidare på det här sättet genom att anropa på tids beroende Hamiltonian simulerings algoritmer som en subrutin, andra konceptuella metoder, till exempel variationen Quantum eigensolver är möjliga.
+Ett vanligt program för Hamiltonian-simulering är adiabatic-tillstånds förberedelse. Här följer två Hamiltonians-$H\_{\text{start}} $ och $H\_{\text{End}} $ och ett Quantum-tillstånd $ \ket{\psi (0)} $ som är ett mark läge för start Hamiltonian $H\_{\text{start}} $. Vanligt vis väljs $H\_{\text{start}} $ så att $ \ket{\psi (0)} $ är enkelt att förbereda från beräknings bas tillstånd $ \ket{0\cdots 0} $. Genom interpolating mellan dessa Hamiltonians i tids beroende simulerings problem tillräckligt långsamt, är det möjligt att uppnå hög sannolikhet i det slutliga Hamiltonian $H\_{\text{End}} $. Även om det går att förbereda en utmärkt uppskattning av Hamiltonian-länder kan du gå vidare på det här sättet genom att anropa på tids beroende Hamiltonian simulerings algoritmer som en subrutin, andra konceptuella metoder, till exempel variationen Quantum eigensolver är möjliga.
 
 Ännu en annan program allmänt förekommande i Quantum kemi uppskattar den markbaserade energin för Hamiltonians som representerar de mellanliggande stegen för kemisk reaktion. Ett sådant schema kan t. ex. förlita sig på adiabatic State-förberedelse för att skapa ett jord-tillstånd och sedan införliva den tidsbegränsade Hamiltonian-simuleringen som en del rutin i beräknings beräknings karakteriseringen för att extrahera denna energi med ett begränsat fel och sannolikheten lyckades. 
 
@@ -128,13 +128,13 @@ operation AdiabaticStateEnergyEstimate(
 `nQubits` är antalet qubits som används för att koda det inledande Quantum-läget. `statePrepUnitary` förbereder start tillstånd från beräknings basen $ \ket{0\cdots 0} $. `adiabaticUnitary` är en enhetlig åtgärd som implementerar adiabatic-tillstånds förberedelse, till exempel producerad av funktionen `InterpolatedEvolution`. `qpeUnitary` är den enhetliga åtgärd som används för att utföra fas uppskattningar i det resulterande steget. `phaseEstAlgorithm` är vårt val av algoritm för fas uppskattning.
 
 > [!TIP]
-> Program för förberedelse av adiabatic-tillstånd beskrivs i exemplen. För Ising-modellen med en manuell implementering av adiabatic-tillstånds förberedelse jämfört med `AdiabaticEvolution` funktionen, se exemplet på [ **AdiabaticIsing** ](https://github.com/Microsoft/Quantum/tree/master/Samples/src/AdiabaticIsing).
-> För fas uppskattning och förberedelse av adiabatic-tillstånd i Ising-modellen, se [exemplet på **IsingPhaseEstimation** ](https://github.com/Microsoft/Quantum/tree/master/Samples/src/IsingPhaseEstimation).
+> Program för förberedelse av adiabatic-tillstånd beskrivs i exemplen. För Ising-modellen med en manuell implementering av adiabatic-tillstånds förberedelse jämfört med `AdiabaticEvolution` funktionen, se exemplet på [ **AdiabaticIsing** ](https://github.com/microsoft/Quantum/tree/master/samples/simulation/ising/adiabatic).
+> För fas uppskattning och förberedelse av adiabatic-tillstånd i Ising-modellen, se [exemplet på **IsingPhaseEstimation** ](https://github.com/microsoft/Quantum/tree/master/samples/simulation/ising/phase-estimation).
 
 > [!TIP]
-> [Simuleringen av molekylen väte](https://github.com/Microsoft/Quantum/tree/master/Samples/src/H2SimulationCmdLine) är ett intressant och kort exempel. Modell-och experiment resultaten som rapporteras i [O'Malley et. Al.](https://arxiv.org/abs/1512.06860) kräver bara Pauli-matriser och använder formatet $ \hat H = g\_{0}\_0I\_1 + g\_1 {Z\_0} + g\_2 {Z\_1} + g\_3 {Z\_0} {Z\_1} + g\_4 {Y\_0} {Y\_1} + g\_5 {X\_0} {X\_1} $. Detta är en effektiv Hamiltonian som bara behöver bara två qubits, där konstanterna $g $ beräknas från avståndet $R $ mellan de två väte-atomerna. Med hjälp av Canon functions, konverteras Johan till unitaries och sedan utvecklats över korta tids perioder med hjälp av Trotter-Suzuki-dekompositionen. Det går att skapa en utmärkt uppskattning av $H _2 $ mark State utan att använda adiabatic och så att energi tillståndets energi kan hittas direkt genom att använda fas uppskattning från Canon.
+> [Simuleringen av molekylen väte](https://github.com/microsoft/Quantum/tree/master/samples/simulation/h2/command-line) är ett intressant och kort exempel. Modell-och experiment resultaten som rapporteras i [O'Malley et. Al.](https://arxiv.org/abs/1512.06860) kräver bara Pauli-matriser och använder formatet $ \hat H = g\_{0}\_0I\_1 + g\_1 {Z\_0} + g\_2 {Z\_1} + g\_3 {Z\_0} {Z\_1} + g\_4 {Y\_0} {Y\_1} + g\_5 {X\_0} {X\_1} $. Detta är en effektiv Hamiltonian som bara behöver bara två qubits, där konstanterna $g $ beräknas från avståndet $R $ mellan de två väte-atomerna. Med hjälp av Canon functions, konverteras Johan till unitaries och sedan utvecklats över korta tids perioder med hjälp av Trotter-Suzuki-dekompositionen. Det går att skapa en utmärkt uppskattning av $H _2 $ mark State utan att använda adiabatic och så att energi tillståndets energi kan hittas direkt genom att använda fas uppskattning från Canon.
 
-## <a name="shors-algorithm"></a>Shor-algoritm ##
+## <a name="shors-algorithm"></a>Shors algoritm ##
 Shor-algoritmen är inte en av de viktigaste fördelarna med Quantum Computing eftersom den visade att Quantum Computers kan användas för att lösa viktiga, för närvarande inaktiverade problem.
 Shor-algoritmen är ett snabbt sätt att väga stora tal med en Quantum-dator, ett problem som kallas för *factoring*.
 Säkerheten för många befintliga cryptosystems baseras på antagandet att det inte finns någon snabb algoritm för factoring.
@@ -151,8 +151,8 @@ Vi har sett hur Quantum Fourier-transformeringen och fas uppskattningen fungerar
 
 Med två heltal $a $ och $N $, där $a < N $, målet för perioden som söker, även kallat order sökning, är att hitta _order_ $r $ $a $ modulo $N $, där $r $ har definierats som minst positivt heltal som $a ^ r \equiv 1 \text{mod} N $.  
 
-För att hitta beställningen med en Quantum-dator kan vi använda fasen för fas uppskattning som tillämpas på följande enhetliga operatör $U _A $: $ $ U_a\ket {x} \equiv \ket{(AX) \text{rest} N}. $ $ eigenvectors för $U _A $ är för heltal $s $ och $0 \ LEQ s \leq r-$1 , $ $ \ket{x_s} \equiv 1/\sqrt{r} \sum\_{k = 0} ^ {r-1} e ^ {\frac{-2\pi i sk} {r}} \ket{a ^ k\text {mod} N}, $ $ är _eigenstates_ av $U _A $.
-Eigenvalues för $U _A $ är $ $ U\_en \ket{x\_s} = e ^ {2 \ Pi i s/r} \ket{x\_s}. $$
+För att hitta beställningen med en Quantum-dator kan vi använda fasen för fas uppskattning som tillämpas på följande enhetliga operatör $U _a $: $ $ U_a \ket{x} \equiv \ket{(AX) \text{mod} N}. $ $ eigenvectors för $U _a $ är för heltal $s $ och $0 \ LEQ s \leq r-$1, $ $ \ket{x_s} \equiv 1/\sqrt{r} \sum\_{k = 0} ^ {r-1} e ^ {\frac{-2\pi i sk} {r}} \ket{a ^ k\text {rest} N}, $ $ är _eigenstates_ av $U _A $.
+Eigenvalues för $U _a $ är $ $ U\_en \ket{x\_s} = e ^ {2 \ Pi i s/r} \ket{x\_s}. $$
 
 Fas uppskattningen utökar därmed Eigenvalues $e ^ {2 \ Pi i s/r} $ från vilken $r $ kan läsas effektivt med hjälp av [fortsatt bråk](https://en.wikipedia.org/wiki/Continued_fraction) från $s/r $.
 
@@ -169,7 +169,7 @@ Vi kan bara förbereda ett Quantum-register över $n $ qubits i stat $ \ket{1}$.
 
 Kretsen innehåller QFT och flera kontrollerade portar.
 QFT-porten har beskrivits [tidigare](xref:microsoft.quantum.libraries.standard.algorithms).
-Det styrda-$U _A $ Gate Maps $ \ket{x} $ till $ \ket{(AX) \text{mod} N} $ om kontrollen qubit är $ \ket{1}$ och mappar $ \ket{x} $ till $ \ket{x} $ annars.
+Det styrda-$U _a $ Gate Maps $ \ket{x} $ till $ \ket{(AX) \text{mod} N} $ om kontrollen qubit är $ \ket{1}$ och mappar $ \ket{x} $ till $ \ket{x} $ annars.
 
 För att uppnå $ (a ^ NX) \text{mod} N $ kan vi helt enkelt tillämpa styrd-$U _ {a ^ N} $, där vi beräknar $a ^ N \text{mod} N $ som är klassiska för att ansluta till Quantum-kretsen.  
 Kretsarna för att uppnå sådana modulära beräkningar har beskrivits i den [Quantum-aritmetiska dokumentationen](./algorithms.md#arithmetic), i synnerhet vi kräver en modulär exponent krets för att implementera de kontrollerade $U\_{a ^ i} $-åtgärder.
