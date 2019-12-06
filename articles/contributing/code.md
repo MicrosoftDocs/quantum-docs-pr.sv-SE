@@ -6,14 +6,14 @@ ms.author: chgranad
 ms.date: 10/12/2018
 ms.topic: article
 uid: microsoft.quantum.contributing.code
-ms.openlocfilehash: cca50e6c63d4bb982aa5f0a59fc19d08ecbec508
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: 3ff15a744bf15924564d5a8fee54f4fbce4c04ee
+ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73185910"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74864431"
 ---
-# <a name="contributing-code"></a>Bidrags kod #
+# <a name="contributing-code"></a>Bidra med kod #
 
 Förutom att rapportera problem och förbättra dokumentationen kan kod till Quantum Development Kit vara ett mycket direkt sätt att hjälpa dina kollegor i Quantum Programming-communityn.
 Genom att bidra med kod kan du hjälpa till att åtgärda problem, tillhandahålla nya exempel, göra befintliga bibliotek lättare att använda, eller till och med helt nya funktioner.
@@ -30,13 +30,14 @@ Därför är det användbart när funktioner som läggs till av ett bidrag är v
 
 De Q #-funktioner, åtgärder och användardefinierade typer som utgör bibliotek, till exempel Canon, testas automatiskt som en del av utvecklingen på [**Microsoft/QuantumLibraries**](https://github.com/Microsoft/QuantumLibraries/) -lagringsplatsen.
 När en ny pull-begäran öppnas, till exempel så kontrollerar vår [Azure-pipeline](https://azure.microsoft.com/services/devops/pipelines/) att ändringarna i pull-begäran inte bryter några befintliga funktioner som program varan Quantum Programming är beroende av.
-Dessa tester skrivs med [Microsoft. Quantum. Xunit](https://www.nuget.org/packages/Microsoft.Quantum.Xunit/) -paketet, som visar Q #-funktioner och-åtgärder som tester för [Xunit](https://xunit.github.io/) -ramverket.
 
-[`Standard/tests/Standard.Tests.csproj`](https://github.com/microsoft/QuantumLibraries/blob/master/Standard/tests/Standard.Tests.csproj) använder den här xUnit-integreringen för att köra alla funktioner eller åtgärder som slutar på `Test`.
-Följande funktion används till exempel för att se till att <xref:microsoft.quantum.canon.fst> och <xref:microsoft.quantum.canon.snd> fungerar både för att returnera rätt utdata i ett representativt exempel.
+Med den senaste Q #-versionen definieras enhets test med hjälp av `@Test("QuantumSimulator")`-attributet. Argumentet kan vara antingen "QuantumSimulator", "ToffoliSimulator", "TraceSimulator" eller ett fullständigt kvalificerat namn som anger körnings målet. Flera attribut som definierar olika körnings mål kan kopplas till samma anrops bara. Några av våra tester använder fortfarande det inaktuella [Microsoft. Quantum. Xunit](https://www.nuget.org/packages/Microsoft.Quantum.Xunit/) -paketet som visar alla Q #-funktioner och åtgärder som avslutas i `Test` till [Xunit](https://xunit.github.io/) -ramverket. Det här paketet behövs inte längre för att definiera enhets test. 
+
+Följande funktion används för att säkerställa att <xref:microsoft.quantum.canon.fst> och <xref:microsoft.quantum.canon.snd> båda returnerar rätt utdata i ett representativt exempel.
 Om resultatet av `Fst` eller `Snd` är felaktigt används `fail`-instruktionen för att göra testet misslyckat.
 
 ```qsharp
+@Test("QuantumSimulator")
 function PairTest () : Unit {
     let pair = (12, PauliZ);
 
@@ -56,6 +57,7 @@ Mer komplicerade villkor kan kontrol leras med hjälp av metoderna i [avsnittet 
 Följande test kontrollerar till exempel att `H(q); X(q); H(q);` som anropas av <xref:microsoft.quantum.canon.applywith> gör samma sak som `Z(q)`.
 
 ```qsharp
+@Test("QuantumSimulator")
 operation WithTest () : Unit {
     let actual = ApplyWith(H, X, _);
     let expected = Z;
