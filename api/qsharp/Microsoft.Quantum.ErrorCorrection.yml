@@ -23,15 +23,9 @@ functions:
   summary: Den här funktionen returnerar ett objekt av typen `RecoveryFn` som innehåller all information som krävs för att utföra en tabells öknings avkodning för en specifik tabell med Pauli-åtgärder för en specifik qubits-åtgärd.
 operations:
 - uid: microsoft.quantum.errorcorrection.bitflipdecoder
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.errorcorrection.encodeintobitflipcode"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nBitFlipDecoder är föråldrad. Använd @\"microsoft.quantum.errorcorrection.decodefrombitflipcode\" i stället.\nAnvänd @\"microsoft.quantum.errorcorrection.encodeintobitflipcode\"."
 - uid: microsoft.quantum.errorcorrection.bitflipencoder
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.errorcorrection.encodeintobitflipcode"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nBitFlipEncoder är föråldrad. Använd @\"microsoft.quantum.errorcorrection.encodeintobitflipcode\" i stället.\nAnvänd @\"microsoft.quantum.errorcorrection.encodeintobitflipcode\"."
 - uid: microsoft.quantum.errorcorrection.decodefrombitflipcode
   summary: Avkodar från [3, 1, 3]/⟦ 3, 1, 1 ⟧ bit-flip-kod.
 - uid: microsoft.quantum.errorcorrection.decodefromfivequbitcode
@@ -45,15 +39,9 @@ operations:
 - uid: microsoft.quantum.errorcorrection.encodeintosteanecode
   summary: En kodnings åtgärd som mappar ett kodat Quantum-register till ett kodat Quantum-register under ⟦ 7, 1, 3 ⟧ Steane Quantum Code.
 - uid: microsoft.quantum.errorcorrection.fivequbitcodedecoder
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.errorcorrection.decodefromfivequbitcode"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nFiveQubitCodeDecoder är föråldrad. Använd @\"microsoft.quantum.errorcorrection.decodefromfivequbitcode\" i stället.\nAnvänd @\"microsoft.quantum.errorcorrection.decodefromfivequbitcode\"."
 - uid: microsoft.quantum.errorcorrection.fivequbitcodeencoder
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.errorcorrection.encodeintofivequbitcode"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nFiveQubitCodeEncoder är föråldrad. Använd @\"microsoft.quantum.errorcorrection.encodeintofivequbitcode\" i stället.\nAnvänd @\"microsoft.quantum.errorcorrection.encodeintofivequbitcode\"."
 - uid: microsoft.quantum.errorcorrection.injectpi4yrotation
   summary: >-
     Utför en π/4-rotation om `Y`.
@@ -75,15 +63,9 @@ operations:
 - uid: microsoft.quantum.errorcorrection.recovercss
   summary: Utför en enskild avrundning av fel korrigering med en Quantum-kod som beskrivs av en `CSS` typ.
 - uid: microsoft.quantum.errorcorrection.steanecodedecoder
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.errorcorrection.decodefromfivequbitcode"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nSteaneCodeDecoder är föråldrad. Använd @\"microsoft.quantum.errorcorrection.decodefromsteanecode\" i stället.\nAnvänd @\"microsoft.quantum.errorcorrection.decodefromfivequbitcode\"."
 - uid: microsoft.quantum.errorcorrection.steanecodeencoder
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.errorcorrection.decodefromfivequbitcode"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nSteaneCodeEncoder är föråldrad. Använd @\"microsoft.quantum.errorcorrection.encodeintosteanecode\" i stället.\nAnvänd @\"microsoft.quantum.errorcorrection.decodefromfivequbitcode\"."
 newtypes:
 - uid: microsoft.quantum.errorcorrection.css
   summary: Representerar en kod för Calderbank – Shor – Steane (CSS) som definieras av dess kodare, avkodare och dess Syndrome mätnings procedurer för `X` respektive `Z` fel.
@@ -110,9 +92,9 @@ newtypes:
 - uid: microsoft.quantum.errorcorrection.syndromemeasop
   summary: Representerar en åtgärd som används för att mäta Syndrome för ett felkorrigerande kod block.
 metadata:
-  ms.openlocfilehash: 6e1ef3ba9f22dac172e4edfb93bf1012e7bb21b4
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 2f72286018b39e2d51d6e0ffa6babf7ce350d976
+  ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73056786"
+  ms.lasthandoff: 12/05/2019
+  ms.locfileid: "74858370"

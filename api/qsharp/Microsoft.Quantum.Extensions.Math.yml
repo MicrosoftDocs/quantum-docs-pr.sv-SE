@@ -3,189 +3,81 @@ uid: microsoft.quantum.extensions.math
 name: Microsoft.Quantum.Extensions.Math
 functions:
 - uid: microsoft.quantum.extensions.math.absb
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.math.absl"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nAbsB är föråldrad. Använd @\"microsoft.quantum.math.absl\" i stället.\nAnvänd @\"microsoft.quantum.math.absl\"."
 - uid: microsoft.quantum.extensions.math.absd
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.math.absd"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nAbsD är föråldrad. Använd @\"microsoft.quantum.math.absd\" i stället.\nAnvänd @\"microsoft.quantum.math.absd\"."
 - uid: microsoft.quantum.extensions.math.absi
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.math.absi"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nAbsI är föråldrad. Använd @\"microsoft.quantum.math.absi\" i stället.\nAnvänd @\"microsoft.quantum.math.absi\"."
 - uid: microsoft.quantum.extensions.math.arccos
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.math.arccos"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nArcCos är föråldrad. Använd @\"microsoft.quantum.math.arccos\" i stället.\nAnvänd @\"microsoft.quantum.math.arccos\"."
 - uid: microsoft.quantum.extensions.math.arcsin
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.math.arcsin"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nBågar är inaktuell. Använd @\"microsoft.quantum.math.arcsin\" i stället.\nAnvänd @\"microsoft.quantum.math.arcsin\"."
 - uid: microsoft.quantum.extensions.math.arctan
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.math.arctan"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nArcTan är föråldrad. Använd @\"microsoft.quantum.math.arctan\" i stället.\nAnvänd @\"microsoft.quantum.math.arctan\"."
 - uid: microsoft.quantum.extensions.math.arctan2
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.math.arctan2"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nArcTan2 är föråldrad. Använd @\"microsoft.quantum.math.arctan2\" i stället.\nAnvänd @\"microsoft.quantum.math.arctan2\"."
 - uid: microsoft.quantum.extensions.math.ceiling
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.math.ceiling"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nTaket är föråldrat. Använd @\"microsoft.quantum.math.ceiling\" i stället.\nAnvänd @\"microsoft.quantum.math.ceiling\"."
 - uid: microsoft.quantum.extensions.math.cos
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.math.cos"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nCOS är föråldrad. Använd @\"microsoft.quantum.math.cos\" i stället.\nAnvänd @\"microsoft.quantum.math.cos\"."
 - uid: microsoft.quantum.extensions.math.cosh
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.math.cosh"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nCosh är föråldrad. Använd @\"microsoft.quantum.math.cosh\" i stället.\nAnvänd @\"microsoft.quantum.math.cosh\"."
 - uid: microsoft.quantum.extensions.math.divremb
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.math.divreml"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nDivRemB är föråldrad. Använd @\"microsoft.quantum.math.divreml\" i stället.\nAnvänd @\"microsoft.quantum.math.divreml\"."
 - uid: microsoft.quantum.extensions.math.e
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.math.e"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nE-postvärdet är föråldrat. Använd @\"microsoft.quantum.math.e\" i stället.\nAnvänd @\"microsoft.quantum.math.e\"."
 - uid: microsoft.quantum.extensions.math.expd
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.math.expd"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nExpD är föråldrad. Använd @\"microsoft.quantum.math.expd\" i stället.\nAnvänd @\"microsoft.quantum.math.expd\"."
 - uid: microsoft.quantum.extensions.math.floor
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.math.floor"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nBasyta är föråldrad. Använd @\"microsoft.quantum.math.floor\" i stället.\nAnvänd @\"microsoft.quantum.math.floor\"."
 - uid: microsoft.quantum.extensions.math.ieeeremainder
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.math.ieeeremainder"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nIEEERemainder är föråldrad. Använd @\"microsoft.quantum.math.ieeeremainder\" i stället.\nAnvänd @\"microsoft.quantum.math.ieeeremainder\"."
 - uid: microsoft.quantum.extensions.math.log
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.math.log"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nLoggen är inaktuell. Använd @\"microsoft.quantum.math.log\" i stället.\nAnvänd @\"microsoft.quantum.math.log\"."
 - uid: microsoft.quantum.extensions.math.log10
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.math.log10"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nLog10 är föråldrad. Använd @\"microsoft.quantum.math.log10\" i stället.\nAnvänd @\"microsoft.quantum.math.log10\"."
 - uid: microsoft.quantum.extensions.math.maxb
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.math.maxl"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nMaxB är föråldrad. Använd @\"microsoft.quantum.math.maxl\" i stället.\nAnvänd @\"microsoft.quantum.math.maxl\"."
 - uid: microsoft.quantum.extensions.math.maxd
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.math.maxd"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nMaxD är föråldrad. Använd @\"microsoft.quantum.math.maxd\" i stället.\nAnvänd @\"microsoft.quantum.math.maxd\"."
 - uid: microsoft.quantum.extensions.math.maxi
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.math.maxi"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nMaxI är föråldrad. Använd @\"microsoft.quantum.math.maxi\" i stället.\nAnvänd @\"microsoft.quantum.math.maxi\"."
 - uid: microsoft.quantum.extensions.math.minb
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.math.minl"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nMinB är föråldrad. Använd @\"microsoft.quantum.math.minl\" i stället.\nAnvänd @\"microsoft.quantum.math.minl\"."
 - uid: microsoft.quantum.extensions.math.mind
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.math.mind"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nTänk på att det är föråldrat. Använd @\"microsoft.quantum.math.mind\" i stället.\nAnvänd @\"microsoft.quantum.math.mind\"."
 - uid: microsoft.quantum.extensions.math.mini
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.math.mini"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nMinI är föråldrad. Använd @\"microsoft.quantum.math.mini\" i stället.\nAnvänd @\"microsoft.quantum.math.mini\"."
 - uid: microsoft.quantum.extensions.math.modpowb
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.math.modpowl"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nModPowB är föråldrad. Använd @\"microsoft.quantum.math.modpowl\" i stället.\nAnvänd @\"microsoft.quantum.math.modpowl\"."
 - uid: microsoft.quantum.extensions.math.pi
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.math.pi"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nPI är föråldrad. Använd @\"microsoft.quantum.math.pi\" i stället.\nAnvänd @\"microsoft.quantum.math.pi\"."
 - uid: microsoft.quantum.extensions.math.powd
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.math.powd"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nPowD är föråldrad. Använd @\"microsoft.quantum.math.powd\" i stället.\nAnvänd @\"microsoft.quantum.math.powd\"."
 - uid: microsoft.quantum.extensions.math.round
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.math.round"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nRound är föråldrad. Använd @\"microsoft.quantum.math.round\" i stället.\nAnvänd @\"microsoft.quantum.math.round\"."
 - uid: microsoft.quantum.extensions.math.signb
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.math.signl"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nSignB är föråldrad. Använd @\"microsoft.quantum.math.signl\" i stället.\nAnvänd @\"microsoft.quantum.math.signl\"."
 - uid: microsoft.quantum.extensions.math.signd
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.math.signd"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nSigneringen är inaktuell. Använd @\"microsoft.quantum.math.signd\" i stället.\nAnvänd @\"microsoft.quantum.math.signd\"."
 - uid: microsoft.quantum.extensions.math.signi
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.math.signi"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nInloggningen är inaktuell. Använd @\"microsoft.quantum.math.signi\" i stället.\nAnvänd @\"microsoft.quantum.math.signi\"."
 - uid: microsoft.quantum.extensions.math.sin
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.math.sin"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nSin har föråldrats. Använd @\"microsoft.quantum.math.sin\" i stället.\nAnvänd @\"microsoft.quantum.math.sin\"."
 - uid: microsoft.quantum.extensions.math.sinh
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.math.sinh"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nSinh är föråldrad. Använd @\"microsoft.quantum.math.sinh\" i stället.\nAnvänd @\"microsoft.quantum.math.sinh\"."
 - uid: microsoft.quantum.extensions.math.sqrt
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.math.sqrt"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nSqrt är inaktuell. Använd @\"microsoft.quantum.math.sqrt\" i stället.\nAnvänd @\"microsoft.quantum.math.sqrt\"."
 - uid: microsoft.quantum.extensions.math.tan
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.math.tan"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nTan är föråldrad. Använd @\"microsoft.quantum.math.tan\" i stället.\nAnvänd @\"microsoft.quantum.math.tan\"."
 - uid: microsoft.quantum.extensions.math.tanh
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.math.tanh"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nTANH är föråldrad. Använd @\"microsoft.quantum.math.tanh\" i stället.\nAnvänd @\"microsoft.quantum.math.tanh\"."
 - uid: microsoft.quantum.extensions.math.truncate
-  summary: >-
-    > [!WARNING]
-
-    > Använd @"microsoft.quantum.math.truncate"som föråldrad.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nTrunken är inaktuell. Använd @\"microsoft.quantum.math.truncate\" i stället.\nAnvänd @\"microsoft.quantum.math.truncate\"."
 metadata:
-  ms.openlocfilehash: a1a8cda192f7e95141eb2e34baa37ddaae4cb8c9
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 1eb20bd8834d2a34022ee503808fd26eccaf8c64
+  ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73056339"
+  ms.lasthandoff: 12/05/2019
+  ms.locfileid: "74858844"

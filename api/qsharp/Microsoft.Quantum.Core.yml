@@ -3,6 +3,8 @@ uid: microsoft.quantum.core
 name: Microsoft.Quantum.Core
 summary: " # <a name=\"summary\"></a>Sammanfattning\n Det här namn området innehåller Q # Core-funktioner och-åtgärder.\n\n # <a name=\"remarks\"></a>Kommentarer\n Det här namn området öppnas automatiskt av Q #-kompilatorn, så alla element i namn området är alltid tillgängliga."
 functions:
+- uid: microsoft.quantum.core.default
+  summary: Returnerar en standard instans av den angivna typen.
 - uid: microsoft.quantum.core.length
   summary: Returnerar antalet element i en matris.
 - uid: microsoft.quantum.core.rangeend
@@ -13,10 +15,17 @@ functions:
   summary: Returnerar det definierade startvärdet för det angivna intervallet.
 - uid: microsoft.quantum.core.rangestep
   summary: Returnerar det heltal som anger hur nästa värde i ett intervall beräknas.
+newtypes:
+- uid: microsoft.quantum.core.attribute
+  summary: Kompileraren identifierat attribut som används för att markera användardefinierade typer som attribut.
+- uid: microsoft.quantum.core.deprecated
+  summary: Ett identifierat attribut för kompilator som används för att markera en typ eller som kan anropas som föråldrad.
+- uid: microsoft.quantum.core.entrypoint
+  summary: Kompileraren identifierat attribut som används för att markera start punkten för en körbar fil.
 metadata:
-  ms.openlocfilehash: 41c28f8e8e11990ec1cf9b315478996a1e0811f4
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 6391521907deddbf4425b927b1dec12e73f0ee5d
+  ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73056892"
+  ms.lasthandoff: 12/05/2019
+  ms.locfileid: "74858589"
