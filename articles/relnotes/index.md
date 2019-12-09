@@ -6,12 +6,12 @@ ms.author: nakersha
 ms.date: 09/30/2019
 ms.topic: article
 uid: microsoft.quantum.relnotes
-ms.openlocfilehash: 90fd8ad455702ef4f962e1b3291c650eb0afea2e
-ms.sourcegitcommit: 87dd450cea5bcac76a42f0bdc224bfae712efdde
+ms.openlocfilehash: c709f1eb130d37f930ffc4acc4bd663b8b8ba24a
+ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74153317"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74863171"
 ---
 # <a name="microsoft-quantum-development-kit-release-notes"></a>Viktig information för Microsoft Quantum Development Kit
 
@@ -20,6 +20,18 @@ Den här artikeln innehåller information om varje version av Quantum Developmen
 Installationsanvisningar finns i [installationsguiden](xref:microsoft.quantum.install).
 
 Uppdateringsanvisningar finns i [uppdateringsguiden](xref:microsoft.quantum.update).
+
+## <a name="version-01019120501"></a>Version 0.10.1912.0501
+
+*Utgivningsdatum: 5 december 2019*
+
+Den här versionen innehåller följande:
+
+- Nytt testattribut för Q#-enhetstestning: se uppdaterad API-dokumentation [här](https://docs.microsoft.com/qsharp/api/qsharp/microsoft.quantum.diagnostics.test) och uppdaterad vägledning för testning och felsökning [här](xref:microsoft.quantum.techniques.testing-and-debugging)
+- Stackspårning har lagts till i händelse av ett körningsfel för #Q-program
+- Stöd för brytpunkter i Visual Studio Code på grund av en uppdatering i [OmniSharp C# Visual Studio Code-tillägget](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp)
+
+Se den fullständiga listan med stängda PR:er för [bibliotek](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed), [kompilator](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+is%3Aclosed), [runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+is%3Aclosed), [exempel](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed) och [Katas](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+is%3Aclosed).  
 
 ## <a name="version-01019111607"></a>Version 0.10.1911.1607
 
@@ -205,7 +217,7 @@ Den här versionen innehåller följande:
 
 - Lägger till stöd för Jupyter Notebook, vilket är ett bra sätt att lära sig mer om Q#.  [Kolla in de nya Jupyter Notebook-exemplen och lär dig att skriva egna notebook-filer](xref:microsoft.quantum.install). 
 
-- Lägger till aritmetik för heltalsadderare i Quantum Canon-biblioteket.  Se även en Jupyter-notebook-fil som [beskriver hur du använder de nya heltalsadderarna](https://github.com/Microsoft/Quantum/blob/master/Samples/src/Arithmetic/Adder%20Example.ipynb).
+- Lägger till aritmetik för heltalsadderare i Quantum Canon-biblioteket.  Se även en Jupyter-notebook-fil som [beskriver hur du använder de nya heltalsadderarna](https://github.com/microsoft/Quantum/blob/master/samples/arithmetic/AdderExample.ipynb).
 
 - Buggkorrigering för DumpRegister-problem som rapporterats av communityn ([#148](https://github.com/Microsoft/Quantum/issues/148)).
 
