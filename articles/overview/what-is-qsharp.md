@@ -6,12 +6,12 @@ ms.author: nakersha
 ms.date: 10/22/2019
 ms.topic: article
 uid: microsoft.quantum.overview.qsharp
-ms.openlocfilehash: 3fd288439c7db7f939240b4388c9cdb114b6535c
-ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+ms.openlocfilehash: e04d72bafe390ff5c79af408db1d9400754b06ce
+ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73529976"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74864295"
 ---
 # <a name="what-is-q"></a>Vad är Q#?
 
@@ -25,12 +25,11 @@ Med programmeringsspråket Q# får du en intuitiv uppsättning typer, åtgärder
 
 I början när kvantberäkningsalgoritmerna visualiserades som diagram som liknade kretsdiagram i klassisk databehandling.  Även om kretsmodellen har varit användbar under många år vid kvantberäkning, tror vi på Microsoft att utvecklarna kan ta sig utanför kvantkretsarna och utveckla kvantalgoritmer och program med hjälp av Q#. Q#-språket har skapats för att vi ska kunna dra nytta av vad vi lärt oss under årtionden av klassisk programvaruutveckling och ge kvantutvecklarna en språkfunktionalitet på hög nivå som inriktar sig på kvantberäkning.
 
-
 ## <a name="how-does-q-work"></a>Hur fungerar Q#?
 
 En av de grundläggande byggstenarna i Q# är `Qubit`-typen, som inte kan kopieras eller nås direkt, precis som en riktig kvantbit. I stället kan vi mäta den och lagra resultatet av mätningen i en `Result`-variabel, som är en Q#-typ med två möjliga värden: `Zero` och `One`. Konstruktioner som denna garanterar att algoritmerna alltid följer lagarna inom kvantfysik och kan köras utan problem på kvantdatorer eller i simulatorer.
 
-Q# innehåller även klassiska logiska funktioner som villkor eller loopar med vissa delar som ser till att alla kvantregler följs. Du kan till exempel begränsa hur slingor körs för att säkerställa kvantåtgärderna.
+Q# innehåller även klassiska logiska funktioner som villkor och loopar med vissa delar som ser till att alla kvantregler följs. Du kan till exempel begränsa hur slingor körs för att säkerställa att kvantåtgärderna inte anropas inom funktioner som kanske bara innehåller deterministiska klassiska subrutiner.
 
 Q#-program är ofta kopplade till ett värdprogram som skrivits C# i eller Python, vilket kan ge en bekväm organisation av klassisk kod och kvantkod. Förutom stödet för språk som C# och Python, har QDK stöd för Jupyter Notebook med Jupyter-kärnan IQ#.
 
