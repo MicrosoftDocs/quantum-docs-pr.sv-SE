@@ -1,0 +1,47 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.amplitudeamplification.amplitudeamplificationfrompartialreflections
+name: AmplitudeAmplificationFromPartialReflections
+type: function
+namespace: Microsoft.Quantum.AmplitudeAmplification
+summary: Amplitud förstärkning med partiella reflektioner.
+remarks: >-
+  Amplitud förstärkning är ett specialfall av Oblivious amplitud-förstärkning där det inte finns någon system qubits och Oblivious Oracle är inställt på identitet.
+
+  I de flesta fall initieras `startQubits` i läget $ \ket{\text{start}}\_$1, som är $-$1-eigenstate för `startStateReflection`.
+syntax: 'function AmplitudeAmplificationFromPartialReflections (phases : Microsoft.Quantum.AmplitudeAmplification.ReflectionPhases, startStateReflection : Microsoft.Quantum.Oracles.ReflectionOracle, targetStateReflection : Microsoft.Quantum.Oracles.ReflectionOracle) : (Qubit[] => Unit is Adj + Ctl)'
+input:
+  content: '(phases : Microsoft.Quantum.AmplitudeAmplification.ReflectionPhases, startStateReflection : Microsoft.Quantum.Oracles.ReflectionOracle, targetStateReflection : Microsoft.Quantum.Oracles.ReflectionOracle)'
+  types:
+  - name: phases
+    summary: Faser av partiella reflektioner
+    uid: microsoft.quantum.amplitudeamplification.reflectionphases
+  - name: startStateReflection
+    summary: Reflektions operator om start tillstånd
+    uid: microsoft.quantum.oracles.reflectionoracle
+  - name: targetStateReflection
+    summary: Reflektions operator om mål status
+    uid: microsoft.quantum.oracles.reflectionoracle
+output:
+  content: (Qubit[] => Unit is Adj + Ctl)
+  types:
+  - summary: En åtgärd som implementerar amplitud-förstärkning med partiella reflektioner.
+    isOperation: true
+    input:
+      types:
+      - isArray: true
+        isPrimitive: true
+        uid: Qubit
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    functors:
+    - Adjoint
+    - Controlled
+metadata:
+  ms.openlocfilehash: 8fd7ecce6a7623158e26ec4db6732daf114490af
+  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
+  ms.translationtype: MT
+  ms.contentlocale: sv-SE
+  ms.lasthandoff: 01/29/2020
+  ms.locfileid: "76872316"

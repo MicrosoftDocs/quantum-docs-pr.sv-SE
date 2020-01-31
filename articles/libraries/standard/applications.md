@@ -6,12 +6,12 @@ uid: microsoft.quantum.libraries.applications
 ms.author: martinro@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: ef22460a5bca63ebaf32c0ba21984e103ec8ebdd
-ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
+ms.openlocfilehash: 3e629e095bd2ee492496066710ef6fd4e578a543
+ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74864397"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76868976"
 ---
 # <a name="applications"></a>Appar #
 
@@ -69,15 +69,16 @@ Som exempel kan Trotter-Suzuki diskompositionen anropas med hjälp av följande 
 
 ```qsharp
 function TrotterSimulationAlgorithm(
-    trotterStepSize: Double, 
-    trotterOrder: Int) 
-    : SimulationAlgorithm {
+    trotterStepSize : Double, 
+    trotterOrder : Int) 
+: SimulationAlgorithm {
     ...
 }
+
 function TimeDependentTrotterSimulationAlgorithm(
-    trotterStepSize: Double, 
-    trotterOrder: Int) 
-    : TimeDependentSimulationAlgorithm {
+    trotterStepSize : Double, 
+    trotterOrder : Int) 
+: TimeDependentSimulationAlgorithm {
     ...
 }
 ```
@@ -99,11 +100,11 @@ Vi definierar därför den praktiska funktionen
 
 ```qsharp
 function InterpolatedEvolution(
-        interpolationTime: Double, 
-        evolutionGeneratorStart: EvolutionGenerator,
-        evolutionGeneratorEnd: EvolutionGenerator,
-        timeDependentSimulationAlgorithm: TimeDependentSimulationAlgorithm)
-        : (Qubit[] => Unit is Adj + Ctl) {
+        interpolationTime : Double, 
+        evolutionGeneratorStart : EvolutionGenerator,
+        evolutionGeneratorEnd : EvolutionGenerator,
+        timeDependentSimulationAlgorithm : TimeDependentSimulationAlgorithm)
+: (Qubit[] => Unit is Adj + Ctl) {
         ...
 }
  
@@ -114,13 +115,13 @@ Detta returnerar en enhetlig åtgärd som implementerar alla steg i adiabatic-ti
 Vi definierar också en användbar åtgärd som automatiskt utför alla steg i ett typiskt Quantum kemi-experiment. Till exempel har vi följande, som returnerar en energi uppskattning av den status som produceras av adiabatic-tillstånds förberedelse:
 
 ```qsharp
-operation AdiabaticStateEnergyEstimate( 
-    nQubits : Int, 
-    statePrepUnitary: (Qubit[] => Unit),
-    adiabaticUnitary: (Qubit[] => Unit),
+operation EstimateAdiabaticStateEnergy(
+    nQubits : Int,
+    statePrepUnitary : (Qubit[] => Unit),
+    adiabaticUnitary : (Qubit[] => Unit),
     qpeUnitary: (Qubit[] => Unit is Adj + Ctl),
-    phaseEstAlgorithm : ((DiscreteOracle, Qubit[]) => Double)) 
-    : Double {
+    phaseEstAlgorithm : ((DiscreteOracle, Qubit[]) => Double))
+: Double {
 ...
 }
 ```
@@ -174,7 +175,7 @@ Det styrda-$U _a $ Gate Maps $ \ket{x} $ till $ \ket{(AX) \text{mod} N} $ om kon
 För att uppnå $ (a ^ NX) \text{mod} N $ kan vi helt enkelt tillämpa styrd-$U _ {a ^ N} $, där vi beräknar $a ^ N \text{mod} N $ som är klassiska för att ansluta till Quantum-kretsen.  
 Kretsarna för att uppnå sådana modulära beräkningar har beskrivits i den [Quantum-aritmetiska dokumentationen](./algorithms.md#arithmetic), i synnerhet vi kräver en modulär exponent krets för att implementera de kontrollerade $U\_{a ^ i} $-åtgärder.
 
-Även om kretsen ovan motsvarar Quantum- [fas-uppskattningen](xref:microsoft.quantum.characterization.quantumphaseestimation) och explicit aktiverar order upptäckt, kan vi minska antalet qubits som krävs. Vi kan antingen följa Beauregard-metoden för order sökning enligt beskrivningen [på sidan 8 i arXiv: Quant-pH/0205095v3](https://arxiv.org/pdf/quant-ph/0205095v3.pdf#page=8)eller använda en av de fas uppskattnings rutiner som är tillgängliga i Microsoft. Quantum. Canon. Till exempel använder [robust fas uppskattning](xref:microsoft.quantum.characterization.robustphaseestimation) också en extra qubit.
+Även om kretsen ovan motsvarar Quantum- [fas-uppskattningen](xref:microsoft.quantum.characterization.quantumphaseestimation) och explicit aktiverar order upptäckt, kan vi minska antalet qubits som krävs. Vi kan antingen följa Beauregard-metoden för order sökning enligt beskrivningen [på sidan 8 i arXiv: Quant-pH/0205095v3](https://arxiv.org/pdf/quant-ph/0205095v3.pdf#page=8)eller använda en av de fas uppskattnings rutiner som finns i Microsoft. Quantum. karakterisering. Till exempel använder [robust fas uppskattning](xref:microsoft.quantum.characterization.robustphaseestimation) också en extra qubit.
  
 ### <a name="factoring"></a>Hänsyn ###
 Syftet med att använda factoring är att fastställa de två viktigaste faktorerna i heltal $N $, där $N $ är ett $n $-bitars nummer.  

@@ -4,23 +4,39 @@ name: Microsoft.Quantum.AmplitudeAmplification
 summary: " # <a name=\"summary\"></a>Sammanfattning\n Det här namn området innehåller funktioner och åtgärder för att utföra amplitud-förstärkning.\n\n # <a name=\"description\"></a>Beskrivning\n Oblivious amplitud-förstärkning med partiella reflektioner är den mest generella formen av amplitud-förstärkning som implementeras här.\n\n Detta anropas via åtgärden AmpAmpObliviousByReflectionPhases.\n\n Detta har två register: `ancillaRegister` och `systemRegister`.\n\n Detta godkänner två Oracle för dessa reflektioner av typen `ReflectionOracle` som bara agerar på `ancillaRegister`-registreringen.\n\n Detta godkänner en Oracle-specifik till Oblivious amplitud-förstärkning av typen `ObliviousOracle` som fungerar tillsammans i båda registren.\n\n Ingångs läget till `ancillaRegister` antas vara den unika $-$1-eigenstate för den första reflektions operatorn $I-2 \\ ket {s} \\ bra {s} $.\n\n Reflektioner om ett mål Quantum-tillstånd implementeras ofta genom att man antar åtkomst till en Oracle som förbereder detta tillstånd från beräknings basen $ \\ket{0\\cdots 0} $.\n\n Vår konvention för dessa Oracle kräver två register: en qubit `flagQubit` registrera dig och ett register för allt annat i ancillaRegister-registret.\n\n Oracle av typ `StateOracle` fungerar tillsammans i båda registren för att skapa mål tillstånd som flaggats av $ \\ket{1}$ i `flagQubit` registrera med en riktig amplitud.\n\n Reflektions `ReflectionOracle` om det här flagg läget genereras av åtgärden `TargetStateReflectionOracle`.\n\n Reflektions `ReflectionOracle` om ingångs läget till `ancillaRegister` genereras av den inverterande StateOracle och visar sedan ungefär $ \\ket{0\\cdots 0} $ med ReflectionStart ().\n\n Oracle av typen `DeterministicStateOracle` agerar i `qubitState` registren för att skapa mål tillstånd exakt utan flagga.\n\n `AmpAmpObliviousByOraclePhases` är en version av Oblivious amplitud-förstärkning som godkänner Oracle `StateOracle` och `ObliviousOracle` i stället för att avspeglas.\n\n Observera att amplitud förstärkning är ett specialfall av Oblivious amplitud-förstärkning där `ObliviousOracle` är identitets operatorn, och det finns inga system qubits, d.v.s. `systemRegister` är tomt.\n\n Detta anropas genom åtgärden `AmpAmByReflectionPhases` och `AmpAmpByOraclePhases`.\n\n Faserna för partiella reflektioner i standard fallet för Grover-sökning tillhandahålls av funktionen AmpAmpPhasesStandard.\n\n Vi har till exempel följande beroenden: AmpAmpByOracle-> AmpAmpByOraclePhases-> AmpAmpObliviousByOraclePhases-> AmpAmpObliviousByReflectionPhases."
 functions:
 - uid: microsoft.quantum.amplitudeamplification.ampampbyoracle
-  summary: Standardalgoritm för Amplituds förstärkning
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nAmpAmpByOracle är föråldrad. Använd @\"microsoft.quantum.amplitudeamplification.standardamplitudeamplification\" i stället.\nAnvänd @\"microsoft.quantum.amplitudeamplification.standardamplitudeamplification\"."
 - uid: microsoft.quantum.amplitudeamplification.ampampbyoraclephases
-  summary: Amplitud förstärkning av Oracle för partiella reflektioner.
-- uid: microsoft.quantum.amplitudeamplification.ampampbyreflectionsphases
-  summary: Amplitud förstärkning med partiella reflektioner.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nAmpAmpByOraclePhases är föråldrad. Använd @\"microsoft.quantum.amplitudeamplification.amplitudeamplificationfromstatepreparation\" i stället.\nAnvänd @\"microsoft.quantum.amplitudeamplification.amplitudeamplificationfromstatepreparation\"."
+- uid: microsoft.quantum.amplitudeamplification.ampampbyreflectionphases
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nAmpAmpByReflectionPhases är föråldrad. Använd @\"microsoft.quantum.amplitudeamplification.amplitudeamplificationfrompartialreflections\" i stället.\nAnvänd @\"microsoft.quantum.amplitudeamplification.amplitudeamplificationfrompartialreflections\"."
 - uid: microsoft.quantum.amplitudeamplification.ampampobliviousbyoraclephases
-  summary: Oblivious amplitud-förstärkning av Oracle för partiella reflektioner.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nAmpAmpObliviousByOraclePhases är föråldrad. Använd @\"microsoft.quantum.amplitudeamplification.obliviousamplitudeamplificationfromstatepreparation\" i stället.\nAnvänd @\"microsoft.quantum.amplitudeamplification.obliviousamplitudeamplificationfromstatepreparation\"."
 - uid: microsoft.quantum.amplitudeamplification.ampampobliviousbyreflectionphases
-  summary: Returnerar en enhetlig som implementerar Oblivious amplitud-förstärkning genom att ange för partiella reflektioner.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nAmpAmpObliviousByReflectionPhases är föråldrad. Använd @\"microsoft.quantum.amplitudeamplification.obliviousamplitudeamplificationfrompartialreflections\" i stället.\nAnvänd @\"microsoft.quantum.amplitudeamplification.obliviousamplitudeamplificationfrompartialreflections\"."
 - uid: microsoft.quantum.amplitudeamplification.ampampphasesfixedpoint
-  summary: Beräknar delvis reflektions faser för amplitud-förstärkning med fast punkt.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nAmpAmpPhasesFixedPoint är föråldrad. Använd @\"microsoft.quantum.amplitudeamplification.fixedpointreflectionphases\" i stället.\nAnvänd @\"microsoft.quantum.amplitudeamplification.fixedpointreflectionphases\"."
 - uid: microsoft.quantum.amplitudeamplification.ampampphasesstandard
-  summary: Beräknar delvis reflektions faser för standard-amplitud-förstärkning.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nAmpAmpPhasesStandard är föråldrad. Använd @\"microsoft.quantum.amplitudeamplification.standardreflectionphases\" i stället.\nAnvänd @\"microsoft.quantum.amplitudeamplification.standardreflectionphases\"."
 - uid: microsoft.quantum.amplitudeamplification.ampamprotationtoreflectionphases
-  summary: Konverterar faser som anges som en qubit rotation till faser som anges som partiella reflektioner.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nAmpAmpRotationToReflectionPhases är föråldrad. Använd @\"microsoft.quantum.amplitudeamplification.rotationphasesasreflectionphases\" i stället.\nAnvänd @\"microsoft.quantum.amplitudeamplification.rotationphasesasreflectionphases\"."
+- uid: microsoft.quantum.amplitudeamplification.amplitudeamplificationfrompartialreflections
+  summary: Amplitud förstärkning med partiella reflektioner.
+- uid: microsoft.quantum.amplitudeamplification.amplitudeamplificationfromstatepreparation
+  summary: Amplitud förstärkning av Oracle för partiella reflektioner.
+- uid: microsoft.quantum.amplitudeamplification.fixedpointreflectionphases
+  summary: Beräknar delvis reflektions faser för amplitud-förstärkning med fast punkt.
+- uid: microsoft.quantum.amplitudeamplification.obliviousamplitudeamplificationfrompartialreflections
+  summary: Returnerar en enhetlig som implementerar Oblivious amplitud-förstärkning genom att ange för partiella reflektioner.
+- uid: microsoft.quantum.amplitudeamplification.obliviousamplitudeamplificationfromstatepreparation
+  summary: Oblivious amplitud-förstärkning av Oracle för partiella reflektioner.
 - uid: microsoft.quantum.amplitudeamplification.reflectionstart
   summary: Skapar en reflektion om strängen med alla strängar | 0... 0 〉, vilket är det typiska ingångs läget för amplitud förstärkning.
+- uid: microsoft.quantum.amplitudeamplification.rotationphasesasreflectionphases
+  summary: Konverterar faser som anges som en qubit rotation till faser som anges som partiella reflektioner.
+- uid: microsoft.quantum.amplitudeamplification.standardamplitudeamplification
+  summary: Standardalgoritm för Amplituds förstärkning
+- uid: microsoft.quantum.amplitudeamplification.standardreflectionphases
+  summary: Beräknar delvis reflektions faser för standard-amplitud-förstärkning.
 - uid: microsoft.quantum.amplitudeamplification.targetstatereflectionoracle
   summary: >-
     Skapar en `ReflectionOracle` om mål tillstånd som unikt marker ATS av flaggan qubit.
@@ -29,16 +45,22 @@ functions:
     Mål tillstånd har en enda qubit inställd på 1, och alla andra 0: $ \ket{1}_f $.
 operations:
 - uid: microsoft.quantum.amplitudeamplification.ampamprusbyoracle
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nAmpAmpRUSByOracle är föråldrad. Använd @\"microsoft.quantum.amplitudeamplification.applyfixedpointamplification\" i stället.\nAnvänd @\"microsoft.quantum.amplitudeamplification.applyfixedpointamplification\"."
+- uid: microsoft.quantum.amplitudeamplification.applyamplitudeamplification
+  summary: Använder amplitud-förstärkning för ett angivet register med en angiven uppsättning faser och Oracle för att avspegla de ursprungliga och slutliga tillstånden.
+- uid: microsoft.quantum.amplitudeamplification.applyfixedpointamplification
   summary: Algoritm för Amplituds förstärkning med fast punkt
+- uid: microsoft.quantum.amplitudeamplification.applyobliviousamplitudeamplification
+  summary: Oblivious amplitud-förstärkning genom att ange partiella reflektioner.
 newtypes:
 - uid: microsoft.quantum.amplitudeamplification.reflectionphases
   summary: Faser för en sekvens av partiella reflektioner i amplitud förstärkning.
 - uid: microsoft.quantum.amplitudeamplification.rotationphases
   summary: Faser för en sekvens med en qubit rotation i amplitud förstärkning.
 metadata:
-  ms.openlocfilehash: acec4d085e42811618228c8e120842dc400c50b4
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 7b6aec2bd2300a84550f92740e24f33ce243ea7c
+  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73057196"
+  ms.lasthandoff: 01/29/2020
+  ms.locfileid: "76870390"

@@ -6,12 +6,12 @@ uid: microsoft.quantum.language.file-structure
 ms.author: Alan.Geller@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 40b2e7ddf5def6285250dffe130b152429dce1f8
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: 364d353c55bda38f227456909755d13dc7e67080
+ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73185196"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76821090"
 ---
 # <a name="file-structure"></a>Filstruktur
 
@@ -66,7 +66,7 @@ I synnerhet finns det ingen automatisk konvertering mellan värden av två anvä
 
 En användardefinierad typ deklaration består av nyckelordet `newtype`följt av namnet på den användardefinierade typen, en `=`, en giltig typ specifikation och ett avslutande semikolon.
 
-Exempel:
+Ett exempel:
 
 ```qsharp
 newtype PairOfInts = (Int, Int);
@@ -84,7 +84,7 @@ Varje Q #-källfil kan definiera valfritt antal åtgärder.
 
 Åtgärds namn måste vara unika inom ett namn område och får inte stå i konflikt med typ-och funktions namn.
 
-En åtgärds deklaration består av nyckelordet `operation`, följt av symbolen som är åtgärdens namn, en tupel för typ identifierare som definierar argumenten för åtgärden, ett kolon `:`, en typ anteckning som beskriver åtgärdens resultat typ, Alternativt en anteckning med åtgärds egenskaper, en öppen klammer `{`, bröd texten i åtgärds deklarationen och en avslutande klammerparentes `}`.
+En åtgärds deklaration består av nyckelordet `operation`, följt av symbolen som är åtgärdens namn, en typ av identifierare som definierar argumenten för åtgärden, ett kolon `:`, en typ anteckning som beskriver åtgärdens resultat typ, eventuellt en anteckning med åtgärds egenskaper, en öppen klammer `{`, bröd texten i åtgärds deklarationen och en avslutande klammerparentes `}`.
 
 Bröd texten i åtgärds deklarationen består antingen av standard implementeringen eller en lista över specialiseringar.
 Standard implementeringen kan anges direkt i deklarationen om endast implementeringen av standard-specialisering måste anges explicit.
@@ -138,7 +138,7 @@ is Ctl + Adj {
 }
 ```
 
-I exemplet ovan anger `adjoint invert;` att den angränsande specialiseringen ska genereras genom att invertera bröd texten och `controlled adjoint invert;` anger att den kontrollerade intilliggande specialiseringen ska genereras genom att den angivna implementeringen av kontrollerad specialisering.
+I exemplet ovan anger `adjoint invert;` att den angränsande specialiseringen ska genereras genom att invertera bröd texten och `controlled adjoint invert;` anger att den kontrollerade intilliggande specialiseringen ska genereras genom att den angivna implementeringen av den kontrollerade specialiseringen inverteras.
 
 För att en åtgärd ska kunna stödja program av `Adjoint` och/eller `Controlled` Functor måste dess returtyp nödvändigt vis `Unit`. 
 
@@ -187,12 +187,12 @@ För `body` och `adjoint`bör argument listan alltid vara `(...)`; för `control
 Om en eller flera specialiseringar förutom standard texten måste deklareras explicit måste implementeringen för standard texten omslutas till en lämplig specialiserings deklaration.
 
 ```qsharp
-operation CountOnes(qs: Qubit[]) : Int {
+operation CountOnes(qubits: Qubit[]) : Int {
 
     body (...) // default body specialization
     {
         mutable n = 0;
-        for (q in qs) {
+        for (qubit in qubits) {
             set n += M(q) == One ? 1 | 0;
         }
         return n;
@@ -208,7 +208,7 @@ Det är tillåtet att ange en åtgärd utan angränsande; mätnings åtgärder h
 En åtgärd stöder `Adjoint` Functor om dess deklaration innehåller en implicit eller explicit deklaration av en närliggande specialisering.
 En explicit deklarerad, intilliggande, intilliggande specialisering innebär att det finns en närliggande specialisering. 
 
-För åtgärd vars brödtext innehåller upprepnings-tills-Success-slingor, set-instruktioner, mätningar, Return-instruktioner eller anrop till andra åtgärder som inte stöder `Adjoint` Functor, genererar en angränsande specialisering automatiskt efter `invert` eller @no__ t_2_-direktivet är inte möjligt.
+För åtgärder vars brödtext innehåller upprepnings-tills-Success-slingor, set-instruktioner, mätningar, Return-instruktioner eller anrop till andra åtgärder som inte har stöd för `Adjoint` Functor, genererar automatiskt en angränsande specialisering enligt `invert`-eller `auto`-direktivet.
 
 ### <a name="controlled"></a>Styr
 
@@ -236,7 +236,7 @@ För en åtgärd vars brödtext innehåller anrop till andra åtgärder som inte
 En åtgärds deklaration kan vara så enkel som följande, som definierar den primitiva Pauli X-åtgärden:
 
 ```qsharp
-operation X (q : Qubit) : Unit
+operation X (qubit : Qubit) : Unit
 is Adj + Ctl {
     body intrinsic;
     adjoint self;
@@ -282,7 +282,7 @@ operation Teleport (source : Qubit, target : Qubit) : Unit {
 Functions är rent klassiska rutiner i Q #.
 Varje Q #-källfil kan definiera valfritt antal funktioner.
 
-En funktions deklaration består av nyckelordet `function`följt av symbolen som är funktionens namn, en typ av identifierad identifierare, en typ anteckning som beskriver funktionens returtyp och ett instruktions block som beskriver implementeringen av funktioner.
+En funktions deklaration består av nyckelordet `function`följt av symbolen som är funktionens namn, en typ av identifierare, en typ anteckning som beskriver funktionens returtyp och ett instruktions block som beskriver implementeringen av funktionen.
 
 Instruktions blocket som definierar en funktion måste stå inom `{` och `}` som alla andra instruktions block.
 

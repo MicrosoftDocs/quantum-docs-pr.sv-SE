@@ -3,25 +3,22 @@ uid: microsoft.quantum.amplitudeamplification.ampampphasesstandard
 name: AmpAmpPhasesStandard
 type: function
 namespace: Microsoft.Quantum.AmplitudeAmplification
-summary: Beräknar delvis reflektions faser för standard-amplitud-förstärkning.
-remarks: Alla faser är $ \pi $, förutom den första reflektionen om start tillstånd och senaste reflektionen om mål status, som är $0 $.
+summary: AmpAmpPhasesStandard är föråldrad. Använd @"microsoft.quantum.amplitudeamplification.standardreflectionphases" i stället.
 syntax: 'function AmpAmpPhasesStandard (nIterations : Int) : Microsoft.Quantum.AmplitudeAmplification.ReflectionPhases'
 input:
   content: '(nIterations : Int)'
   types:
   - name: nIterations
-    summary: Antal amplituds förstärknings iterationer som genererar delvis reflektions faser för.
     isPrimitive: true
     uid: Int
 output:
   content: Microsoft.Quantum.AmplitudeAmplification.ReflectionPhases
   types:
-  - summary: En åtgärd som implementerar faser som anges som partiella reflektioner
-    uid: microsoft.quantum.amplitudeamplification.reflectionphases
+  - uid: microsoft.quantum.amplitudeamplification.reflectionphases
 metadata:
-  ms.openlocfilehash: eeea673baba07c1d36ba15e4dc16268938655f86
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 33e87abf856736960bf445934d2124a7493ccf30
+  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73215684"
+  ms.lasthandoff: 01/29/2020
+  ms.locfileid: "76869142"

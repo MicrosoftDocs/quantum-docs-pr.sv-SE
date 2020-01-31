@@ -1,17 +1,17 @@
 ---
 title: Quantum-kretsar | Microsoft Docs
-description: Quantum-kretsar
+description: Kvantkretsar
 author: QuantumWriter
 uid: microsoft.quantum.concepts.circuits
 ms.author: nawiebe@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 7c2afa58fd70d893529cf794ae07df480466aaec
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: fe845aa0dde7c780ea6721dfe2559119e90b4aa5
+ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73210626"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76820801"
 ---
 # <a name="quantum-circuits"></a>Quantum-kretsar
 Överväg att ta en stund till den enhetliga omvandlingen $ \text{CNOT} _{01}(H\otimes 1) $.
@@ -39,7 +39,7 @@ Till exempel symbolen
 <!-- Can't find a way to easily center this... probably an extension needed:  -->
 ![](~/media/concepts_2.png)
 
-är [Hadamard](xref:microsoft.quantum.primitive.h) -porten som agerar vid en qubit-registrering.
+är [Hadamard](xref:microsoft.quantum.intrinsic.h) -porten som agerar vid en qubit-registrering.
 
 Quantum Gates sorteras i kronologisk ordning med den översta porten som den grind som först appliceras på qubits.
 Om du till exempel har en bild av kablarna som behålls i Quantum-läget, tar kablarna med Quantum-tillstånd genom varje port i diagrammet från vänster till höger.
@@ -72,7 +72,7 @@ Det innebär att du kan få en intuition om data flödet för en stor Quantum-al
 
 ## <a name="controlled-gates"></a>Kontrollerade grindar
 Den andra konstruktion som är inbyggd i qubit-diagram med flera är kontroll.
-Åtgärden för en Quantum och lätt kontrollerad grind, som betecknar $ \Lambda (G) $, där ett enskilt qubit värde styr programmet för $G $, kan förstås genom att titta i följande exempel på en produkt tillstånds ingång $ \Lambda (G) (\alpha \ket{0} + \beta \ket{1}) \ket{\psi} = \alpha \ket{0} \ket{\psi} + \beta \ket{1} G\ket {\ psi} $.
+Åtgärden för en Quantum., som är betecknad $ \Lambda (G) $, där ett enskilt qubit värde styr programmet för $G $, kan förstås genom att titta i följande exempel på en produkt tillstånds ingång $ \Lambda (G) (\alpha \ket{0} + \beta \ket{1}) \ket{\psi} = \alpha \ket{0} \ket{\psi} + \beta \ket{1} G\ket {\ psi} $.
 Det vill säga att den kontrollerade porten gäller $G $ till registret som innehåller $ \psi $ om och bara om kontrollen qubit tar värdet $1 $.
 I allmänhet beskriver vi sådana kontrollerade åtgärder i krets diagram som
 
@@ -81,7 +81,7 @@ I allmänhet beskriver vi sådana kontrollerade åtgärder i krets diagram som
 ![](~/media/concepts_5.png)
 
 Här visas den svarta cirkeln som anger den Quantum-bit där porten styrs och en lodrät kabel anger den färg som tillämpas när kontrollen qubit tar värdet $1 $.
-För de specialfall där $G = X $ och $G = Z $, introducerar vi följande notation för att beskriva den kontrollerade versionen av grindarna (Observera att den kontrollerade X-porten är [$CNOT $ grind](xref:microsoft.quantum.primitive.cnot)):
+För de specialfall där $G = X $ och $G = Z $, introducerar vi följande notation för att beskriva den kontrollerade versionen av grindarna (Observera att den kontrollerade X-porten är [$CNOT $ grind](xref:microsoft.quantum.intrinsic.cnot)):
 
 <!--- ![](.\media\6.svg) --->
 <!-- Can't find a way to easily center this... probably an extension needed:  -->
@@ -106,7 +106,7 @@ Mer specifikt ser en sådan under krets ut så här:
 <!-- Can't find a way to easily center this... probably an extension needed:  -->
 ![mätnings krets](~/media/concepts_7.png)
 
-Q # implementerar en [mått operator](xref:microsoft.quantum.primitive.measure) för det här ändamålet.
+Q # implementerar en [mått operator](xref:microsoft.quantum.intrinsic.measure) för det här ändamålet.
 Mer information finns i [avsnittet om mått](xref:microsoft.quantum.libraries.standard.prelude#measurements) .
 
 På samma sätt är under kretsen

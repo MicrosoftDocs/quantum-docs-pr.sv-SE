@@ -6,12 +6,12 @@ uid: microsoft.quantum.language.statements
 ms.author: Alan.Geller@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 5bcbee868c76aaf53d0b7969e6e634da62689aaa
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: 9157cf3336ce0894816dbfbaf13ce0e712a6b096
+ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73184873"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76821073"
 ---
 # <a name="statements-and-other-constructs"></a>Instruktioner och andra konstruktioner
 
@@ -29,7 +29,7 @@ I `///` kommentarer formateras text som en del av API-dokumentationen som [markd
 Som tillägg till markdown kan kors referenser till åtgärder, funktioner och användardefinierade typer i Q # inkluderas med hjälp av `@"<ref target>"`, där `<ref target>` ersätts av det fullständigt kvalificerade namnet på det kod objekt som refereras till.
 Alternativt kan en dokumentations motor också ha stöd för ytterligare markdown-tillägg.
 
-Exempel:
+Ett exempel:
 
 ```qsharp
 /// # Summary
@@ -54,8 +54,7 @@ Exempel:
 ///
 /// # See Also
 /// - Microsoft.Quantum.Intrinsic.H
-operation ApplyTwice<'T>(op : ('T => Unit), target : 'T) : Unit
-{
+operation ApplyTwice<'T>(op : ('T => Unit), target : 'T) : Unit {
     op(target);
     op(target);
 }
@@ -90,7 +89,6 @@ Om ett kort namn `Z` för `X.Y` har definierats i det namn området och filen m�
 
 ```qsharp
 namespace NS {
-
     open Microsoft.Quantum.Intrinsic; // opens the namespace
     open Microsoft.Quantum.Math as Math; // defines a short name for the namespace
 }
@@ -181,7 +179,7 @@ for (i in 1 .. 2 .. 10) {
 Liknande instruktioner är tillgängliga för alla binära operatorer där typen för den vänstra sidan matchar uttrycks typen. Detta ger till exempel ett bekvämt sätt att ackumulera värden:
 ```qsharp
 mutable results = new Result[0];
-for (q in qubits) {
+for (qubit in qubits) {
     set results += [M(q)];
     // ...
 }
@@ -193,7 +191,7 @@ Det finns en liknande sammanfogning för kopiera-och-uppdatera-uttryck på den h
 ```qsharp
 newtype Complex = (Re : Double, Im : Double);
 
-function AddAll (reals : Double[], ims : Double[]) : Complex[] {
+function ElementwisePlus(reals : Double[], ims : Double[]) : Complex[] {
     mutable res = Complex(0.,0.);
 
     for (r in reals) {
@@ -209,19 +207,17 @@ function AddAll (reals : Double[], ims : Double[]) : Complex[] {
 Om det finns matriser innehåller våra standard bibliotek nödvändiga verktyg för många vanliga behov av initiering och manipulering av matris, och därför kan du undvika att behöva uppdatera mat ris objekt på den första platsen. Uppdaterings-och omtilldelnings instruktioner ger ett alternativ om det behövs:
 
 ```qsharp
-operation RandomInts(maxInt : Int, nrSamples : Int) : Int[] {
-
+operation GenerateRandomInts(max : Int, nSamples : Int) : Int[] {
     mutable samples = new Double[0];
-    for (i in 1 .. nrSamples) {
-        set samples += [RandomInt(maxInt)];
+    for (i in 1 .. nSamples) {
+        set samples += [RandomInt(max)];
     }
     return samples;
 }
 
-operation SampleUniformDistr(nrSamples : Int, prec : Int) : Double[] {
-
-    let normalization = 1. / IntAsDouble(prec);
-    mutable samples = RandomInts(prec, nrSamples);
+operation SampleUniformDistrbution(nSamples : Int, nSteps : Int) : Double[] {
+    let normalization = 1. / IntAsDouble(nSteps);
+    mutable samples = GenerateRandomInts(nSteps, nSamples);
     
     for (i in IndexRange(samples) {
         let value = IntAsDouble(samples[i]);
@@ -236,10 +232,9 @@ operation SampleUniformDistr(nrSamples : Int, prec : Int) : Double[] {
 
 Funktionen
 ```qsharp
-function EmbedPauli (pauli : Pauli, location : Int, n : Int) : Pauli[]
-{
-    mutable pauliArray = new Pauli[n];
-    for (index in 0 .. n - 1) {
+function PauliEmbedding(pauli : Pauli, length : Int, location : Int) : Pauli[] {
+    mutable pauliArray = new Pauli[length];
+    for (index in 0 .. length - 1) {
         set pauliArray w/= index <- 
             index == location ? pauli | PauliI;
     }    
@@ -249,8 +244,8 @@ function EmbedPauli (pauli : Pauli, location : Int, n : Int) : Pauli[]
 Du kan till exempel enkelt använda funktionen `ConstantArray` i `Microsoft.Quantum.Arrays`och returnera ett kopierings-och-uppdaterings uttryck:
 
 ```qsharp
-function EmbedPauli (pauli : Pauli, i : Int, n : Int) : Pauli[] {
-    return ConstantArray(n, PauliI) w/ i <- pauli;
+function PauliEmbedding(pauli : Pauli, length : Int, location : Int) : Pauli[] {
+    return ConstantArray(length, PauliI) w/ location <- pauli;
 }
 ```
 
@@ -330,8 +325,8 @@ Exempel:
 
 ```qsharp
 // ...
-for (qb in qubits) { // qubits contains a Qubit[]
-    H(qb);
+for (qubit in qubits) { // qubits contains a Qubit[]
+    H(qubit);
 }
 
 mutable results = new (Int, Results)[Length(qubits)];
@@ -359,13 +354,13 @@ Loop-texten, villkoret och korrigeringen betraktas som alla som ett enda omfång
 ```qsharp
 mutable iter = 1;
 repeat {
-    ProbabilisticCircuit(qs);
-    let success = ComputeSuccessIndicator(qs);
+    ProbabilisticCircuit(qubits);
+    let success = ComputeSuccessIndicator(qubits);
 }
 until (success || iter > maxIter)
 fixup {
     iter += 1;
-    ComputeCorrection(qs);
+    ComputeCorrection(qubits);
 }
 ```
 
@@ -374,25 +369,25 @@ Om villkoret är sant slutförs instruktionen. annars utförs korrigeringen och 
 Observera att om du slutför körningen av korrigeringen avslutas omfånget för instruktionen, så att symbol bindningar som görs under bröd texten eller korrigeringen inte är tillgängliga i efterföljande upprepningar.
 
 Följande kod är till exempel en Probabilistic-krets som implementerar en viktig rotations grind $V _3 = (\boldone + 2 i Z)/\sqrt{5}$ med Hadamard-och T-grindarna.
-Slingan upphör om 8/5 upprepningar i genomsnitt.
+Loopen avslutas i $ \frac{8}{5}$ upprepningar i genomsnitt.
 Se [*REPEAT-until-lyckades: icke-deterministisk dekomposition av Single-qubit unitaries*](https://arxiv.org/abs/1311.1074) (Paetznick och Svore, 2014) för mer information.
 
 ```qsharp
-using (anc = Qubit()) {
+using (qubit = Qubit()) {
     repeat {
-        H(anc);
-        T(anc);
-        CNOT(target,anc);
-        H(anc);
-        Adjoint T(anc);
-        H(anc);
-        T(anc);
-        H(anc);
-        CNOT(target,anc);
-        T(anc);
+        H(qubit);
+        T(qubit);
+        CNOT(target, qubit);
+        H(qubit);
+        Adjoint T(qubit);
+        H(qubit);
+        T(qubit);
+        H(qubit);
+        CNOT(target, qubit);
+        T(qubit);
         Z(target);
-        H(anc);
-        let result = M(anc);
+        H(qubit);
+        let result = M(qubit);
     } until (result == Zero);
 }
 ```
@@ -450,7 +445,7 @@ if (i == 1) {
 }
 ```
 
-### <a name="return"></a>returrelaterade
+### <a name="return"></a>Returrelaterade
 
 Return-instruktionen avslutar körningen av en åtgärd eller funktion och returnerar ett värde till anroparen.
 Det består av nyckelordet `return`följt av ett uttryck av lämplig typ och ett avslutande semikolon.
@@ -480,7 +475,7 @@ eller
 return (results, qubits);
 ```
 
-### <a name="fail"></a>Kanske
+### <a name="fail"></a>Misslyckades
 
 Instruktionen Error avslutar körningen av en åtgärd och returnerar ett felvärde till anroparen.
 Det består av nyckelordet `fail`följt av en sträng och ett avslutande semikolon.
@@ -519,15 +514,15 @@ Initierare är tillgängliga antingen för en enskild qubit, anges som `Qubit()`
 Exempel:
 
 ```qsharp
-using (q = Qubit()) {
+using (qubit = Qubit()) {
     // ...
 }
-using ((ancilla, qubits) = (Qubit(), Qubit[bits * 2 + 3])) {
+using ((auxiliary, qubits) = (Qubit(), Qubit[bits * 2 + 3])) {
     // ...
 }
 ```
 
-### <a name="dirty-qubits"></a>Smutsig qubits
+### <a name="borrowed-qubits"></a>Lånade qubits
 
 `borrowing`-instruktionen används för att hämta qubits för tillfällig användning. Instruktionen består av nyckelordet `borrowing`följt av en öppen parentes `(`, en bindning, en avslutande parentes `)`och instruktions blocket som qubits är tillgängligt i.
 Bindningen följer samma mönster och regler som i en `using`-instruktion.
@@ -535,10 +530,10 @@ Bindningen följer samma mönster och regler som i en `using`-instruktion.
 Exempel:
 
 ```qsharp
-borrowing (q = Qubit()) {
+borrowing (qubit = Qubit()) {
     // ...
 }
-borrowing ((ancilla, qubits) = (Qubit(), Qubit[bits * 2 + 3])) {
+borrowing ((auxiliary, qubits) = (Qubit(), Qubit[bits * 2 + 3])) {
     // ...
 }
 ```
@@ -547,8 +542,7 @@ De lånade qubits är i ett okänt tillstånd och hamnar utanför definitions om
 Låntagaren åtar sig att lämna qubits i samma tillstånd som de var i när de lånades, d.v.s. deras tillstånd i början och i slutet av instruktions blocket förväntas vara detsamma.
 Detta tillstånd är i synnerhet inte nödvändigt vis ett klassiskt läge, som i de flesta fall bör låne omfång inte innehålla mätningar. 
 
-Sådana qubits kallas ofta "smutsig Ancilla".
-Se [*factoring med hjälp av 2n + 2 qubits med Toffoli-baserad modulär multiplikation*](https://arxiv.org/abs/1611.07995) (Haner, Roetteler och Svore 2017) för ett exempel på smutsig Ancilla användning.
+Se [*factoring med hjälp av 2n + 2 qubits med Toffoli-baserad modulär multiplikation*](https://arxiv.org/abs/1611.07995) (Haner, Roetteler och Svore 2017) för ett exempel på lånad qubit användning.
 
 När du lånar qubits försöker systemet först att fylla i begäran från qubits som används men som inte har öppnats under bröd texten i `borrowing`-instruktionen.
 Om det inte finns tillräckligt med sådan qubits, kommer den att allokera nya qubits för att slutföra begäran.

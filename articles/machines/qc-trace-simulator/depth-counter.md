@@ -1,17 +1,17 @@
 ---
 title: Djup räknare | Quantum Computer trace Simulator | Microsoft Docs
-description: Översikt över Quantum Computer trace Simulator
+description: Översikt över spårningssimulator för kvantdator
 author: vadym-kl
 ms.author: vadym@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
 uid: microsoft.quantum.machines.qc-trace-simulator.depth-counter
-ms.openlocfilehash: f5fcaa64e91290d377eeba597df2e307e187277c
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: 07f927c794e2c62e53e4e053b5bc683d24bbed8d
+ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73184907"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76820478"
 ---
 # <a name="depth-counter"></a>Djup räknare
 
@@ -20,12 +20,12 @@ Det används för att samla in antalet djup för varje åtgärd som anropas i et
 
 Som standard har alla åtgärder djup 0, förutom T-porten som har djup 1. Detta innebär att endast T-djupet beräknas (vilket är ofta önskvärt) som standard. Insamlad statistik sammanställs över alla kanter i åtgärds anrops diagrammet. 
 
-Nu ska vi beräkna <xref:microsoft.quantum.intrinsic.t> djupet i <xref:microsoft.quantum.intrinsic.ccnot>s åtgärden. Vi kommer att använda följande Q #-driv rutins kod: 
+Nu ska vi beräkna <xref:microsoft.quantum.intrinsic.t> djupet i <xref:microsoft.quantum.intrinsic.ccnot>s åtgärden. Vi kommer att använda följande exempel kod för Q #:
 
 ```qsharp
-open Microsoft.Quantum.Primitive;
-operation CCNOTDriver() : Unit {
+open Microsoft.Quantum.Intrinsic;
 
+operation ApplySampleWithCCNOT() : Unit {
     using (qubits = Qubit[3]) {
         CCNOT(qubits[0], qubits[1], qubits[2]);
         T(qubits[0]);
@@ -35,7 +35,7 @@ operation CCNOTDriver() : Unit {
 
 ## <a name="using-depth-counter-within-a-c-program"></a>Använda djup räknare i ett C# program
 
-För att kontrol lera att `CCNOT` har `T` djup 5 och `CCNOTDriver` har `T` djup 6 kan vi använda C# följande kod:
+För att kontrol lera att `CCNOT` har `T` djup 5 och `ApplySampleWithCCNOT` har `T` djup 6 kan vi använda C# följande kod:
 
 ```csharp 
 using Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators;
@@ -43,17 +43,17 @@ using System.Diagnostics;
 var config = new QCTraceSimulatorConfiguration();
 config.useDepthCounter = true;
 var sim = new QCTraceSimulator(config);
-var res = CCNOTDriver.Run(sim).Result;
+var res = ApplySampleWithCCNOT.Run(sim).Result;
 
-double tDepth = sim.GetMetric<Primitive.CCNOT, CCNOTDriver>(DepthCounter.Metrics.Depth);
-double tDepthAll = sim.GetMetric<CCNOTDriver>(DepthCounter.Metrics.Depth);
+double tDepth = sim.GetMetric<Intrinsic.CCNOT, ApplySampleWithCCNOT>(DepthCounter.Metrics.Depth);
+double tDepthAll = sim.GetMetric<ApplySampleWithCCNOT>(DepthCounter.Metrics.Depth);
 ```
 
-Den första delen av programmet körs `CCNOTDriver`. I den andra delen använder vi metoden `QCTraceSimulator.GetMetric` för att hämta `T` djupet för `CCNOT` och `CCNOTDriver`: 
+Den första delen av programmet körs `ApplySampleWithCCNOT`. I den andra delen använder vi metoden `QCTraceSimulator.GetMetric` för att hämta `T` djupet för `CCNOT` och `ApplySampleWithCCNOT`: 
 
 ```csharp
-double tDepth = sim.GetMetric<Primitive.CCNOT, CCNOTDriver>(DepthCounter.Metrics.Depth);
-double tDepthAll = sim.GetMetric<CCNOTDriver>(DepthCounter.Metrics.Depth);
+double tDepth = sim.GetMetric<Intrinsic.CCNOT, ApplySampleWithCCNOT>(DepthCounter.Metrics.Depth);
+double tDepthAll = sim.GetMetric<ApplySampleWithCCNOT>(DepthCounter.Metrics.Depth);
 ```
 
 Slutligen kan vi använda följande för att mata ut all statistik som samlas in av `Depth Counter` i CSV-format:

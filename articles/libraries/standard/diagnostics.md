@@ -5,12 +5,12 @@ author: cgranade
 uid: microsoft.quantum.libraries.diagnostics
 ms.author: chgranad@microsoft.com
 ms.topic: article
-ms.openlocfilehash: d5889b8d5a92801b0ada65f7a17c655c959fc57f
-ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
+ms.openlocfilehash: 67ec6780d8cbbda7223d46026a9df97cebc92b33
+ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74864346"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76820988"
 ---
 # <a name="diagnostics"></a>Diagnostik #
 
@@ -53,7 +53,7 @@ Standard biblioteken för Q # innehåller flera olika funktioner för att repres
 
 - <xref:microsoft.quantum.diagnostics.fact>
 - <xref:microsoft.quantum.diagnostics.equalitywithintolerancefact>
-- <xref:microsoft.quantum.diagnostics.nearequalityfact>
+- <xref:microsoft.quantum.diagnostics.nearequalityfactc>
 - <xref:microsoft.quantum.diagnostics.equalityfacti>
 
 
@@ -146,7 +146,7 @@ Den refererade kontrollen anropar däremot varje åtgärd exakt en gång, så at
 Båda dessa tester är användbara för att säkerställa att Quantum program är korrekta.
 
 
-## <a name="further-reading"></a>Mer information ##
+## <a name="further-reading"></a>Mer läsning ##
 
 - <xref:microsoft.quantum.techniques.testing-and-debugging>
 - <xref:microsoft.quantum.diagnostics>

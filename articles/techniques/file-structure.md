@@ -1,18 +1,19 @@
 ---
-title: Introduktion till Quantum Development-metoder | Microsoft Docs
-description: Introduktion till Quantum Development-metoder
+title: 'Översikt över q # program-Q #-tekniker | Microsoft Docs'
+description: 'Översikt över q # program – Q # tekniker'
 author: QuantumWriter
 ms.author: Christopher.Granade@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 702d23293a1c340ddd3d7032d0e05294345469b2
-ms.sourcegitcommit: aa5e6f4a2deb4271a333d3f1b1eb69b5bb9a7bad
+uid: microsoft.quantum.techniques.file-structure
+ms.openlocfilehash: e8f52e6b0d4382331665a8e845ef19a3a1beabf9
+ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73442564"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76820835"
 ---
-# <a name="q-program-overview"></a>Översikt över Q # program
+# <a name="q-program-overview"></a>Översikt över Q#-programmet
 
 Q # är ett skalbart, beskärmat programmeringsspråk för flera paradigm för Quantum Computing. Q # är ett Quantum-programmeringsspråk där det kan användas för att beskriva hur instruktioner körs på Quantum Machines. De datorer som kan vara riktade till den faktiska Quantum-maskinvaran. Q # är skalbart: det kan användas för att skriva enkla demonstrations program, t. ex. teleport som körs på några qubits, men som också har stöd för skrivning av stora, sofistikerade program som simulering av komplexa molekyler som kräver stora datorer med miljon tals qubits. Även om stora fysiska datorer fortfarande är i framtiden, tillåter Q # att en programmerare programmerar komplexa Quantum-algoritmer nu. Vad är mer, Q # stöder olika uppgifter som fel sökning, profilering, resurs uppskattning och vissa simuleringar av särskilda ändamål på ett skalbart sätt. 
 

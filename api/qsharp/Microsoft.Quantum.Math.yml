@@ -197,7 +197,7 @@ functions:
 - uid: microsoft.quantum.math.realmod
   summary: Beräknar modulen mellan två reella tal.
 - uid: microsoft.quantum.math.round
-  summary: Avrundar ett värde till närmaste heltal eller till det angivna antalet bråk tals siffror.
+  summary: Avrundar ett värde till närmaste heltal.
 - uid: microsoft.quantum.math.signd
   summary: Returnerar ett heltal som anger tecknet för ett tal.
 - uid: microsoft.quantum.math.signi
@@ -253,9 +253,9 @@ operations:
 - uid: microsoft.quantum.math.randomsinglequbitpauli
   summary: Returnerar en av Pauli-operatörerna med en qubit enhetligt läge.
 metadata:
-  ms.openlocfilehash: 00156d553e8378b1a38dcd6f1749c4ff3cb689a7
-  ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
+  ms.openlocfilehash: f1a0185252155a39572a6b4159a88686533154c0
+  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 12/05/2019
-  ms.locfileid: "74858266"
+  ms.lasthandoff: 01/29/2020
+  ms.locfileid: "76870194"

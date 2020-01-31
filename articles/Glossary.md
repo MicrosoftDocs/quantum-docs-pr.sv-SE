@@ -6,12 +6,12 @@ ms.author: Alan.Geller@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
 uid: microsoft.quantum.glossary
-ms.openlocfilehash: ce15fee2be68d41f0b806be50320b562a749c3b7
-ms.sourcegitcommit: aa5e6f4a2deb4271a333d3f1b1eb69b5bb9a7bad
+ms.openlocfilehash: 5c7f2c4a572f6194ee846f056016a25b8c5303a2
+ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73442544"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76820767"
 ---
 # <a name="quantum-computing-glossary"></a>Ord lista för Quantum Computing
 
@@ -39,9 +39,8 @@ ms.locfileid: "73442544"
 |Inledning|Uppsättningen primitiva och klassiska åtgärder och funktioner som definieras av varje enskild måldator, i stället för på Q #-nivå.|
 |Quantum-krets|En representation av ett program för en Quantum-dator. Mer information finns i avsnittet <xref:microsoft.quantum.concepts.circuits>.|
 |Quantum-tillstånd|En representation av qubits i systemet. Detta är vanligt vis betecknat som en komplex kolumn vektor. Mer information finns i <xref:microsoft.quantum.concepts.vectors>. |
-|qubit|Enhet för Quantum Storage. Mer information finns i avsnittet <xref:microsoft.quantum.concepts.qubit>.|
+|Qubit|Enhet för Quantum Storage. Mer information finns i avsnittet <xref:microsoft.quantum.concepts.qubit>.|
 |Upprepa-tills-lyckades|En Quantum-algoritm som probabilistically lyckas. Vid ett haveri försök att genomföra rutinen igen förrän det lyckades (eller en gräns har nåtts). |
-|Program varu stack|Den fullständiga uppsättningen av klassiska program och Quantum-program samt de kompilatorer, simulatorer och körningar som krävs för att använda en Quantum-dator. Mer information finns i avsnittet <xref:microsoft.quantum.concepts.software-stack>. |
 |Måldator|Ett Compilation Target som sänker ett abstrakt Quantum-program mot maskin vara eller simulering. Detta omfattar vanligt vis åter skrivningar för många olika sätt, inklusive porttyp, kodning för fel korrigering, geometrisk layout och andra.|
 |Tupel|Kommaavgränsade typer grupperas tillsammans med parentes. |
 |Användardefinierad typ|Samling inbyggda eller tidigare definierade typer som kan kallas en enskild enhet.|

@@ -6,12 +6,12 @@ ms.author: vadym@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
 uid: microsoft.quantum.machines.qc-trace-simulator.intro
-ms.openlocfilehash: 7fd9d1fa4fb3c5dd216d846038abd40454ece2e8
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: 929745a6da6034599e97d2f573190308fde6eb75
+ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73035125"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76820444"
 ---
 # <a name="quantum-trace-simulator"></a>Spårningssimulator för kvantdator
 
@@ -24,29 +24,26 @@ Spårningssimulatorn måste erhålla ytterligare information från användaren n
 
 ## <a name="providing-the-probability-of-measurement-outcomes"></a>Ange sannolikheten för mätresultatet
 
-Det finns två typer av mått som syns i kvantalgoritmer. Den första typen används när användaren vanligtvis känner till sannolikheten för resultatet. I detta fall kan användaren skriva <xref:microsoft.quantum.primitive.assertprob> från namnområdet <xref:microsoft.quantum.primitive> för att visa att kunskapen finns. Följande exempel illustrerar detta:
+Det finns två typer av mått som syns i kvantalgoritmer. Den första typen används när användaren vanligtvis känner till sannolikheten för resultatet. I detta fall kan användaren skriva <xref:microsoft.quantum.intrinsic.assertprob> från namnområdet <xref:microsoft.quantum.intrinsic> för att visa att kunskapen finns. Följande exempel illustrerar detta:
 
 ```qsharp
-operation Teleportation (source : Qubit, target : Qubit) : Unit {
-
-    using (ancilla = Qubit()) {
-
-        H(ancilla);
-        CNOT(ancilla, target);
-
-        CNOT(source, ancilla);
+operation TeleportQubit(source : Qubit, target : Qubit) : Unit {
+    using (qubit = Qubit()) {
+        H(qubit);
+        CNOT(qubit, target);
+        CNOT(source, qubit);
         H(source);
 
         AssertProb([PauliZ], [source], Zero, 0.5, "Outcomes must be equally likely", 1e-5);
-        AssertProb([PauliZ], [ancilla], Zero, 0.5, "Outcomes must be equally likely", 1e-5);
+        AssertProb([PauliZ], [q], Zero, 0.5, "Outcomes must be equally likely", 1e-5);
 
         if (M(source) == One)  { Z(target); X(source); }
-        if (M(ancilla) == One) { X(target); X(ancilla); }
+        if (M(q) == One) { X(target); X(q); }
     }
 }
 ```
 
-När spårningssimulatorn kör `AssertProb` kommer den registrera att mätning av `PauliZ` i `source` och `ancilla` bör få ett resultat på `Zero` med sannolikheten 0,5. När simulatorn senare kör `M` kommer den att hitta de registrerade värdena för resultatets sannolikhet och `M` returnerar `Zero` eller `One` med sannolikheten 0,5. När samma kod körs på en simulator som håller koll på kvanttillståndet, kontrollerar simulatorn att de angivna sannolikheterna i `AssertProb` är korrekta.
+När spårningssimulatorn kör `AssertProb` kommer den registrera att mätning av `PauliZ` i `source` och `q` bör få ett resultat på `Zero` med sannolikheten 0,5. När simulatorn senare kör `M` kommer den att hitta de registrerade värdena för resultatets sannolikhet och `M` returnerar `Zero` eller `One` med sannolikheten 0,5. När samma kod körs på en simulator som håller koll på kvanttillståndet, kontrollerar simulatorn att de angivna sannolikheterna i `AssertProb` är korrekta.
 
 ## <a name="running-your-program-with-the-quantum-computer-trace-simulator"></a>Köra ditt program med spårningssimulatorn för kvantdatorer 
 

@@ -1,17 +1,17 @@
 ---
 title: 'Q # typ modell | Microsoft Docs'
-description: 'Q # typ modell'
+description: Modell av Q#-typ
 author: QuantumWriter
 uid: microsoft.quantum.language.type-model
 ms.author: Alan.Geller@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 4e251053d1b8306bf8956314d8099e95c56bce55
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: 0aabb144779da301b71ad215c8e975cc29b4dcce
+ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/28/2019
-ms.locfileid: "73184754"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76871642"
 ---
 # <a name="the-type-model"></a>Typ modellen
 
@@ -120,7 +120,7 @@ Vi refererar till denna egenskap som _likhet med singleton-tupel_.
 
 En Q #-fil kan definiera en ny namngiven typ som innehåller ett enda värde av juridisk typ.
 För valfri tupel-typ `T`kan vi deklarera en ny användardefinierad typ som är en undertyp till `T` med `newtype`-instruktionen.
-I @"microsoft.quantum.canon"-namnrymden definieras komplexa tal som en användardefinierad typ:
+I @"microsoft.quantum.math"-namnrymden definieras komplexa tal som en användardefinierad typ:
 
 ```qsharp
 newtype Complex = (Double, Double);
@@ -141,7 +141,7 @@ newtype Nested = (Double, (ItemName : Int, String));
 Namngivna objekt har fördelen att de kan nås direkt via åtkomst operatören `::`. 
 
 ```qsharp
-function Addition (c1 : Complex, c2 : Complex) : Complex {
+function ComplexAddition(c1 : Complex, c2 : Complex) : Complex {
     return Complex(c1::Re + c2::Re, c1::Im + c2::Im);
 }
 ```
@@ -151,7 +151,7 @@ Med operatorn "unwrap" `!`kan du extrahera värdet som finns i en användardefin
 Typen av "unwrap"-uttryck är den underliggande typen av användardefinierad typ. 
 
 ```qsharp
-function PrintMsg (value : Nested) : Unit {
+function PrintedMessage(value : Nested) : Unit {
     let (d, (_, str)) = value!;
     Message ($"{str}, value: {d}");
 }
@@ -227,7 +227,7 @@ På så sätt har användardefinierade typer en liknande roll som poster i F# ti
 ## <a name="operation-and-function-types"></a>Åtgärds-och funktions typer
 
 En Q #- _åtgärd_ är en Quantum-underrutin.
-Det vill säga att det är en rutin som kan anropas och som innehåller Quantum-åtgärder.
+Det innebär att det är en anropningsbar rutin som innehåller kvantåtgärder.
 
 _Funktionen_ Q # är en klassisk underrutin som används i en Quantum-algoritm.
 Den kan innehålla en klassisk kod men inga Quantum-åtgärder.
@@ -286,27 +286,28 @@ Q # är contravariant med avseende på indatatyper: ett anrop som tar en typ `'A
 Det innebär att man får följande definitioner:
 
 ```qsharp
-operation Invertible (qs : Qubit[]) : Unit 
+operation Invert(qubits : Qubit[]) : Unit 
 is Adj {...} 
-operation Unitary (qs : Qubit[]) : Unit 
+
+operation ApplyUnitary(qubits : Qubit[]) : Unit 
 is Adj + Ctl {...} 
 
-function ConjugateInvertibleWith (
-   inner: (Qubit[] => Unit is Adj),
-   outer : (Qubit[] => Unit is Adj))
+function ConjugateInvertWith(
+    inner : (Qubit[] => Unit is Adj),
+    outer : (Qubit[] => Unit is Adj))
 : (Qubit[] => Unit is Adj) {...}
 
-function ConjugateUnitaryWith (
-   inner: (Qubit[] => Unit is Adj + Ctl),
-   outer : (Qubit[] => Unit is Adj))
+function ConjugateUnitaryWith(
+    inner : (Qubit[] => Unit is Adj + Ctl),
+    outer : (Qubit[] => Unit is Adj))
 : (Qubit[] => Unit is Adj + Ctl) {...}
 ```
 
 följande är sant:
 
-- Åtgärden `ConjugateInvertibleWith` kan anropas med ett `inner` argument för antingen `Invertible` eller `Unitary`.
-- Åtgärden `ConjugateUnitaryWith` kan anropas med ett `inner` argument av `Unitary`, men inte `Invertible`.
-- Ett värde av typen `(Qubit[] => Unit is Adj + Ctl)` kan returneras från `ConjugateInvertibleWith`.
+- Funktionen `ConjugateInvertWith` kan anropas med ett `inner` argument för antingen `Invert` eller `ApplyUnitary`.
+- Funktionen `ConjugateUnitaryWith` kan anropas med ett `inner` argument av `ApplyUnitary`, men inte `Invert`.
+- Ett värde av typen `(Qubit[] => Unit is Adj + Ctl)` kan returneras från `ConjugateInvertWith`.
 
 > [!IMPORTANT]
 > I Q # 0,3 införs en betydande skillnad i beteendet för användardefinierade typer.
@@ -377,14 +378,12 @@ Det här exemplet på en Q #-åtgärd kommer från [mått](https://github.com/mi
 ```qsharp
 /// # Summary
 /// Prepares a state and measures it in the Pauli-Z basis.
-operation MeasureOneQubit () : Result {
+operation MeasureOneQubit() : Result {
         mutable result = Zero;
 
         using (qubit = Qubit()) { // Allocate a qubit
             H(qubit);               // Use a quantum operation on that qubit
-
             set result = M(qubit);      // Measure the qubit
-
             if (result == One) {    // Reset the qubit so that it can be released
                 X(qubit);
             }
@@ -396,12 +395,11 @@ operation MeasureOneQubit () : Result {
 
 Det här exemplet på en funktion kommer från [PhaseEstimation](https://github.com/microsoft/Quantum/tree/master/samples/characterization/phase-estimation) -exemplet. Den innehåller en helt klassisk kod. Du kan se att, till skillnad från exemplet ovan, inga qubits har tilldelats och inga Quantum-åtgärder används.
 
-
 ```qsharp
 /// # Summary
 /// Given two arrays, returns a new array that is the pointwise product
 /// of each of the given arrays.
-function MultiplyPointwise (left : Double[], right : Double[]) : Double[] {
+function PointwiseProduct(left : Double[], right : Double[]) : Double[] {
     mutable product = new Double[Length(left)];
 
     for (idxElement in IndexRange(left)) {
@@ -417,7 +415,10 @@ Det är också möjligt att en funktion skickas qubits för bearbetning, som i d
 /// # Summary
 /// Translate MCT masks into multiple-controlled Toffoli gates (with single
 /// targets).
-function GateMasksToToffoliGates (qubits : Qubit[], masks : MCMTMask[]) : MCTGate[] {
+function GateMasksToToffoliGates(
+    qubits : Qubit[], 
+    masks : MCMTMask[]) 
+: MCTGate[] {
 
     mutable result = new MCTGate[0];
     let n = Length(qubits);

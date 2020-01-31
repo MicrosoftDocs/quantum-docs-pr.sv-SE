@@ -6,12 +6,12 @@ ms.author: nawiebe@microsoft.com
 ms.date: 10/09/2017
 ms.topic: article-type-from-white-list
 uid: microsoft.quantum.chemistry.concepts.simulationalgorithms
-ms.openlocfilehash: 4d1924386eadb427e8f53bc0a177453a341f185f
-ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
+ms.openlocfilehash: 69c7923ea447af320a413889df54716abd5475ea
+ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74864465"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76820648"
 ---
 # <a name="simulating-hamiltonian-dynamics"></a>Simulera Hamiltonian Dynamics
 
@@ -49,13 +49,13 @@ Till exempel $ $ e ^ {-iX\otimes X t} = (H\otimes H) e ^ {-iZ\otimes Z t} (H\oti
         0 & 0 & 0 & e ^ {-IT} \end{bmatrix}.
 $ $ Här, $e ^ {-iHt} \ket{00} = e ^ {IT} \ket{00}$ och $e ^ {-iHt} \ket{01} = e ^ {-IT} \ket{01}$, som kan visas direkt till följd av det faktum att pariteten för $0 $ är $0 $ medan pariteten för bit strängen $1 $ är $1 $.
 
-Exponenter för Pauli-operatörer kan implementeras direkt i Q # med <xref:microsoft.quantum.primitive.exp>-åtgärden:
+Exponenter för Pauli-operatörer kan implementeras direkt i Q # med <xref:microsoft.quantum.intrinsic.exp>-åtgärden:
 ```qsharp
     using(qubits = Qubit[2]){
         let pauliString = [PauliX, PauliX];
         let evolutionTime = 1.0;
 
-        // This applies e^{- i X \otimes X t} to qubits 0 and 1.
+        // This applies 𝑒^{- 𝑖 𝑋⊗𝑋 𝑡} to qubits 0 and 1.
         Exp(pauliString, - evolutionTime, qubits);
     }
 ```

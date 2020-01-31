@@ -1,23 +1,23 @@
 ---
-title: 'Q #-tekniker – placera allt tillsammans | Microsoft Docs'
-description: 'Q #-tekniker – placera allt tillsammans'
+title: 'Placera allt tillsammans – Q #-tekniker | Microsoft Docs'
+description: 'Placera allt tillsammans – Q #-tekniker'
 uid: microsoft.quantum.techniques.puttingittogether
 author: QuantumWriter
 ms.author: Christopher.Granade@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: f65b3e260f98a7a90da13b62edd6cc63d200f5af
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: 3605826da159757d4b321dbf4ec6acd7f4e6be05
+ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "73183275"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76820172"
 ---
 # <a name="putting-it-all-together-teleportation"></a>Placera allt tillsammans: Teleportion #
 Vi går tillbaka till exemplet på den Teleportion-krets som definieras i [Quantum-kretsar](xref:microsoft.quantum.concepts.circuits). Vi ska använda det här för att illustrera de koncept vi har lärt dig hittills. En förklaring av Quantum Teleportion finns nedan för de som inte är bekanta med teori, följt av en genom gång av kod implementeringen i Q #. 
 
 ## <a name="quantum-teleportation-theory"></a>Quantum Teleportion: teori
-Quantum Teleportion är en teknik för att skicka ett okänt Quantum-tillstånd (som vi refererar till som "__meddelande__") från en qubit på en plats till en qubit på en annan plats (vi refererar till dessa qubits som "__här__" och "__där__", respektive). Vi kan representera vårt __meddelande__ som en Vector med Dirac-notation: 
+Quantum Teleportion är en teknik för att skicka ett okänt Quantum-tillstånd (som vi refererar till som "__meddelande__") från en qubit på en plats till en qubit på en annan plats (vi kommer att se dessa qubits som "__här__" och "__där__"). Vi kan representera vårt __meddelande__ som en Vector med Dirac-notation: 
 
 $ $ \ket{\psi} = \alpha\ket{0} + \beta\ket{1} $ $
 
@@ -56,7 +56,7 @@ $ \ket{1}$  | $ \frac{1}{\sqrt{2}} (\ket{0}-\ket{1}) $
 
 Om vi tillämpar Hadamard-porten på den första qubit av varje term i våra utdata ovan får vi följande resultat:
 
-$ $ \frac{\alpha}{\sqrt{2}} (\frac{1}{\sqrt{2}} (\ket{0} + \ket{1})) \ket{00} + \frac{\alpha}{\sqrt{2}} (\frac{1}{\sqrt{2}} (\ket{0} + \ket{1})) \ket{11} + \frac{\beta}{ \sqrt{2}} (\frac{1}{\sqrt{2}} (\ket{0}-\ket{1})) \ket{10} + \frac{\beta}{\sqrt{2}} (\frac{1}{\sqrt{2}} (\ket{0}-\ket{1})) \ket{01} $ $
+$ $ \frac{\alpha}{\sqrt{2}} (\frac{1}{\sqrt{2}} (\ket{0} + \ket{1})) \ket{00} + \frac{\alpha}{\sqrt{2}} (\frac{1}{\sqrt{2}} (\ket{0} + \ket{1})) \ket{11} + \frac{\beta}{\sqrt{2}} (\frac{1}{\sqrt{2}} (\ket{0}-\ket{1})) \ket{10} + \frac{\beta}{\sqrt{2}} (\frac{1}{\sqrt{2}} (\ket{0}-\ket{1})) \ket{01} $ $
 
 Observera att varje term har $2 \frac{1}{\sqrt{2}} $ faktorer. Vi kan multiplicera dessa resultat genom att ge följande resultat:
 
@@ -125,7 +125,7 @@ Vi måste också allokera en qubit `here` som vi uppnår med ett `using` block:
 ```
 
 ### <a name="step-1-create-an-entangled-state"></a>Steg 1: skapa ett Entangled-tillstånd
-Vi kan sedan skapa Entangled-paret mellan `here` och `there` med hjälp av @"microsoft.quantum.primitive.h" och @"microsoft.quantum.primitive.cnot" åtgärder:
+Vi kan sedan skapa Entangled-paret mellan `here` och `there` med hjälp av @"microsoft.quantum.intrinsic.h" och @"microsoft.quantum.intrinsic.cnot" åtgärder:
 
 ```qsharp
         H(here);
@@ -141,7 +141,7 @@ Vi använder sedan nästa $ \operatorname{CNOT} $ och $H $ Gates för att flytta
 ```
 
 ### <a name="step-3--4-measuring-and-interpreting-the-result"></a>Steg 3 & 4: mäta och tolka resultatet
-Slutligen använder vi @"microsoft.quantum.primitive.m" för att utföra mätningarna och utföra de åtgärder som krävs för att få önskat tillstånd, som betecknas med `if`-satser:
+Slutligen använder vi @"microsoft.quantum.intrinsic.m" för att utföra mätningarna och utföra de åtgärder som krävs för att få önskat tillstånd, som betecknas med `if`-satser:
 
 ```qsharp
         // Measure out the entanglement

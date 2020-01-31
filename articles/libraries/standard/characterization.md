@@ -6,12 +6,12 @@ uid: microsoft.quantum.libraries.characterization
 ms.author: martinro@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 1eb48da9d4ae2a730019e2707dcb2c69b998491e
-ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
+ms.openlocfilehash: 51124dc78feedf6d5c85fe224898e66a1c5ed459
+ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74864380"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76870360"
 ---
 # <a name="quantum-characterization-and-statistics"></a>Quantum-karakterisering och statistik #
 
@@ -39,11 +39,11 @@ I att diskutera iterativa fas uppskattningar kommer vi att betrakta en enhetlig 
 Som det beskrivs i avsnittet om Oracle i [data strukturer](xref:microsoft.quantum.libraries.data-structures), kommer Q # Canon att modellera sådana åtgärder med <xref:microsoft.quantum.oracles.discreteoracle> användardefinierad typ, som definieras av tuple-typen `((Int, Qubit[]) => Unit : Adjoint, Controlled)`.
 Konkret, om `U : DiscreteOracle`, `U(m)` implementerar $U ^ m $ för `m : Int`.
 
-Med den här definitionen i stället fortsätter varje steg i upprepnings fas uppskattningen genom att förbereda en auxillary-qubit i $ \ket{+} $ State tillsammans med det inledande tillstånd $ \ket{\phi} $ som vi antar är en [eigenvector](xref:microsoft.quantum.concepts.matrix-advanced) av $U (m) $, d.v.s. $U (m) \ket{\phi} = e ^ {im\phi} \ ket {\ Phi} $.  
+Med den här definitionen på plats fortsätter varje steg i upprepnings fas uppskattningen genom att förbereda en tilläggs qubit i $ \ket{+} $ State tillsammans med det inledande tillstånd $ \ket{\phi} $ som vi antar är en [eigenvector](xref:microsoft.quantum.concepts.matrix-advanced) av $U (m) $, d.v.s. $U (m) \ket{\phi} = e ^ {im\phi} \ ket {\ Phi} $.  
 En kontrollerad tillämpning av `U(m)` används sedan som förbereder status $ \left (R\_1 (m \phi) \ket{+} \right) \ket{\phi} $.
 Som i Quantum-fallet är effekten av en kontrollerad tillämpning av Oracle-`U(m)` exakt samma som effekten av att tillämpa $R _1 $ för den okända fasen på $ \ket{+} $, så att vi kan beskriva effekterna av $U $ på det här enklare sättet.
 Algoritmen roterar sedan kontrollen qubit genom att använda $R _1 (-m\theta) $ för att hämta ett tillstånd $ \ket{\psi} = \left (R\_1 (m [\phi-\theta]) \ket{+} \right) \ket{\phi} $ $.
-Auxillary-qubit som används som kontroll för `U(m)` mäts sedan i $X $-basen för att få en enda klassisk `Result`.
+Hjälp qubit som används som kontroll för `U(m)` mäts sedan i $X $-basen för att få en enda klassisk `Result`.
 
 I det här läget är det ett klassiskt statistiskt problem med att konstruera om fasen från `Result` värden som erhålls genom iterativa fas uppskattning.
 Att hitta värdet för $m $ som maximerar den information som erhålls, med en fast härlednings metod, är bara ett problem i statistiken.
@@ -106,7 +106,7 @@ Ett exempel med ett effektivt klassiskt steg efter bearbetning är [algoritmen f
 
 Den viktigaste funktionen i robust fas uppskattning, som delas med de flesta andra användbara varianter, är att rekonstruktions kvaliteten för $ \hat{\phi} $ är i en viss Heisenberg-begränsad. Det innebär att om avvikelsen för $ \hat{\phi} $ från det sanna värdet är $ \sigma $ skalas $ \sigma $ i proportion till det totala antalet frågor som $Q $ gjorde till styrd-$U $, t. ex. $ \sigma = \mathcal{O} (1/Q) $. Nu varierar definitionen av avvikelse mellan olika algoritmer för bedömning. I vissa fall kan det innebära att minst $ \mathcal{O} (1) $ sannolikhet, uppskattnings felet $ | \hat{\phi}-\phi |\_\circ\le \sigma $ på ett cirkulärt mått $ \circ $. För robust fas uppskattning är avvikelsen exakt variansen $ \sigma ^ 2 = \mathbb{E}\_\hat{\phi} [(\mod\_{2 \ PI} (\hat{\phi}-\phi + \pi)-\pi) ^ 2] $ om vi avbryter periodiska faser till ett enda ändligt intervall $ (-\pi, \pi] $. Mer exakt uppfyller standard avvikelsen i robust fas uppskattningen $ $ \begin{align} 2,0 \pi/Q \le \sigma \le 2 \ Pi/2 ^ {n} \le 10.7 \ PI/Q, \end{align} $ $ där den nedre gränsen uppnås inom gränsen på asymptotically Large $Q $ och den övre gränsen garanteras även för små urvals storlekar.  Observera att $n $ som har valts av `bitsPrecision` Indatatyp, som implicit definierar $Q $.
 
-Andra relevanta uppgifter inkluderar, t. ex. den små utrymmes kostnaden på bara $1 $ Ancilla qubit, eller att proceduren är icke-adaptiv, vilket innebär att den nödvändiga sekvensen av Quantum experiment är oberoende av de mellanliggande Mät resultat. I det här och kommande exempel där valet av algoritmen för fas uppskattning är viktigt, bör en bör hänvisa till dokumentationen, till exempel @"microsoft.quantum.canon.robustphaseestimation" och de refererade publikationerna där, för mer information och för deras implementering.
+Andra relevanta uppgifter inkluderar, t. ex. den små utrymmes kostnaden på bara $1 $ Ancilla qubit, eller att proceduren är icke-adaptiv, vilket innebär att den nödvändiga sekvensen av Quantum experiment är oberoende av de mellanliggande Mät resultat. I det här och kommande exempel där valet av algoritmen för fas uppskattning är viktigt, bör en bör hänvisa till dokumentationen, till exempel @"microsoft.quantum.characterization.robustphaseestimation" och de refererade publikationerna där, för mer information och för deras implementering.
 
 > [!TIP]
 > Det finns många exempel där robust fas uppskattning används. För fas uppskattning när du extraherar mark tillstånds energin för olika fysiska system kan du se exempel på [ **H2-simulering** ](https://github.com/microsoft/Quantum/tree/master/samples/simulation/h2/command-line), [ **SimpleIsing** -exemplet](https://github.com/microsoft/Quantum/tree/master/samples/simulation/ising/simple)och [ **Hubbard Model** -exemplet](https://github.com/microsoft/Quantum/tree/master/samples/simulation/hubbard).
@@ -154,25 +154,27 @@ Som det visas i **H2Sample**kan en åtgärd på detta sätt acceptera en upprepn
 
 ```qsharp
 operation H2EstimateEnergy(
-    idxBondLength : Int, 
+    idxBondLength : Int,
     trotterStepSize : Double,
-    phaseEstAlgorithm : ((DiscreteOracle, Qubit[]) => Double)) 
+    phaseEstAlgorithm : ((DiscreteOracle, Qubit[]) => Double))
 : Double
 ```
 
-Dessa algoritmer för myriaden-bedömning är optimerade för olika egenskaper och indataparametrar, vilket måste förstås för att göra det bästa valet för mål programmet. Till exempel är vissa algoritmer för fas uppskattning anpassningsbara, vilket innebär att framtida steg styrs klassiskt av mät resultaten i föregående steg. Vissa kräver möjligheten att exponentiate den svarta Box-gruppen av andra verkliga befogenheter, och andra kräver bara heltals befogenheter, men det går bara att lösa en fas Beräknad modulo $2 \ PI $. Vissa kräver många auxillary-qubits och andra kräver bara en.
+Dessa algoritmer för myriaden-bedömning är optimerade för olika egenskaper och indataparametrar, vilket måste förstås för att göra det bästa valet för mål programmet. Till exempel är vissa algoritmer för fas uppskattning anpassningsbara, vilket innebär att framtida steg styrs klassiskt av mät resultaten i föregående steg. Vissa kräver möjligheten att exponentiate den svarta Box-gruppen av andra verkliga befogenheter, och andra kräver bara heltals befogenheter, men det går bara att lösa en fas Beräknad modulo $2 \ PI $. Vissa kräver många hjälp qubits och andra kräver bara en.
 
 På samma sätt går det bra att använda slumpmässig stegvisa beräknings steg på samma sätt som för andra algoritmer som medföljer Canon:
 
 ```qsharp
-operation ExampleOracle(eigenphase : Double, time : Double, register : Qubit[]) : Unit
-is Adj + Ctl {
+operation ApplyExampleOracle(
+    eigenphase : Double,
+    time : Double,
+    register : Qubit[])
+: Unit is Adj + Ctl {
     Rz(2.0 * eigenphase * time, register[0]);
 }
 
-operation BayesianPhaseEstimationCanonSample(eigenphase : Double) : Double {
-
-    let oracle = ContinuousOracle(ExampleOracle(eigenphase, _, _));
+operation EstimateBayesianPhase(eigenphase : Double) : Double {
+    let oracle = ContinuousOracle(ApplyExampleOracle(eigenphase, _, _));
     using (eigenstate = Qubit()) {
         X(eigenstate);
         // The additional inputs here specify the mean and variance of the prior, the number of

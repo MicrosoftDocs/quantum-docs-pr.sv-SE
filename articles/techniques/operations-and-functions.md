@@ -1,17 +1,17 @@
 ---
-title: 'Q #-metoder – åtgärder och funktioner | Microsoft Docs'
-description: 'Q #-metoder – åtgärder och funktioner'
+title: 'Drift-och funktions-Q #-tekniker | Microsoft Docs'
+description: 'Drift-och Functions-Q #-tekniker'
 uid: microsoft.quantum.techniques.opsandfunctions
 author: QuantumWriter
 ms.author: Christopher.Granade@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 06da09dc9c6e0ba0331db6bc0cd3d2ddeb287113
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: 1fca20bb44cc42008f7d25d2fc71a39b962525c2
+ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "73183462"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76820784"
 ---
 # <a name="q-operations-and-functions"></a>Q #-åtgärder och-funktioner
 
@@ -66,7 +66,7 @@ Om en åtgärd implementerar en enhetlig omvandling, är det möjligt att defini
 Förekomsten av dessa specialiseringar kan deklareras som en del av åtgärdens signatur: `is Adj + Ctl` i följande exempel. Motsvarande implementering för varje sådan implicit deklarerad specialisering genereras sedan av kompileraren. 
 
 ```qsharp
-operation PrepareEntangledPair(here : Qubit, there : Qubit) : Unit {
+operation PrepareEntangledPair(here : Qubit, there : Qubit) : Unit
 is Adj + Ctl { // implies the existence of an adjoint, a controlled, and a controlled adjoint specialization
     H(here);
     CNOT(here, there);
@@ -111,7 +111,7 @@ is Ctl + Adj {
     controlled adjoint invert; 
 }
 ```
-I exemplet ovan anger `adjoint invert;` att den angränsande specialiseringen ska genereras genom att invertera bröd texten och `controlled adjoint invert;` anger att den kontrollerade intilliggande specialiseringen ska genereras genom att den angivna implementeringen av kontrollerad specialisering.
+I exemplet ovan anger `adjoint invert;` att den angränsande specialiseringen ska genereras genom att invertera bröd texten och `controlled adjoint invert;` anger att den kontrollerade intilliggande specialiseringen ska genereras genom att den angivna implementeringen av den kontrollerade specialiseringen inverteras.
 
 Vi kommer att se fler exempel på detta i [kontroll flödet med högre ordning](xref:microsoft.quantum.concepts.control-flow).
 
@@ -163,7 +163,7 @@ operation U(target : Qubit) : Unit {
 
 Varje `U` anropas, kommer den att ha en annan åtgärd på `target`.
 I synnerhet kan kompileraren inte garantera att om vi har lagt till en `adjoint auto` specialisering-deklaration i `U`, så `U(target); Adjoint U(target);` fungerar som identitet (dvs. som No-OP).
-Detta bryter mot definitionen av det angränsande som vi såg i [vektorer och matriser](xref:microsoft.quantum.concepts.vectors), till exempel för att automatiskt generera en angränsande specialisering i en åtgärd där vi har anropat åtgärden <xref:microsoft.quantum.math.randomreal> skulle skada de garantier som tillhandahålls av kompilatorn ; <xref:microsoft.quantum.math.randomreal> är en åtgärd för vilken det inte finns något angränsande eller styrd version.
+Detta strider mot definitionen av det angränsande som vi såg i [vektorer och matriser](xref:microsoft.quantum.concepts.vectors), till exempel för att automatiskt generera en angränsande specialisering i en åtgärd där vi har anropat åtgärden <xref:microsoft.quantum.math.randomreal> skulle bryta mot de garantier som kompileraren tillhandahåller. <xref:microsoft.quantum.math.randomreal> är en åtgärd för vilken det inte finns något angränsande eller styrd version.
 
 Å andra sidan är det möjligt att tillåta funktions anrop som `Square` är säkra, eftersom kompileraren kan vara säker på att den bara behöver bevara indata till `Square` för att hålla dess utdata stabil.
 Att isolera så mycket klassisk logik som möjligt i functions gör det lätt att återanvända den logiken i andra funktioner och åtgärder.

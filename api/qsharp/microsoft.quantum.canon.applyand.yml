@@ -1,0 +1,50 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.canon.applyand
+name: ApplyAnd
+type: operation
+namespace: Microsoft.Quantum.Canon
+summary: >-
+  Inverterar en specifik mål-qubit, om och bara om båda kontroll qubits är i läget 1, med hjälp av mått för att utföra den angränsande åtgärden.
+
+
+  Inverterar `target` om och endast om båda kontrollerna är 1, men förutsätter att `target` är i tillstånd 0.  Åtgärden har T-Count 4, T-djup 2 och kräver ingen hjälp-qubit och kan därför föredras för en CCNOT-åtgärd, om `target` är känt som 0.  Det angränsande av den här åtgärden är mått baserat och kräver inga T-grindar.
+
+
+  Det kontrollerade tillämpnings programmet för den här åtgärden kräver ingen qubit, `2^c` `Rz`-portar och är inte optimerad för djup, där `c` är antalet övergripande kontroll qubits, inklusive de två kontrollerna från `ApplyAnd` åtgärden.  Det intilliggande kontrollerade programmet kräver `2^c - 1` `Rz`-portar (med en vinkel två gånger så stor som den icke-angränsande), ingen hjälp-qubit och är inte optimerad för djupet.
+syntax: 'operation ApplyAnd (control1 : Qubit, control2 : Qubit, target : Qubit) : Unit'
+references: >-
+  - Cody Jones: "nya byggen för den feltoleranta Toffoli-porten", inventering. Rev. A 87, 022328, 2013 [arXiv: 1212.5069](https://arxiv.org/abs/1212.5069) Doi: 10.1103/PhysRevA. 87.022328
+
+  - Craig Gidney: "hälften av kostnaden för Quantum addition", Quantum 2, sida 74, 2018 [arXiv: 1709.06648](https://arxiv.org/abs/1709.06648) Doi: 10.1103/PhysRevA. 85.044302
+
+  - Mathias Soeken: "Quantum Oracle-kretsar och jul träds mönstret", [blogg artikel från decemer 19, 2019](https://msoeken.github.io/blog_qac.html) (Obs! förklarar den flera styrda konstruktionen)
+input:
+  content: '(control1 : Qubit, control2 : Qubit, target : Qubit)'
+  types:
+  - name: control1
+    summary: Första kontrollen qubit
+    isPrimitive: true
+    uid: Qubit
+  - name: control2
+    summary: Qubit för andra kontrollen
+    isPrimitive: true
+    uid: Qubit
+  - name: target
+    summary: Mål auxillary qubit; måste vara i tillstånd 0
+    isPrimitive: true
+    uid: Qubit
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+functors:
+- Adjoint
+- Controlled
+metadata:
+  ms.openlocfilehash: 7cde3dbbd33ff482609bbaaccb15e4c7b1bc536e
+  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
+  ms.translationtype: MT
+  ms.contentlocale: sv-SE
+  ms.lasthandoff: 01/29/2020
+  ms.locfileid: "76872996"

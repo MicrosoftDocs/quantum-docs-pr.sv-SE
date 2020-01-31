@@ -6,12 +6,12 @@ ms.author: nawiebe@microsoft.com
 ms.date: 10/09/2017
 ms.topic: article-type-from-white-list
 uid: microsoft.quantum.chemistry.concepts.jordanwigner
-ms.openlocfilehash: f34233bc17ff68a9e04256959f8d79be2682c34f
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: 5d9038e440a2022547395e889e149a531a7ef818
+ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "73184057"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76820546"
 ---
 # <a name="jordan-wigner-representation"></a>Jordanien – Wigner-representation
 
@@ -22,16 +22,21 @@ Andra som Bravyi – Kitaev-representation finns också och har sina egna relati
 Den största fördelen med den Jordanien-Wigner-representation är dess enkelhet.
 
 Den Jordanien-Wigner-representation är rakt framåt för att bli härledd.
-Kom ihåg att ett tillstånd $ \ket{0}_J $ innebär att rotations orbital $j $ är tom och att $ \ket{1}_J $ anger att den är upptagen.
+Kom ihåg att ett tillstånd $ \ket{0}_j $ innebär att rotations orbital $j $ är tomt och att $ \ket{1}_j $ anger att den är upptagen.
 Det innebär att qubits kan lagra yrket i ett angivet varv orbital.
-Vi har sedan $a ^ \dagger_j \ket{0}_J = \ket{1}_J $ och $a ^ \dagger_j \ket{1}_J = $0.
-Det är enkelt att verifiera att \begin{align} a ^ \dagger_j & = \begin{bmatrix}0 & 1 \\\ 0 & 0 \end{bmatrix} = \frac{X_j + iY_j}{2}, \nonumber\\\\ a_j & = \begin{bmatrix}0 & 0 \\\ 1 & 0 \end{ bmatrix} = \frac{X_j-iY_j}{2}, \end{align} där $X _J $ och $Y _J $ är Pauli-$X $ och-$Y $-operatörer som agerar på qubit $j $.
+Sedan har vi $a ^ \ dagger_j \ket{0}_j = \ket{1}_j $ och $a ^ \ dagger_j \ket{1}_j = $0.
+Det är enkelt att verifiera att \begin{align} a ^ \ dagger_j & = \begin{bmatrix}0 & 0 \\\ 1 & 0 \end{bmatrix} = \frac{X_j-iY_j}{2}\nonumber\\\\ a_j & = \begin{bmatrix}0 & 1 \\\ 0 & 0 \end{bmatrix} = \frac{X_j + iY_j}{2}, \end{align} där $X _j $ och $Y _j $ är Pauli-$X $ och-$Y $ som agerar på qubit $j $.
+
+>[!NOTE]
+> I Q # visar $ \ket{0}$ State eigenstate $-operatorn + 1 $Z. I vissa områden av fysik $ \ket{0}$ representerar jord-och eigenstate på låg energi nivå, vilket innebär att $-operatören $Z. Därför kan vissa formler skilja sig från populära litteratur.
+
+I kemi-biblioteket använder vi $ \ket{0}$ för att representera ett orbital varv-.
 Detta visar att för ett enda varv-orbital är det enkelt att representera skapande-och Annihilation-operatörer i termer av enhetliga matriser som Quantum Computers förstår.
 Observera att medan $X $ och $Y $ är enhetliga $a ^ \dagger $ och $a $ inte.
 Vi kommer att se senare att detta inte utgör en utmaning för simulering.
 
 Ett problem som är kvar är att medan byggnaden ovan fungerar för en enda varv-orbital, så Miss lyckas system med två eller flera rotations banor.
-Eftersom Fermions är antisymmetic vet vi att $a ^ \dagger_j a ^ \dagger_k =-a ^ \dagger_k a ^ \dagger_j $ för alla $j $ och $k $.
+Eftersom Fermions är antisymmetic vet vi att $a ^ \ dagger_j a ^ \ dagger_k =-a ^ \ dagger_k a ^ \ dagger_j $ för alla $j $ och $k $.
 Men $ $ \left (\frac{X_j-iY_j}{2}\right) \left (\frac{X_k-iY_k}{2}\right) = \left (\frac{X_k-iY_k}{2}\right) \left (\frac{X_j-iY_j}{2}\right).
 $ $ Med andra ord fungerar inte de två skapande operatorerna som krävs.
 Detta kan åtgärdas med hjälp av en enkel, om så är möjligt.
@@ -40,11 +45,11 @@ I synnerhet $XZ =-ZX $ och $YZ =-ZY $.
 Genom att blanda $Z $-operatörer i driften av operatören kan vi därför emulera rätt anti-arbetslösare.
 Den fullständiga konstruktionen är följande: 
 
-\begin{align} a ^ \dagger_1 & = \left (\frac{X-iY}{2}\right) \otimes 1 \otimes 1 \otimes 1 \otimes \cdots \otimes 1\\\\ a ^ \dagger_2 & = Z\otimes\left (\frac{X-iY}{2}\right) \otimes 1 \ otimes 1 \otimes \cdots \otimes 1 ,\\\\ a ^ \dagger_3 & = Z\otimes Z\otimes \left (\frac{X-iY}{2}\right) \otimes 1 \otimes \cdots \otimes 1,\\\\ & \vdots\\\\ en ^ \dagger_N & = Z\otimes Z\otimes Z\otimes Z \otimes \cdots \otimes Z\otimes \left (\frac{X-iY}{2}\right). \label{eq:JW} \end{align}
+\begin{align} a ^ \ dagger_1 & = \left (\frac{X-iY}{2}\right) \otimes 1 \otimes 1 \otimes 1 \otimes \cdots \otimes 1,\\\\ a ^ \ dagger_2 & = Z\otimes\left (\frac{X-iY}{2}\right) \otimes 1 \ otimes 1 \otimes \cdots \otimes 1,\\\\ a ^ \ dagger_3 & = Z\otimes Z\otimes \left (\frac{X-iY}{2}\right) \otimes 1 \otimes \cdots \otimes 1,\\\\ & \vdots\\\\ a ^ \ dagger_N & = Z\otimes Z\otimes Z\otimes Z \otimes \cdots \otimes Z \ otimes \left (\frac{X-iY}{2}\right). \label{eq:JW} \end{align}
 
-Det är också enkelt att uttrycka antalet operatorer $n _J $, vad gäller Pauli-operatörer.
+Det är också enkelt att uttrycka antalet operatorer $n _j $, vad gäller Pauli-operatörer.
 Thankfully, strängarna i $Z $-operatörer (kallade Wigner-strängar) avbryts efter att den här ersättningen har utförts.
-Efter att ha utfört detta (och återkallar att $X _jY_j = iZ_j $) har vi \begin{Equation} n_j = a ^ \dagger_j a_j = \frac{(1-Z_j)}{2}.
+Efter att ha utfört detta (och återkallat $X _jY_j = iZ_j $) har vi \begin{Equation} n_j = a ^ \ dagger_j a_j = \frac{(1-Z_j)}{2}.
 \end{equation}
 
 
@@ -56,7 +61,7 @@ När en utför denna ersättning finns det bara fem villkors klasser inom Hamilt
 Dessa fem klasser motsvarar de olika sätt som vi kan välja mellan $p, q $ och $p, q, r, s $ i en Body-och två-Body-termer i Hamiltonian.
 Dessa fem klasser, i de fall där $p > q > r > s $ och Real värdes banor, är
 
-\begin{align} H_ {PP} a_p ^ \dagger a_p & = \sum_p \frac{H_{PP}}{2}(1-Z_p)\\\\ H_ {PQ} (a_p ^ \dagger a_q + a ^ \dagger_q a_p) & = \frac{H_{PQ}}{2}\left (\prod_{j = q + 1} ^ {p-1} Z_j \right) \ Left (X_pX_q + Y_pY_q\right)\\\\ H_ {pqqp} n_p n_q & = \frac{H_{pqqp}}{4}\left (1-Z_p-Z_q + Z_pZ_q \right)\\\\ H_ {pqqr} & = \frac{H_{pqqr}}{2}\left (\prod_{j = r + 1} ^ {p-1} Z_j \right) \left (X_pX_r + Y_pY_r\right) \left (\frac{1-Z_q}{2}\right)\\\\ H_ {PQRS} & = \frac{H_{PQRS}}{8}\prod_{j = s + 1} ^ {r-1} Z_j\prod_ {k = q + 1} ^ {p-1} Z_k \Big (XXXX-XXYY + XYXY\nonumber\\\\ & \qquad\qquad\qquad\qquad\qquad + YXXY + YXYX-YYXX\nonumber\\\\ & \qquad\qquad\qquad\qquad\qquad + XYYX + YYYY\Big) \end{align}
+\begin{align} h_ {PP} a_p ^ \dagger a_p & = \ sum_p \frac{h_ {PP}}{2}(1-Z_p)\\\\ h_ {PQ} (a_p ^ \dagger a_q + a ^ \ dagger_q a_p) & = \frac{h_ {PQ}}{2}\left (\ prod_ {j = q + 1} ^ {p-1} Z_j \right) \left (X_pX_q + Y_pY_q \right)\\\\ h_ {pqqp} n_p n_q & = \frac{h_ {pqqp}}{4}\left (1-Z_p-Z_q + Z_pZ_q \right)\\\\ H_ {pqqr} & = \frac{h_ {pqqr}}{2}\left (\ prod_ {j = r + 1} ^ {p-1} Z_j \right) \left (X_pX_r + Y_pY_r \right) \left (\frac{1-Z_q}{2}\right)\\\\ H_ {PQRS} & = \frac{h_ {PQRS}}{8}\ prod_ {j = s + 1} ^ {r-1} Z_j \ prod_ {k = q + 1} ^ {p-1} Z_k \Big (XXXX-XXYY + XYXY\nonumber\\\\ & \qquad\qquad\qquad\qquad\qquad + YXXY + YXYX-YYXX\nonumber\\\\ & \qquad\qquad\qquad\qquad\qquad + XYYX + YYYY\Big) \end{align}
 
 Under genereringen av sådana Hamiltonians kräver bara att de här ersättnings reglerna tillämpas, så det skulle vara omöjligt för stora molekyler som kan bestå av miljon tals Hamiltonian villkor.
 Som ett alternativ kan vi automatiskt konstruera `JordanWignerEncoding` som har fått en `FermionHamiltonian` representation av Hamiltonian.

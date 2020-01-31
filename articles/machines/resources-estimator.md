@@ -6,12 +6,12 @@ ms.author: anpaz@microsoft.com
 ms.date: 1/22/2019
 ms.topic: article
 uid: microsoft.quantum.machines.resources-estimator
-ms.openlocfilehash: 591e306b3001934bd81342a533e3f6ca25129781
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: 960fda3dade7648f9cd24496c3a49fd11d6f807a
+ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73184992"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76820869"
 ---
 # <a name="the-resourcesestimator-target-machine"></a>Mål datorn för ResourcesEstimator
 
@@ -97,37 +97,37 @@ Följande är en lista över mått som beräknas av `ResourcesEstimator`:
 * __QubitClifford__: antalet enskilda qubit-Clifford och Pauli-portar som körs.
 * __Mått__: antalet utförda mätningar.
 * __R__: antalet enskilda qubit-rotationer som körs, med undantag för T-, Clifford-och Pauli-portar.
-* __T__: antalet t-grindar och deras konjugat, inklusive T-grind, T_x = H. T. H och T_y = hy. T. hy, utförs.
+* __T__: antalet t-grindar och deras konjugat, inklusive T-grind, T_x = H. T. H och T_y = hy. T. hy, körs.
 * __Djup__: djupet i Quantum-kretsen som körs av åtgärden Q #. Som standard räknas bara T-portar i djupet. mer information finns i [djup räknare](xref:microsoft.quantum.machines.qc-trace-simulator.depth-counter) .
 * __Width__: det högsta antalet qubits som tilldelas under körningen av Q #-åtgärden.
 * __BorrowedWidth__: det maximala antalet qubits som lånas inom Q #-åtgärden.
 
 
-## <a name="providing-the-probability-of-measurement-outcomes"></a>Ange sannolikheten för mått resultat
+## <a name="providing-the-probability-of-measurement-outcomes"></a>Ange sannolikheten för mätresultatet
 
-<xref:microsoft.quantum.primitive.assertprob> från namn området <xref:microsoft.quantum.primitive> kan användas för att ge information om den förväntade sannolikheten för en mätning för att köra körningen av Q #-programmet. Följande exempel illustrerar detta:
+<xref:microsoft.quantum.intrinsic.assertprob> från namn området <xref:microsoft.quantum.intrinsic> kan användas för att ge information om den förväntade sannolikheten för en mätning för att köra körningen av Q #-programmet. Följande exempel illustrerar detta:
 
 ```qsharp
-operation Teleportation (source : Qubit, target : Qubit) : Unit {
+operation Teleport(source : Qubit, target : Qubit) : Unit {
 
-    using (ancilla = Qubit()) {
+    using (qubit = Qubit()) {
 
-        H(ancilla);
-        CNOT(ancilla, target);
+        H(q);
+        CNOT(qubit, target);
 
-        CNOT(source, ancilla);
+        CNOT(source, qubit);
         H(source);
 
         AssertProb([PauliZ], [source], Zero, 0.5, "Outcomes must be equally likely", 1e-5);
-        AssertProb([PauliZ], [ancilla], Zero, 0.5, "Outcomes must be equally likely", 1e-5);
+        AssertProb([PauliZ], [qubit], Zero, 0.5, "Outcomes must be equally likely", 1e-5);
 
         if (M(source) == One)  { Z(target); X(source); }
-        if (M(ancilla) == One) { X(target); X(ancilla); }
+        if (M(qubit) == One) { X(target); X(qubit); }
     }
 }
 ```
 
-När `ResourcesEstimator` påträffar `AssertProb` registreras att mät `PauliZ` på `source` och `ancilla` bör få ett resultat av `Zero` med sannolikhet 0,5. När den körs `M` senare kommer den att hitta de inspelade värdena för resultatet sannolikhet och `M` returnerar `Zero` eller `One` med sannolikhet 0,5.
+När `ResourcesEstimator` påträffar `AssertProb` registreras att mät `PauliZ` på `source` och `q` bör få ett resultat av `Zero` med sannolikhet 0,5. När den körs `M` senare kommer den att hitta de inspelade värdena för resultatet sannolikhet och `M` returnerar `Zero` eller `One` med sannolikhet 0,5.
 
 
 ## <a name="see-also"></a>Se också
