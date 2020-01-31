@@ -6,12 +6,12 @@ ms.author: chgranad
 ms.date: 10/12/2018
 ms.topic: article
 uid: microsoft.quantum.contributing
-ms.openlocfilehash: 4be86c5045ece62ae3af40090a2cd344d965e65f
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: 3f27f7502c83574e6bd8f950d7e17ee481e44a3c
+ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73057391"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76819866"
 ---
 # <a name="contributing-to-the-quantum-development-kit"></a>Bidra till Quantum Development Kit #
 
@@ -61,7 +61,7 @@ Var och en av dessa delar finns på en särskild lagringsplats, så en av de fö
 > [!NOTE]
 > Vi kan tyvärr inte acceptera kod- och dokumentationsbidrag på lagringsplatsen [**microsoft/Quantum-NC**](https://github.com/microsoft/Quantum-NC) just nu, men vi tar gärna emot felrapporter.
 
-Det finns också några andra mer specialiserade lagringsplatser som fokuserar på olika händelser eller på extra funktioner som är relaterade till Quantum Development Kit.
+Det finns också några andra mer specialiserade lagringsplatser som fokuserar på olika händelser, eller på extra funktioner som är relaterade till Quantum Development Kit.
 
 - [**msr-quarc/qsharp.sty**](https://github.com/msr-quarc/qsharp.sty): Stöd för LaTeX-formatering av Q#-syntax.
 - [**msr-quarc/intern-workshop-2019**](https://github.com/msr-quarc/intern-workshop-2019): IQ# Notebook for Deutsch–Jozsas självstudie från en intern workshop 2019.

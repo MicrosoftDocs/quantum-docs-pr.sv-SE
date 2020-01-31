@@ -6,12 +6,12 @@ ms.author: nakersha
 ms.date: 09/30/2019
 ms.topic: article
 uid: microsoft.quantum.relnotes
-ms.openlocfilehash: c709f1eb130d37f930ffc4acc4bd663b8b8ba24a
-ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
+ms.openlocfilehash: c135dacb2fc305fa97874cb4abcf4e2ac489b9e4
+ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74863171"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76871625"
 ---
 # <a name="microsoft-quantum-development-kit-release-notes"></a>Viktig information för Microsoft Quantum Development Kit
 
@@ -20,6 +20,19 @@ Den här artikeln innehåller information om varje version av Quantum Developmen
 Installationsanvisningar finns i [installationsguiden](xref:microsoft.quantum.install).
 
 Uppdateringsanvisningar finns i [uppdateringsguiden](xref:microsoft.quantum.update).
+
+## <a name="version-01020012831"></a>Version 0.10.2001.2831
+
+*Utgivningsdatum: 29 januari 2020*
+
+Den här versionen innehåller följande:
+
+- Nytt Microsoft.Quantum.SDK NuGet-paket. Mer information finns i [VIKTIGT](https://github.com/microsoft/qsharp-compiler/blob/master/src/QuantumSdk/README.md)
+- Stöd för .NET Core 3.1 har lagts till. Vi rekommenderar starkt att ha version 3.1.100 installerat, eftersom om du skapar med äldre .NET Core SDK-versioner kan problem uppstå
+- Nya kompilatoromvandlingar finns tillgängliga under Microsoft.Quantum.QsCompiler.Experimental
+- Nya funktioner för att exponera utmatade tillståndsvektorer som HTML i IQ#
+- Stöd har lagts till för EstimateFrequencyA till Microsoft.Quantum.Characterization för Hadamard- och SWAP-tester
+- AmplitudeAmplification-namnområdet använder nu Q#-stilguiden
 
 ## <a name="version-01019120501"></a>Version 0.10.1912.0501
 
@@ -127,7 +140,7 @@ Den här versionen omorganiserar, utökar och uppdaterar kemibiblioteket:
 * Lägger till stöd för [vågfunktioner med multireferens](xref:microsoft.quantum.chemistry.concepts.multireference), både vågfunktioner med sparse-multireferens och enkelt kopplat kluster.  [PR #110](https://github.com/Microsoft/QuantumLibraries/pull/110).
 * (Tack!) [1QBit](https://1qbit.com)-deltagare ([@valentinS4t1qbit](https://github.com/ValentinS4t1qbit)): Energiutvärdering med hjälp av variations-ansatz. [PR #120](https://github.com/Microsoft/QuantumLibraries/pull/120).
 * Uppdaterar [Broombridge](xref:microsoft.quantum.libraries.chemistry.schema.broombridge)-schemat till ny [version 0.2](xref:microsoft.quantum.libraries.chemistry.schema.spec_v_0_2) och lade till specifikation för enkelt kopplat kluster. [Problem #65](https://github.com/microsoft/QuantumLibraries/issues/65).
-* Lägger till Python-interoperabilitet i funktionerna i kemibiblioteket. Prova detta [exempel](https://github.com/microsoft/Quantum/tree/master/Chemistry/PythonIntegration). [Problem #53](https://github.com/microsoft/QuantumLibraries/issues/53) [PR #110](https://github.com/Microsoft/QuantumLibraries/pull/110).
+* Lägger till Python-interoperabilitet i funktionerna i kemibiblioteket. Prova detta [exempel](https://github.com/microsoft/Quantum/tree/master/Chemistry/PythonIntegration). [Problem nr 53](https://github.com/microsoft/QuantumLibraries/issues/53) [PR #110](https://github.com/Microsoft/QuantumLibraries/pull/110).
 
 ## <a name="version-061905"></a>Version 0.6.1905
 

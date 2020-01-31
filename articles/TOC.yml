@@ -2,7 +2,7 @@
   href: index.yml
 - name: Översikt
   items:
-    - name: Komma igång
+    - name: Kom igång
       href: welcome.md
     - name: Fem frågor om kvantberäkning
       items:
@@ -26,10 +26,18 @@
       href: quickstart.md
     - name: Implementera Grovers sökalgoritm
       href: quickstarts/search.md
-- name: Instruktionsguider
+- name: Anvisningar
   items:
     - name: Installera QDK
-      href: install-guide/index.md
+      items:
+        - name: Installationsöversikt
+          href: install-guide/index.md
+        - name: 'Q# + C#'
+          href: install-guide/csinstall.md
+        - name: 'Q# + Python'
+          href: install-guide/pyinstall.md
+        - name: 'Q# Jupyter Notebooks'
+          href: install-guide/qjupyter.md
     - name: Uppdatera QDK
       href: install-guide/update.md
     - name: 'Skapa ett Q#-projekt'
