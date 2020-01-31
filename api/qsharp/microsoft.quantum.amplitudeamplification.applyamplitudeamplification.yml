@@ -1,0 +1,39 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.amplitudeamplification.applyamplitudeamplification
+name: ApplyAmplitudeAmplification
+type: operation
+namespace: Microsoft.Quantum.AmplitudeAmplification
+summary: Använder amplitud-förstärkning för ett angivet register med en angiven uppsättning faser och Oracle för att avspegla de ursprungliga och slutliga tillstånden.
+syntax: 'operation ApplyAmplitudeAmplification (phases : Microsoft.Quantum.AmplitudeAmplification.ReflectionPhases, startStateReflection : Microsoft.Quantum.Oracles.ReflectionOracle, targetStateReflection : Microsoft.Quantum.Oracles.ReflectionOracle, target : Qubit[]) : Unit'
+input:
+  content: '(phases : Microsoft.Quantum.AmplitudeAmplification.ReflectionPhases, startStateReflection : Microsoft.Quantum.Oracles.ReflectionOracle, targetStateReflection : Microsoft.Quantum.Oracles.ReflectionOracle, target : Qubit[])'
+  types:
+  - name: phases
+    summary: En uppsättning faser som beskriver de partiella speglingarna i varje steg i algoritmen för amplitud förstärkning. Se @"microsoft.quantum.amplitudeamplification.standardreflectionphases" ett exempel.
+    uid: microsoft.quantum.amplitudeamplification.reflectionphases
+  - name: startStateReflection
+    summary: En Oracle som visar om det ursprungliga läget.
+    uid: microsoft.quantum.oracles.reflectionoracle
+  - name: targetStateReflection
+    summary: En Oracle som återspeglar det önskade slutliga läget.
+    uid: microsoft.quantum.oracles.reflectionoracle
+  - name: target
+    summary: Ett register för att utföra amplitud förstärkning på.
+    isArray: true
+    isPrimitive: true
+    uid: Qubit
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+functors:
+- Adjoint
+- Controlled
+metadata:
+  ms.openlocfilehash: 36b58c7b553c225c022e44d6c7257ab92a280807
+  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
+  ms.translationtype: MT
+  ms.contentlocale: sv-SE
+  ms.lasthandoff: 01/29/2020
+  ms.locfileid: "76872486"

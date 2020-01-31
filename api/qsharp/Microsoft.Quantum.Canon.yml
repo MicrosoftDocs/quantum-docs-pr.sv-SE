@@ -69,11 +69,7 @@ functions:
 
     Modifieraren `CA` visar att åtgärden är kontrollerbar och adjointable.
 - uid: microsoft.quantum.canon.compose
-  summary: >-
-    Genererar sammansättningen för två funktioner.
-
-
-    Det vill säga om två funktioner $f $ och $g $, returnerar en ny funktion som representerar $f \circ g $.
+  summary: Returnerar sammansättningen för två functions.
 - uid: microsoft.quantum.canon.conjugatedby
   summary: Vissa yttre och inre åtgärder returnerar en ny åtgärd som konjugaterar den inre åtgärden med den yttre åtgärden.
 - uid: microsoft.quantum.canon.conjugatedbya
@@ -96,8 +92,10 @@ functions:
     Det vill säga en åtgärd med två indata, använder den här funktionen curry isomorphism $f (x, y) \equiv f (x) $ för att returnera en åtgärd av en indata som returnerar en åtgärd av en indata.
 - uid: microsoft.quantum.canon.curryop
   summary: "\n> [!WARNING]\n> Inaktuell\n\nCurryOp är föråldrad. Använd @\"microsoft.quantum.canon.curriedop\" i stället.\nAnvänd @\"microsoft.quantum.canon.curriedop\"."
-- uid: microsoft.quantum.canon.decomposeintotimestepsca
+- uid: microsoft.quantum.canon.decomposedintotimestepsca
   summary: Returnerar en åtgärd som implementerar Trotter – Suzuki Integrator för en specifik åtgärd.
+- uid: microsoft.quantum.canon.decomposeintotimestepsca
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nDecomposeIntoTimeStepsCA är föråldrad. Använd @\"microsoft.quantum.canon.decomposedintotimestepsca\" i stället."
 - uid: microsoft.quantum.canon.delayed
   summary: Returnerar en åtgärd som tillämpar den åtgärd som har angivet argument.
 - uid: microsoft.quantum.canon.delayeda
@@ -238,17 +236,17 @@ functions:
 - uid: microsoft.quantum.canon.splitarray
   summary: "\n> [!WARNING]\n> Inaktuell\n\nSplitArray är föråldrad. Använd @\"microsoft.quantum.arrays.partitioned\" i stället.\nAnvänd @\"Microsoft.Quantum.Arrays.Partitioned\" i stället."
 - uid: microsoft.quantum.canon.stackcapacity
-  summary: Hämtar kapaciteten för en <xref:microsoft.quantum.canon.resultstack>.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nStackCapacity är föråldrad."
 - uid: microsoft.quantum.canon.stacklength
-  summary: Hämtar antalet element som lagras i en <xref:microsoft.quantum.canon.resultstack>.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nStackLength är föråldrad."
 - uid: microsoft.quantum.canon.stacknew
-  summary: Skapar en ny tom <xref:microsoft.quantum.canon.resultstack> med den aktuella kapaciteten.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nStackNew är föråldrad."
 - uid: microsoft.quantum.canon.stackpeek
-  summary: Hämtar det översta elementet i en <xref:microsoft.quantum.canon.resultstack>.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nStackPeek är föråldrad."
 - uid: microsoft.quantum.canon.stackpop
-  summary: Tar bort det översta elementet från en <xref:microsoft.quantum.canon.resultstack>.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nStackPop är föråldrad."
 - uid: microsoft.quantum.canon.stackpush
-  summary: Push-överför ett nytt element till en <xref:microsoft.quantum.canon.resultstack>.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nStackPush är föråldrad."
 - uid: microsoft.quantum.canon.tooperation
   summary: "\n> [!WARNING]\n> Inaktuell\n\nToOperation är föråldrad. Använd @\"microsoft.quantum.convert.functionasoperation\" i stället.\nAnvänd @\"microsoft.quantum.convert.functionasoperation\"."
 - uid: microsoft.quantum.canon.transformedoperation
@@ -287,16 +285,18 @@ functions:
 - uid: microsoft.quantum.canon.weightonepaulis
   summary: Returnerar en matris med alla vikt-1 Pauli-operatorer för ett angivet antal qubits.
 - uid: microsoft.quantum.canon.xor
-  summary: Detta beräknar den exklusiva eller av två bitar.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nXOR är inaktuell. Använd @\"microsoft.quantum.logical.xor\" i stället.\nAnvänd @\"microsoft.quantum.logical.xor\"."
 operations:
 - uid: microsoft.quantum.canon.adiabaticstateenergyunitary
   summary: "\n> [!WARNING]\n> Inaktuell\n\nAdiabaticStateEnergyUnitary är föråldrad. Använd @\"microsoft.quantum.simulation.estimateenergywithadiabaticevolution\" i stället.\nAnvänd @\"microsoft.quantum.simuilation.pnormalized\"."
 - uid: microsoft.quantum.canon.andladder
-  summary: >-
-    Utför en kontrollerad och stege på mål-qubits.
-
-
-    Detta gäller en enhetlig som angetts av följande karta om beräknings bas vektorer: $ $ \begin{align} \ket{x\_1, \dots, x\_n} \ket{y\_1, \dots, y\_{n-1}} \mapsto \ket{x\_1, \dots, x\_n} \ket{y\_1 \oplus (x\_1 \land x\_2), \dots, y\_{n-1} \oplus (x\_1 \land x\_2 \land \cdots \land x\_{n-1}} , \end{align} $ $ WHERE $ \ket{x\_1, \dots, x\_n} $ refererar till beräknings bas tillstånden för `controls`och där $ \ket{y\_1, \dots, y\_{n-1}} $ refererar till `targets`s beräknings underlag.
+  summary: Utför en kontrollerad "och stege" i ett register över mål qubits.
+- uid: microsoft.quantum.canon.applyand
+  summary: Inverterar en specifik mål-qubit, om och bara om båda kontroll qubits är i läget 1, med hjälp av mått för att utföra den angränsande åtgärden.
+- uid: microsoft.quantum.canon.applycnotchain
+  summary: Beräknar pariteten för ett register över qubits på plats.
+- uid: microsoft.quantum.canon.applycnotchainwithtarget
+  summary: Beräknar pariteten för en matris med qubits i en mål-qubit.
 - uid: microsoft.quantum.canon.applydiagonalunitary
   summary: >-
     Använder en matris med komplexa faser till numeriska bas tillstånd för ett register över qubits.
@@ -348,6 +348,8 @@ operations:
   summary: Använder en åtgärd som kan kontrol leras på ett klassiskt resultat värde som noll.
 - uid: microsoft.quantum.canon.applyifzeroca
   summary: Använder en åtgärd med ett enhetligt resultat på ett klassiskt resultat värde som noll.
+- uid: microsoft.quantum.canon.applylowdepthand
+  summary: Inverterar en specifik mål-qubit, om och bara om båda kontroll qubits är i läget 1, med T-djup 1, med hjälp av mått för att utföra den angränsande åtgärden.
 - uid: microsoft.quantum.canon.applymulticontrolledc
   summary: >-
     Använder en multiplicerad, kontrollerad version av en åtgärd med enkel kontroll.
@@ -528,7 +530,7 @@ operations:
 - uid: microsoft.quantum.canon.applywitha
   summary: Med två åtgärder används en som konjugaten med den andra.
 - uid: microsoft.quantum.canon.applywithc
-  summary: ''
+  summary: Med två åtgärder används en som konjugaten med den andra.
 - uid: microsoft.quantum.canon.applywithca
   summary: Med två åtgärder används en som konjugaten med den andra.
 - uid: microsoft.quantum.canon.applywithinputtransformation
@@ -553,18 +555,12 @@ operations:
     Mer specifikt förutsätter att fasen $ \phi $ i ett Quantum-tillstånd som kan uttryckas som $ \frac{e ^ {i t}} {\sqrt{2}} (e ^ {i\phi} \ ket{0} + e ^ {-i\phi} \ ket{1}) $ för en viss godtycklig verklig t har det förväntade värdet.
 - uid: microsoft.quantum.canon.assertprobintbe
   summary: "\n> [!WARNING]\n> Inaktuell\n\nAssertProbIntBE är föråldrad. Använd @ \"assertprobint (stateindex, sannolikhet, bigendianaslittleendian (qubits), tolerans)\" i stället.\nDen här åtgärden har tagits bort."
+- uid: microsoft.quantum.canon.cascadecnot
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nCascadeCNOT är föråldrad. Använd @\"microsoft.quantum.canon.applycnotchain\" i stället.\nAnvänd @\"microsoft.quantum.canon.applycnotchain\"."
 - uid: microsoft.quantum.canon.cnotchain
-  summary: >-
-    Beräknar pariteten för en matris med qubits på plats.
-
-
-    Det följer mönstret $ \ket{q_0} \ket{q_0 \oplus q_1} \ket{q_0 \oplus q_1 \oplus q_2} \cdots $.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nCNOTChain är föråldrad. Använd @\"microsoft.quantum.canon.applycnotchain\" i stället."
 - uid: microsoft.quantum.canon.cnotchaintarget
-  summary: >-
-    Beräknar pariteten för en matris med qubits i en mål-qubit.
-
-
-    Om matrisen inlednings vis är i läget $ \ket{q_0} \ket{q_1} \cdots \ket{q_ {\text{Target}}} $, erhålls det slutliga stadiet av $ \ket{q_0} \ket{q_1 \oplus q_0} \cdots \ket{q_ {n-1} \oplus \cdots \oplus q_0 \oplus q_ {\text{Target}}} $.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nCNOTChainTarget är föråldrad. Använd @\"microsoft.quantum.canon.applycnotchainwithtarget\" i stället."
 - uid: microsoft.quantum.canon.copymostsignificantbitle
   summary: "\n> [!WARNING]\n> Inaktuell\n\nCopyMostSignificantBitLE är föråldrad. Använd @\"microsoft.quantum.arithmetic.copymostsignificantbit\" i stället.\nAnvänd @\"Microsoft.Quantum.Arithmetic.CopyMostSignificantBit\"."
 - uid: microsoft.quantum.canon.cx
@@ -604,6 +600,8 @@ operations:
     \begin{align} H_Y \mathrel{: =} \frac{1}{\sqrt{2}} \begin{bmatrix} 1 & 1 \\\\ &-i \end{bmatrix}.
 
     \end{align}
+- uid: microsoft.quantum.canon.inplacemajority
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nInPlaceMajority är föråldrad. Använd @\"microsoft.quantum.arithmetic.applymajorityinplace\" i stället.\nAnvänd @\"microsoft.quantum.arithmetic.applymajorityinplace\"."
 - uid: microsoft.quantum.canon.inplacexorbe
   summary: "\n> [!WARNING]\n> Inaktuell\n\nInPlaceXorBE är föråldrad. Använd @ \"applyreversedopleca (applyxorinplace (värde, _), mål)\" i stället.\nDen här åtgärden har tagits bort."
 - uid: microsoft.quantum.canon.inplacexorle
@@ -613,9 +611,9 @@ operations:
 - uid: microsoft.quantum.canon.integerincrementphasele
   summary: "\n> [!WARNING]\n> Inaktuell\n\nIntegerIncrementPhaseLE är föråldrad. Använd @\"microsoft.quantum.arithmetic.incrementphasebyinteger\" i stället.\nAnvänd @\"Microsoft.Quantum.Arithmetic.IncrementPhaseByInteger\"."
 - uid: microsoft.quantum.canon.iteratethroughcartesianpower
-  summary: Itererar en variabel, säg arr, via kartesiska-produkten [0, Bound-1] × [0, Bound-1] × [0, Bound-1] och anrop OP (arr) för varje element i kartesiska-produkten
+  summary: Tillämpar en åtgärd för varje index i kartesiska-kraften i ett heltals intervall.
 - uid: microsoft.quantum.canon.iteratethroughcartesianproduct
-  summary: Itererar en variabel, säg `arr`genom en kartesiska-produkt [0, gränser [0]-1] × [0, gränser [1]-1] × [0, gränser [längd (gränser)-1]-1] och anrop OP (arr) för varje element i kartesiska-produkten
+  summary: Tillämpar en åtgärd för varje index i kartesiska-produkten av flera intervall.
 - uid: microsoft.quantum.canon.measureintegerbe
   summary: "\n> [!WARNING]\n> Inaktuell\n\nMeasureIntegerBE är föråldrad. Använd @ \"measureinteger (bigendianaslittleendian (Target))\" i stället.\nDen här åtgärden har tagits bort."
 - uid: microsoft.quantum.canon.modularaddproductle
@@ -701,14 +699,11 @@ newtypes:
 - uid: microsoft.quantum.canon.ccnotop
   summary: Typ av signatur för CCNOT-grind.
 - uid: microsoft.quantum.canon.resultstack
-  summary: >-
-    En sista in-först-ut-stack med `Result` variabler.
-
-    Stacken består av en heltals kapacitet, en stack pekare och en `Result` matris.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nResultStack är föråldrad."
 metadata:
-  ms.openlocfilehash: 457d211ace716ddc09ebcd94c5cbc3c33b42d704
-  ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
+  ms.openlocfilehash: 8d54303daeb32281b1e531fce50443c132c14093
+  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 12/05/2019
-  ms.locfileid: "74858555"
+  ms.lasthandoff: 01/29/2020
+  ms.locfileid: "76870732"

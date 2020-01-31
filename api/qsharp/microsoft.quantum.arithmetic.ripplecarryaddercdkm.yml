@@ -6,6 +6,7 @@ namespace: Microsoft.Quantum.Arithmetic
 summary: >-
   Reversibel, "på plats"-tillägg av två heltal.
 
+
   Med två $n $-bitars heltal som är kodade i LittleEndian registrerar `xs` och `ys`, och en qubit bär åtgärd, beräknar åtgärden summan av de två heltalen där $n $ minst betydande bitar av resultatet hålls i `ys` och den framställda biten är XoReD till qubit `carry`.
 remarks: Den här åtgärden har samma funktioner som RippleCarryAdderD, men använder bara en Ancilla-qubit i stället för $n $.
 syntax: 'operation RippleCarryAdderCDKM (xs : Microsoft.Quantum.Arithmetic.LittleEndian, ys : Microsoft.Quantum.Arithmetic.LittleEndian, carry : Qubit) : Unit'
@@ -34,9 +35,9 @@ functors:
 - Adjoint
 - Controlled
 metadata:
-  ms.openlocfilehash: 2d973659a9457c301ba65a282e4fd4b627c93671
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: bc5a7af8534741cab8e7b18a404b1745454a20c4
+  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73218489"
+  ms.lasthandoff: 01/29/2020
+  ms.locfileid: "76871370"

@@ -10,11 +10,7 @@ functions:
 - uid: microsoft.quantum.oracles.oracletodiscrete
   summary: En åtgärd som representerar en "svart box" Oracle returnerar en separat tids Oracle som representerar den svarta-Box-Oracle som upprepas flera gånger.
 - uid: microsoft.quantum.oracles.reflectionoraclefromdeterministicstateoracle
-  summary: >-
-    Skapar reflektion om ett angivet tillstånd från en Oracle.
-
-
-    Med tanke på Oracle-$O $ av typen <xref:microsoft.quantum.oracles.deterministicstateoracle>är resultatet av den här funktionen en reflektion runt status $ \ket{\psi} $ där $O \ket{0} = \ket{\psi} $.
+  summary: Skapar reflektion om ett angivet tillstånd från en Oracle.
 - uid: microsoft.quantum.oracles.stateoraclefromdeterministicstateoracle
   summary: Konverterar en Oracle av typen `DeterministicStateOracle` till `StateOracle`.
 newtypes:
@@ -73,9 +69,9 @@ newtypes:
 
     - Systemet registrerar $s $ som kommer att lagra det önskade Quantum-läget $ \ket{\psi}\_s $.
 metadata:
-  ms.openlocfilehash: 10eb2c7acebf805b955816abe2bf1cabb95ce059
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 7e582286b69563bc4baa856f5236e5c2bd292ae0
+  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73216109"
+  ms.lasthandoff: 01/29/2020
+  ms.locfileid: "76870049"

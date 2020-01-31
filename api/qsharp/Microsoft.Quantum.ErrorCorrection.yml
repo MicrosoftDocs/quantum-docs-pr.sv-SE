@@ -43,19 +43,9 @@ operations:
 - uid: microsoft.quantum.errorcorrection.fivequbitcodeencoder
   summary: "\n> [!WARNING]\n> Inaktuell\n\nFiveQubitCodeEncoder är föråldrad. Använd @\"microsoft.quantum.errorcorrection.encodeintofivequbitcode\" i stället.\nAnvänd @\"microsoft.quantum.errorcorrection.encodeintofivequbitcode\"."
 - uid: microsoft.quantum.errorcorrection.injectpi4yrotation
-  summary: >-
-    Utför en π/4-rotation om `Y`.
-
-
-    Rotationen utförs genom att konsumera ett magiskt tillstånd; det vill säga en kopia av tillstånd $ $ \begin{align} \cos\frac{\pi}{8} \ket{0} + \sin \frac{\pi}{8} \ket{1}.
-
-    \end{align} $ $
+  summary: Roterar en enskild qubit från π/4 om Y-axeln.
 - uid: microsoft.quantum.errorcorrection.knilldistill
-  summary: >-
-    Implementerar algoritmen för Knill Magic State.
-
-
-    Med 15 ungefärliga kopior av ett Magic State $ $ \begin{align} \cos\frac{\pi}{8} \ket{0} + \sin \frac{\pi}{8} \ket{1} \end{align}, $ $ ger en kopia av högre kvalitet.
+  summary: Implementerar algoritmen för Knill Magic State.
 - uid: microsoft.quantum.errorcorrection.measurestabilizergenerators
   summary: Mäter den angivna uppsättningen generatorer för en stabiliserings grupp.
 - uid: microsoft.quantum.errorcorrection.recover
@@ -92,9 +82,9 @@ newtypes:
 - uid: microsoft.quantum.errorcorrection.syndromemeasop
   summary: Representerar en åtgärd som används för att mäta Syndrome för ett felkorrigerande kod block.
 metadata:
-  ms.openlocfilehash: 2f72286018b39e2d51d6e0ffa6babf7ce350d976
-  ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
+  ms.openlocfilehash: 0a149810314453e816c7754dd535b2f3bb7d8e58
+  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 12/05/2019
-  ms.locfileid: "74858370"
+  ms.lasthandoff: 01/29/2020
+  ms.locfileid: "76870796"

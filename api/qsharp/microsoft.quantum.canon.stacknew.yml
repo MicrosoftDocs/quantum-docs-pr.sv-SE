@@ -3,24 +3,22 @@ uid: microsoft.quantum.canon.stacknew
 name: StackNew
 type: function
 namespace: Microsoft.Quantum.Canon
-summary: Skapar en ny tom <xref:microsoft.quantum.canon.resultstack> med den aktuella kapaciteten.
+summary: StackNew är föråldrad.
 syntax: 'function StackNew (size : Int) : Microsoft.Quantum.Canon.ResultStack'
 input:
   content: '(size : Int)'
   types:
   - name: size
-    summary: Kapaciteten för den nya stacken.
     isPrimitive: true
     uid: Int
 output:
   content: Microsoft.Quantum.Canon.ResultStack
   types:
-  - summary: En ny `ResultStack` som har kapacitet `size` och längd 0.
-    uid: microsoft.quantum.canon.resultstack
+  - uid: microsoft.quantum.canon.resultstack
 metadata:
-  ms.openlocfilehash: 4ce9db8cdae4d6c7813a4d5cfbd04e1b8d25cfaf
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: bd4180407c93f8d1209bcd786a4db4116c1fc8f2
+  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73222195"
+  ms.lasthandoff: 01/29/2020
+  ms.locfileid: "76871455"

@@ -1,0 +1,58 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.amplitudeamplification.obliviousamplitudeamplificationfromstatepreparation
+name: ObliviousAmplitudeAmplificationFromStatePreparation
+type: function
+namespace: Microsoft.Quantum.AmplitudeAmplification
+summary: Oblivious amplitud-förstärkning av Oracle för partiella reflektioner.
+remarks: >-
+  Detta tillämpar strängare villkor på form av hjälp start-och mål tillstånd än i `AmpAmpObliviousByReflectionPhases`.
+
+  Det förutsätts att $A \ket{0}\_f\ket{0}\_A = \ket{\text{start}}\_{FA} $ förbereder det extra start tillstånd $ \ket{\text{start}}\_{FA} $ från beräknings basen $ \ket{0}\_f\ket{0}$.
+
+  Det förutsätts att mål status är markerat med $ \ket{1}\_f $.
+
+  Det förutsätts att \begin{align} O\ket {\ text {start}}\_{FA} \ket{\psi}\_s = \lambda\ket{1}\_f\ket {\ text {all}}\_a\ket {\ text {Target}}\_s U \ket{\psi}\_s + \sqrt{1-| \lambda | ^ 2} \ket{0}\_f\cdots, \end{align} för en del $U $.
+syntax: 'function ObliviousAmplitudeAmplificationFromStatePreparation (phases : Microsoft.Quantum.AmplitudeAmplification.ReflectionPhases, startStateOracle : Microsoft.Quantum.Oracles.DeterministicStateOracle, signalOracle : Microsoft.Quantum.Oracles.ObliviousOracle, idxFlagQubit : Int) : ((Qubit[], Qubit[]) => Unit is Adj + Ctl)'
+input:
+  content: '(phases : Microsoft.Quantum.AmplitudeAmplification.ReflectionPhases, startStateOracle : Microsoft.Quantum.Oracles.DeterministicStateOracle, signalOracle : Microsoft.Quantum.Oracles.ObliviousOracle, idxFlagQubit : Int)'
+  types:
+  - name: phases
+    summary: Faser av partiella reflektioner
+    uid: microsoft.quantum.amplitudeamplification.reflectionphases
+  - name: startStateOracle
+    summary: Enhetlig Oracle $A $ som förbereder start tillstånd
+    uid: microsoft.quantum.oracles.deterministicstateoracle
+  - name: signalOracle
+    summary: Enhetlig Oracle $O $ av typ `ObliviousOracle` som fungerar tillsammans med hjälp-och system registret
+    uid: microsoft.quantum.oracles.obliviousoracle
+  - name: idxFlagQubit
+    summary: Index till Single-qubit flagga-register
+    isPrimitive: true
+    uid: Int
+output:
+  content: ((Qubit[], Qubit[]) => Unit is Adj + Ctl)
+  types:
+  - summary: En åtgärd som implementerar Oblivious amplitud-förstärkning baserat på partiella reflektioner.
+    isOperation: true
+    input:
+      types:
+      - isArray: true
+        isPrimitive: true
+        uid: Qubit
+      - isArray: true
+        isPrimitive: true
+        uid: Qubit
+    output:
+      types:
+      - isPrimitive: true
+        uid: Unit
+    functors:
+    - Adjoint
+    - Controlled
+metadata:
+  ms.openlocfilehash: fa44068c55a1bb92f8827095889f9c3b4d6f1011
+  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
+  ms.translationtype: MT
+  ms.contentlocale: sv-SE
+  ms.lasthandoff: 01/29/2020
+  ms.locfileid: "76872452"

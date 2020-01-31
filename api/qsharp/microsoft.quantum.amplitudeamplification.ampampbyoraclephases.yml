@@ -3,32 +3,22 @@ uid: microsoft.quantum.amplitudeamplification.ampampbyoraclephases
 name: AmpAmpByOraclePhases
 type: function
 namespace: Microsoft.Quantum.AmplitudeAmplification
-summary: Amplitud förstärkning av Oracle för partiella reflektioner.
-remarks: >-
-  Detta tillämpar strängare villkor i form av start-och mål tillstånd än i `AmpAmpByReflectionPhases`.
-
-  Det förutsätts att mål status är markerat med $ \ket{1}\_f $.
-
-  Det antas att \begin{align} A\ket{0}\_{f} \ket{0}\_s = \lambda\ket{1}\_f\ket {\ text {Target}}\_s + \sqrt{1-| \lambda | ^ 2} \ket{0}\_f\cdots , \end{align} i de flesta fall, `flagQubit` och `ancillaRegister` initieras i tillstånd $ \ket{0}\_{f} \ket{0}\_s $.
+summary: AmpAmpByOraclePhases är föråldrad. Använd @"microsoft.quantum.amplitudeamplification.amplitudeamplificationfromstatepreparation" i stället.
 syntax: 'function AmpAmpByOraclePhases (phases : Microsoft.Quantum.AmplitudeAmplification.ReflectionPhases, stateOracle : Microsoft.Quantum.Oracles.StateOracle, idxFlagQubit : Int) : (Qubit[] => Unit is Adj + Ctl)'
 input:
   content: '(phases : Microsoft.Quantum.AmplitudeAmplification.ReflectionPhases, stateOracle : Microsoft.Quantum.Oracles.StateOracle, idxFlagQubit : Int)'
   types:
   - name: phases
-    summary: Faser av partiella reflektioner
     uid: microsoft.quantum.amplitudeamplification.reflectionphases
   - name: stateOracle
-    summary: Enhetlig Oracle $A $ som förbereder start tillstånd
     uid: microsoft.quantum.oracles.stateoracle
   - name: idxFlagQubit
-    summary: Index för att flagga qubit
     isPrimitive: true
     uid: Int
 output:
   content: (Qubit[] => Unit is Adj + Ctl)
   types:
-  - summary: En åtgärd som implementerar amplitud-förstärkning av Oracle som implementeras av partiella reflektioner.
-    isOperation: true
+  - isOperation: true
     input:
       types:
       - isArray: true
@@ -42,9 +32,9 @@ output:
     - Adjoint
     - Controlled
 metadata:
-  ms.openlocfilehash: cacd3b34fae01697ee5bba414d9a7422b3260e2f
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: a5a20dbb207841bf5dd9e46746814b4d7560cc67
+  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73215837"
+  ms.lasthandoff: 01/29/2020
+  ms.locfileid: "76869236"

@@ -7,22 +7,27 @@ summary: >-
   Utför en modulär ökning av ett qubit-register med en heltalskonstant.
 
 
-  Låt oss ange `increment` av ett, `modulus` av N och heltal som är kodat i `target` av y. sedan utför åtgärden följande omvandling: \begin{align} \ket{y} \mapsto \ket{y + 1 \operatorname{mod} N} \end{align} heltal kodas i litet endian-format.
-remarks: Förutsätter att värdet på målet är mindre än N. Observera att <xref:microsoft.quantum.arithmetic.incrementphasebymodularinteger> implementerar samma åtgärd, men i `PhaseLittleEndian`.
+  Låt oss ange `increment` $a $, `modulus` genom $N $ och Integer som är kodat i `target` av $y $.
+
+  Åtgärden utför sedan följande omvandling: \begin{align} \ket{y} \mapsto \ket{(y + a) \operatorname{mod} N} \end{align} heltal kodas i litet endian-format.
+remarks: >-
+  Förutsätter att det initiala värdet för målet är mindre än $N $ och att ökningen $a $ är mindre än $N $.
+
+  Observera att <xref:microsoft.quantum.arithmetic.incrementphasebymodularinteger> implementerar samma åtgärd i `PhaseLittleEndian`-underlaget.
 syntax: 'operation IncrementByModularInteger (increment : Int, modulus : Int, target : Microsoft.Quantum.Arithmetic.LittleEndian) : Unit'
 input:
   content: '(increment : Int, modulus : Int, target : Microsoft.Quantum.Arithmetic.LittleEndian)'
   types:
   - name: increment
-    summary: Heltals ökning a som ska läggas till i y.
+    summary: Heltals ökning $a $ som ska läggas till i $y $.
     isPrimitive: true
     uid: Int
   - name: modulus
-    summary: Integer N som mods y + a.
+    summary: Integer $N $ som mods $y + a $.
     isPrimitive: true
     uid: Int
   - name: target
-    summary: Heltals-y i `LittleEndian`-format som `increment` a läggs till i.
+    summary: Integer $y $ i `LittleEndian`-format som `increment` $a $ läggs till i.
     uid: microsoft.quantum.arithmetic.littleendian
 output:
   content: Unit
@@ -33,11 +38,11 @@ functors:
 - Adjoint
 - Controlled
 seeAlso:
-- incrementphasebymodularinteger
+- microsoft.quantum.arithmetic.incrementphasebymodularinteger
 metadata:
-  ms.openlocfilehash: 9b61ed007a08d176d1754a7c1cd6cd2d9edce7d2
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 975d4548eadbc61f8174b6719d067ffed32797dd
+  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73219067"
+  ms.lasthandoff: 01/29/2020
+  ms.locfileid: "76871608"
