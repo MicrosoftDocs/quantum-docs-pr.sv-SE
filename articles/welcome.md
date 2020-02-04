@@ -6,16 +6,18 @@ author: natke
 ms.author: nakersha
 ms.date: 10/23/2019
 ms.topic: overview
-ms.openlocfilehash: 8fb3b7181632bd6f2b562735546adbf4b461a1b6
-ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+ms.openlocfilehash: 4308bf7e0e48e5735419fab836e479641455e9a5
+ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73530025"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76819935"
 ---
 # <a name="get-started-with-the-quantum-development-kit-qdk"></a>Kom igång med Quantum Development Kit (QDK)
 
-Välkommen till Microsoft Quantum Development Kit!  Här hittar du alla verktyg som du behöver när du lär dig kvantprogrammering med Q#.  För att lära dig kvantberäkning med Q# får du en komma igång-guide som passar både de som vill börja koda kvantprogram och de som inte är redo att börja koda, men som vill lära sig mer om Q# och kvantprogrammering.
+Välkommen till Microsoft Quantum Development Kit!  Här hittar du alla verktyg som du behöver när du lär dig kvantprogrammering med Q#.  För att lära dig kvantberäkning med Q# får du en komma igång-guide som passar både de som vill börja koda kvantprogram och de som inte är redo att börja koda, men som vill lära sig mer om Q# och kvantprogrammering. 
+
+Om du är redo att börja koda [installerar du QDK nu](xref:microsoft.quantum.install).
 
 ## <a name="questions-about-quantum-computing"></a>Frågor om kvantberäkning
 
@@ -54,9 +56,8 @@ Komma igång-guiderna och artiklarna ovan är avsedda som hjälp för både koda
 * Utforska våra [Q#-exempel](https://docs.microsoft.com/samples/browse/?languages=qsharp) och upptäck vilka problem du kan lösa med kvantberäkning.
 
 * Utveckla på en lokal dator med det värdprogrammeringsspråk och den utvecklingsmiljö som du är mest bekväm med:
-  * Utveckla med [Python](xref:microsoft.quantum.install#develop-with-python)
-  * Utveckla med [Visual Studio](xref:microsoft.quantum.install#develop-with-c-on-windows-using-visual-studio)
-  * Utveckla med [Visual Studio Code](xref:microsoft.quantum.install#develop-with-c-using-visual-studio-code)
-  * Utveckla med [Jupyter Notebook](xref:microsoft.quantum.install#develop-with-jupyter-notebooks)
+  * Utveckla med [Q# och Python](xref:microsoft.quantum.install.python)
+  * Utveckla med [Q# och C#](xref:microsoft.quantum.install.cs)
+  * Utveckla med [Q# Jupyter Notebooks](xref:microsoft.quantum.install.jupyter)
 
 * Bli en del av Microsoft Quantum-communityn genom att bidra till [QDK](xref:microsoft.quantum.contributing)-projekt med öppen källkod.

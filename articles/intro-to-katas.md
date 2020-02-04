@@ -6,12 +6,12 @@ ms.author: nakersha
 ms.date: 10/17/2019
 ms.topic: overview
 uid: microsoft.quantum.overview.katas
-ms.openlocfilehash: 7fb8dba2a10f9a983ebee52e394260bbdc0d2f9c
-ms.sourcegitcommit: aa5e6f4a2deb4271a333d3f1b1eb69b5bb9a7bad
+ms.openlocfilehash: af54a2260147b8ca07919b241548aac85ed0d8a1
+ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73444148"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76821107"
 ---
 # <a name="learn-quantum-computing-with-the-quantum-katas"></a>Lära sig kvantberäkning med Quantum Katas
 
@@ -19,7 +19,7 @@ ms.locfileid: "73444148"
 
 ## <a name="learning-by-doing"></a>Lära genom att göra
 
-Självstudierna och de Katas som samlas in i projektet skapar inlärning med hjälp av praktiska uppgifter. De innehåller programmeringsuppgifter för vissa ämnen, från att vara mycket enkla till att vara ganska utmanande. I varje uppgift ska du fylla i viss kod. I den första uppgiften kanske enbart en rad krävs och i den sista måste du kanske ange ett stort kodfragment.
+Självstudierna och övningarna som samlas in i projektet skapar inlärning med hjälp av praktiska uppgifter. De innehåller programmeringsuppgifter för vissa ämnen, från att vara mycket enkla till att vara ganska utmanande. I varje uppgift ska du fylla i viss kod. I den första uppgiften kanske enbart en rad krävs och i den sista måste du kanske ange ett stort kodfragment.
 
 Det viktigaste är att Katas innehåller testramverk som konfigurerar, kör och validerar lösningarna på uppgifterna. På så sätt kan du få omedelbar feedback på lösningen och du kan fundera över vilken metod du ska använda om den var fel.
 
@@ -36,10 +36,12 @@ Här är en sammanfattning av de huvudsakliga ämnen som ingår i Quantum Katas.
 
 ### <a name="introduction-to-quantum-computing-concepts"></a>Introduktion till kvantberäkningsbegrepp
 
-* [Komplex aritmetik](https://github.com/microsoft/QuantumKatas/blob/master/tutorials/ComplexArithmetic)
-* [Linjär algebra](https://github.com/microsoft/QuantumKatas/blob/master/tutorials/LinearAlgebra)
-* [Kvantbitsbegreppet](https://github.com/microsoft/QuantumKatas/blob/master/tutorials/Qubit)
-* [Kvantgrindar med en kvantbit](https://github.com/microsoft/QuantumKatas/blob/master/tutorials/SingleQubitGates)
+* [Komplex aritmetik](https://github.com/microsoft/QuantumKatas/tree/master/tutorials/ComplexArithmetic)
+* [Linjär algebra](https://github.com/microsoft/QuantumKatas/tree/master/tutorials/LinearAlgebra)
+* [Kvantbitsbegreppet](https://github.com/microsoft/QuantumKatas/tree/master/tutorials/Qubit)
+* [Kvantgrindar med en kvantbit](https://github.com/microsoft/QuantumKatas/tree/master/tutorials/SingleQubitGates)
+* [System med flera kvantbitar](https://github.com/microsoft/QuantumKatas/tree/master/tutorials/MultiQubitSystems)
+* [Grindar med flera kvantbitar](https://github.com/microsoft/QuantumKatas/tree/master/tutorials/MultiQubitGates)
 
 ### <a name="quantum-computing-fundamentals"></a>Grunderna i kvantberäkning
 
@@ -52,10 +54,10 @@ Här är en sammanfattning av de huvudsakliga ämnen som ingår i Quantum Katas.
 
 * [Kvantteleportering](https://github.com/microsoft/QuantumKatas/tree/master/Teleportation)
 * [Superdense-kodning](https://github.com/microsoft/QuantumKatas/tree/master/SuperdenseCoding)
-* [Deutsch-Jozsa-algoritm](https://github.com/microsoft/QuantumKatas/blob/master/tutorials/DeutschJozsaAlgorithm)
+* [Deutsch-Jozsa-algoritm](https://github.com/microsoft/QuantumKatas/tree/master/tutorials/ExploringDeutschJozsaAlgorithm)
 * [Implementera Grovers sökalgoritm](https://github.com/microsoft/QuantumKatas/tree/master/GroversAlgorithm)
-* [Utforska egenskaper på hög nivå för Grovers sökalgoritm](https://github.com/microsoft/QuantumKatas/blob/master/tutorials/ExploringGroversAlgorithm)
-* Lösa verkliga problem med Grovers algoritm: [SAT-problem](https://github.com/microsoft/QuantumKatas/blob/master/SolveSATWithGrover) och [problem med diagramfärger](https://github.com/microsoft/QuantumKatas/blob/master/GraphColoring)
+* [Utforska egenskaper på hög nivå för Grovers sökalgoritm](https://github.com/microsoft/QuantumKatas/tree/master/tutorials/ExploringGroversAlgorithm)
+* Lösa verkliga problem med Grovers algoritm: [SAT-problem](https://github.com/microsoft/QuantumKatas/tree/master/SolveSATWithGrover) och [problem med diagramfärger](https://github.com/microsoft/QuantumKatas/tree/master/GraphColoring)
 
 ### <a name="protocols-and-libraries"></a>Protokoll och bibliotek
 
@@ -66,8 +68,8 @@ Här är en sammanfattning av de huvudsakliga ämnen som ingår i Quantum Katas.
 
 ### <a name="entanglement-games"></a>Sammanflätningsspel
 
-* [CHSH-spel](https://github.com/microsoft/QuantumKatas/blob/master/CHSHGame)
-* [GHZ-spel](https://github.com/microsoft/QuantumKatas/blob/master/GHZGame)
+* [CHSH-spel](https://github.com/microsoft/QuantumKatas/tree/master/CHSHGame)
+* [GHZ-spel](https://github.com/microsoft/QuantumKatas/tree/master/GHZGame)
 * [Mermin-Peres magiska kvadratspel](https://github.com/microsoft/QuantumKatas/tree/master/MagicSquareGame)
 
 ## <a name="resources"></a>Resurser
