@@ -6,23 +6,23 @@ ms.author: Alan.Geller@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
 uid: microsoft.quantum.language.expressions
-ms.openlocfilehash: 09d493df4e1178fee1f7a5946cfda2f411111006
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: 83fe697aa07a8ab28bd64437c8f5746bc5893b27
+ms.sourcegitcommit: 5094c0a60cbafdee669c8728b92df281071259b9
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73185213"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77036322"
 ---
 # <a name="expressions"></a>Uttryck
 
-## <a name="grouping"></a>Baserat
+## <a name="grouping"></a>baserat
 
 Detta uttryck har fått ett uttryck av samma typ, i alla uttryck.
 `(7)` är till exempel ett `Int` uttryck, `([1,2,3])` är ett uttryck av typen matris med `Int`s och `((1,2))` är ett uttryck med typ `(Int, Int)`.
 
 Motsvarigheten mellan enkla värden och tupler med ett enda element som beskrivs i [typ modellen](xref:microsoft.quantum.language.type-model#tuple-types) tar bort tvetydigheten mellan `(6)` som en grupp och `(6)` som en tupel med ett enda element.
 
-## <a name="symbols"></a>Specialtecken
+## <a name="symbols"></a>Symboler
 
 Namnet på en symbol som är kopplad till eller tilldelats ett värde av typen `'T` är ett uttryck av typen `'T`.
 Om till exempel symbolen `count` är kopplad till heltal svärdet `5`, är `count` ett heltals uttryck.
@@ -61,7 +61,7 @@ I det här fallet måste den andra parametern passa in i 32 bitar. om inte, komm
 
 Med två heltals-eller Big-heltals uttryck kan ett nytt heltals-eller Big-heltals uttryck skapas med operatorerna `%` (Modulus), `&&&` (bitvis AND), `|||` (bitvis OR) eller `^^^` (Bitvis XOR).
 
-Med ett heltals uttryck eller ett Big-uttryck till höger, och ett heltals uttryck till höger, kan `<<<` (aritmetiska vänstra Shift) eller `>>>` (aritmetiska höger Shift) operatörer användas för att skapa ett nytt uttryck med samma typ som vänster uttryck.
+Med antingen ett heltals-eller Big-heltals uttryck till vänster, och ett heltals uttryck till höger, kan `<<<` (aritmetiska vänstra Shift) eller `>>>` (aritmetiska höger Shift) operatörer användas för att skapa ett nytt uttryck med samma typ som det vänstra uttrycket.
 
 Den andra parametern (Shift-värdet) till antingen Shift-operationen måste vara större än eller lika med noll. beteendet för negativa Skift-mängder är odefinierat.
 Skift-beloppet för båda Skift-operationen måste också passa i 32 bitar; om inte, kommer ett körnings fel att aktive ras.
@@ -94,9 +94,9 @@ Med ett heltals-eller Big-heltals uttryck kan ett nytt uttryck av samma typ skap
 De två `Bool` literala värdena är `true` och `false`.
 
 Med två uttryck av samma primitiva typ kan `==` och `!=` binära operatorer användas för att skapa ett `Bool`-uttryck.
-Uttrycket är sant om de två uttrycken är (ansvars värde) lika.
+Uttrycket är sant om de två uttrycken är lika och falskt om inte.
 
-Värden för användardefinierade typer kan inte jämföras, endast deras värden kan jämföras. Exempel:
+Värden för användardefinierade typer kan inte jämföras, men endast de värden som inte är figursatta kan jämföras. Till exempel använder operatorn "unwrap" `!` (förklaras på [sidan för Q # typ modell](xref:microsoft.quantum.language.type-model#user-defined-types)).
 
 ```qsharp
 newtype WrappedInt = Int;     // Yes, this is a contrived example
@@ -347,7 +347,7 @@ Matriser som innehåller qubits eller callables måste initieras korrekt med ick
 
 Standardvärdena för varje typ är:
 
-Typ | Standard
+Typ | Default
 ---------|----------
  `Int` | `0`
  `BigInt` | `0L`
@@ -492,17 +492,17 @@ Operator | Ariteten | Beskrivning | Operands typer
 ---------|----------|---------|---------------
  efterföljande `!` | Operator | Packa upp | Valfri användardefinierad typ
  `-`, `~~~`, `not` | Operator | Numeriskt negativ, bitvis komplement, logisk negation | `Int`, `BigInt` eller `Double` för `-`, `Int` eller `BigInt` för `~~~`, `Bool` för `not`
- `^` | binär | Heltals effekt | `Int` eller `BigInt` för basen `Int` för exponenten
- `/`, `*`, `%` | binär | Division, multiplikation, heltals-modulus | `Int`, `BigInt` eller `Double` för `/` och `*`, `Int` eller `BigInt` för `%`
- `+`, `-` | binär | Kombination av addition eller sträng och matris, subtraktion | `Int`, `BigInt` eller `Double`, även `String` eller valfri mat ris typ för `+`
- `<<<`, `>>>` | binär | Vänster SKIFT, höger Skift | `Int` eller `BigInt`
- `<`, `<=`, `>`, `>=` | binär | Mindre än, mindre än eller lika med, större än, större än eller-lika med jämförelser | `Int`, `BigInt` eller `Double`
- `==`, `!=` | binär | lika med, inte lika med jämförelser | vilken primitiv typ som helst
- `&&&` | binär | Bitvis och | `Int` eller `BigInt`
- `^^^` | binär | Bitvis XOR | `Int` eller `BigInt`
- <code>\|\|\|</code> | binär | Bitvis eller | `Int` eller `BigInt`
- `and` | binär | Logiska och | `Bool`
- `or` | binär | Logiska eller | `Bool`
+ `^` | Binär | Heltals effekt | `Int` eller `BigInt` för basen `Int` för exponenten
+ `/`, `*`, `%` | Binär | Division, multiplikation, heltals-modulus | `Int`, `BigInt` eller `Double` för `/` och `*`, `Int` eller `BigInt` för `%`
+ `+`, `-` | Binär | Kombination av addition eller sträng och matris, subtraktion | `Int`, `BigInt` eller `Double`, även `String` eller valfri mat ris typ för `+`
+ `<<<`, `>>>` | Binär | Vänster SKIFT, höger Skift | `Int` eller `BigInt`
+ `<`, `<=`, `>`, `>=` | Binär | Mindre än, mindre än eller lika med, större än, större än eller-lika med jämförelser | `Int`, `BigInt` eller `Double`
+ `==`, `!=` | Binär | lika med, inte lika med jämförelser | vilken primitiv typ som helst
+ `&&&` | Binär | Bitvis och | `Int` eller `BigInt`
+ `^^^` | Binär | Bitvis XOR | `Int` eller `BigInt`
+ <code>\|\|\|</code> | Binär | Bitvis eller | `Int` eller `BigInt`
+ `and` | Binär | Logiska och | `Bool`
+ `or` | Binär | Logiska eller | `Bool`
  `..` | Binär/ternär | Intervall operator | `Int`
  `?` `|` | Ternär | Villkorsstyrd | `Bool` för den vänstra sidan
 `w/` `<-` | Ternär | Kopiera och uppdatera | Se [Kopiera och uppdatera uttryck](#copy-and-update-expressions)

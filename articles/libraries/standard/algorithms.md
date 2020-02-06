@@ -6,12 +6,12 @@ ms.author: martinro@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
 uid: microsoft.quantum.libraries.standard.algorithms
-ms.openlocfilehash: 91f65b05c83367c2d2ece93212369dc448d8c2a8
-ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
+ms.openlocfilehash: 1c45808207a2020f603448eba05900cdc40b4916
+ms.sourcegitcommit: 5094c0a60cbafdee669c8728b92df281071259b9
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76821022"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77036363"
 ---
 # <a name="quantum-algorithms"></a>Quantum-algoritmer #
 
@@ -48,7 +48,8 @@ Dessutom överskrider *Fourier-transformeringens* effektivitet (QFT) mycket vad 
 
 Som en ungefärlig generalisering av QFT tillhandahåller vi <xref:microsoft.quantum.canon.approximateqft>-åtgärden som möjliggör ytterligare optimering genom att rensa rotationer som inte är absolut nödvändiga för den önskade algoritmen.
 Den ungefärliga QFT kräver att dyadic $Z $-rotations åtgärd <xref:microsoft.quantum.intrinsic.rfrac> samt <xref:microsoft.quantum.intrinsic.h> åtgärden.
-Indata och utdata antas vara kodade i big endian encoding (lägsta bit-/qubit är till vänster, samma som [ket-notation](xref:microsoft.quantum.concepts.dirac)).
+Indata och utdata antas vara kodade i big endian encoding---det vill säga att qubit med index `0` är kodat i det vänstra (högsta) biten i den binära heltals representationen.
+Detta justeras med [ket-notation](xref:microsoft.quantum.concepts.dirac), som ett register över tre qubits i tillstånd $ \ket{100}$ motsvarar $q _0 $ är i tillstånd $ \ket{1}$ medan $q _1 $ och $q _2 $ är både i tillstånd $ \ket{0}$.
 Den ungefärliga parametern $a $ fastställer rensnings nivån för $Z $-rotationer, t. ex. $a \in [0.. n] $.
 I detta fall alla $Z $-rotationer $2 \ Pi/2 ^ k $ där $k > en $ tas bort från QFT-kretsen.
 Det är känt att för $k \ge \ log_2 (n) + \ log_2 (1/\epsilon) + $3. en kan vara kopplad till $\\| \operatorname{QFT} – \operatorname{AQFT} \\| < \epsilon $.
@@ -56,7 +57,7 @@ Här $\\| \cdot\\| $ är operator norm, som i det här fallet kvadratroten av de
 
 ## <a name="arithmetic"></a>Aritmetiska ##
 
-Precis som det aritmetiska spelar en central roll i klassisk data behandling, är den också indispensible i Quantum Computing.  Algoritmer som Shor, Quantum simulerings metoder och många Oracular-algoritmer förlitar sig på sammanhängande aritmetiska åtgärder.  De flesta metoder för aritmetiska byggen vid Quantum egenskapsangivning-kretsar.  Den enklaste egenskapsangivning tar en klassisk in$b $ och lägger till värdet i ett Quantum-tillstånd som innehåller ett heltal $ \ket{a} $.  Matematiskt, egenskapsangivning (som vi betecknar $ \operatorname{Add} (b) $ för klassisk in$b $) har egenskapen som
+Precis som aritmetiskt spelar en central roll i klassisk data behandling, är det också inte nödvändigt i Quantum Computing.  Algoritmer som Shor, Quantum simulerings metoder och många Oracular-algoritmer förlitar sig på sammanhängande aritmetiska åtgärder.  De flesta metoder för aritmetiska byggen vid Quantum egenskapsangivning-kretsar.  Den enklaste egenskapsangivning tar en klassisk in$b $ och lägger till värdet i ett Quantum-tillstånd som innehåller ett heltal $ \ket{a} $.  Matematiskt, egenskapsangivning (som vi betecknar $ \operatorname{Add} (b) $ för klassisk in$b $) har egenskapen som
 
 $ $ \operatorname{Add} (b) \ket{a} = \ket{a + b}.
 $ $ Den här grundläggande egenskapsangivning-kretsen är mer av en ökning än en egenskapsangivning.

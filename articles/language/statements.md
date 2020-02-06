@@ -6,12 +6,12 @@ uid: microsoft.quantum.language.statements
 ms.author: Alan.Geller@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 9157cf3336ce0894816dbfbaf13ce0e712a6b096
-ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
+ms.openlocfilehash: 9a6f5d53ec21090d0c13f4369e0270d264cd1e9b
+ms.sourcegitcommit: 5094c0a60cbafdee669c8728b92df281071259b9
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76821073"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77036499"
 ---
 # <a name="statements-and-other-constructs"></a>Instruktioner och andra konstruktioner
 
@@ -29,7 +29,7 @@ I `///` kommentarer formateras text som en del av API-dokumentationen som [markd
 Som tillägg till markdown kan kors referenser till åtgärder, funktioner och användardefinierade typer i Q # inkluderas med hjälp av `@"<ref target>"`, där `<ref target>` ersätts av det fullständigt kvalificerade namnet på det kod objekt som refereras till.
 Alternativt kan en dokumentations motor också ha stöd för ytterligare markdown-tillägg.
 
-Ett exempel:
+Exempel:
 
 ```qsharp
 /// # Summary
@@ -191,7 +191,7 @@ Det finns en liknande sammanfogning för kopiera-och-uppdatera-uttryck på den h
 ```qsharp
 newtype Complex = (Re : Double, Im : Double);
 
-function ElementwisePlus(reals : Double[], ims : Double[]) : Complex[] {
+function ComplexSum(reals : Double[], ims : Double[]) : Complex[] {
     mutable res = Complex(0.,0.);
 
     for (r in reals) {

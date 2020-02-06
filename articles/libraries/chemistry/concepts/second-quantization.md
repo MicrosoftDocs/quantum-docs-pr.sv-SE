@@ -6,24 +6,24 @@ ms.author: nawiebe@microsoft.com
 ms.date: 10/09/2017
 ms.topic: article-type-from-white-list
 uid: microsoft.quantum.chemistry.concepts.secondquantization
-ms.openlocfilehash: b3cc7eb8139d2df6e02de371ccf7a423e58ea76d
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: 4b7b5a6be6d0c1f3520128609e6b9fa83e5460d5
+ms.sourcegitcommit: 5094c0a60cbafdee669c8728b92df281071259b9
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73210402"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77036431"
 ---
 # <a name="second-quantization"></a>Andra kvantifieringsfel
 
 Andra kvantifieringsfel tittar på problemet med elektronisk struktur via en annan lins.
-I stället för att tilldela var och en av de $N _e $ electrons till ett särskilt tillstånd (eller orbital), spårar andra kvantifieringsfel varje orbital och lagrar om det finns en Electron som finns på var och en av dem och samtidigt säkerställer egenskaperna för symmetri egenskaperna för motsvarande våg funktion.
+I stället för att tilldela var och en av de $N _e $ electrons till ett särskilt tillstånd (eller orbital), spårar andra kvantifieringsfel varje orbital och lagrar om det finns en Electron som finns på var och en av dem och samtidigt garanterar att egenskaperna för symmetri egenskaperna för motsvarande våg funktion.
 Detta är viktigt eftersom det gör det möjligt att ange Quantum kemi-modeller utan att behöva oroa sig för att symmetrizing ingångs tillstånd (som krävs för Fermions) och även om andra kvantifieringsfel tillåter att sådana modeller simuleras med hjälp av små Quantum Computer.
 
-Som ett exempel på andra kvantifieringsfel i praktiken antar vi att $ \psi_0\cdots \psi_{N-1} $ är en orthonormal uppsättning med avstånds banor.
+Som ett exempel på andra kvantifieringsfel i praktiken antar vi att $ \ psi_0 \cdots \ psi_ {N-1} $ är en orthonormal uppsättning med avstånd för överbanor.
 Dessa insikter väljs för att representera systemet så korrekt som möjligt inom den begränsade bas uppsättningen som beaktas.
 Ett vanligt exempel på sådana banor är atomiska banor som bildar en eigenbasis för väte-Atomen.
 Eftersom electrons har två varv tillstånd kan två electrons vara Crammed i varje sådan spatiala orbital.
-Det vill säga att giltiga bas tillstånd är i formatet $ \psi_{0, \uparrow}, \ldots, \psi_{N-1, \uparrow}, \psi_{0, \downarrow}, \ldots, \psi_{N-1, \downarrow} $ där $ \uparrow $ och $ \downarrow $ är etiketter som anger de två eigenstates i rotations graden för friheten.
+Det vill säga att giltiga bas tillstånd är av typen $ \ psi_ {0, \uparrow}, \ldots, \ psi_ {N-1, \uparrow}, \ psi_ {0, \downarrow}, \ldots, \ psi_ {N-1, \downarrow} $ där $ \uparrow $ och $ \downarrow $ är etiketter som anger de två eigenstates i rotations graden för friheten.
 Det här kombinerade indexet $ (j, \sigma) $ för $ \sigma \in \{\uparrow, \downarrow\}$ kallas en rotations-orbital eftersom det lagrar både spatialdata och rotations graden för frihet.
 I kemi-biblioteket lagras rotations banaarna i en `SpinOrbital` data struktur och skapas på följande sätt.
 
@@ -49,7 +49,7 @@ I kemi-biblioteket lagras rotations banaarna i en `SpinOrbital` data struktur oc
     SpinOrbital spinOrbital1 = tuple;
 ```
 
-Det innebär att vi kan formellt tänka på grund för både rotations-och rums delen av vågen som $ \psi_{0} \cdots \psi_{2N-1} $ där var och en av indexen nu är en uppräkning av en $ (j, \sigma) $.
+Det innebär att vi kan formellt tänka på grund för både rotations-och rums delen av vågen som $ \ psi_{0} \cdots \ psi_ {2N-1} $ där var och en av indexen nu är en uppräkning av en $ (j, \sigma) $.
 En möjlig uppräkning är $g (j, \sigma) = j + N\sigma $.
 En annan möjlig uppräkning är $h (j, \sigma) = 2 * j + \sigma $.
 Quantum kemi-biblioteket kan använda dessa konventioner och rotations banaarna i en sådan kodning kan instansieras på följande sätt.
@@ -74,8 +74,8 @@ Quantum kemi-biblioteket kan använda dessa konventioner och rotations banaarna 
 ```
 
 För fermionic-system förhindrar Pauli uteslutnings principen att fler än en Electron förekommer i en rotations-orbital på samma tidpunkt.
-Det innebär att vi kan skriva de två juridiska tillstånden för $ \psi_1 $ som \begin{Equation} \psi_1 \rightarrow \begin{Cases} \ket{0}_1 & \text{IF $ \psi_1 $ inte är upptagna,} \\\
-\ket{1}_1 & \text{IF $ \psi_1 $ är upptagen.} \end{Cases} \end{Equation} den här kodningen är perfekt för Quantum Computers eftersom det innebär att vi kan lagra den elektroniska yrket som en enda Quantum-bit.
+Det innebär att vi kan skriva de två juridiska tillstånden för $ \ psi_1 $ som \begin{Equation} \ psi_1 \rightarrow \begin{Cases} \ket{0}_1 & \text{IF $ \ psi_1 $ inte är upptagna,} \\\
+\ket{1}_1 & \text{IF $ \ psi_1 $ är upptagen.} \end{Cases} \end{Equation} den här kodningen är perfekt för Quantum Computers eftersom det innebär att vi kan lagra den elektroniska yrket som en enda Quantum-bit.
 
 Yrkes tillstånden för $2N $-rotations banorna kan liknas på samma sätt i $2N $ qubits.
 Exempel: om $N = $2 kommer tillstånd $ $ \ket{0} \ket{1} \ket{1} \ket{0}, $ $
@@ -92,10 +92,10 @@ Detta beror på att, som vi kommer att se, är antisymmetrin av statusen i stäl
 
 De två grundläggande operatörerna som fungerar på de andra quantized-bas vektorerna kallas skapande-och Annihilation-operatörer.
 Dessa operatörer infogar eller förstör electrons på en viss plats.
-Dessa betecknas $a ^ \dagger_j $ respektive $a _J $.
+Dessa betecknas $a ^ \ dagger_j $ och $a _j $ respektive.
 
-Exempel: \begin{align} a ^ \dagger_1 \ket{0}_1 = \ket{1}_1, \quad a ^ \dagger_1 \ket{1}_1 = 0, \quad A_1 \ket{0}_1 = 0, \quad A_1 \ket{1}_1 = \ket{0}_1.
-\end{align} Obs! här $a ^ \dagger_1 \ket{1}_1 = 0 $ och $a _1 \ket{0}_1 $ ger noll-Vector inte $ \ket{0}_1 $.
+Till exempel \begin{align} a ^ \ dagger_1 \ket{0}_1 = \ket{1}_1, \quad a ^ \ dagger_1 \ket{1}_1 = 0, \quad a_1 \ket{0}_1 = 0, \quad a_1 \ket{1}_1 = \ket{0}_1.
+\end{align} Obs! här $a ^ \ dagger_1 \ket{1}_1 = 0 $ och $a _1 \ket{0}_1 $ ger noll-Vector inte $ \ket{0}_1 $.
 Sådana operatörer är därför varken Hermitiana eller på samma sätt.
 Vi representerar allmänna skapande-och Annihilation-operatörer med hjälp av <xref:Microsoft.Quantum.Chemistry.LadderOperators.LadderOperator`1> typen.
 En enda skapande operator visas till exempel som följer.
@@ -123,7 +123,7 @@ En enda skapande operator visas till exempel som följer.
     var ladderOperator1 = new LadderOperator<int>((creationEnum, spinOrbitalInteger));
 ```
 
-Även med sådana operatörer kan vi uttrycka $ $ \ket{0} \ket{1} \ket{1} \ket{0} = a ^ \dagger_1 a ^ \dagger_2 \ket{0}^ {\otimes 4}.
+Även med sådana operatörer kan vi uttrycka $ $ \ket{0} \ket{1} \ket{1} \ket{0} = a ^ \ dagger_1 a ^ \ dagger_2 \ket{0}^ {\otimes 4}.
 $ $ Den här sekvensen av operatörer skulle skapas i biblioteket för Hamiltonian- C# simulering med hjälp av kod som liknar orbital med ovan:
 ```csharp
     // We load the namespace containing fermion-related objects.
@@ -144,16 +144,16 @@ $ $ Den här sekvensen av operatörer skulle skapas i biblioteket för Hamiltoni
     var fermionTerm = new FermionTerm(ladderSequences);
 ```
 
-För ett system med $k $ Fermions, i andra kvantifieringsfel, har åtgärden för skapande operatören $a ^ \dagger_i $ angetts av $ $ a ^ \dagger_i \ket{n_1, n_2, \ldots, 0_i, \ldots, n_k} = (-1) ^ {S_i} \ket{n_1, n_2, \ldots, 1_i , \ldots, n_k}, $ $ och $ $ a ^ \dagger_i \ket{n_1, n_2, \ldots, 1_i, \ldots, n_k} = 0, $ $ WHERE $S _i = \sum_{j < i} a ^ \dagger_j a_j $ mäter det totala antalet Fermions som är i samma tillstånd som en enskild partikel och som har ett index $j < i $.
+För ett system med $k $ Fermions, i andra kvantifieringsfel, har åtgärden att skapa operatör $a ^ \ dagger_i $ angetts av $ $ a ^ \ dagger_i \ket{n_1, n_2, \ldots, 0_i, \ldots, n_k} = (-1) ^ {S_i} \ket{n_1, n_2, \ldots, 1_i , \ldots, n_k}, $ $ och $ $ a ^ \ dagger_i \ket{n_1, n_2, \ldots, 1_i, \ldots, n_k} = 0, $ $ där $S _i = \ sum_ {j < i} a ^ \ dagger_j a_j $ mäter det totala antalet Fermions som är i samma tillstånd som en enskild partikel och som har ett index $j < i $.
 
 En tredje operator används också ofta i andra quantized-representationer.
-Den här operatorn kallas för nummer operatorn och definieras av \begin{Equation} n_i = a ^ \dagger_i a_i.
+Den här operatorn kallas för nummer operatorn och definieras av \begin{Equation} n_i = a ^ \ dagger_i a_i.
 \end{Equation} den här operatorn räknar om en specifik orbital, vilket är att säga \begin{align} n_i \ket{0}_i & = 0 \ nonumber\\\
 n_i \ket{1}_i & = \ket{1}_i.
 \end{align} som liknar ovanstående `FermionTerm` exempel skapas den här nummer operatorn enligt följande.
 ```csharp
     // Let us use a new method to compactly create a sequence of ladder
-    // operators. Note that we have ommitted specifying whether the 
+    // operators. Note that we have omitted specifying whether the 
     // operators are raising or lowering. In this case, the first half
     // will be raising operators, and the second half will be lowering 
     // operators.
@@ -166,8 +166,8 @@ n_i \ket{1}_i & = \ket{1}_i.
 
 En subtlety uppstår även när du använder skapande-eller Annihilation-operatörer i fermionic-system.
 Vi kräver att alla giltiga Quantum-tillstånd är antisymmetriska i utbyte av etiketter.
-Det innebär att $ $ a ^ \dagger_2 a ^ \dagger_1 \ket{0} =-a ^ \dagger_1 a ^ \dagger_2 \ket{0}.
-$ $ Sådana operatörer säger "anti-arbets" och allmänt för alla $i, j $ vi har \begin{align} a ^ \dagger_i a ^ \dagger_j =-(1-\delta_{i, j}) a ^ \dagger_j a ^ \dagger_i, \quad a ^ \dagger_i a_j = \delta_{i, j}-a_j a ^ \dagger_i.
+Det innebär att $ $ a ^ \ dagger_2 a ^ \ dagger_1 \ket{0} =-a ^ \ dagger_1 a ^ \ dagger_2 \ket{0}.
+$ $ Sådana operatörer säger att "anti-arbets" och allmänt för alla $i, j $ har \begin{align} a ^ \ dagger_i a ^ \ dagger_j =-(1-\ delta_ {i, j}) a ^ \ dagger_j a ^ \ dagger_i, \quad a ^ \ dagger_i a_j = \ delta_ {i, j} – a_j a ^ \ dagger_i.
 \end{align} därför betraktas följande två <xref:Microsoft.Quantum.Chemistry.LadderOperators.LadderSequence`1> instanser som likvärdiga
 ```csharp
     // Let us initialize an array of tuples representing the
@@ -187,7 +187,7 @@ Kravet på att var och en av de skapande operatörerna använder en andra quanti
 I stället visas utmaningen på nytt i vår definition av de skapande operatörerna. 
 
 Med hjälp av regler för att koppla från regler, motsvarar vissa `LadderSequence` instanser faktiskt samma sekvens av fermionic-operatörer, ibland upp till ett minus tecken.
-Anta till exempel att Hamiltonian $a _0 ^ \dagger A_1 ^ \dagger A_1 a_0 =-A_1 ^ \dagger a_0 ^ \dagger A_1 a_0 $.
+Anta till exempel att Hamiltonian $a _0 ^ \dagger a_1 ^ \dagger a_1 a_0 =-a_1 ^ \dagger a_0 ^ \dagger a_1 a_0 $.
 Detta motiverar oss att definiera en kanonisk ordning för varje `FermionTerm`.
 Alla `FermionTerm` sätts automatiskt i kanonisk ordning enligt följande.
 ```csharp
@@ -213,29 +213,29 @@ Alla `FermionTerm` sätts automatiskt i kanonisk ordning enligt följande.
 Det är kanske unsurprising att Hamiltonian i [Quantum-modeller för elektroniska system](xref:microsoft.quantum.chemistry.concepts.quantummodels) kan skrivas i form av skapande-och Annihilation-operatörer.
 I synnerhet, om $ \psi\_j $, är de rotations banor som utgör grunden
 
-\begin{Equation} \hat{H} = \sum\_{PQ} H\_{PQ} a ^ \dagger\_p a\_q + \frac{1}{2}\sum\_{PQRS} H\_{PQRS} a ^ \dagger\_p a ^ \dagger\_q a\_ra\_s + h\_{\textrm NUC}, \label{EQ: totalHam} \end{Equation} där $h\_{\textrm NUC} $ är kärn energi (som är en konstant under den födda-Oppenheimer-uppskattningen) och
+\begin{Equation} \hat{H} = \sum\_{PQ} H\_{PQ} a ^ \dagger\_p a\_q + \frac{1}{2}\sum\_{PQRS} H\_{PQRS} a ^ \dagger\_p a ^ \dagger\_q a\_ra\_s + H\_{\textrm NUC}, \label{EQ: totalHam} \end{Equation} där $h\_{\textrm NUC} $ är kärn energi (som är en konstant under den födda-Oppenheimer-uppskattningen) och
 
-\begin{align} h\_{PQ} & = \int\_{-\infty} ^ \infty \psi ^\*\_p (x\_1) \left (-\frac{\nabla ^ 2}{2} + V (x\_1) \right) \psi\_q (x\_1) \mathrm{d} ^ 3x @no__ t_9_ 1, \end{align}
+\begin{align} h\_{PQ} & = \int\_{-\infty} ^ \infty \psi ^\*\_p (x\_1) \left (-\frac{\nabla ^ 2}{2} + V (x\_1) \right) \psi\_q (x\_1) \mathrm{d} ^ 3x\_1, \end{align}
 
 där $V (x) $ är potentialen medel fält och
 
-\begin{align} h\_{PQRS} & = \int\_{-\infty} ^ \infty \int\_{-\infty} ^ \infty\psi\_p ^\*(x\_1) \psi\_q ^\*(x\_2) \left (\frac{1}{| x_1-x_2 |} \ höger) \psi\_r (x\_2) \psi\_s (x\_1) \mathrm{d} ^ 3x\_1 \ mathrm {d} ^ 3x\_2. \ Label {EQ: integraler} \end{align}
+\begin{align} h\_{PQRS} & = \int\_{-\infty} ^ \infty \int\_{-\infty} ^ \infty\psi\_p ^\*(x\_1) \psi\_q ^\*(x\_2) \left (\frac{1}{| x_1-x_2 |} \right) \psi\_r (x\_2) \psi\_s (x\_1) \mathrm{d} ^ 3x\_1 \ mathrm {d} ^ 3x\_2. \ Label {EQ : integraler} \end{align}
 
-Termerna $h\_{PQ} $ refereras till som en Electron integraler eftersom alla sådana termer bara omfattar enskilda electrons och även $h\_{PQRS} $ är de två Electron integralerna.
+Termerna $h\_{PQ} $ kallas en-Electron integraler eftersom alla sådana termer bara omfattar enskilda electrons och även $h\_{PQRS} $ är de två Electron integralerna.
 De kallas integraler eftersom beräkning av värdena för dessa koefficienter kräver en integral.
 Det enda villkoret för Electron beskriver den enskilda electrons och deras interaktioner med de elektriska fälten i kärnor.
 De två Electron-integralerna å andra sidan beskriver interaktionerna mellan electrons.
 
 En intuition för det här villkoret kan vara uppnår från skapande-och Annihilation-operatörerna som omfattar var och en av dem.
-Exempel: $h _ {PQ} a ^ \dagger_p a_q $ beskriver Electron hoppande från rotation orbital $q $ för att snurra orbital $p $.
-På samma sätt beskrivs termen $h _ {PQRS} a ^ \dagger_p a ^ \dagger_q a_r a_s $ (för distinkt $p, q, r, s $) två electrons i rotations banaarna $r $ och $s $-spridning av varandra och som slutar med rotations banaarna $p $ och $q $.
-Om $r = q $ och $p = s $ sedan $h _ {prrp} a ^ \dagger_p a ^ \dagger_r a_r a_p = H_ {prrp} n_p n_r $ ger den energi påföljd som är kopplad till de två electrons som är nära varandra, men beskriver inte en dynamisk process.
+Exempel: $h _ {PQ} a ^ \ dagger_p a_q $ beskriver Electron hoppande från rotation orbital $q $ för att snurra orbital $p $.
+På samma sätt beskriver termen $h _ {PQRS} a ^ \ dagger_p a ^ \ dagger_q a_r a_s $ (för distinkta $p, q, r, s $) två electrons i rotations banaarna $r $ och $s $-spridning av varandra och du avslutar i rotations banorna $p $ och $q $.
+Om $r = q $ och $p = s $ sedan $h _ {prrp} a ^ \ dagger_p a ^ \ dagger_r a_r a_p = h_ {prrp} n_p n_r $ ger den energi påföljd som är kopplad till de två electrons nära varandra, men beskriver inte en dynamisk process.
 
 Vi kan representera sådana Hamiltonians med `FermionHamiltonian`-klassen, som är i grunden en lista som innehåller alla önskade `FermionTerm`-instanser.
 Eftersom Hamiltonians är Hermitian definitions mässigt indexerar vi termerna med hjälp av en mer specialiserad typ `HermitianFermionTerm` som också använder Hermitian symmetri när de kontrollerar om villkoren är likvärdiga.
 
 Låt oss skapa några exempel på exempel.
-Överväg Hamiltonian $ \hat{H} = a_0 ^ \dagger A_1 + A_1 ^ \dagger a_0 $.
+Överväg Hamiltonian $ \hat{H} = a_0 ^ \dagger a_1 + a_1 ^ \dagger a_0 $.
 ```csharp
     // We create a `FermionHamiltonian` instance to store the fermion terms.
     var hamiltonian = new FermionHamiltonian();
@@ -273,7 +273,7 @@ Följande kodfragment representerar därför också samma Hamiltonian:
 ```
 
 Med hjälp av reglerna för att koppla från regler, motsvarar vissa `FermionTerm` instanser i Hamiltonian samma sekvens med fermionic-operatörer, ibland upp till ett minus tecken.
-Anta till exempel att Hamiltonian $H = a_0 ^ \dagger A_1 ^ \dagger A_1 a_0-A_1 ^ \dagger a_0 ^ \dagger A_1 a_0 = 2a_0 ^ \dagger A_1 ^ \dagger A_1 a_0 $, som är en summa av de termer som skapats ovan.
+Anta till exempel att Hamiltonian $H = a_0 ^ \dagger a_1 ^ \dagger a_1 a_0-a_1 ^ \dagger a_0 ^ \dagger a_1 a_0 = 2a_0 ^ \dagger a_1 ^ \dagger a_1 a_0 $, som är en summa av de termer som skapats ovan.
 Det är inte alltid uppenbart att användaren har motsvarande villkor, och därför kan de läggas till i Hamiltonian separat.
 Det kan också vara intressant att ändra redan befintliga termer i Hamiltonian.
 I dessa fall kan vi kombinera motsvarande termer på följande sätt.
@@ -301,15 +301,15 @@ Senare, minskar detta antalet Quantum-grindar som krävs för att simulera Hamil
 
 En fermionic-Hamiltonian med en och två-Body-interaktioner visas i quantized-notation som
 
-$ $ \begin{align} H = \sum\_{PQ} h\_{PQ} a ^ \dagger\_{p} a\_{q} + \frac{1}{2}\sum\_{PQRS} H\_{PQRS} a ^ \dagger\_{p} a ^ \dagger\_{q} en @no__ t_10_ {r} en\_{s}.
+$ $ \begin{align} H = \sum\_{PQ} h\_{PQ} a ^ \dagger\_{p} a\_{q} + \frac{1}{2}\sum\_{PQRS} H\_{PQRS} a ^ \dagger\_{p} a ^ \dagger\_{q} en\_{r} en\_{s}.
 \end{align} $ $
 
 I det här formatet finns högst $N ^ 2 + N ^ 4 $ koefficienter.
 Många av dessa koefficienter kan dock samlas in när de motsvarar samma operatör.
-I de fall där $p, q, r, s $ är distinkta index, kan vi använda regler för att se till att: $ $ a ^ \dagger\_{p} a ^ \dagger\_{q} a\_{r} a\_{s} =-a ^ \dagger\_{q} a ^ \dagger\_{ p} en\_{r} a\_{s} =-a ^ \dagger\_{p} a ^ \dagger\_{q} a\_{s} a\_{r} = a ^ \dagger\_{q} a ^ \dagger\_{p} a\_{s} a\_{r}.
+Till exempel, i fall där $p, q, r, s $ är distinkta index, vi kan använda regler för att se till att: $ $ a ^ \dagger\_{p} a ^ \dagger\_{q} en\_{r} a\_{s} =-a ^ \dagger\_{q} a ^ \dagger\_{p} a\_{r} a\_{s} =-a ^ \dagger\_{p} a ^ \dagger\_{q} a\_{s} a\_{r} = a ^ \dagger\_{q} a ^ \dagger\_{p} en\_{s} a\_{r}.
 $$
 
-Dessutom är $H $ Hermitian, varje icke-Hermitian fermionic-Operator, säg $h\_{PQRS} a ^ \dagger\_{p} a ^ \dagger\_{q} en\_{r} en\_{s} $, har ett Hermitian-konjugat som också finns i $H $. För att unikt indexera grupper av termer som kännetecknas av dessa symmetries definierar vi en kanonisk ordning för indexen $ (i\_1, \cdots, i\_n, j\_1, \cdots, j\_m) $ i valfri följd av $n + m $ fermionic-operatörer $a ^ \dagger\_{i\_1} \cdots a ^ \dagger\_{i\_n} a\_{j\_1} \cdots en\_{j\_m} $as följande:
+Dessutom är $H $ Hermitian, varje icke-Hermitian fermionic-Operator, säg $h\_{PQRS} a ^ \dagger\_{p} a ^ \dagger\_{q} en\_{r} en\_{s} $, har ett Hermitian-konjugat som också finns i $H $. För att unikt indexera grupper av termer som kännetecknas av dessa symmetries definierar vi en kanonisk ordning på indexen $ (i\_1, \cdots, i\_n, j\_1, \cdots, j\_m) $ i vilken ordning som helst $n + m $ fermionic-operatörer $a ^ \dagger\_{i\_1} \cdots a ^ \dagger\_{i\_n}\_{j\_1} \cdots en\_{j\_m} $as följande :
 -   Alla skapande operatörer $a ^ \dagger\_{i\_\cdot} $ placeras före alla Annihilation-operatörer $a\_{j\_\cdot} $.
 -   Alla index för skapande operatorer sorteras i stigande ordning, vilket är $i\_1 < i\_2 < \cdots < i\_n $.
 -   Alla index för Annihilation-operatorer sorteras i fallande ordning, $j\_1 > j\_2 \cdots > j\_m $.
@@ -318,5 +318,5 @@ Dessutom är $H $ Hermitian, varje icke-Hermitian fermionic-Operator, säg $h\_{
 Låt oss identifiera den här uppsättningen av kanoniskt sorterade index som $ $ \begin{align} (i\_1, \cdots, i\_n, j\_1, \cdots, j\_m) \in S\_{n, m}.
 \end{align} $ $
 
-Med den här kanoniska ordningen kan fermionic-Hamiltonian uttryckas som $ $ \begin{align} H = \sum\_{(p, q) \in S\_{1,1}} H '\_{PQ} \frac{a ^ \dagger\_{p} a\_{q} + a ^ \dagger\_{q} a\_{ p}}{2}+ \sum\_{(p, q, r, s) \in S\_{2,2}} h "\_{PQRS} \frac{a ^ \dagger\_{p} a ^ \dagger\_{q} a\_{r} en\_{s} + a ^ \dagger\_{s} a ^ \ Dagger\_{r} a\_{q} a\_{p}}{2}, \end{align} $ $ med lämpligt anpassat One-och Electron integraler $h '\_{PQ} $ och $h '\_{PQRS} $.
+Med den här kanoniska ordningen kan fermionic-Hamiltonian uttryckas som $ $ \begin{align} H = \sum\_{(p, q) \in S\_{1,1}} H '\_{PQ} \frac{a ^ \dagger\_{p} a\_{q} + a ^ \dagger\_{q} a\_{p}}{2}+ \sum\_{(p) f, r, s) \in S\_{2,2}} H '\_{PQRS} \frac{a ^ \dagger\_{p} a ^ \dagger\_{q} a\_{r} a\_{S} + a ^ \dagger\_{S} a ^ \ Dagger\_{r} a\_{q} a\_{p}}{2}, \end{align} $ $ med lämpligt anpassat One-och Electron integraler $h '\_{PQ} $ och $h '\_{PQRS} $.
 

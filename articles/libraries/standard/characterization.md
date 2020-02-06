@@ -6,12 +6,12 @@ uid: microsoft.quantum.libraries.characterization
 ms.author: martinro@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 51124dc78feedf6d5c85fe224898e66a1c5ed459
-ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
+ms.openlocfilehash: 0c347113339a77e9eaf63dc0967c320f8b063a0e
+ms.sourcegitcommit: 5094c0a60cbafdee669c8728b92df281071259b9
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76870360"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77036261"
 ---
 # <a name="quantum-characterization-and-statistics"></a>Quantum-karakterisering och statistik #
 
@@ -88,7 +88,7 @@ Efter traditionell klassisk terminologi kallar vi $ \eqref{EQ: Phase Est-sannoli
 
 Efter att ha observerat en `Result` från sannolikhets funktionen för iterativa fas beräkningar kan vi sedan använda Bayes ' Rule för att föreskriva vad vi bör tro för att följa den observationen.
 Betong, \begin{Equation} \Pr (\phi | d) = \frac{\Pr (d | \phi) \Pr (\phi)} {\int \Pr (d | \phi) \Pr (\phi) {\mathrm d} \phi} \Pr (\phi), \end{Equation} där $d \in \\{\texttt{Zero}, \texttt{One}\\} $ är en `Result`, och där $ \Pr (\phi) $ beskriver vår tidigare övertygelse om $ \phi $.
-Detta gör att den iterativa arten av iterativa fas uppskattningen är explicit, eftersom den bakre fördelningen $ \Pr (\phi | d) $ beskriver vår övertygelse omedelbart före vår observation av nästa `Result`.
+Detta gör att den iterativa arten av iterativa fas uppskattningen är explicit, eftersom den bakre fördelningen $ \Pr (\phi | d) $ beskriver vår övertygelse omedelbart före vårt observation av nästa `Result`.
 
 Vi kan när som helst under den här proceduren rapportera den fas $ \hat{\phi} $ som är härledd av klassisk kontrollant som \begin{Equation} \hat{\phi} \mathrel{: =} \expect [\phi | \text{data}] = \int \phi \Pr (\phi | \text{data}) {\mathrm d} \phi, \end{Equation} där $ \text{data} $ står för hela registreringen av alla `Result` värden som hämtats.
 
