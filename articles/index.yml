@@ -1,122 +1,96 @@
 ### YamlMime:Landing
-title: Microsoft Quantum Development Kit
-summary: Lär dig att använda Microsoft Quantum Development Kit och Q#, ett språk för programmering av kvantalgoritmer.
+title: Microsoft Quantum-dokumentation
+summary: Lär dig att använda Microsoft Quantum Developer Kit och Q#, ett språk för kvantalgoritmer. Lär dig viktiga begrepp och skriv ditt första kvantprogram.
 metadata:
-  title: Microsoft Quantum Development Kit – Q# API-referens
-  description: Lär dig att använda Microsoft Quantum Development Kit och Q#, ett språk för programmering av kvantalgoritmer. Lär dig viktiga begrepp och skriv ditt första kvantprogram.  Utforska de omfattande verktygen och biblioteken för QDK.
+  title: Microsoft Quantum-dokumentation – Q# API-referens
+  description: Lär dig att använda Microsoft Quantum Development Kit och Q#, ett språk för kvantprogrammering. Lär dig viktiga begrepp och skriv ditt första kvantprogram.  Utforska de omfattande verktygen och biblioteken för QDK.
   ms.prod: quantum
   ms.topic: landing-page
   ms.collection: collection
   author: cjgronlund
   ms.author: cgronlun
   ms.date: 10/21/2019
-  ms.openlocfilehash: 53ee7b0a1ba7a83fb943f18afd27b5c699f848b2
-  ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
+  ms.openlocfilehash: a39b230bc3b740afd23f0050b9c45df6094bea4e
+  ms.sourcegitcommit: 5094c0a60cbafdee669c8728b92df281071259b9
   ms.translationtype: HT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 01/29/2020
-  ms.locfileid: "76820733"
+  ms.lasthandoff: 02/06/2020
+  ms.locfileid: "77036584"
 landingContent:
 - title: Kom igång med Microsoft Quantum
   linkLists:
   - linkListType: overview
     links:
-    - text: Fem frågor om kvantberäkning
+    - text: Quantum Development Kit
       url: welcome.md
-  - linkListType: get-started
+  - linkListType: learn
+    links:
+    - text: Vad är kvantberäkning?
+      url: overview/what-is-quantum-computing.md
+    - text: Vad kan en kvantdator göra?
+      url: overview/quantum-computers.md
+    - text: Varför ska man lära sig kvantberäkning?
+      url: overview/why-learn-quantum-computing.md
+    - text: Vad är Q#?
+      url: overview/what-is-qsharp.md
+    - text: Hur kan jag få information om kvantberäkning?
+      url: overview/how-to-learn-quantum-computing.md
+- title: Få Quantum Development Kit
+  linkLists:
+  - linkListType: download
+    links:
+    - text: Installera QDK
+      url: install-guide/index.md
+    - text: Uppdatera QDK
+      url: install-guide/update.md
+- title: Snabbstarter
+  linkLists:
+  - linkListType: quickstart
     links:
     - text: Bygga en kvantgenerator för slumptal
       url: quickstarts/qrng.md
     - text: Kvantgrunder med Q#
       url: quickstart.md
-    - text: Lär dig mer om betydelsefulla kvantprogram med Q#
+    - text: 'Kvantpåskyndande: Grovers sökalgoritm'
       url: quickstarts/search.md
-    - text: Lär dig mer om att lösa våra största kemiutmaningar
-      url: https://cloudblogs.microsoft.com/quantum/2018/12/04/simulating-nature-with-the-new-microsoft-quantum-development-kit-chemistry-library/
-  - linkListType: learn
-    links:
-    - text: Lär dig med Quantum Katas
-      url: intro-to-katas.md
-    - text: Bläddra bland Q#-exempel
-      url: https://docs.microsoft.com/samples/browse/?languages=qsharp
-- title: Utveckla med Q# och Python eller Jupyter Notebooks
-  linkLists:
-  - linkListType: how-to-guide
-    links:
-    - text: Python-installation
-      url: install-guide/pyinstall.md
-    - text: Jupyter-installation
-      url: install-guide/qjupyter.md
-  - linkListType: how-to-guide
-    links:
-    - text: Q#-exempel med Python
-      url: https://docs.microsoft.com/samples/browse/?languages=python&products=qdk
-    - text: Teleportering med Q# Jupyter-anteckningsbok
-      url: https://docs.microsoft.com/samples/microsoft/quantum/quantum-teleportation/
-    - text: Så här skapar du Q# Jupyter-anteckningsböcker
-      url: https://docs.microsoft.com/samples/microsoft/quantum/intro-to-qsharp-jupyter/
-- title: Q#-utvecklingsmiljöer
-  linkLists:
-  - linkListType: how-to-guide
-    links:
-    - text: Visual Studio-installation
-      url: install-guide/csinstall.md
-    - text: Visual Studio Code-installation
-      url: install-guide/csinstall.md
-- title: Q#-exempel
-  linkLists:
-  - linkListType: how-to-guide
-    links:
-    - text: Tre enkla algoritmer
-      url: https://docs.microsoft.com/samples/microsoft/quantum/simple-quantum-algorithms
-    - text: Söka med Grovers algoritm
-      url: https://docs.microsoft.com/samples/microsoft/quantum/searching-with-grovers-algorithm
-    - text: Kvantteleportering
-      url: https://docs.microsoft.com/samples/microsoft/quantum/quantum-teleportation/
-    - text: Alla exempel
-      url: https://docs.microsoft.com/samples/browse/?languages=qsharp
-- title: Q#-språket och utvecklingstekniker
-  linkLists:
-  - linkListType: learn
-    links:
-    - text: Introduktion till Q#-språk
-      url: language/index.md
-  - linkListType: how-to-guide
-    links:
-    - text: Kvantsimulatorer och värdprogram
-      url: machines/index.md
-  - linkListType: how-to-guide
-    links:
-    - text: Översikt över Q#-programmet
-      url: techniques/file-structure.md
-    - text: Åtgärder och funktioner
-      url: techniques/operations-and-functions.md
-    - text: Lokala variabler
-      url: techniques/local-variables.md
-    - text: Arbeta med kvantbitar
-      url: techniques/working-with-qubits.md
-    - text: 'Lägga ihop det: Teleportering'
-      url: techniques/putting-it-all-together.md
 - title: Begrepp inom kvantberäkning
   linkLists:
   - linkListType: concept
     links:
     - text: Begrepp inom kvantberäkning
       url: concepts/index.md
-    - text: Ordlista
-      url: Glossary.md
-- title: Q#-algoritmer och program
+- title: Q#-programmeringsspråket
   linkLists:
-  - linkListType: reference
+  - linkListType: learn
     links:
-    - text: Amplitudförstärkning
-      url: libraries/standard/algorithms.md
-    - text: Uppskattning av kvantfasen
-      url: libraries/standard/algorithms.md#quantum-phase-estimation
-    - text: Shors algoritm
-      url: libraries/standard/applications.md#shors-algorithm
-    - text: Hamiltonsk simulering
-      url: libraries/standard/applications.md
+    - text: Introduktion till Q#-språk
+      url: language/index.md
+    - text: Q#-utvecklingstekniker
+      url: techniques/index.md
+- title: Måldatorer
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Kvantsimulatorer och värdprogram
+      url: machines/index.md
+  - linkListType: architecture
+    links:
+    - text: Simulator med fullständigt tillstånd
+      url: machines/full-state-simulator.md
+    - text: Resursberäknare
+      url: machines/resources-estimator.md
+    - text: Spårningssimulator
+      url: machines/qc-trace-simulator/index.md
+    - text: Toffoli-simulator
+      url: machines/toffoli-simulator.md
+- title: Q#-utbildningsresurser
+  linkLists:
+  - linkListType: learn
+    links:
+    - text: Lär dig med Quantum Katas
+      url: intro-to-katas.md
+    - text: Bläddra bland exempel på Q#-kod
+      url: https://docs.microsoft.com/samples/browse/?languages=qsharp
 - title: Q#-bibliotek
   linkLists:
   - linkListType: reference
@@ -129,14 +103,18 @@ landingContent:
       url: libraries/chemistry/index.md
     - text: Kemiska begrepp
       url: libraries/chemistry/concepts/quantum-dynamics.md
-  - linkListType: how-to-guide
+- title: Q#-algoritmer och -program (från standardbibliotek)
+  linkLists:
+  - linkListType: reference
     links:
-    - text: Numeriska Q#-exempel
-      url: libraries/numerics/numerics.md
-    - text: Kemiska Q#-exempel
-      url: libraries/chemistry/samples/index.md
-    - text: Från slutpunkt till slutpunkt med NWChem
-      url: libraries/chemistry/samples/end-to-end.md
+    - text: Amplitudförstärkning
+      url: libraries/standard/algorithms.md
+    - text: Uppskattning av kvantfasen
+      url: libraries/standard/algorithms.md#quantum-phase-estimation
+    - text: Shors algoritm
+      url: libraries/standard/applications.md#shors-algorithm
+    - text: Hamiltonsk simulering
+      url: libraries/standard/applications.md
 - title: Community och bidrag
   linkLists:
   - linkListType: how-to-guide
