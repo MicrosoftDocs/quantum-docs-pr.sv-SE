@@ -6,58 +6,77 @@ author: natke
 ms.author: nakersha
 ms.date: 10/23/2019
 ms.topic: overview
-ms.openlocfilehash: 4308bf7e0e48e5735419fab836e479641455e9a5
-ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
+ms.openlocfilehash: 066981e3e2fb468c1ff2a4cf4d3e7cff057772ab
+ms.sourcegitcommit: 5094c0a60cbafdee669c8728b92df281071259b9
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76819935"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77036346"
 ---
 # <a name="get-started-with-the-quantum-development-kit-qdk"></a>Kom igång med Quantum Development Kit (QDK)
 
-Välkommen till Microsoft Quantum Development Kit!  Här hittar du alla verktyg som du behöver när du lär dig kvantprogrammering med Q#.  För att lära dig kvantberäkning med Q# får du en komma igång-guide som passar både de som vill börja koda kvantprogram och de som inte är redo att börja koda, men som vill lära sig mer om Q# och kvantprogrammering. 
+Välkommen till Microsoft Quantum Development Kit!  
+QDK innehåller alla verktyg du behöver för att bygga egna kvantprogram och experiment med Q#, ett programmeringsspråk som utformats särskilt för kvantprogramutveckling. 
 
-Om du är redo att börja koda [installerar du QDK nu](xref:microsoft.quantum.install).
+För att komma igång direkt kan du gå till [installationsguiden för QDK](xref:microsoft.quantum.install).
+Du vägleds sedan genom installationen av Quantum Development Kit på Windows-, Linux- eller MacOS-datorer så att du kan skriva egna kvantprogram.
 
-## <a name="questions-about-quantum-computing"></a>Frågor om kvantberäkning
+Om du inte är redo att börja koda men vill lära dig mer om kvantdatabehandling och Q# rekommenderar vi ändå att du läser den här artikeln för att få en överblick av de resurser du har tillgång till. I avsnittet [fem frågor om kvantberäkning](#five-questions-about-quantum-computing) hittar du länkar till exakt det du letar efter!
 
-Vi börjar med en serie korta artiklar som sammanfattar _frågorna om kvantberäkning_. De här korta artiklarna ger en snabb överblick över kvantberäkning för den som vill lära sig mer.
+## <a name="get-started-programming"></a>Kom igång med programmering
 
-[Vad är kvantberäkning?](xref:microsoft.quantum.overview.what)
+I Quantum Development Kit finns det många sätt att lära sig att utveckla ett kvantprogram med Q#.
+För att komma igång med kraften hos kvantberäkning kan du prova våra *snabbstarter*:
 
-[Vad kan kvantdatorer göra?](xref:microsoft.quantum.overview.computers)
+* [Slumptalsgeneratorn för kvanttal](xref:microsoft.quantum.quickstarts.qrng) är ett program i ”Q# Hello World”-format som ger en kort introduktion till kvantbegrepp där du kan skapa och köra ett kvantprogram på bara några minuter.
+* [Kvantgrunder med Q#](xref:microsoft.quantum.write-program) hjälper dig att skriva ett Q#-program med några grundläggande begrepp inom kvantprogrammering. 
+    Om du inte är redo att börja koda kan du ändå följa med utan att installera QD. Du får då en översikt över Q#-programmeringsspråket och de första begreppen inom kvantberäkning.
+* [Grovers sökalgoritm](xref:microsoft.quantum.quickstarts.search) ger ett exempel på ett Q#-program som visar hur Q# kan uttrycka kvantalgoritmen på ett sätt som beskriver kvantåtgärder på en enkel nivå. 
+    Den här snabbstarten visar hur du utvecklar programmet i olika programmeringsmiljöer (med en Python-värd eller med en .NET-språkvärd samt med Visual Studio eller Visual Studio Code).
 
-[Varför ska man lära sig kvantberäkning?](xref:microsoft.quantum.overview.why)
+### <a name="learning-further"></a>Lär dig ännu mer
+* Om du vill gå in djupare på Q#-programmering kan du titta närmare på [Quantum Katas](https://github.com/Microsoft/QuantumKatas) – en samling med programmeringsövningar som du utför i egen takt och som ger dig en introduktion till kvantberäkning via programmeringsövningar i Q#.
+    Många av dessa kata är även tillgängliga som Q#-notebooks. 
+* På vår [lagringsplats med exempel](https://github.com/Microsoft/Quantum) demonstreras flera exempel på hur du skriver kvantprogram med hjälp av Q#. De flesta av dessa exempel är skrivna med våra [kvantbibliotek](https://github.com/Microsoft/QuantumLibraries) med öppen källkod, däribland biblioteken [standard](xref:microsoft.quantum.libraries.standard.intro) och [kemi](xref:microsoft.quantum.chemistry.concepts.intro) (mer information om dessa finns nedan).
 
-[Vad är Q#?](xref:microsoft.quantum.overview.qsharp)
+## <a name="five-questions-about-quantum-computing"></a>Fem frågor om kvantberäkning
 
-## <a name="how-to-learn-quantum-computing-with-q"></a>Hur lär man sig kvantberäkning med Q#?
+Om kvantutveckling är nytt för dig vet vi att det här ämnet kan verka svårt. Vi har tillhandahållit resurser som hjälper dig att komma igång med att lära dig om kvantberäkning. Vi är säkra på att du med hjälp av de här korta artiklarna snabbt kommer igång med programmeringen.
+* [Vad är kvantberäkning?](xref:microsoft.quantum.overview.what)
+* [Vad kan kvantdatorer göra?](xref:microsoft.quantum.overview.computers)
+* [Varför ska man lära sig kvantberäkning?](xref:microsoft.quantum.overview.why)
+* [Vad är Q#?](xref:microsoft.quantum.overview.qsharp)
+* [Hur man lär sig kvantberäkning med Q#](xref:microsoft.quantum.overview.learn)
 
-I Q# och Quantum Development Kit finns verktyg som du behöver när du utvecklar de program för kvantberäkning som kommer att lösa våra mest utmanande beräkningsproblem.
+## <a name="quantum-development-kit-documentation"></a>Dokumentation för Quantum Development Kit
 
-I den femte frågan:  ”_Hur lär man sig kvantberäkning med Q#?_ ” börjar vi med följande översikter:
+Den aktuella dokumentationen innehåller följande ytterligare ämnen.
 
-* en komma igång-guide om hur du skapar en [kvantgenerator för slumptal](xref:microsoft.quantum.quickstarts.qrng), där du får hjälp att installera QDK och skriva ditt första Q#-program, samt en kort introduktion till kvantbegrepp. Slumptalsgeneratorn är ett program i ”Q# Hello World”-format där du kan skapa och köra ett kvantprogram på bara några minuter.
+### <a name="using-q"></a>Använda Q#
+* [Tekniker för kvantutveckling](xref:microsoft.quantum.techniques.intro) beskriver de viktigaste begreppen som används för att skapa kvantprogram i Q#. Ämnena omfattar filstrukturer, operationer och funktioner, arbete med qubitar och vissa avancerade ämnen.
+* [Q#-språkreferensen](xref:microsoft.quantum.language.intro) beskriver språket Q#, inklusive typmodellen, uttryck, instruktioner och kompilatoranvändning.
+* [Kvantsimulatorer och värdprogram](xref:microsoft.quantum.machines) beskriver hur kvantalgoritmer körs, vilka kvantdatorer som är tillgängliga samt hur man skriver en icke-Q#-drivrutin för kvantprogrammet.
 
-* en komma igång-guide om [kvantgrunder med Q#](xref:microsoft.quantum.write-program) som hjälper dig att skriva ett Q#-program med några grundläggande begrepp inom kvantprogrammering. Om du inte är redo att börja koda kan du ändå följa med utan att installera QD. Du får då en översikt över Q#-programmeringsspråket och de första begreppen inom kvantberäkning.
+### <a name="q-libraries"></a>Q#-bibliotek
+* [Q#-standardbiblioteket](xref:microsoft.quantum.libraries.standard.intro) beskriver de operationer och funktioner som stöder både det klassiska språkkontrollkravet och Q#-kvantalgoritmerna. 
+    Avsnitten omfattar kontrollflöde, datastrukturer, felkorrigering, testning och felsökning. 
+* [Q#-kemibiblioteket](xref:microsoft.quantum.chemistry.concepts.intro) beskriver de operationer och funktioner som stöder kvantkemisimulering – en viktig tillämpning av kvantberäkning. Ämnena omfattar simulering av hamiltonsk mekanik, kvantfasberäkning och mer.
+* [Q#-nummerbiblioteket](xref:microsoft.quantum.numerics.intro) beskriver de operationer och funktioner som stöder uttryck av komplicerade aritmetiska funktioner i termer som gäller för måldatorernas inbyggda operationer.
+* [Q#-biblioteksreferensen](xref:microsoft.quantum.standardlibsintro) innehåller referensinformation om biblioteksentiteter efter namnområde.
 
-* i komma igång-guiden om [Grovers sökning](xref:microsoft.quantum.quickstarts.search) finns ett exempel på ett Q#-program som visar hur Q# kan uttrycka kvantalgoritmen på ett sätt som beskriver kvantåtgärder på en enkel nivå.  Snabbstarten för Grovers sökning visar dig hur du utvecklar programmet i olika programmeringsmiljöer (med en Python-värd eller med en .NET-språkvärd, samt med Visual Studio eller Visual Studio Code).
+### <a name="general-quantum-computing"></a>Allmän kvantberäkning
+* [Begrepp inom kvantberäkning](xref:microsoft.quantum.concepts.intro) innehåller ämnen såsom relevansen av linjär algebra för kvantberäkning, vad en qubit är och hur den används, hur du läser en kvantkrets och mer.
+* [Ordlista för kvantberäkning](xref:microsoft.quantum.glossary) är en ordlista med några viktiga termer som gäller särskilt för kvantberäkning och programutveckling. 
+    Om det här området är nytt för dig kan detta vara en praktisk referens när du läser igenom vår dokumentation.
+* [Ytterligare läsning](xref:microsoft.quantum.more-information) innehåller särskilt valda referenser för djupgående information om ämnen som rör kvantberäkning.
 
-* en [video](https://www.microsoft.com/videoplayer/embed/RE2JOJf) där du lär dig mer om att skapa kvantprogram med Q#-bibliotek.  QDK levereras med Q#:s standardbibliotek och numeriska bibliotek där kraftfulla beräkningsabstraktioner finns som hjälper dig att utveckla dessa lösningar. Vi tillhandahåller även Quantum Chemistry Library, ett Q#-bibliotek för att utforma kemiska processer på kvantnivå.
+### <a name="additional-info"></a>Ytterligare info
+* [Viktig information för Microsoft Quantum Development Kit](xref:microsoft.quantum.relnotes).
 
-## <a name="next-steps"></a>Nästa steg
 
-Komma igång-guiderna och artiklarna ovan är avsedda som hjälp för både kodare och icke-kodare med en introduktion till kvantberäkning och Q#.  Om du vill fortsätta att lära dig hur man programmerar kvantdatorer med Q#:
+## <a name="be-a-part-of-the-q-open-source-community"></a>Gå med i communityn för Q# med öppen källkod
+Quantum Development Kit är ett utvecklingspaket med öppen källkod som gör det möjligt för utvecklare att göra kvantberäkning mer lättillgängligt för alla, så att vi kan lösa några av världens mest aktuella utmaningar.  Akademiska institutioner som behöver programvara med öppen källkod kommer att kunna distribuera Q# för sina utbildningar och sin utveckling inom kvantteknik. Tack vare att källkoden för utvecklingspaketet är öppen har utvecklare och domänexperter möjligheten att bidra med förbättringar och idéer via egen kod.
 
-* I [Lära sig kvantberäkning med Q#](xref:microsoft.quantum.overview.learn) finns hjälp för hur du kan lära dig kvantberäkningsbegrepp med Q#.
+Din feedback, ditt deltagande och dina bidrag till Quantum Development Kit är viktiga.  Om du vill veta mer om Quantum Development Kit-källorna, ge feedback och ta reda på hur du kan delta i besluten samt bidra till den här växande kvantutvecklingsplattformen kan du läsa [Bidra till Quantum Development Kit](xref:microsoft.quantum.contributing).
 
-* Lär dig kvantprogrammering med vår [Quantum Katas i egen takt](https://aka.ms/try-quantum-katas). I den här serien med korta övningar lär du dig att programmera i Q# och du lär dig kvantberäkning.
-
-* Utforska våra [Q#-exempel](https://docs.microsoft.com/samples/browse/?languages=qsharp) och upptäck vilka problem du kan lösa med kvantberäkning.
-
-* Utveckla på en lokal dator med det värdprogrammeringsspråk och den utvecklingsmiljö som du är mest bekväm med:
-  * Utveckla med [Q# och Python](xref:microsoft.quantum.install.python)
-  * Utveckla med [Q# och C#](xref:microsoft.quantum.install.cs)
-  * Utveckla med [Q# Jupyter Notebooks](xref:microsoft.quantum.install.jupyter)
-
-* Bli en del av Microsoft Quantum-communityn genom att bidra till [QDK](xref:microsoft.quantum.contributing)-projekt med öppen källkod.
+Om du vill ha mer allmän information om Microsofts initiativ för kvantberäkning kan du läsa [Microsoft Quantum](https://www.microsoft.com/en-us/quantum/).
