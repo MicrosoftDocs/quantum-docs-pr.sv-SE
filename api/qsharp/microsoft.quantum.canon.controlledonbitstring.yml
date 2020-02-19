@@ -3,18 +3,73 @@ uid: microsoft.quantum.canon.controlledonbitstring
 name: ControlledOnBitString
 type: function
 namespace: Microsoft.Quantum.Canon
-summary: Returnerar en enhetlig operator som tillämpar en Oracle på mål registret om kontroll registerets tillstånd motsvarar en angiven bitmask.
+summary: >-
+  Returnerar en enhetlig operator som tillämpar en Oracle på mål registret om kontroll registerets tillstånd motsvarar en angiven bitmask.
+
+
+  Resultatet av den här funktionen kan representeras av en enhetlig omvandling $U $ t. ex. \begin{align} U \ket{b_0 b_1 \cdots b_ {n-1}} \ket{\psi} = \ket{b_0 b_1 \cdots b_ {n-1}} \otimes \begin{Cases} V \ket{\psi} & \textrm{IF} (b_0 b_1 \cdots b_ {n-1}) = \texttt{BITS} \\\\ \ket{\psi} & \textrm{otherwise} \end{Cases}, \end{align} där $V $ är en enhetlig transformering som representerar åtgärd i `oracle`s åtgärden.
+remarks: >-
+  Längden på `bits` och `controlRegister` måste vara lika.
+
+
+  Med en boolesk matris `bits` och en enhetlig åtgärd `oracle`är resultatet av den här funktionen en åtgärd som utför följande steg:
+
+
+  * Använd en `X`-åtgärd för varje qubit av kontroll registret som motsvarar `false`-elementet i `bits`;
+
+  * tillämpa `Controlled oracle` på kontroll-och mål registren;
+
+  * Använd en `X`-åtgärd för varje qubit av kontroll registret som motsvarar `false`-elementet i `bits` igen för att returnera kontroll registret till det ursprungliga läget.
+
+
+  Utdata från `Controlled` Functor är ett specialfall av `ControlledOnBitString` där `bits` är lika med `[true, ..., true]`.
+examples: >-
+  Följande kodfragment är likvärdiga:
+
+
+  ```qsharp
+
+  (ControlledOnBitString(bits, oracle))(controlRegister, targetRegister);
+
+  ```
+
+
+  och
+
+
+  ```qsharp
+
+  within {
+      ApplyPauliFromBitString(PauliX, false, bits, controlRegister);
+  } apply {
+      Controlled oracle(controlRegister, targetRegister);
+  }
+
+  ```
+
+
+  Följande kod förbereder ett tillstånd $ \frac{1}{2}(\ket{00}-\ket{01} + \ket{10} + \ket{11}) $:
+
+
+  ```qsharp
+
+  using (register = Qubit[2]) {
+      ApplyToEach(H, register);
+      (ControlledOnBitString([false], Z))(register[0..0], register[1]);
+  }
+
+  ```
 syntax: "function ControlledOnBitString (bits : Bool[], oracle : ('T => Unit is Adj + Ctl)) : ((Qubit[], 'T) => Unit is Adj + Ctl)"
 input:
   content: "(bits : Bool[], oracle : ('T => Unit is Adj + Ctl))"
   types:
   - name: bits
-    summary: Boolesk matris.
+    summary: Bit strängen som styr den förändrade på.
     isArray: true
     isPrimitive: true
     uid: Bool
   - name: oracle
-    summary: Enhetlig operatör.
+    summary: En enhetlig operatör att tillämpa på mål registret.
     isOperation: true
     input:
       types:
@@ -47,9 +102,9 @@ output:
     - Adjoint
     - Controlled
 metadata:
-  ms.openlocfilehash: 1abe0f1abcbab06aa9821c52878cf85b03d2c592
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: dde246a6eb0cf5e278cd079ff52c3a0b0ff71120
+  ms.sourcegitcommit: b7e205aaa7fa1ca9f0daa163e46154945f4bc965
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73227397"
+  ms.lasthandoff: 02/18/2020
+  ms.locfileid: "77441057"
