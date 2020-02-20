@@ -6,12 +6,12 @@ ms.author: nakersha
 ms.date: 09/30/2019
 ms.topic: article
 uid: microsoft.quantum.relnotes
-ms.openlocfilehash: c135dacb2fc305fa97874cb4abcf4e2ac489b9e4
-ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
+ms.openlocfilehash: be1eff8127be9fb024a1dc2de3ec82952ac2dc2b
+ms.sourcegitcommit: b7e205aaa7fa1ca9f0daa163e46154945f4bc965
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76871625"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77441037"
 ---
 # <a name="microsoft-quantum-development-kit-release-notes"></a>Viktig information för Microsoft Quantum Development Kit
 
@@ -21,13 +21,14 @@ Installationsanvisningar finns i [installationsguiden](xref:microsoft.quantum.in
 
 Uppdateringsanvisningar finns i [uppdateringsguiden](xref:microsoft.quantum.update).
 
+
 ## <a name="version-01020012831"></a>Version 0.10.2001.2831
 
 *Utgivningsdatum: 29 januari 2020*
 
 Den här versionen innehåller följande:
 
-- Nytt Microsoft.Quantum.SDK NuGet-paket. Mer information finns i [VIKTIGT](https://github.com/microsoft/qsharp-compiler/blob/master/src/QuantumSdk/README.md)
+- Nytt Microsoft.Quantum.SDK NuGet-paket
 - Stöd för .NET Core 3.1 har lagts till. Vi rekommenderar starkt att ha version 3.1.100 installerat, eftersom om du skapar med äldre .NET Core SDK-versioner kan problem uppstå
 - Nya kompilatoromvandlingar finns tillgängliga under Microsoft.Quantum.QsCompiler.Experimental
 - Nya funktioner för att exponera utmatade tillståndsvektorer som HTML i IQ#
