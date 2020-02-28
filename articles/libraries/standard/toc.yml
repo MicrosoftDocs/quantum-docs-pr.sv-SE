@@ -1,5 +1,3 @@
-- name: OSS-licensiering
-  href: licensing.md
 - name: Inledningen
   href: prelude.md
 - name: Klassisk matematik
@@ -20,3 +18,5 @@
   href: error-correction.md
 - name: Program
   href: applications.md
+- name: OSS-licensiering
+  href: licensing.md
