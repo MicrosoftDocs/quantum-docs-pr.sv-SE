@@ -81,7 +81,7 @@ functions:
 - uid: microsoft.quantum.canon.continuedfractionconvergent
   summary: "\n> [!WARNING]\n> Inaktuell\n\nContinuedFractionConvergent är föråldrad. Använd @\"microsoft.quantum.math.continuedfractionconvergenti\" i stället.\nAnvänd @\"microsoft.quantum.math.continuedfractionconvergenti\"."
 - uid: microsoft.quantum.canon.controlledonbitstring
-  summary: Returnerar en enhetlig operator som tillämpar en Oracle på mål registret om kontroll registerets tillstånd motsvarar en angiven bitmask.
+  summary: Returnerar en enhetlig åtgärd som tillämpar en Oracle på mål registret om kontroll registerets tillstånd motsvarar en angiven bitmask.
 - uid: microsoft.quantum.canon.controlledonint
   summary: Returnerar en enhetlig operator som tillämpar en Oracle på mål registret om kontroll registerets tillstånd motsvarar ett angivet positivt heltal.
 - uid: microsoft.quantum.canon.curriedop
@@ -298,14 +298,7 @@ operations:
 - uid: microsoft.quantum.canon.applycnotchainwithtarget
   summary: Beräknar pariteten för en matris med qubits i en mål-qubit.
 - uid: microsoft.quantum.canon.applydiagonalunitary
-  summary: >-
-    Använder en matris med komplexa faser till numeriska bas tillstånd för ett register över qubits.
-
-
-    Det innebär att det här implementerar den diagonala, enhetliga åtgärden $U $ som tillämpar en komplex fas $e ^ {i \ theta_j} $ på $n $-qubit Number State $ \ket{j} $.
-
-
-    $U = \sum ^ {2 ^ n-1} _ {j = 0} e ^ {i \ theta_j} \ket{j}\bra{j} $.
+  summary: Använder en matris med komplexa faser till numeriska bas tillstånd för ett register över qubits.
 - uid: microsoft.quantum.canon.applyfermionicswap
   summary: Tillämpar Fermionic-VÄXLINGen.
 - uid: microsoft.quantum.canon.applyif
@@ -440,6 +433,14 @@ operations:
     Tillämpar en enskild qubit-åtgärd på varje indexerat element i en register.
 
     Modifieraren `CA` anger att åtgärden för en qubit är adjointable och kan kontrol leras.
+- uid: microsoft.quantum.canon.applytoelement
+  summary: Tillämpar en åtgärd på ett angivet element i en matris.
+- uid: microsoft.quantum.canon.applytoelementa
+  summary: Tillämpar en åtgärd på ett angivet element i en matris.
+- uid: microsoft.quantum.canon.applytoelementc
+  summary: Tillämpar en åtgärd på ett angivet element i en matris.
+- uid: microsoft.quantum.canon.applytoelementca
+  summary: Tillämpar en åtgärd på ett angivet element i en matris.
 - uid: microsoft.quantum.canon.applytofirstqubit
   summary: Tillämpar en åtgärd på den första qubit i registret.
 - uid: microsoft.quantum.canon.applytofirstqubita
@@ -541,6 +542,12 @@ operations:
   summary: Vid en åtgärd som accepterar vissa indata, en funktion som returnerar en utmatning som är kompatibel med den åtgärden och en indata till den funktionen, används åtgärden med funktionen för att transformera indata till ett formulär som förväntas av åtgärden.
 - uid: microsoft.quantum.canon.applywithinputtransformationca
   summary: Vid en åtgärd som accepterar vissa indata, en funktion som returnerar en utmatning som är kompatibel med den åtgärden och en indata till den funktionen, används åtgärden med funktionen för att transformera indata till ett formulär som förväntas av åtgärden.
+- uid: microsoft.quantum.canon.approximatelyapplydiagonalunitary
+  summary: Använder en matris med komplexa faser till numeriska bas tillstånd för ett register över qubits, vilket trunkerar små rotations vinklar enligt en viss tolerans.
+- uid: microsoft.quantum.canon.approximatelymultiplexpauli
+  summary: Använder en Pauli-rotation i en matris med qubits, trunkerar små rotations vinklar enligt en viss tolerans.
+- uid: microsoft.quantum.canon.approximatelymultiplexz
+  summary: Använder en Pauli Z-rotation i en matris med qubits, trunkerar små rotations vinklar enligt en viss tolerans.
 - uid: microsoft.quantum.canon.approximateqft
   summary: Använd den ungefärliga AQFT-transformeringen (Quantum Fourier Transform) till ett Quantum-register.
 - uid: microsoft.quantum.canon.asserthighestbit
@@ -648,23 +655,9 @@ operations:
 
     $U = \sum ^ {N-1} _ {j = 0} \ket{j}\bra{j}\otimes V_j $.
 - uid: microsoft.quantum.canon.multiplexpauli
-  summary: >-
-    Använder en Pauli-rotation som är villkorlig på en matris med qubits.
-
-
-    Detta tillämpar den multiplicering-kontrollerade enhetliga åtgärden $U $ som utför rotationer efter vinkeln $ \ theta_j $ qubit Pauli-operatorn $P $ när den styrs av $n $-qubit Number State $ \ket{j} $.
-
-
-    $U = \sum ^ {2 ^ n-1} _ {j = 0} \ket{j}\bra{j}\otimes e ^ {i P \ theta_j} $.
+  summary: Använder en Pauli-rotation som är villkorlig på en matris med qubits.
 - uid: microsoft.quantum.canon.multiplexz
-  summary: >-
-    Använder en Pauli Z-rotation i en matris med qubits.
-
-
-    Detta tillämpar den multiplicering-kontrollerade enhetliga åtgärden $U $ som utför rotationer efter vinkeln $ \ theta_j $ qubit Pauli-operatorn $Z $ när den styrs av $n $-qubit Number State $ \ket{j} $.
-
-
-    $U = \sum ^ {2 ^ n-1} _ {j = 0} \ket{j}\bra{j}\otimes e ^ {i Z \ theta_j} $.
+  summary: Använder en Pauli Z-rotation i en matris med qubits.
 - uid: microsoft.quantum.canon.noop
   summary: Utför identitets åtgärden (inga-OP) i ett argument.
 - uid: microsoft.quantum.canon.permutequbits
@@ -701,9 +694,9 @@ newtypes:
 - uid: microsoft.quantum.canon.resultstack
   summary: "\n> [!WARNING]\n> Inaktuell\n\nResultStack är föråldrad."
 metadata:
-  ms.openlocfilehash: 8d54303daeb32281b1e531fce50443c132c14093
-  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
+  ms.openlocfilehash: db3466b0e6fe493393f75bea85f9c91e2f56ec67
+  ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 01/29/2020
-  ms.locfileid: "76870732"
+  ms.lasthandoff: 02/28/2020
+  ms.locfileid: "77905632"

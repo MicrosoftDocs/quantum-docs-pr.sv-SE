@@ -1,0 +1,31 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.measurement.settobasisstate
+name: SetToBasisState
+type: operation
+namespace: Microsoft.Quantum.Measurement
+summary: Ställer in en qubit till ett angivet beräknings underlag genom att mäta qubit och tillämpa en bit-flip vid behov.
+remarks: Som en invariant av den här åtgärden anropar `M(q)` omedelbart efter att `SetToBasisState(result, q)` returnerar `result`.
+syntax: 'operation SetToBasisState (desired : Result, target : Qubit) : Unit'
+input:
+  content: '(desired : Result, target : Qubit)'
+  types:
+  - name: desired
+    summary: Det bas tillstånd som qubit ska vara inställt på.
+    isPrimitive: true
+    uid: Result
+  - name: target
+    summary: Qubit vars tillstånd ska anges.
+    isPrimitive: true
+    uid: Qubit
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+metadata:
+  ms.openlocfilehash: 977d0d5b55a9372a6e45e08cb89804e213ddd72c
+  ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
+  ms.translationtype: MT
+  ms.contentlocale: sv-SE
+  ms.lasthandoff: 02/28/2020
+  ms.locfileid: "77908437"

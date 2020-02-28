@@ -1,0 +1,39 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.machinelearning.estimateclassificationprobability
+name: EstimateClassificationProbability
+type: operation
+namespace: Microsoft.Quantum.MachineLearning
+summary: Med ett exempel och en sekventiell klassificerare beräknar klassificerings sannolikheten för det exemplet genom att upprepade gånger mäta utdata från klassificeraren i det angivna exemplet.
+syntax: 'operation EstimateClassificationProbability (tolerance : Double, model : Microsoft.Quantum.MachineLearning.SequentialModel, sample : Double[], nMeasurements : Int) : Double'
+input:
+  content: '(tolerance : Double, model : Microsoft.Quantum.MachineLearning.SequentialModel, sample : Double[], nMeasurements : Int)'
+  types:
+  - name: tolerance
+    summary: Toleransen för att tillåta kodning av exemplet i en tillstånds förberedelse åtgärd.
+    isPrimitive: true
+    uid: Double
+  - name: model
+    summary: Den sekventiella modell som används för att beräkna klassificerings sannolikheten för det aktuella exemplet.
+    uid: microsoft.quantum.machinelearning.sequentialmodel
+  - name: sample
+    summary: Funktions vektorn för det exempel som ska klassificeras.
+    isArray: true
+    isPrimitive: true
+    uid: Double
+  - name: nMeasurements
+    summary: Antalet measusrements som ska användas vid uppskattning av klassificerings sannolikheten.
+    isPrimitive: true
+    uid: Int
+output:
+  content: Double
+  types:
+  - summary: En uppskattning av klassificerings sannolikheten för det aktuella exemplet.
+    isPrimitive: true
+    uid: Double
+metadata:
+  ms.openlocfilehash: 21c4dcb04d4f4a81fcc9e39d6379a2bf2a92f90d
+  ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
+  ms.translationtype: MT
+  ms.contentlocale: sv-SE
+  ms.lasthandoff: 02/28/2020
+  ms.locfileid: "77909491"

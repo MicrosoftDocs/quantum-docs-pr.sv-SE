@@ -1,10 +1,10 @@
 ### YamlMime:QSharpType
-uid: microsoft.quantum.canon.multiplexpauli
-name: MultiplexPauli
+uid: microsoft.quantum.canon.approximatelymultiplexpauli
+name: ApproximatelyMultiplexPauli
 type: operation
 namespace: Microsoft.Quantum.Canon
 summary: >-
-  Använder en Pauli-rotation som är villkorlig på en matris med qubits.
+  Använder en Pauli-rotation i en matris med qubits, trunkerar små rotations vinklar enligt en viss tolerans.
 
 
   Detta använder en multiplicering-kontrollerad enhetlig åtgärd som utför rotationer efter vinkeln $ \ theta_j $ om Single-qubit Pauli-operatorn $P $ när den styrs av $n $-qubit Number State $ \ket{j} $.
@@ -19,10 +19,14 @@ summary: >-
 
   ##
 remarks: '`coefficients` fylls med elementen $ \ theta_j = $0,0 om färre än $2 ^ n $ anges.'
-syntax: 'operation MultiplexPauli (coefficients : Double[], pauli : Pauli, control : Microsoft.Quantum.Arithmetic.LittleEndian, target : Qubit) : Unit'
+syntax: 'operation ApproximatelyMultiplexPauli (tolerance : Double, coefficients : Double[], pauli : Pauli, control : Microsoft.Quantum.Arithmetic.LittleEndian, target : Qubit) : Unit'
 input:
-  content: '(coefficients : Double[], pauli : Pauli, control : Microsoft.Quantum.Arithmetic.LittleEndian, target : Qubit)'
+  content: '(tolerance : Double, coefficients : Double[], pauli : Pauli, control : Microsoft.Quantum.Arithmetic.LittleEndian, target : Qubit)'
   types:
+  - name: tolerance
+    summary: En tolerans under vilken små koefficienter trunkeras.
+    isPrimitive: true
+    uid: Double
   - name: coefficients
     summary: Matris med upp till $2 ^ n $ koefficienter $ \ theta_j $. $J $ koefficienten indexerar Number State $ \ket{j} $ kodat i litet endian-format.
     isArray: true
@@ -48,11 +52,11 @@ functors:
 - Adjoint
 - Controlled
 seeAlso:
-- approximatelymultiplexpauli
+- multiplexpauli
 metadata:
-  ms.openlocfilehash: 7c30159a7774b407d7574018028b53e8c72f8d0a
+  ms.openlocfilehash: e3b828de03845724fc1cad78babfff0c01b8ae24
   ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
   ms.translationtype: MT
   ms.contentlocale: sv-SE
   ms.lasthandoff: 02/28/2020
-  ms.locfileid: "77906584"
+  ms.locfileid: "77907944"
