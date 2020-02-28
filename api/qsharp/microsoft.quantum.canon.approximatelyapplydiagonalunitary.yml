@@ -1,10 +1,10 @@
 ### YamlMime:QSharpType
-uid: microsoft.quantum.canon.applydiagonalunitary
-name: ApplyDiagonalUnitary
+uid: microsoft.quantum.canon.approximatelyapplydiagonalunitary
+name: ApproximatelyApplyDiagonalUnitary
 type: operation
 namespace: Microsoft.Quantum.Canon
 summary: >-
-  Använder en matris med komplexa faser till numeriska bas tillstånd för ett register över qubits.
+  Använder en matris med komplexa faser till numeriska bas tillstånd för ett register över qubits, vilket trunkerar små rotations vinklar enligt en viss tolerans.
 
 
   Den här åtgärden implementerar en diagonalt som använder en komplex fas $e ^ {i \ theta_j} $ på $n $-qubit Number State $ \ket{j} $.
@@ -16,11 +16,15 @@ summary: >-
 
   \end{align} $ $
 remarks: '`coefficients` fylls med elementen $ \ theta_j = $0,0 om färre än $2 ^ n $ anges.'
-syntax: 'operation ApplyDiagonalUnitary (coefficients : Double[], qubits : Microsoft.Quantum.Arithmetic.LittleEndian) : Unit'
+syntax: 'operation ApproximatelyApplyDiagonalUnitary (tolerance : Double, coefficients : Double[], qubits : Microsoft.Quantum.Arithmetic.LittleEndian) : Unit'
 references: '- Syntes av Quantum Logic-kretsar Vivek V. Shende, Stephen S. Bullock, Igor L. Markov https://arxiv.org/abs/quant-ph/0406176'
 input:
-  content: '(coefficients : Double[], qubits : Microsoft.Quantum.Arithmetic.LittleEndian)'
+  content: '(tolerance : Double, coefficients : Double[], qubits : Microsoft.Quantum.Arithmetic.LittleEndian)'
   types:
+  - name: tolerance
+    summary: En tolerans under vilken små koefficienter trunkeras.
+    isPrimitive: true
+    uid: Double
   - name: coefficients
     summary: Matris med upp till $2 ^ n $ koefficienter $ \ theta_j $. $J $ koefficienten indexerar Number State $ \ket{j} $ kodat i litet endian-format.
     isArray: true
@@ -37,11 +41,11 @@ functors:
 - Adjoint
 - Controlled
 seeAlso:
-- approximatelyapplydiagonalunitary
+- applydiagonalunitary
 metadata:
-  ms.openlocfilehash: a98bdfc2503f7acf4e5cb145df6d6de528fc3f4f
+  ms.openlocfilehash: 9d2ee3254a3cd7c182ae6b4a57a6c48a993fa679
   ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
   ms.translationtype: MT
   ms.contentlocale: sv-SE
   ms.lasthandoff: 02/28/2020
-  ms.locfileid: "77905277"
+  ms.locfileid: "77907961"

@@ -1,0 +1,17 @@
+### YamlMime:QSharpNamespace
+uid: microsoft.quantum.optimization
+name: Microsoft.Quantum.Optimization
+summary: " # <a name=\"summary\"></a>Sammanfattning\n Innehåller funktioner och optimeringar för att hitta minimi."
+functions:
+- uid: microsoft.quantum.optimization.localunivariateminimum
+  summary: Returnerar det lokala minimivärdet för en univariate-funktion under ett begränsat intervall med hjälp av en gyllene intervalls ökning.
+newtypes:
+- uid: microsoft.quantum.optimization.univariateoptimizationresult
+  summary: Representerar resultatet av att optimera en univariate-funktion.
+metadata:
+  ms.openlocfilehash: 4cbb867e974056e311725f161c445cfb06bf5c4c
+  ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
+  ms.translationtype: MT
+  ms.contentlocale: sv-SE
+  ms.lasthandoff: 02/28/2020
+  ms.locfileid: "77908284"

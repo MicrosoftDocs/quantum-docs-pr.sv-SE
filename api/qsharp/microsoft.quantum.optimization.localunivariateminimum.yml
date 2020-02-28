@@ -1,0 +1,47 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.optimization.localunivariateminimum
+name: LocalUnivariateMinimum
+type: function
+namespace: Microsoft.Quantum.Optimization
+summary: Returnerar det lokala minimivärdet för en univariate-funktion under ett begränsat intervall med hjälp av en gyllene intervalls ökning.
+syntax: 'function LocalUnivariateMinimum (fn : (Double -> Double), bounds : (Double, Double), tolerance : Double) : Microsoft.Quantum.Optimization.UnivariateOptimizationResult'
+input:
+  content: '(fn : (Double -> Double), bounds : (Double, Double), tolerance : Double)'
+  types:
+  - name: fn
+    summary: Univariate-funktionen som ska minimeras.
+    isFunction: true
+    input:
+      types:
+      - isPrimitive: true
+        uid: Double
+    output:
+      types:
+      - isPrimitive: true
+        uid: Double
+  - name: bounds
+    summary: Intervallet som det lokala minimivärdet ska hittas i.
+    types:
+    - isPrimitive: true
+      uid: Double
+    - isPrimitive: true
+      uid: Double
+  - name: tolerance
+    summary: >-
+      Noggrannheten i funktionen indatatyper som ska tolereras.
+
+      Sökningen efter lokal OPTIMA fortsätter tills intervallet är mindre än denna tolerans.
+    isPrimitive: true
+    uid: Double
+output:
+  content: Microsoft.Quantum.Optimization.UnivariateOptimizationResult
+  types:
+  - summary: En lokal OPTIMA för den aktuella funktionen, som finns inom de tilldelade gränserna.
+    uid: microsoft.quantum.optimization.univariateoptimizationresult
+metadata:
+  ms.openlocfilehash: a93eed007d3720b38529b56d6b9b235869a37eee
+  ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
+  ms.translationtype: MT
+  ms.contentlocale: sv-SE
+  ms.lasthandoff: 02/28/2020
+  ms.locfileid: "77909015"
