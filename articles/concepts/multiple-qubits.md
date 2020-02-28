@@ -1,17 +1,17 @@
 ---
-title: Flera qubits | Microsoft Docs
-description: Flera kvantbitar
+title: Flera kvantbitar
+description: Lär dig hur du utför åtgärder på två eller fler qubits.
 author: QuantumWriter
 uid: microsoft.quantum.concepts.multiple-qubits
 ms.author: nawiebe@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: e9c043f4ee41a878b9544a27d5ea052fce29f06e
-ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
+ms.openlocfilehash: 2fa227c823cd87df9c799c043c699e4ce818b8e3
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74863224"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77907553"
 ---
 # <a name="multiple-qubits"></a>Flera qubits
 
@@ -27,7 +27,7 @@ Dessa verktyg är absolut nödvändiga för att förstå de grind uppsättningar
 
 ## <a name="representing-two-qubits"></a>Som representerar två qubits
 Den största skillnaden mellan ett-och två-qubit-tillstånd är att två-qubit-tillstånd är fyra dimensionell snarare än två mått.
-Detta beror på att beräknings grunden för qubit-tillstånd bildas av behållen produkter i ett qubit tillstånd.  Till exempel har vi \begin{align} 00 \equiv \begin{bmatrix}1 \\\\ 0 \end{bmatrix}\otimes \begin{bmatrix}1 \\\\ 0 \end{bmatrix} & = \begin{bmatrix}1 \\\\ 0\\\\ 0\\\\ 0 \end{bmatrix}, \qquad 01 \equiv \begin{bmatrix}1 \\\\ 0 \end{bmatrix}\otimes \begin{bmatrix}0 \\\\ 1 \end{bmatrix} = \begin{bmatrix}0 \\\\ 1\\\\ 0\\\\ 0 \end{bmatrix},\\\\ 10 \equiv \begin{bmatrix}0 \\\\ 1 \end{bmatrix}\otimes \begin{bmatrix}1 \\\\ 0 \end{bmatrix} & = \begin{bmatrix}0 \\\\ 0\\\\ 1\\\\ 0 \end{bmatrix}, \qquad 11 \equiv \begin{bmatrix}0 \\\\ 1 \end{bmatrix}\otimes \begin{bmatrix}0 \\\\ 1 \end{bmatrix} = \begin{bmatrix}0 \\\\ 0\\\\ 0 @no__ t_40_ \\ 1 \end{bmatrix}.
+Detta beror på att beräknings grunden för qubit-tillstånd bildas av behållen produkter i ett qubit tillstånd.  Till exempel har vi \begin{align} 00 \equiv \begin{bmatrix}1 \\\\ 0 \end{bmatrix}\otimes \begin{bmatrix}1 \\\\ 0 \end{bmatrix} & = \begin{bmatrix}1 \\\\ 0\\\\ 0\\\\ 0 \end{bmatrix}, \qquad 01 \equiv \begin{bmatrix}1 \\\\ 0 \end{bmatrix}\otimes \begin{bmatrix}0 \\\\ 1 \end{bmatrix} = \begin{bmatrix}0 \\\\ 1\\\\ 0\\\\ 0 \end{bmatrix},\\\\ 10 \equiv \begin{bmatrix}0 \\\\ 1 \end{bmatrix}\otimes \begin{bmatrix}1 \\\\ 0 \end{bmatrix} & = \begin{bmatrix}0 \\\\ 0\\\\ 1\\\\ 0 \end{bmatrix}, \qquad 11 \equiv \begin{bmatrix}0 \\\\ 1 \end{bmatrix}\otimes \begin{bmatrix}0 \\\\ 1 \end{bmatrix} = \begin{bmatrix}0 \\\\ 0\\\\ 0 @no__ t_40_ \\ 1 \end{bmatrix}.\\
 \end{align}
 
 Det är enkelt att se att mer än Quantum-läget för $n $ qubits representeras av en enhets vektor med dimension $2 ^ n $ med denna konstruktion.  Vektorn
@@ -97,7 +97,7 @@ $ $ \frac{\frac{e_2}{2}+ \frac{e_3}{2}} {\sqrt{\frac{1}{2}}} = \frac{1}{\sqrt{2}
 ## <a name="two-qubit-operations"></a>Två qubit-åtgärder
 Precis som i ett qubit-fall är en enhetlig omvandling en giltig åtgärd på qubits. I allmänhet är en enhetlig omvandling på $n $ qubits en matris $U $ med storleken $2 ^ n \times 2 ^ n $ (så att den fungerar på vektorer med storleken $2 ^ n $), till exempel $U ^{-1} = U ^ \dagger $. CNOT (styrd-NOT) är till exempel en ofta använd qubit-grind och representeras av följande enhetliga matris:
 
-$ $ \operatorname{CNOT} = \begin{bmatrix} 1 \ 0 \ 0 \ 0 \\\\ 0 \ 1 \ 0 \ 0 \\\\ 0 \ 0 \ 0 \\0 \ 0 \ 1 \ 0 \end{bmatrix} $ $
+$ $ \operatorname{CNOT} = \begin{bmatrix} 1 \ 0 \ 0 \ 0 \\\\ 0 \ 1 \ 0 \ 0 \\\\ 0 \ 0 \ 0 \\0 \ 0 \ 1 \ 0 \end{bmatrix} $ $\\
 
 Vi kan också bilda två qubit-portar genom att använda qubit-portar på båda qubits. Om vi till exempel använder grindarna 
 

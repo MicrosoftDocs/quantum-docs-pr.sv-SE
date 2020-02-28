@@ -1,26 +1,26 @@
 ---
-title: Microsoft Quantum Development Kit Third Party Software | Microsoft Docs
-description: Microsoft Quantum Development Kit Third Party Software
+title: Microsoft Quantum Development Kit Third Party Software
+description: Microsoft Quantum Development Kit meddelanden och information om program från tredje part.
 services: service-name-with-dashes-AZURE-ONLY
 keywords: Lägg inte till eller redigera nyckelord utan att först kontakta den SEO-ansvarige.
 author: QuantumWriter
 ms.author: MSFT-alias-person-or-DL
 ms.date: 10/09/2017
 ms.topic: article-type-from-white-list
-ms.openlocfilehash: 85bade791c0744d6636d60fe4f7c9b8f7749c7c6
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: 84d83bf65b3c01a630d98210a5ac3fe322fa501f
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "73184380"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77906822"
 ---
 # <a name="third-party-software-notices-and-information"></a>MEDDELANDEN OCH INFORMATION OM PROGRAM FRÅN TREDJE PART
 
-Den här filen baseras på eller inkluderar material från projekt som anges nedan (IP-adress till tredje part). Det ursprungliga upphovs rätts meddelandet och licensen enligt vilken Microsoft har tagit emot denna tredje parts IP-adress, anges nedan. Sådana licenser och meddelanden tillhandahålls endast i informations syfte. Microsoft licensierar IP-adressen från tredje part till dig under licens villkoren för Microsoft-produkten. Microsoft förbehåller sig alla andra rättigheter som inte uttryckligen beviljas enligt detta avtal, vare sig genom indirekt, via estoppel eller på annat sätt.
+Den här filen baseras på eller inkluderar material från projekt som anges nedan (IP-adress till tredje part). Det ursprungliga upphovs rätts meddelandet och licensen enligt vilken Microsoft har tagit emot denna tredje parts IP-adress, anges nedan. Sådana licenser och meddelanden tillhandahålls endast i informationssyfte. Microsoft licensierar IP-adressen från tredje part till dig under licens villkoren för Microsoft-produkten. Microsoft förbehåller sig alla andra rättigheter som inte uttryckligen beviljas enligt detta avtal, vare sig genom indirekt, via estoppel eller på annat sätt.
 
 1. YamlDotNet. Signed version 4.2.2 (https://www.nuget.org/packages/YamlDotNet.Signed/4.2.2)
 2. xunit. löpare. VisualStudio 2.3.1 (https://www.nuget.org/packages/xunit.runner.visualstudio/2.3.1)
-3. xunit. löpare. Console 2.3.1 (https://www.nuget.org/packages/xunit.runner.console/2.3.1 )
+3. xunit. löpare. Console 2.3.1 (https://www.nuget.org/packages/xunit.runner.console/2.3.1)
 4. xunit. utöknings barhet. Execution 2.3.1 (https://www.nuget.org/packages/xunit.extensibility.execution/2.3.1)
 5. xunit. utöknings barhet. Core 2.3.1 (https://www.nuget.org/packages/xunit.extensibility.core/2.3.1)
 6. xunit. Core 2.3.1 (https://www.nuget.org/packages/xunit.core/2.3.1)
@@ -39,11 +39,11 @@ Den här filen baseras på eller inkluderar material från projekt som anges ned
 ---------------------------------------
 Copyright (c) 2008, 2009, 2010, 2011, 2012, 2013, 2014 Antoine Aubry och bidrags givare
 
-Behörighet beviljas härmed till en person som erhåller en kopia av den här program varan och tillhör ande dokumentations filer ("program vara") för att hantera program varan utan begränsning, inklusive utan begränsning av rättigheterna att använda, kopiera, ändra, sammanfoga, publicera, distribuera, underlicensiera och/eller sälja kopior av program varan och för att tillåta personer som program varan kommer att göra detta på, i enlighet med följande villkor:
+Tillstånd beviljas härmed kostnadsfritt till alla som erhåller en kopia av den här programvaran och associerade dokumentationsfiler (”programvaran”) för att hantera programvaran utan begränsning, inklusive utan begränsning av rätten till att använda, kopiera, ändra, slå samman, publicera, distribuera, underlicensiera och/eller sälja kopior av programvaran och även för att tillåta personer till vilka programvaran tillhandahålls att göra detta på följande villkor:
 
-Upphovs rätts meddelandet ovan och detta meddelande om tillstånd skall inkluderas i alla kopior eller betydande delar av program varan.
+Upphovsrättsmeddelandet ovan och detta meddelande om tillstånd ska inkluderas i alla kopior eller i betydande delar av programvaran.
 
-PROGRAM VARAN TILLHANDAHÅLLS I BEFINTLIGT SKICK UTAN GARANTI AV NÅGOT SLAG, VARKEN UTTRYCKLIG ELLER UNDERFÖRSTÅDD, INKLUSIVE MEN INTE BEGRÄNSAT TILL GARANTI FÖR SÄLJBAR HET, LÄMPLIGHET FÖR ETT SÄRSKILT ÄNDAMÅL OCH FRÅNVARO AV INTRÅNG. UNDER INGA OMSTÄNDIGHETER KAN FÖRFATTARNA ELLER UPPHOVS RÄTTS INNEHAVARNA VARA ANSVARIGA FÖR ALLA ANSPRÅK, SKADOR ELLER ANDRA SKYLDIGHETER, VARE SIG VID ETT AVTAL, KRÄNKNING ELLER PÅ ANNAT SÄTT SOM UPPSTÅR I SAMBAND MED ELLER ÄR I SAMBAND MED PROGRAM VARAN ELLER ANVÄNDNING ELLER ANDRA ÅTGÄRDER I PROGRAM VARAN.
+PROGRAMVARAN TILLHANDAHÅLLS I BEFINTLIGT SKICK UTAN GARANTI AV NÅGOT SLAG, VARKEN UTTRYCKLIG ELLER UNDERFÖRSTÅDD, INKLUSIVE MEN INTE BEGRÄNSAT TILL GARANTI FÖR SÄLJBARHET, LÄMPLIGHET FÖR ETT SÄRSKILT ÄNDAMÅL OCH FRÅNVARO AV INTRÅNG I ANNAN PARTS RÄTTIGHETER. UNDER INGA OMSTÄNDIGHETER KAN FÖRFATTARNA ELLER UPPHOVSRÄTTSINNEHAVARNA HÅLLAS ANSVARIGA FÖR NÅGRA ANSPRÅK, SKADOR ELLER ANNAT ANSVAR, VARE SIG RÖRANDE TALAN GRUNDAD PÅ FÖRELIGGGANDE AVTAL, KRÄNKNING ELLER PÅ ANNAT SÄTT, SOM UPPSTÅR TILL FÖLJD AV ELLER I SAMBAND MED PROGRAMVARAN ELLER ANVÄNDNING AV DEN ELLER ANNAN HANTERING AV PROGRAMVARAN.
 
 
 
@@ -164,35 +164,35 @@ Se licensen för det specifika språk som reglerar behörigheter och begränsnin
 ---------------------------------------
 Microsoft offentlig licens (MS-PL)
 
-Den här licensen styr användningen av den medföljande program varan. Om du använder program varan godkänner du licensen. Om du inte accepterar licensen ska du inte använda program varan.
+Denna licens reglerar användningen av den medföljande programvaran. Om du använder programvaran accepterar du licensen. Om du inte accepterar licensen ska du inte använda programvaran.
 
 1. Definitioner
 
-Termerna "reproduktion", "reproduktion", "derivated Works" och "distribution" har samma innebörd här som i amerikansk upphovs rätts lagstiftning.
+Termerna ”återge”, ”återgivning”, ”härledda verk” och ”distribution” har samma innebörd här som i amerikansk upphovsrättslagstiftning.
 
-Ett "bidrag" är den ursprungliga program varan eller tillägg eller ändringar av program varan.
+Ett ”bidrag” är den ursprungliga programvaran eller eventuella tillägg till eller ändringar av programvaran.
 
-En "bidrags givare" är en person som distribuerar sitt bidrag enligt denna licens.
+En ”bidragsgivare” är en person som distribuerar sitt bidrag under denna licens.
 
-"Licensierade patent" är en bidrags givares patent anspråk som är direkt lästa till sitt bidrag.
+”Licensierade patent” är en bidragsgivares patentanspråk avseende dess direkta bidrag.
 
-2. Beviljande av rättigheter
+2. Beviljande av upphovsrätt
 
-(A) upphovs rätts bidrag – omfattas av villkoren i denna licens, inklusive licens villkoren och begränsningarna i avsnitt 3, varje bidrags givare ger dig en icke-exklusiv, global, royalty fri copyright-licens för att återskapa bidraget, förbereda derivat ditt bidrag och distribuerar sitt bidrag eller alla härledda arbeten som du skapar.
+(A) Beviljande av upphovsrätt – Underkastat villkoren i denna licens, inklusive villkoren och begränsningarna för licensen i stycke 3, beviljar varje bidragsgivare dig en icke-exklusiv, global, royaltyfri upphovsrättslicens för att återge deras bidrag, framställa egna produkter utifrån deras bidrag, och distribuera deras bidrag och alla egna produkter som du framställer utifrån deras bidrag.
 
-(B) patent beviljande – omfattas av villkoren i denna licens, inklusive licens villkoren och begränsningarna i avsnitt 3, och varje bidrags givare ger dig en icke-exklusiv, global, royalty fri licens enligt dess licensierade patent som gör att du har gjort, använder, säljer, erbjuder att sälja, importera och/eller på annat sätt ta bort bidraget i program varan eller härledda arbeten av bidraget i program varan.
+(B) Patentbeviljande – Underkastat villkoren i denna licens, inklusive villkoren och begränsningarna för licensen i stycke 3, beviljar varje bidragsgivare dig en icke-exklusiv, global, royaltyfri licens i enlighet med deras licensierade patent att göra, låta göra, använda, sälja, erbjuda för försäljning, importera och i övrigt förfara med deras bidrag till programvaran eller egna produkter framställda utifrån deras bidrag till programvaran.
 
 3. Villkor och begränsningar
 
-(A) ingen varumärkes licens – den här licensen ger dig inte behörighet att använda deltagares namn, logo typer eller varumärken.
+(A) Ingen varumärkeslicens – Denna licens ger dig inga rättigheter att använda någon bidragsgivares namn, logotyp eller varumärken.
 
-(B) om du antecknar ett patent anspråk mot någon bidrags givare över patent som du anspråkerar av program varan, avslutas din patent licens från sådan deltagare till program varan automatiskt.
+(B) Om du väcker patenttalan mot någon bidragsgivare gällande patent som du hävdar att programvaran gör intrång på avslutas din patentlicens från den bidragsgivaren till programvaran automatiskt.
 
-(C) om du distribuerar någon del av program varan måste du behålla alla meddelanden om upphovs rätt, patent, varumärke och behörighet som finns i program varan.
+(C) Om du distribuerar någon del av programvaran måste du bevara alla meddelanden om upphovsrätt, patent, varumärken och tillskrivningar som finns i programvaran.
 
-(D) om du distribuerar någon del av program varan i käll kods form kan du bara göra det under den här licensen genom att inkludera en fullständig kopia av den här licensen med din distribution. Om du distribuerar någon del av program varan i kompilerad eller objekt kod form kan du bara göra detta under en licens som följer denna licens.
+(D) Om du distribuerar någon del av programvaran i källkodsform får du endast göra det i enlighet med denna licens under förutsättning att du bifogar en fullständig kopia av denna licens med din distribution. Om du distribuerar någon del av programvaran i kompilerad eller objektkodsform kan du bara göra det under en licens som överensstämmer med denna licens.
 
-(E) program varan licensieras "i befintligt skick". Du uppbär risken för att använda den. Bidrags givare ger inga uttryckliga garantier eller villkor. Du kan ha ytterligare konsument rättigheter enligt lokal lagstiftning som denna licens inte kan ändra. I den utsträckning som tillåts enligt lokal lagstiftning utesluter bidrags givaren underförstådda garantier gällande säljbar het, lämplighet för ett särskilt ändamål och frånvaro av intrång.
+(E) Programvaran licensieras i befintligt skick. Du använder den på eget ansvar. Bidrags givare ger inga uttryckliga garantier eller villkor. Du kan ha ytterligare rättigheter som konsument eller lagstadgade garantier enligt lokal lagstiftning som detta avtal inte kan ändra. I den utsträckning din lokala lagstiftning medger utesluter bidragsgivarna underförstådda garantier om säljbarhet, lämplighet för ett särskilt syfte och frånvaro av intrång i tredje parts rättigheter.
 
 ## <a name="fsharpcore-notices-and-information"></a>FSharp. Core-meddelanden och INFORMATION
 ---------------------------------------
@@ -201,11 +201,11 @@ MIT-licensen (MIT)
 Copyright (c) Microsoft Corporation.
 Med ensamrätt.
 
-Behörighet beviljas härmed till en person som erhåller en kopia av den här program varan och tillhör ande dokumentations filer ("program vara") för att hantera program varan utan begränsning, inklusive utan begränsning av rättigheterna att använda, kopiera, ändra, sammanfoga, publicera, distribuera, underlicensiera och/eller sälja kopior av program varan och för att tillåta personer som program varan kommer att göra detta på, i enlighet med följande villkor:
+Tillstånd beviljas härmed kostnadsfritt till alla som erhåller en kopia av den här programvaran och associerade dokumentationsfiler (”programvaran”) för att hantera programvaran utan begränsning, inklusive utan begränsning av rätten till att använda, kopiera, ändra, slå samman, publicera, distribuera, underlicensiera och/eller sälja kopior av programvaran och även för att tillåta personer till vilka programvaran tillhandahålls att göra detta på följande villkor:
 
-Upphovs rätts meddelandet ovan och detta meddelande om tillstånd skall inkluderas i alla kopior eller betydande delar av program varan.
+Upphovsrättsmeddelandet ovan och detta meddelande om tillstånd ska inkluderas i alla kopior eller i betydande delar av programvaran.
 
-PROGRAM VARAN TILLHANDAHÅLLS I BEFINTLIGT SKICK UTAN GARANTI AV NÅGOT SLAG, VARKEN UTTRYCKLIG ELLER UNDERFÖRSTÅDD, INKLUSIVE MEN INTE BEGRÄNSAT TILL GARANTI FÖR SÄLJBAR HET, LÄMPLIGHET FÖR ETT SÄRSKILT ÄNDAMÅL OCH FRÅNVARO AV INTRÅNG. UNDER INGA OMSTÄNDIGHETER KAN FÖRFATTARNA ELLER UPPHOVS RÄTTS INNEHAVARNA VARA ANSVARIGA FÖR ALLA ANSPRÅK, SKADOR ELLER ANDRA SKYLDIGHETER, VARE SIG VID ETT AVTAL, KRÄNKNING ELLER PÅ ANNAT SÄTT SOM UPPSTÅR I SAMBAND MED ELLER ÄR I SAMBAND MED PROGRAM VARAN ELLER ANVÄNDNING ELLER ANDRA ÅTGÄRDER I PROGRAM VARAN.
+PROGRAMVARAN TILLHANDAHÅLLS I BEFINTLIGT SKICK UTAN GARANTI AV NÅGOT SLAG, VARKEN UTTRYCKLIG ELLER UNDERFÖRSTÅDD, INKLUSIVE MEN INTE BEGRÄNSAT TILL GARANTI FÖR SÄLJBARHET, LÄMPLIGHET FÖR ETT SÄRSKILT ÄNDAMÅL OCH FRÅNVARO AV INTRÅNG I ANNAN PARTS RÄTTIGHETER. UNDER INGA OMSTÄNDIGHETER KAN FÖRFATTARNA ELLER UPPHOVSRÄTTSINNEHAVARNA HÅLLAS ANSVARIGA FÖR NÅGRA ANSPRÅK, SKADOR ELLER ANNAT ANSVAR, VARE SIG RÖRANDE TALAN GRUNDAD PÅ FÖRELIGGGANDE AVTAL, KRÄNKNING ELLER PÅ ANNAT SÄTT, SOM UPPSTÅR TILL FÖLJD AV ELLER I SAMBAND MED PROGRAMVARAN ELLER ANVÄNDNING AV DEN ELLER ANNAN HANTERING AV PROGRAMVARAN.
 
 ## <a name="fsharpcharting-notices-and-information"></a>FSharp. diagram meddelanden och INFORMATION
 ---------------------------------------
@@ -213,11 +213,11 @@ MIT-licensen (MIT)
 
 Copyright (c) 2013 Tomas Petricek
 
-Behörighet beviljas härmed till en person som erhåller en kopia av den här program varan och tillhör ande dokumentations filer ("program vara") för att hantera program varan utan begränsning, inklusive utan begränsning av rättigheterna att använda, kopiera, ändra, sammanfoga, publicera, distribuera, underlicensiera och/eller sälja kopior av program varan och för att tillåta personer som program varan kommer att göra detta på, i enlighet med följande villkor:
+Tillstånd beviljas härmed kostnadsfritt till alla som erhåller en kopia av den här programvaran och associerade dokumentationsfiler (”programvaran”) för att hantera programvaran utan begränsning, inklusive utan begränsning av rätten till att använda, kopiera, ändra, slå samman, publicera, distribuera, underlicensiera och/eller sälja kopior av programvaran och även för att tillåta personer till vilka programvaran tillhandahålls att göra detta på följande villkor:
 
-Upphovs rätts meddelandet ovan och detta meddelande om tillstånd skall inkluderas i alla kopior eller betydande delar av program varan.
+Upphovsrättsmeddelandet ovan och detta meddelande om tillstånd ska inkluderas i alla kopior eller i betydande delar av programvaran.
 
-PROGRAM VARAN TILLHANDAHÅLLS I BEFINTLIGT SKICK UTAN GARANTI AV NÅGOT SLAG, VARKEN UTTRYCKLIG ELLER UNDERFÖRSTÅDD, INKLUSIVE MEN INTE BEGRÄNSAT TILL GARANTI FÖR SÄLJBAR HET, LÄMPLIGHET FÖR ETT SÄRSKILT ÄNDAMÅL OCH FRÅNVARO AV INTRÅNG. UNDER INGA OMSTÄNDIGHETER KAN FÖRFATTARNA ELLER UPPHOVS RÄTTS INNEHAVARNA VARA ANSVARIGA FÖR ALLA ANSPRÅK, SKADOR ELLER ANDRA SKYLDIGHETER, VARE SIG VID ETT AVTAL, KRÄNKNING ELLER PÅ ANNAT SÄTT SOM UPPSTÅR I SAMBAND MED ELLER ÄR I SAMBAND MED PROGRAM VARAN ELLER ANVÄNDNING ELLER ANDRA ÅTGÄRDER I PROGRAM VARAN.
+PROGRAMVARAN TILLHANDAHÅLLS I BEFINTLIGT SKICK UTAN GARANTI AV NÅGOT SLAG, VARKEN UTTRYCKLIG ELLER UNDERFÖRSTÅDD, INKLUSIVE MEN INTE BEGRÄNSAT TILL GARANTI FÖR SÄLJBARHET, LÄMPLIGHET FÖR ETT SÄRSKILT ÄNDAMÅL OCH FRÅNVARO AV INTRÅNG I ANNAN PARTS RÄTTIGHETER. UNDER INGA OMSTÄNDIGHETER KAN FÖRFATTARNA ELLER UPPHOVSRÄTTSINNEHAVARNA HÅLLAS ANSVARIGA FÖR NÅGRA ANSPRÅK, SKADOR ELLER ANNAT ANSVAR, VARE SIG RÖRANDE TALAN GRUNDAD PÅ FÖRELIGGGANDE AVTAL, KRÄNKNING ELLER PÅ ANNAT SÄTT, SOM UPPSTÅR TILL FÖLJD AV ELLER I SAMBAND MED PROGRAMVARAN ELLER ANVÄNDNING AV DEN ELLER ANNAN HANTERING AV PROGRAMVARAN.
 Paketerade versioner av program varan kan innehålla kopior av OxyPlot. Core. dll och OxyPlot. GtkSharp. dll, licens nedan.
 
 ---
@@ -226,11 +226,11 @@ MIT-licensen (MIT)
 
 Copyright (c) 2012 Oystein Bjorke
 
-Behörighet beviljas härmed till en person som erhåller en kopia av den här program varan och tillhör ande dokumentations filer ("program vara") för att hantera program varan utan begränsning, inklusive utan begränsning av rättigheterna att använda, kopiera, ändra, sammanfoga, publicera, distribuera, underlicensiera och/eller sälja kopior av program varan och för att tillåta personer som program varan kommer att göra detta på, i enlighet med följande villkor:
+Tillstånd beviljas härmed kostnadsfritt till alla som erhåller en kopia av den här programvaran och associerade dokumentationsfiler (”programvaran”) för att hantera programvaran utan begränsning, inklusive utan begränsning av rätten till att använda, kopiera, ändra, slå samman, publicera, distribuera, underlicensiera och/eller sälja kopior av programvaran och även för att tillåta personer till vilka programvaran tillhandahålls att göra detta på följande villkor:
 
-Upphovs rätts meddelandet ovan och detta meddelande om tillstånd skall inkluderas i alla kopior eller betydande delar av program varan.
+Upphovsrättsmeddelandet ovan och detta meddelande om tillstånd ska inkluderas i alla kopior eller i betydande delar av programvaran.
 
-PROGRAM VARAN TILLHANDAHÅLLS I BEFINTLIGT SKICK UTAN GARANTI AV NÅGOT SLAG, VARKEN UTTRYCKLIG ELLER UNDERFÖRSTÅDD, INKLUSIVE MEN INTE BEGRÄNSAT TILL GARANTI FÖR SÄLJBAR HET, LÄMPLIGHET FÖR ETT SÄRSKILT ÄNDAMÅL OCH FRÅNVARO AV INTRÅNG. UNDER INGA OMSTÄNDIGHETER KAN FÖRFATTARNA ELLER UPPHOVS RÄTTS INNEHAVARNA VARA ANSVARIGA FÖR ALLA ANSPRÅK, SKADOR ELLER ANDRA SKYLDIGHETER, VARE SIG VID ETT AVTAL, KRÄNKNING ELLER PÅ ANNAT SÄTT SOM UPPSTÅR I SAMBAND MED ELLER ÄR I SAMBAND MED PROGRAM VARAN ELLER ANVÄNDNING ELLER ANDRA ÅTGÄRDER I PROGRAM VARAN.
+PROGRAMVARAN TILLHANDAHÅLLS I BEFINTLIGT SKICK UTAN GARANTI AV NÅGOT SLAG, VARKEN UTTRYCKLIG ELLER UNDERFÖRSTÅDD, INKLUSIVE MEN INTE BEGRÄNSAT TILL GARANTI FÖR SÄLJBARHET, LÄMPLIGHET FÖR ETT SÄRSKILT ÄNDAMÅL OCH FRÅNVARO AV INTRÅNG I ANNAN PARTS RÄTTIGHETER. UNDER INGA OMSTÄNDIGHETER KAN FÖRFATTARNA ELLER UPPHOVSRÄTTSINNEHAVARNA HÅLLAS ANSVARIGA FÖR NÅGRA ANSPRÅK, SKADOR ELLER ANNAT ANSVAR, VARE SIG RÖRANDE TALAN GRUNDAD PÅ FÖRELIGGGANDE AVTAL, KRÄNKNING ELLER PÅ ANNAT SÄTT, SOM UPPSTÅR TILL FÖLJD AV ELLER I SAMBAND MED PROGRAMVARAN ELLER ANVÄNDNING AV DEN ELLER ANNAN HANTERING AV PROGRAMVARAN.
 
 ## <a name="fscheck-notices-and-information"></a>FsCheck meddelanden och INFORMATION
 ---------------------------------------
@@ -238,13 +238,13 @@ Copyright (c) 2008-2014, Kurt Schelfthout
 
 Med ensamrätt.
 
-Omdistribution och användning i käll-och binära formulär, med eller utan modifiering, tillåts förutsatt att följande villkor uppfylls:
+Vidaredistribution och användning i käll- och binär form, med eller utan ändringar, är tillåtet under förutsättning att följande villkor uppfylls:
 
-* Distribution av käll koden måste behålla upphovs rätts meddelandet ovan, denna lista över villkor och följande fri skrivning.
-* Omdistributioner i binär form måste återge upphovs rätts meddelandet ovan, denna lista över villkor och följande fri skrivning i dokumentationen och/eller annat material som ingår i distributionen.
+* Vidaredistribution av källkoden måste bibehålla upphovsrättsmeddelandet ovan, denna lista över villkor och följande friskrivning.
+* Vidaredistribution i binär form måste återge upphovsrättsmeddelandet ovan, denna lista över villkor och följande friskrivning i dokumentationen och/eller annat material som ingår i distributionen.
 * Varken namnet på FsCheck eller namnen på dess deltagare får användas för att påteckna eller marknadsföra produkter som har härletts från den här program varan utan föregående skriftligt tillstånd.
 
-DEN HÄR PROGRAM VARAN TILLHANDAHÅLLS AV UPPHOVS RÄTTS INNEHAVARNA OCH DELTAGARENA I BEFINTLIGT SKICK OCH ALLA UTTRYCKLIGA ELLER UNDERFÖRSTÅDDA GARANTIER, INKLUSIVE, MEN INTE BEGRÄNSAT TILL, UNDERFÖRSTÅDDA GARANTIER FÖR SÄLJBAR HET OCH LÄMPLIGHET FÖR ETT SÄRSKILT ÄNDAMÅL. UPPHOVS RÄTTS ÄGAREN ELLER BIDRAGS GIVARE FÅR UNDER INGA OMSTÄNDIGHETER VARA ANSVARIGA FÖR DIREKTA, INDIREKTA, OFÖRUTSEDDA, SÄRSKILDA, FÖRHÖJT ELLER FÖLJD SKADOR (INKLUSIVE, MEN INTE BEGRÄNSAT TILL, UPPHANDLING AV ERSÄTTNINGS VAROR ELLER TJÄNSTER. FÖRLUST AV ANVÄNDNING, DATA ELLER VINST, ELLER VERKSAMHETS AVBROTT) SOM EMELLERTID ORSAKATS AV OCH PÅ VILKEN TEORI SOM HELST, OAVSETT OM DET GÄLLER KONTRAKT, STRIKT ANSVAR ELLER KRÄNKNINGAR (INKLUSIVE FÖRSUMLIGHET ELLER PÅ ANNAT SÄTT) SOM UPPSTÅR PÅ NÅGOT SÄTT FRÅN ANVÄNDNINGEN AV PROGRAM VARAN, ÄVEN OM DET FINNS EN RISK FÖR RISKEN FÖR SÅDANA SKADOR.
+DEN HÄR PROGRAMVARAN TILLHANDAHÅLLS AV UPPHOVSRÄTTSINNEHAVARNA OCH BIDRAGSGIVARNA I BEFINTLIGT SKICK OCH UTAN VARKEN UTTRYCKLIG ELLER UNDERFÖRSTÅDD GARANTI, INKLUSIVE OCH UTAN BEGRÄNSNING TILL, UNDERFÖRSTÅDD GARANTI FÖR SÄLJBARHET OCH LÄMPLIGHET FÖR ETT SÄRSKILT ÄNDAMÅL. UPPHOVS RÄTTS ÄGAREN ELLER BIDRAGS GIVARE FÅR UNDER INGA OMSTÄNDIGHETER VARA ANSVARIGA FÖR DIREKTA, INDIREKTA, OFÖRUTSEDDA, SÄRSKILDA, FÖRHÖJT ELLER FÖLJD SKADOR (INKLUSIVE, MEN INTE BEGRÄNSAT TILL, UPPHANDLING AV ERSÄTTNINGS VAROR ELLER TJÄNSTER. FÖRLUST AV ANVÄNDNING, DATA ELLER VINST, ELLER VERKSAMHETS AVBROTT) SOM EMELLERTID ORSAKATS AV OCH PÅ VILKEN TEORI SOM HELST, OAVSETT OM DET GÄLLER KONTRAKT, STRIKT ANSVAR ELLER KRÄNKNINGAR (INKLUSIVE FÖRSUMLIGHET ELLER PÅ ANNAT SÄTT) SOM UPPSTÅR PÅ NÅGOT SÄTT FRÅN ANVÄNDNINGEN AV PROGRAM VARAN, ÄVEN OM DET FINNS EN RISK FÖR RISKEN FÖR SÅDANA SKADOR.
 
 ## <a name="argu-notices-and-information"></a>Argu meddelanden och INFORMATION
 ---------------------------------------
@@ -252,11 +252,11 @@ MIT-licensen (MIT)
 
 Copyright (c) 2016 Eirik Tsarpalis
 
-Behörighet beviljas härmed till en person som erhåller en kopia av den här program varan och tillhör ande dokumentations filer ("program vara") för att hantera program varan utan begränsning, inklusive utan begränsning av rättigheterna att använda, kopiera, ändra, sammanfoga, publicera, distribuera, underlicensiera och/eller sälja kopior av program varan och för att tillåta personer som program varan kommer att göra detta på, i enlighet med följande villkor:
+Tillstånd beviljas härmed kostnadsfritt till alla som erhåller en kopia av den här programvaran och associerade dokumentationsfiler (”programvaran”) för att hantera programvaran utan begränsning, inklusive utan begränsning av rätten till att använda, kopiera, ändra, slå samman, publicera, distribuera, underlicensiera och/eller sälja kopior av programvaran och även för att tillåta personer till vilka programvaran tillhandahålls att göra detta på följande villkor:
 
-Upphovs rätts meddelandet ovan och detta meddelande om tillstånd skall inkluderas i alla kopior eller betydande delar av program varan.
+Upphovsrättsmeddelandet ovan och detta meddelande om tillstånd ska inkluderas i alla kopior eller i betydande delar av programvaran.
 
-PROGRAM VARAN TILLHANDAHÅLLS I BEFINTLIGT SKICK UTAN GARANTI AV NÅGOT SLAG, VARKEN UTTRYCKLIG ELLER UNDERFÖRSTÅDD, INKLUSIVE MEN INTE BEGRÄNSAT TILL GARANTI FÖR SÄLJBAR HET, LÄMPLIGHET FÖR ETT SÄRSKILT ÄNDAMÅL OCH FRÅNVARO AV INTRÅNG. UNDER INGA OMSTÄNDIGHETER KAN FÖRFATTARNA ELLER UPPHOVS RÄTTS INNEHAVARNA VARA ANSVARIGA FÖR ALLA ANSPRÅK, SKADOR ELLER ANDRA SKYLDIGHETER, VARE SIG VID ETT AVTAL, KRÄNKNING ELLER PÅ ANNAT SÄTT SOM UPPSTÅR I SAMBAND MED ELLER ÄR I SAMBAND MED PROGRAM VARAN ELLER ANVÄNDNING ELLER ANDRA ÅTGÄRDER I PROGRAM VARAN.
+PROGRAMVARAN TILLHANDAHÅLLS I BEFINTLIGT SKICK UTAN GARANTI AV NÅGOT SLAG, VARKEN UTTRYCKLIG ELLER UNDERFÖRSTÅDD, INKLUSIVE MEN INTE BEGRÄNSAT TILL GARANTI FÖR SÄLJBARHET, LÄMPLIGHET FÖR ETT SÄRSKILT ÄNDAMÅL OCH FRÅNVARO AV INTRÅNG I ANNAN PARTS RÄTTIGHETER. UNDER INGA OMSTÄNDIGHETER KAN FÖRFATTARNA ELLER UPPHOVSRÄTTSINNEHAVARNA HÅLLAS ANSVARIGA FÖR NÅGRA ANSPRÅK, SKADOR ELLER ANNAT ANSVAR, VARE SIG RÖRANDE TALAN GRUNDAD PÅ FÖRELIGGGANDE AVTAL, KRÄNKNING ELLER PÅ ANNAT SÄTT, SOM UPPSTÅR TILL FÖLJD AV ELLER I SAMBAND MED PROGRAMVARAN ELLER ANVÄNDNING AV DEN ELLER ANNAN HANTERING AV PROGRAMVARAN.
 
 ## <a name="fparsec-notices-and-information"></a>FParsec meddelanden och INFORMATION
 ---------------------------------------
@@ -273,9 +273,9 @@ Dokumentationen i mappen dokument licensieras enligt Creative Commons-gång till
 
 Copyright (c) 2007 \ u20122017, Stephan Tolksdorf. Med ensamrätt.
 
-Omdistribution och användning i käll-och binära formulär, med eller utan modifiering, tillåts förutsatt att följande villkor uppfylls: 
-* Distribution av käll koden måste behålla upphovs rätts meddelandet ovan, denna lista över villkor och följande fri skrivning.
-* Omdistributioner i binär form måste återge upphovs rätts meddelandet ovan, denna lista över villkor och följande fri skrivning i dokumentationen och/eller annat material som ingår i distributionen. 
+Vidaredistribution och användning i käll- och binär form, med eller utan ändringar, är tillåtet under förutsättning att följande villkor uppfylls: 
+* Vidaredistribution av källkoden måste bibehålla upphovsrättsmeddelandet ovan, denna lista över villkor och följande friskrivning.
+* Vidaredistribution i binär form måste återge upphovsrättsmeddelandet ovan, denna lista över villkor och följande friskrivning i dokumentationen och/eller annat material som ingår i distributionen. 
 
 Den här program varan tillhandahålls av upphovs rätts innehavarna "i befintligt skick" och eventuella uttryckliga eller underförstådda garantier, inklusive, men inte begränsat till, underförstådda garantier gällande säljbar het och lämplighet för ett särskilt ändamål. Upphovs rätts innehavarna är under inga omständigheter ansvariga för direkta, indirekta, tillfälliga, särskilda, förhöjt eller följd skador (inklusive, men inte begränsat till, upphandling av ersättnings varor eller tjänster, förlust av användning, data eller vinst, eller verksamhet avbrott) orsakade av och på en teori av ansvar, oavsett om det gäller kontrakt, strikt ansvar eller kränkningar (inklusive försumlighet eller på annat sätt) som uppstår på något sätt från användningen av denna program vara, även om det finns en risk för risken för sådana skador. 
 

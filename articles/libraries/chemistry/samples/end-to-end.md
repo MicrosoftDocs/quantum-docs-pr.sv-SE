@@ -1,18 +1,18 @@
 ---
-title: Slut punkt till slut punkt med NWChem | Microsoft Docs
-description: Slut punkt till slut punkt med NWChem-dokument
+title: Exempel på NWChem Quantum program
+description: Använd en NWChem-kortlek och gå igenom ett exempel på hur man hämtar antalet grindar för simulering av Quantum kemi.
 author: cgranade
 ms.author: chgranad@microsoft.com
 ms.date: 10/23/2018
 uid: microsoft.quantum.chemistry.examples.endtoend
-ms.openlocfilehash: 8f727ea4599e06b41ced561c624c4e773b9887d9
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: 545ade99859f2a9939477fb18604921f70a5d9aa
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73185825"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77906516"
 ---
-# <a name="end-to-end-with-nwchem"></a>Slut punkt till slut punkt med NWChem #
+# <a name="end-to-end-with-nwchem"></a>Slutpunkt till slutpunkt med NWChem #
 
 På den här sidan går vi igenom ett exempel på hur man hämtar antalet grindar för simulering av Quantum kemi, från en [NWChem](http://www.nwchem-sw.org/index.php/Main_Page) -kortlek.
 Innan du fortsätter med det här exemplet ser du till att du har installerat Docker, efter [installations-och validerings guiden](xref:microsoft.quantum.chemistry.concepts.installation).

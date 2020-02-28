@@ -1,17 +1,17 @@
 ---
-title: Hartree – Fock teori | Microsoft Docs
-description: Hartree – Fock teori-dokument
+title: Hartree – Fock teori
+description: Lär dig mer om Hartree – Fock teori, ett enkelt sätt att skapa det ursprungliga läget för Quantum Systems.
 author: nathanwiebe2
 ms.author: nawiebe@microsoft.com
 ms.date: 10/09/2017
 ms.topic: article-type-from-white-list
 uid: microsoft.quantum.chemistry.concepts.hartreefock
-ms.openlocfilehash: e73111ae710e11ca6730581b8be711cf32783677
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: 6fa63cbe13fe98565ffb42b56f3ade86720cedb3
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "73184108"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77904459"
 ---
 # <a name="hartreefock-theory"></a>Hartree – Fock teori
 
@@ -22,10 +22,10 @@ Det går att lära sig mer om kvantiteter som mark tillstånds energi.
 Om t. ex. $ \ket{\psi} $ är ett rent Quantum-tillstånd kommer \begin{Equation} E = \bra{\psi} \hat{H} \ket{\psi} \end{Equation} att ge den genomsnittliga energin som systemet har i detta tillstånd.
 Mark läget är sedan det tillstånd som ger det minsta värdet. Därför är det viktigt att välja ett tillstånd som är så nära som möjligt till det verkliga jord läget för att uppskatta energin antingen direkt (som görs i Variations eigensolvers) eller genom fas uppskattning.
 
-Hartree – Fock teori ger ett enkelt sätt att skapa det ursprungliga läget för Quantum Systems. Den ger en enda Slater approximation till ett Quantum-Systems mark tillstånd. I detta fall hittar den en rotation i Fock-utrymme som minimerar mark tillståndets energi. I synnerhet, för ett system med $N $ electrons, utför metoden rotations \begin{Equation} \prod_{j = 0} ^ {N-1} a ^ \dagger_j \ket{0} \mapsto \prod_{j = 0} ^ {N-1} e ^ {u} a ^ \dagger_j e ^ {-u} \ket{0}\defeq\prod_{j = 0} ^ {N-1} \widetilde{a} ^ \dagger _J \ket{0}, \end{Equation} med en anti-Hermitian (t. ex. $u =-u ^ \dagger $) Matrix $u = \sum_{PQ} u_ {PQ} a ^ \dagger_p a_q $. Det bör noteras att matrisen $u $ representerar orbital-rotationer och $ \widetilde{a} ^ \dagger_j $ och $ \widetilde{a}_J $ som representerar skapande och Annihilation operatörer för electrons som använder Hartree – Fock molekyl ära rotations banor.
+Hartree – Fock teori ger ett enkelt sätt att skapa det ursprungliga läget för Quantum Systems. Den ger en enda Slater approximation till ett Quantum-Systems mark tillstånd. I detta fall hittar den en rotation i Fock-utrymme som minimerar mark tillståndets energi. I synnerhet för ett system med $N $ electrons utför metoden rotations \begin{Equation} \ prod_ {j = 0} ^ {N-1} a ^ \ dagger_j \ket{0} \mapsto \ prod_ {j = 0} ^ {N-1} e ^ {u} a ^ \ dagger_j e ^ {-u} \ket{0}\defeq\ prod_ {j = 0} ^ {N-1} \widetilde{a} ^ \ dagger_j \ket{0}, \end{Equation} med en anti-Hermitian (dvs. $u =-u ^ \dagger $) matrisen $u = \ sum_ {PQ} u_ {PQ} a ^ \ dagger_p a_q $. Det bör noteras att matrisen $u $ representerar orbital-rotationer och $ \widetilde{a} ^ \ dagger_j $ och $ \widetilde{a} _j $ som representerar skapande-och Annihilation-operatörer för electrons som använder Hartree – Fock molekyl ära rotations banor.
 
 
-Matrisen $u $ optimeras sedan för att minimera den förväntade energi $ \bra{0} \prod_{j = 0} ^ {N-1} \widetilde{a}\_j H \prod\_{k = 0} ^ {N-1} \widetilde{a} ^ \dagger_k\ket{0}$. Sådana optimerings problem kan vara generella hårda, i praktiken är Hartree – Fock-algoritmen att snabbt konvergera till en nära optimal lösning på optimerings problemet, särskilt för stängda-Shell-molekyler i jämvikts Geometries. Vi kan ange dessa tillstånd som en instans av `FermionWavefunction`-objektet. Till exempel är tillstånd $a ^ \dagger_{1}en ^ \dagger_{2}a ^ \dagger_{6}\ket{0}$ instansieras i kemi-biblioteket på följande sätt.
+Matrisen $u $ optimeras sedan för att minimera den förväntade energi $ \bra{0} \ prod_ {j = 0} ^ {N-1} \widetilde{a}\_j H \prod\_{k = 0} ^ {N-1} \widetilde{a} ^ \ dagger_k \ket{0}$. Sådana optimerings problem kan vara generella hårda, i praktiken är Hartree – Fock-algoritmen att snabbt konvergera till en nära optimal lösning på optimerings problemet, särskilt för stängda-Shell-molekyler i jämvikts Geometries. Vi kan ange dessa tillstånd som en instans av `FermionWavefunction`-objektet. Till exempel är tillstånd $a ^ \ dagger_{1}a ^ \ dagger_{2}a ^ \ dagger_{6}\ket{0}$ instansieras i kemi-biblioteket på följande sätt.
 ```csharp
 // Create a list of integer indices of the creation operators
 var indices = new[] { 1, 2, 6 };

@@ -1,19 +1,19 @@
 ---
-title: Korrelerade wavefunctions | Microsoft Docs
-description: Koncept dokument för Quantum Dynamics
+title: Korrelerade vågfunktioner
+description: Lär dig om dynamiska och icke-dynamiska korrelationer i wavefunctions med Microsoft Quantum kemi-biblioteket.
 author: guanghaolow
 ms.author: gulow@microsoft.com
 ms.date: 05/28/2019
 ms.topic: article-type-from-white-list
 uid: microsoft.quantum.chemistry.concepts.multireference
-ms.openlocfilehash: 0b14f373d31c5b63e313e07810daf62d9195b1d3
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: 005ef86382ca72969b06a4206cab01f3845718e2
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "73184040"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77904442"
 ---
-# <a name="correlated-wavefunctions"></a>Korrelerade wavefunctions
+# <a name="correlated-wavefunctions"></a>Korrelerade vågfunktioner
 
 För många system, särskilt de nära jämvikts geometrin, ger [Hartree – Fock](xref:microsoft.quantum.chemistry.concepts.hartreefock) teori en kvalitativ beskrivning av molekyl egenskaper genom ett engångs referens tillstånd. Men för att uppnå kvantitativ noggrannhet måste det också ta hänsyn till korrelations effekter. 
 
@@ -24,9 +24,9 @@ Detta kräver en överplacering av Determinant och är ett exempel på en wavefu
 Kemi-biblioteket är ett sätt att ange en Zeroth order-wavefunction för ett multireferens-problem som en överplacering av Determinant. Den här metoden, som vi kallar sparse multireference wavefunctions, är effektiv när bara några få komponenter räcker för att ange överplacering. Biblioteket innehåller också en metod för att inkludera dynamiska korrelationer ovanpå en engångs referens via den generaliserade enhetliga kluster ansatz. Dessutom konstrueras även Quantum-kretsar som genererar dessa tillstånd på en Quantum-dator. Dessa tillstånd kan anges i Broombridge- [schemat](xref:microsoft.quantum.libraries.chemistry.schema.broombridge)och vi tillhandahåller även funktionen för att manuellt ange dessa tillstånd via kemi-biblioteket.
 
 ## <a name="sparse-multi-reference-wavefunction"></a>Wavefunction för sparse-flera referenser
-Det går inte att ange ett multi-Reference-tillstånd $ \ket{\psi_{\rm {MCSCF}}} $ $ som en linjär kombination av $N $-Electron Slater determininants.
-\begin{align} \ket{\psi_{\rm {MCSCF}}} \propto \sum_{i_1 < I_2 < \cdots < i_N} \lambda_{i_1, I_2, \cdots, i_N} a ^ \dagger_{i_1}a ^ \dagger_{I_2}\cdots a ^ \dagger_{i_N}\ket{0}.
-\end{align} t. ex. State $ \propto (0,1 a ^ \dagger_1a ^ \dagger_2a ^ \dagger_6-0,2 a ^ \dagger_2a ^ \dagger_1a ^ \dagger_5) \ket{0}$ kan anges i kemi-biblioteket på följande sätt.
+En \ket{\ för flera referenser $ psi_ {\rm {MCSCF}}} $ kan anges explicit som en linjär kombination av $N $-Electron Slater determininants.
+\begin{align} \ket{\ psi_ {\rm {MCSCF}}} \propto \ sum_ {i_1 < i_2 < \cdots < i_N} \ lambda_ {i_1, i_2, \cdots, i_N} a ^ \ dagger_ {i_1} a ^ \ dagger_ {i_2} \cdots a ^ \ dagger_ {i_N} \ket{0}.
+\end{align} till exempel, tillstånd $ \propto (0,1 a ^ \ dagger_1a ^ \ dagger_2a ^ \ dagger_6-0,2 a ^ \ dagger_2a ^ \ dagger_1a ^ \ dagger_5) \ket{0}$ kan anges i kemi-biblioteket på följande sätt.
 ```csharp
 // Create a list of tuples where the first item of each 
 // tuple are indices to the creation operators acting on the
@@ -42,18 +42,18 @@ var wavefunction = new FermionWavefunction<int>(superposition);
 Den här explicita representationen av superpositions komponenterna är effektiv när bara några få komponenter behöver anges. Du bör undvika att använda den här representationen när många komponenter krävs för att korrekt kunna avbilda det önskade läget. Anledningen är att den här gaten är en Quantum-krets som förbereder det här läget på en Quantum-dator, som skalas minst linjärt med antalet superpositions komponenter och som är mest kvadratiskt med en-norm för amplituderna superposition.
 
 ## <a name="unitary-coupled-cluster-wavefunction"></a>Enhetligt kluster wavefunction
-Det är också möjligt att ange en enhetlig, fristående kluster wavefunction $ \ket{\psi_{\rm {UCC}}} $ med chemistery-biblioteket. I den här situationen har vi ett engångs referens tillstånd, t. ex. $ \ket{\psi_{\rm{SCF}}} $. Komponenterna i den enhetliga kluster wavefunction anges sedan som implicit genom en enhetlig operatör som agerar i ett referens tillstånd.
-Den här enhetliga operatorn skrivs vanligt vis som $e ^ {T-T ^ \dagger} $, där $T-T ^ \dagger $ är den Hermitian kluster operatorn. Därför \begin{align} \ket{\psi_{\rm {UCC}}} = e ^ {T-T ^ \dagger}\ket{\psi_{\rm{SCF}}}.
+Det är också möjligt att ange en enhetlig, fristående kluster wavefunction $ \ket{\ psi_ {\rm {UCC}}} $ med chemistery-biblioteket. I den här situationen har vi ett engångs referens tillstånd, t. ex. $ \ket{\ psi_ {\rm{SCF}}} $. Komponenterna i den enhetliga kluster wavefunction anges sedan som implicit genom en enhetlig operatör som agerar i ett referens tillstånd.
+Den här enhetliga operatorn skrivs vanligt vis som $e ^ {T-T ^ \dagger} $, där $T-T ^ \dagger $ är den Hermitian kluster operatorn. Därför \begin{align} \ket{\ psi_ {\rm {UCC}}} = e ^ {T-T ^ \dagger}\ket{\ psi_ {\rm{SCF}}}.
 \end{align}
 
-Det är också vanligt att dela upp kluster operatören $T = T_1 + T_2 + \cdots $ i delar, där varje del $T _J $ innehåller $j $-Body-termer. I generaliserad kluster teori är Singles (Enbody Cluster operator) av formatet \begin{align} T_1 = \sum_{PQ}t ^ {p} _ {q} a ^ \dagger_p a_q, \end{align}
+Det är också vanligt att dela upp kluster operatorn $T = T_1 + T_2 + \cdots $ i delar, där varje del $T _j $ innehåller $j $-Body-villkor. I generaliserad kluster teori är Singles (Enbody Cluster-operatören) av formatet \begin{align} T_1 = \ sum_ {PQ} T ^ {p} _ {q} a ^ \ dagger_p a_q, \end{align}
 
-och två huvud kluster operatörer (dubbla) är av formatet \begin{align} T_2 = \sum_{PQRS}t ^ {PQ} _ {RS} a ^ \dagger_p a ^ \dagger_q a_r a_s.
+och två huvud kluster operatörer (dubbla) har formatet \begin{align} T_2 = \ sum_ {PQRS} T ^ {PQ} _ {RS} a ^ \ dagger_p a ^ \ dagger_q a_r a_s.
 \end{align}
 
 Högre ordning (tredubbla, fyr dubbels osv.) är möjliga, men stöds för närvarande inte av kemi-biblioteket.
 
-Låt säga att $ \ket{\psi_{\rm{SCF}}} = a ^ \dagger_1 a ^ \dagger_2\ket{0}$ och låt $T = 0,123 a ^ \dagger_0 A_1 + 0,456 a ^ \dagger_0a ^ \dagger_3 A_1 a_2-0,789 a ^ \dagger_3a ^ \dagger_2 A_1 a_0 $. Sedan instansieras det här läget i kemi-biblioteket på följande sätt.
+Låt säga att $ \ket{\ psi_ {\rm{SCF}}} = a ^ \ dagger_1 a ^ \ dagger_2 \ket{0}$ och låt $T = 0,123 a ^ \ dagger_0 a_1 + 0,456 a ^ \ dagger_0a ^ \ dagger_3 a_1 a_2-0,789 a ^ \ dagger_3a ^ \ dagger_2 A_1 a_0 $. Sedan instansieras det här läget i kemi-biblioteket på följande sätt.
 ```csharp
 // Create a list of indices of the creation operators
 // for the single-reference state
@@ -77,7 +77,7 @@ var clusterOperator = new[]
 var wavefunction = new FermionWavefunction<int>(reference, clusterOperator);
 ```
 
-Rotations convervation kan göras explicit genom att i stället ange `SpinOrbital` index i stället för heltals index. Låt säga att $ \ket{\psi_{\rm{SCF}}} = a ^ \dagger_{1, \uparrow} a ^ \dagger_{2, \downarrow}\ket{0}$ och låt $T = 0,123 a ^ \dagger_{0, \uparrow} a_ {1, \uparrow} + 0,456 a ^ \dagger_{0, \uparrow} a ^ \dagger_{3, \downarrow} a_ {1, \uparrow} a_ {2, \ NEDPIL}-0,789 a ^ \dagger_{3, \uparrow} a ^ \dagger_{2, \uparrow} a_ {1, \uparrow} a_ {0, \uparrow} $ måste snurra convserving. Sedan instansieras det här läget i kemi-biblioteket på följande sätt.
+Rotations convervation kan göras explicit genom att i stället ange `SpinOrbital` index i stället för heltals index. Låt säga att $ \ket{\ psi_ {\rm{SCF}}} = a ^ \ dagger_ {1, \uparrow} a ^ \ dagger_ {2, \downarrow}\ket{0}$ och låt $T = 0,123 a ^ \ dagger_ {0, \uparrow} a_ {1, \uparrow} + 0,456 a ^ \ dagger_ {0, \uparrow} a ^ \ dagger_ {3, \downarrow} a_ {1, \uparrow} a_ {2, \downarrow}-0,789 a ^ \ dagger_ {3, \uparrow} a ^ \ dagger_ {2, \uparrow} a_ {1, \uparrow} a_ {0, \uparrow} $ convserving. Sedan instansieras det här läget i kemi-biblioteket på följande sätt.
 ```csharp
 // Create a list of indices of the creation operators
 // for the single-reference state

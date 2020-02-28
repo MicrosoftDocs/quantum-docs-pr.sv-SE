@@ -1,16 +1,17 @@
 ---
 title: Broombridge – Quantum kemi-schema
+description: Översikt över Broombridge Quantum kemi-schemat som används för att utforma verkliga kemi-problem med Microsoft Quantum Development Kit.
 author: martinro
 ms.author: martinro@microsoft.com
 ms.date: 10/17/2018
 ms.topic: article
 uid: microsoft.quantum.libraries.chemistry.schema.broombridge
-ms.openlocfilehash: c2a7636d0b3f07419e3312e04da5d811229ad854
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: a746b63055bb1b2c1168b89993a7459ca9597f86
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73185332"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77907825"
 ---
 # <a name="broombridge-quantum-chemistry-schema"></a>Broombridge Quantum kemi-schema # 
 
@@ -23,9 +24,8 @@ Broombridge är ett strukturerat, mänskligt och läsligt sätt att representera
 - Mark-och spännande tillstånd kan visas med hjälp av sekvenser.
 - De övre och nedre gränserna för energi nivåer kan anges.
 
-Data formatet kan genereras från NWChem på ett enkelt sätt: en mängd olika metoder är tillgängliga som sträcker sig från en fullständig installation av NWChem för att köra kemi-däck som de som anges [här](https://github.com/nwchemgit/nwchem/tree/master/QA/chem_library_tests) och utdata Broombridge som en del av körningen, över en Docker bild av NWchem som också kan användas för att generera Broombridge från kemi-däck. Slutligen är en visuell metod för att komma igång med beräknings kemi snabbt utan att behöva installera någon kemi-programvara från [EMSL Arrows](https://arrows.emsl.pnnl.gov/api/qsharp_chem) -gränssnittet till NWChem. 
+Data formatet kan genereras från NWChem på ett enkelt sätt: det finns en mängd olika metoder som sträcker sig från en fullständig installation av NWChem för att köra kemi-däck, till exempel de som anges [här](https://github.com/nwchemgit/nwchem/tree/master/QA/chem_library_tests) och utdata Broombridge som en del av körningen, via en Docker-avbildning av NWChem som också kan användas för att generera Broombridge från kemi-däck. Slutligen är en visuell metod för att komma igång med beräknings kemi snabbt utan att behöva installera någon kemi-programvara från [EMSL Arrows](https://arrows.emsl.pnnl.gov/api/qsharp_chem) -gränssnittet till NWChem. 
 
-På hög nivå kan samspelet mellan NWChem och Microsoft Quantum Development Kit visualiseras på följande sätt: ![kemi stack](~/media/broombridge.png) den blå skuggade rutan representerar Broombridge-schemat, de olika grå skuggade rutorna representerar andra interna data representationer som valts för att representera och bearbeta Quantum-algoritmer för beräkning av kemi baserat på kemi problem i Real världen. 
+På en hög nivå kan samspelet mellan NWChem och Microsoft Quantum Development Kit visualiseras på följande sätt: ![kemi stack](~/media/broombridge.png) den blå skuggade rutan representerar Broombridge-schemat, de olika grå skuggade rutorna representerar andra interna data representationer som valts för att representera och bearbeta Quantum-algoritmer för beräknings kemi baserade på kemi-problem i Real världen. 
 
 Det finns flera kemiska representationer som definieras med Broombridge-schemat [här](https://github.com/microsoft/Quantum/tree/master/Chemistry/IntegralData/YAML).
-

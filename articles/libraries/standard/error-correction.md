@@ -1,17 +1,17 @@
 ---
-title: 'Q # standard bibliotek-fel korrigering | Microsoft Docs'
-description: 'Q # standard bibliotek – fel korrigering'
+title: 'Fel korrigering i standard biblioteken för Q #'
+description: 'Lär dig hur du använder fel när du korrigerar koder i dina Q #-program samtidigt som du skyddar qubits-tillstånd.'
 author: QuantumWriter
 uid: microsoft.quantum.libraries.error-correction
 ms.author: martinro@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: e1b78cf94ae0a043ad275d4cb06b230eafd7fc85
-ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
+ms.openlocfilehash: 514fe68f603b9a3a0b4607390719b08a43fe4967
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74863205"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77907774"
 ---
 # <a name="error-correction"></a>Fel korrigering #
 

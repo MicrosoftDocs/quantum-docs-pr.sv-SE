@@ -1,24 +1,24 @@
 ---
-title: 'Guide för Q #-format | Microsoft Docs'
-description: 'Stil guide för Q #'
+title: 'Microsoft Q # stil guide'
+description: 'Lär dig mer om namngivning, indatamängd, dokumentation och formatering för Q #-program och-bibliotek.'
 author: cgranade
 ms.author: chgranad
 ms.date: 10/12/2018
 ms.topic: article
 uid: microsoft.quantum.contributing.style
-ms.openlocfilehash: 4050e2ee9e516aed7a8ba1398792562926808ee0
-ms.sourcegitcommit: c93fea5980d1d46fbda1e7c7153831b9337134bf
+ms.openlocfilehash: 3c8e432378ec563a197a5b87000c3e90cadb8e18
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73463317"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77907451"
 ---
 # <a name="q-style-guide"></a>Stil guide för Q # #
 ## <a name="general-conventions"></a>Allmänna konventioner ##
 
 De konventioner som föreslås i den här guiden är avsedda att hjälpa till att göra program och bibliotek skrivna i Q # lättare att läsa och förstå.
 
-## <a name="guidance"></a>Vägledning
+## <a name="guidance"></a>Riktlinjer
 
 Vi rekommenderar:
 
@@ -49,7 +49,7 @@ Den här skillnaden antyder att vi namnger åtgärder som verb och fungerar som 
 > Från och med detta perspektiv ska användardefinierade typer namnges som substantiv, så att både själva typen och konstruktorn-funktionen har konsekventa namn.
 
 Om det är rimligt bör du se till att åtgärds namnen börjar med verb som tydligt anger vilken åtgärd som vidtas.
-Exempel:
+Några exempel:
 
 - `MeasureInteger`
 - `EstimateEnergy`
@@ -62,11 +62,11 @@ Andra verb kan vara användbara även i det här fallet, som i `IterateThroughCa
 
 | Verb | Förväntad påverkan |
 | ---- | ------ |
-| Ansök | En åtgärd som angetts som indata kallas |
+| Använd | En åtgärd som angetts som indata kallas |
 | Assert | En hypotes om resultatet av en möjlig Quantum-mätning kontrol leras av en simulator |
 | Beräkningen | Ett klassiskt värde returneras som representerar en uppskattning som skapats från en eller flera mätningar |
 | Mått | En Quantum-mätning utförs och resultatet returneras till användaren |
-| Förbered dig | Ett visst register av qubits initieras i ett visst tillstånd |
+| Förbereda | Ett visst register av qubits initieras i ett visst tillstånd |
 | Exempel | Ett klassiskt värde returneras slumpmässigt från en distribution |
 
 För functions, rekommenderar vi att du undviker användningen av verb som prioriterar vanliga Substantiv (se rikt linjer för rätt Substantiv nedan) eller adjektiv:
@@ -80,7 +80,7 @@ Exempel: `ControlledOnInt` använder participle-formen av verbet "Control" för 
 Det här namnet har ytterligare fördelar med att matcha semantiken för de inbyggda `Controlled` Functor, enligt beskrivningen nedan.
 På samma sätt kan du använda _agent Substantiv_ för att skapa Function-och UDT-namn från åtgärds namn, som i fallet med namnet `Encoder` för en UDT som är starkt kopplad till `Encode`.
 
-# <a name="guidancetabguidance"></a>[Riktlinjer](#tab/guidance)
+# <a name="guidance"></a>[Riktlinjer](#tab/guidance)
 
 Vi rekommenderar:
 
@@ -91,7 +91,7 @@ Vi rekommenderar:
 - För alla lokala variabler använder du `pascalCase` i starka preferenser för att `CamelCase`, `snake_case`eller `ANGRY_CASE`. Se särskilt till att lokala variabler börjar med små bokstäver.
 - Undvik att använda under streck `_` i funktions-och åtgärds namn. om det behövs ytterligare nivåer av hierarkin, använder du namn områden och namn områdes Ali Aset.
 
-# <a name="examplestabexamples"></a>[Exempel](#tab/examples)
+# <a name="examples"></a>[Exempel](#tab/examples)
 
 |   | Namn | Beskrivning |
 |---|------|-------------|
@@ -132,7 +132,7 @@ is Adj + Ctl {
 }
 ```
 
-# <a name="guidancetabguidance"></a>[Riktlinjer](#tab/guidance)
+# <a name="guidance"></a>[Riktlinjer](#tab/guidance)
 
 Vi rekommenderar:
 
@@ -141,7 +141,7 @@ Vi rekommenderar:
 - Använd versaler för korta (två bokstäver) akronymer och initialisms.
 - Använd `CamelCase` för längre (tre eller fler bokstäver) akronymer och initialisms.
 
-# <a name="examplestabexamples"></a>[Exempel](#tab/examples)
+# <a name="examples"></a>[Exempel](#tab/examples)
 
 |   | Namn | Beskrivning |
 |---|------|-------------|
@@ -168,17 +168,17 @@ Därför rekommenderar vi att när rimliga, vanliga substantiv som beskriver ett
 Som ett särskilt exempel kallas funktionen för enkel kontrollerad växling och dubblerad kontrollerade inte åtgärder för åtgärderna "Fredkin" och "Toffoli" i den akademiska dokumentationen, men identifieras i Q # främst som `CSWAP` och `CCNOT`.
 I båda fallen ger kommentarer till API-dokumentation synonyma namn baserat på korrekta substantiv, tillsammans med alla lämpliga citat tecken.
 
-Den här inställningen är särskilt viktig, men det är särskilt viktigt att viss användning av rätt Substantiv alltid är nödvändig: Q # följer tradition som har angetts av många klassiska språk, till exempel, och refererar till `Bool` typer i referens till boolesk logik, som i sin tur heter av George bool.
+Den här inställningen är särskilt viktig, men det är särskilt viktigt att viss användning av rätt Substantiv alltid är nödvändig: Q # följer tradition som har angetts av många klassiska språk, till exempel, och refererar till `Bool` typer i referens till boolesk logik, som i sin tur har värdet George bool.
 Några Quantum-koncept kan liknas på liknande sätt, inklusive `Pauli` typ som är inbyggd på språket Q #.
 Genom att minimera användningen av rätt substantiv, om sådan användning inte är nödvändig, minskar vi effekten där rätt Substantiv inte kan undvikas rimligen.
 
-# <a name="guidancetabguidance"></a>[Riktlinjer](#tab/guidance) 
+# <a name="guidance"></a>[Riktlinjer](#tab/guidance) 
 
 Vi rekommenderar:
 
 - Undvik att använda rätt Substantiv i namn.
 
-# <a name="examplestabexamples"></a>[Exempel](#tab/examples)
+# <a name="examples"></a>[Exempel](#tab/examples)
 
 ***
 
@@ -188,17 +188,17 @@ Eftersom Q # är ett starkt och statiskt typ språk kan ett värde av en typ end
 Detta är i motsats till språk som tillåter att värden ändrar typer implicit (t. ex.: typ befordran) eller genom databyte.
 Resultatet är att typ konverterings funktioner spelar en viktig roll i Q # biblioteks utveckling och utgör ett av de vanligaste besluten om namngivning.
 Vi noterar dock att eftersom typ konverteringen alltid är _deterministisk_, kan de skrivas som funktioner och därmed omfattas av ovanstående råd.
-I synnerhet rekommenderar vi att typ konverterings funktioner aldrig ska namnges som verb (t. ex.: `ConvertToX`) eller adverb-förpositions fraser (`ToX`), men ska vara namngivna som adjektiv beskrivande fraser som anger käll-och mål typerna (`XAsY`).
+I synnerhet rekommenderar vi att typ konverterings funktioner aldrig ska namnges som verb (t. ex.: `ConvertToX`) eller adverb-betecknings fraser (`ToX`), men ska vara namngivna som adjektiv förpositions fraser som anger käll-och mål typerna (`XAsY`).
 När du anger mat ris typer i typ konverterings funktions namn rekommenderar vi stenografiska `Arr`.
 Spärr av exceptionella omständigheter, vi rekommenderar att alla typ konverterings funktioner får namnet med `As` så att de snabbt kan identifieras.
 
-# <a name="guidancetabguidance"></a>[Riktlinjer](#tab/guidance)
+# <a name="guidance"></a>[Riktlinjer](#tab/guidance)
 
 Vi rekommenderar:
 
 - Om en funktion konverterar ett värde av typen `X` till ett värde av typen `Y`använder du antingen namnet `AsY` eller `XAsY`.
 
-# <a name="examplestabexamples"></a>[Exempel](#tab/examples)
+# <a name="examples"></a>[Exempel](#tab/examples)
 
 |   | Namn | Beskrivning |
 |---|------|-------------|
@@ -215,13 +215,13 @@ I många fall är ett namn enbart avsett för användning internt i ett bibliote
 Det är praktiskt att tydligt ange att det här är fallet när du namnger funktioner och åtgärder så att oavsiktliga beroenden i intern kod görs uppenbara.
 Om en åtgärd eller funktion inte är avsedd för direkt användning, utan bör istället användas av en matchande anrops funktion som fungerar genom partiell tillämpning, bör du överväga att använda ett namn som börjar med `_` för det anrop som används delvis.
 
-# <a name="guidancetabguidance"></a>[Riktlinjer](#tab/guidance)
+# <a name="guidance"></a>[Riktlinjer](#tab/guidance)
 
 Vi rekommenderar:
 
 - Om en funktion, åtgärd eller användardefinierad typ inte är en del av det offentliga API: t för ett Q #-bibliotek eller program, se till att dess namn börjar med ett inledande under streck (`_`).
 
-# <a name="examplestabexamples"></a>[Exempel](#tab/examples)
+# <a name="examples"></a>[Exempel](#tab/examples)
 
 |   | Namn | Beskrivning |
 |---|------|-------------|
@@ -244,14 +244,14 @@ Dessa grupper kan särskiljas med hjälp av samma rot namn, följt av en eller t
 | `D` | Indata eller indata är av typen `Double` |
 | `L` | Indata eller indata är av typen `BigInt` |
 
-# <a name="guidancetabguidance"></a>[Riktlinjer](#tab/guidance)
+# <a name="guidance"></a>[Riktlinjer](#tab/guidance)
 
 Vi rekommenderar:
 
 - Om en funktion eller åtgärd inte är relaterad till liknande funktioner eller åtgärder som stöds av typerna och Functor stöd för deras indata, ska du inte använda ett suffix.
 - Om en funktion eller åtgärd är relaterad till liknande funktioner eller åtgärder av typen och Functor stöd för deras indata, använder du suffix som i tabellen ovan för att skilja mellan varianter.
 
-# <a name="examplestabexamples"></a>[Exempel](#tab/examples)
+# <a name="examples"></a>[Exempel](#tab/examples)
 
 ***
 
@@ -261,7 +261,7 @@ Ett viktigt mål för Q #-koden för en funktion eller åtgärd är att den är 
 På samma sätt bör namnen på indata-och typ argumenten kommunicera hur en funktion eller ett argument ska användas när det har angetts.
 
 
-# <a name="guidancetabguidance"></a>[Riktlinjer](#tab/guidance)
+# <a name="guidance"></a>[Riktlinjer](#tab/guidance)
 
 Vi rekommenderar:
 
@@ -276,7 +276,7 @@ Vi rekommenderar:
   Undvik starkt att använda variabel namn med enkla bokstäver som index. Överväg att använda `idx` minst.
 - Variabler som används för att lagra mat ris längder måste börja med `n` och måste vara plural (t. ex.: `nThings`).
 
-# <a name="examplestabexamples"></a>[Exempel](#tab/examples)
+# <a name="examples"></a>[Exempel](#tab/examples)
 
 ***
 
@@ -285,7 +285,7 @@ Vi rekommenderar:
 Namngivna objekt i användardefinierade typer ska namnges som `CamelCase`, även i indata till UDT-konstruktörer.
 Detta hjälper till att tydligt separera namngivna objekt från referenser till lokalt begränsade variabler när accessor notation används (t. ex.: `callable::Apply`) eller kopia-och-uppdaterings notation (`set arr w/= Data <- newData`).
 
-# <a name="guidancetabguidance"></a>[Riktlinjer](#tab/guidance)
+# <a name="guidance"></a>[Riktlinjer](#tab/guidance)
 
 Vi rekommenderar:
 
@@ -294,7 +294,7 @@ Vi rekommenderar:
 - Namngivna objekt som inte matchas till åtgärder ska namnges som Substantiv-fraser.
 - För UDTs som radbryts, ska ett enda namngivet objekt som kallas `Apply` definieras.
 
-# <a name="examplestabexamples"></a>[Exempel](#tab/examples)
+# <a name="examples"></a>[Exempel](#tab/examples)
 
 |   | Bitar | Beskrivning |
 |---|---------|-------------|
@@ -342,7 +342,7 @@ Som ett specialfall av att minimera överraskningen efterliknar vissa funktioner
 `ControlledOnInt<'T>` har till exempel typ `(Int, ('T => Unit is Adj + Ctl)) => ((Qubit[], 'T) => Unit is Adj + Ctl)`, till exempel `ControlledOnInt<Qubit[]>(5, _)` fungerar som `Controlled` Functor, men på villkoret att kontroll registret representerar tillståndet $ \ket{5} = \ket{101}$.
 Därför förväntar sig en utvecklare att indata till `ControlledOnInt` placera det anropande som transformeras sist, och att den resulterande åtgärden tar som indata `(Qubit[], 'T)`---samma ordning som resultatet av `Controlled` Functor.
 
-# <a name="guidancetabguidance"></a>[Riktlinjer](#tab/guidance)
+# <a name="guidance"></a>[Riktlinjer](#tab/guidance)
 
 Vi rekommenderar:
 
@@ -350,11 +350,11 @@ Vi rekommenderar:
 - Använd ingångs ordningar konsekvent med inbyggda functors.
 - Placera alla klassiska indata före eventuella Quantum-indata.
 
-# <a name="examplestabexamples"></a>[Exempel](#tab/examples)
+# <a name="examples"></a>[Exempel](#tab/examples)
 
 ***
 
-## <a name="documentation-conventions"></a>Dokumentations konventioner ##
+## <a name="documentation-conventions"></a>Dokumentationskonventioner ##
 
 Med Q #-språket kan du bifoga dokumentation till åtgärder, funktioner och användardefinierade typer genom att använda särskilt formaterade dokumentations kommentarer.
 De här dokumentations kommentarerna är små [DocFX markdown](https://dotnet.github.io/docfx/spec/docfx_flavored_markdown.html) -dokument som kan användas för att beskriva syftet med varje åtgärd, funktion och användardefinierad typ, vilka indata varje förväntar sig, och så vidare.`///`
@@ -368,7 +368,7 @@ Genom att använda dokumentations kommentarer kan du därför hjälpa användarn
 
 För att effektivt kunna använda den här funktionen för att hjälpa användarna, rekommenderar vi att du håller några saker i åtanke när du skriver dokumentations kommentarer.
 
-# <a name="guidancetabguidance"></a>[Riktlinjer](#tab/guidance)
+# <a name="guidance"></a>[Riktlinjer](#tab/guidance)
 
 Vi rekommenderar:
 
@@ -388,7 +388,7 @@ Vi rekommenderar:
 - När en åtgärd eller funktion är relaterad till andra åtgärder eller funktioner efter Functor varianter, listar du andra varianter som punkter i avsnittet `# See Also`.
 - Lämna en tom kommentar rad mellan nivå 1-avsnitt (`/// #`), men lämna inte en tom rad mellan nivå 2 (`/// ##`) avsnitt.
 
-# <a name="examplestabexamples"></a>[Exempel](#tab/examples)
+# <a name="examples"></a>[Exempel](#tab/examples)
 
 #### <a name=""></a>☑ ####
 
@@ -434,7 +434,7 @@ Sådan formatering av regler efter art tenderar att vara något godtycklig och s
 Vi rekommenderar dock att du underhåller en konsekvent uppsättning format konventioner inom en grupp medarbetare och särskilt för stora Q #-projekt, till exempel Quantum Development Kit.
 Dessa regler kan tillämpas automatiskt med hjälp av det format verktyg som är integrerat med Q #-kompilatorn.
 
-# <a name="guidancetabguidance"></a>[Riktlinjer](#tab/guidance) 
+# <a name="guidance"></a>[Riktlinjer](#tab/guidance) 
 
 Vi rekommenderar:
 
@@ -451,7 +451,7 @@ Vi rekommenderar:
 - Använd inte blank steg efter Function-, operation-eller UDT-namn eller efter `@` i Attribute-deklarationer.
 - Varje deklaration för attribut bör finnas på en egen rad.
 
-# <a name="examplestabexamples"></a>[Exempel](#tab/examples)
+# <a name="examples"></a>[Exempel](#tab/examples)
 
 |   | Bitar | Beskrivning |
 |---|---------|-------------|

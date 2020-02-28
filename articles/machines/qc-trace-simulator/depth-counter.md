@@ -1,17 +1,17 @@
 ---
-title: Djup räknare | Quantum Computer trace Simulator | Microsoft Docs
-description: Översikt över spårningssimulator för kvantdator
+title: Djup räknare
+description: Lär dig mer om räknaren för Microsoft QDK-djupet som samlar in antalet djup för varje åtgärd som anropas i ett Quantum-program.
 author: vadym-kl
 ms.author: vadym@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
 uid: microsoft.quantum.machines.qc-trace-simulator.depth-counter
-ms.openlocfilehash: 07f927c794e2c62e53e4e053b5bc683d24bbed8d
-ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
+ms.openlocfilehash: d532a9f512b8c87d83d62ed26e3bb67e1b6f668b
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76820478"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77906108"
 ---
 # <a name="depth-counter"></a>Djup räknare
 
@@ -37,7 +37,7 @@ operation ApplySampleWithCCNOT() : Unit {
 
 För att kontrol lera att `CCNOT` har `T` djup 5 och `ApplySampleWithCCNOT` har `T` djup 6 kan vi använda C# följande kod:
 
-```csharp 
+```csharp
 using Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators;
 using System.Diagnostics;
 var config = new QCTraceSimulatorConfiguration();
@@ -61,6 +61,6 @@ Slutligen kan vi använda följande för att mata ut all statistik som samlas in
 string csvSummary = sim.ToCSV()[MetricsCountersNames.depthCounter];
 ```
 
-## <a name="see-also"></a>Se också ##
+## <a name="see-also"></a>Se även ##
 
 - Översikt över Quantum Computer [trace Simulator](xref:microsoft.quantum.machines.qc-trace-simulator.intro) .

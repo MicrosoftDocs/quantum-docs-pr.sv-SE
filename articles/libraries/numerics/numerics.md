@@ -1,17 +1,17 @@
 ---
-title: Använda det numeriska biblioteket | Microsoft Docs
-description: Använda det numeriska biblioteket
+title: 'Använda Microsoft Q #-biblioteket'
+description: Lär dig mer om de typer och åtgärder som är tillgängliga i Microsoft Quantum numeric-biblioteket.
 author: thomashaener
 ms.author: thhaner
 ms.date: 5/14/2019
 ms.topic: article
 uid: microsoft.quantum.numerics.usage
-ms.openlocfilehash: ca24ff60cd9ae5077c7f4bae0012fe1180d7e6d4
-ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
+ms.openlocfilehash: ad9f529efd06fdf13bab4467b091aafacf1d5b09
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76821039"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77907264"
 ---
 # <a name="using-the-numerics-library"></a>Använda det numeriska biblioteket
 
@@ -36,7 +36,7 @@ Det numeriska biblioteket stöder följande typer
 1. **`SignedLittleEndian`** : samma som `LittleEndian`, förutom att det representerar ett signerat heltal som lagras i två komplement.
 1. **`FixedPoint`** : representerar ett reellt tal som består av en qubit mat ris `qArr2 : Qubit[]` och en binär punkt positions `pos`, som räknar antalet binära siffror till vänster om den binära punkten. `qArr2` lagras på samma sätt som `SignedLittleEndian`.
 
-## <a name="operations"></a>Operations
+## <a name="operations"></a>Åtgärder
 
 Det finns flera olika åtgärder för var och en av de tre typerna ovan:
 

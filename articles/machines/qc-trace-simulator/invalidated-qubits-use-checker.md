@@ -1,17 +1,17 @@
 ---
-title: Ogiltig användnings kontroll för qubits | Quantum Computer trace Simulator | Microsoft Docs
-description: Översikt över spårningssimulator för kvantdator
+title: Kontroll av användning av upphävda kvantbitar
+description: 'Lär dig mer om den invaliderade qubits use-kontrollen i Microsoft QDK, som kontrollerar din Q #-kod för potentiellt ogiltiga qubits.'
 author: vadym-kl
 ms.author: vadym@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
 uid: microsoft.quantum.machines.qc-trace-simulator.invalidated-qubits
-ms.openlocfilehash: 093937346488725eacb69ef7da6affde764ec5c1
-ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
+ms.openlocfilehash: e2bbb12448e27f28db030a0084302fb24f46f26b
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76820886"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77907077"
 ---
 # <a name="invalidated-qubits-use-checker"></a>Ogiltig användnings kontroll för qubits
 
@@ -58,6 +58,6 @@ namespace Quantum.MyProgram
 
 Klassen `QCTraceSimulatorConfiguration` lagrar konfigurationen av Quantum Computer trace Simulator och kan anges som ett argument för konstruktorn `QCTraceSimulator`. När `useInvalidatedQubitsUseChecker` är inställt på Sant är `Invalidated Qubits Use Checker` aktiverat. Mer information finns i API-dokumentationen för [QCTraceSimulator](https://docs.microsoft.com/dotnet/api/Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator) och [QCTraceSimulatorConfiguration](https://docs.microsoft.com/dotnet/api/Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulatorConfiguration) .
 
-## <a name="see-also"></a>Se också ##
+## <a name="see-also"></a>Se även ##
 
 - Översikt över Quantum Computer [trace Simulator](xref:microsoft.quantum.machines.qc-trace-simulator.intro) .

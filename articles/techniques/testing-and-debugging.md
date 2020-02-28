@@ -1,17 +1,17 @@
 ---
-title: 'Testning och fel sökning – Q #-tekniker | Microsoft Docs'
-description: 'Testning och fel sökning – Q #-tekniker'
+title: 'Testa och felsöka Q #-program'
+description: Lär dig hur du använder enhets tester, fakta och intyg och dumpa funktioner för att testa och felsöka Quantum-program.
 author: tcNickolas
 ms.author: mamykhai@microsoft.com
 uid: microsoft.quantum.techniques.testing-and-debugging
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: cfc71f08be0f190d9f5f4a48796e3d0ad06d6107
-ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
+ms.openlocfilehash: 3df8df8defabcc9cc87d59f543f425c882b001e0
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76820121"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77907689"
 ---
 # <a name="testing-and-debugging"></a>Testning och fel sökning
 
@@ -27,12 +27,12 @@ Q # stöder skapande av enhets test för Quantum-program och som kan köras som 
 
 ### <a name="creating-a-test-project"></a>Skapa ett test projekt
 
-#### <a name="visual-studio-2019tabtabid-vs2019"></a>[Visual Studio 2019](#tab/tabid-vs2019)
+#### <a name="visual-studio-2019"></a>[Visual Studio 2019](#tab/tabid-vs2019)
 
 Öppna Visual Studio 2019. Gå till `File`-menyn och välj `New` > `Project...`.
 I det övre högra hörnet söker du efter `Q#`och väljer `Q# Test Project`s mal len.
 
-#### <a name="command-line--visual-studio-codetabtabid-vscode"></a>[Kommandorad/Visual Studio Code](#tab/tabid-vscode)
+#### <a name="command-line--visual-studio-code"></a>[Kommandorad/Visual Studio Code](#tab/tabid-vscode)
 
 Kör följande kommando från din favorit kommando rad:
 ```bash
@@ -71,7 +71,7 @@ I Q #-kompilatorn identifieras de inbyggda målen "QuantumSimulator", "ToffoliSi
 
 ### <a name="running-q-unit-tests"></a>Köra Q # enhets test
 
-#### <a name="visual-studio-2019tabtabid-vs2019"></a>[Visual Studio 2019](#tab/tabid-vs2019)
+#### <a name="visual-studio-2019"></a>[Visual Studio 2019](#tab/tabid-vs2019)
 
 Som en konfiguration per lösning går du till `Test`-menyn och väljer `Test Settings` > `Default Processor Architecture` > `X64`.
 
@@ -81,7 +81,7 @@ Som en konfiguration per lösning går du till `Test`-menyn och väljer `Test Se
 
 Bygg projektet, gå till `Test`-menyn och välj `Windows` > `Test Explorer`. `AllocateQubit` visas i listan med tester i `Not Run Tests`s gruppen. Välj `Run All` eller kör det här enskilda testet så bör det passas!
 
-#### <a name="command-line--visual-studio-codetabtabid-vscode"></a>[Kommandorad/Visual Studio Code](#tab/tabid-vscode)
+#### <a name="command-line--visual-studio-code"></a>[Kommandorad/Visual Studio Code](#tab/tabid-vscode)
 
 Om du vill köra tester navigerar du till projektmappen (mappen som innehåller `Tests.csproj`) och kör kommandot:
 
@@ -123,29 +123,29 @@ $ dotnet test --filter "Name=AllocateQubit"
 
 Den inbyggda funktionen <xref:microsoft.quantum.intrinsic.message> har typen `(String -> Unit)` och gör det möjligt att skapa diagnostiska meddelanden.
 
-#### <a name="visual-studio-2019tabtabid-vs2019"></a>[Visual Studio 2019](#tab/tabid-vs2019)
+#### <a name="visual-studio-2019"></a>[Visual Studio 2019](#tab/tabid-vs2019)
 
 När du har kört ett test i test Utforskaren och klickar på testet visas en panel med information om testkörning: status för skickad/misslyckad, förfluten tid och en "utdata"-länk. Om du klickar på länken "utdata" öppnas test resultatet i ett nytt fönster.
 
 ![testa utdata](~/media/unit-test-output.png)
 
-#### <a name="command-line--visual-studio-codetabtabid-vscode"></a>[Kommandorad/Visual Studio Code](#tab/tabid-vscode)
+#### <a name="command-line--visual-studio-code"></a>[Kommandorad/Visual Studio Code](#tab/tabid-vscode)
 
 Status för pass/misslyckande för varje test skrivs ut till-konsolen med `dotnet test`.
 Vid misslyckade tester skrivs utdata också ut till-konsolen för att hjälpa till att diagnostisera felet.
 
 ***
 
-## <a name="assertions"></a>Intyg
+## <a name="facts-and-assertions"></a>Fakta och intyg
 
 Eftersom funktioner i Q # inte har några _logiska_ sid effekter, kan alla _andra typer_ av effekter av att köra en funktion vars datatyp är den tomma tuppeln `()` aldrig observeras i ett Q #-program.
 Det innebär att en måldator kan välja att inte köra någon funktion som returnerar `()` med garantin att detta utelämnande inte ändrar beteendet för någon av följande Q #-koder.
-Detta gör att funktioner returnerar `()` ett användbart verktyg för att bädda in kontroller och fel söknings logik i Q #-program. 
+Detta gör att funktioner returnerar `()` (t. ex. `Unit`) ett användbart verktyg för att bädda in kontroller och fel söknings logik i Q #-program. 
 
-Samma logik kan användas för att implementera kontroller. Vi ska tänka på ett enkelt exempel:
+Vi ska tänka på ett enkelt exempel:
 
 ```qsharp
-function AssertPositive(value : Double) : Unit 
+function PositivityFact(value : Double) : Unit 
 {
     if (value <= 0) 
     {
@@ -156,11 +156,31 @@ function AssertPositive(value : Double) : Unit
 
 Här anger nyckelordet `fail` att beräkningen inte bör fortsätta, vilket ger upphov till ett undantag på mål datorn som kör Q #-programmet.
 Efter definition kan ett problem av den här typen inte observeras inifrån Q # eftersom ingen ytterligare Q # kod körs när en `fail`-instruktion har nåtts.
-Om vi fortsätter att passera ett anrop till `AssertPositive`, kan vi därför vara säkra på att dess inaktuella information var positiv.
+Om vi fortsätter att passera ett anrop till `PositivityFact`, kan vi därför vara säkra på att dess inaktuella information var positiv.
+
+Observera att vi kan implementera samma beteende som `PositivityFact` med hjälp av funktionen [`Fact`](xref:microsoft.quantum.diagnostics.fact) från <xref:microsoft.quantum.diagnostics> namn området:
+
+```qsharp
+    Fact(value <= 0, "Expected a positive number.");
+```
+
+*Kontroller*, å andra sidan, används på liknande sätt som fakta, men kan vara beroende av mål datorns tillstånd. På motsvarande sätt definieras de som åtgärder, medan fakta definieras som funktioner (som ovan).
+För att förstå skillnaden bör du överväga följande användning av ett faktum i en kontroll:
+
+```qsharp
+operation AssertQubitsAreAvailable() : Unit
+{
+     Fact(GetQubitsAvailableToUse() > 0, "No qubits were actually available");
+}
+```
+
+Här använder vi åtgärden <xref:microsoft.quantum.environment.getqubitsavailabletouse> för att returnera antalet tillgängliga qubits som kan användas.
+Som det här är tydligt beroende av programmets globala tillstånd och dess körnings miljö, så måste definitionen av `AssertQubitsAreAvailable` vara en åtgärd också.
+Vi kan dock använda det globala läget för att ge ett enkelt `Bool`-värde som inmatat i funktionen `Fact`.
 
 [Inledning](xref:microsoft.quantum.libraries.standard.prelude) erbjuder två särskilt användbara kontroller, <xref:microsoft.quantum.intrinsic.assert> och <xref:microsoft.quantum.intrinsic.assertprob> både modellerade som åtgärder på `()`. Dessa intyg var och en tar en Pauli-operatör som beskriver en viss värdering av intresse, ett Quantum-register som en mätning ska utföras på och ett hypotetiskt resultat.
 På mål datorer som arbetar med simuleringen är vi inte kopplade till [no-kloning-satsen](https://en.wikipedia.org/wiki/No-cloning_theorem)och kan utföra sådana mätningar utan att störa registret som skickats till sådana kontroller.
-En simulator kan sedan, som liknar `AssertPositive` funktion ovan, avbryta beräkningen om det hypotetiska resultatet inte skulle observeras i övningen:
+En simulator kan sedan, som liknar `PositivityFact` funktion ovan, avbryta beräkningen om det hypotetiska resultatet inte skulle observeras i övningen:
 
 ```qsharp
 using (register = Qubit()) 
@@ -265,7 +285,7 @@ I följande exempel visas `DumpMachine` för några vanliga tillstånd:
   > ID: t för en qubit tilldelas vid körning och är inte nödvändigt vis justerat i den ordning som qubit allokerades eller var i ett qubit-register.
 
 
-#### <a name="visual-studio-2019tabtabid-vs2019"></a>[Visual Studio 2019](#tab/tabid-vs2019)
+#### <a name="visual-studio-2019"></a>[Visual Studio 2019](#tab/tabid-vs2019)
 
   > [!TIP]
   > Du kan räkna ut ett qubit-ID i Visual Studio genom att placera en Bryt punkt i koden och inspektera värdet för en qubit-variabel, till exempel:
@@ -274,7 +294,7 @@ I följande exempel visas `DumpMachine` för några vanliga tillstånd:
   >
   > qubit med index `0` på `register2` har ID =`3`, qubit med index `1` har ID =`2`.
 
-#### <a name="command-line--visual-studio-codetabtabid-vscode"></a>[Kommandorad/Visual Studio Code](#tab/tabid-vscode)
+#### <a name="command-line--visual-studio-code"></a>[Kommandorad/Visual Studio Code](#tab/tabid-vscode)
 
   > [!TIP]
   > Du kan räkna ut ett qubit-ID med hjälp av funktionen <xref:microsoft.quantum.intrinsic.message> och skicka qubit-variabeln i meddelandet, till exempel:

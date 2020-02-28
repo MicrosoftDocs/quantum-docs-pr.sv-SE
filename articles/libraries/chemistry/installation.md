@@ -1,17 +1,17 @@
 ---
-title: Installation och verifiering av kemi-bibliotek | Microsoft Docs
-description: Installation och verifiering av kemi-bibliotek
+title: 'Installation och verifiering av Microsoft Q # kemi Library'
+description: Lär dig hur du installerar Microsoft Quantum kemi-biblioteket och använder det med NWChem-plattformen för beräknings kemi.
 author: guanghaolow
 ms.author: gulow
 ms.date: 10/12/2018
 ms.topic: article
 uid: microsoft.quantum.chemistry.concepts.installation
-ms.openlocfilehash: de13d1814821c612ed74a347dc8ffb5881063576
-ms.sourcegitcommit: 5094c0a60cbafdee669c8728b92df281071259b9
+ms.openlocfilehash: 48bf7bc980e238e622053f5c2bdd09604c572596
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77036482"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77907366"
 ---
 # <a name="chemistry-library-installation-and-validation"></a>Installation och verifiering av kemi-bibliotek
 
@@ -21,25 +21,25 @@ Precis som med andra NuGet-paket är det enkelt att lägga till kemi-biblioteket
 **Visual Studio 2019:** Om du använder Visual Studio 2019 kan du lägga till Quantum kemi-paketen med hjälp av NuGet Package Manager.
 Om du vill öppna paket hanteraren högerklickar du på det projekt som du vill lägga till kemi-biblioteket i och väljer "hantera NuGet-paket..." som i skärm bilden nedan.
 
-![](~/media/vs2017-nuget-manage-packages.png)
+![Använda NuGet Package Manager i Visual Studio 2019](~/media/vs2017-nuget-manage-packages.png)
 
 Sök efter paket namnet "Microsoft. Quantum. kemi" från fliken Bläddra.
 
 > [!NOTE]
 > Se till att kryssa för "inkludera för hands version".
 
-![](~/media/vs2017-nuget-package-search.png)
+![Kryss rutan inkludera för hands version](~/media/vs2017-nuget-package-search.png)
 
 Detta visar de paket som är tillgängliga för nedladdning.
 Klicka på Microsoft. Quantum. kemi i den vänstra rutan, Välj den senaste för hands versionen i rutan till höger och klicka på "installera":
 
-![](~/media/vs2017-nuget-select-chem.png)
+![Installera det senaste Microsoft. Quantum. kemi-paketet](~/media/vs2017-nuget-select-chem.png)
 
 Mer information finns i UI- [guiden för paket hanteraren](https://docs.microsoft.com/nuget/tools/package-manager-ui).
 
 Du kan också använda Package Manager-konsolen för att lägga till Quantum kemi-biblioteket i projektet med ett kommando rads gränssnitt.
 
-![](~/media/vs2017-nuget-console-menu.png)
+![Använda Package Manager-konsolen från kommando raden](~/media/vs2017-nuget-console-menu.png)
 
 Kör följande från Package Manager-konsolen:
 

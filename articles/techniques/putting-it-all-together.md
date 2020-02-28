@@ -1,17 +1,17 @@
 ---
-title: 'Placera allt tillsammans – Q #-tekniker | Microsoft Docs'
-description: 'Placera allt tillsammans – Q #-tekniker'
+title: 'Q #-tekniker – placera allt tillsammans'
+description: 'Gå igenom ett Basic Q #-program som visar Quantum Teleportion.'
 uid: microsoft.quantum.techniques.puttingittogether
 author: QuantumWriter
 ms.author: Christopher.Granade@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 3605826da159757d4b321dbf4ec6acd7f4e6be05
-ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
+ms.openlocfilehash: 6c988f77ef6e433945dbf21dfb41204c74bdda3e
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76820172"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77906839"
 ---
 # <a name="putting-it-all-together-teleportation"></a>Placera allt tillsammans: Teleportion #
 Vi går tillbaka till exemplet på den Teleportion-krets som definieras i [Quantum-kretsar](xref:microsoft.quantum.concepts.circuits). Vi ska använda det här för att illustrera de koncept vi har lärt dig hittills. En förklaring av Quantum Teleportion finns nedan för de som inte är bekanta med teori, följt av en genom gång av kod implementeringen i Q #. 

@@ -1,16 +1,16 @@
 ---
-title: 'Q # standard bibliotek – diagnostik | Microsoft Docs'
-description: 'Q # standard bibliotek – diagnostik'
+title: 'Diagnostik i standard biblioteken för Q #'
+description: 'Lär dig mer om diagnostiska funktioner och åtgärder i de Q # standard-bibliotek som används för att fånga misstag eller fel i Quantum-program.'
 author: cgranade
 uid: microsoft.quantum.libraries.diagnostics
 ms.author: chgranad@microsoft.com
 ms.topic: article
-ms.openlocfilehash: 67ec6780d8cbbda7223d46026a9df97cebc92b33
-ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
+ms.openlocfilehash: ba2f248327bb3db4ee895f8e65ea31c17e42b5f4
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76820988"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77906244"
 ---
 # <a name="diagnostics"></a>Diagnostik #
 

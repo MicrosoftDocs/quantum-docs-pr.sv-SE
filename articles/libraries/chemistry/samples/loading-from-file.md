@@ -1,17 +1,17 @@
 ---
-title: Läser in en Hamiltonian från filen | Microsoft Docs
-description: Läsa in en Hamiltonian från fil dokument
+title: Läsa in ett hamiltonskt värde från en fil
+description: Lär dig hur du automatiskt genererar en stor Hamiltonian med Broombridge-schemat.
 author: guanghaolow
 ms.author: gulow
 ms.date: 10/23/2018
 ms.topic: article-type-from-white-list
 uid: microsoft.quantum.chemistry.examples.loadhamiltonian
-ms.openlocfilehash: 18f257efe8d53d2a22af4840bd8d17ab6b80a503
-ms.sourcegitcommit: aa5e6f4a2deb4271a333d3f1b1eb69b5bb9a7bad
+ms.openlocfilehash: 715dbcefc10ecc5af45f2bdd228890f1cb28886b
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73442337"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77907298"
 ---
 # <a name="loading-a-hamiltonian-from-file"></a>Läsa in ett hamiltonskt värde från en fil
 Tidigare konstruerade vi Hamiltonians genom att lägga till enskilda villkor till den. Även om det här är bra för små exempel kräver Quantum kemi i skala Hamiltonians med miljon tals eller miljarder villkor. Sådana Hamiltonians, som genereras av kemi-paket som NWChem, är för stora för att kunna importeras manuellt. I det här exemplet illustrerar vi hur en `FermionHamiltonian` instans kan genereras automatiskt från en molekyl som representeras av [Broombridge-schemat](xref:microsoft.quantum.libraries.chemistry.schema.broombridge). En kan till exempel granska det tillhandahållna `LithiumHydrideGUI` exemplet eller `RunSimulation` exemplet. Begränsad support är också tillgängligt för import från formatet som används av [LIQUi | >](https://www.microsoft.com/en-us/research/project/language-integrated-quantum-operations-liqui/).

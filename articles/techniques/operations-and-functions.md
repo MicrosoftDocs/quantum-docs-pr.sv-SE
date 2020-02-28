@@ -1,17 +1,17 @@
 ---
-title: 'Drift-och funktions-Q #-tekniker | Microsoft Docs'
-description: 'Drift-och Functions-Q #-tekniker'
+title: 'Q #-åtgärder och-funktioner'
+description: 'Läs mer om åtgärder och funktioner i Q # och hur de används i ett Quantum-program.'
 uid: microsoft.quantum.techniques.opsandfunctions
 author: QuantumWriter
 ms.author: Christopher.Granade@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 1fca20bb44cc42008f7d25d2fc71a39b962525c2
-ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
+ms.openlocfilehash: 43f0cf2da192a607e514d0c7de57a9bdd067faf7
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76820784"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77907672"
 ---
 # <a name="q-operations-and-functions"></a>Q #-åtgärder och-funktioner
 
@@ -231,7 +231,7 @@ operation ApplyTwice(op : (Qubit => Unit), target : Qubit) : Unit {
 
 I det här exemplet `=>` pilen som visas i typen `(Qubit => Unit)` anger att inmatnings fältet `op` är en åtgärd som tar indata av typen `Qubit` och skapar en tom tupel som utdata.
 Dessutom anger vi egenskaperna för den åtgärds typen som innehåller den information om vilka functors som stöds.
-En åtgärd av typen `(Qubit => Unit)` stöder varken `Adjoint` eller `Controlled` Functor. Om vi vill ange att en åtgärd av den typen måste ha stöd för t. ex. `Adjoint` Functor måste vi deklarera den som adjointable. Detta görs med hjälp av antecknings `is Adj` till typen. På samma sätt anger `(Qubit => Unit is Ctl)` att en åtgärd av den typen stöder `Controlled`-Functor. Vi kommer att utforska detta ytterligare när vi diskuterar [types in Q #] (XREF: Microsoft. Quantum. language. Type-Model) oftare.
+En åtgärd av typen `(Qubit => Unit)` stöder varken `Adjoint` eller `Controlled` Functor. Om vi vill ange att en åtgärd av den typen måste ha stöd för t. ex. `Adjoint` Functor måste vi deklarera den som adjointable. Detta görs med hjälp av antecknings `is Adj` till typen. På samma sätt anger `(Qubit => Unit is Ctl)` att en åtgärd av den typen stöder `Controlled`-Functor. Vi kommer att utforska detta ytterligare när vi diskuterar [typer i Q #](xref:microsoft.quantum.language.type-model) i allmänhet.
 
 För närvarande betonar vi att vi även kan returnera åtgärder som en del av utdata, så att vi kan isolera vissa typer av klassisk villkorlig logik som en klassisk funktion som returnerar en beskrivning av ett Quantum-program i form av en åtgärd.
 Ett enkelt exempel är att ta med i exemplet på Teleportion, i vilken parten som tar emot ett tvåsidigt meddelande med två bitar måste använda meddelandet för att avkoda sin qubit till rätt transport tillstånd.

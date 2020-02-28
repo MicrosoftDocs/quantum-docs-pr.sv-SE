@@ -1,17 +1,17 @@
 ---
-title: Fil struktur | Microsoft Docs
-description: 'Q # fil struktur'
+title: 'Q # fil struktur'
+description: 'Lär dig hur du strukturerar namn områden och åtgärder, funktioner och användardefinierade deklarationer i Q #-program och-bibliotek.'
 author: QuantumWriter
 uid: microsoft.quantum.language.file-structure
 ms.author: Alan.Geller@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 364d353c55bda38f227456909755d13dc7e67080
-ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
+ms.openlocfilehash: b4bb7d4d70677dbd5d921a9f68313760499a56a1
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76821090"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77907400"
 ---
 # <a name="file-structure"></a>Filstruktur
 
@@ -66,7 +66,7 @@ I synnerhet finns det ingen automatisk konvertering mellan värden av två anvä
 
 En användardefinierad typ deklaration består av nyckelordet `newtype`följt av namnet på den användardefinierade typen, en `=`, en giltig typ specifikation och ett avslutande semikolon.
 
-Ett exempel:
+Några exempel:
 
 ```qsharp
 newtype PairOfInts = (Int, Int);

@@ -1,17 +1,17 @@
 ---
-title: Dirac-notation | Microsoft Docs
-description: Dirac-notation
+title: Dirac-notation
+description: Lär dig mer om att använda Dirac-notation för att representera Quantum-tillstånd och simulera Quantum-åtgärder.
 author: QuantumWriter
 uid: microsoft.quantum.concepts.dirac
 ms.author: nawiebe@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 33d964d079c94bd947e35d2c09516b29df1bba11
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: 204e56cc97fe28f9c52dcfb882aadec7e09bb2dc
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/28/2019
-ms.locfileid: "73184771"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77907570"
 ---
 # <a name="dirac-notation"></a>Dirac-notation
 
@@ -36,7 +36,7 @@ $$
 
 Följande notation används ofta för att beskriva de tillstånd som uppstår vid tillämpning av Hadamard-porten på $ \ket{0}$ och $ \ket{1}$ (som motsvarar enhets vektorerna i riktningarna $ + x $ och $-x $ på Bloch-sfären):
 
-$ $ \frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\\\ 1 \end{bmatrix} = H\ket{0} = \ket{+}, \qquad \frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\\\-1 \end{bmatrix} = H\ket{1} = \ket{-} .
+$ $ \frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\\\ 1 \end{bmatrix} = H\ket{0} = \ket{+}, \qquad \frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\\\-1 \end{bmatrix} = H\ket{1} = \ket{-}.
 $$
 
 Dessa tillstånd kan också utökas med Dirac-notation som summor av $ \ket{0}$ och $ \ket{1}$:
@@ -62,7 +62,7 @@ $ $ \big | \braket{1 | \psi}\big | ^ 2 = \left | \frac{3}{5}\braket{1 | 1} + \fr
 ### <a name="tensor-product-notation"></a>Betecknings produkt notation
 Dirac notation innehåller också en produkt struktur med implicita beteckningar i den.  Detta är viktigt eftersom i Quantum Computing är den tillstånds vektor som beskrivs av två korrelerade Quantum-register beskrivare i de två tillstånds vektorerna.  En kortfattad beskrivning av produkt strukturen för beskrivare eller brist på detta är viktigt om du vill förklara en Quantum-beräkning.  Produkt strukturen för beskrivare innebär att vi kan skriva $ \psi \otimes \phi $ för två Quantum State-vektorer $ \phi $ och $ \psi $ som $ \ket{\psi} \ket{\phi} $, som ibland skrivs som $ \ket{\psi} \otimes \ket{\phi} $, trots konventions skrivning $ \otimes $ i mellan vektorerna är onödig.  Till exempel anges tillstånd med två qubits som initieras till noll för tillstånd av
 
-$ $ \begin{bmatrix} 1 \\\\ 0 \\\\ 0 \\\\ 0 \end{bmatrix} = \begin{bmatrix} 1 \\\\ 0 \end{bmatrix} \otimes \begin{bmatrix} 1 \\\\ 0 \end{bmatrix} = \ket{0} \ otimes \ket{0}= \ket{0} \ket{0}.
+$ $ \begin{bmatrix} 1 \\\\ 0 \\\\ 0 \\\\ 0 \end{bmatrix} = \begin{bmatrix} 1 \\\\ 0 \end{bmatrix} \otimes \begin{bmatrix} 1 \\\\ 0 \end{bmatrix} = \ket{0} \otimes \ket{0}= \ket{0} \ket{0}.
 $$
 
 På samma sätt representerar State $ \ket{p} $ för integer $p $ ett Quantum-tillstånd som kodar i binär representation av heltals $p $.  Om vi till exempel vill uttrycka talet $5 $ med en osignerad binär kodning kan vi även uttrycka det som
@@ -78,7 +78,7 @@ $$
 ### <a name="example-describing-superposition-with-dirac-notation"></a>Exempel: beskriva superposition med Dirac-notation
 Ett annat exempel på hur du kan använda Dirac notation för att beskriva ett Quantum-tillstånd, Tänk på följande sätt för att skriva ett Quantum-tillstånd som är lika överplacerat över varje möjlig bit sträng med längden $n $
 
-$ $ H ^ {\otimes n} \ket{0} = \frac{1}{2 ^ {n/2}} \sum_{j = 0} ^ {2 ^ n-1} \ket{j} = \ket{+} ^ {\otimes n}.
+$ $ H ^ {\otimes n} \ket{0} = \frac{1}{2 ^ {n/2}} \ sum_ {j = 0} ^ {2 ^ n-1} \ket{j} = \ket{+} ^ {\otimes n}.
 $$
 
 Här kan du undra varför summan går från $0 $ till $2 ^ {n}-$1 för $n $ bitar.  Först Observera att det finns $2 ^ {n} $ olika konfigurationer som $n $ BITS kan ta.  Du kan se detta genom att notera att en bit kan ta $2 $-värden, men två bitar kan ta $4 $-värden och så vidare. I allmänhet innebär detta att det finns $2 ^ n $ olika möjliga bit strängar, men det största värdet som har kodats i någon av dem $1 \ cdots 1 = 2 ^ n-$1 och därmed är den övre gränsen för summan.
@@ -93,7 +93,7 @@ Det innebär att du kan distribuera handnotationen för beskrivare i Dirac-notat
 
 Bra Vectors följer en liknande konvention till ket-vektorer.  Till exempel motsvarar Vector $ \bra{\psi}\bra{\phi} $ status Vector $ \psi ^ \dagger \otimes \phi ^ \dagger = (\psi\otimes \phi) ^ \dagger $. Om ket Vector $ \ket{\psi} $ är $ \alpha \ket{0} + \beta \ket{1}$, är bra Vector-versionen $ \bra{\psi} = \ket{\psi} ^ \dagger = (\bra{0}\alpha ^ * + \bra{1}\beta ^ *) $.
 
-Anta till exempel att vi vill beräkna sannolikheten för att mäta tillståndet $ \ket{\psi} = \frac{3}{5} \ket{1} + \frac{4}{5} \ket{0}$ med ett Quantum-program för att mäta tillstånd som ska vara antingen $ \ket{+} $ eller $ \ket{-}$. Sannolikheten att enheten skulle resultera i att statusen är $ \ket{-}$ 
+Anta till exempel att vi vill beräkna sannolikheten för att mäta tillståndet $ \ket{\psi} = \frac{3}{5} \ket{1} + \frac{4}{5} \ket{0}$ med ett Quantum-program för att mäta tillstånd att vara antingen $ \ket{+} $ eller $ \ket{-}$. Sannolikheten att enheten skulle resultera i att statusen är $ \ket{-}$ 
 
 $ $ | \braket{-| \psi} | ^ 2 = \left | \frac{1}{\sqrt{2}} (\bra{0}-\bra{1}) (\frac{3}{5} \ket{1} + \frac{4}{5} \ket{0}) \right | ^ 2 = \left |-\frac{3}{5 \ sqrt{2}} + \frac{4}{5 \ sqrt{2}} \right | ^ 2 = \frac{1}{50}. $ $
 
@@ -132,7 +132,7 @@ $$
 
 Vi kan sedan se att detta stämmer överens med diskussionen om Mät sannolikheter för multiqubit-tillstånd med hjälp av Column-Vector notation:
 
-$ $ P (\text{First qubit = 1}) = \psi ^ \dagger (e\_{10}e\_{10}^ \dagger + e\_{11}e\_{11}^ \dagger) \psi = | e\_{10}^ \dagger \psi | ^ 2 + | e\_{11}^ \ Dagger \psi | ^ 2, $ $
+$ $ P (\text{First qubit = 1}) = \psi ^ \dagger (e\_{10}e\_{10}^ \dagger + e\_{11}e\_{11}^ \dagger) \psi = | e\_{10}^ \dagger \psi | ^ 2 + | e\_{11}^ \dagger \psi | ^ 2, $ $
 
 som matchar diskussions gruppen för multi-qubit.  Generaliseringen av det här resultatet till qubit-fallet är dock något mer okomplicerat att uttrycka med Dirac-notation än Column-Vector-notation och är helt likvärdig med den tidigare behandlingen.
 
@@ -146,4 +146,3 @@ För den intresserade läsaren rekommenderar vi att du läser en av de referens 
 
 ## <a name="q-gate-sequences-equivalent-to-quantum-states"></a>Q # Gate-sekvenser som motsvarar Quantum-tillstånd
 En slut punkt som kan höja om Quantum-notation och Q #-programmeringsspråk: vid början av det här dokumentet nämnde vi att steget Quantum är det grundläggande objektet av information i Quantum Computing.  Det kan sedan bli en överraskning som i Q # det inte finns någon form av ett Quantum-tillstånd.  I stället beskrivs alla tillstånd endast av de åtgärder som används för att förbereda dem.  Föregående exempel är en utmärkt illustration av detta.  I stället för att uttrycka en enhetlig överplacering över varje Quantum bit-sträng i ett register kan vi representera resultatet som $H ^ {\otimes n} \ket{0}$.  Den här exponentiellt kortare beskrivningen av tillstånden har inte bara fördelen att vi kan göra en klassisk orsak till den, men det är också en kortfattad beskrivning av de åtgärder som behövs för att spridas via program varu stacken för att implementera algoritmen.  Därför är Q # utformat för att generera grind sekvenser i stället för Quantum-tillstånd. men på en teoretisk nivå är båda perspektiven likvärdiga.
-

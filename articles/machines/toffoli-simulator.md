@@ -1,17 +1,17 @@
 ---
-title: Quantum Development Kit Toffoli-Simulator | Microsoft Docs
-description: Översikt över Microsofts Toffoli-Simulator för Quantum Development Kit
+title: Quantum Development Kit Toffoli-Simulator
+description: Lär dig mer om Microsoft QDKe Toffoli simulator, en speciell funktion Quantum simulator som kan användas med miljon tals qubits.
 author: alan-geller
 ms.author: ageller@microsoft.com
 ms.date: 01/16/2019
 ms.topic: article
 uid: microsoft.quantum.machines.toffoli-simulator
-ms.openlocfilehash: 26940d1a8fe31f1035e2d23a68940cd999517c6b
-ms.sourcegitcommit: aa5e6f4a2deb4271a333d3f1b1eb69b5bb9a7bad
+ms.openlocfilehash: 8a29caaa0fa058600a74e7d130e644374cbfa19c
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73442352"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77907026"
 ---
 # <a name="quantum-development-kit-toffoli-simulator"></a>Quantum Development Kit Toffoli-Simulator
 
@@ -46,7 +46,7 @@ Som standard allokerar `ToffoliSimulator` utrymme för 65 536 qubits.
 Om algoritmen kräver mer än så kan du ändra antalet qubit genom att ange ett värde för parametern `qubitCount` till konstruktorn.
 För varje ytterligare qubit krävs ytterligare byte av minne, så det finns ingen betydande kostnad för att uppskatta antalet qubits som du behöver.
 
-Exempel:
+Några exempel:
 
 ```csharp
     var sim = new ToffoliSimulator(qubitCount: 1000000);

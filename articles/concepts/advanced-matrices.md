@@ -1,17 +1,17 @@
 ---
-title: Avancerade mat ris koncept | Microsoft Docs
-description: Avancerade mat ris koncept
+title: Avancerade matrisbegrepp
+description: Lär dig mer om eigenvectors, Eigenvalues och Matrix-exponenter, de grundläggande verktyg som används för att beskriva och simulera Quantum-algoritmer.
 author: QuantumWriter
 uid: microsoft.quantum.concepts.matrix-advanced
 ms.author: nawiebe@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: f87b3bcd19d2f98fea2a9724a280781a78c4cbb9
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: a83911e01ad758bbcb7f701000fd58b4f1c91cd2
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "73183768"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77907587"
 ---
 # <a name="advanced-matrix-concepts"></a>Avancerade mat ris koncept #
 
@@ -27,7 +27,7 @@ För identitets mat ris är till exempel en eigenvector med eigenvalue $1 $ för
 
 Ett annat exempel är om du vill ha en [*Diagonal matris*](https://en.wikipedia.org/wiki/Diagonal_matrix) $D $ som bara innehåller poster som inte är noll i diagonalen:
 
-$ $ \begin{bmatrix} D_1 & 0 & 0 \\\\ 0 & D_2 & 0 \\\\ 0 & 0 & D_3 \end{bmatrix}.
+$ $ \begin{bmatrix} d_1 & 0 & 0 \\\\ 0 & d_2 & 0 \\\\ 0 & 0 & d_3 \end{bmatrix}.
 $$
 
 Vektorerna
@@ -36,10 +36,10 @@ $ $ \begin{bmatrix}1 \\\\ 0 \\\\ 0 \end{bmatrix}, \begin{bmatrix}0 \\\\ 1 \\\\ 0
 
 är eigenvectors av den här matrisen med Eigenvalues $d _1 $, $d _2 $ och $d _3 $. Om $d _1 $, $d _2 $ och $d _3 $ är distinkta tal, är dessa vektorer (och deras multiplar) de enda eigenvectors i matrisen $D $. I allmänhet är det enkelt att läsa av Eigenvalues och eigenvectors för en diagonal matris. Eigenvalues är alla siffror som visas i diagonalen och deras respektive eigenvectors är enhets vektorerna med en post som motsvarar $1 $ och de återstående posterna som motsvarar $0 $.
 
-Observera i exemplet ovan att eigenvectors i $D $ utgör grunden för $3 $-dimensionella vektorer. En basis är en uppsättning vektorer så att alla vektorer kan skrivas som en linjär kombination av dem. Mer uttryckligen, $v _1 $, $v _2 $ och $v _3 $ form a-basis om någon Vector $v $ kan skrivas som $v = A_1 v_1 + a_2 v_2 + a_3 v_3 $ för vissa siffror $a _1 $, $a _2 $ och $a _3 $.
+Observera i exemplet ovan att eigenvectors i $D $ utgör grunden för $3 $-dimensionella vektorer. En basis är en uppsättning vektorer så att alla vektorer kan skrivas som en linjär kombination av dem. Mer uttryckligen, $v _1 $, $v _2 $ och $v _3 $ form a-basis om någon Vector $v $ kan skrivas som $v = a_1 v_1 + a_2 v_2 + a_3 v_3 $ för vissa siffror $a _1 $, $a _2 $ och $a _3 $.
 
 Kom ihåg att en Hermitian-matris (även kallat eget) är en komplex fyrkantig mat ris som motsvarar dess egna komplexa konjugat, medan en enhetlig matris är en komplex fyrkantig mat ris vars invertering är lika med dess komplexa konjugat.
-För Hermitian-och enhetliga matriser, som i huvudsak är de enda matriser som påträffas i Quantum Computing, finns det ett allmänt resultat som kallas för [*Spectral-satsen*](https://en.wikipedia.org/wiki/Spectral_theorem), vilket förutsätter följande: för alla Hermitian eller den enhetliga matrisen $M $ finns det ett $U $ så att $M = U ^ \dagger D U $ för en viss Diagonal matris $D $. Dessutom är de diagonala posterna i $D $ Eigenvalues i $M $.
+För Hermitian-och enhetliga matriser, som i huvudsak är de enda matriser som påträffas i Quantum Computing, finns det ett allmänt resultat som kallas för [*Spectral-satsen*](https://en.wikipedia.org/wiki/Spectral_theorem), vilket förutsätter följande: för alla Hermitian eller enhetliga matriser $M $ finns det en enhetlig $U $ som $M = U ^ \Dagger D U $ för viss diagonal matris $D $. Dessutom är de diagonala posterna i $D $ Eigenvalues i $M $.
 
 Vi vet redan hur man beräknar Eigenvalues och eigenvectors för en diagonal matris $D $. Med den här satsen vet vi att om $v $ är en eigenvector av $D $ med eigenvalue $c $, d.v.s. $Dv = ka $, kommer $U ^ \dagger v $ att vara en eigenvector av $M $ med eigenvalue $c $. Detta beror på att
 

@@ -1,17 +1,17 @@
 ---
-title: Installation och validering av numeriska bibliotek | Microsoft Docs
-description: Installation och validering av numeriska bibliotek
+title: Microsoft Quantum numeric-bibliotek – installation och validering
+description: Lär dig hur du lägger till Microsoft Quantum numeric-biblioteket i Visual Studio 2019 eller senare installation.
 author: thomashaener
 ms.author: thhaner
 ms.date: 05/14/2019
 ms.topic: article
 uid: microsoft.quantum.numerics.installation
-ms.openlocfilehash: c41bb73ea484271689eea2ca1b59ce6639dc15a7
-ms.sourcegitcommit: 5094c0a60cbafdee669c8728b92df281071259b9
+ms.openlocfilehash: cb0d00a509b3986b605dd7f15f9bccc0661bb894
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77036465"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77906346"
 ---
 # <a name="numerics-library-installation-and-validation"></a>Installation och validering av numeriska bibliotek
 
@@ -33,7 +33,7 @@ Mer information finns i UI- [guiden för paket hanteraren](https://docs.microsof
 
 Du kan också använda Package Manager-konsolen för att lägga till ett numeriskt bibliotek i projektet via kommando rads gränssnittet.
 
-![](../../media/vs2017-nuget-console-menu.png)
+![Använda Package Manager-konsolen från kommando raden](../../media/vs2017-nuget-console-menu.png)
 
 Kör följande från Package Manager-konsolen:
 

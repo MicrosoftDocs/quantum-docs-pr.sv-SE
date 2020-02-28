@@ -1,19 +1,19 @@
 ---
-title: Öppnar pull-begäranden | Microsoft Docs
-description: Öppnar pull-begäranden
+title: Öppnar pull-begäranden
+description: Lär dig hur du skickar in en GitHub pull-begäran när du är redo att bidra med kod eller dokumentation till Microsoft Quantum Development Kit.
 author: cgranade
 ms.author: chgranad
 ms.date: 10/12/2018
 ms.topic: article
 uid: microsoft.quantum.contributing.pulls
-ms.openlocfilehash: d70a0a0319d14cfdae4910b897733d77b236f2f9
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: a4373a65688893c95e0475356c8f6fca0912f8c5
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "73183734"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77907468"
 ---
-# <a name="opening-pull-requests"></a>Öppnar pull-begäranden #
+# <a name="opening-pull-requests"></a>Öppna pull-begäranden #
 
 All dokumentation för Quantum Development Kit hanteras med git-versions kontroll systemet genom användning av flera databaser som finns på GitHub.
 Med hjälp av Git och GitHub tillsammans blir det enkelt att samar beta mycket i Quantum Development Kit.
@@ -42,19 +42,19 @@ Vi ritar ofta diagram där incheckningar ritas som cirklar med pilar från före
 Anta att du har startat ett bidrag i en _gren_ som kallas `feature`.
 Sedan kan din förgrening av **Microsoft/Quantum** se ut ungefär så här:
 
-![](~/media/git-workflow-step0.png)
+![En arbets gren i GitHub](~/media/git-workflow-step0.png)
 
 Om du gör dina ändringar i din lokala lagrings plats kan du _Hämta_ ändringar från en annan lagrings plats till din för att komma igång med alla ändringar som har varit överordnade.
 
-![](~/media/git-workflow-step1.png)
+![Hämta och sammanfoga ändringar från en överordnad lagrings platsen](~/media/git-workflow-step1.png)
 
 Pull-begäranden fungerar på samma sätt, men i omvänd ordning: när du öppnar en pull-begäran ber du om den överordnade lagrings platsen att hämta ditt bidrag i.
 
-![](~/media/git-workflow-step2.png)
+![Begär att hämta ändringarna till den ursprungliga lagrings platsen](~/media/git-workflow-step2.png)
 
 När du öppnar en pull-begäran till någon av våra databaser, kommer GitHub att erbjuda en möjlighet för andra i communityn att se en sammanfattning av dina ändringar, kommentera dem och få förslag på hur du kan göra ett ännu bättre bidrag.
 
-![](~/media/pull-request-header.png)
+![Skärm bild av en pull-begäran i GitHub](~/media/pull-request-header.png)
 
 Med den här processen kan vi använda GitHub-funktioner för att förbättra bidrag och underhålla en produkt med hög kvalitet för program gruppen Quantum Programming.
 

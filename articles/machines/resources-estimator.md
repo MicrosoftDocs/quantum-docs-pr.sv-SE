@@ -1,17 +1,17 @@
 ---
-title: Resurs uppskattning för Quantum Development Kit-resurser | Microsoft Docs
-description: Översikt över Microsofts resurs uppskattning för Quantum Development Kit-resurser
+title: Resurs uppskattning för Quantum Development Kit-resurser
+description: 'Lär dig mer om resurs uppskattningen som beräknar de resurser som krävs för att köra en specifik instans av en Q #-åtgärd på en Quantum-dator.'
 author: anpaz-msft
 ms.author: anpaz@microsoft.com
 ms.date: 1/22/2019
 ms.topic: article
 uid: microsoft.quantum.machines.resources-estimator
-ms.openlocfilehash: 960fda3dade7648f9cd24496c3a49fd11d6f807a
-ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
+ms.openlocfilehash: 37c901e5a861f0e8a10cdc911ad1d84ddd3e6e00
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76820869"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77907060"
 ---
 # <a name="the-resourcesestimator-target-machine"></a>Mål datorn för ResourcesEstimator
 
@@ -130,7 +130,7 @@ operation Teleport(source : Qubit, target : Qubit) : Unit {
 När `ResourcesEstimator` påträffar `AssertProb` registreras att mät `PauliZ` på `source` och `q` bör få ett resultat av `Zero` med sannolikhet 0,5. När den körs `M` senare kommer den att hitta de inspelade värdena för resultatet sannolikhet och `M` returnerar `Zero` eller `One` med sannolikhet 0,5.
 
 
-## <a name="see-also"></a>Se också
+## <a name="see-also"></a>Se även
 
 `ResourcesEstimator` bygger på den väntande dator [spårnings simulatorn](xref:microsoft.quantum.machines.qc-trace-simulator.intro), som ger en mer omfattande uppsättning mått, möjlighet att rapportera mått för det fullständiga anrops diagrammet och funktioner som [distinkta inmatnings kontroll](xref:microsoft.quantum.machines.qc-trace-simulator.distinct-inputs) för att hitta buggar i Q #-program. Mer information finns i dokumentationen för [spårnings simulatorn](xref:microsoft.quantum.machines.qc-trace-simulator.intro) .
 

@@ -1,24 +1,24 @@
 ---
-title: Symmetries av molekyl integraler | Microsoft Docs
-description: Symmetries av koncept dokument för molekyl integraler
+title: Symmetries av molekyl integraler
+description: 'Lär dig mer om att använda Q # OrbitalIntegral-typen för att räkna upp molekyl symmetries.'
 author: nathanwiebe2
 ms.author: nawiebe
 ms.date: 10/09/2017
 ms.topic: article-type-from-white-list
 uid: microsoft.quantum.chemistry.concepts.symmetries
-ms.openlocfilehash: 041d600bc8d65e7d67f5fe7d61a69426fb42ffbc
-ms.sourcegitcommit: aa5e6f4a2deb4271a333d3f1b1eb69b5bb9a7bad
+ms.openlocfilehash: b7e7b79af17af544c4a784eff08500498afc9f67
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73442388"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77904476"
 ---
 # <a name="symmetries-of-molecular-integrals"></a>Symmetries av molekyl integraler
 
-Den inneboende symmetrin för Coulomb-Hamiltonian, som är den Hamiltonian som anges i [Quantum-modeller för elektroniska system](xref:microsoft.quantum.chemistry.concepts.quantummodels), som beskriver electrons interagerar elektriskt med varandra och med kärnor, leder till ett antal symmetries som kan utnyttjas för att komprimera villkoren i Hamiltonian.
-I allmänhet om inga ytterligare antaganden görs om bas funktionerna $ \psi_j $ har vi bara den \begin{Equation} H_ {PQRS} = H_ {qpsr}, \tag{★} \label{EQ: hpqrs} \end{Equation} som kan visas direkt från integralerna i [Quantum modeller för Elektroniska system](xref:microsoft.quantum.chemistry.concepts.quantummodels) som antecknar att deras värden är identiska om $p, q $ och $r, s $, är utbytbara från anti-Arbetssläckning.
+Den ensymmetrien av Coulomb-Hamiltonian, som är den Hamiltonian som anges i [Quantum-modeller för elektroniska system](xref:microsoft.quantum.chemistry.concepts.quantummodels), som beskriver electrons interagerar med varandra och med kärnor, leder till ett antal symmetries som kan utnyttjas för att komprimera villkoren i Hamiltonian.
+I allmänhet om inga ytterligare antaganden görs om bas funktionerna $ \ psi_j $, har vi bara det \begin{Equation} h_ {PQRS} = h_ {qpsr}. \tag{★} \label{EQ: hpqrs} \end{Equation} som kan ses direkt från integralerna i [Quantum-modeller för elektroniska system](xref:microsoft.quantum.chemistry.concepts.quantummodels) när de antecknar att deras värden är identiska om $p, q $ och $r, s $ är utbytbara mot arbets tiden.
 
-Om vi antar att rotations avtrycken är Real värde (som de är för Gaussisk orbital Bases) har vi ytterligare \begin{Equation} H_ {PQRS} = H_ {qpsr} = H_ {srqp} = H_ {rspq} = H_ {rqps} = H_ {psrq} = H_ {SPQR} = H_ {qrsp} .\tag {★} \label{EQ: hpqrsreal} \end{ ekvation} vissa antaganden är undantagna, vi kan använda ovanstående symmetries för att minska de data som behövs för att lagra mat ris elementen i Hamiltonian med en faktor på $8 $; även om du gör det blir det något mer utmanande att importera data på ett konsekvent sätt.
+Om vi antar att rotations avtrycken är Real värde (som de är för Gaussisk orbital Bases) har vi ytterligare \begin{Equation} h_ {PQRS} = h_ {qpsr} = h_ {srqp} = h_ {rspq} = h_ {rqps} = h_ {psrq} = h_ {SPQR} = h_ {qrsp} .\tag {★} \label{EQ: hpqrsreal} \end{ ekvation} vissa antaganden är undantagna, vi kan använda ovanstående symmetries för att minska de data som behövs för att lagra mat ris elementen i Hamiltonian med en faktor på $8 $; även om du gör det blir det något mer utmanande att importera data på ett konsekvent sätt.
 Lyckligt vis har Hamiltonian Simulator-biblioteket Under rutiner som kan användas för att importera integral-filer från antingen [LIQUI $ | \rangle $](https://www.microsoft.com/en-us/research/project/language-integrated-quantum-operations-liqui/) eller direkt från [NWChem](http://www.nwchem-sw.org/index.php/Main_Page).
 
 Molekyl orbital integraler (d.v.s. $h\_{PQ} $ och $h\_{PQRS} $ villkor) som representeras med `OrbitalIntegral` typ, som innehåller ett antal användbara funktioner för att uttrycka denna symmetri.

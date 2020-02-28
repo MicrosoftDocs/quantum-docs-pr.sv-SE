@@ -1,21 +1,21 @@
 ---
-title: Uttryck | Microsoft Docs
-description: Uttryck
+title: 'Q # uttryck'
+description: 'Förstå hur du anger, refererar till och kombinerar konstanter, variabler, operatorer, åtgärder och funktioner som uttryck i Q #.'
 author: QuantumWriter
 ms.author: Alan.Geller@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
 uid: microsoft.quantum.language.expressions
-ms.openlocfilehash: 83fe697aa07a8ab28bd64437c8f5746bc5893b27
-ms.sourcegitcommit: 5094c0a60cbafdee669c8728b92df281071259b9
+ms.openlocfilehash: fbde873f220d737db17f889d00be33541e3eb59b
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77036322"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77907417"
 ---
 # <a name="expressions"></a>Uttryck
 
-## <a name="grouping"></a>baserat
+## <a name="grouping"></a>Baserat
 
 Detta uttryck har fått ett uttryck av samma typ, i alla uttryck.
 `(7)` är till exempel ett `Int` uttryck, `([1,2,3])` är ett uttryck av typen matris med `Int`s och `((1,2))` är ett uttryck med typ `(Int, Int)`.
@@ -73,7 +73,7 @@ Det vill säga att flytta ett steg till vänster eller höger är exakt detsamma
 
 Heltals Division och heltals-Modulus följer samma beteende för negativa C#tal som.
 Det vill `a % b` alltid ha samma tecken som `a`och `b * (a / b) + a % b` är alltid lika med `a`.
-Exempel:
+Några exempel:
 
  `A` | `B` | `A / B` | `A % B`
 ---------|----------|---------|---------
@@ -306,7 +306,7 @@ Om `WrappedPair` är en användardefinierad typ med underliggande typ `IntPair`o
 
 Prioriteten hos `!` operatören har en effekt som kanske inte är uppenbar.
 Om en funktion eller åtgärd returnerar ett värde som sedan blir omsluten, måste funktionen eller åtgärds anropet omges av parenteser, så att argumentet tupel binder till anropet i stället för att avbrytas.
-Exempel:
+Några exempel:
 
 ```qsharp
 let f = (Foo(arg))!;    // Calls Foo(arg), then unwraps the result
@@ -347,7 +347,7 @@ Matriser som innehåller qubits eller callables måste initieras korrekt med ick
 
 Standardvärdena för varje typ är:
 
-Typ | Default
+Typ | Standard
 ---------|----------
  `Int` | `0`
  `BigInt` | `0L`
