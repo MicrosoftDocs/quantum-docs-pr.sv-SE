@@ -6,12 +6,12 @@ ms.author: chgranad@microsoft.com
 ms.date: 10/19/2019
 ms.topic: article
 uid: microsoft.quantum.quickstarts.search
-ms.openlocfilehash: c1fd578fdb3d56a7b48972e6ccc9b1605047fe36
-ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
+ms.openlocfilehash: 0e64fcd56929fa33397c45bf1b2e99bf687eca6f
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76820359"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77906958"
 ---
 # <a name="quickstart-implement-grovers-search-algorithm-in-q"></a>Snabbstart: Implementera Grovers sökalgoritm i Q#
 
@@ -43,7 +43,7 @@ Antalet stegvisa ökningar är färre än antalet objekt i listan. Det här är 
 
 1. I projektfilen `Operations.qs` lägger du till följande kod:
 
-    :::code language="qsharp" source="~/quantum/samples/algorithms/simple-grover/SimpleGrover.qs" range="4-23" highlight="5,27":::
+    :::code language="qsharp" source="~/quantum/samples/algorithms/simple-grover/SimpleGrover.qs" range="4-40":::
 
 1. Definiera listan som vi söker i genom att skapa den nya filen `Reflections.qs` där du klistrar in följande kod:
 
@@ -53,7 +53,7 @@ Antalet stegvisa ökningar är färre än antalet objekt i listan. Det här är 
 
 1. Kör sedan ditt nya Q#-program för att hitta objektet som markerats med `ReflectAboutMarked`.
 
-    ### <a name="python-with-visual-studio-code-or-the-command-linetabtabid-python"></a>[Python med Visual Studio Code eller kommandoraden](#tab/tabid-python)
+    ### <a name="python-with-visual-studio-code-or-the-command-line"></a>[Python med Visual Studio Code eller kommandoraden](#tab/tabid-python)
 
     Om du vill köra ditt nya Q#-program från Python sparar du följande kod som `host.py`:
 
@@ -71,7 +71,7 @@ Antalet stegvisa ökningar är färre än antalet objekt i listan. Det här är 
     [0, 1, 0, 1, 0]
     ```
 
-    ### <a name="c-with-visual-studio-code-or-the-command-linetabtabid-csharp"></a>[C# med Visual Studio Code eller kommandoraden](#tab/tabid-csharp)
+    ### <a name="c-with-visual-studio-code-or-the-command-line"></a>[C# med Visual Studio Code eller kommandoraden](#tab/tabid-csharp)
 
     Om du vill köra ditt nya Q#-program från C# ändrar du `Driver.cs` så att följande C#-kod ingår:
 
@@ -90,7 +90,7 @@ Antalet stegvisa ökningar är färre än antalet objekt i listan. Det här är 
     Press any key to continue...
     ```
 
-    ### <a name="c-with-visual-studio-2019tabtabid-vs2019"></a>[C# med Visual Studio 2019](#tab/tabid-vs2019)
+    ### <a name="c-with-visual-studio-2019"></a>[C# med Visual Studio 2019](#tab/tabid-vs2019)
 
     Om du vill köra ditt nya Q#-program från C# i Visual Studio ändrar du `Driver.cs` så att följande C#-kod ingår:
 

@@ -6,12 +6,12 @@ ms.author: nakersha
 ms.date: 10/07/2019
 ms.topic: tutorial
 uid: microsoft.quantum.write-program
-ms.openlocfilehash: 30135fa8a123e52a92b7187218f9980ba3cdbd2d
-ms.sourcegitcommit: aa5e6f4a2deb4271a333d3f1b1eb69b5bb9a7bad
+ms.openlocfilehash: 8d3b2d7c8da39a961f4eedcc5989ad3a1e134ade
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73442209"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77906737"
 ---
 # <a name="quantum-basics-with-q"></a>Kvantgrunder med Q#
 
@@ -30,7 +30,7 @@ Du kan också följa med i texten utan att installera QDK. Du får då en övers
 
 ## <a name="demonstrating-qubit-behavior-with-q"></a>Demonstrera kvantbitsbeteende med Q#
 
-Kommer du ihåg vår enkla [definition av en kvantbit](xref:microsoft.quantum.overview.what#the-qubit)?  Där klassiska bitar innehåller ett enda binärt värde av 0 eller 1, kan tillståndet för en kvantbit vara i en **superposition** med 0 och 1 samtidigt.  Begreppsmässigt kan man tänka på en kvantbit som en riktning (kallas även för vektor).  En kvantbit kan ha någon av de riktningar som är möjliga. De två **klassiska tillstånden** är två riktningar. De motsvarar en chans på 100 % att mäta 0 och en chans på 100 % att mäta 1.  Detta kan även visualiseras med [Bloch-sfären](/quantum/concepts/the-qubit?view=qsharp-preview#visualizing-qubits-and-transformations-using-the-bloch-sphere).
+Kommer du ihåg vår enkla [definition av en kvantbit](xref:microsoft.quantum.overview.what#the-qubit)?  Där klassiska bitar innehåller ett enda binärt värde av 0 eller 1, kan tillståndet för en kvantbit vara i en **superposition** med 0 och 1 samtidigt.  Begreppsmässigt kan man tänka på en kvantbit som en riktning (kallas även för vektor).  En kvantbit kan ha någon av de riktningar som är möjliga. De två **klassiska tillstånden** är två riktningar. De motsvarar en chans på 100 % att mäta 0 och en chans på 100 % att mäta 1.  Detta kan även visualiseras med [Bloch-sfären](/quantum/concepts/the-qubit#visualizing-qubits-and-transformations-using-the-bloch-sphere).
 
 
 Mätningen genererar ett binärt resultat och ändrar kvantbitens tillstånd. Mätningen genererar ett binärt värde, antingen 0 eller 1.  Kvantbiten går från att vara i superposition (vilken riktning som helst) till ett av de klassiska tillstånden.  När du därefter upprepar samma mätning utan några andra åtgärder får du samma binära resultat.  
@@ -39,14 +39,14 @@ Flera kvantbitar kan vara **sammanflätade**. När vi mäter en sammanflätad kv
 
 Nu är vi redo att demonstrera hur Q# uttrycker detta beteende.  Du börjar med det enklaste programmet och skapar det för att visa en kvantsuperposition och kvantsammanflätning.
 
-## <a name="setup"></a>Konfiguration
+## <a name="setup"></a>Installation
 
 Program som har utvecklats med Microsofts Quantum Development Kit består av två delar:
 
 1. En eller flera kvantalgoritmer som har implementerats med hjälp av kvantprogrammeringsspråket Q#.
 1. Ett värdprogram som har implementerats i ett programmeringsspråk som Python eller C#, som fungerar som huvudstartpunkt och som anropar Q#-åtgärder för att köra en kvantalgoritm.
 
-#### <a name="pythontabtabid-python"></a>[Python](#tab/tabid-python)
+#### <a name="python"></a>[Python](#tab/tabid-python)
 
 1. Välj en plats för ditt program
 
@@ -54,7 +54,7 @@ Program som har utvecklats med Microsofts Quantum Development Kit består av tv�
 
 1. Skapa en fil med namnet `host.py`. Filen kommer att innehålla din Python-värdkod.
 
-#### <a name="c-command-linetabtabid-csharp"></a>[C#-kommandorad](#tab/tabid-csharp).
+#### <a name="c-command-line"></a>[C#-kommandorad](#tab/tabid-csharp).
 
 1. Skapa ett nytt Q#-projekt:
 
@@ -71,7 +71,7 @@ Program som har utvecklats med Microsofts Quantum Development Kit består av tv�
     mv Operation.qs Bell.qs
     ```
 
-#### <a name="visual-studiotabtabid-vs2019"></a>[Visual Studio](#tab/tabid-vs2019)
+#### <a name="visual-studio"></a>[Visual Studio](#tab/tabid-vs2019)
 
 1. Skapa ett nytt projekt
 
@@ -177,7 +177,7 @@ I båda fallen härleds variabeltypen av kompileraren. Q# kräver inte någon ty
 
 ## <a name="create-the-host-application-code"></a>Skapa värdprogramkoden
 
-#### <a name="pythontabtabid-python"></a>[Python](#tab/tabid-python)
+#### <a name="python"></a>[Python](#tab/tabid-python)
 
 1. Öppna filen `host.py` och lägg till följande kod:
 
@@ -195,7 +195,7 @@ I båda fallen härleds variabeltypen av kompileraren. Q# kräver inte någon ty
       print(f'Init:{i: <4} 0s={num_zeros: <4} 1s={num_ones: <4}')
     ```
 
-#### <a name="ctabtabid-csharp"></a>[C#](#tab/tabid-csharp)
+#### <a name="c"></a>[C#](#tab/tabid-csharp)
 
 1. Ersätt innehållet i filen `Driver.cs` med följande kod:
 
@@ -237,7 +237,7 @@ I båda fallen härleds variabeltypen av kompileraren. Q# kräver inte någon ty
 
 ### <a name="about-the-host-application-code"></a>Om värdprogramkoden
 
-#### <a name="pythontabtabid-python"></a>[Python](#tab/tabid-python)
+#### <a name="python"></a>[Python](#tab/tabid-python)
 
 Python-värdprogrammet består av tre delar:
 
@@ -245,7 +245,7 @@ Python-värdprogrammet består av tre delar:
 * Kör kvantalgoritmen genom att anropa metoden `simulate()` i den importerade Q#-åtgärden.
 * Bearbeta resultatet för åtgärden. I det här exemplet tar `res` emot resultatet av åtgärden. Här är resultatet en tuppel med antalet nollor (`num_zeros`) och antalet ettor (`num_ones`) som har mätts av simulatorn. Vi dekonstruerar tuppeln för att få de två fälten och skriver ut resultatet.
 
-#### <a name="ctabtabid-csharp"></a>[C#](#tab/tabid-csharp)
+#### <a name="c"></a>[C#](#tab/tabid-csharp)
 
 C#-värdprogrammet består av fyra delar:
 
@@ -260,7 +260,7 @@ C#-värdprogrammet består av fyra delar:
 
 ## <a name="build-and-run"></a>Skapa och kör
 
-#### <a name="pythontabtabid-python"></a>[Python](#tab/tabid-python)
+#### <a name="python"></a>[Python](#tab/tabid-python)
 
 1. Kör följande kommando i terminalen:
 
@@ -277,7 +277,7 @@ Init:0    0s=1000 1s=0
 Init:1    0s=0    1s=1000
 ```
 
-#### <a name="command-line--visual-studio-codetabtabid-csharp"></a>[Kommandorad/Visual Studio Code](#tab/tabid-csharp)
+#### <a name="command-line--visual-studio-code"></a>[Kommandorad/Visual Studio Code](#tab/tabid-csharp)
 
 1. Kör följande i terminalen:
 
@@ -299,7 +299,7 @@ Init:One  0s=0    1s=1000
 Press any key to continue...
 ```
 
-#### <a name="visual-studiotabtabid-vs2019"></a>[Visual Studio](#tab/tabid-vs2019)
+#### <a name="visual-studio"></a>[Visual Studio](#tab/tabid-vs2019)
 
 1. Du behöver bara trycka på `F5` för att ditt program ska börja byggas och köras!
 
@@ -445,7 +445,7 @@ Om vi kör detta får vi exakt samma 50/50-resultat som vi fick tidigare. Men va
 
 Det nya returvärdet (`agree`) registrerar varje gång mätningen av den första kvantbiten matchar mätningen av den andra kvantbiten. Vi måste också uppdatera värdprogrammet på lämpligt sätt:
 
-#### <a name="pythontabtabid-python"></a>[Python](#tab/tabid-python)
+#### <a name="python"></a>[Python](#tab/tabid-python)
 
 ```python
 import qsharp
@@ -461,7 +461,7 @@ for i in initials:
     print(f'Init:{i: <4} 0s={num_zeros: <4} 1s={num_ones: <4} agree={agree: <4}')
 ```
 
-#### <a name="ctabtabid-csharp"></a>[C#](#tab/tabid-csharp)
+#### <a name="c"></a>[C#](#tab/tabid-csharp)
 
 ```csharp
             using (var qsim = new QuantumSimulator())
