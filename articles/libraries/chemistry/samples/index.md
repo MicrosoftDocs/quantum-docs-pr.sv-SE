@@ -1,17 +1,17 @@
 ---
-title: Exempel för kvantkemi | Microsoft Docs
-description: Exempel för kvantkemi – Docs
+title: Exempelprogram för kvantkemi
+description: Utforska exempelprogram i Microsofts kvantkemibibliotek.
 author: guanghaolow
 ms.author: gulow
 ms.date: 10/23/2018
 ms.topic: article-type-from-white-list
 uid: microsoft.quantum.chemistry.examples
-ms.openlocfilehash: 586ea98321ff71947df8d81a2141a8b050dbd9ed
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: 5168fc8592d34a32ba67e5a0c4793aa17599fd35
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "72960404"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77906499"
 ---
 # <a name="quantum-chemistry-examples"></a>Exempel för kvantkemi
 

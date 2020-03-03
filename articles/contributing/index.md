@@ -1,17 +1,17 @@
 ---
-title: Bidra till Quantum Development Kit | Microsoft Docs
-description: Bidra till Quantum Development Kit
+title: Bidra till Microsoft Quantum Development Kit
+description: Lär dig hur du bidrar till Microsoft Quantum Development Kit och communityn för kvantutveckling.
 author: cgranade
 ms.author: chgranad
 ms.date: 10/12/2018
 ms.topic: article
 uid: microsoft.quantum.contributing
-ms.openlocfilehash: 3f27f7502c83574e6bd8f950d7e17ee481e44a3c
-ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
+ms.openlocfilehash: 63c6f90a511c7bd14435b2e593af0d8615c18519
+ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76819866"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77904884"
 ---
 # <a name="contributing-to-the-quantum-development-kit"></a>Bidra till Quantum Development Kit #
 
@@ -79,4 +79,3 @@ Om du vill lära dig mer om att bidra, kan du fortsätta med någon av följande
 
 > [!div class="nextstepaction"]
 > [Lär dig att öppna pull-begäranden](xref:microsoft.quantum.contributing.pulls)
-
