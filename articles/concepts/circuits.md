@@ -6,12 +6,12 @@ uid: microsoft.quantum.concepts.circuits
 ms.author: nawiebe@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 8ba4648f1837065d15957a01ab4ca8dd2d490a42
-ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
+ms.openlocfilehash: 80d9df00159090768ea442e519c34043a99b050c
+ms.sourcegitcommit: d61b388651351e5abd4bfe7a672e88b84a6697f8
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77905156"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79022779"
 ---
 # <a name="quantum-circuits"></a>Quantum-kretsar
 Överväg att ta en stund till den enhetliga omvandlingen $ \text{CNOT} _{01}(H\otimes 1) $.
@@ -24,7 +24,7 @@ Krets diagrammet för att förbereda denna maximally Entangled-Quantum-tillstån
 
 <!--- ![](.\media\1.svg) --->
 <!-- Can't find a way to easily center this... probably an extension needed:  -->
-![krets diagram för ett maximally Entangled-qubit tillstånd](~/media/Concepts1.png)
+![krets diagram för ett maximally Entangled-qubit tillstånd](~/media/1.svg)
 
 ## <a name="quantum-circuit-diagram-conventions"></a>Diagram konventioner för Quantum-kretsar
 Det här visuella språket för Quantum Operations kan vara mer enkelt digestible än att skriva ned motsvarande matris när du förstår konventionerna för att uttrycka en Quantum-krets.
@@ -37,7 +37,7 @@ Till exempel symbolen
 
 <!--- ![](.\media\2.svg) --->
 <!-- Can't find a way to easily center this... probably an extension needed:  -->
-![symbol för en Hadamard-åtgärd som agerar på en qubit-registrering](~/media/concepts_2.png)
+![symbol för en Hadamard-åtgärd som agerar på en qubit-registrering](~/media/2.svg)
 
 är en [Hadamard](xref:microsoft.quantum.intrinsic.h) -åtgärd som agerar på ett enda qubit-register.
 
@@ -47,7 +47,7 @@ Det vill säga
 
 <!--- ![](.\media\3.svg) --->
 <!-- Can't find a way to easily center this... probably an extension needed:  -->
-![diagram över Quantum-grindar som används från vänster till höger](~/media/concepts_3.png)
+![diagram över Quantum-grindar som används från vänster till höger](~/media/3.svg)
 
 är den enhetliga matrisen $CBA $.
 Matrisen multiplikation följer den motsatta konventionen: den högra matrisen används först. I Quantum-krets diagram används dock den översta porten först.
@@ -65,7 +65,7 @@ Som ett exempel på ett klargörande exempel kan vi definiera en qubit-åtgärd 
 
 <!--- ![](.\media\4.svg) --->
 <!-- Can't find a way to easily center this... probably an extension needed:  -->
-![krets diagram med en qubit-åtgärd](~/media/concepts_4.png)
+![krets diagram med en qubit-åtgärd](~/media/4.svg)
 
 Vi kan också Visa $B $ som har en åtgärd på ett enda qubit-register snarare än 2 1-qubit-registreringar beroende på i vilken kontext kretsen används. Den mest användbara egenskapen för sådana abstrakta krets diagram är att de gör att komplicerade Quantum-algoritmer kan beskrivas på en hög nivå utan att behöva kompilera dem till fundamentala grindar.
 Det innebär att du kan få en intuition om data flödet för en stor Quantum-algoritm utan att behöva förstå all information om hur var och en av under rutinerna i algoritmen fungerar.
@@ -78,14 +78,14 @@ I allmänhet beskriver vi sådana kontrollerade åtgärder i krets diagram som
 
 <!--- ![](.\media\5.svg) --->
 <!-- Can't find a way to easily center this... probably an extension needed:  -->
-![krets diagram över en enskilt kontrollerad grind](~/media/concepts_5.png)
+![krets diagram över en enskilt kontrollerad grind](~/media/5.svg)
 
 Här visas den svarta cirkeln som anger den Quantum-bit där porten styrs och en lodrät kabel anger den färg som tillämpas när kontrollen qubit tar värdet $1 $.
 För de specialfall där $G = X $ och $G = Z $, introducerar vi följande notation för att beskriva den kontrollerade versionen av grindarna (Observera att den kontrollerade X-porten är [$CNOT $ grind](xref:microsoft.quantum.intrinsic.cnot)):
 
 <!--- ![](.\media\6.svg) --->
 <!-- Can't find a way to easily center this... probably an extension needed:  -->
-![krets diagram för särskilda fall av kontrollerade grindar](~/media/concepts_6.png)
+![krets diagram för särskilda fall av kontrollerade grindar](~/media/6.svg)
 
 Q # innehåller metoder för att automatiskt generera en kontrollerad version av en åtgärd, vilket sparar programmerare från att behöva gå vidare till dessa åtgärder. Ett exempel på detta visas nedan:
 
@@ -104,7 +104,7 @@ Mer specifikt ser en sådan under krets ut så här:
 
 <!--- ![](.\media\7.svg) ---->
 <!-- Can't find a way to easily center this... probably an extension needed:  -->
-![symbol som representerar en mätnings åtgärd](~/media/concepts_7.png)
+![symbol som representerar en mätnings åtgärd](~/media/7.svg)
 
 Q # implementerar en [mått operator](xref:microsoft.quantum.intrinsic.measure) för det här ändamålet.
 Mer information finns i [avsnittet om mått](xref:microsoft.quantum.libraries.standard.prelude#measurements) .
@@ -113,7 +113,7 @@ På samma sätt är under kretsen
 
 <!--- ![](.\media\8.svg) --->
 <!-- Can't find a way to easily center this... probably an extension needed:  -->
-![krets diagram som representerar en kontrollerad åtgärd](~/media/concepts_8.png)
+![krets diagram som representerar en kontrollerad åtgärd](~/media/8.svg)
 
 ger en klassisk kontrollerad grind där $G $ tillämpas på den klassiska kontroll biten som värde $1 $.
 
@@ -125,4 +125,4 @@ Detta är nödvändigt för att protokollet ska fungera enligt lagstiftningen i 
 Den andra kretsen för Quantum Teleportion anges nedan. Vi tillhandahåller också en kommenterad version av kretsen för att illustrera hur du kan läsa Quantum-kretsen.
 
 <!--- ![](.\media\tp2.svg){ width=50% } --->
-![Quantum Teleportion-kretsen](~/media/concepts_tp2.png)
+![Quantum Teleportion-kretsen](~/media/tp2.svg)

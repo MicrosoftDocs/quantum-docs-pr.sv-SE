@@ -6,14 +6,14 @@ ms.author: chgranad
 ms.date: 10/12/2018
 ms.topic: article
 uid: microsoft.quantum.contributing.docs
-ms.openlocfilehash: d244a7841b4093031d6225230a6cbefb22cc6a39
-ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
+ms.openlocfilehash: ed5ab5df9de5d71ccd922cd430cf15779806dd6a
+ms.sourcegitcommit: d61b388651351e5abd4bfe7a672e88b84a6697f8
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77904901"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79022640"
 ---
-# <a name="improving-documentation"></a>Förbättra dokumentation #
+# <a name="improving-documentation"></a>Förbättra dokumentation
 
 Dokumentationen för Quantum Development Kit tar flera olika formulär, så att informationen är lätt att komma åt i Quantum-utvecklare.
 
@@ -28,7 +28,7 @@ Detta innebär att varje form av dokumentation varierar något i detaljerna:
 - **API-referensen** är en uppsättning sidor för varje Q #-funktion,-åtgärd och användardefinierad typ, publicerad till https://docs.microsoft.com/qsharp/api/. Dessa sidor dokumenterar indata och åtgärder för varje anrop, tillsammans med exempel och länkar till mer information. API-referensen extraheras automatiskt från små DFM-dokument i Q # käll kod som en del av varje version.
 - README-filerna **<!---->. MD** som ingår i varje exempel och Kata beskriver hur du använder det här exemplet eller Kata, vad det täcker och hur det är relaterat till resten av Quantum Development Kit. De här filerna skrivs med [GitHub-markdown (GFM)](https://github.github.com/gfm/), ett mer lätt alternativ till DFM som är populärt för att bifoga dokumentation direkt till kod centraler.
 
-## <a name="contributing-to-the-conceptual-documentation"></a>Bidra till den konceptuella dokumentationen ##
+## <a name="contributing-to-the-conceptual-documentation"></a>Bidra till den konceptuella dokumentationen
 
 För att bidra till en förbättring av den konceptuella dokumentationen eller README-dokumentationen börjar du med en pull-begäran till antingen [**Microsoft docs/Quantum-dok-PR**](https://github.com/MicrosoftDocs/quantum-docs-pr/
 ), [**Microsoft/Quantum**](https://github.com/Microsoft/Quantum)eller [**Microsoft/QuantumKatas**](https://github.com/Microsoft/QuantumKatas), vilket är lämpligt.
@@ -41,7 +41,18 @@ Vi beskriver mer om pull-begäranden nedan, men för närvarande finns det någr
 - Många medlemmar i Quantum Programming community är akademiska forskare, och erkänns huvudsakligen genom citat från sina bidrag till communityn. Förutom att hjälpa läsarna att hitta ytterligare material, och se till att korrekt citera akademiska utdata, till exempel papper, samtal, blogg inlägg och program varu verktyg, kan hjälpa akademiska deltagare att utföra sitt bästa arbete för att förbättra samhället.
 - Quantum Programming community är en bred och mycket bred grupp. Användning av köns prosubstantiv i exempel på tredje person (t. ex.: "om en användare...") kan användas för att utesluta i stället för att inkludera. Att vara cognizant av personens namn i Citats och länkar, och rätt inkludering av icke-ASCII-tecken kan tjäna på mångfalden av communityn genom att visa respekt för dess medlemmar. På samma sätt används många ord på det engelska språket ofta på ett hatefult sätt, så att deras användning i den tekniska dokumentationen kan orsaka skada både enskilda läsare och till communityn i stor utsträckning.
 
-## <a name="contributing-to-the-api-references"></a>Bidrag till API-referenser ##
+### <a name="referencing-sample-code-from-conceptual-articles"></a>Referera till exempel kod från konceptuella artiklar
+
+Om du vill inkludera kod från [exempel databasen](https://github.com/Microsoft/Quantum)kan du göra det med hjälp av ett särskilt DocFX markdown-kommando:
+
+```markdown
+:::code language="qsharp" source="~/quantum/samples/algorithms/chsh-game/Game.qs" range="4-8":::
+```
+
+Det här kommandot importerar rader 4 till 8 i [`Game.qs`-filen från `chsh-game` exemplet](https://github.com/microsoft/Quantum/blob/master/samples/algorithms/chsh-game/Game.qs)och markerar dem som Q # kod för markering av syntax.
+Med det här kommandot kan du undvika att duplicera kod mellan konceptuella artiklar och exempel databasen, så att exempel koden i dokumentationen alltid är så aktuell som möjligt.
+
+## <a name="contributing-to-the-api-references"></a>Bidrag till API-referenser
 
 För att bidra till en förbättring av API-referenserna är det mest användbart att öppna en pull-begäran direkt på den kod som dokumenteras.
 Varje funktion, åtgärd eller användardefinierad typ har stöd för en dokumentations kommentar (betecknas med `///` i stället för `//`).
@@ -123,6 +134,7 @@ I exemplet på `ControlledOnBitString`kan vi skriva något som liknar följande:
      return ControlledOnBitStringImpl(bits, oracle, _, _);
  }
 ```
+
 Du kan se den återgivna versionen av koden ovan i API- [dokumentationen för `ControlledOnBitString` funktionen](xref:microsoft.quantum.canon.controlledonbitstring).
 
 Förutom den allmänna metoden för dokumentations skrivning, i skriva API-dokumentation kommentarer, hjälper det till att hålla några saker i åtanke:

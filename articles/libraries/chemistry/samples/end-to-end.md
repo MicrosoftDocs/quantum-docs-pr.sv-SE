@@ -5,16 +5,16 @@ author: cgranade
 ms.author: chgranad@microsoft.com
 ms.date: 10/23/2018
 uid: microsoft.quantum.chemistry.examples.endtoend
-ms.openlocfilehash: 545ade99859f2a9939477fb18604921f70a5d9aa
-ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
+ms.openlocfilehash: 7605676e05ee352e47791657eeaafceef5dbb493
+ms.sourcegitcommit: d61b388651351e5abd4bfe7a672e88b84a6697f8
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77906516"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79022494"
 ---
 # <a name="end-to-end-with-nwchem"></a>Slutpunkt till slutpunkt med NWChem #
 
-På den här sidan går vi igenom ett exempel på hur man hämtar antalet grindar för simulering av Quantum kemi, från en [NWChem](http://www.nwchem-sw.org/index.php/Main_Page) -kortlek.
+I den här artikeln går vi igenom ett exempel på hur man hämtar antalet grindar för simulering av Quantum kemi, från en [NWChem](http://www.nwchem-sw.org/index.php/Main_Page) -kortlek.
 Innan du fortsätter med det här exemplet ser du till att du har installerat Docker, efter [installations-och validerings guiden](xref:microsoft.quantum.chemistry.concepts.installation).
 
 Mer information:
@@ -62,7 +62,7 @@ Get-Command -Module InvokeNWChem
 ```
 
 Nu ska vi importera kommandot `Get-GateCount` som tillhandahålls med **GetGateCount** -exemplet.
-Fullständig information finns i [instruktionerna som medföljer exemplet](https://github.com/Microsoft/Quantum/tree/master/Chemistry/GetGateCount).
+Fullständig information finns i [instruktionerna som medföljer exemplet](https://github.com/Microsoft/Quantum/tree/master/samples/chemistry/GetGateCount).
 Kör sedan följande och ersätt `<runtime>` med antingen `win10-x64`, `osx-x64`eller `linux-x64`, beroende på vilket operativ system du har:
 
 ```powershell
@@ -112,7 +112,7 @@ set tce:qelb  9
 
 ## <a name="producing-and-consuming-broombridge-output-from-nwchem"></a>Producera och konsumera Broombridge-utdata från NWChem ##
 
-Vi har nu allt vi behöver för att skapa och använda Broombridge-dokument.
+Nu har du allt du behöver för att skapa och använda Broombridge-dokument.
 Kör `Convert-NWChemToBroombridge`för att köra NWChem och skapa ett Broombridge-dokument för `h4_sto6g_0.000.nw`-datanings däck:
 
 > [!NOTE]
@@ -123,7 +123,7 @@ Kör `Convert-NWChemToBroombridge`för att köra NWChem och skapa ett Broombridg
 Convert-NWChemToBroombridge h4_sto6g_0.000.nw 
 ```
 
-Detta kommer att skapa ett Broombridge-dokument med namnet `h4_sto6g_0.000.yaml` som vi kan använda med `Get-GateCount`:
+Detta kommer att skapa ett Broombridge-dokument med namnet `h4_sto6g_0.000.yaml` som du kan använda med `Get-GateCount`:
 
 ```powershell
 Get-GateCount -Format YAML h4_sto6g_0.000.yaml
@@ -164,7 +164,7 @@ Det finns många saker att gå härifrån:
 - Prova olika fördefinierade matnings kort, t. ex. genom att variera parametern `alpha` i `h4_sto6g_alpha.nw`, 
 - Försök att ändra däcken genom att redigera NWChem-däcken direkt, t. ex., utforska `STO-nG` modeller för olika val av n, 
 - Testa andra fördefinierade NWChem-indatamasker som är tillgängliga på `nwchem/qa/chem_library_tests`,
-- Testa en uppsättning fördefinierade Broombridge YAML-benchmarks som genererats från NWChem och är tillgängliga som en del av [Microsoft/Quantum-lagringsplatsen](https://github.com/Microsoft/Quantum/tree/master/Chemistry/IntegralData/YAML). Följande riktmärken är: 
+- Testa en uppsättning fördefinierade Broombridge YAML-benchmarks som genererats från NWChem och är tillgängliga som en del av [Microsoft/Quantum-lagringsplatsen](https://github.com/Microsoft/Quantum/tree/master/samples/chemistry/IntegralData/YAML). Följande riktmärken är: 
     - små molekyler som molekyl väte (H2), Beryllium (vara), litium Hydride (LiH).
     - större molekyler som ozon (O3), beta-carotene, cytosine och många fler. 
 - Testa de grafiska frontend- [EMSL pilar](https://arrows.emsl.pnnl.gov/api/qsharp_chem) som innehåller ett gränssnitt till Microsoft Quantum Development Kit. 

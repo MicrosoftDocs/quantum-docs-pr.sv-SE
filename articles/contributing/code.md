@@ -6,27 +6,27 @@ ms.author: chgranad
 ms.date: 10/12/2018
 ms.topic: article
 uid: microsoft.quantum.contributing.code
-ms.openlocfilehash: 1882e640dacf3987745ed225fef18636726f70a8
-ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
+ms.openlocfilehash: edc52dc4434e91258bece28812fd76b66329c6f9
+ms.sourcegitcommit: d61b388651351e5abd4bfe7a672e88b84a6697f8
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77907485"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79022456"
 ---
-# <a name="contributing-code"></a>Bidra med kod #
+# <a name="contributing-code"></a>Bidra med kod
 
 Förutom att rapportera problem och förbättra dokumentationen kan kod till Quantum Development Kit vara ett mycket direkt sätt att hjälpa dina kollegor i Quantum Programming-communityn.
 Genom att bidra med kod kan du hjälpa till att åtgärda problem, tillhandahålla nya exempel, göra befintliga bibliotek lättare att använda, eller till och med helt nya funktioner.
 
 I den här guiden ska vi se en del av vad vi letar efter när vi granskar pull-begäranden för att hjälpa ditt bidrag att göra den mest bra.
 
-## <a name="what-we-look-for"></a>Vad vi letar efter ##
+## <a name="what-we-look-for"></a>Vad vi letar efter
 
 Ett idealiskt kod bidrag bygger på det befintliga arbetet i en databas för Quantum Development Kit för att åtgärda problem, Visa befintliga funktioner eller lägga till nya funktioner inom en lagrings plats.
 När vi accepterar ett kod bidrag blir det en del av Quantum Development Kit, så att nya funktioner släpps, bevaras och utvecklas på samma sätt som resten av Quantum Development Kit.
 Därför är det användbart när funktioner som läggs till av ett bidrag är väl testade och dokumenteras.
 
-### <a name="unit-tests"></a>Enhets tester ###
+### <a name="unit-tests"></a>Enhets tester
 
 De Q #-funktioner, åtgärder och användardefinierade typer som utgör bibliotek, till exempel Canon, testas automatiskt som en del av utvecklingen på [**Microsoft/QuantumLibraries**](https://github.com/Microsoft/QuantumLibraries/) -lagringsplatsen.
 När en ny pull-begäran öppnas, till exempel så kontrollerar vår [Azure-pipeline](https://azure.microsoft.com/services/devops/pipelines/) att ändringarna i pull-begäran inte bryter några befintliga funktioner som program varan Quantum Programming är beroende av.
@@ -56,7 +56,7 @@ function PairTest () : Unit {
 Mer komplicerade villkor kan kontrol leras med hjälp av metoderna i [avsnittet test](xref:microsoft.quantum.libraries.diagnostics) i standard biblioteks guiden.
 Följande test kontrollerar till exempel att `H(q); X(q); H(q);` som anropas av <xref:microsoft.quantum.canon.applywith> gör samma sak som `Z(q)`.
 
-```qsharp
+```Q#
 @Test("QuantumSimulator")
 operation TestApplyWith() : Unit {
     let actual = ApplyWith(H, X, _);
@@ -79,7 +79,8 @@ Lokalt kan du köra enhets test med Visual Studio Test Explorer eller kommandot 
 
 ### Citations and References ### -->
 
-## <a name="when-well-reject-a-pull-request"></a>När vi avvisar en pull-begäran ##
+
+## <a name="when-well-reject-a-pull-request"></a>När vi avvisar en pull-begäran
 
 Ibland avvisar vi pull-begäran för ett bidrag.
 Om detta inträffar kan det inte betyda att det är dåligt, eftersom det finns ett antal orsaker till att vi kanske inte kan acceptera ett visst bidrag.
@@ -98,10 +99,15 @@ Slutligen kan vi inte ta emot bidrag som skadar den Quantum Computing-gruppen, e
 Vi vill se till att bidragen betjänar hela den Quantum data bearbetnings gruppen, både i den aktuella underbara mångfalden och i framtiden när den växer för att bli ännu mer.
 Vi uppskattar din hjälp att realisera detta mål.
 
-## <a name="next-steps"></a>Nästa steg ##
+## <a name="next-steps"></a>Nästa steg
 
 Tack för att du hjälper till att göra Quantum Development Kit till en fantastisk resurs för hela Quantum Programming-gruppen!
 Om du vill veta mer kan du fortsätta med följande guide på Q #-format.
 
 > [!div class="nextstepaction"]
 > [Läs mer om rikt linjer för Q #-format](xref:microsoft.quantum.contributing.style)
+
+Beroende på vilken typ av kod som du bidrar kan det finnas ytterligare saker att tänka på och som kan hjälpa dig att göra ditt bidrag så mycket som möjligt för communityn.
+
+> [!div class="nextstepaction"]
+> [Lär dig mer om att bidra exempel](xref:microsoft.quantum.contributing.samples)
