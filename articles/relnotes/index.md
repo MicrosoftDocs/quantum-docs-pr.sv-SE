@@ -6,12 +6,12 @@ ms.author: nakersha
 ms.date: 09/30/2019
 ms.topic: article
 uid: microsoft.quantum.relnotes
-ms.openlocfilehash: f4bc69e5b14833dea0d61106a9eb368d7d7f5663
-ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
+ms.openlocfilehash: 53b7d226f0f9b12f47460964944f1ddb6160c357
+ms.sourcegitcommit: d61b388651351e5abd4bfe7a672e88b84a6697f8
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77906941"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79022842"
 ---
 # <a name="microsoft-quantum-development-kit-release-notes"></a>Viktig information för Microsoft Quantum Development Kit
 
@@ -57,7 +57,7 @@ Den här versionen innehåller följande:
 
 - Nytt testattribut för Q#-enhetstestning: se uppdaterad API-dokumentation [här](https://docs.microsoft.com/qsharp/api/qsharp/microsoft.quantum.diagnostics.test) och uppdaterad vägledning för testning och felsökning [här](xref:microsoft.quantum.techniques.testing-and-debugging)
 - Stackspårning har lagts till i händelse av ett körningsfel för #Q-program
-- Stöd för brytpunkter i Visual Studio Code på grund av en uppdatering i [OmniSharp C# Visual Studio Code-tillägget](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp)
+- Stöd för brytpunkter i Visual Studio Code på grund av en uppdatering i [OmniSharp C# Visual Studio Code-tillägget](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp)
 
 Se den fullständiga listan med stängda PR:er för [bibliotek](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed), [kompilator](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+is%3Aclosed), [runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+is%3Aclosed), [exempel](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed) och [Katas](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+is%3Aclosed).  
 

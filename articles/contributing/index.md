@@ -6,14 +6,14 @@ ms.author: chgranad
 ms.date: 10/12/2018
 ms.topic: article
 uid: microsoft.quantum.contributing
-ms.openlocfilehash: 63c6f90a511c7bd14435b2e593af0d8615c18519
-ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
+ms.openlocfilehash: cf913a09395f0694a51645ec8f91171e5b1555c3
+ms.sourcegitcommit: d61b388651351e5abd4bfe7a672e88b84a6697f8
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77904884"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79022483"
 ---
-# <a name="contributing-to-the-quantum-development-kit"></a>Bidra till Quantum Development Kit #
+# <a name="contributing-to-the-quantum-development-kit"></a>Bidra till Quantum Development Kit
 
 Quantum Development Kit är mer än en samling av verktyg för att skriva kvantprogram.
 Det ingår i en stor community av personer som har upptäckt kvantberäkning, som forskar i kvantalgoritmer, som utvecklar nya program för kvantenheter och som på andra sätt arbetar för att få ut det mesta av kvantprogrammeringen.
@@ -23,7 +23,7 @@ Vi är tacksamma för dina bidrag och för möjligheten att arbeta tillsammans m
 
 I den här guiden ger vi några tips på hur du gör ditt bidrag så användbart som möjligt för den bredare communityn inom kvantprogrammering.
 
-## <a name="building-community"></a>Skapa en community ##
+## <a name="building-community"></a>Skapa en community
 
 Det första du ska tänka på när du lämnar ett bidrag är att alltid komma ihåg vilken community du bidrar till.
 Genom att agera respektfullt och professionellt mot dina kolleger i communityn för kvantprogrammering, hjälper du till att säkerställa att dina insatser skapar den bästa och mest välkomnande communityn.
@@ -31,7 +31,7 @@ Genom att agera respektfullt och professionellt mot dina kolleger i communityn f
 Som en del av detta har alla Quantum Development Kit-projekt infört [Microsofts regler för uppförande i öppen källkod](https://opensource.microsoft.com/codeofconduct/).
 Läs [Vanliga frågor och svar om regler för uppförande](https://opensource.microsoft.com/codeofconduct/faq/) eller kontakta [opencode@microsoft.com](mailto:opencode@microsoft.com) om du har några andra frågor eller kommentarer.
 
-## <a name="what-kinds-of-contributions-help-the-community"></a>Vilka typer av bidrag kan vara till hjälp för communityn? ##
+## <a name="what-kinds-of-contributions-help-the-community"></a>Vilka typer av bidrag kan vara till hjälp för communityn?
 
 Det finns många olika sätt som du kan hjälpa communityn för kvantprogrammering med dina bidrag.
 I den här guiden fokuserar vi på tre sätt som är särskilt relevanta för Quantum Development Kit.
@@ -45,7 +45,7 @@ Detta är definitivt inte en fullständig lista – vi rekommenderar att du utfo
 De olika typerna av bidrag är alla oerhört värdefulla och uppskattas mycket.
 I resten av guiden ger vi råd om hur du skapar de olika typerna av bidrag.
 
-## <a name="where-do-contributions-go"></a>Vart tar bidragen vägen? ##
+## <a name="where-do-contributions-go"></a>Vart tar bidragen vägen?
 
 Quantum Development Kit innehåller ett flertal olika delar som används tillsammans för att skapa en plattform där kvantprogram kan skrivas.
 Var och en av dessa delar finns på en särskild lagringsplats, så en av de första sakerna du gör är att bestämma på vilken plats varje bidrag ska finnas.
@@ -66,7 +66,7 @@ Det finns också några andra mer specialiserade lagringsplatser som fokuserar p
 - [**msr-quarc/qsharp.sty**](https://github.com/msr-quarc/qsharp.sty): Stöd för LaTeX-formatering av Q#-syntax.
 - [**msr-quarc/intern-workshop-2019**](https://github.com/msr-quarc/intern-workshop-2019): IQ# Notebook for Deutsch–Jozsas självstudie från en intern workshop 2019.
 
-## <a name="next-steps"></a>Nästa steg ##
+## <a name="next-steps"></a>Nästa steg
 
 Tack för att du är en del av communityn för Quantum Development Kit, vi är glada över dina bidrag!
 Om du vill lära dig mer om att bidra, kan du fortsätta med någon av följande guider.

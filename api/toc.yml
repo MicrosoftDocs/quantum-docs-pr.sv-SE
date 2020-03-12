@@ -1,9 +1,14 @@
 - name: API-referens
   items:
+    - name: API-referens
+      href: index.md
     - name: 'Q#-bibliotek'
+      topicHref: qsharp/index.md
       href: qsharp/toc.yml
     - name: .NET-bibliotek
       items:
+        - name: .NET-bibliotek
+          href: dot-net-libraries.md
         - name: Spårningssimulator
           href: 'https://docs.microsoft.com/dotnet/api/microsoft.quantum.simulation.simulators.qctracesimulators'
         - name: Kvantkemi
