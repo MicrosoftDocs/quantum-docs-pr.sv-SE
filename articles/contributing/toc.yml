@@ -6,5 +6,9 @@
   href: pull-requests.md
 - name: Bidra med kod
   href: code.md
+- name: Bidra med exempel
+  href: samples.md
 - name: Stilguide
   href: style-guide.md
+- name: Designprinciper för API
+  href: api-design-principles.md
