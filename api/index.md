@@ -6,20 +6,19 @@ author: natke
 ms.author: nakersha
 ms.date: 09/04/2019
 ms.topic: landing-page
-ms.openlocfilehash: 25a53e1cb8577761ef89cdcf2cfcddc509093f86
-ms.sourcegitcommit: 8becfb03eb60ba205c670a634ff4daa8071bcd06
+ms.openlocfilehash: 5975b0caf0fc73ad18fbd8a1e7c82a2333161da2
+ms.sourcegitcommit: d61b388651351e5abd4bfe7a672e88b84a6697f8
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73056968"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79022520"
 ---
-# <a name="q-standard-libraries"></a>Q#-standardbibliotek #
+# <a name="q-api-reference"></a>API-referens för #Q #
 
-Q# stöds av olika användbara åtgärder, funktioner och användardefinierade typer som utgör Q#-*standardbiblioteket*.
-Q#-standardbiblioteket är uppdelat i två huvuddelar:
+Den här API-referensen innehåller Q#-standardbiblioteket och de tre bibliotek som ingår i det – biblioteken för kemi, matematik och maskininlärning. Det finns även .NET- och Python-bibliotek som är tillgängliga för Q#.
 
-- **Inledning**: Åtgärder och funktioner som definieras som en del av måldatorn och kompileraren, vanligtvis i klassiskt inbyggd .NET-kod.
-  I allmänhet kan olika måldatorer ha olika implementeringar av inledningen som är lämpliga för de olika systemen.
-- **Kanoniskt**: Åtgärder och funktioner som definieras i Q# bygger på den logik som definierats i inledningen.
-  Den kanoniska implementeringen är inte beroende av måldatorerna.
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+- [Q#-bibliotek](xref:microsoft.quantum.qsharplibintro)
+- [.NET-bibliotek](xref:microsoft.quantum.dotnetlibsintro)
+- [Python-bibliotek](https://docs.microsoft.com/python/qsharp)
+
+Mer information om #Q-bibliotek finns i <xref:microsoft.quantum.libraries>.
