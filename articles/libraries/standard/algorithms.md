@@ -6,12 +6,12 @@ ms.author: martinro@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
 uid: microsoft.quantum.libraries.standard.algorithms
-ms.openlocfilehash: aaa9ddf47e5ea35e7e57b9828db082889d0e6adf
-ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
+ms.openlocfilehash: 8b8a9019e8bc419f42b0c6f7558354d19a157917
+ms.sourcegitcommit: d61b388651351e5abd4bfe7a672e88b84a6697f8
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77907247"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79402858"
 ---
 # <a name="quantum-algorithms"></a>Quantum-algoritmer #
 
@@ -77,9 +77,9 @@ $ $ Om vi definierar $ $ \ket{\phi\_k (a)} = \frac{1}{\sqrt{2}} \left (\ket{0} +
 $ $ Sökvägen för att utföra en egenskapsangivning avmarkeras efter att du har iakttagit att summan av indata kan skrivas som $ $ \ket{a + b} = \operatorname{QFT} ^{-1}\ket{\phi\_1 (a + b)} \otimes \cdots \otimes \ket{\phi\_n (a + b)}.
 $ $ Heltalen $b $ och $a $ kan sedan läggas till genom att utföra rotation med styrd fas på varje qubits i nedbrytningen med hjälp av bitarna i $b $ som kontroller.
 
-Den här utökningen kan för enklas ytterligare genom att notera att för alla heltal $j $ och reella tal $x $, $e ^ {i2\pi (x + j)} = e ^ {i2\pi x} $.  Detta beror på att om du roterar $360 ^ {\circ} $ grader ($ 2 \ pi $ radianer) i en cirkel så slutar du exakt där du startade.  Den enda viktiga delen av $x $ för $e ^ {i2\pi x} $ är därför bråk delen av $x $.  Mer specifikt, om vi har en binär expansion av formuläret $x = y +0. x\_0x\_2 \ ldots x\_n $, $e ^ {i2\pi x} = e ^ {i2\pi (0). x\_0x\_2 \ ldots x\_{n-1})} $ och därmed $ $ \ket{\phi\_k (a + b)} = \frac{1}{\sqrt{2}} \left (\ket{0} + e ^ {i2\pi [a/2 ^ k +0. b\_k\ldots b\_1]} \ket{1} \right). $ $ det innebär att om vi utför addition genom att öka var och en av de styrkorts faktorer i expanderingen av Fourier-transformeringen för $ \ket{a} $ krymper antalet rotationer som $k $ minskar.  Detta minskar avsevärt antalet Quantum-grindar som krävs i egenskapsangivning.  Vi betecknar Fourier Transform, Phase addition och inverterade Fourier-transformationer som utgör Draper egenskapsangivning som $ \operatorname{QFT} ^{-1} \left (\phi\\\!\operatorname{ADD}\right) \operatorname{QFT} $. En Quantum-krets som använder denna förenkling för att implementera hela processen kan visas nedan.
+Den här utökningen kan för enklas ytterligare genom att notera att för alla heltal $j $ och reella tal $x $, $e ^ {i2\pi (x + j)} = e ^ {i2\pi x} $.  Detta beror på att om du roterar $360 ^ {\circ} $ grader ($ 2 \ pi $ radianer) i en cirkel så slutar du exakt där du startade.  Den enda viktiga delen av $x $ för $e ^ {i2\pi x} $ är därför bråk delen av $x $.  Mer specifikt, om vi har en binär expansion av formuläret $x = y +0. x\_0x\_2 \ ldots x\_n $, $e ^ {i2\pi x} = e ^ {i2\pi (0). x\_0x\_2 \ ldots x\_{n-1})} $ och därmed $ $ \ket{\phi\_k (a + b)} = \frac{1}{\sqrt{2}} \left (\ket{0} + e ^ {i2\pi [a/2 ^ k +0. b\_k\ldots b\_1]} \ket{1} \right). $ $ det innebär att om vi utför addition genom att öka de olika styrkorts faktorerna i expanderingen av Fourier-transformeringen för $ \ket{a} $ sedan antalet rotationer krymper när $k $ minskar.  Detta minskar avsevärt antalet Quantum-grindar som krävs i egenskapsangivning.  Vi betecknar Fourier Transform, Phase addition och inverterade Fourier-transformationer som utgör Draper egenskapsangivning som $ \operatorname{QFT} ^{-1} \left (\phi\\\!\operatorname{ADD}\right) \operatorname{QFT} $. En Quantum-krets som använder denna förenkling för att implementera hela processen kan visas nedan.
 
-![Draper egenskapsangivning visas som krets diagram](~/media/draper.png)
+![Draper egenskapsangivning visas som krets diagram](~/media/draper.svg)
 
 Varje kontrollerad $e ^ {i2 \ PI/k} $ grind i kretsen refererar till en kontrollerad fas-grind.  Sådana grindar har egenskapen som finns på det qubits som de agerar på, $ \ket{00}\mapsto \ket{00}$ \ket $ \mapsto{11}i2 e ^ {ket \ PI/k} \{11}$.  Med den här kretsen kan vi utföra addition genom att inte använda ytterligare qubits förutom de som behövs för att lagra indata och utdata.
 
@@ -92,7 +92,7 @@ $$
 
 Beauregard-egenskapsangivning använder Draper egenskapsangivning, eller mer specifikt $ \phi\\\!\operatorname{ADD} $, för att lägga till $a $ och $b $ i fas.  Den använder sedan samma åtgärd för att identifiera om $a + b < N $ genom att subtrahera $N $ och testa om $a + b-N < 0 $.  Kretsen lagrar den här informationen i en hjälp qubit och lägger sedan till $N $ tillbaka registret om $a + b < N $.  Den kommer sedan att ingå i den här hjälp biten (det här steget krävs för att säkerställa att Ancilla kan avallokeras när egenskapsangivning har anropats).  Kretsen för Beauregard-egenskapsangivning anges nedan.
 
-![Beauregard egenskapsangivning visas som krets diagram](~/media/beau.png)
+![Beauregard egenskapsangivning visas som krets diagram](~/media/beau.svg)
 
 Här är grinden $ \Phi\\\!\operatorname{ADD} $ tar samma formulär som $ \Phi\\\!\operatorname{ADD} $, förutom att i detta sammanhang är indatamängden klassisk i stället för Quantum.  Detta gör att de kontrollerade faserna i $ \Phi\\\!\operatorname{ADD} $ ersätts med fas grindar som sedan kan kompileras till färre åtgärder för att minska antalet qubits och antalet portar som behövs för egenskapsangivning.
 
@@ -111,7 +111,7 @@ Det är på ett annat sätt att tillämpa $V $ på samma sätt som att använda 
 För resten av denna diskussion kommer vi därför att diskutera fasens uppskattning i termer av $R _1 (\phi) $, som vi implementerar med hjälp av så kallade *fas Kickback*.
 
 Eftersom kontroll-och mål registret fortfarande är untangled efter den här processen kan vi återanvända $ \ket{\phi} $ som mål för ett kontrollerat program med $U ^ $2 för att förbereda en andra kontroll qubit i tillstånd $R _1 (2 \phi) \ket{+} $.
-Om du fortsätter på det här sättet kan vi hämta ett register över formatet \begin{align} \ket{\psi} & = \ sum_ {j = 0} ^ n R_1 (2 ^ j \phi) \ket{+} \\\\ & \propto \ bigotimes_ {j = 0} ^ {n} \left (\ket{0} + \exp (i 2 ^ {j} \phi) \ket{1}\right) \\\\ & \propto \ sum_ {k = 0} ^ {2 ^ n-1} \exp (i \phi k) \ket{k} \end{align} där $n $ är antalet precisions bitar som vi behöver, och där vi har använt ${} \propto {}$ för att indikera att vi har ignorerat normaliserings faktorn för $ 1/\sqrt{2 ^ n} $.
+Om du fortsätter på det här sättet kan vi hämta ett register över formatet \begin{align} \ket{\psi} & = \ sum_ {j = 0} ^ n R_1 (2 ^ j \phi) \ket{+} \\\\ & \propto \ bigotimes_ {j = 0} ^ {n} \left (\ket{0} + \exp (i 2 ^ {j} \phi) \ket{1}\right) \\\\ & \propto \ sum_ {k = 0} ^ {2 ^ n-1} \exp (i \phi k) \ket{k} \end{align} där $n $ är antalet precisions bitar som vi behöver, och där vi har använt ${} \propto {}$ för att indikera att vi har ignorerat normaliserings faktorn $1/\sqrt {2 ^ n} $.
 
 Om vi antar att $ \phi = 2 \pi p/2 ^ k $ för ett heltal $p $, känner vi igen detta som $ \ket{\psi} = \operatorname{QFT} \ket{p_0 p_1 \dots p_n} $, där $p _j $ är $j ^ {\textrm{th}} $ bit $2 \pi $.
 Genom att använda det angränsande av Quantum Fourier-transformeringen får vi därför en binär representation av fasen som är kodad som ett Quantum-tillstånd.
