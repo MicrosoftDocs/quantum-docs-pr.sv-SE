@@ -6,12 +6,12 @@ ms.author: nawiebe@microsoft.com
 ms.date: 10/09/2017
 ms.topic: article-type-from-white-list
 uid: microsoft.quantum.chemistry.concepts.simulationalgorithms
-ms.openlocfilehash: e3ce76f5ddcca497adb519eece959c9dd5dec92f
-ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
+ms.openlocfilehash: 5dad4e4a77eea99e72eb2efac52eec61ebbdb21c
+ms.sourcegitcommit: a0e50c5f07841b99204c068cf5b5ec8ed087ffea
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77904646"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80320715"
 ---
 # <a name="simulating-hamiltonian-dynamics"></a>Simulera Hamiltonian Dynamics
 
@@ -28,14 +28,14 @@ Observera att om $e ^ {-i H t} $ var en vanlig exponent, skulle felet i den här
 Det här felet beror på att $e ^ {-iHt} $ är en operator exponentiell och därför att det uppstår ett fel när du använder den här formeln på grund av att $H _j $-villkoren inte går ut (*d.v.s.* $H _J H_k \ne H_k $ i allmänhet).
 
 Om $t $ är stor kan Trotter – Suzuki-formler fortfarande användas för att simulera Dynamicset korrekt genom att dela upp det i en sekvens med korta tids steg.
-Låt $r $ vara det antal steg som har vidtagits under utvecklingen av tiden.
-Sedan har vi den $ $ e ^ {-i \ sum_ {j = 1} ^ m H_j t} = \left (\ prod_ {j = 1} ^ m e ^ {-iH_j t/r} \ höger) ^ r + O (m ^ 2 t ^ 2/r). $ $ som innebär att om $r $ skalas som $m ^ 2 t ^ 2/\ Epsilon $ kan felet göras högst $ \epsilon $ för alla $ \epsilon > 0 $.
+Låt $r $ vara det antal steg som har vidtagits under tids utvecklingen, så varje gång steg körs för tid $t/r $. Sedan har vi den $ $ e ^ {-i \ sum_ {j = 1} ^ m H_j t} = \left (\ prod_ {j = 1} ^ m e ^ {-iH_j t/r} \ höger) ^ r + O (m ^ 2 t ^ 2/r). $ $ som innebär att om $r $ skalas som $m ^ 2 t ^ 2/\ Epsilon $ kan felet göras högst $ \epsilon $ för alla $ \epsilon > 0 $.
 
 Mer exakta uppskattningar kan byggas genom att skapa en sekvens med operatorer exponentiella så att fel villkoren avbryts.
-Den enklaste formeln, den symmetriska Trotter-formeln eller Strang-delningen, tar formuläret $ $ U_1 (t) = \ prod_ {j = 1} ^ m e ^ {-iH_j t/2} \ prod_ {j = m} ^ 1 e ^ {-iH_j t} = e ^ {-iHt} + O (m ^ 3 t ^ 3), $ $ som kan göras mindre än $ \epsilon $ för alla $ \epsilon > 0 $ genom att välja $r $ för att skala som $m ^ {3/2} t ^ {3/2}/\sqrt {\ Epsilon} $.
+Den enklaste formeln, den andra ordningen Trotter-Suzuki formel, tar formuläret $ $ U_2 (t) = \left (\ prod_ {j = 1} ^ {m} e ^ {-iH_j t/2R} \ prod_ {j = m} ^ 1 e ^ {-iH_j t/2R} \ Right) ^ r = e ^ {-iHt} + O (m ^ 3 t ^ 3/r ^ 2), $ $ ett fel som kan göras mindre än $ \epsilon $ för alla $ \epsilon > 0 $ genom att välja $r $ för att skala som $m ^ {3/2} t ^ {3/2}/\sqrt {\ Epsilon} $.
 
-Även Trotter formler med högre ordning kan skapas baserat på $U _1 $.
-Det enklaste är följande fjärde order formel, introducerades ursprungligen av Suzuki: $ $ U_2 (t) = U_1 ^ 2 (s_1t) U_1 ([1-4s_1] t) U_1 ^ 2 (s_1 t) = e ^ {-iHt} + O (m ^ 5T ^ 5), $ $ där $s _1 = (4-4 ^ {1/3}) ^{-1}$.
+Även formler med högre ordning, särskilt ($ 2 $) för $k > 0 $, kan konstrueras rekursivt: $ $ U_ {2 000} (t) = [U_  (s_k\~ t)] ^ 2 U_  ([1-4s_k] t) [U_ {2-2} (s_k\~ t)] ^ 2 = e ^ {-iHt} + O ((m t) ^ {2 000 + 1}/r ^ ), $ $ WHERE $s _k = (4-4 ^ {1/(2 000-1)}) ^{-1}$.
+
+Det enklaste är följande fjärde order ($k = $2) formel, som ursprungligen introducerades av Suzuki: $ $ U_4 (t) = [U_2 (s_2\~ t)] ^ 2 U_2 ([1-4s_2] t) [U_2 (s_2\~ t)] ^ 2 = e ^ {-iHt} + O (m ^ 5T ^ 5). $ $ Where $s _2 = (4-4 ^ {1/3}) ^{-1}$.
 I allmänhet kan godtyckliga formler med hög ordning skapas på samma sätt; kostnaderna för att använda mer komplexa integrerare uppväger dock ofta fördelarna bortom den fjärde ordningen för de flesta praktiska problemen.
 
 För att se till att strategierna ovan fungerar måste vi ha en metod för att simulera en bred klass $e ^ {-iH_j t} $.

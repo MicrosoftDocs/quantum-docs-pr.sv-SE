@@ -6,12 +6,12 @@ uid: microsoft.quantum.concepts.multiple-qubits
 ms.author: nawiebe@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 2fa227c823cd87df9c799c043c699e4ce818b8e3
-ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
+ms.openlocfilehash: 239073b7e7edafc49bc65cb60c9f45cf0af83dbe
+ms.sourcegitcommit: a0e50c5f07841b99204c068cf5b5ec8ed087ffea
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77907553"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80320888"
 ---
 # <a name="multiple-qubits"></a>Flera qubits
 
@@ -27,7 +27,7 @@ Dessa verktyg är absolut nödvändiga för att förstå de grind uppsättningar
 
 ## <a name="representing-two-qubits"></a>Som representerar två qubits
 Den största skillnaden mellan ett-och två-qubit-tillstånd är att två-qubit-tillstånd är fyra dimensionell snarare än två mått.
-Detta beror på att beräknings grunden för qubit-tillstånd bildas av behållen produkter i ett qubit tillstånd.  Till exempel har vi \begin{align} 00 \equiv \begin{bmatrix}1 \\\\ 0 \end{bmatrix}\otimes \begin{bmatrix}1 \\\\ 0 \end{bmatrix} & = \begin{bmatrix}1 \\\\ 0\\\\ 0\\\\ 0 \end{bmatrix}, \qquad 01 \equiv \begin{bmatrix}1 \\\\ 0 \end{bmatrix}\otimes \begin{bmatrix}0 \\\\ 1 \end{bmatrix} = \begin{bmatrix}0 \\\\ 1\\\\ 0\\\\ 0 \end{bmatrix},\\\\ 10 \equiv \begin{bmatrix}0 \\\\ 1 \end{bmatrix}\otimes \begin{bmatrix}1 \\\\ 0 \end{bmatrix} & = \begin{bmatrix}0 \\\\ 0\\\\ 1\\\\ 0 \end{bmatrix}, \qquad 11 \equiv \begin{bmatrix}0 \\\\ 1 \end{bmatrix}\otimes \begin{bmatrix}0 \\\\ 1 \end{bmatrix} = \begin{bmatrix}0 \\\\ 0\\\\ 0 @no__ t_40_ \\ 1 \end{bmatrix}.\\
+Detta beror på att beräknings grunden för qubit-tillstånd bildas av behållen produkter i ett qubit tillstånd.  Till exempel har vi \begin{align} 00 \equiv \begin{bmatrix}1 \\\\ 0 \end{bmatrix}\otimes \begin{bmatrix}1 \\\\ 0 \end{bmatrix} & = \begin{bmatrix}1 \\\\ 0\\\\ 0\\\\ 0 \end{bmatrix}, \qquad 01 \equiv \begin{bmatrix}1 \\\\ 0 \end{bmatrix}\otimes \begin{bmatrix}0 \\\\ 1 \end{bmatrix} = \begin{bmatrix}0 \\\\ 1\\\\ 0\\\\ 0 \end{bmatrix} ,\\\\ 10 \equiv \begin{bmatrix}0 \\\\ 1 \end{bmatrix}\otimes \begin{bmatrix}1 \\\\ 0 \end{bmatrix} & = \begin{bmatrix}0 \\\\ 0\\\\ 1\\\\ 0 \end{bmatrix}, \qquad 11 \equiv \begin{bmatrix}0 \\\\ 1 \end{bmatrix}\otimes \begin{bmatrix}0 \\\\ 1 \end{bmatrix} = \begin{bmatrix}0 \\\\ 0\\\\ 0\\\\ 1 \end{bmatrix}.
 \end{align}
 
 Det är enkelt att se att mer än Quantum-läget för $n $ qubits representeras av en enhets vektor med dimension $2 ^ n $ med denna konstruktion.  Vektorn
@@ -59,13 +59,16 @@ $$
 
 Det är också möjligt att mäta bara en qubit av ett qubit Quantum-tillstånd. I de fall där du endast mäter en av qubits är effekten av måttet olika, eftersom hela statusen inte är komprimerad till ett beräknings underlag, i stället komprimeras endast till ett under system.  I sådana fall kan du med andra ord bara mäta en qubit för att minimera ett av under systemen, men inte alla.  
 
-Du kan se detta genom att mäta det första qubit av följande tillstånd, som bildas genom att använda Hadamard-transformeringen $H $ på två qubits som ursprungligen har angetts till "0"-tillstånd: $ $ H ^ {\otimes 2} \left (\begin{bmatrix}1 \\\\ 0 \end{bmatrix}\otimes \begin{bmatrix}1 \\\\ 0 \end{bmatrix} \right) = \frac{1}{2}\begin{bmatrix}1 & 1 & 1 & 1 \\\\ 1 &-1 & 1 &-1 \\\\ 1 & 1 &-1 &-1 \\\\ 1 & – 1 &-1 & 1 \end{bmatrix}\begin{bmatrix}1\\\\ 0\\\\ 0\\\\ 0 \ slut {bmatrix} = \frac{1}{2}\begin{bmatrix}1\\\\ 1\\\\ 1\\\\ 1 \ end {bmatrix} \mapsto \begin{Cases}\text{Outcome} = 0 & \frac{1}{\sqrt{2}} \begin{bmatrix}1\\\\ 1\\\\ 0\\\\ 0 \end{bmatrix}\\\\ \text{Outcome} = 1 & \frac{1}{\sqrt{2}} \begin{bmatrix}0\\\\ 0\\\\ 1\\\\ 1 \end{bmatrix}\\\\ \end{cases}.
+Du kan se detta genom att mäta det första qubit av följande tillstånd, som bildas genom att använda Hadamard-transformeringen $H $ på två qubits som ursprungligen har angetts till "0"-tillstånd: $ $ H ^ {\otimes 2} \left (\begin{bmatrix}1 \\\\ 0 \end{bmatrix}\otimes \begin{bmatrix}1 \\\\ 0 \end{bmatrix} \right) = \frac{1}{2}\begin{bmatrix}1 & 1 & 1 & 1 \\\\ 1 &-1 & 1 &-1 \\\\ 1 & 1 &-1 &-1 \\\\ 1 &-1 &-1 & 1 \ End {bmatrix} \begin{bmatrix}1\\\\ 0\\\\ 0\\\\ 0 \ slut {bmatrix} = \frac{1}{2}\begin{bmatrix}1\\\\ 1\\\\ 1\\\\ 1 \ end {bmatrix} \mapsto \begin{Cases}\text{Outcome} = 0 & \frac{1}{\sqrt{2}} \begin{bmatrix}1\\\\ 1\\\\\\\\\\\end{bmatrix} \\ & \text{Outcome{2}} \begin{bmatrix}0\\\\ 0\\\\ 1\\\\ 1 \end{bmatrix}\\\\ \end{cases}.{1}
 $ $ Båda resultat har en sannolikhet på 50%.  Resultatet som 50% sannolikheten för båda kan Reformas från det faktum att den inledande Quantum-delläges vektorn är invariant under växlingen $0 $ med $1 $ på den första qubit.
 
-Den matematiska regeln för att mäta den första eller andra qubit är enkel.  Om vi låter $e _k $ vara $k ^ {\rm to} $ beräknings bas vektor och låta $S $ vara en uppsättning $e _k $ så att qubit i fråga tar värdet $1 $ för värdet för $k $.  Om vi till exempel är intresse rad av att mäta det första qubit skulle $S $ bestå av $e _2 \ equiv $10 och $e _3 \ equiv $11.  På samma sätt skulle vi, om vi är intresserade av den andra qubit $S $, bestå av $e _1 \ equiv $1 och $e _3 \equiv $11.  Sannolikheten för att mäta de valda qubit till $1 $ är för State Vector $ \psi $
+Den matematiska regeln för att mäta den första eller andra qubit är enkel.  Om vi låter $e _k $ vara $k ^ {\rm to} $ beräknings bas vektor och låta $S $ vara en uppsättning $e _k $ så att qubit i fråga tar värdet $1 $ för värdet för $k $.  Om vi till exempel är intresse rad av att mäta det första qubit skulle $S $ bestå av $e _1 \ equiv $10 och $e _3 \ equiv $11.  På samma sätt skulle vi, om vi är intresserade av den andra qubit $S $, bestå av $e _2 \ equiv $1 och $e _3 \equiv $11.  Sannolikheten för att mäta de valda qubit till $1 $ är för State Vector $ \psi $
 
 $ $ P (\text{Outcome} = 1) = \ sum_ {e_k \text{i uppsättningen} S} \psi ^ \dagger e_k e_k ^ \dagger \psi.
 $$
+
+> [!NOTE]
+> I det här dokumentet använder vi det lilla endian-formatet för att namnge beräknings basen. I little endians format kommer de minst viktiga bitarna först. Till exempel representeras talet fyra i litet endian-format av strängen BITS 001.
 
 Eftersom varje qubit-mått bara kan ge $0 $ eller $1 $, är sannolikheten att mäta $0 $ bara $1-P (\text{Outcome} = 1) $.  Det är därför som vi bara uttryckligen ger en formel för sannolikheten för att mäta $1 $.
 
@@ -79,7 +82,7 @@ Försiktig läsare kan bekymra sig om vad som händer när sannolikheten för m�
 
 Om vi tar $ \psi $ som en enhetlig delstats Vector som anges ovan och som är intresserade av att mäta de första qubit sedan 
 
-$ $ P (\text{Measurement av First qubit} = 1) = (\psi ^ \dagger e_2) (e_2 ^ \dagger \psi) + (\psi ^ \dagger e_3) (e_3 ^ \dagger \psi) = | e_2 ^ \dagger \psi | ^ 2 + | e_3 ^ \dagger \psi | ^ 2.
+$ $ P (\text{Measurement av First qubit} = 1) = (\psi ^ \dagger e_1) (e_1 ^ \dagger \psi) + (\psi ^ \dagger e_3) (e_3 ^ \dagger \psi) = | e_1 ^ \dagger \psi | ^ 2 + | e_3 ^ \dagger \psi | ^ 2.
 $$
 
 Observera att detta är bara summan av de två sannolikheter som skulle förväntas för att mäta resultaten $10 $ och $11 $ var alla qubits som skulle mätas.
@@ -90,12 +93,13 @@ $$
 
 vilket perfekt matchar vad vår intuition anger för oss att sannolikheten ska vara.  På samma sätt kan tillstånd skrivas som
 
-$ $ \frac{\frac{e_2}{2}+ \frac{e_3}{2}} {\sqrt{\frac{1}{2}}} = \frac{1}{\sqrt{2}} \begin{bmatrix} 0\\\\ 0\\\\ 1\\\\ 1 \ end {bmatrix} $ $
+$ $ \frac{\frac{e_1}{2}+ \frac{e_3}{2}} {\sqrt{\frac{1}{2}}} = \frac{1}{\sqrt{2}} \begin{bmatrix} 0\\\\ 0\\\\ 1\\\\ 1 \ end {bmatrix} $ $
 
 återigen i enlighet med våra intuition.
 
 ## <a name="two-qubit-operations"></a>Två qubit-åtgärder
-Precis som i ett qubit-fall är en enhetlig omvandling en giltig åtgärd på qubits. I allmänhet är en enhetlig omvandling på $n $ qubits en matris $U $ med storleken $2 ^ n \times 2 ^ n $ (så att den fungerar på vektorer med storleken $2 ^ n $), till exempel $U ^{-1} = U ^ \dagger $. CNOT (styrd-NOT) är till exempel en ofta använd qubit-grind och representeras av följande enhetliga matris:
+Precis som i ett qubit-fall är en enhetlig omvandling en giltig åtgärd på qubits. I allmänhet är en enhetlig omvandling på $n $ qubits en matris $U $ med storleken $2 ^ n \times 2 ^ n $ (så att den fungerar på vektorer med storleken $2 ^ n $), till exempel $U ^{-1} = U ^ \dagger $.
+CNOT (styrd-NOT) är till exempel en ofta använd qubit-grind och representeras av följande enhetliga matris:
 
 $ $ \operatorname{CNOT} = \begin{bmatrix} 1 \ 0 \ 0 \ 0 \\\\ 0 \ 1 \ 0 \ 0 \\\\ 0 \ 0 \ 0 \\0 \ 0 \ 1 \ 0 \end{bmatrix} $ $\\
 

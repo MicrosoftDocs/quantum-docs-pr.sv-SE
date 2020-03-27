@@ -6,17 +6,17 @@ ms.author: anpaz@microsoft.com
 ms.date: 1/22/2019
 ms.topic: article
 uid: microsoft.quantum.machines.resources-estimator
-ms.openlocfilehash: 37c901e5a861f0e8a10cdc911ad1d84ddd3e6e00
-ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
+ms.openlocfilehash: 51186134e9279727fec212cdce84f69493aaa656
+ms.sourcegitcommit: a0e50c5f07841b99204c068cf5b5ec8ed087ffea
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77907060"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80320817"
 ---
 # <a name="the-resourcesestimator-target-machine"></a>Mål datorn för ResourcesEstimator
 
 Som namnet antyder beräknar `ResourcesEstimator` de resurser som krävs för att köra en specifik instans av en Q #-åtgärd på en Quantum-dator.
-Detta åstadkommer detta genom att köra åtgärden Quantum utan att faktiskt simulera status för en Quantum-dator. av den anledningen kan IT uppskatta resurser för Q #-åtgärder som använder tusentals qubits.
+Detta åstadkommer detta genom att köra åtgärden Quantum utan att faktiskt simulera status för en Quantum-dator. av den anledningen kan IT uppskatta resurser för Q #-åtgärder som använder tusentals qubits, om den klassiska delen av koden kan köras på rimlig tid.
 
 ## <a name="usage"></a>Användning
 
