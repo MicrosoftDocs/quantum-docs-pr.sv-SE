@@ -1,6 +1,6 @@
 - name: Rapportera buggar
   href: reporting-bugs.md
-- name: Bidra till dokumentationen
+- name: Förbättra dokumentationen
   href: docs.md
 - name: Öppna pull-begäranden
   href: pull-requests.md
