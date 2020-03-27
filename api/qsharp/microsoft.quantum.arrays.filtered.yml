@@ -5,6 +5,29 @@ type: function
 namespace: Microsoft.Quantum.Arrays
 summary: Med tanke på en matris och ett predikat som har definierats för elementen i matrisen, returnerar en matris som består av de element som uppfyller predikatet.
 remarks: Funktionen definieras för generiska typer, d.v.s. När vi har en matris `'T[]` och ett predikat `'T -> Bool` vi kan filtrera element.
+examples: >-
+  Följande kod visar funktionen "filtrerad".
+
+  Ett predikat definieras med hjälp av funktionen @"microsoft.quantum.logical.greaterthani":
+
+
+  ```qsharp
+
+  open Microsoft.Quantum.Arrays;
+
+  open Microsoft.Quantum.Logical;
+
+
+  function FilteredDemo() : Unit {
+     let predicate = GreaterThanI(_, 5);
+     let filteredArray = Filtered(predicate, [2, 5, 9, 1, 8]);
+     Message($"{filteredArray}");
+  }
+
+  ```
+
+
+  Resultatet ett bör förvänta sig från det här exemplet är en matris med tal som är större än 5.
 syntax: "function Filtered (predicate : ('T -> Bool), array : 'T[]) : 'T[]"
 input:
   content: "(predicate : ('T -> Bool), array : 'T[])"
@@ -36,9 +59,9 @@ typeParameters:
 - uid: "'T"
   summary: Typ av `array` element.
 metadata:
-  ms.openlocfilehash: f2749f204c6276a0a43ac67bdee9c4cda0de049e
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 8ce7f84c2243a5194b5a2223884fb68304767dbf
+  ms.sourcegitcommit: a0e50c5f07841b99204c068cf5b5ec8ed087ffea
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73218370"
+  ms.lasthandoff: 03/26/2020
+  ms.locfileid: "80320754"
