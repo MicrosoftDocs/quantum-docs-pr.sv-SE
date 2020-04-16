@@ -6,12 +6,12 @@ ms.author: nakersha
 ms.date: 09/30/2019
 ms.topic: article
 uid: microsoft.quantum.relnotes
-ms.openlocfilehash: 61a91278ee2c77972ff12ed77b4f20c837b02643
-ms.sourcegitcommit: a0e50c5f07841b99204c068cf5b5ec8ed087ffea
+ms.openlocfilehash: 4fbb740568ff6cdc99e4f6a813802ed8d4234ab4
+ms.sourcegitcommit: 9d1c045cf1a2c3e19030cb38dbc7496dbd24ab58
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80320704"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81269394"
 ---
 # <a name="microsoft-quantum-development-kit-release-notes"></a>Viktig information för Microsoft Quantum Development Kit
 
@@ -21,6 +21,17 @@ Installationsanvisningar finns i [installationsguiden](xref:microsoft.quantum.in
 
 Uppdateringsanvisningar finns i [uppdateringsguiden](xref:microsoft.quantum.update).
 
+
+## <a name="version-01120032506"></a>Version 0.11.2003.2506
+
+*Utgivningsdatum: 26 mars 2020*
+
+Den här versionen innehåller följande:
+
+- Nytt stöd för åtkomstmodifierare i Q#. Mer information finns i [Filstrukturer](xref:microsoft.quantum.language.file-structure)
+- Uppdaterades till .NET Core SDK 3.1
+
+Se den fullständiga listan med stängda PR:er för [bibliotek](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed), [kompilator](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+is%3Aclosed), [runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+is%3Aclosed), [exempel](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed) och [Katas](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+is%3Aclosed).  
 
 ## <a name="version-01020022610"></a>Version 0.10.2002.2610
 
