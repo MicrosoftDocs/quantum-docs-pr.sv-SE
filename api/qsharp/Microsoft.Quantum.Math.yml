@@ -3,9 +3,9 @@ uid: microsoft.quantum.math
 name: Microsoft.Quantum.Math
 functions:
 - uid: microsoft.quantum.math.abscomplex
-  summary: Returnerar det absoluta värdet för ett komplext tal av typen `Complex`.
+  summary: Returnerar det absoluta värdet för ett komplext tal av `Complex`typen.
 - uid: microsoft.quantum.math.abscomplexpolar
-  summary: Returnerar det absoluta värdet för ett komplext tal av typen `ComplexPolar`.
+  summary: Returnerar det absoluta värdet för ett komplext tal av `ComplexPolar`typen.
 - uid: microsoft.quantum.math.absd
   summary: Returnerar det absoluta värdet av ett flyttal med dubbel precision.
 - uid: microsoft.quantum.math.absi
@@ -49,17 +49,17 @@ functions:
 - uid: microsoft.quantum.math.ceiling
   summary: Returnerar det minsta heltal som är större än eller lika med det angivna talet.
 - uid: microsoft.quantum.math.complexascomplexpolar
-  summary: Konverterar ett komplext tal av typen `Complex` till ett komplext antal typ `ComplexPolar`.
+  summary: Konverterar ett komplext tal av `Complex` typen till ett komplext tal `ComplexPolar`av typen.
 - uid: microsoft.quantum.math.complexpolarascomplex
-  summary: Konverterar ett komplext tal av typen `ComplexPolar` till ett komplext antal typ `Complex`.
+  summary: Konverterar ett komplext tal av `ComplexPolar` typen till ett komplext tal `Complex`av typen.
 - uid: microsoft.quantum.math.complexpolartocomplex
   summary: "\n> [!WARNING]\n> Inaktuell\n\nComplexPolarToComplex är föråldrad. Använd @\"microsoft.quantum.math.complexpolarascomplex\" i stället."
 - uid: microsoft.quantum.math.complextocomplexpolar
   summary: "\n> [!WARNING]\n> Inaktuell\n\nComplexToComplexPolar är föråldrad. Använd @\"microsoft.quantum.math.complexascomplexpolar\" i stället."
 - uid: microsoft.quantum.math.continuedfractionconvergenti
-  summary: Söker efter den fortsatta fraktions Convergent som är närmast `fraction` med nämnaren mindre än eller lika med `denominatorBound`
+  summary: Söker efter den fortsatta fraktions Convergent `fraction` som ligger närmast med nämnaren mindre än eller lika med`denominatorBound`
 - uid: microsoft.quantum.math.continuedfractionconvergentl
-  summary: Söker efter den fortsatta fraktions Convergent som är närmast `fraction` med nämnaren mindre än eller lika med `denominatorBound`
+  summary: Söker efter den fortsatta fraktions Convergent `fraction` som ligger närmast med nämnaren mindre än eller lika med`denominatorBound`
 - uid: microsoft.quantum.math.cos
   summary: Returnerar cosinus för den angivna vinkeln.
 - uid: microsoft.quantum.math.cosh
@@ -145,9 +145,9 @@ functions:
 - uid: microsoft.quantum.math.modpowl
   summary: Utför modulär Division på ett tal upphöjt till ett annat tal.
 - uid: microsoft.quantum.math.modulusi
-  summary: Beräknar den kanoniska återstoden av `value` modulo `modulus`.
+  summary: Beräknar de kanoniska resterna `value` av `modulus`modulo.
 - uid: microsoft.quantum.math.modulusl
-  summary: Beräknar den kanoniska återstoden av `value` modulo `modulus`.
+  summary: Beräknar de kanoniska resterna `value` av `modulus`modulo.
 - uid: microsoft.quantum.math.negationc
   summary: Returnerar den unära negationen av inmatade värden.
 - uid: microsoft.quantum.math.negationcp
@@ -174,16 +174,16 @@ functions:
   summary: Returnerar summan av två indata.
 - uid: microsoft.quantum.math.pnorm
   summary: >-
-    Returnerar `L(p)` normen för en Vector av `Double`s.
+    Returnerar `L(p)` normen för en Vector of `Double`s.
 
 
-    Det vill säga att en matris $x $ av typen `Double[]`, returnerar detta $p $-norm $\|x\|\_p = (\ sum_ {j} | x_j | ^ {p}) ^ {1/p} $.
+    Det vill säga att en matris $x $ av typ `Double[]`returnerar detta $p $-norm $\|x\|\_p = (\ sum_ {j} | x_j | ^ {p}) ^ {1/p} $.
 - uid: microsoft.quantum.math.pnormalized
   summary: >-
-    Normaliserar en Vector med `Double`s i `L(p)` norm.
+    Normaliserar en Vector of `Double`s i `L(p)` normen.
 
 
-    Det vill säga en matris $x $ av typen `Double[]`, returnerar detta en matris där alla element delas av $p $-norm $\|x\|_p $.
+    Det vill säga, med en matris $x $ av `Double[]`typen, returnerar detta en matris där alla element delas av $p $-norm $\|x\|_p $.
 - uid: microsoft.quantum.math.powc
   summary: Returnerar ett tal upphöjt till en specifik potens.
 - uid: microsoft.quantum.math.powcp
@@ -255,9 +255,9 @@ operations:
 - uid: microsoft.quantum.math.randomsinglequbitpauli
   summary: Returnerar en av Pauli-operatörerna med en qubit enhetligt läge.
 metadata:
-  ms.openlocfilehash: 03a0eba2101d3a20b393b7f685ac463b1abcd727
-  ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
+  ms.openlocfilehash: 2ad787a0d29e98e25c733d1fdcf0a79fcc8c2803
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 02/28/2020
-  ms.locfileid: "77905836"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82673159"

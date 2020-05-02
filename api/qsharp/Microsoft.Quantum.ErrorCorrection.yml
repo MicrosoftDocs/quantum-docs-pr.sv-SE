@@ -20,7 +20,7 @@ functions:
 - uid: microsoft.quantum.errorcorrection.steanecoderecoveryz
   summary: Avkodare för Z-delen av stabiliserings gruppen för ⟦ 7, 1, 3 ⟧ Steane Quantum Code.
 - uid: microsoft.quantum.errorcorrection.tablelookuprecovery
-  summary: Den här funktionen returnerar ett objekt av typen `RecoveryFn` som innehåller all information som krävs för att utföra en tabells öknings avkodning för en specifik tabell med Pauli-åtgärder för en specifik qubits-åtgärd.
+  summary: För en specifik tabell med Pauli-åtgärder på ett angivet register av qubits returnerar den här funktionen ett objekt av `RecoveryFn` typen som innehåller all information som behövs för att utföra en tabells öknings avkodning i förhållande till den aktuella matrisen med Pauli-åtgärder.
 operations:
 - uid: microsoft.quantum.errorcorrection.bitflipdecoder
   summary: "\n> [!WARNING]\n> Inaktuell\n\nBitFlipDecoder är föråldrad. Använd @\"microsoft.quantum.errorcorrection.decodefrombitflipcode\" i stället.\nAnvänd @\"microsoft.quantum.errorcorrection.encodeintobitflipcode\"."
@@ -49,16 +49,16 @@ operations:
 - uid: microsoft.quantum.errorcorrection.measurestabilizergenerators
   summary: Mäter den angivna uppsättningen generatorer för en stabiliserings grupp.
 - uid: microsoft.quantum.errorcorrection.recover
-  summary: Utför en enskild avrundning av fel korrigering med en Quantum-kod som beskrivs av en `QECC` typ.
+  summary: Utför en enskild avrundning av fel korrigering med en Quantum-kod `QECC` som beskrivs av en typ.
 - uid: microsoft.quantum.errorcorrection.recovercss
-  summary: Utför en enskild avrundning av fel korrigering med en Quantum-kod som beskrivs av en `CSS` typ.
+  summary: Utför en enskild avrundning av fel korrigering med en Quantum-kod `CSS` som beskrivs av en typ.
 - uid: microsoft.quantum.errorcorrection.steanecodedecoder
   summary: "\n> [!WARNING]\n> Inaktuell\n\nSteaneCodeDecoder är föråldrad. Använd @\"microsoft.quantum.errorcorrection.decodefromsteanecode\" i stället.\nAnvänd @\"microsoft.quantum.errorcorrection.decodefromfivequbitcode\"."
 - uid: microsoft.quantum.errorcorrection.steanecodeencoder
   summary: "\n> [!WARNING]\n> Inaktuell\n\nSteaneCodeEncoder är föråldrad. Använd @\"microsoft.quantum.errorcorrection.encodeintosteanecode\" i stället.\nAnvänd @\"microsoft.quantum.errorcorrection.decodefromfivequbitcode\"."
 newtypes:
 - uid: microsoft.quantum.errorcorrection.css
-  summary: Representerar en kod för Calderbank – Shor – Steane (CSS) som definieras av dess kodare, avkodare och dess Syndrome mätnings procedurer för `X` respektive `Z` fel.
+  summary: Representerar en kod för Calderbank – Shor – Steane (CSS) som definieras av dess kodare, avkodare och dess Syndrome mått procedurer för `X` respektive `Z` fel.
 - uid: microsoft.quantum.errorcorrection.decodeop
   summary: >-
     Representerar en åtgärd som avkodar en kodad register till ett fysiskt register och den Scratch-qubits som används för att registrera en syndrome.
@@ -72,7 +72,7 @@ newtypes:
 
     Det första argumentet är att vara det fysiska register som kommer att kodas, medan det andra argumentet tas som det första registret som ska användas.
 - uid: microsoft.quantum.errorcorrection.logicalregister
-  summary: Typ för registrering av fysisk qubits `Qubit[]` som kodar den logiska qubits.
+  summary: Typ för registrering av fysisk qubits `Qubit[]` som kodar det logiska qubits.
 - uid: microsoft.quantum.errorcorrection.qecc
   summary: Representerar en fel korrigerings kod som definieras av dess kodare, avkodare och Syndrome mått procedur.
 - uid: microsoft.quantum.errorcorrection.recoveryfn
@@ -82,9 +82,9 @@ newtypes:
 - uid: microsoft.quantum.errorcorrection.syndromemeasop
   summary: Representerar en åtgärd som används för att mäta Syndrome för ett felkorrigerande kod block.
 metadata:
-  ms.openlocfilehash: 0a149810314453e816c7754dd535b2f3bb7d8e58
-  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
+  ms.openlocfilehash: b4d7aaa55fee7e99b9c96ebf3cecb36706a66062
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 01/29/2020
-  ms.locfileid: "76870796"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82673336"

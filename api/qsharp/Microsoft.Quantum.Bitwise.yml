@@ -38,9 +38,9 @@ functions:
   summary: Returnerar ett heltal som representerar Z-bitarna för en matris med Pauli-operatorer.
 summary: " # <a name=\"summary\"></a>Sammanfattning\n Det här namn området innehåller funktioner för att agera på den bitvisa representationen av klassiska data typer."
 metadata:
-  ms.openlocfilehash: c474d92e7a40f5491b21d80e00294fbdff96a62a
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: fb52d02d38d31b96b46dfc469ee07ee62e29a9d4
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73210958"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82673386"
