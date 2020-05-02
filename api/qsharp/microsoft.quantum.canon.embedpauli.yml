@@ -3,9 +3,9 @@ uid: microsoft.quantum.canon.embedpauli
 name: EmbedPauli
 type: function
 namespace: Microsoft.Quantum.Canon
-summary: Med en qubit Pauli-operator och indexet för en qubit returneras en Pauli-operator med en med en-operator i indexet och `PauliI` vid varje annat index.
+summary: Med en enda-qubit Pauli-operator och indexet för en qubit returneras en Pauli-operator med en med en-operator med den aktuella indexen `PauliI` och vid alla andra index.
 examples: >-
-  Så här hämtar du matrisen `[PauliI, PauliI, PauliX, PauliI]`:
+  Så här hämtar du `[PauliI, PauliI, PauliX, PauliI]`matrisen:
 
 
   ```qsharp
@@ -36,9 +36,9 @@ output:
     isPrimitive: true
     uid: Pauli
 metadata:
-  ms.openlocfilehash: 1e852781f6dd85e5432f5613184f028db0e84b87
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: df9cff23b6a7255ec57e944fd1bed140ff18560a
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73219390"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82675589"
