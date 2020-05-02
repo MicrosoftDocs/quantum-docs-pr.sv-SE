@@ -6,7 +6,7 @@ namespace: Microsoft.Quantum.Canon
 summary: >-
   En funktion som returnerar åtgärder returnerar en ny åtgärd som tar båda indata som en tupel.
 
-  Modifieraren `C` visar att åtgärderna är kontrollerbara.
+  Modifieraren `C` anger att åtgärderna är kontrollerbara.
 syntax: "function UncurriedOpC (curriedOp : ('T -> ('U => Unit is Ctl))) : (('T, 'U) => Unit is Ctl)"
 input:
   content: "(curriedOp : ('T -> ('U => Unit is Ctl)))"
@@ -56,9 +56,9 @@ typeParameters:
 seeAlso:
 - microsoft.quantum.canon.uncurryop
 metadata:
-  ms.openlocfilehash: 2808ad1be091f98185ca9b218d2df6065c15a143
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 763ea81f9a459a358d9a41e177697eb6bf2ca307
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73216959"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82677980"

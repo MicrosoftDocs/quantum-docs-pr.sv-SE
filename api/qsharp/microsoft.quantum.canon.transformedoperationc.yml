@@ -5,7 +5,7 @@ type: function
 namespace: Microsoft.Quantum.Canon
 summary: Med en funktion och en åtgärd returnerar en ny åtgärd vars Indatatyp omvandlas av den angivna funktionen.
 examples: >-
-  Följande anrop använder @"Microsoft.Quantum.Arithmetic.LittleEndianAsBigEndian" för att transformera en åtgärd som har utformats för @"Microsoft.Quantum.Arithmetic.BigEndian" indata till en åtgärd som accepterar indata av typen @"Microsoft.Quantum.Arithmetic.LittleEndian":
+  Följande anrop använder för @"Microsoft.Quantum.Arithmetic.LittleEndianAsBigEndian" att transformera en åtgärd som har @"Microsoft.Quantum.Arithmetic.BigEndian" utformats för indata till en åtgärd som accepterar @"Microsoft.Quantum.Arithmetic.LittleEndian"indata av typen:
 
 
   ```qsharp
@@ -44,7 +44,7 @@ input:
 output:
   content: ('U => Unit is Ctl)
   types:
-  - summary: En ny åtgärd tbat anropar `fn` med indata och skickar sedan resultatet till `op`.
+  - summary: En ny åtgärd tbat anropar `fn` sina indata och skickar sedan resultatet till. `op`
     isOperation: true
     input:
       types:
@@ -63,9 +63,9 @@ seeAlso:
 - applywithinputtransformation
 - compose
 metadata:
-  ms.openlocfilehash: 315c9aa76018490a58fcf9bbf93d4ef0e8410616
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 7f71aa5549ee813d0e53ed5b043479a7e7f3ffb6
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73217061"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82678050"
