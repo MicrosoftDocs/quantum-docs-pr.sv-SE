@@ -7,7 +7,7 @@ summary: Returnerar funktion som mappar fel Syndrome mätningar till rätt fel �
 remarks: >-
   Genom att iterera över alla fel i vikt $1 $ får vi totalt $3 \ gånger 5 = 15 $ möjligt icke-trivial syndromes.
 
-  Tillsammans med identiteten har en tabell med fel och motsvarande Syndrome skapats. För den 5 qubit koden anges följande tabell: $X\_1: (0, 0, 1); X\_2: (1,0, 0, 0); X\_3: (1, 1,0); X\_4: (0, 1, 1, 0); X\_5: (0,0, 1, 1) $, $Z\_1: (1,0, 1,0); Z\_2: (0, 1, 0, 1); Z\_3: (0, 0, 1, 0); Z\_4: (1,0, 0, 1); Z\_5: (0, 1,0, 0) $ med $Y _i $ erhållen genom att lägga till $X _i $ och $Z _i $ syndromes. Observera att ordningen i tabell söknings återställningen anges genom att konvertera bitvectors till heltal (med little endian).
+  Tillsammans med identiteten har en tabell med fel och motsvarande Syndrome skapats. För den 5 qubit koden anges följande tabell: $X\_1: (0, 0, 1); X\_2: (1,0, 0, 0); X\_3: (1, 1,0); X\_4: (0, 1, 1, 0); X\_5: (0,0, 1, 1) $, $Z\_1: (1, 0, 1, 0); Z\_2: (0, 1, 0, 1); Z\_3: (0, 0, 1, 0); Z\_4: (1,0, 0, 1); Z\_5: (0, 1,0) $ med $Y _i $ erhålls genom att lägga till $X _i $ och $Z _i $ syndromes. Observera att ordningen i tabell söknings återställningen anges genom att konvertera bitvectors till heltal (med little endian).
 syntax: 'function FiveQubitCodeRecoveryFn () : Microsoft.Quantum.ErrorCorrection.RecoveryFn'
 input:
   content: ()
@@ -15,14 +15,14 @@ input:
 output:
   content: Microsoft.Quantum.ErrorCorrection.RecoveryFn
   types:
-  - summary: Funktion av typen `RecoveryFn` som tar en Syndrome mått `Result[]` och returnerar de `Pauli[]`-operatorer som korrigerar det identifierade felet.
+  - summary: Funktion av typ `RecoveryFn` som tar en Syndrome- `Result[]` mätning och returnerar `Pauli[]` de operatorer som korrigerar det identifierade felet.
     uid: microsoft.quantum.errorcorrection.recoveryfn
 seeAlso:
 - recoveryfn
 metadata:
-  ms.openlocfilehash: efeabbeb6595d1440882eef73f152610a3ac74c5
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 8de748ddaf446cfcf7b8694079bd84bfc171211c
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73211638"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82684888"
