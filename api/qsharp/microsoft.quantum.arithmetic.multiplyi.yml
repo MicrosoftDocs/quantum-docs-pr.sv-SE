@@ -3,11 +3,11 @@ uid: microsoft.quantum.arithmetic.multiplyi
 name: MultiplyI
 type: operation
 namespace: Microsoft.Quantum.Arithmetic
-summary: Multiplicera Heltal `xs` med Integer `ys` och lagra resultatet i `result`, vilket måste vara noll först.
+summary: Multiplicera Heltal `xs` med heltal `ys` och lagra resultatet i `result`, som först måste vara noll.
 remarks: >-
   Använder en vanlig Shift-och-Lägg-metod för att implementera multiplikationen.
 
-  Den kontrollerade versionen har förbättrats genom att du kopierade $x _i $ till ett Ancilla qubit-villkor på kontrollen qubits och sedan styr additionen på Ancilla qubit.
+  Den kontrollerade versionen har förbättrats genom att du kopierade $x _i $ till en Ancilla-qubit som är villkorlig på kontrollen qubits och sedan styr additionen av Ancilla qubit.
 syntax: 'operation MultiplyI (xs : Microsoft.Quantum.Arithmetic.LittleEndian, ys : Microsoft.Quantum.Arithmetic.LittleEndian, result : Microsoft.Quantum.Arithmetic.LittleEndian) : Unit'
 input:
   content: '(xs : Microsoft.Quantum.Arithmetic.LittleEndian, ys : Microsoft.Quantum.Arithmetic.LittleEndian, result : Microsoft.Quantum.Arithmetic.LittleEndian)'
@@ -19,7 +19,7 @@ input:
     summary: $n $-bit multiplikator (LittleEndian)
     uid: microsoft.quantum.arithmetic.littleendian
   - name: result
-    summary: $2N $-bit result (LittleEndian) måste vara i tillstånd $ \ket{0}$ initialt.
+    summary: $2N $-bit result (LittleEndian) måste ha statusen $ \ket{0}$ initialt.
     uid: microsoft.quantum.arithmetic.littleendian
 output:
   content: Unit
@@ -30,9 +30,9 @@ functors:
 - Adjoint
 - Controlled
 metadata:
-  ms.openlocfilehash: 5af23390ef67bf339e816e4e8af1d3f52847aaa7
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: fcb55b47c0d5ca82736e8c3da14190daffd2b414
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73218744"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82679494"
