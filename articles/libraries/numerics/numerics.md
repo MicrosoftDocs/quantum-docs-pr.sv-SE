@@ -6,12 +6,12 @@ ms.author: thhaner
 ms.date: 5/14/2019
 ms.topic: article
 uid: microsoft.quantum.numerics.usage
-ms.openlocfilehash: ad9f529efd06fdf13bab4467b091aafacf1d5b09
-ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
+ms.openlocfilehash: 10d5675e0ef182211a38db4d09347b05afe109c3
+ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77907264"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82677113"
 ---
 # <a name="using-the-numerics-library"></a>Använda det numeriska biblioteket
 
@@ -23,7 +23,7 @@ Det numeriska biblioteket består av tre komponenter
 1. **Hög nivå av heltals funktioner** som bygger på de grundläggande funktionerna. den omfattar multiplikation, Division, inversion osv.  för signerade och osignerade heltal.
 1. **Aritmetiska funktioner** med fast punkt med fast punkt-initiering, tillägg, multiplikation, ömsesidig, polynom utvärdering och mätning.
 
-Alla dessa komponenter kan nås med hjälp av en enda `open`-instruktion:
+Alla dessa komponenter kan nås med hjälp av en enda `open` instruktion:
 ```qsharp
 open Microsoft.Quantum.Arithmetic;
 ```
@@ -32,23 +32,23 @@ open Microsoft.Quantum.Arithmetic;
 
 Det numeriska biblioteket stöder följande typer
 
-1. **`LittleEndian`** : en qubit mat ris `qArr : Qubit[]` som representerar ett heltal där `qArr[0]` anger den minst signifikanta biten.
-1. **`SignedLittleEndian`** : samma som `LittleEndian`, förutom att det representerar ett signerat heltal som lagras i två komplement.
-1. **`FixedPoint`** : representerar ett reellt tal som består av en qubit mat ris `qArr2 : Qubit[]` och en binär punkt positions `pos`, som räknar antalet binära siffror till vänster om den binära punkten. `qArr2` lagras på samma sätt som `SignedLittleEndian`.
+1. **`LittleEndian`**: En qubit- `qArr : Qubit[]` matris som representerar ett heltal `qArr[0]` som anger den minst signifikanta biten.
+1. **`SignedLittleEndian`**: Samma som `LittleEndian` förutom att det representerar ett signerat heltal som lagras i två komplement.
+1. **`FixedPoint`**: Representerar ett reellt tal bestående av en qubit `qArr2 : Qubit[]` -matris och en binär `pos`punkt position, vilket räknar antalet binära siffror till vänster om den binära punkten. `qArr2`lagras på samma sätt som `SignedLittleEndian`.
 
 ## <a name="operations"></a>Åtgärder
 
 Det finns flera olika åtgärder för var och en av de tre typerna ovan:
 
 1. **`LittleEndian`**
-    - Lägger
+    - Addition
     - Jämförelse
     - Multiplikation
     - Squaring
     - Division (med rest)
 
 1. **`SignedLittleEndian`**
-    - Lägger
+    - Addition
     - Jämförelse
     - Inversion av modulo 2-komplement
     - Multiplikation
@@ -75,8 +75,8 @@ Med hjälp av Quantum Development Kit kan du använda den här åtgärden på f�
 operation TestMyAddition(xValue : Int, yValue : Int, n : Int) : Unit {
     using ((xQubits, yQubits) = (Qubit[n], Qubit[n]))
     {
-        x = LittleEndian(xQubits); // define bit order
-        y = LittleEndian(yQubits);
+        let x = LittleEndian(xQubits); // define bit order
+        let y = LittleEndian(yQubits);
         
         ApplyXorInPlace(xValue, x); // initialize values
         ApplyXorInPlace(yValue, y);
@@ -90,15 +90,15 @@ operation TestMyAddition(xValue : Int, yValue : Int, n : Int) : Unit {
 
 ## <a name="sample-evaluating-smooth-functions"></a>Exempel: utvärdering av utjämna funktioner
 
-Om du vill utvärdera mjuka funktioner som $ \sin (x) $ på en Quantum-dator, där $x $ är ett Quantum `FixedPoint`-nummer, innehåller biblioteken med Quantum Development Kit-paket åtgärder `EvaluatePolynomialFxP` och `Evaluate[Even/Odd]PolynomialFxP`.
+Om du vill utvärdera mjuka funktioner som $ \sin (x) $ på en Quantum-dator, där $x $ är `FixedPoint` ett Quantum-tal, innehåller Quantum Development Kit-biblioteket de `EvaluatePolynomialFxP` åtgärder `Evaluate[Even/Odd]PolynomialFxP`och.
 
-Det första, `EvaluatePolynomialFxP`, gör det möjligt att utvärdera en polynom av formatet $ $ P (x) = a_0 + a_1x + a_2x ^ 2 + \cdots + a_dx ^ d, $ $ där $d $ anger *graden*. För att göra det är allt det som behövs de polynoma koefficienterna `[a_0,..., a_d]` (av typ `Double[]`), indata-`x : FixedPoint` och utdata `y : FixedPoint` (ursprungligen noll):
+Med det första `EvaluatePolynomialFxP`, kan du utvärdera en polynom av formatet $ $ P (x) = a_0 + a_1x + a_2x ^ 2 + \cdots + a_dx ^ d, $ $ där $d $ anger *graden*. För att göra det är allt som behövs `[a_0,..., a_d]` de polynoma koefficienterna (av typen `Double[]`), indata `x : FixedPoint` och utdata `y : FixedPoint` (från noll):
 ```qsharp
 EvaluatePolynomialFxP([1.0, 2.0], x, y);
 ```
 Resultatet, $P (x) = 1 + 2x $, kommer att lagras i `yFxP`.
 
-Den andra, `EvaluateEvenPolynomialFxP`och den tredje `EvaluateOddPolynomialFxP`är specialiseringar för fall av jämna respektive udda funktioner. Det vill säga för en jämn/udda funktion $f (x) $ och $ $ P_ {jämna} (x) = a_0 + a_1 x ^ 2 + a_2 x ^ 4 + \cdots + a_d x ^ {2D}, $ $ $f (x) $ approximeras bra genom att $P _ {t.o.m.} (x) $ eller $P _ {udda} (x): = x\cdot P_ {jämna} (x) $.
+Den andra `EvaluateEvenPolynomialFxP`, och den tredje, `EvaluateOddPolynomialFxP`är specialiseringar för fall av jämna respektive udda funktioner. Det vill säga för en jämn/udda funktion $f (x) $ och $ $ P_ {jämna} (x) = a_0 + a_1 x ^ 2 + a_2 x ^ 4 + \cdots + a_d x ^ {2D}, $ $ $f (x) $ approximeras bra genom att $P _ {t.o.m.} (x) $ eller $P _ {udda} (x): = x\cdot P_ {jämna} (x) $.
 I Q # kan dessa två fall hanteras på följande sätt:
 ```qsharp
 EvaluateEvenPolynomialFxP([1.0, 2.0], x, y);
@@ -113,14 +113,14 @@ som utvärderar $P _ {udda} (x) = x + 2x ^ 3 $.
 
 Du hittar fler exempel i [huvud exempel lagrings platsen](https://github.com/Microsoft/Quantum).
 
-Kom igång genom att klona lagrings platsen och öppna undermappen `Numerics`:
+Kom igång genom att klona lagrings platsen och öppna `Numerics` undermappen:
 
 ```bash
 git clone https://github.com/Microsoft/Quantum.git
 cd Quantum/Numerics
 ```
 
-`cd` till en av exempel mapparna och kör exemplet via
+Sedan, `cd` till en av exempel mapparna och köra exemplet via
 
 ```bash
 dotnet run

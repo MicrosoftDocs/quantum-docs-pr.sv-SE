@@ -4,11 +4,11 @@ name: Filtered
 type: function
 namespace: Microsoft.Quantum.Arrays
 summary: Med tanke på en matris och ett predikat som har definierats för elementen i matrisen, returnerar en matris som består av de element som uppfyller predikatet.
-remarks: Funktionen definieras för generiska typer, d.v.s. När vi har en matris `'T[]` och ett predikat `'T -> Bool` vi kan filtrera element.
+remarks: Funktionen definieras för generiska typer, d.v.s. När vi har en matris `'T[]` och ett predikat `'T -> Bool` kan vi filtrera element.
 examples: >-
   Följande kod visar funktionen "filtrerad".
 
-  Ett predikat definieras med hjälp av funktionen @"microsoft.quantum.logical.greaterthani":
+  Ett predikat definieras med @"microsoft.quantum.logical.greaterthani" funktionen:
 
 
   ```qsharp
@@ -51,7 +51,7 @@ input:
 output:
   content: "'T[]"
   types:
-  - summary: En matris `'T[]` av element som uppfyller predikatet.
+  - summary: En matris `'T[]` med element som uppfyller predikatet.
     isArray: true
     uid: "'T"
     isLocal: true
@@ -59,9 +59,9 @@ typeParameters:
 - uid: "'T"
   summary: Typ av `array` element.
 metadata:
-  ms.openlocfilehash: 8ce7f84c2243a5194b5a2223884fb68304767dbf
-  ms.sourcegitcommit: a0e50c5f07841b99204c068cf5b5ec8ed087ffea
+  ms.openlocfilehash: 6aa19a279425672675182f3c8098e7c47fb5cce6
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 03/26/2020
-  ms.locfileid: "80320754"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82676454"

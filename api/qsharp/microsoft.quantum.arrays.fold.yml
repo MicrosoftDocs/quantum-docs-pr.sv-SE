@@ -3,7 +3,7 @@ uid: microsoft.quantum.arrays.fold
 name: Fold
 type: function
 namespace: Microsoft.Quantum.Arrays
-summary: Itererar en funktion `f` genom en mat ris `array`och returnerar `f(f(f(initialState, array[0]), array[1]), ...)`.
+summary: Itererar en funktion `f` genom en matris `array`och returnerar `f(f(f(initialState, array[0]), array[1]), ...)`.
 examples: >-
   ```qsharp
 
@@ -45,18 +45,18 @@ input:
 output:
   content: "'State"
   types:
-  - summary: Det slutliga tillstånd som returneras av mappen efter att du har itererat över alla delar av `array`.
+  - summary: Det slutliga tillstånd som returneras av mappen efter att du har itererat `array`över alla element i.
     uid: "'State"
     isLocal: true
 typeParameters:
 - uid: "'State"
-  summary: Den typ av tillstånd som den `folder`-funktionen körs på, dvs accepterar som sitt första argument och returnerar.
+  summary: Den typ av tillstånd som `folder` funktionen körs på, dvs accepterar som första argument och returnerar.
 - uid: "'T"
   summary: Typ av `array` element.
 metadata:
-  ms.openlocfilehash: 4be4752029b10351cfb3fe0fa6aa61b84b157510
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: d02d20c049e8b8d21214028efcd6a647067bf71f
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73214358"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82676449"

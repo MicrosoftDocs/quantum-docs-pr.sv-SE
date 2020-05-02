@@ -5,7 +5,7 @@ type: function
 namespace: Microsoft.Quantum.Arrays
 summary: Två matriser av samma typ och ett predikat som har definierats för par element i matriserna, kontrollerar om matriserna är lika.
 remarks: >-
-  Den här funktionen definieras för generiska typer. det vill säga när vi har två matriser `'T[]` och en funktion `equal: ('T, 'T) -> Bool`, returnerar den här funktionen ett `Bool` värde som anger om matriserna är lika.
+  Den här funktionen definieras för generiska typer. det vill säga när vi har två matriser `'T[]` och en funktion `equal: ('T, 'T) -> Bool`, returnerar den här funktionen `Bool` ett värde som anger om matriserna är lika.
 
   För att två matriser ska anses vara lika måste de ha samma längd och elementen i samma positioner i matriserna måste vara identiska.
 examples: >-
@@ -59,18 +59,18 @@ output:
   content: Bool
   types:
   - summary: >-
-      Värdet `true` om och endast om `array1` och `array2` är lika.
+      Värdet `true` IF och endast IF `array1` och `array2` är lika med.
 
-      Det vill säga om båda matriserna har samma längd och alla element är lika definierade som `equal`.
+      Det vill säga om båda matriserna har samma längd och alla element är lika definierade som de av `equal`.
     isPrimitive: true
     uid: Bool
 typeParameters:
 - uid: "'T"
   summary: Typen för varje mat ris element.
 metadata:
-  ms.openlocfilehash: 466078fa243e2f394fa42dff15845ae5f1cd73df
-  ms.sourcegitcommit: a0e50c5f07841b99204c068cf5b5ec8ed087ffea
+  ms.openlocfilehash: d2af5ff8e2d66e6162c73c3854670451a00dcf50
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 03/26/2020
-  ms.locfileid: "80321614"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82676487"

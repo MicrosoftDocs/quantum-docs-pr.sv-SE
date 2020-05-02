@@ -9,10 +9,10 @@ summary: >-
 
   Detta byter i princip qubits vid användning av en global fas på-1 om båda qubits är 1. Bevarar symmetrization av banor.
 
-  Mer information finns i.
+  Mer information finns i .
 
 
-  Den här åtgärden representeras av den enhetliga operatorn \begin{align} f_ {swap} \mathrel{: =} \begin{bmatrix} 1 & 0 & 0 & 0 \\\\ 0 & 0 & 1 & 0 \\\\ 0 & 0 & 0 & \\\\ 0 & 0 & 0 &-1 \\\\ \end{bmatrix}.
+  Den här åtgärden representeras av den enhetliga operatorn \begin{align} f_ {swap} \mathrel{: =} \begin{bmatrix} 1 & 0 & \\ \\ 0 & 0 0 & 0 & \\ \\ 1 & 0 & & 1 & \\ \\ 0 & 0 & 0 & 0 \\ \\ -1 \end{bmatrix}.
 
   \end{align}
 syntax: 'operation ApplyFermionicSWAP (qubit1 : Qubit, qubit2 : Qubit) : Unit'
@@ -39,9 +39,9 @@ functors:
 seeAlso:
 - microsoft.quantum.intrinsic.swap
 metadata:
-  ms.openlocfilehash: 4d9fd4ea879dd0df6bddddb3d4f769f4e8096657
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: c5e9a825d29bab3fa6b7a89e67f4cf5e40fec6d8
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73213831"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82676370"

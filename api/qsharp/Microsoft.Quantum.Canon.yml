@@ -40,34 +40,34 @@ functions:
   summary: >-
     Med en matris med åtgärder som agerar på samma indatamängd skapar en ny åtgärd som utför varje åtgärd i följd.
 
-    Modifieraren `A` visar att alla åtgärder i matrisen är adjointable.
+    Modifieraren `A` anger att alla åtgärder i matrisen är adjointable.
 - uid: microsoft.quantum.canon.boundc
   summary: >-
     Med en matris med åtgärder som agerar på samma indatamängd skapar en ny åtgärd som utför varje åtgärd i följd.
 
-    Modifieraren `C` visar att alla åtgärder i matrisen är kontrollerbara.
+    Modifieraren `C` anger att alla åtgärder i matrisen är kontrollerbara.
 - uid: microsoft.quantum.canon.boundca
   summary: >-
     Med en matris med åtgärder som agerar på samma indatamängd skapar en ny åtgärd som utför varje åtgärd i följd.
 
-    Modifieraren `CA` visar att alla åtgärder i matrisen är adjointable och kontrollerbara.
+    Modifieraren `CA` anger att alla åtgärder i matrisen är adjointable och kontrollerbara.
 - uid: microsoft.quantum.canon.ccontrolled
   summary: Med en åtgärd op returnerar en ny åtgärd som tillämpar op om en klassisk kontroll bit är sann. Om `false`händer ingenting.
 - uid: microsoft.quantum.canon.ccontrolleda
   summary: >-
     Med en åtgärd op returnerar en ny åtgärd som tillämpar op om en klassisk kontroll bit är sann. Om `false`händer ingenting.
 
-    Modifieraren `A` visar att åtgärden är adjointable.
+    Modifieraren `A` anger att åtgärden är adjointable.
 - uid: microsoft.quantum.canon.ccontrolledc
   summary: >-
     Med en åtgärd op returnerar en ny åtgärd som tillämpar op om en klassisk kontroll bit är sann. Om `false`händer ingenting.
 
-    Modifieraren `C` visar att åtgärden är kontrollerbar.
+    Modifieraren `C` anger att åtgärden är kontrollerbar.
 - uid: microsoft.quantum.canon.ccontrolledca
   summary: >-
     Med en åtgärd op returnerar en ny åtgärd som tillämpar op om en klassisk kontroll bit är sann. Om `false`händer ingenting.
 
-    Modifieraren `CA` visar att åtgärden är kontrollerbar och adjointable.
+    Modifieraren `CA` anger att åtgärden är kontrollerbar och adjointable.
 - uid: microsoft.quantum.canon.compose
   summary: Returnerar sammansättningen för två functions.
 - uid: microsoft.quantum.canon.conjugatedby
@@ -105,7 +105,7 @@ functions:
 - uid: microsoft.quantum.canon.delayedca
   summary: Returnerar en åtgärd som tillämpar den åtgärd som har angivet argument.
 - uid: microsoft.quantum.canon.embedpauli
-  summary: Med en qubit Pauli-operator och indexet för en qubit returneras en Pauli-operator med en med en-operator i indexet och `PauliI` vid varje annat index.
+  summary: Med en enda-qubit Pauli-operator och indexet för en qubit returneras en Pauli-operator med en med en-operator med den aktuella indexen `PauliI` och vid alla andra index.
 - uid: microsoft.quantum.canon.expmod
   summary: "\n> [!WARNING]\n> Inaktuell\n\nExpMod är föråldrad. Använd @\"microsoft.quantum.math.expmodi\" i stället.\nAnvänd @\"microsoft.quantum.math.expmodi\"."
 - uid: microsoft.quantum.canon.extendedgcd
@@ -168,7 +168,7 @@ functions:
   summary: >-
     Genererar en åtgärd till en exponent.
 
-    Modifieraren `A` visar att åtgärden är adjointable.
+    Modifieraren `A` anger att åtgärden är adjointable.
 
 
     Det vill säga en åtgärd som representerar en grind $U $, returnerar en ny åtgärd $U ^ m $ för en Power $m $.
@@ -176,7 +176,7 @@ functions:
   summary: >-
     Genererar en åtgärd till en exponent.
 
-    Modifieraren `C` visar att åtgärden är kontrollerbar.
+    Modifieraren `C` anger att åtgärden är kontrollerbar.
 
 
     Det vill säga en åtgärd som representerar en grind $U $, returnerar en ny åtgärd $U ^ m $ för en Power $m $.
@@ -184,7 +184,7 @@ functions:
   summary: >-
     Genererar en åtgärd till en exponent.
 
-    Modifieraren `A` visar att åtgärden är kontrollerbar och adjointable.
+    Modifieraren `A` anger att åtgärden är kontrollerbar och adjointable.
 
 
     Det vill säga en åtgärd som representerar en grind $U $, returnerar en ny åtgärd $U ^ m $ för en Power $m $.
@@ -204,17 +204,17 @@ functions:
   summary: >-
     Begränsar en åtgärd till en matris med index i ett register, dvs. en under registrering.
 
-    Modifieraren `A` visar att åtgärden är adjointable.
+    Modifieraren `A` anger att åtgärden är adjointable.
 - uid: microsoft.quantum.canon.restrictedtosubregisterc
   summary: >-
     Begränsar en åtgärd till en matris med index i ett register, dvs. en under registrering.
 
-    Modifieraren `C` visar att åtgärden är kontrollerbar.
+    Modifieraren `C` anger att åtgärden är kontrollerbar.
 - uid: microsoft.quantum.canon.restrictedtosubregisterca
   summary: >-
     Begränsar en åtgärd till en matris med index i ett register, dvs. en under registrering.
 
-    Modifieraren `CA` visar att åtgärden är kontrollerbar och adjointable.
+    Modifieraren `CA` anger att åtgärden är kontrollerbar och adjointable.
 - uid: microsoft.quantum.canon.restricttosubregister
   summary: "\n> [!WARNING]\n> Inaktuell\n\nRestrictToSubregister är föråldrad. Använd @\"microsoft.quantum.canon.restrictedtosubregister\" i stället.\nAnvänd @\"microsoft.quantum.canon.restrictedtosubregister\"."
 - uid: microsoft.quantum.canon.restricttosubregistera
@@ -263,17 +263,17 @@ functions:
   summary: >-
     En funktion som returnerar åtgärder returnerar en ny åtgärd som tar båda indata som en tupel.
 
-    Modifieraren `A` visar att åtgärderna är adjointable.
+    Modifieraren `A` anger att åtgärderna är adjointable.
 - uid: microsoft.quantum.canon.uncurriedopc
   summary: >-
     En funktion som returnerar åtgärder returnerar en ny åtgärd som tar båda indata som en tupel.
 
-    Modifieraren `C` visar att åtgärderna är kontrollerbara.
+    Modifieraren `C` anger att åtgärderna är kontrollerbara.
 - uid: microsoft.quantum.canon.uncurriedopca
   summary: >-
     En funktion som returnerar åtgärder returnerar en ny åtgärd som tar båda indata som en tupel.
 
-    Modifieraren `CA` visar att åtgärderna är kontrollerbara och adjointable.
+    Modifieraren `CA` anger att åtgärderna är kontrollerbara och adjointable.
 - uid: microsoft.quantum.canon.uncurryop
   summary: "\n> [!WARNING]\n> Inaktuell\n\nUncurryOp är föråldrad. Använd @\"microsoft.quantum.canon.uncurriedop\" i stället.\nAnvänd @\"microsoft.quantum.canon.uncurriedop\"."
 - uid: microsoft.quantum.canon.uncurryopa
@@ -347,12 +347,12 @@ operations:
   summary: >-
     Använder en multiplicerad, kontrollerad version av en åtgärd med enkel kontroll.
 
-    Modifieraren `C` visar att åtgärden för en qubit är kontrollerbar.
+    Modifieraren `C` anger att en enskild-qubit-åtgärd är kontrollerbar.
 - uid: microsoft.quantum.canon.applymulticontrolledca
   summary: >-
     Använder en multiplicerad, kontrollerad version av en åtgärd med enkel kontroll.
 
-    Modifieraren `CA` visar att åtgärden för en qubit är kontrollerbar och adjointable.
+    Modifieraren `CA` anger att en enskild-qubit-åtgärd är kontrollerbar och adjointable.
 - uid: microsoft.quantum.canon.applyoprepeatedlyover
   summary: Använder samma OP över ett qubit-register flera gånger.
 - uid: microsoft.quantum.canon.applyoprepeatedlyovera
@@ -405,34 +405,34 @@ operations:
   summary: >-
     Tillämpar en enskild qubit-åtgärd för varje-element i en register.
 
-    Modifieraren `A` anger att åtgärden för en qubit är adjointable.
+    Modifieraren `A` anger att en qubit-åtgärd är adjointable.
 - uid: microsoft.quantum.canon.applytoeachc
   summary: >-
     Tillämpar en enskild qubit-åtgärd för varje-element i en register.
 
-    Modifieraren `C` visar att åtgärden för en qubit är kontrollerbar.
+    Modifieraren `C` anger att en enskild-qubit-åtgärd är kontrollerbar.
 - uid: microsoft.quantum.canon.applytoeachca
   summary: >-
     Tillämpar en enskild qubit-åtgärd för varje-element i en register.
 
-    Modifieraren `CA` visar att åtgärden för en qubit är kontrollerbar och adjointable.
+    Modifieraren `CA` anger att en enskild-qubit-åtgärd är kontrollerbar och adjointable.
 - uid: microsoft.quantum.canon.applytoeachindex
   summary: Tillämpar en enskild qubit-åtgärd på varje indexerat element i en register.
 - uid: microsoft.quantum.canon.applytoeachindexa
   summary: >-
     Tillämpar en enskild qubit-åtgärd på varje indexerat element i en register.
 
-    Modifieraren `A` anger att åtgärden för en qubit är adjointable.
+    Modifieraren `A` anger att en qubit-åtgärd är adjointable.
 - uid: microsoft.quantum.canon.applytoeachindexc
   summary: >-
     Tillämpar en enskild qubit-åtgärd på varje indexerat element i en register.
 
-    Modifieraren `C` visar att åtgärden för en qubit är kontrollerbar.
+    Modifieraren `C` anger att en enskild-qubit-åtgärd är kontrollerbar.
 - uid: microsoft.quantum.canon.applytoeachindexca
   summary: >-
     Tillämpar en enskild qubit-åtgärd på varje indexerat element i en register.
 
-    Modifieraren `CA` anger att åtgärden för en qubit är adjointable och kan kontrol leras.
+    Modifieraren `CA` anger att en qubit-åtgärd är adjointable och kan kontrol leras.
 - uid: microsoft.quantum.canon.applytoelement
   summary: Tillämpar en åtgärd på ett angivet element i en matris.
 - uid: microsoft.quantum.canon.applytoelementa
@@ -447,85 +447,85 @@ operations:
   summary: >-
     Tillämpar en åtgärd på den första qubit i registret.
 
-    Modifieraren `A` visar att åtgärden är adjointable.
+    Modifieraren `A` anger att åtgärden är adjointable.
 - uid: microsoft.quantum.canon.applytofirstqubitc
   summary: >-
     Tillämpar åtgärden op på den första qubit i registret.
 
-    Modifieraren `C` visar att åtgärden är kontrollerbar.
+    Modifieraren `C` anger att åtgärden är kontrollerbar.
 - uid: microsoft.quantum.canon.applytofirstqubitca
   summary: >-
     Tillämpar åtgärden op på den första qubit i registret.
 
-    Modifieraren `CA` visar att åtgärden är kontrollerbar och adjointable.
+    Modifieraren `CA` anger att åtgärden är kontrollerbar och adjointable.
 - uid: microsoft.quantum.canon.applytofirstthreequbits
   summary: Tillämpar en åtgärd på de första tre qubits i registret.
 - uid: microsoft.quantum.canon.applytofirstthreequbitsa
   summary: >-
     Tillämpar en åtgärd på de första tre qubits i registret.
 
-    Modifieraren `A` visar att åtgärden är adjointable.
+    Modifieraren `A` anger att åtgärden är adjointable.
 - uid: microsoft.quantum.canon.applytofirstthreequbitsc
   summary: >-
     Tillämpar en åtgärd på de första tre qubits i registret.
 
-    Modifieraren `C` visar att åtgärden är kontrollerbar.
+    Modifieraren `C` anger att åtgärden är kontrollerbar.
 - uid: microsoft.quantum.canon.applytofirstthreequbitsca
   summary: >-
     Tillämpar en åtgärd på de första tre qubits i registret.
 
-    Modifieraren `CA` visar att åtgärden är kontrollerbar och adjointable.
+    Modifieraren `CA` anger att åtgärden är kontrollerbar och adjointable.
 - uid: microsoft.quantum.canon.applytofirsttwoqubits
   summary: Tillämpar en åtgärd på de två första qubits i registret.
 - uid: microsoft.quantum.canon.applytofirsttwoqubitsa
   summary: >-
     Tillämpar en åtgärd på de två första qubits i registret.
 
-    Modifieraren `A` visar att åtgärden är adjointable.
+    Modifieraren `A` anger att åtgärden är adjointable.
 - uid: microsoft.quantum.canon.applytofirsttwoqubitsc
   summary: >-
     Tillämpar en åtgärd på de två första qubits i registret.
 
-    Modifieraren `C` visar att åtgärden är kontrollerbar.
+    Modifieraren `C` anger att åtgärden är kontrollerbar.
 - uid: microsoft.quantum.canon.applytofirsttwoqubitsca
   summary: >-
     Tillämpar en åtgärd på de två första qubits i registret.
 
-    Modifieraren `CA` visar att åtgärden är kontrollerbar och adjointable.
+    Modifieraren `CA` anger att åtgärden är kontrollerbar och adjointable.
 - uid: microsoft.quantum.canon.applytopartition
   summary: Använder ett åtgärds par för en viss partition av ett register i två delar.
 - uid: microsoft.quantum.canon.applytopartitiona
   summary: >-
     Använder ett åtgärds par för en viss partition av ett register i två delar.
 
-    Modifieraren `A` visar att åtgärden är adjointable.
+    Modifieraren `A` anger att åtgärden är adjointable.
 - uid: microsoft.quantum.canon.applytopartitionc
   summary: >-
     Använder ett åtgärds par för en viss partition av ett register i två delar.
 
-    Modifieraren `C` visar att åtgärden är kontrollerbar.
+    Modifieraren `C` anger att åtgärden är kontrollerbar.
 - uid: microsoft.quantum.canon.applytopartitionca
   summary: >-
     Använder ett åtgärds par för en viss partition av ett register i två delar.
 
-    Modifieraren `CA` visar att åtgärden är kontrollerbar och adjointable.
+    Modifieraren `CA` anger att åtgärden är kontrollerbar och adjointable.
 - uid: microsoft.quantum.canon.applytosubregister
   summary: Tillämpar en åtgärd på ett under register i ett register, där qubits anges av en matris med sina index.
 - uid: microsoft.quantum.canon.applytosubregistera
   summary: >-
     Tillämpar en åtgärd på ett under register i ett register, där qubits anges av en matris med sina index.
 
-    Modifieraren `A` visar att åtgärden är adjointable.
+    Modifieraren `A` anger att åtgärden är adjointable.
 - uid: microsoft.quantum.canon.applytosubregisterc
   summary: >-
     Tillämpar en åtgärd på ett under register i ett register, där qubits anges av en matris med sina index.
 
-    Modifieraren `C` visar att åtgärden är kontrollerbar.
+    Modifieraren `C` anger att åtgärden är kontrollerbar.
 - uid: microsoft.quantum.canon.applytosubregisterca
   summary: >-
     Tillämpar en åtgärd på ett under register i ett register, där qubits anges av en matris med sina index.
 
-    Modifieraren `CA` visar att åtgärden är kontrollerbar och adjointable.
+    Modifieraren `CA` anger att åtgärden är kontrollerbar och adjointable.
 - uid: microsoft.quantum.canon.applywith
   summary: Med två åtgärder används en som konjugaten med den andra.
 - uid: microsoft.quantum.canon.applywitha
@@ -559,7 +559,7 @@ operations:
     Förutsätter att fasen för ett Equal-positions läge har det förväntade värdet.
 
 
-    Mer specifikt förutsätter att fasen $ \phi $ i ett Quantum-tillstånd som kan uttryckas som $ \frac{e ^ {i t}} {\sqrt{2}} (e ^ {i\phi} \ ket{0} + e ^ {-i\phi} \ ket{1}) $ för en viss godtycklig verklig t har det förväntade värdet.
+    Mer specifikt förutsätter att fasen $ \phi $ i ett Quantum-tillstånd som kan uttryckas som $ \frac{e ^ {i t}} {{2}\sqrt} (e ^ {i\phi} \{0} ket + e ^ {-i\phi} \{1}ket) $ för en viss godtycklig verklig t har det förväntade värdet.
 - uid: microsoft.quantum.canon.assertprobintbe
   summary: "\n> [!WARNING]\n> Inaktuell\n\nAssertProbIntBE är föråldrad. Använd @ \"assertprobint (stateindex, sannolikhet, bigendianaslittleendian (qubits), tolerans)\" i stället.\nDen här åtgärden har tagits bort."
 - uid: microsoft.quantum.canon.cascadecnot
@@ -575,19 +575,19 @@ operations:
     Tillämpar den kontrollerade X (CX)-porten på ett par med qubits.
 
 
-    $ $ \begin{align} 1 & 0 & 0 & 0 \\\\ 0 & 1 & 0 & 0 \\\\ 0 & 0 & 0 & 1 \\\\ 0 & 0 & 1 & 0 \end{align}, $ $ där rader och kolumner är ordnade som i Quantum Concepts-guiden.
+    $ $ \begin{align} 1 & 0 & 0 & 0 \\ \\ 0 & 1 & 0 & \\ \\ 0 0 & 0 & 0 & 1 \\ \\ 0 & 0 & 1 & 0 \end{align}, $ $ där rader och kolumner är ordnade som i Quantum Concepts-guiden.
 - uid: microsoft.quantum.canon.cy
   summary: >-
     Tillämpar den kontrollerade Y-porten (CY) på ett par med qubits.
 
 
-    $ $ \begin{align} 1 & 0 & 0 & 0 \\\\ 0 & 1 & 0 & 0 \\\\ 0 & 0 & 0 &-i \\\\ 0 & 0 & i & 0 \end{align} $ $ där rader och kolumner är ordnade som i Quantum Concepts-guiden.
+    $ $ \begin{align} 1 & 0 & 0 & 0 \\ \\ 0 & 1 & 0 & \\ \\ 0 0 & 0 & 0 &-i \\ \\ 0 & 0 & i & 0 \end{align} $ $ där rader och kolumner är ordnade som i Quantum Concepts-guiden.
 - uid: microsoft.quantum.canon.cz
   summary: >-
     Använder CZ-porten (styrd-Z) till ett par med qubits.
 
 
-    $ $ \begin{align} 1 & 0 & 0 & 0 \\\\ 0 & 1 & 0 & 0 \\\\ 0 & 0 & 1 & 0 \\\\ 0 & 0 & 0 &-1 \end{align}, $ $ där rader och kolumner är ordnade som i Quantum Concepts-guiden.
+    $ $ \begin{align} 1 & 0 & 0 & 0 \\ \\ 0 & 1 & 0 & \\ \\ 0 0 & 0 & 1 & 0 \\ \\ 0 & 0 & 0 &-1 \end{align}, $ $ där rader och kolumner ordnas som i Quantum Concepts-guiden.
 - uid: microsoft.quantum.canon.delay
   summary: Tillämpar en viss åtgärd med en fördröjning.
 - uid: microsoft.quantum.canon.delaya
@@ -604,7 +604,7 @@ operations:
     Y Hadamard-transformeringen $H _Y = S H $ på en enda qubit är:
 
 
-    \begin{align} H_Y \mathrel{: =} \frac{1}{\sqrt{2}} \begin{bmatrix} 1 & 1 \\\\ &-i \end{bmatrix}.
+    \begin{align} H_Y \mathrel{: =} \frac{1}{\sqrt{2}} \begin{bmatrix} 1 & 1 \\ \\ i &-i \end{bmatrix}.
 
     \end{align}
 - uid: microsoft.quantum.canon.inplacemajority
@@ -694,9 +694,9 @@ newtypes:
 - uid: microsoft.quantum.canon.resultstack
   summary: "\n> [!WARNING]\n> Inaktuell\n\nResultStack är föråldrad."
 metadata:
-  ms.openlocfilehash: db3466b0e6fe493393f75bea85f9c91e2f56ec67
-  ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
+  ms.openlocfilehash: a38f0267c2caefba7acc63e8e36d96a1b8c08d91
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 02/28/2020
-  ms.locfileid: "77905632"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82677064"

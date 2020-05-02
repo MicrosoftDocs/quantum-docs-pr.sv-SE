@@ -7,11 +7,11 @@ summary: >-
   Utför en modulär ökning av ett qubit-register med en heltalskonstant.
 
 
-  Låt oss ange `increment` $a $, `modulus` genom $N $ och Integer som är kodat i `target` av $y $.
+  Låt oss `increment` ange $a $, genom `modulus` att $N $ och Integer som är `target` kodat i $y $.
 
   Åtgärden utför sedan följande omvandling: \begin{align} \ket{y} \mapsto \ket{(y + a) \operatorname{mod} N} \end{align} heltal kodas i litet endian-format i QFT.
 remarks: >-
-  Förutsätter att `target` har den högsta bit inställningen 0.
+  Förutsätter `target` att har den högsta bit inställningen 0.
 
   Förutsätter också att målets värde är mindre än $N $.
 
@@ -30,7 +30,7 @@ input:
     isPrimitive: true
     uid: Int
   - name: target
-    summary: Integer $y $ i fas-kodat litet endian-format som `increment` $a $ läggs till i.
+    summary: Integer $y $ i fas-kodat litet endian-format `increment` som $a $ läggs till i.
     uid: microsoft.quantum.arithmetic.phaselittleendian
 output:
   content: Unit
@@ -43,9 +43,9 @@ functors:
 seeAlso:
 - microsoft.quantum.arithmetic.incrementbymodularinteger
 metadata:
-  ms.openlocfilehash: 69240c9ecac0917f8f2a6d1f6a3554cc93269cbd
-  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
+  ms.openlocfilehash: e97f88d64d9188d18b10ed7f67adc0225167c466
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 01/29/2020
-  ms.locfileid: "76871421"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82676859"

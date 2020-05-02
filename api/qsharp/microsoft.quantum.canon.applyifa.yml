@@ -7,11 +7,11 @@ summary: >-
   Tillämpar en adjointable-åtgärd som villkorat på en klassisk bit.
 
 
-  Med en åtgärd `op` och ett bit värde `bit`används `op` till `target` om `bit` är `true`. Om `false`händer ingenting i `target`.
+  En åtgärd `op` och ett bit värde `bit`gäller `op` för `target` IF. `bit` `true` Om `false`händer ingenting `target`.
 
-  Suffixet `A` indikerar att åtgärden som ska tillämpas är adjointable.
+  Suffixet `A` anger att åtgärden som ska tillämpas är adjointable.
 examples: >-
-  Följande förbereder ett register över qubits till ett beräknings bas tillstånd som representeras av en klassisk bit sträng som anges som en matris med `Bool` värden:
+  Följande förbereder ett register över qubits till ett beräknings bas tillstånd som representeras av en klassisk bit sträng som anges som en `Bool` matris med värden:
 
 
   ```Q#
@@ -65,9 +65,9 @@ seeAlso:
 - microsoft.quantum.canon.applyifa
 - microsoft.quantum.canon.applyifca
 metadata:
-  ms.openlocfilehash: 2c62617251d7795f19fa67f7de01859679c94313
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: fca10f4a39c8cdc3941d9a7d06e47e1c6dfefa74
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73213882"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82676339"

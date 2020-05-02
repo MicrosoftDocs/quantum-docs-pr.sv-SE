@@ -18,9 +18,9 @@ functions:
 - uid: microsoft.quantum.convert.boolarrayaspauli
   summary: Med en bit-sträng returnerar en qubit Pauli-operator som representeras som en matris med qubit Pauli-operatörer.
 - uid: microsoft.quantum.convert.boolarrayasresultarray
-  summary: Konverterar en `Bool[]`-typ till en `Result[]` typ där `true` mappas till `One` och `false` mappas till `Zero`.
+  summary: Konverterar en `Bool[]` typ till en `Result[]` typ, där `true` mappas till `One` och `false` mappas till `Zero`.
 - uid: microsoft.quantum.convert.boolasresult
-  summary: Konverterar en `Bool`-typ till en `Result` typ där `true` mappas till `One` och `false` mappas till `Zero`.
+  summary: Konverterar en `Bool` typ till en `Result` typ, där `true` mappas till `One` och `false` mappas till `Zero`.
 - uid: microsoft.quantum.convert.boolasstring
   summary: Konverterar ett angivet booleskt värde till en motsvarande sträng representation.
 - uid: microsoft.quantum.convert.doubleasstring
@@ -47,20 +47,20 @@ functions:
 - uid: microsoft.quantum.convert.pauliarrayasint
   summary: Kodar en qubit Pauli-operatör som representeras som en matris med qubit Pauli-operatörer till ett heltal.
 - uid: microsoft.quantum.convert.rangeasintarray
-  summary: Skapar en matris `arr` av heltal som räknas upp av start.. steg... ändamål.
+  summary: Skapar en matris `arr` med heltal som räknas upp av start.. steg... ändamål.
 - uid: microsoft.quantum.convert.resultarrayasboolarray
-  summary: Konverterar en `Result[]`-typ till en `Bool[]` typ där `One` mappas till `true` och `Zero` mappas till `false`.
+  summary: Konverterar en `Result[]` typ till en `Bool[]` typ, där `One` mappas till `true` och `Zero` mappas till `false`.
 - uid: microsoft.quantum.convert.resultarrayasint
   summary: Genererar ett positivt heltal från en sträng med resultat i little endian format.
 - uid: microsoft.quantum.convert.resultasbool
-  summary: Konverterar en `Result`-typ till en `Bool` typ där `One` mappas till `true` och `Zero` mappas till `false`.
+  summary: Konverterar en `Result` typ till en `Bool` typ, där `One` mappas till `true` och `Zero` mappas till `false`.
 operations:
 - uid: microsoft.quantum.convert.call
   summary: Anropar en funktion med en specifik Indatatyp.
 metadata:
-  ms.openlocfilehash: a0c347d8004b8f8bd35fc1b7f7eaf52e6230cee0
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: d435979692fe94efb64af82f4a7a949cb2341ef8
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73210975"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82677004"
