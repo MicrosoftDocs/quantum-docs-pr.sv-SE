@@ -1,147 +1,101 @@
 ---
-title: 'Utveckla med Q # +C#'
+title: Utveckla med Q# och C#
 author: natke
 ms.author: nakersha
 ms.date: 9/30/2019
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.install.cs
-ms.openlocfilehash: 7803846279f230f5fc0ee8424bd39be735a650ca
-ms.sourcegitcommit: 5094c0a60cbafdee669c8728b92df281071259b9
+ms.openlocfilehash: 5bcb036b0b32e64d43f90e9a068d9dcc237890ba
+ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77036295"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82680167"
 ---
-# <a name="develop-with-q--c"></a><span data-ttu-id="4ac1e-102">Utveckla med Q # +C#</span><span class="sxs-lookup"><span data-stu-id="4ac1e-102">Develop with Q# + C#</span></span>
+# <a name="using-q-with-c-and-f"></a><span data-ttu-id="2e008-102">Använda Q # med C\# och F\#</span><span class="sxs-lookup"><span data-stu-id="2e008-102">Using Q# with C\# and F\#</span></span>
 
-<span data-ttu-id="4ac1e-103">Installera QDK för att utveckla C# värd program för att anropa Q #-åtgärder.</span><span class="sxs-lookup"><span data-stu-id="4ac1e-103">Install the QDK to develop C# host programs to call Q# operations.</span></span>
+<span data-ttu-id="2e008-103">Q # är utformat för att spelas upp bra med .NET-språk som C# och F #.</span><span class="sxs-lookup"><span data-stu-id="2e008-103">Q# is built to play well with .NET languages such as C# and F#.</span></span>
+<span data-ttu-id="2e008-104">I den här guiden visar vi hur du använder Q # med ett värd program skrivet på ett .NET-språk.</span><span class="sxs-lookup"><span data-stu-id="2e008-104">In this guide, we'll demonstrate how to use Q# with a host program written in a .NET language.</span></span>
 
-<span data-ttu-id="4ac1e-104">Q # är utformat för att spela bra med .NET-språk – C#särskilt.</span><span class="sxs-lookup"><span data-stu-id="4ac1e-104">Q# is built to play well with .NET languages--specifically C#.</span></span> <span data-ttu-id="4ac1e-105">Du kan arbeta med denna koppling i olika utvecklings miljöer:</span><span class="sxs-lookup"><span data-stu-id="4ac1e-105">You can work with this pairing inside different development environments:</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="2e008-105">Krav</span><span class="sxs-lookup"><span data-stu-id="2e008-105">Prerequisites</span></span>
 
-- [<span data-ttu-id="4ac1e-106">Q # + C# använda Visual Studio (Windows)</span><span class="sxs-lookup"><span data-stu-id="4ac1e-106">Q# + C# using Visual Studio (Windows)</span></span>](#VS)
-- [<span data-ttu-id="4ac1e-107">Q # + C# använda Visual Studio Code (Windows, Linux och Mac)</span><span class="sxs-lookup"><span data-stu-id="4ac1e-107">Q# + C# using Visual Studio Code (Windows, Linux and Mac)</span></span>](#VSC)
-- [<span data-ttu-id="4ac1e-108">Q # + C# använda kommando rads verktyget `dotnet`</span><span class="sxs-lookup"><span data-stu-id="4ac1e-108">Q# + C# using the `dotnet` command-line tool</span></span>](#command)
+- <span data-ttu-id="2e008-106">Installera Quantum Development Kit [för användning med kommando rads projekt i Q #](xref:microsoft.quantum.install.standalone).</span><span class="sxs-lookup"><span data-stu-id="2e008-106">Install the Quantum Development Kit [for use with Q# command-line projects](xref:microsoft.quantum.install.standalone).</span></span>
 
-## <span data-ttu-id="4ac1e-109">Utveckla med Q # + C# med Visual Studio <a name="VS"></a></span><span class="sxs-lookup"><span data-stu-id="4ac1e-109">Develop with Q# + C# using Visual Studio <a name="VS"></a></span></span>
+## <a name="creating-a-q-library-and-a-net-host"></a><span data-ttu-id="2e008-107">Skapa ett Q #-bibliotek och en .NET-värd</span><span class="sxs-lookup"><span data-stu-id="2e008-107">Creating a Q# library and a .NET host</span></span>
 
-<span data-ttu-id="4ac1e-110">Visual Studio erbjuder en omfattande miljö för att utveckla Q #-program.</span><span class="sxs-lookup"><span data-stu-id="4ac1e-110">Visual Studio offers a rich environment for developing Q# programs.</span></span> <span data-ttu-id="4ac1e-111">Q # Visual Studio-tillägget innehåller mallar för Q #-filer och-projekt samt markering av syntax, kod komplettering och stöd för IntelliSense.</span><span class="sxs-lookup"><span data-stu-id="4ac1e-111">The Q# Visual Studio extension contains templates for Q# files and projects as well as syntax highlighting, code completion and IntelliSense support.</span></span>
+<span data-ttu-id="2e008-108">Det första steget är att skapa projekt för ditt Q #-bibliotek och för den .NET-värd som ska anropa de åtgärder och funktioner som definierats i ditt Q #-bibliotek.</span><span class="sxs-lookup"><span data-stu-id="2e008-108">The first step is to create projects for your Q# library, and for the .NET host that will call into the operations and functions defined in your Q# library.</span></span>
 
+### <a name="visual-studio-2019"></a>[<span data-ttu-id="2e008-109">Visual Studio 2019</span><span class="sxs-lookup"><span data-stu-id="2e008-109">Visual Studio 2019</span></span>](#tab/tabid-vs2019)
 
-1. <span data-ttu-id="4ac1e-112">Förutsättningar</span><span class="sxs-lookup"><span data-stu-id="4ac1e-112">Pre-requisites</span></span>
+- <span data-ttu-id="2e008-110">Skapa ett nytt Q #-bibliotek</span><span class="sxs-lookup"><span data-stu-id="2e008-110">Create a new Q# library</span></span>
+  - <span data-ttu-id="2e008-111">Gå till **filen** -> **nytt** -> **projekt**</span><span class="sxs-lookup"><span data-stu-id="2e008-111">Go to **File** -> **New** -> **Project**</span></span>
+  - <span data-ttu-id="2e008-112">Skriv "Q #" i sökrutan</span><span class="sxs-lookup"><span data-stu-id="2e008-112">Type "Q#" in the search box</span></span>
+  - <span data-ttu-id="2e008-113">Välj **Q #-bibliotek**</span><span class="sxs-lookup"><span data-stu-id="2e008-113">Select **Q# Library**</span></span>
+  - <span data-ttu-id="2e008-114">Välj **Nästa**</span><span class="sxs-lookup"><span data-stu-id="2e008-114">Select **Next**</span></span>
+  - <span data-ttu-id="2e008-115">Välj ett namn och en plats för ditt bibliotek</span><span class="sxs-lookup"><span data-stu-id="2e008-115">Choose a name and location for your library</span></span>
+  - <span data-ttu-id="2e008-116">Se till att "placera projektet och lösningen i samma katalog" är **avmarkerat**</span><span class="sxs-lookup"><span data-stu-id="2e008-116">Make sure that "place project and solution in same directory" is **unchecked**</span></span>
+  - <span data-ttu-id="2e008-117">Välj **skapa**</span><span class="sxs-lookup"><span data-stu-id="2e008-117">Select **Create**</span></span>
+- <span data-ttu-id="2e008-118">Skapa ett nytt C#-eller F #-värd program</span><span class="sxs-lookup"><span data-stu-id="2e008-118">Create a new C# or F# host program</span></span>
+  - <span data-ttu-id="2e008-119">Gå till **Arkiv** → **nytt** → **projekt**</span><span class="sxs-lookup"><span data-stu-id="2e008-119">Go to **File** → **New** → **Project**</span></span>
+  - <span data-ttu-id="2e008-120">Välj "konsol program (.NET Core") "för antingen C# eller F #</span><span class="sxs-lookup"><span data-stu-id="2e008-120">Select "Console App (.NET Core")" for either C# or F#</span></span>
+  - <span data-ttu-id="2e008-121">Välj **Nästa**</span><span class="sxs-lookup"><span data-stu-id="2e008-121">Select **Next**</span></span>
+  - <span data-ttu-id="2e008-122">Under *lösning*väljer du "Lägg till i lösning"</span><span class="sxs-lookup"><span data-stu-id="2e008-122">Under *solution*, select "add to solution"</span></span>
+  - <span data-ttu-id="2e008-123">Välj ett namn för värd programmet</span><span class="sxs-lookup"><span data-stu-id="2e008-123">Choose a name for your host program</span></span>
+  - <span data-ttu-id="2e008-124">Välj **skapa**</span><span class="sxs-lookup"><span data-stu-id="2e008-124">Select **Create**</span></span>
 
-    - <span data-ttu-id="4ac1e-113">[Visual Studio](https://visualstudio.microsoft.com/downloads/) 16.3, med arbetsbelastningen för .NET Core plattformsoberoende utveckling aktiverat</span><span class="sxs-lookup"><span data-stu-id="4ac1e-113">[Visual Studio](https://visualstudio.microsoft.com/downloads/) 16.3, with the .NET Core cross-platform development workload enabled</span></span>
+### <a name="visual-studio-code-or-command-line"></a>[<span data-ttu-id="2e008-125">Visual Studio-kod eller kommando rad</span><span class="sxs-lookup"><span data-stu-id="2e008-125">Visual Studio Code or Command Line</span></span>](#tab/tabid-cmdline)
 
-1. <span data-ttu-id="4ac1e-114">Installera Q# Visual Studio-tillägget</span><span class="sxs-lookup"><span data-stu-id="4ac1e-114">Install the Q# Visual Studio extension</span></span>
+- <span data-ttu-id="2e008-126">Skapa ett nytt Q #-bibliotek</span><span class="sxs-lookup"><span data-stu-id="2e008-126">Create a new Q# library</span></span>
 
-    - <span data-ttu-id="4ac1e-115">Ladda ned och installera [Visual Studio-tillägget](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit)</span><span class="sxs-lookup"><span data-stu-id="4ac1e-115">Download and install the [Visual Studio extension](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit)</span></span>
+  ```dotnetcli
+  dotnet new classlib -lang Q# -o quantum
+  ```
 
-1. <span data-ttu-id="4ac1e-116">Verifiera installationen genom att skapa ett `Hello World`-program</span><span class="sxs-lookup"><span data-stu-id="4ac1e-116">Verify the installation by creating a `Hello World` application</span></span>
+- <span data-ttu-id="2e008-127">Skapa ett nytt C#-eller F #-konsol projekt</span><span class="sxs-lookup"><span data-stu-id="2e008-127">Create a new C# or F# console project</span></span>
 
-    - <span data-ttu-id="4ac1e-117">Skapa ett nytt Q#-program</span><span class="sxs-lookup"><span data-stu-id="4ac1e-117">Create a new Q# application</span></span>
+  ```dotnetcli
+  dotnet new console -lang C# -o host  
+  ```
 
-        - <span data-ttu-id="4ac1e-118">Gå till **Arkiv** -> **Nytt** -> **Projekt**</span><span class="sxs-lookup"><span data-stu-id="4ac1e-118">Go to **File** -> **New** -> **Project**</span></span>
-        - <span data-ttu-id="4ac1e-119">Skriv `Q#` i sökrutan</span><span class="sxs-lookup"><span data-stu-id="4ac1e-119">Type `Q#` in the search box</span></span>
-        - <span data-ttu-id="4ac1e-120">Välj **Q#-program**</span><span class="sxs-lookup"><span data-stu-id="4ac1e-120">Select **Q# Application**</span></span>
-        - <span data-ttu-id="4ac1e-121">Välj **Nästa**</span><span class="sxs-lookup"><span data-stu-id="4ac1e-121">Select **Next**</span></span>
-        - <span data-ttu-id="4ac1e-122">Välj ett namn och en plats för ditt program</span><span class="sxs-lookup"><span data-stu-id="4ac1e-122">Choose a name and location for your application</span></span>
-        - <span data-ttu-id="4ac1e-123">Välj **Skapa**</span><span class="sxs-lookup"><span data-stu-id="4ac1e-123">Select **Create**</span></span>
+- <span data-ttu-id="2e008-128">Lägg till ditt Q #-bibliotek som en referens från värd programmet</span><span class="sxs-lookup"><span data-stu-id="2e008-128">Add your Q# library as a reference from your host program</span></span>
 
-    - <span data-ttu-id="4ac1e-124">Inspektera projektet</span><span class="sxs-lookup"><span data-stu-id="4ac1e-124">Inspect the project</span></span>
+  ```dotnetcli
+  cd host
+  dotnet add reference ../quantum/quantum.csproj
+  ```
 
-        <span data-ttu-id="4ac1e-125">Du bör se att två filer har skapats: `Driver.cs`, vilket är C#-värdprogrammet och `Operation.qs`, vilket är ett Q#-program som definierar en enkel åtgärd för att skriva ett meddelande till konsolen.</span><span class="sxs-lookup"><span data-stu-id="4ac1e-125">You should see that two files have been created: `Driver.cs`, which is the C# host application; and `Operation.qs`, which is a Q# program that defines a simple operation to print a message to the console.</span></span>
+- <span data-ttu-id="2e008-129">Valfritt Skapa en lösning för båda projekten</span><span class="sxs-lookup"><span data-stu-id="2e008-129">[Optional] Create a solution for both projects</span></span>
 
-    - <span data-ttu-id="4ac1e-126">Köra programmet</span><span class="sxs-lookup"><span data-stu-id="4ac1e-126">Run the application</span></span>
+  ```dotnetcli
+  dotnet new sln -n quantum-dotnet
+  dotnet sln quantum-dotnet.sln add ./quantum/quantum.csproj
+  dotnet sln quantum-dotnet.sln add ./host/host.csproj
+  ```
 
-        - <span data-ttu-id="4ac1e-127">Välj **Felsökning** -> **Starta utan felsökning**</span><span class="sxs-lookup"><span data-stu-id="4ac1e-127">Select **Debug** -> **Start Without Debugging**</span></span>
-        - <span data-ttu-id="4ac1e-128">Du bör se att texten `Hello quantum world!` skrivs till ett konsolfönster.</span><span class="sxs-lookup"><span data-stu-id="4ac1e-128">You should see the text `Hello quantum world!` printed to a console window.</span></span>
+***
 
-> [!NOTE]
-> * <span data-ttu-id="4ac1e-129">Om du har flera projekt i en Visual Studio-lösning måste alla projekt i lösningen finnas i samma mapp som lösningen, eller i en av dess undermappar.</span><span class="sxs-lookup"><span data-stu-id="4ac1e-129">If you have multiple projects within one Visual Studio solution, all projects contained in the solution need to be in the same folder as the solution, or in one of its subfolders.</span></span>  
+## <a name="calling-into-q-from-net"></a><span data-ttu-id="2e008-130">Anrop till Q # från .NET</span><span class="sxs-lookup"><span data-stu-id="2e008-130">Calling into Q# from .NET</span></span>
 
-## <span data-ttu-id="4ac1e-130">Utveckla med Q # + C# med Visual Studio Code <a name="VSC"></a></span><span class="sxs-lookup"><span data-stu-id="4ac1e-130">Develop with Q# + C# using Visual Studio Code <a name="VSC"></a></span></span>
+<span data-ttu-id="2e008-131">När du har skapat dina projekt enligt anvisningarna ovan kan du anropa i Q # från ditt .NET-konsol program.</span><span class="sxs-lookup"><span data-stu-id="2e008-131">Once you have your projects set up following the above instructions, you can call into Q# from your .NET console application.</span></span>
+<span data-ttu-id="2e008-132">I Q #-kompilatorn skapas .NET-klasser för varje Q #-åtgärd och-funktion som gör att du kan köra dina Quantum-program på en simulator.</span><span class="sxs-lookup"><span data-stu-id="2e008-132">The Q# compiler will create .NET classes for each Q# operation and function that allow you to run your quantum programs on a simulator.</span></span>
 
-<span data-ttu-id="4ac1e-131">Visual Studio Code (VS Code) erbjuder en omfattande miljö för att utveckla Q #-program på Windows, Linux och Mac.</span><span class="sxs-lookup"><span data-stu-id="4ac1e-131">Visual Studio Code (VS Code) offers a rich environment for developing Q# programs on Windows, Linux and Mac.</span></span>  <span data-ttu-id="4ac1e-132">Q # VS Code-tillägget innehåller stöd för markering av Q #-syntax, kod komplettering och Q #-kodfragment.</span><span class="sxs-lookup"><span data-stu-id="4ac1e-132">The Q# VS Code extension includes support for Q# syntax highlighting, code completion, and Q# code snippets.</span></span>
+<span data-ttu-id="2e008-133">Exempel på .net- [interoperabilitet](https://github.com/microsoft/Quantum/tree/master/samples/interoperability/dotnet) innehåller följande exempel på en Q #-åtgärd:</span><span class="sxs-lookup"><span data-stu-id="2e008-133">For example, the [.NET interoperability sample](https://github.com/microsoft/Quantum/tree/master/samples/interoperability/dotnet) includes the following example of a Q# operation:</span></span>
 
-1. <span data-ttu-id="4ac1e-133">Förutsättningar</span><span class="sxs-lookup"><span data-stu-id="4ac1e-133">Pre-requisites</span></span>
+:::code language="qsharp" source="~/quantum/samples/interoperability/dotnet/qsharp/Operations.qs" range="67-75":::
 
-   - [<span data-ttu-id="4ac1e-134">VS-kod</span><span class="sxs-lookup"><span data-stu-id="4ac1e-134">VS Code</span></span>](https://code.visualstudio.com/download)
-   - [<span data-ttu-id="4ac1e-135">.NET Core SDK 3,1 eller senare</span><span class="sxs-lookup"><span data-stu-id="4ac1e-135">.NET Core SDK 3.1 or later</span></span>](https://www.microsoft.com/net/download)
+<span data-ttu-id="2e008-134">Om du vill anropa den här åtgärden från .NET på en Quantum-simulator kan `Run` du använda metoden `RunAlgorithm` för .net-klassen som genereras av Q #-kompilatorn:</span><span class="sxs-lookup"><span data-stu-id="2e008-134">To call this operation from .NET on a quantum simulator, you can use the `Run` method of the `RunAlgorithm` .NET class generated by the Q# compiler:</span></span>
 
-1. <span data-ttu-id="4ac1e-136">Installera Quantum VS Code-tillägget</span><span class="sxs-lookup"><span data-stu-id="4ac1e-136">Install the Quantum VS Code extension</span></span>
+### <a name="c"></a>[<span data-ttu-id="2e008-135">C #</span><span class="sxs-lookup"><span data-stu-id="2e008-135">C#</span></span>](#tab/tabid-csharp)
 
-    - <span data-ttu-id="4ac1e-137">Installera [VS Code-tillägget](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode)</span><span class="sxs-lookup"><span data-stu-id="4ac1e-137">Install the [VS Code extension](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode)</span></span>
+:::code language="csharp" source="~/quantum/samples/interoperability/dotnet/csharp/Host.cs" range="4-":::
 
-1. <span data-ttu-id="4ac1e-138">Installera Quantum-projektmallarna:</span><span class="sxs-lookup"><span data-stu-id="4ac1e-138">Install the Quantum project templates:</span></span>
+### <a name="f"></a>[<span data-ttu-id="2e008-136">F#</span><span class="sxs-lookup"><span data-stu-id="2e008-136">F#</span></span>](#tab/tabid-fsharp)
 
-   - <span data-ttu-id="4ac1e-139">Gå till **Visa** -> **Kommandopaletten**</span><span class="sxs-lookup"><span data-stu-id="4ac1e-139">Go to **View** -> **Command Palette**</span></span>
-   - <span data-ttu-id="4ac1e-140">Välj **Q #: installera projektmallar**</span><span class="sxs-lookup"><span data-stu-id="4ac1e-140">Select **Q#: Install project templates**</span></span>
+:::code language="fsharp" source="~/quantum/samples/interoperability/dotnet/fsharp/Host.fs" range="4-":::
 
-    <span data-ttu-id="4ac1e-141">Du har nu installerat Quantum Development Kit och kan börja använda det i dina egna program och bibliotek.</span><span class="sxs-lookup"><span data-stu-id="4ac1e-141">You now have the Quantum Development Kit installed and ready to use in your own applications and libraries.</span></span>
-
-1. <span data-ttu-id="4ac1e-142">Verifiera installationen genom att skapa ett `Hello World`-program</span><span class="sxs-lookup"><span data-stu-id="4ac1e-142">Verify the installation by creating a `Hello World` application</span></span>
-
-    - <span data-ttu-id="4ac1e-143">Skapa ett nytt projekt:</span><span class="sxs-lookup"><span data-stu-id="4ac1e-143">Create a new project:</span></span>
-
-        - <span data-ttu-id="4ac1e-144">Gå till **Visa** -> **Kommandopaletten**</span><span class="sxs-lookup"><span data-stu-id="4ac1e-144">Go to **View** -> **Command Palette**</span></span>
-        - <span data-ttu-id="4ac1e-145">Välj **Q #: skapa nytt projekt**</span><span class="sxs-lookup"><span data-stu-id="4ac1e-145">Select **Q#: Create New Project**</span></span>
-        - <span data-ttu-id="4ac1e-146">Välj **fristående konsol program**</span><span class="sxs-lookup"><span data-stu-id="4ac1e-146">Select **Standalone console application**</span></span>
-        - <span data-ttu-id="4ac1e-147">Gå till den plats i filsystemet där du vill skapa programmet</span><span class="sxs-lookup"><span data-stu-id="4ac1e-147">Navigate to the location on the file system where you would like to create the application</span></span>
-        - <span data-ttu-id="4ac1e-148">Klicka på knappen **Öppna nytt projekt...** när projektet har skapats</span><span class="sxs-lookup"><span data-stu-id="4ac1e-148">Click on the **Open new project...** button, once the project has been created</span></span>
-
-    - <span data-ttu-id="4ac1e-149">Om du inte redan har installerat C# tillägget vs Code visas ett popup-fönster.</span><span class="sxs-lookup"><span data-stu-id="4ac1e-149">If you don't already have the C# extension for VS Code installed, a pop-up will appear.</span></span> <span data-ttu-id="4ac1e-150">Installera tillägget.</span><span class="sxs-lookup"><span data-stu-id="4ac1e-150">Install the extension.</span></span> 
-
-    - <span data-ttu-id="4ac1e-151">Kör programmet:</span><span class="sxs-lookup"><span data-stu-id="4ac1e-151">Run the application:</span></span>
-
-        - <span data-ttu-id="4ac1e-152">Gå till **terminal** -> **ny terminal**</span><span class="sxs-lookup"><span data-stu-id="4ac1e-152">Go to **Terminal** -> **New Terminal**</span></span>
-        - <span data-ttu-id="4ac1e-153">Ange `dotnet run`</span><span class="sxs-lookup"><span data-stu-id="4ac1e-153">Enter `dotnet run`</span></span>
-        - <span data-ttu-id="4ac1e-154">Du bör se följande text i utdatafönstret `Hello quantum world!`</span><span class="sxs-lookup"><span data-stu-id="4ac1e-154">You should see the following text in the output window `Hello quantum world!`</span></span>
-
-
-> [!NOTE]
-> * <span data-ttu-id="4ac1e-155">Arbetsytor med flera rotmappar stöds för närvarande inte av Visual Studio Code-tillägget.</span><span class="sxs-lookup"><span data-stu-id="4ac1e-155">Workspaces with multiple root folders are not currently supported by the Visual Studio Code extension.</span></span> <span data-ttu-id="4ac1e-156">Om du har flera projekt på en VS Code-arbetsyta, måste alla projekten finnas i samma rotmapp.</span><span class="sxs-lookup"><span data-stu-id="4ac1e-156">If you have multiple projects within one VS Code workspace, all projects need to be contained within the same root folder.</span></span>
-
-## <span data-ttu-id="4ac1e-157">Utveckla med Q # + C# med hjälp av kommando rads verktyget `dotnet`<a name="command"></a></span><span class="sxs-lookup"><span data-stu-id="4ac1e-157">Develop with Q# + C# using the `dotnet` command-line tool <a name="command"></a></span></span>
-
-<span data-ttu-id="4ac1e-158">Naturligtvis kan du också skapa och köra Q#-program från kommandoraden, genom att helt enkelt installera .NET Core SDK och QDK-projektmallarna.</span><span class="sxs-lookup"><span data-stu-id="4ac1e-158">Of course, you can also build and run Q# programs from the command line by simply installing the .NET Core SDK and the QDK project templates.</span></span> 
-
-1. <span data-ttu-id="4ac1e-159">Förutsättningar</span><span class="sxs-lookup"><span data-stu-id="4ac1e-159">Pre-requisites</span></span>
-
-    - [<span data-ttu-id="4ac1e-160">.NET Core SDK 3,1 eller senare</span><span class="sxs-lookup"><span data-stu-id="4ac1e-160">.NET Core SDK 3.1 or later</span></span>](https://www.microsoft.com/net/download)
-
-1. <span data-ttu-id="4ac1e-161">Installera kvantprojektmallar för .NET</span><span class="sxs-lookup"><span data-stu-id="4ac1e-161">Install the Quantum project templates for .NET</span></span>
-
-    ```dotnetcli
-    dotnet new -i Microsoft.Quantum.ProjectTemplates
-    ```
-
-    <span data-ttu-id="4ac1e-162">Du har nu installerat Quantum Development Kit och kan börja använda det i dina egna program och bibliotek.</span><span class="sxs-lookup"><span data-stu-id="4ac1e-162">You now have the Quantum Development Kit installed and ready to use in your own applications and libraries.</span></span>
-
-1. <span data-ttu-id="4ac1e-163">Verifiera installationen genom att skapa ett `Hello World`-program</span><span class="sxs-lookup"><span data-stu-id="4ac1e-163">Verify the installation by creating a `Hello World` application</span></span>
-
-    - <span data-ttu-id="4ac1e-164">Skapa ett nytt program</span><span class="sxs-lookup"><span data-stu-id="4ac1e-164">Create a new application</span></span>
-
-       ```dotnetcli
-       dotnet new console -lang "Q#" -o runSayHello
-       ```
-
-    - <span data-ttu-id="4ac1e-165">Gå till den nya programkatalogen</span><span class="sxs-lookup"><span data-stu-id="4ac1e-165">Navigate to the new application directory</span></span>
-
-       ```bash
-       cd runSayHello
-       ```
-
-    <span data-ttu-id="4ac1e-166">Du bör se att två filer har skapats, tillsammans med projektfilerna för programmet: en Q#-fil (`Operation.qs`) och en C#-värdfil (`Driver.cs`).</span><span class="sxs-lookup"><span data-stu-id="4ac1e-166">You should see that two files have been created, along with the project files of the application: a Q# file (`Operation.qs`) and a C# host file (`Driver.cs`).</span></span>
-
-    - <span data-ttu-id="4ac1e-167">Köra programmet</span><span class="sxs-lookup"><span data-stu-id="4ac1e-167">Run the application</span></span>
-
-        ```dotnetcli
-        dotnet run
-        ```
-
-        <span data-ttu-id="4ac1e-168">Du bör se följande utdata: `Hello quantum world!`</span><span class="sxs-lookup"><span data-stu-id="4ac1e-168">You should see the following output: `Hello quantum world!`</span></span>
-
+***
     
-## <a name="whats-next"></a><span data-ttu-id="4ac1e-169">Nästa steg</span><span class="sxs-lookup"><span data-stu-id="4ac1e-169">What's next?</span></span>
+## <a name="whats-next"></a><span data-ttu-id="2e008-137">Nästa steg</span><span class="sxs-lookup"><span data-stu-id="2e008-137">What's next?</span></span>
 
-<span data-ttu-id="4ac1e-170">Nu när du har installerat Quantum Development Kit i din önskade miljö, kan du skriva och köra [ditt första kvantprogram](xref:microsoft.quantum.write-program).</span><span class="sxs-lookup"><span data-stu-id="4ac1e-170">Now that you have installed the Quantum Development Kit in your preferred environment, you can write and run [your first quantum program](xref:microsoft.quantum.write-program).</span></span>
+<span data-ttu-id="2e008-138">Nu när du har Quantum Development Kit konfigurerat för både Q # kommando rads program och för interoperabilitet med .NET, kan du skriva och köra [ditt första Quantum-program](xref:microsoft.quantum.write-program).</span><span class="sxs-lookup"><span data-stu-id="2e008-138">Now that you have Quantum Development Kit set up for both Q# command-line programs, and for interoperability with .NET, you can write and run [your first quantum program](xref:microsoft.quantum.write-program).</span></span>

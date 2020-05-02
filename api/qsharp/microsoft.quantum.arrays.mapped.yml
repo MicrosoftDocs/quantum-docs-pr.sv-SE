@@ -4,7 +4,7 @@ name: Mapped
 type: function
 namespace: Microsoft.Quantum.Arrays
 summary: Med tanke på en matris och en funktion som har definierats för elementen i matrisen, returnerar en ny matris som består av de bilder som finns i den ursprungliga matrisen under funktionen.
-remarks: "Funktionen definieras för generiska typer, d.v.s. När vi har en matris `'T[]` och en funktion `mapper: 'T -> 'U` vi kan mappa element i matrisen och skapa en ny matris av typen `'U[]`."
+remarks: "Funktionen definieras för generiska typer, d.v.s. När vi har en matris `'T[]` och en funktion `mapper: 'T -> 'U` kan vi mappa element i matrisen och skapa en ny matris av typen. `'U[]`"
 syntax: "function Mapped (mapper : ('T -> 'U), array : 'T[]) : 'U[]"
 input:
   content: "(mapper : ('T -> 'U), array : 'T[])"
@@ -28,7 +28,7 @@ input:
 output:
   content: "'U[]"
   types:
-  - summary: En matris `'U[]` av element som mappas av funktionen `mapper`.
+  - summary: En matris `'U[]` med element som mappas av `mapper` funktionen.
     isArray: true
     uid: "'U"
     isLocal: true
@@ -36,11 +36,11 @@ typeParameters:
 - uid: "'T"
   summary: Typ av `array` element.
 - uid: "'U"
-  summary: Resultat typen för funktionen `mapper`.
+  summary: Resultat typen för `mapper` funktionen.
 metadata:
-  ms.openlocfilehash: 3e9262d3d2b294ccfafac24b2b080b124c9e319c
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 877899dad82374281090e189c727c2a662f12b7b
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73218132"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82680950"
