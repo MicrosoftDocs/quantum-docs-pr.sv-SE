@@ -4,11 +4,11 @@ name: BlockEncodingReflectionByLCU
 type: function
 namespace: Microsoft.Quantum.Simulation
 summary: >-
-  Kodar en operatör av intresse i en `BlockEncodingReflection`.
+  Kodar en operatör av intresse till en `BlockEncodingReflection`.
 
 
-  Detta skapar en $U `BlockEncodingReflection`-V\cdot = P\cdot P ^ \dagger $ som kodar vissa operatorer $H = \sum_{j} | \alpha_j | U_j $ av intresse som är en linjär kombination av unitaries. $P $ är vanligt vis en enhetlig tillstånds förberedelse som $P \ket{0}\_a\sum_j\sqrt {\ alpha_j/\|\vec\alpha\|\_2} \ket{j}\_en $, och $V = \sum_{j}\ket{j}\bra{j}\_a\otimes U_ j $.
-remarks: Den här `BlockEncoding` implementeringen ger den egenskaperna för en `BlockEncodingReflection`.
+  Detta skapar en `BlockEncodingReflection` enhetlig $U = P\cdot V\cdot P ^ \dagger $ som kodar vissa operatorer $H = \ sum_ {j} | \ alpha_j | U_j $ intresse som är en linjär kombination av unitaries. $P $ är vanligt vis en enhetlig tillstånds förberedelse som $P \ket{0}\_a \ sum_j \sqrt{\ alpha_j/\|\vec\alpha\|\_2} \ket{j}\_a $ och $V = \ sum_ {j} \ket{j}\bra{j}\_a\otimes U_j $.
+remarks: Den `BlockEncoding` här implementeringen ger den egenskaperna för `BlockEncodingReflection`en.
 syntax: 'function BlockEncodingReflectionByLCU (statePreparation : (Qubit[] => Unit is Adj + Ctl), selector : ((Qubit[], Qubit[]) => Unit is Adj + Ctl)) : Microsoft.Quantum.Simulation.BlockEncodingReflection'
 input:
   content: '(statePreparation : (Qubit[] => Unit is Adj + Ctl), selector : ((Qubit[], Qubit[]) => Unit is Adj + Ctl))'
@@ -49,15 +49,15 @@ input:
 output:
   content: Microsoft.Quantum.Simulation.BlockEncodingReflection
   types:
-  - summary: En enhetlig $U $ som agerar gemensamt på register `a` och `s` som blockerar-kodar $H $ och uppfyller $U ^{-1} = U $.
+  - summary: En enhetlig $U $ som agerar gemensamt på `a` registren `s` och som blockerar-kodar $H $ och uppfyller $U ^{-1} = U $.
     uid: microsoft.quantum.simulation.blockencodingreflection
 seeAlso:
 - microsoft.quantum.canon.blockencoding
 - microsoft.quantum.canon.blockencodingreflection
 metadata:
-  ms.openlocfilehash: a092068a61d860074ace150b0c7872eb064a63b9
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 8fe23d346a09e245d41f2a0c242462b5300561e1
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73219169"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82687102"

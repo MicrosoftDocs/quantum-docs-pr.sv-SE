@@ -6,12 +6,12 @@ ms.author: chgranad
 ms.date: 10/12/2018
 ms.topic: article
 uid: microsoft.quantum.contributing.pulls
-ms.openlocfilehash: a4373a65688893c95e0475356c8f6fca0912f8c5
-ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
+ms.openlocfilehash: 82af3b5123588cc06882f746ffcb0402ad3f0f2e
+ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77907468"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82686843"
 ---
 # <a name="opening-pull-requests"></a>Öppna pull-begäranden #
 
@@ -39,7 +39,7 @@ Efter ovanstående är det bra att ta en stund att säga vad en pull-begäran **
 När du arbetar med git visas alla ändringar som en _incheckning_ som beskriver hur dessa ändringar är relaterade till lagrings platsens tillstånd innan ändringarna.
 Vi ritar ofta diagram där incheckningar ritas som cirklar med pilar från föregående incheckningar.
 
-Anta att du har startat ett bidrag i en _gren_ som kallas `feature`.
+Anta att du har startat ett bidrag i _branch_ en gren `feature`som kallas.
 Sedan kan din förgrening av **Microsoft/Quantum** se ut ungefär så här:
 
 ![En arbets gren i GitHub](~/media/git-workflow-step0.png)
@@ -60,9 +60,9 @@ Med den här processen kan vi använda GitHub-funktioner för att förbättra bi
 
 ## <a name="how-to-make-a-pull-request"></a>Så här gör du en pull-begäran ##
 
-Det finns två huvudsakliga sätt att göra en pull-begäran.
-För små ändringar som endast påverkar en enskild fil kan GitHub-webbgränssnittet användas för att göra en pull-begäran helt online.
-För mer komplexa bidrag är det oftast enklare att använda din lokala dator för att förbereda för en pull-begäran först.
+Det finns två huvudsakliga sätt att göra en pull-begäran.  
+För små ändringar som endast påverkar en enskild fil kan GitHub-webbgränssnittet användas för att göra en pull-begäran helt online. Navigera bara till filen som du vill redigera och Använd redigerings ikonen.  
+För mer komplexa bidrag är det oftast enklare att klona lagrings platsen till din lokala dator för att förbereda en pull-begäran först.
 
 <!--
 ### Using the Web Interface ###

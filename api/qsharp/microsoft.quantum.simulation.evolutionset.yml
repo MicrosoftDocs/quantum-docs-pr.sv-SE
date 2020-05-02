@@ -7,12 +7,12 @@ summary: >-
   Representerar en uppsättning portar som kan implementeras snabbt och användas för att implementera simulerings algoritmer.
 
 
-  Element i uppsättningen indexeras av en <xref:microsoft.quantum.simulation.generatorindex>och varje uppsättning beskrivs av en funktion från `GeneratorIndex` till <xref:microsoft.quantum.simulation.evolutionunitary>, som är åtgärder som parameteras av ett reellt tal som representerar tid
+  Element i uppsättningen indexeras av en <xref:microsoft.quantum.simulation.generatorindex>, och varje uppsättning beskrivs av en funktion från `GeneratorIndex` till <xref:microsoft.quantum.simulation.evolutionunitary>, vilket är åtgärder som parameteras av ett reellt tal som representerar tid
 syntax: newtype EvolutionSet = (Microsoft.Quantum.Simulation.GeneratorIndex -> Microsoft.Quantum.Simulation.EvolutionUnitary);
 metadata:
-  ms.openlocfilehash: 2e3e717ca219f5e575f750a32f640215142b170c
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 0db782c1909c6121078f251f34bbffd5b49a4d8e
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73211094"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82687007"
