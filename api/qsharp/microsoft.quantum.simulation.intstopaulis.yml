@@ -16,14 +16,14 @@ input:
 output:
   content: Pauli[]
   types:
-  - summary: En matris `paulis` av Pauli-operatörer `Pauli[]` samma längd som `ints` så att `paulis[idxPauli]` är lika med `[PauliI, PauliX, PauliY, PauliZ]` som anges av `ints[idxPauli]`.
+  - summary: En matris `paulis` med Pauli- `Pauli[]` operatorer `ints` `paulis[idxPauli]` har samma längd som det som är lika med det `[PauliI, PauliX, PauliY, PauliZ]` element som `ints[idxPauli]`anges av.
     isArray: true
     isPrimitive: true
     uid: Pauli
 metadata:
-  ms.openlocfilehash: 407ad1481c220f390fffb5f1b59f0968d6d6570c
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 1159e3db02663b0588d12ea9d297e055be84ac4a
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73066990"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82682623"

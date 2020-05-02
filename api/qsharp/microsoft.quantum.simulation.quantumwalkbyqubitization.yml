@@ -7,9 +7,9 @@ summary: >-
   Konverterar en block kodnings reflektion till en Quantum-LED.
 
 
-  Med en `BlockEncodingReflection` som representeras av en enhetlig $U $ som kodar en viss operatör $H $ of Interest, konverterar den till en Quantum-steg-$W $ som innehåller spektrumet $ \pm e ^ {\pm i\sin ^{-1}(H)} $.
+  Utifrån en `BlockEncodingReflection` person som representeras av en enhetlig $U $ som kodar en viss operatör $H $ of Interest, konverterar den till en Quantum-sats $W $ som innehåller spektrumet $ \pm e{-1}^ {\Pm i\sin ^ (H)} $.
 syntax: 'function QuantumWalkByQubitization (blockEncoding : Microsoft.Quantum.Simulation.BlockEncodingReflection) : ((Qubit[], Qubit[]) => Unit is Adj + Ctl)'
-references: '- Hamiltonian-simulering av Qubitization Guang lämnar demon Hao Low, Isak L. Chuang https://arxiv.org/abs/1610.06546'
+references: '- Hamiltonian-simulering av Qubitization Guang lämnar demon Hao Low, Isak L. Chuanghttps://arxiv.org/abs/1610.06546'
 input:
   content: '(blockEncoding : Microsoft.Quantum.Simulation.BlockEncodingReflection)'
   types:
@@ -18,7 +18,7 @@ input:
 output:
   content: ((Qubit[], Qubit[]) => Unit is Adj + Ctl)
   types:
-  - summary: En Quantum-$W $ som agerar gemensamt på register `a` och `s` som blockerar-kodar $H $ och innehåller spektrumet $ \pm e ^ {\pm i\sin ^{-1}(H)} $.
+  - summary: En Quantum-$W $ som agerar gemensamt på `a` registren `s` och som blockerar-kodar $H $ och innehåller spektrumet $ \pm e ^ {\Pm i\sin ^{-1}(H)} $.
     isOperation: true
     input:
       types:
@@ -39,9 +39,9 @@ seeAlso:
 - microsoft.quantum.canon.blockencoding
 - microsoft.quantum.canon.blockencodingreflection
 metadata:
-  ms.openlocfilehash: aed748abe8f3468da0cc772606afc4f577c4abeb
-  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
+  ms.openlocfilehash: e2a6c0469b730140b8584e8cff2aad2d68254793
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 01/29/2020
-  ms.locfileid: "76869159"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82682489"
