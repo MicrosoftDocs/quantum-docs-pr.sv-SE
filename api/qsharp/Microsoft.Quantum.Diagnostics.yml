@@ -34,9 +34,9 @@ functions:
   summary: Garanterar att ett klassiskt flytt ALS värde har det förväntade värdet upp till en liten tolerans för 1e-10.
 operations:
 - uid: microsoft.quantum.diagnostics.assertallzero
-  summary: Assert att de aktuella qubits är alla i \ket{0}$ State.
+  summary: Assert att de aktuella qubits är i läget ${0}\ket $.
 - uid: microsoft.quantum.diagnostics.assertallzerowithintolerance
-  summary: Assert att de aktuella qubits är alla i $ \ket{0}$ State upp till en specifik tolerans.
+  summary: Assert att de aktuella qubits är i $ \ket{0}$-tillstånd upp till en bestämd tolerans.
 - uid: microsoft.quantum.diagnostics.assertoperationsequalinplace
   summary: >-
     Två åtgärder förutsätter att de fungerar identiskt för alla ingångs tillstånd.
@@ -48,7 +48,7 @@ operations:
     Den här kontrollen använder $n $ qubits och kräver flera anrop av de åtgärder som jämförs.
 - uid: microsoft.quantum.diagnostics.assertoperationsequalinplacecompbasis
   summary: >-
-    Kontrollerar om åtgärden `givenU` är lika med åtgärden `expectedU` på den angivna indata-storleken genom att kontrol lera åtgärdens åtgärder endast på vektorerna från beräknings basen.
+    Kontrollerar om åtgärden `givenU` är lika med åtgärden `expectedU` för den angivna indata-storleken genom att kontrol lera åtgärdens åtgärder endast på vektorerna från beräknings basen.
 
     Detta är ett nödvändigt, men inte tillräckligt, villkor för likheten av två unitaries.
 - uid: microsoft.quantum.diagnostics.assertoperationsequalreferenced
@@ -62,27 +62,29 @@ operations:
 
     Denna kontroll kan användas för att se till att en optimerad version av en åtgärd fungerar identiskt med dess naïve-implementering, eller att en åtgärd som agerar på ett intervall av icke-Quantum-indata accepterar kända fall.
 - uid: microsoft.quantum.diagnostics.assertqubit
-  summary: Garanterar att qubit `q` finns i den förväntade eigenstate för Pauli Z-operatorn.
+  summary: Förutsätter att qubit `q` finns i den förväntade Eigenstate för Pauli Z-operatorn.
 - uid: microsoft.quantum.diagnostics.assertqubitisinstatewithintolerance
   summary: >-
     Förutsätter att en qubit förväntas i det förväntade läget.
 
 
-    `expected` representerar en komplex Vector, $ \ket{\psi} = \begin{bmatrix}a & b\end {bmatrix} ^ {\mathrm{T}} $.
+    `expected`representerar en komplex Vector, $ \ket{\psi} = \begin{bmatrix}a & b\end {bmatrix} ^ {\mathrm{T}} $.
 
     Det första elementet i tuppeln som representerar var och en av $a $, $b $ är den reella delen av det komplexa talet, medan det andra är den imaginära delen.
 
     Det sista argumentet definierar toleransen för vilken kontroll görs.
 - uid: microsoft.quantum.diagnostics.assertqubitwithintolerance
-  summary: Förutsätter att qubit `q` finns i den förväntade eigenstate för Pauli Z-operatören upp till en bestämd tolerans.
+  summary: Förutsätter att qubit `q` finns i den förväntade Eigenstate för Pauli Z-operatorn upp till en specifik tolerans.
 newtypes:
+- uid: microsoft.quantum.diagnostics.enabletestingvianame
+  summary: Kompileraren identifierat attribut via vilket ett alternativt namn kan definieras och som kan användas vid inläsning av en typ eller ett anrop för test ändamål.
 - uid: microsoft.quantum.diagnostics.test
   summary: Kompileraren identifierat attribut som används för att markera ett enhets test.
 summary: " # <a name=\"summary\"></a>Sammanfattning\n Det här namn området innehåller funktioner och åtgärder som är användbara för diagnostiska orsaker, inklusive assert-åtgärder och anspråks funktioner."
 metadata:
-  ms.openlocfilehash: 353750a6714b1cdd54ff866657a39bb825e34425
-  ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
+  ms.openlocfilehash: 5e580bb50983d5c0e65d3284408bae04a5e92756
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 02/28/2020
-  ms.locfileid: "77905921"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82676947"
