@@ -5,7 +5,7 @@ type: function
 namespace: Microsoft.Quantum.Arrays
 summary: Returnerar det första indexet för det första elementet i en matris som uppfyller ett angivet predikat. Returnerar-1 om det inte finns något sådant element.
 examples: >-
-  Anta att `IsEven : Int -> Bool` är en funktion som returnerar `true` om och bara om indatatypen är till och med. Sedan kan detta användas med `IndexOf` för att hitta det första jämna elementet i en matris:
+  Anta att `IsEven : Int -> Bool` är en funktion som returnerar `true` om och bara om indatatypen är till och med. Sedan kan du använda `IndexOf` för att hitta det första elementet till och med en matris:
 
 
   ```Q#
@@ -38,13 +38,13 @@ input:
 output:
   content: Int
   types:
-  - summary: Antingen är det minsta indexet `idx` så att `predicate(arr[idx])` är sant, eller-1 om det inte finns något sådant element.
+  - summary: Antingen det minsta indexet `idx` som `predicate(arr[idx])` är sant eller-1 om det inte finns något sådant element.
     isPrimitive: true
     uid: Int
 metadata:
-  ms.openlocfilehash: 6f7fee40a558e7bb17b94c9dd58656c6f34ceac8
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 6fb95357096751e53f601a9c855ff656e2dd1b34
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73218200"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82681007"

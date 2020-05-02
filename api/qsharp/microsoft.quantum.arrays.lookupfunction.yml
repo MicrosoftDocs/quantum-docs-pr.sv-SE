@@ -4,7 +4,7 @@ name: LookupFunction
 type: function
 namespace: Microsoft.Quantum.Arrays
 summary: Med en matris returneras en funktion som returnerar element i matrisen.
-remarks: Den här funktionen är främst användbar för att samar beta med funktioner och åtgärder som tar `Int -> 'T` Functions som argument. Detta är vanligt, t. ex. i Generator biblioteket, där Functions används för att undvika att behöva registrera en hel matris i minnet.
+remarks: Den här funktionen är främst användbar för att samar beta med funktioner och åtgärder `Int -> 'T` som utför funktioner som argument. Detta är vanligt, t. ex. i Generator biblioteket, där Functions används för att undvika att behöva registrera en hel matris i minnet.
 syntax: "function LookupFunction (array : 'T[]) : (Int -> 'T)"
 input:
   content: "(array : 'T[])"
@@ -31,9 +31,9 @@ typeParameters:
 - uid: "'T"
   summary: Typ av element i matrisen som representeras som en lookup-funktion.
 metadata:
-  ms.openlocfilehash: b4f509de7137377465f1e76e59a04abfd9a22fd1
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 4d911a3952c273e050c75e4d785e6812d54f5fa1
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73218115"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82680959"

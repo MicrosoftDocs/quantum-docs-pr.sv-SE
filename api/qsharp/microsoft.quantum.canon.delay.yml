@@ -9,9 +9,9 @@ summary: >-
 
   Vid en åtgärd och indata för åtgärden tillämpas åtgärden när ytterligare indata har angetts.
 
-  I synnerhet är uttrycket `Delay(op, arg, _)` en åtgärd som gäller `op` till `arg` vid anrop.
+  I synnerhet är uttrycket `Delay(op, arg, _)` en åtgärd som gäller `op` `arg` vid anrop.
 
-  Med uttrycket `Delay(op,arg,_)` kan du fördröja program `op`.
+  Uttrycket `Delay(op,arg,_)` kan försena tillämpningen av `op`.
 syntax: "operation Delay (op : ('T => 'U), arg : 'T, aux : Unit) : 'U"
 input:
   content: "(op : ('T => 'U), arg : 'T, aux : Unit)"
@@ -51,9 +51,9 @@ seeAlso:
 - microsoft.quantum.canon.delayca
 - microsoft.quantum.canon.delayed
 metadata:
-  ms.openlocfilehash: 1759670182cff1153859c62e9c95d1be1f998674
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: d6e9c821bdb21714ee914bc908f6f93222b5c3b6
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73226122"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82680203"

@@ -7,7 +7,7 @@ summary: >-
   Returnerar den bitvisa inte ett heltal.
 
   Detta utför samma beräkning som den inbyggda `~~~` operatorn.
-remarks: Mer information finns på [ C# ~-operatorn](https://docs.microsoft.com/dotnet/csharp/language-reference/operators/bitwise-complement-operator) .
+remarks: Mer information finns i [C# ~-operatorn](https://docs.microsoft.com/dotnet/csharp/language-reference/operators/bitwise-complement-operator) .
 examples: >-
   ```qsharp
 
@@ -29,9 +29,9 @@ output:
   - isPrimitive: true
     uid: Int
 metadata:
-  ms.openlocfilehash: f06b4d6b5cd7e030936ac4f6018665bc5636f04a
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 3de6cbe072ab770fba893c41112df3bb686c3e79
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73214001"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82680653"

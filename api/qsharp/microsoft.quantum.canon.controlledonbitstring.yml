@@ -7,22 +7,22 @@ summary: >-
   Returnerar en enhetlig åtgärd som tillämpar en Oracle på mål registret om kontroll registerets tillstånd motsvarar en angiven bitmask.
 
 
-  Resultatet av den här funktionen är en åtgärd som kan representeras av en enhetlig omvandling $U $ t. ex. \begin{align} U \ket{b_0 b_1 \cdots b_ {n-1}} \ket{\psi} = \ket{b_0 b_1 \cdots b_ {n-1}} \otimes \begin{Cases} V \ket{\psi} & \textrm{IF} (b_0 b_1 \cdots b_ {n-1}) = \texttt{BITS} \\\\ \ket{\psi} & \textrm{otherwise} \end{Cases}, \end{align} där $V $ är en enhetlig transformering som representerar åtgärd i `oracle`s åtgärden.
+  Resultatet av den här funktionen är en åtgärd som kan representeras av en enhetlig omvandling $U $ t. ex. \begin{align} U \ket{b_0 b_1 \cdots b_ {n-1}} \ket{\psi} = \ket{b_0 b_1 \cdots b_ {n-1}} \otimes \begin{Cases} V \ket{\psi} & \textrm{IF} (b_0 b_1 \cdots b_ {n-1} \\ \\ ) = \texttt{BITS} \ket{\psi} & \textrm{otherwise} \end{Cases}, \end{align} där $V $ är en enhetlig omvandling som representerar åtgärdens åtgärd `oracle` .
 remarks: >-
-  Längden på `bits` och `controlRegister` måste vara lika.
+  Längden på `bits` och `controlRegister` måste vara lika med.
 
 
-  Med en boolesk matris `bits` och en enhetlig åtgärd `oracle`är resultatet av den här funktionen en åtgärd som utför följande steg:
+  Resultatet av den här `bits` funktionen är en åtgärd `oracle`som utför följande steg för att få en boolesk matris och en enhetlig åtgärd:
 
 
-  * Använd en `X`-åtgärd för varje qubit av kontroll registret som motsvarar `false`-elementet i `bits`;
+  * tillämpa en `X` åtgärd på varje qubit i kontroll registret som motsvarar `false` element i. `bits`
 
-  * tillämpa `Controlled oracle` på kontroll-och mål registren;
+  * gäller `Controlled oracle` för kontroll-och mål registren.
 
-  * Använd en `X`-åtgärd för varje qubit av kontroll registret som motsvarar `false`-elementet i `bits` igen för att returnera kontroll registret till det ursprungliga läget.
+  * tillämpa en `X` åtgärd på varje qubit i kontroll registret som motsvarar `false` elementet i `bits` igen för att returnera kontroll registret till det ursprungliga läget.
 
 
-  Utdata från `Controlled` Functor är ett specialfall av `ControlledOnBitString` där `bits` är lika med `[true, ..., true]`.
+  Utdata från `Controlled` Functor är ett specialfall av `ControlledOnBitString` var `bits` är lika med. `[true, ..., true]`
 examples: >-
   Följande kodfragment är likvärdiga:
 
@@ -48,7 +48,7 @@ examples: >-
   ```
 
 
-  Följande kod förbereder ett tillstånd $ \frac{1}{2}(\ket{00}-\ket{01} + \ket{10} + \ket{11}) $:
+  Följande kod förbereder ett{1}{2}tillstånd $ \frac ({00} \ket-\ket{01} + \ket{10} + \ket{11}) $:
 
 
   ```qsharp
@@ -85,7 +85,7 @@ input:
 output:
   content: ((Qubit[], 'T) => Unit is Adj + Ctl)
   types:
-  - summary: En enhetlig åtgärd som tillämpar `oracle` på mål registret om status för kontroll registret motsvarar den bitmask `bits`.
+  - summary: En enhetlig åtgärd som gäller `oracle` för mål registret om status för kontroll registret motsvarar bitmask `bits`.
     isOperation: true
     input:
       types:
@@ -102,9 +102,9 @@ output:
     - Adjoint
     - Controlled
 metadata:
-  ms.openlocfilehash: e6f7f8980b2b9b8305df12da41e30fc563e54ad1
-  ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
+  ms.openlocfilehash: d5a6223c130150f42f83044aec19b1d5a875bb1d
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 02/28/2020
-  ms.locfileid: "77906533"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82680347"

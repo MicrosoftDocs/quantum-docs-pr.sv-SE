@@ -1,147 +1,101 @@
 ---
-title: 'Utveckla med Q # +C#'
+title: Utveckla med Q# och C#
 author: natke
 ms.author: nakersha
 ms.date: 9/30/2019
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.install.cs
-ms.openlocfilehash: 7803846279f230f5fc0ee8424bd39be735a650ca
-ms.sourcegitcommit: 5094c0a60cbafdee669c8728b92df281071259b9
+ms.openlocfilehash: 5bcb036b0b32e64d43f90e9a068d9dcc237890ba
+ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77036295"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82680167"
 ---
-# <a name="develop-with-q--c"></a>Utveckla med Q # +C#
+# <a name="using-q-with-c-and-f"></a>Använda Q # med C\# och F\#
 
-Installera QDK för att utveckla C# värd program för att anropa Q #-åtgärder.
+Q # är utformat för att spelas upp bra med .NET-språk som C# och F #.
+I den här guiden visar vi hur du använder Q # med ett värd program skrivet på ett .NET-språk.
 
-Q # är utformat för att spela bra med .NET-språk – C#särskilt. Du kan arbeta med denna koppling i olika utvecklings miljöer:
+## <a name="prerequisites"></a>Krav
 
-- [Q # + C# använda Visual Studio (Windows)](#VS)
-- [Q # + C# använda Visual Studio Code (Windows, Linux och Mac)](#VSC)
-- [Q # + C# använda kommando rads verktyget `dotnet`](#command)
+- Installera Quantum Development Kit [för användning med kommando rads projekt i Q #](xref:microsoft.quantum.install.standalone).
 
-## Utveckla med Q # + C# med Visual Studio <a name="VS"></a>
+## <a name="creating-a-q-library-and-a-net-host"></a>Skapa ett Q #-bibliotek och en .NET-värd
 
-Visual Studio erbjuder en omfattande miljö för att utveckla Q #-program. Q # Visual Studio-tillägget innehåller mallar för Q #-filer och-projekt samt markering av syntax, kod komplettering och stöd för IntelliSense.
+Det första steget är att skapa projekt för ditt Q #-bibliotek och för den .NET-värd som ska anropa de åtgärder och funktioner som definierats i ditt Q #-bibliotek.
 
+### <a name="visual-studio-2019"></a>[Visual Studio 2019](#tab/tabid-vs2019)
 
-1. Förutsättningar
+- Skapa ett nytt Q #-bibliotek
+  - Gå till **filen** -> **nytt** -> **projekt**
+  - Skriv "Q #" i sökrutan
+  - Välj **Q #-bibliotek**
+  - Välj **Nästa**
+  - Välj ett namn och en plats för ditt bibliotek
+  - Se till att "placera projektet och lösningen i samma katalog" är **avmarkerat**
+  - Välj **skapa**
+- Skapa ett nytt C#-eller F #-värd program
+  - Gå till **Arkiv** → **nytt** → **projekt**
+  - Välj "konsol program (.NET Core") "för antingen C# eller F #
+  - Välj **Nästa**
+  - Under *lösning*väljer du "Lägg till i lösning"
+  - Välj ett namn för värd programmet
+  - Välj **skapa**
 
-    - [Visual Studio](https://visualstudio.microsoft.com/downloads/) 16.3, med arbetsbelastningen för .NET Core plattformsoberoende utveckling aktiverat
+### <a name="visual-studio-code-or-command-line"></a>[Visual Studio-kod eller kommando rad](#tab/tabid-cmdline)
 
-1. Installera Q# Visual Studio-tillägget
+- Skapa ett nytt Q #-bibliotek
 
-    - Ladda ned och installera [Visual Studio-tillägget](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit)
+  ```dotnetcli
+  dotnet new classlib -lang Q# -o quantum
+  ```
 
-1. Verifiera installationen genom att skapa ett `Hello World`-program
+- Skapa ett nytt C#-eller F #-konsol projekt
 
-    - Skapa ett nytt Q#-program
+  ```dotnetcli
+  dotnet new console -lang C# -o host  
+  ```
 
-        - Gå till **Arkiv** -> **Nytt** -> **Projekt**
-        - Skriv `Q#` i sökrutan
-        - Välj **Q#-program**
-        - Välj **Nästa**
-        - Välj ett namn och en plats för ditt program
-        - Välj **Skapa**
+- Lägg till ditt Q #-bibliotek som en referens från värd programmet
 
-    - Inspektera projektet
+  ```dotnetcli
+  cd host
+  dotnet add reference ../quantum/quantum.csproj
+  ```
 
-        Du bör se att två filer har skapats: `Driver.cs`, vilket är C#-värdprogrammet och `Operation.qs`, vilket är ett Q#-program som definierar en enkel åtgärd för att skriva ett meddelande till konsolen.
+- Valfritt Skapa en lösning för båda projekten
 
-    - Köra programmet
+  ```dotnetcli
+  dotnet new sln -n quantum-dotnet
+  dotnet sln quantum-dotnet.sln add ./quantum/quantum.csproj
+  dotnet sln quantum-dotnet.sln add ./host/host.csproj
+  ```
 
-        - Välj **Felsökning** -> **Starta utan felsökning**
-        - Du bör se att texten `Hello quantum world!` skrivs till ett konsolfönster.
+***
 
-> [!NOTE]
-> * Om du har flera projekt i en Visual Studio-lösning måste alla projekt i lösningen finnas i samma mapp som lösningen, eller i en av dess undermappar.  
+## <a name="calling-into-q-from-net"></a>Anrop till Q # från .NET
 
-## Utveckla med Q # + C# med Visual Studio Code <a name="VSC"></a>
+När du har skapat dina projekt enligt anvisningarna ovan kan du anropa i Q # från ditt .NET-konsol program.
+I Q #-kompilatorn skapas .NET-klasser för varje Q #-åtgärd och-funktion som gör att du kan köra dina Quantum-program på en simulator.
 
-Visual Studio Code (VS Code) erbjuder en omfattande miljö för att utveckla Q #-program på Windows, Linux och Mac.  Q # VS Code-tillägget innehåller stöd för markering av Q #-syntax, kod komplettering och Q #-kodfragment.
+Exempel på .net- [interoperabilitet](https://github.com/microsoft/Quantum/tree/master/samples/interoperability/dotnet) innehåller följande exempel på en Q #-åtgärd:
 
-1. Förutsättningar
+:::code language="qsharp" source="~/quantum/samples/interoperability/dotnet/qsharp/Operations.qs" range="67-75":::
 
-   - [VS-kod](https://code.visualstudio.com/download)
-   - [.NET Core SDK 3,1 eller senare](https://www.microsoft.com/net/download)
+Om du vill anropa den här åtgärden från .NET på en Quantum-simulator kan `Run` du använda metoden `RunAlgorithm` för .net-klassen som genereras av Q #-kompilatorn:
 
-1. Installera Quantum VS Code-tillägget
+### <a name="c"></a>[C #](#tab/tabid-csharp)
 
-    - Installera [VS Code-tillägget](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode)
+:::code language="csharp" source="~/quantum/samples/interoperability/dotnet/csharp/Host.cs" range="4-":::
 
-1. Installera Quantum-projektmallarna:
+### <a name="f"></a>[F#](#tab/tabid-fsharp)
 
-   - Gå till **Visa** -> **Kommandopaletten**
-   - Välj **Q #: installera projektmallar**
+:::code language="fsharp" source="~/quantum/samples/interoperability/dotnet/fsharp/Host.fs" range="4-":::
 
-    Du har nu installerat Quantum Development Kit och kan börja använda det i dina egna program och bibliotek.
-
-1. Verifiera installationen genom att skapa ett `Hello World`-program
-
-    - Skapa ett nytt projekt:
-
-        - Gå till **Visa** -> **Kommandopaletten**
-        - Välj **Q #: skapa nytt projekt**
-        - Välj **fristående konsol program**
-        - Gå till den plats i filsystemet där du vill skapa programmet
-        - Klicka på knappen **Öppna nytt projekt...** när projektet har skapats
-
-    - Om du inte redan har installerat C# tillägget vs Code visas ett popup-fönster. Installera tillägget. 
-
-    - Kör programmet:
-
-        - Gå till **terminal** -> **ny terminal**
-        - Ange `dotnet run`
-        - Du bör se följande text i utdatafönstret `Hello quantum world!`
-
-
-> [!NOTE]
-> * Arbetsytor med flera rotmappar stöds för närvarande inte av Visual Studio Code-tillägget. Om du har flera projekt på en VS Code-arbetsyta, måste alla projekten finnas i samma rotmapp.
-
-## Utveckla med Q # + C# med hjälp av kommando rads verktyget `dotnet`<a name="command"></a>
-
-Naturligtvis kan du också skapa och köra Q#-program från kommandoraden, genom att helt enkelt installera .NET Core SDK och QDK-projektmallarna. 
-
-1. Förutsättningar
-
-    - [.NET Core SDK 3,1 eller senare](https://www.microsoft.com/net/download)
-
-1. Installera kvantprojektmallar för .NET
-
-    ```dotnetcli
-    dotnet new -i Microsoft.Quantum.ProjectTemplates
-    ```
-
-    Du har nu installerat Quantum Development Kit och kan börja använda det i dina egna program och bibliotek.
-
-1. Verifiera installationen genom att skapa ett `Hello World`-program
-
-    - Skapa ett nytt program
-
-       ```dotnetcli
-       dotnet new console -lang "Q#" -o runSayHello
-       ```
-
-    - Gå till den nya programkatalogen
-
-       ```bash
-       cd runSayHello
-       ```
-
-    Du bör se att två filer har skapats, tillsammans med projektfilerna för programmet: en Q#-fil (`Operation.qs`) och en C#-värdfil (`Driver.cs`).
-
-    - Köra programmet
-
-        ```dotnetcli
-        dotnet run
-        ```
-
-        Du bör se följande utdata: `Hello quantum world!`
-
+***
     
 ## <a name="whats-next"></a>Nästa steg
 
-Nu när du har installerat Quantum Development Kit i din önskade miljö, kan du skriva och köra [ditt första kvantprogram](xref:microsoft.quantum.write-program).
+Nu när du har Quantum Development Kit konfigurerat för både Q # kommando rads program och för interoperabilitet med .NET, kan du skriva och köra [ditt första Quantum-program](xref:microsoft.quantum.write-program).
