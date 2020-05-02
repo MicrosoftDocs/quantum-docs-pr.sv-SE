@@ -8,14 +8,14 @@ summary: >-
 
 
   $U = \sum ^ {N-1} _ {j = 0} \ket{j}\bra{j}\otimes V_j $.
-remarks: '`coefficients` fylls i automatiskt med identitets element om färre än $2 ^ n $ anges. Den här implementeringen använder $n-$1-hjälp qubits.'
+remarks: '`coefficients`fylls i med identitets element om färre än $2 ^ n $ anges. Den här implementeringen använder $n-$1-hjälp qubits.'
 syntax: "operation MultiplexOperationsFromGenerator (unitaryGenerator : (Int, (Int -> ('T => Unit is Adj + Ctl))), index : Microsoft.Quantum.Arithmetic.LittleEndian, target : 'T) : Unit"
 references: '- [*Andrew M. Children, Dmitri Maslov, Yunseong, Neil J. värskogsnätverksväxling, Yuan Su*, arXiv: 1711.10980](https://arxiv.org/abs/1711.10980)'
 input:
   content: "(unitaryGenerator : (Int, (Int -> ('T => Unit is Adj + Ctl))), index : Microsoft.Quantum.Arithmetic.LittleEndian, target : 'T)"
   types:
   - name: unitaryGenerator
-    summary: En tupel där det första elementet `Int` är antalet unitaries $N $, och det andra elementet `(Int -> ('T => () is Adj + Ctl))` är en funktion som tar ett heltal $j $ i $ [0, N-1] $ och ger den enhetliga åtgärden $V _j $.
+    summary: En tupel där det första elementet `Int` är antalet unitaries $N $, och det andra elementet `(Int -> ('T => () is Adj + Ctl))` är en funktion som tar ett heltal $j $ i $ [0, N-1] $ och utvärderar den enhetliga åtgärden $V _J $.
     types:
     - isPrimitive: true
       uid: Int
@@ -54,9 +54,9 @@ functors:
 - Adjoint
 - Controlled
 metadata:
-  ms.openlocfilehash: 54c0db61b5e18c7a598b6c8ec930f2851ba608f2
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: b9599723cf6296367412a5603f4b36a3d610acc5
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73227788"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82678798"

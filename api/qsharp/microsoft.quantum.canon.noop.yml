@@ -11,10 +11,10 @@ summary: >-
 
   Detta kan vara användbart när en indatatyp av en åtgärds typ förväntas, men ingen åtgärd vidtas.
 
-  Om en viss fel korrigering Syndrome till exempel anger att inget fel har inträffat, kan `NoOp<Qubit[]>` vara korrekt återställnings procedur.
+  Om till exempel en viss fel korrigering Syndrome anger att det inte har uppstått något fel `NoOp<Qubit[]>` , kan det vara rätt återställnings förfarande.
 
-  På samma sätt kan `NoOp<Qubit[]>` användas för att förbereda statusen $ \ket{0 \cdots 0} $ om en åtgärd förväntar sig en tillstånds förberedelse procedur som indatamängd.
-remarks: I nästan alla fall måste typ parametern för `NoOp` anges explicit. `NoOp<Qubit>` är till exempel identisk med <xref:microsoft.quantum.intrinsic.i>.
+  Om en åtgärd till exempel förväntar sig en tillstånds förberedelse procedur som `NoOp<Qubit[]>` inmatare, kan användas för att förbereda status $ \ket{0 \cdots 0} $.
+remarks: I nästan alla fall måste typ parametern för `NoOp` anges explicit. `NoOp<Qubit>` Är till exempel identiskt med <xref:microsoft.quantum.intrinsic.i>.
 syntax: "operation NoOp (input : 'T) : Unit"
 input:
   content: "(input : 'T)"
@@ -34,9 +34,9 @@ functors:
 seeAlso:
 - microsoft.quantum.intrinsic.i
 metadata:
-  ms.openlocfilehash: 8752eb93c1fba59065518ffd4665ea6f110ce1cc
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 74c85340e065929feabb81d7e97339f80255c0f6
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73222688"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82678726"
