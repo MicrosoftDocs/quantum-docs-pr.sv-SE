@@ -25,7 +25,7 @@ functions:
 - uid: microsoft.quantum.extensions.math.divremb
   summary: "\n> [!WARNING]\n> Inaktuell\n\nDivRemB är föråldrad. Använd @\"microsoft.quantum.math.divreml\" i stället.\nAnvänd @\"microsoft.quantum.math.divreml\"."
 - uid: microsoft.quantum.extensions.math.e
-  summary: "\n> [!WARNING]\n> Inaktuell\n\nE-postvärdet är föråldrat. Använd @\"microsoft.quantum.math.e\" i stället.\nAnvänd @\"microsoft.quantum.math.e\"."
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nE-postvärdet är föråldrat. Använd@\"microsoft.quantum.math.e\" i stället.\nAnvänd @\"microsoft.quantum.math.e\"."
 - uid: microsoft.quantum.extensions.math.expd
   summary: "\n> [!WARNING]\n> Inaktuell\n\nExpD är föråldrad. Använd @\"microsoft.quantum.math.expd\" i stället.\nAnvänd @\"microsoft.quantum.math.expd\"."
 - uid: microsoft.quantum.extensions.math.floor
@@ -75,9 +75,9 @@ functions:
 - uid: microsoft.quantum.extensions.math.truncate
   summary: "\n> [!WARNING]\n> Inaktuell\n\nTrunken är inaktuell. Använd @\"microsoft.quantum.math.truncate\" i stället.\nAnvänd @\"microsoft.quantum.math.truncate\"."
 metadata:
-  ms.openlocfilehash: 1eb20bd8834d2a34022ee503808fd26eccaf8c64
-  ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
+  ms.openlocfilehash: b94b4c7aa1523d9f3e8b42359e759ffa356b25ea
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 12/05/2019
-  ms.locfileid: "74858844"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82673266"

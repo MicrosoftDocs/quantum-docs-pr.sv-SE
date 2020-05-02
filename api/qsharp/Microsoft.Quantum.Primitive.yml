@@ -60,9 +60,9 @@ operations:
 - uid: microsoft.quantum.primitive.z
   summary: "\n> [!WARNING]\n> Inaktuell\n\nZ är föråldrad. Använd @\"microsoft.quantum.intrinsic.z\" i stället.\nAnvänd @\"microsoft.quantum.intrinsic.z\"."
 metadata:
-  ms.openlocfilehash: d3eef5b065a00cee2b31ea1a99e8814b5ca11ae0
-  ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
+  ms.openlocfilehash: 541a5ef9f6c87e18526a3883b6c4570666c8eb0d
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 12/05/2019
-  ms.locfileid: "74858249"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82673081"

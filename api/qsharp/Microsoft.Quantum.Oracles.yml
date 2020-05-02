@@ -6,7 +6,7 @@ functions:
 - uid: microsoft.quantum.oracles.deterministicstateoraclefromstateoracle
   summary: Konverterar en Oracle av typen `StateOracle` till `DeterministicStateOracle`.
 - uid: microsoft.quantum.oracles.obliviousoraclefromdeterministicstateoracle
-  summary: Kombinerar Oracle-`DeterministicStateOracle` och `ObliviousOracle`.
+  summary: Kombinerar Oracle- `DeterministicStateOracle` och `ObliviousOracle`.
 - uid: microsoft.quantum.oracles.oracletodiscrete
   summary: En åtgärd som representerar en "svart box" Oracle returnerar en separat tids Oracle som representerar den svarta-Box-Oracle som upprepas flera gånger.
 - uid: microsoft.quantum.oracles.reflectionoraclefromdeterministicstateoracle
@@ -28,7 +28,7 @@ newtypes:
     Indatamängden till Oracle-$O $ är:
 
 
-    - Registret som kommer att lagra det önskade Quantum-läget $ \ket{\psi}\_s $.
+    - Registret som kommer att lagra det önskade Quantum-läget $\_\ket{\psi} s $.
 - uid: microsoft.quantum.oracles.discreteoracle
   summary: >-
     Representerar en separat tid i Oracle.
@@ -45,7 +45,7 @@ newtypes:
 
     - Ancilla registrera $a $ som $O $ agerar på.
 
-    - Systemet registrerar $s $ som du vill att den önskade enhetliga $U $ ska tillämpas på, efter att du har valt att registrera $a $ i tillstånd $ \ket{t}\_en $.
+    - Systemet registrerar $s $ som du vill att den önskade enhetliga $U $ ska tillämpas på, efter att du har valt att registrera $a $ i\_tillstånd $ \ket{t} a $.
 - uid: microsoft.quantum.oracles.reflectionoracle
   summary: >-
     Representerar en reflektions-Oracle.
@@ -67,11 +67,11 @@ newtypes:
 
     - Ett heltal som indexerar flaggan qubit $f $.
 
-    - Systemet registrerar $s $ som kommer att lagra det önskade Quantum-läget $ \ket{\psi}\_s $.
+    - Systemet registrerar $s $ som kommer att lagra det önskade Quantum-läget $\_\ket{\psi} s $.
 metadata:
-  ms.openlocfilehash: 7e582286b69563bc4baa856f5236e5c2bd292ae0
-  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
+  ms.openlocfilehash: c1f364d74aab6d318e7b6db078d5532aeae57bcd
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 01/29/2020
-  ms.locfileid: "76870049"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82673113"

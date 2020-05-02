@@ -7,13 +7,13 @@ operations:
   summary: >-
     Returnerar antalet qubits som för närvarande är tillgängliga för lån.
 
-    Detta inkluderar oanvända qubits; det vill säga detta inkluderar qubits som returnerades av `GetQubitsAvailableToUse`.
+    Detta inkluderar oanvända qubits; det vill säga detta inkluderar qubits som returnerades `GetQubitsAvailableToUse`av.
 - uid: microsoft.quantum.environment.getqubitsavailabletouse
   summary: Returnerar antalet qubits som för närvarande är tillgängliga för användning.
 metadata:
-  ms.openlocfilehash: 50e5cfb7c1b9a4075c25b2705d00b435a09e159e
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: bd6d442aabb179f4c5fea0a0f48efaa472ec00cf
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73056820"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82673337"

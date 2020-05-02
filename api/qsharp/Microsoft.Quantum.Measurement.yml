@@ -13,15 +13,15 @@ operations:
 - uid: microsoft.quantum.measurement.mresety
   summary: Mäter en enskild qubit i Y-basen och återställer den till standard bas läget | 0 〉 efter mätningen.
 - uid: microsoft.quantum.measurement.mresetz
-  summary: Mäter en enskild qubit i `Z`-basen och återställer den till standard bas läget | 0 〉 efter mätningen.
+  summary: Mäter en enskild qubit i `Z` grunden och återställer den till standard bas läget | 0 〉 efter mätningen.
 - uid: microsoft.quantum.measurement.multim
   summary: Mäter varje qubit i en specifik matris enligt standard-basen.
 - uid: microsoft.quantum.measurement.settobasisstate
   summary: Ställer in en qubit till ett angivet beräknings underlag genom att mäta qubit och tillämpa en bit-flip vid behov.
 metadata:
-  ms.openlocfilehash: dc74db43b60728bf9924c05346bae4c6b329a265
-  ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
+  ms.openlocfilehash: 8e0910bf53734ffe65aa12b06321ec9b3403133f
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 02/28/2020
-  ms.locfileid: "77905768"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82673144"
