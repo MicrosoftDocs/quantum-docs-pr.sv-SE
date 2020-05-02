@@ -3,7 +3,7 @@ uid: microsoft.quantum.characterization.estimatefrequency
 name: EstimateFrequency
 type: operation
 namespace: Microsoft.Quantum.Characterization
-summary: Med tanke på förberedelse och mätning beräknar den frekvens med vilken mätningen lyckades (returnerar `Zero`) genom att utföra ett angivet antal utvärderings versioner.
+summary: Med tanke på förberedelse och mätning beräknar den frekvens med vilken mätningen lyckas (returnerar `Zero`) genom att utföra ett angivet antal utvärderings versioner.
 syntax: 'operation EstimateFrequency (preparation : (Qubit[] => Unit), measurement : (Qubit[] => Result), nQubits : Int, nMeasurements : Int) : Double'
 input:
   content: '(preparation : (Qubit[] => Unit), measurement : (Qubit[] => Result), nQubits : Int, nMeasurements : Int)'
@@ -44,16 +44,16 @@ output:
   content: Double
   types:
   - summary: >-
-      En uppskattning i $ \hat{p} $ av den frekvens med vilken $M (P (\ket{00 \cdots 0} \bra{00 \cdots 0})) $ returnerar `Zero`, som erhålls med hjälp av en ej prioriterad binomialfördelningen $ \hat{p} = n\_{\uparrow}/n\_{\text{Measurements}} $, där $n\_{\uparrow} $ är antalet `Zero` resultat som observerats.
+      En uppskattning i $ \hat{p} $ av den frekvens med vilken $M (P (\ket{00 \cdots 0} \bra{00 \cdots 0})) $ `Zero`returnerar, som erhålls med hjälp av den ej vägd binomialfördelningen $ \hat{p}\_= n {\uparrow}\_/n {\text{Measurements}} $,\_där $n {\uparrow} $ är antalet `Zero` resultat som observerats.
 
 
       Detta är särskilt viktigt på mål datorer som respekterar fysiska begränsningar, så att sannolikheten inte kan mätas.
     isPrimitive: true
     uid: Double
 metadata:
-  ms.openlocfilehash: 1c27d38983f9fa9c1a1dc5c80548e307b7c36ffe
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 973ab328d11410fee400659f18a99d50c1883156
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73229199"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82677741"

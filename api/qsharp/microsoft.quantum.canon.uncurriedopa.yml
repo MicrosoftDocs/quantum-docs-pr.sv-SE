@@ -6,7 +6,7 @@ namespace: Microsoft.Quantum.Canon
 summary: >-
   En funktion som returnerar åtgärder returnerar en ny åtgärd som tar båda indata som en tupel.
 
-  Modifieraren `A` visar att åtgärderna är adjointable.
+  Modifieraren `A` anger att åtgärderna är adjointable.
 syntax: "function UncurriedOpA (curriedOp : ('T -> ('U => Unit is Adj))) : (('T, 'U) => Unit is Adj)"
 input:
   content: "(curriedOp : ('T -> ('U => Unit is Adj)))"
@@ -56,9 +56,9 @@ typeParameters:
 seeAlso:
 - microsoft.quantum.canon.uncurryop
 metadata:
-  ms.openlocfilehash: 305f90bd71f2dc6e790e470df649e5a2a5afb9ad
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 92ec8c1ae333bcd319c7d63f89fb8614f0793d79
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73216993"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82677993"
