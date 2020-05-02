@@ -7,10 +7,10 @@ summary: Dumpar den aktuella mål datorns status.
 remarks: >-
   Med den här metoden kan du dumpa information om mål datorns aktuella status till en fil eller någon annan plats.
 
-  Den faktiska informationen som skapas och semantiken för `location` är specifika för varje måldator. Du kan dock ange en tom tupel som en plats (`()`) eller utesluta parametern `location` som vanligt vis innebär att du genererar utdata till-konsolen.
+  Den faktiska informationen som genereras och semantiken för `location` är specifika för varje måldator. Men att ange en tom tupel som en plats (`()`) eller utesluta `location` parametern vanligt vis innebär att du genererar utdata till-konsolen.
 
 
-  För att den lokala fullständiga tillstånds simulatorn ska distribueras som en del av Quantum Development Kit förväntar den här metoden en sträng med sökvägen till en fil där den skriver vågen som en endimensionell matris med komplexa tal, där varje element representerar amplituder av sannolikheten för att mäta motsvarande tillstånd.
+  För att den lokala fullständiga tillstånds simulatorn ska distribueras som en del av Quantum Development Kit förväntar den här metoden en sträng med sökvägen till en fil där den skriver vågen som en endimensionell matris med komplexa tal, där varje element representerar amplituderna för sannolikheten för att mäta motsvarande tillstånd.
 syntax: "function DumpMachine (location : 'T) : Unit"
 input:
   content: "(location : 'T)"
@@ -22,13 +22,13 @@ input:
 output:
   content: Unit
   types:
-  - summary: Ingen.
+  - summary: Inga.
     isPrimitive: true
     uid: Unit
 metadata:
-  ms.openlocfilehash: 7d268127c56dc5554e7c99494ae90b2bc14b336c
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 7511e0bdded689c84cb90794860dd79e48950414
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73227074"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82656560"
