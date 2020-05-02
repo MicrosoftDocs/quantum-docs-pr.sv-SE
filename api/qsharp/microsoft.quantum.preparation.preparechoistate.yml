@@ -10,7 +10,7 @@ input:
   content: '(op : (Qubit[] => Unit), reference : Qubit[], target : Qubit[])'
   types:
   - name: op
-    summary: Åtgärd $ \Lambda $ vars Choi – Jamiłkowski State $J (\Lambda)/2 ^ N $ ska förberedas, där $N $ är antalet qubits där `op` fungerar.
+    summary: Åtgärd $ \Lambda $ vars Choi – Jamiłkowski State $J (\Lambda)/2 ^ N $ ska förberedas, där $N $ är antalet qubits som `op` fungerar.
     isOperation: true
     input:
       types:
@@ -22,12 +22,12 @@ input:
       - isPrimitive: true
         uid: Unit
   - name: reference
-    summary: Ett register över qubits som startar i $ \ket{00\cdots 0} $ State som ska användas som referens för `op`s åtgärd.
+    summary: Ett register över qubits som startar i $ \ket{00\cdots 0} $ State som ska användas som referens för åtgärden `op`.
     isArray: true
     isPrimitive: true
     uid: Qubit
   - name: target
-    summary: Ett register över qubits inlednings vis i den $ \ket{00\cdots 0} $-status som `op` ska tillämpas på.
+    summary: Ett register över qubits inlednings vis i den $ \ket{00\cdots 0} $ `op` -status som ska tillämpas.
     isArray: true
     isPrimitive: true
     uid: Qubit
@@ -41,9 +41,9 @@ seeAlso:
 - preparechoistatec
 - preparechoistateca
 metadata:
-  ms.openlocfilehash: f1f0ea6233d13ce1850b3b8dfb210ab6b0e378f8
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: c23954131c9ef7c609089e3f58b3577151409993
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73228128"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82681171"

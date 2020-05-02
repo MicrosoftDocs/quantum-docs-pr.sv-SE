@@ -5,7 +5,7 @@ type: newtype
 namespace: Microsoft.Quantum.MachineLearning
 summary: Beskriver en kontrollerad rotation i termer av mål-och kontroll index, rotations axel och index i en modell parameter vektor.
 remarks: >-
-  En okontrollerad rotation kan representeras genom att ange `ControlIndices` till en tom matris med index `new Int[0]`.
+  En okontrollerad rotation kan representeras genom `ControlIndices` att ställa in en tom matris med index `new Int[0]`.
 
 
   ### <a name="examples"></a>Exempel
@@ -24,9 +24,9 @@ remarks: >-
   ```
 syntax: newtype ControlledRotation = ((Int, Int[]), Pauli, Int);
 metadata:
-  ms.openlocfilehash: b09588e77a43be10493184d4e3b8bbe7a0025ce6
-  ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
+  ms.openlocfilehash: 058c1dc75dd169971d0c542d0577d739327e4d56
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 02/28/2020
-  ms.locfileid: "77909525"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82681682"

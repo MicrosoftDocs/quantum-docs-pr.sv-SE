@@ -7,7 +7,7 @@ summary: Beräknar modulen mellan två reella tal.
 remarks: >-
   Den här funktionen beräknar den verkliga modulen genom att figursätta den verkliga linjen om enhets cirkeln och sedan hitta vinkeln på den enhets cirkel som motsvarar indatan.
 
-  `minValue`-ineffekten anger sedan effektivt var du vill klippa ut enhets cirkeln.
+  `minValue` Inmatarna anger sedan i praktiken var du vill klippa ut enhets cirkeln.
 examples: >-
   ```qsharp
       // Returns 3 π / 2.
@@ -38,9 +38,9 @@ output:
   - isPrimitive: true
     uid: Double
 metadata:
-  ms.openlocfilehash: 9430ce172fec2bf10d64aa111d5a788c574a9566
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 0a35628198ae5d496b093b98542daeac16aced9b
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73232378"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82681501"
