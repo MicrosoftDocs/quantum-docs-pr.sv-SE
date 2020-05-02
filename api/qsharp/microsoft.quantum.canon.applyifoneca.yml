@@ -7,9 +7,9 @@ summary: >-
   Använder en åtgärd med ett enhetligt värde som är ett klassiskt resultat värde.
 
 
-  Med en åtgärd `op` och ett resultat värde `result`används `op` till `target` om `result` är `One`. Om `Zero`händer ingenting i `target`.
+  En åtgärd `op` och ett resultat värde `result`gäller `op` för `target` IF. `result` `One` Om `Zero`händer ingenting `target`.
 
-  Suffixet `CA` anger att den åtgärd som ska tillämpas är enhetlig (både kontrollerbar och adjointable).
+  Suffixet `CA` anger att åtgärden som ska tillämpas är enhetlig (kan kontrol leras och adjointable).
 syntax: "operation ApplyIfOneCA (result : Result, (op : ('T => Unit is Adj + Ctl), target : 'T)) : Unit"
 input:
   content: "(result : Result, (op : ('T => Unit is Adj + Ctl), target : 'T))"
@@ -52,9 +52,9 @@ seeAlso:
 - microsoft.quantum.canon.applyifonea
 - microsoft.quantum.canon.applyifoneca
 metadata:
-  ms.openlocfilehash: 9756dcc29853d41e1d2a9fee5816254afa5e5d73
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: f8837e549ec1fc70b76e8151a211c4bf9f71168e
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73217401"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82672656"

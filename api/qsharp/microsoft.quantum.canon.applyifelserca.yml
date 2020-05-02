@@ -7,13 +7,13 @@ summary: >-
   Använder en av två enhetliga åtgärder, beroende på värdet av ett klassiskt resultat.
 
 
-  På grund av ett resultat `result`använder åtgärden `zeroOp` med `zeroInput` som indatatyp när `result` är lika med `Zero`och tillämpar `oneOp(oneInput)` när `result == One`.
+  På grund av `result`detta `zeroOp` tillämpas åtgärden `zeroInput` med som indatamängden när `result` är lika med `Zero`, och tillämpas `oneOp(oneInput)` när `result == One`.
 syntax: "operation ApplyIfElseRCA (result : Result, (zeroOp : ('T => Unit is Adj + Ctl), zeroInput : 'T), (oneOp : ('U => Unit is Adj + Ctl), oneInput : 'U)) : Unit"
 input:
   content: "(result : Result, (zeroOp : ('T => Unit is Adj + Ctl), zeroInput : 'T), (oneOp : ('U => Unit is Adj + Ctl), oneInput : 'U))"
   types:
   - name: result
-    summary: Mät resultatet som används för att avgöra om `zeroOp` eller `oneOp` tillämpas.
+    summary: Mät resultatet som används för att avgöra `zeroOp` om `oneOp` eller används.
     isPrimitive: true
     uid: Result
   - name: zeroOp
@@ -31,7 +31,7 @@ input:
     - Adjoint
     - Controlled
   - name: zeroInput
-    summary: Indata som ska tillhandahållas `zeroOp` när `result == Zero`.
+    summary: Indata som ska anges till `zeroOp` när `result == Zero`.
     uid: "'T"
     isLocal: true
   - name: oneOp
@@ -49,7 +49,7 @@ input:
     - Adjoint
     - Controlled
   - name: oneInput
-    summary: Indata som ska tillhandahållas `oneOp` när `result == One`.
+    summary: Indata som ska anges till `oneOp` när `result == One`.
     uid: "'U"
     isLocal: true
 output:
@@ -59,9 +59,9 @@ output:
     uid: Unit
 typeParameters:
 - uid: "'T"
-  summary: Indatatypen för åtgärden `zeroOp` att tillämpas villkorligt.
+  summary: Indatatypen för den åtgärd `zeroOp` som ska tillämpas villkorligt.
 - uid: "'U"
-  summary: Indatatypen för åtgärden `oneOp` att tillämpas villkorligt.
+  summary: Indatatypen för den åtgärd `oneOp` som ska tillämpas villkorligt.
 functors:
 - Adjoint
 - Controlled
@@ -72,9 +72,9 @@ seeAlso:
 - microsoft.quantum.canon.applyifelsera
 - microsoft.quantum.canon.applyifelserca
 metadata:
-  ms.openlocfilehash: 79fc62ca2c3525699deec6669e6b078408ede837
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: a1182abedfbb4905ec65f5e720d82a1766aa5d65
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73213729"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82672717"
