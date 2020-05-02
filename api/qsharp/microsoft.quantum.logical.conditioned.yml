@@ -5,7 +5,7 @@ type: function
 namespace: Microsoft.Quantum.Logical
 summary: Returnerar ett av två värden, beroende på värdet för ett booleskt villkor.
 remarks: >-
-  Till skillnad från `?|`-operatorn är den här funktionen inte en kort krets, så att båda indatana utvärderas fullständigt.
+  Till skillnad från `?|` operatorn är den här funktionen inte en kort krets, så att båda indatana utvärderas fullständigt.
 
 
   Till följd av kort slutning är följande motsvarigheter:
@@ -27,23 +27,23 @@ input:
     isPrimitive: true
     uid: Bool
   - name: ifTrue
-    summary: Värdet som ska returneras när `condition` är `true`.
+    summary: Värdet som ska returneras när `condition` är. `true`
     uid: "'T"
     isLocal: true
   - name: ifFalse
-    summary: Värdet som ska returneras när `condition` är `false`.
+    summary: Värdet som ska returneras när `condition` är. `false`
     uid: "'T"
     isLocal: true
 output:
   content: "'T"
   types:
-  - summary: '`ifTrue` om `condition` är `true`och `ifFalse` på annat sätt.'
+  - summary: '`ifTrue`Om `condition` är `true`, och `ifFalse` annars.'
     uid: "'T"
     isLocal: true
 metadata:
-  ms.openlocfilehash: f26e540b181ce405125dbf80cd97c3e177ad9531
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: c5a255fe0434c7dfc9bf49f1a1c9c6be03cd8055
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73233347"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82674083"

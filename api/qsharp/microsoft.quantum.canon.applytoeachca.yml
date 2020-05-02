@@ -6,7 +6,7 @@ namespace: Microsoft.Quantum.Canon
 summary: >-
   Tillämpar en enskild qubit-åtgärd för varje-element i en register.
 
-  Modifieraren `CA` visar att åtgärden för en qubit är kontrollerbar och adjointable.
+  Modifieraren `CA` anger att en enskild-qubit-åtgärd är kontrollerbar och adjointable.
 examples: >-
   Förbered ett tre-qubit $ \ket{+} $-tillstånd:
 
@@ -55,9 +55,9 @@ functors:
 seeAlso:
 - microsoft.quantum.canon.applytoeach
 metadata:
-  ms.openlocfilehash: dfc43c0293a1c056ff773d7bd6b1c3fe13c2d78d
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: e646e3d27a555d46b7c4a7be41ba41f3d47fdecf
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73210295"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82674881"
