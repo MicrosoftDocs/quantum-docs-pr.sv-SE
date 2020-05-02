@@ -5,7 +5,7 @@ type: function
 namespace: Microsoft.Quantum.Logical
 summary: Returnerar den booleska samningen av två värden.
 remarks: >-
-  Till skillnad från `and`-operatorn är den här funktionen inte en kort krets, så att båda indatana utvärderas fullständigt.
+  Till skillnad från `and` operatorn är den här funktionen inte en kort krets, så att båda indatana utvärderas fullständigt.
 
 
   Till följd av kort slutning är följande motsvarigheter:
@@ -33,13 +33,13 @@ input:
 output:
   content: Bool
   types:
-  - summary: '`true` om och bara om `a` och `b` båda är `true`.'
+  - summary: '`true`om och endast om `a` och `b` är båda `true`.'
     isPrimitive: true
     uid: Bool
 metadata:
-  ms.openlocfilehash: 22e884f8041ecd66aba875c38f0b8af234aee0e5
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 01c26ef3804d484d2cfbd6f54261ad80b8f66594
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73233381"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82674096"

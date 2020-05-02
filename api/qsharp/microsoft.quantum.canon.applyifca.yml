@@ -7,11 +7,11 @@ summary: >-
   Använder en enhetlig åtgärd som är villkorlig för en klassisk bit.
 
 
-  Med en åtgärd `op` och ett bit värde `bit`används `op` till `target` om `bit` är `true`. Om `false`händer ingenting i `target`.
+  En åtgärd `op` och ett bit värde `bit`gäller `op` för `target` IF. `bit` `true` Om `false`händer ingenting `target`.
 
-  Suffixet `CA` anger att den åtgärd som ska tillämpas är enhetlig (både kontrollerbar och adjointable).
+  Suffixet `CA` anger att åtgärden som ska tillämpas är enhetlig (kan kontrol leras och adjointable).
 examples: >-
-  Följande förbereder ett register över qubits till ett beräknings bas tillstånd som representeras av en klassisk bit sträng som anges som en matris med `Bool` värden:
+  Följande förbereder ett register över qubits till ett beräknings bas tillstånd som representeras av en klassisk bit sträng som anges som en `Bool` matris med värden:
 
 
   ```Q#
@@ -67,9 +67,9 @@ seeAlso:
 - microsoft.quantum.canon.applyifa
 - microsoft.quantum.canon.applyifca
 metadata:
-  ms.openlocfilehash: c78136688111a71e6a9a58972c9b9bb71603e0cf
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 2b716ef4a7d429176aa1359fb22b3ce24be0d5f4
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73213763"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82675047"
