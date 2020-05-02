@@ -5,9 +5,9 @@ type: function
 namespace: Microsoft.Quantum.Convert
 summary: Genererar en binär representation av ett positivt heltal med hjälp av en liten endian-representation för den returnerade matrisen.
 remarks: >-
-  Indatamängden `bits` måste vara mellan 0 och 63.
+  Inmatade värden `bits` måste vara mellan 0 och 63.
 
-  Indatamängden `number` måste vara mellan 0 och $2 ^ {\texttt{BITS}}-$1.
+  Inmatade värden `number` måste vara mellan 0 och $2 ^ {\texttt{bits}}-$1.
 syntax: 'function IntAsBoolArray (number : Int, bits : Int) : Bool[]'
 input:
   content: '(number : Int, bits : Int)'
@@ -17,20 +17,20 @@ input:
     isPrimitive: true
     uid: Int
   - name: bits
-    summary: Antalet bitar i den binära representationen av `number`.
+    summary: Antalet bitar i den binära representationen `number`av.
     isPrimitive: true
     uid: Int
 output:
   content: Bool[]
   types:
-  - summary: En matris med booleska värden som representerar `number`.
+  - summary: En matris med booleska värden som `number`representerar.
     isArray: true
     isPrimitive: true
     uid: Bool
 metadata:
-  ms.openlocfilehash: e75eede507f04178755e886258e7eb73a6cc3dce
-  ms.sourcegitcommit: 27c9bf1aae923527aa5adeaee073cb27d35c0ca1
+  ms.openlocfilehash: f14af582713f5d08e29b54a1e1758b4efbeea094
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 12/05/2019
-  ms.locfileid: "74858997"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82659188"
