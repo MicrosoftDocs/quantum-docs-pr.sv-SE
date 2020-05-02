@@ -7,7 +7,7 @@ summary: >-
   Tillämpar en åtgärd för varje index i kartesiska-kraften i ett heltals intervall.
 
 
-  En åtgärd tillämpas iterativt för varje element i en kartesiska kraften i intervallet `0..(bound - 1)`.
+  En åtgärd tillämpas iterativt för varje element i en kartesiska-potens av intervallet `0..(bound - 1)`.
 examples: >-
   Med en åtgärd `op`är följande två kodfragment likvärdiga:
 
@@ -66,9 +66,9 @@ output:
 seeAlso:
 - microsoft.quantum.canon.iteratethroughcartesianproduct
 metadata:
-  ms.openlocfilehash: 4679e1b569dab167eecbb22947543ab993d7fa8d
-  ms.sourcegitcommit: ca5015fed409eaf0395a89c2e4bc6a890c360aa2
+  ms.openlocfilehash: a6f2d0e1f99c6cf7038803271af974a1c5fca465
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 01/29/2020
-  ms.locfileid: "76870945"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82679063"
