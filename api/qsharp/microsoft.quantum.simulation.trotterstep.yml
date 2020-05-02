@@ -3,7 +3,7 @@ uid: microsoft.quantum.simulation.trotterstep
 name: TrotterStep
 type: function
 namespace: Microsoft.Quantum.Simulation
-summary: Implementerar en enda tids period – steg-för-steg-utveckling i systemet som beskrivs i en `EvolutionGenerator` med hjälp av en Trotter – Suzuki-dekomposition.
+summary: Implementerar en enda tids period – steg-för-steg-utveckling enligt systemet som `EvolutionGenerator` beskrivs i använda en Trotter – Suzuki-dekomposition.
 remarks: Mer information om Trotter – Suzuki diskomposition finns i [Tidssorterad sammansättning](/quantum/libraries/control-flow#time-ordered-composition).
 syntax: 'function TrotterStep (evolutionGenerator : Microsoft.Quantum.Simulation.EvolutionGenerator, trotterOrder : Int, trotterStepSize : Double) : (Qubit[] => Unit is Adj + Ctl)'
 input:
@@ -38,9 +38,9 @@ output:
     - Adjoint
     - Controlled
 metadata:
-  ms.openlocfilehash: 0605c7de832286b8b7a11b82af50b528d233d18c
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 7059972ad5494e7d2cd86c943314005f620ad60f
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73065222"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82687215"
