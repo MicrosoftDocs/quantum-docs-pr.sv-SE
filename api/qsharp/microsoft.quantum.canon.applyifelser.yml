@@ -7,13 +7,13 @@ summary: >-
   Tillämpar en av två åtgärder, beroende på värdet för ett klassiskt resultat.
 
 
-  På grund av ett resultat `result`använder åtgärden `zeroOp` med `zeroInput` som indatatyp när `result` är lika med `Zero`och tillämpar `oneOp(oneInput)` när `result == One`.
+  På grund av `result`detta `zeroOp` tillämpas åtgärden `zeroInput` med som indatamängden när `result` är lika med `Zero`, och tillämpas `oneOp(oneInput)` när `result == One`.
 syntax: "operation ApplyIfElseR (result : Result, (zeroOp : ('T => Unit), zeroInput : 'T), (oneOp : ('U => Unit), oneInput : 'U)) : Unit"
 input:
   content: "(result : Result, (zeroOp : ('T => Unit), zeroInput : 'T), (oneOp : ('U => Unit), oneInput : 'U))"
   types:
   - name: result
-    summary: Mät resultatet som används för att avgöra om `zeroOp` eller `oneOp` tillämpas.
+    summary: Mät resultatet som används för att avgöra `zeroOp` om `oneOp` eller används.
     isPrimitive: true
     uid: Result
   - name: zeroOp
@@ -28,7 +28,7 @@ input:
       - isPrimitive: true
         uid: Unit
   - name: zeroInput
-    summary: Indata som ska tillhandahållas `zeroOp` när `result == Zero`.
+    summary: Indata som ska anges till `zeroOp` när `result == Zero`.
     uid: "'T"
     isLocal: true
   - name: oneOp
@@ -43,7 +43,7 @@ input:
       - isPrimitive: true
         uid: Unit
   - name: oneInput
-    summary: Indata som ska tillhandahållas `oneOp` när `result == One`.
+    summary: Indata som ska anges till `oneOp` när `result == One`.
     uid: "'U"
     isLocal: true
 output:
@@ -53,9 +53,9 @@ output:
     uid: Unit
 typeParameters:
 - uid: "'T"
-  summary: Indatatypen för åtgärden `zeroOp` att tillämpas villkorligt.
+  summary: Indatatypen för den åtgärd `zeroOp` som ska tillämpas villkorligt.
 - uid: "'U"
-  summary: Indatatypen för åtgärden `oneOp` att tillämpas villkorligt.
+  summary: Indatatypen för den åtgärd `oneOp` som ska tillämpas villkorligt.
 seeAlso:
 - microsoft.quantum.canon.applyifzero
 - microsoft.quantum.canon.applyifone
@@ -63,9 +63,9 @@ seeAlso:
 - microsoft.quantum.canon.applyifelsera
 - microsoft.quantum.canon.applyifelserca
 metadata:
-  ms.openlocfilehash: dc3c41c064297dfa3aef53362095c4d9f998538b
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 4623c321aa2b802b8f27f6a3ec8e65463083b314
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73217435"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82672749"
