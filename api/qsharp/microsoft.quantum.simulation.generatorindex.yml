@@ -4,19 +4,19 @@ name: GeneratorIndex
 type: newtype
 namespace: Microsoft.Quantum.Simulation
 summary: >-
-  Representerar en enda primitiv term i uppsättningen med alla dynamiska generatorer, t. ex. Hermitian-operatörer, för vilka det finns en karta från den generatorn till tids utveckling av denna generator, via `EvolutionSet`.
+  Representerar en enda primitiv term i uppsättningen med alla dynamiska generatorer, t. ex. Hermitian-operatörer, för vilka det finns en karta från den generatorn till tids utveckling av generatorn `EvolutionSet`.
 
 
   Det första elementet (int [], Double []) är index som en term, men Pauli-strängen XXY med koefficient 0,5 skulle indexeras av ([1, 1, 2], [0,5]). Alternativt kan Hamiltonians parameterstyrda av en kontinuerlig variabel, till exempel X cos φ + Y sin φ, representeras av ([], [φ]). Det andra elementet indexerar under systemet som generatorn agerar på.
 remarks: >-
   > [!WARNING]
 
-  > Tolkningen av en `GeneratorIndex` definieras inte, förutom med referens till en viss uppsättning generatorer.
+  > Tolkningen av en `GeneratorIndex` har inte definierats, förutom med referens till en viss uppsättning generatorer.
 
 
   ### <a name="examples"></a>Exempel
 
-  Med hjälp av <xref:microsoft.quantum.simulation.paulievolutionset>visas operatorn $ \pi X_2 X_5 Y_9 $ som:
+  Med <xref:microsoft.quantum.simulation.paulievolutionset>hjälp av operatorn $ \pi X_2 X_5 Y_9 $ visas följande:
 
 
   ```qsharp
@@ -29,9 +29,9 @@ seeAlso:
 - evolutionset
 - paulievolutionset
 metadata:
-  ms.openlocfilehash: dc5f5b96a6d1708e94de918a65cbd68e0af06192
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: d633ecdc11075eb45a40a58bb2a1ca67af577c3c
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73067058"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82655148"
