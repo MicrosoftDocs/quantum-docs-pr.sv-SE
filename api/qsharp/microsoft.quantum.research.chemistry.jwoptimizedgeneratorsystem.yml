@@ -3,7 +3,7 @@ uid: microsoft.quantum.research.chemistry.jwoptimizedgeneratorsystem
 name: JWOptimizedGeneratorSystem
 type: function
 namespace: Microsoft.Quantum.Research.Chemistry
-summary: Konverterar en Hamiltonian som beskrivs av `JWOptimizedHTerms` till en `GeneratorSystem` uttryckt i den `GeneratorIndex`-konvention som definierats i den här filen.
+summary: Konverterar en Hamiltonian som beskrivs `JWOptimizedHTerms` av till `GeneratorSystem` en uttryckt i termer av `GeneratorIndex` den konvention som definierats i den här filen.
 syntax: 'function JWOptimizedGeneratorSystem (data : Microsoft.Quantum.Chemistry.JordanWigner.JWOptimizedHTerms) : Microsoft.Quantum.Simulation.GeneratorSystem'
 input:
   content: '(data : Microsoft.Quantum.Chemistry.JordanWigner.JWOptimizedHTerms)'
@@ -17,9 +17,9 @@ output:
   - summary: Representation av Hamiltonian som `GeneratorSystem`.
     uid: microsoft.quantum.simulation.generatorsystem
 metadata:
-  ms.openlocfilehash: 5f5037767f9737391f3fd07d3dd0e330f8995f56
-  ms.sourcegitcommit: edcf15044d7bdf4f8b21fb8f6af4bde475eb13a0
+  ms.openlocfilehash: 54b172085c66a826a571c5eb2e6dc0a2bfa303a4
+  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73066174"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82683092"
