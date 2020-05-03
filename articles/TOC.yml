@@ -17,15 +17,7 @@
     - name: Kom igång med QDK
       href: welcome.md
     - name: Installera QDK
-      items:
-        - name: Installationsöversikt
-          href: install-guide/index.md
-        - name: 'Q# + C#'
-          href: install-guide/csinstall.md
-        - name: 'Q# + Python'
-          href: install-guide/pyinstall.md
-        - name: 'Q# Jupyter Notebooks'
-          href: install-guide/qjupyter.md
+      href: install-guide/toc.yml
     - name: Uppdatera QDK
       href: install-guide/update.md
     - name: 'Så här skapar du ett Q#-projekt'
