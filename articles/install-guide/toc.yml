@@ -1,0 +1,13 @@
+items:
+  - name: Installationsöversikt
+    href: index.md
+  - name: 'Q#-kommandoradsprogram'
+    href: standalone.md
+  - name: 'Q# Jupyter Notebooks'
+    href: qjupyter.md
+  - name: 'Använda Q# med andra språk'
+    items:
+      - name: 'Använda Q# med Python'
+        href: pyinstall.md
+      - name: 'Använda Q# med .NET'
+        href: csinstall.md

@@ -6,12 +6,12 @@ ms.author: nakersha
 ms.date: 09/30/2019
 ms.topic: article
 uid: microsoft.quantum.relnotes
-ms.openlocfilehash: 84e5db17ab8d963a75c72da38d3e4487b89abc9d
-ms.sourcegitcommit: b6b8459eb654040f1e19f66411b29fc9e48e95c9
+ms.openlocfilehash: 91f12ef6bd15e27c8920471442c66ff3b1e71122
+ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82030607"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82677096"
 ---
 # <a name="microsoft-quantum-development-kit-release-notes"></a>Viktig information för Microsoft Quantum Development Kit
 
@@ -20,6 +20,21 @@ Den här artikeln innehåller information om varje version av Quantum Developmen
 Installationsanvisningar finns i [installationsguiden](xref:microsoft.quantum.install).
 
 Uppdateringsanvisningar finns i [uppdateringsguiden](xref:microsoft.quantum.update).
+
+## <a name="version-01120042825"></a>Version 0.11.2004.2825
+
+*Utgivningsdatum: 30 april 2020*
+
+Den här versionen innehåller följande:
+
+- Nytt stöd för Q#-kommandoradsprogram, som inte längre kräver en C#- eller Python-värdfil. Mer information om hur du kommer igång med Q#-kommandoradsprogram finns [här](xref:microsoft.quantum.install.standalone).
+- Uppdateringen av snabbstarten för att skapa en kvantgenerator för slumptal gör att det inte längre behövs en C#- eller Python-värdfil. Se den uppdaterade  [snabbstarten](xref:microsoft.quantum.quickstarts.qrng)
+- Prestandaförbättringar för IQ# Docker-avbildningar
+
+> [!NOTE]
+> Q#-kommandoradsprogram som använder det nya attributet [`@EntryPoint()`](xref:microsoft.quantum.core.entrypoint) kan för närvarande inte anropas från Python- eller .NET-värdprogram.
+> Mer information finns i samverkansguiderna för [Python](xref:microsoft.quantum.install.python) och [.NET](xref:microsoft.quantum.install.cs).
+
 
 ## <a name="version-01120033107"></a>Version 0.11.2003.3107
 
