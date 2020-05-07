@@ -7,12 +7,12 @@ ms.date: 9/30/2019
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.update
-ms.openlocfilehash: 264b5640216b2c0a468b625cdef4b9e0123d8b39
-ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
+ms.openlocfilehash: bf6d6d3d80af485b555429f25b125bfea685bebf
+ms.sourcegitcommit: c57c271ab73f75f165401651fad2b5bc143e9c8f
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77904765"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82862215"
 ---
 # <a name="update-the-microsoft-quantum-development-kit-qdk"></a>Uppdatera Microsoft Quantum Development Kit (QDK)
 
@@ -26,7 +26,7 @@ Vi rekommenderar att du håller dig uppdaterad med den senaste versionen av QDK.
 
 ## <a name="updating-q-projects"></a>Uppdaterar Q # projekt 
 
-Följ dessa anvisningar om du vill uppdatera C# dina q #-projekt oavsett om du använder eller python för att vara värd för q #-åtgärder.
+Följ dessa anvisningar om du vill uppdatera dina Q #-projekt oavsett om du använder C# eller python som värd för Q #-åtgärder.
 
 1. Kontrol lera först att du har den senaste versionen av [.NET Core SDK 3,1](https://dotnet.microsoft.com/download). Kör följande kommando i kommando tolken:
 
@@ -34,23 +34,23 @@ Följ dessa anvisningar om du vill uppdatera C# dina q #-projekt oavsett om du a
     dotnet --version
     ```
 
-    Kontrol lera att utdata är `3.1.100` eller högre. Om inte, installerar du den [senaste versionen](https://dotnet.microsoft.com/download) och kontrollerar igen. Följ sedan anvisningarna nedan beroende på dina inställningar (Visual Studio, Visual Studio Code eller direkt på kommando raden).
+    Kontrol lera att utdata `3.1.100` är eller högre. Om inte, installerar du den [senaste versionen](https://dotnet.microsoft.com/download) och kontrollerar igen. Följ sedan anvisningarna nedan beroende på dina inställningar (Visual Studio, Visual Studio Code eller direkt på kommando raden).
 
 ### <a name="update-q-projects-in-visual-studio"></a>Uppdatera Q #-projekt i Visual Studio
  
 1. Uppdatera till den senaste versionen av Visual Studio 2019 finns [här](https://docs.microsoft.com/visualstudio/install/update-visual-studio?view=vs-2019) för instruktioner
 2. Öppna din lösning i Visual Studio
-3. På menyn väljer du **Build** -> **ren lösning**
-4. I var och en av dina. CSPROJ-filer uppdaterar du mål ramverket till `netcoreapp3.0` (eller `netstandard2.1` om det är ett biblioteks projekt).
+3. Välj **Bygg** -> **ren lösning** på menyn
+4. I var och en av dina. CSPROJ-filer uppdaterar du mål `netcoreapp3.1` ramverket `netstandard2.1` till (eller om det är ett biblioteks projekt).
     Det vill säga Redigera rader i formuläret:
 
     ```xml
-    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
     ```
 
     Du hittar mer information om att ange mål ramverk [här](https://docs.microsoft.com/dotnet/standard/frameworks#how-to-specify-target-frameworks).
 5. Spara och Stäng alla filer i lösningen
-6. Välj **verktyg** -> **kommando rad** -> **Developer kommando tolken**
+6. Välj **verktyg** -> **kommando rad** -> **utvecklare kommando tolk**
 7. Kör följande kommando för varje projekt i lösningen:
 
     ```dotnetcli
@@ -58,7 +58,7 @@ Följ dessa anvisningar om du vill uppdatera C# dina q #-projekt oavsett om du a
     ```
 
    Om dina projekt använder andra Microsoft. Quantum-paket (t. ex. Microsoft. Quantum. numeric) kör du kommandot för dessa.
-8. Stäng kommando tolken och välj **build** -> **build-lösning** (Välj *inte* att återskapa lösningen)
+8. Stäng kommando tolken och välj **skapa** -> **build-lösning** (Välj *inte* att återskapa lösningen)
 
 Nu kan du gå vidare till [Uppdatera ditt Visual Studio QDK-tillägg](#update-visual-studio-qdk-extension).
 
@@ -66,7 +66,7 @@ Nu kan du gå vidare till [Uppdatera ditt Visual Studio QDK-tillägg](#update-vi
 ### <a name="update-q-projects-in-visual-studio-code"></a>Uppdatera Q #-projekt i Visual Studio Code
 
 1. Öppna mappen som innehåller projektet som ska uppdateras i Visual Studio Code
-2. Välj **terminal** -> **ny terminal**
+2. Välj **Terminal** -> ,**ny terminal**
 3. Följ anvisningarna för uppdatering med hjälp av kommando raden (direkt nedan)
 
 ### <a name="update-q-projects-using-the-command-line"></a>Uppdatera Q #-projekt med hjälp av kommando raden
@@ -78,11 +78,11 @@ Nu kan du gå vidare till [Uppdatera ditt Visual Studio QDK-tillägg](#update-vi
     dotnet clean [project_name].csproj
     ```
 
-3. I var och en av dina. CSPROJ-filer uppdaterar du mål ramverket till `netcoreapp3.0` (eller `netstandard2.1` om det är ett biblioteks projekt).
+3. I var och en av dina. CSPROJ-filer uppdaterar du mål `netcoreapp3.1` ramverket `netstandard2.1` till (eller om det är ett biblioteks projekt).
     Det vill säga Redigera rader i formuläret:
 
     ```xml
-    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
     ```
 
     Du hittar mer information om att ange mål ramverk [här](https://docs.microsoft.com/dotnet/standard/frameworks#how-to-specify-target-frameworks).
@@ -116,7 +116,7 @@ Välj din utvecklings miljö nedan.
 
 ### <a name="update-iq-for-python"></a>Uppdatera SWEETIQ # för python
 
-1. Uppdatera `iqsharp` kernel 
+1. Uppdatera `iqsharp` kerneln 
 
     ```dotnetcli
     dotnet tool update -g Microsoft.Quantum.IQSharp
@@ -136,9 +136,9 @@ Välj din utvecklings miljö nedan.
     Jupyter Core: 1.2.20112.0
     ```
 
-    Oroa dig inte om din `iqsharp` version är högre, bör den matcha den [senaste versionen](xref:microsoft.quantum.relnotes).
+    Oroa dig inte om `iqsharp` din version är högre, den ska överensstämma med den [senaste versionen](xref:microsoft.quantum.relnotes).
 
-3. Uppdatera `qsharp`-paketet
+3. Uppdatera `qsharp` paketet
 
     ```bash
     pip install qsharp --upgrade
@@ -159,7 +159,7 @@ Välj din utvecklings miljö nedan.
     ...
     ```
 
-5. Kör följande kommando från platsen för dina `.qs`-filer
+5. Kör följande kommando från platsen för dina `.qs` filer
 
     ```bash
     python -c "import qsharp; qsharp.reload()"
@@ -169,7 +169,7 @@ Välj din utvecklings miljö nedan.
 
 ### <a name="update-iq-for-jupyter-notebooks"></a>Uppdatera SWEETIQ # för Jupyter-anteckningsböcker
 
-1. Uppdatera `iqsharp` kernel
+1. Uppdatera `iqsharp` kerneln
 
     ```dotnetcli
     dotnet tool update -g Microsoft.Quantum.IQSharp
@@ -189,7 +189,7 @@ Välj din utvecklings miljö nedan.
     Jupyter Core: 1.2.20112.0
     ```
 
-    Oroa dig inte om din `iqsharp` version är högre, bör den matcha den [senaste versionen](xref:microsoft.quantum.relnotes).
+    Oroa dig inte om `iqsharp` din version är högre, den ska överensstämma med den [senaste versionen](xref:microsoft.quantum.relnotes).
 
 3. Kör följande kommando från en cell i Jupyter Notebook:
 
@@ -220,11 +220,11 @@ Välj din utvecklings miljö nedan.
 
 2. Uppdatera Quantum-projektmallar:
 
-   - Gå till **Visa** -> **Kommandopaletten**
+   - Gå till **Visa** -> **kommando palett**
    - Välj **Q #: installera projektmallar**
    - Efter några sekunder bör du få ett popup-meddelande om att Project-mallar har installerats
 
-### <a name="c-using-the-dotnet-command-line-tool"></a>C#, med hjälp av kommando rads verktyget `dotnet`
+### <a name="c-using-the-dotnet-command-line-tool"></a>C# med `dotnet` kommando rads verktyget
 
 1. Uppdatera Quantum Project-mallar för .NET
 
