@@ -20,8 +20,6 @@
       href: install-guide/toc.yml
     - name: Uppdatera QDK
       href: install-guide/update.md
-    - name: 'Så här skapar du ett Q#-projekt'
-      href: how-to-guides/create-qsharp-project.md
 - name: Självstudier
   items:
     - name: Kvantgenerator för slumptal
