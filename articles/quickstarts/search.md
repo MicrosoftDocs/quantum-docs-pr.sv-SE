@@ -6,123 +6,114 @@ ms.author: chgranad@microsoft.com
 ms.date: 10/19/2019
 ms.topic: article
 uid: microsoft.quantum.quickstarts.search
-ms.openlocfilehash: 0e64fcd56929fa33397c45bf1b2e99bf687eca6f
-ms.sourcegitcommit: 7d350db4b5e766cd243633aee7d0a839b6274bd6
+ms.openlocfilehash: c67ccd16957ceef694552bdd9c073ba5a35d8aaf
+ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77906958"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82686834"
 ---
-# <a name="quickstart-implement-grovers-search-algorithm-in-q"></a><span data-ttu-id="79624-103">Snabbstart: Implementera Grovers sökalgoritm i Q#</span><span class="sxs-lookup"><span data-stu-id="79624-103">Quickstart: Implement Grover's search algorithm in Q#</span></span>
+# <a name="quickstart-implement-grovers-search-algorithm-in-q"></a><span data-ttu-id="5dd06-103">Snabbstart: Implementera Grovers sökalgoritm i Q\#</span><span class="sxs-lookup"><span data-stu-id="5dd06-103">Quickstart: Implement Grover's search algorithm in Q\#</span></span>
 
-<span data-ttu-id="79624-104">I den här snabbstarten får du lära dig att skapa och köra Grover-sökning som påskyndar sökningen i ostrukturerade data.</span><span class="sxs-lookup"><span data-stu-id="79624-104">In this Quickstart, you can learn how to build and run Grover search to speed up the search of unstructured data.</span></span>  <span data-ttu-id="79624-105">Grovers sökning är en av de mest populära kvantberäkningsalgoritmerna. Den här relativt lilla Q#-implementeringen ger dig en uppfattning om några av fördelarna med programmering av kvantlösningar med kvantprogrammeringsspråket Q# som på hög nivå uttrycker kvantalgoritmer.</span><span class="sxs-lookup"><span data-stu-id="79624-105">Grover's search is one of the most popular quantum computing algorithms, and this relatively small Q# implementation gives you a sense of some of the advantages of programming quantum solutions with a high-level Q# quantum programming language to express quantum algorithms.</span></span>  <span data-ttu-id="79624-106">I slutet av guiden kommer du att se att simuleringen hittar en specifik sträng i listan med osorterade poster på en bråkdel av den tid det skulle ta att söka igenom hela listan på en klassisk dator.</span><span class="sxs-lookup"><span data-stu-id="79624-106">At the end of the guide, you will see the simulation output demonstrates successfully finding a specific string among a list of onordered entries in a fraction of the time it would take to search the whole list on a classical computer.</span></span>
+<span data-ttu-id="5dd06-104">I den här snabbstarten får du lära dig att skapa och köra Grover-sökning som påskyndar sökningen i ostrukturerade data.</span><span class="sxs-lookup"><span data-stu-id="5dd06-104">In this Quickstart, you can learn how to build and run Grover search to speed up the search of unstructured data.</span></span>  <span data-ttu-id="5dd06-105">Grovers sökning är en av de mest populära kvantberäkningsalgoritmerna. Den här relativt lilla Q#-implementeringen ger dig en uppfattning om några av fördelarna med programmering av kvantlösningar med kvantprogrammeringsspråket Q# som på hög nivå uttrycker kvantalgoritmer.</span><span class="sxs-lookup"><span data-stu-id="5dd06-105">Grover's search is one of the most popular quantum computing algorithms, and this relatively small Q# implementation gives you a sense of some of the advantages of programming quantum solutions with a high-level Q# quantum programming language to express quantum algorithms.</span></span>  <span data-ttu-id="5dd06-106">I slutet av guiden kommer du att se att simuleringen hittar en specifik sträng i listan med osorterade poster på en bråkdel av den tid det skulle ta att söka igenom hela listan på en klassisk dator.</span><span class="sxs-lookup"><span data-stu-id="5dd06-106">At the end of the guide, you will see the simulation output demonstrates successfully finding a specific string among a list of unordered entries in a fraction of the time it would take to search the whole list on a classical computer.</span></span>
 
-<span data-ttu-id="79624-107">Grovers algoritm söker i en lista med ostrukturerade data efter vissa objekt.</span><span class="sxs-lookup"><span data-stu-id="79624-107">Grover's algorithm searches a list of unstructured data for specific items.</span></span> <span data-ttu-id="79624-108">Den kan till exempel svara på frågan: Är det här kortet som drogs ur en kortlek hjärter ess?</span><span class="sxs-lookup"><span data-stu-id="79624-108">For example, it can answer the question: Is this card drawn from a pack of cards an ace of hearts?</span></span> <span data-ttu-id="79624-109">Märkningen av det speciella objektet kallas för _markerad indata_.</span><span class="sxs-lookup"><span data-stu-id="79624-109">The labeling of the specific item is called _marked input_.</span></span>
+<span data-ttu-id="5dd06-107">Grovers algoritm söker i en lista med ostrukturerade data efter vissa objekt.</span><span class="sxs-lookup"><span data-stu-id="5dd06-107">Grover's algorithm searches a list of unstructured data for specific items.</span></span> <span data-ttu-id="5dd06-108">Den kan till exempel svara på frågan: Är det här kortet som drogs ur en kortlek hjärter ess?</span><span class="sxs-lookup"><span data-stu-id="5dd06-108">For example, it can answer the question: Is this card drawn from a pack of cards an ace of hearts?</span></span> <span data-ttu-id="5dd06-109">Märkningen av det speciella objektet kallas för _markerad indata_.</span><span class="sxs-lookup"><span data-stu-id="5dd06-109">The labeling of the specific item is called _marked input_.</span></span>
 
-<span data-ttu-id="79624-110">Med hjälp av Grovers sökalgoritm kommer kvantdatorn garanterat att utföra sökningen i färre steg än antalet objekt i listan som du söker i, något som inte kan göras av en klassisk algoritm.</span><span class="sxs-lookup"><span data-stu-id="79624-110">Using Grover's search algorithm, a quantum computer is guaranteed to run this search in fewer steps than the number of items in the list that you're searching — something no classical algorithm can do.</span></span> <span data-ttu-id="79624-111">Den ökade hastigheten när en kortlek ska genomsökas är försumbar, men i listor som innehåller miljontals eller miljardtals objekt blir det mer viktigt.</span><span class="sxs-lookup"><span data-stu-id="79624-111">The increased speed in the case of a pack of cards is negligible; however, in lists containing millions or billions of items, it becomes significant.</span></span>
+<span data-ttu-id="5dd06-110">Med hjälp av Grovers sökalgoritm kommer kvantdatorn garanterat att utföra sökningen i färre steg än antalet objekt i listan som du söker i, något som inte kan göras av en klassisk algoritm.</span><span class="sxs-lookup"><span data-stu-id="5dd06-110">Using Grover's search algorithm, a quantum computer is guaranteed to run this search in fewer steps than the number of items in the list that you're searching — something no classical algorithm can do.</span></span> <span data-ttu-id="5dd06-111">Den ökade hastigheten när en kortlek ska genomsökas är försumbar, men i listor som innehåller miljontals eller miljardtals objekt blir det mer viktigt.</span><span class="sxs-lookup"><span data-stu-id="5dd06-111">The increased speed in the case of a pack of cards is negligible; however, in lists containing millions or billions of items, it becomes significant.</span></span>
 
-<span data-ttu-id="79624-112">Du kan bygga Grovers sökalgoritm med bara några rader kod.</span><span class="sxs-lookup"><span data-stu-id="79624-112">You can build Grover's search algorithm with just a few lines of code.</span></span>
+<span data-ttu-id="5dd06-112">Du kan bygga Grovers sökalgoritm med bara några rader kod.</span><span class="sxs-lookup"><span data-stu-id="5dd06-112">You can build Grover's search algorithm with just a few lines of code.</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="79624-113">Krav</span><span class="sxs-lookup"><span data-stu-id="79624-113">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="5dd06-113">Krav</span><span class="sxs-lookup"><span data-stu-id="5dd06-113">Prerequisites</span></span>
 
-- <span data-ttu-id="79624-114">Microsoft [Quantum Development Kit][install].</span><span class="sxs-lookup"><span data-stu-id="79624-114">The Microsoft [Quantum Development Kit][install].</span></span>
+- <span data-ttu-id="5dd06-114">Microsoft [Quantum Development Kit][install].</span><span class="sxs-lookup"><span data-stu-id="5dd06-114">The Microsoft [Quantum Development Kit][install].</span></span>
 
-## <a name="what-does-grovers-search-algorithm-do"></a><span data-ttu-id="79624-115">Vad gör Grovers sökalgoritm?</span><span class="sxs-lookup"><span data-stu-id="79624-115">What does Grover's search algorithm do?</span></span>
+## <a name="what-does-grovers-search-algorithm-do"></a><span data-ttu-id="5dd06-115">Vad gör Grovers sökalgoritm?</span><span class="sxs-lookup"><span data-stu-id="5dd06-115">What does Grover's search algorithm do?</span></span>
 
-<span data-ttu-id="79624-116">Grovers algoritm frågar om ett objekt i en lista är det som vi söker efter.</span><span class="sxs-lookup"><span data-stu-id="79624-116">Grover's algorithm asks whether an item in a list is the one we are searching for.</span></span> <span data-ttu-id="79624-117">Detta görs genom att en kvantsuperposition skapas av indexen i listan med respektive koefficient, eller sannolikhetsamplitud, vilket utgör sannolikheten för att det aktuella indexet är det som du söker efter.</span><span class="sxs-lookup"><span data-stu-id="79624-117">It does this by constructing a quantum superposition of the indexes of the list with each coefficient, or probability amplitude, representing the probability of that specific index being the one you are looking for.</span></span>
+<span data-ttu-id="5dd06-116">Grovers algoritm frågar om ett objekt i en lista är det som vi söker efter.</span><span class="sxs-lookup"><span data-stu-id="5dd06-116">Grover's algorithm asks whether an item in a list is the one we are searching for.</span></span> <span data-ttu-id="5dd06-117">Detta görs genom att en kvantsuperposition skapas av indexen i listan med respektive koefficient, eller sannolikhetsamplitud, vilket utgör sannolikheten för att det aktuella indexet är det som du söker efter.</span><span class="sxs-lookup"><span data-stu-id="5dd06-117">It does this by constructing a quantum superposition of the indexes of the list with each coefficient, or probability amplitude, representing the probability of that specific index being the one you are looking for.</span></span>
 
-<span data-ttu-id="79624-118">Algoritmen består av två steg som ökar indexkoefficienten som vi söker efter inkrementellt, fram till att sannolikhetsamplituden för den aktuella koefficienten blir ett.</span><span class="sxs-lookup"><span data-stu-id="79624-118">At the heart of the algorithm are two steps that incrementally boost the coefficient of the index that we are looking for, until the probability amplitude of that coefficient approaches one.</span></span>
+<span data-ttu-id="5dd06-118">Algoritmen består av två steg som ökar indexkoefficienten som vi söker efter inkrementellt, fram till att sannolikhetsamplituden för den aktuella koefficienten blir ett.</span><span class="sxs-lookup"><span data-stu-id="5dd06-118">At the heart of the algorithm are two steps that incrementally boost the coefficient of the index that we are looking for, until the probability amplitude of that coefficient approaches one.</span></span>
 
-<span data-ttu-id="79624-119">Antalet stegvisa ökningar är färre än antalet objekt i listan.</span><span class="sxs-lookup"><span data-stu-id="79624-119">The number of incremental boosts is fewer than the number of items in the list.</span></span> <span data-ttu-id="79624-120">Det här är anledningen till att Grovers sökalgoritm utför sökningen i färre steg än en klassisk algoritm.</span><span class="sxs-lookup"><span data-stu-id="79624-120">This is why Grover's search algorithm performs the search in fewer steps than any classical algorithm.</span></span>
+<span data-ttu-id="5dd06-119">Antalet stegvisa ökningar är färre än antalet objekt i listan.</span><span class="sxs-lookup"><span data-stu-id="5dd06-119">The number of incremental boosts is fewer than the number of items in the list.</span></span> <span data-ttu-id="5dd06-120">Det här är anledningen till att Grovers sökalgoritm utför sökningen i färre steg än en klassisk algoritm.</span><span class="sxs-lookup"><span data-stu-id="5dd06-120">This is why Grover's search algorithm performs the search in fewer steps than any classical algorithm.</span></span>
 
 ![Funktionsdiagram över Grovers sökalgoritm](~/media/grover.png)
 
-## <a name="write-the-code"></a><span data-ttu-id="79624-122">Skriva koden</span><span class="sxs-lookup"><span data-stu-id="79624-122">Write the code</span></span>
+## <a name="write-the-code"></a><span data-ttu-id="5dd06-122">Skriva koden</span><span class="sxs-lookup"><span data-stu-id="5dd06-122">Write the code</span></span>
 
-1. <span data-ttu-id="79624-123">Med hjälp av Quantum Development Kit [skapas ett nytt Q#-projekt](xref:microsoft.quantum.howto.createproject) som kallas `Grover` i valfri utvecklingsmiljö.</span><span class="sxs-lookup"><span data-stu-id="79624-123">Using the Quantum Development Kit, [create a new Q# project](xref:microsoft.quantum.howto.createproject) called `Grover`, in your development environment of choice.</span></span>
+1. <span data-ttu-id="5dd06-123">Med hjälp av Quantum Development Kit [skapas ett nytt Q#-projekt](xref:microsoft.quantum.howto.createproject) som kallas `Grover` i valfri utvecklingsmiljö.</span><span class="sxs-lookup"><span data-stu-id="5dd06-123">Using the Quantum Development Kit, [create a new Q# project](xref:microsoft.quantum.howto.createproject) called `Grover`, in your development environment of choice.</span></span>
 
-1. <span data-ttu-id="79624-124">I projektfilen `Operations.qs` lägger du till följande kod:</span><span class="sxs-lookup"><span data-stu-id="79624-124">Add the following code to the `Operations.qs` file in your new project:</span></span>
+1. <span data-ttu-id="5dd06-124">I projektfilen `Program.qs` lägger du till följande kod:</span><span class="sxs-lookup"><span data-stu-id="5dd06-124">Add the following code to the `Program.qs` file in your new project:</span></span>
 
-    :::code language="qsharp" source="~/quantum/samples/algorithms/simple-grover/SimpleGrover.qs" range="4-40":::
+    :::code language="qsharp" source="~/quantum/samples/algorithms/simple-grover/SimpleGrover.qs" range="4-41":::
 
-1. <span data-ttu-id="79624-125">Definiera listan som vi söker i genom att skapa den nya filen `Reflections.qs` där du klistrar in följande kod:</span><span class="sxs-lookup"><span data-stu-id="79624-125">To define the list that we're searching, create a new file `Reflections.qs`, and paste in the following code:</span></span>
+1. <span data-ttu-id="5dd06-125">Definiera listan som vi söker i genom att skapa den nya filen `Reflections.qs` där du klistrar in följande kod:</span><span class="sxs-lookup"><span data-stu-id="5dd06-125">To define the list that we're searching, create a new file `Reflections.qs`, and paste in the following code:</span></span>
 
     :::code language="qsharp" source="~/quantum/samples/algorithms/simple-grover/Reflections.qs" range="4-70":::
 
-    <span data-ttu-id="79624-126">Åtgärden `ReflectAboutMarked` definierar den markerade indata som du söker efter: Strängen med alternerande nollor och ettor.</span><span class="sxs-lookup"><span data-stu-id="79624-126">The `ReflectAboutMarked` operation defines the marked input that you are searching for: the string of alternating zeros and ones.</span></span> <span data-ttu-id="79624-127">I det här exemplet hårdkodas markerad indata, vilket kan utökas till att söka efter olika indata eller generaliseras för alla indata.</span><span class="sxs-lookup"><span data-stu-id="79624-127">This sample hard-codes the marked input, and can be extended to search for different inputs or generalized for any input.</span></span>
+    <span data-ttu-id="5dd06-126">Åtgärden `ReflectAboutMarked` definierar den markerade indata som du söker efter: Strängen med alternerande nollor och ettor.</span><span class="sxs-lookup"><span data-stu-id="5dd06-126">The `ReflectAboutMarked` operation defines the marked input that you are searching for: the string of alternating zeros and ones.</span></span> <span data-ttu-id="5dd06-127">I det här exemplet hårdkodas markerad indata, vilket kan utökas till att söka efter olika indata eller generaliseras för alla indata.</span><span class="sxs-lookup"><span data-stu-id="5dd06-127">This sample hard-codes the marked input, and can be extended to search for different inputs or generalized for any input.</span></span>
 
-1. <span data-ttu-id="79624-128">Kör sedan ditt nya Q#-program för att hitta objektet som markerats med `ReflectAboutMarked`.</span><span class="sxs-lookup"><span data-stu-id="79624-128">Next, run your new Q# program to find the item marked by `ReflectAboutMarked`.</span></span>
+1. <span data-ttu-id="5dd06-128">Kör sedan ditt nya Q#-program för att hitta objektet som markerats med `ReflectAboutMarked`.</span><span class="sxs-lookup"><span data-stu-id="5dd06-128">Next, run your new Q# program to find the item marked by `ReflectAboutMarked`.</span></span>
 
-    ### <a name="python-with-visual-studio-code-or-the-command-line"></a>[<span data-ttu-id="79624-129">Python med Visual Studio Code eller kommandoraden</span><span class="sxs-lookup"><span data-stu-id="79624-129">Python with Visual Studio Code or the Command Line</span></span>](#tab/tabid-python)
+### <a name="q-command-line-applications-with-visual-studio-or-visual-studio-code"></a><span data-ttu-id="5dd06-129">Q#-kommandoradsprogram med Visual Studio eller Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="5dd06-129">Q# command line applications with Visual Studio or Visual Studio Code</span></span>
 
-    <span data-ttu-id="79624-130">Om du vill köra ditt nya Q#-program från Python sparar du följande kod som `host.py`:</span><span class="sxs-lookup"><span data-stu-id="79624-130">To run your new Q# program from Python, save the following code as `host.py`:</span></span>
+<span data-ttu-id="5dd06-130">Den körbara filen kör åtgärden eller funktionen som har markerats med attributet `@EntryPoint()` i en simulator eller i ett resursuppskattningsverktyg, beroende på projektkonfigurationen och kommandoradsalternativen.</span><span class="sxs-lookup"><span data-stu-id="5dd06-130">The executable will run the operation or function marked with the `@EntryPoint()` attribute on a simulator or resource estimator, depending on the project configuration and command-line options.</span></span>
 
-    :::code language="python" source="~/quantum/samples/algorithms/simple-grover/host.py" range="9-14":::
+<span data-ttu-id="5dd06-131">Tryck bara på Ctrl+F5 i Visual Studio för att köra skriptet.</span><span class="sxs-lookup"><span data-stu-id="5dd06-131">In Visual Studio, simply press Ctrl + F5 to execute the script.</span></span>
 
-    <span data-ttu-id="79624-131">Du kan sedan köra Python-värdprogrammet från kommandoraden:</span><span class="sxs-lookup"><span data-stu-id="79624-131">You can then run your Python host program from the command line:</span></span>
+<span data-ttu-id="5dd06-132">Skapa `Program.qs` första gången genom att skriva följande i terminalfönstret i VS Code:</span><span class="sxs-lookup"><span data-stu-id="5dd06-132">In VS Code, build the `Program.qs` the first time by typing the below in the terminal:</span></span>
 
-    ```bash
-    $ python host.py
-    Preparing Q# environment...
-    Reflecting about marked state...
-    Reflecting about marked state...
-    Reflecting about marked state...
-    Reflecting about marked state...
-    [0, 1, 0, 1, 0]
-    ```
+```Command line
+dotnet build
+```
 
-    ### <a name="c-with-visual-studio-code-or-the-command-line"></a>[<span data-ttu-id="79624-132">C# med Visual Studio Code eller kommandoraden</span><span class="sxs-lookup"><span data-stu-id="79624-132">C# with Visual Studio Code or the Command Line</span></span>](#tab/tabid-csharp)
+<span data-ttu-id="5dd06-133">För efterföljande körningar behöver du inte bygga det igen.</span><span class="sxs-lookup"><span data-stu-id="5dd06-133">For subsequent runs, there is no need to build it again.</span></span> <span data-ttu-id="5dd06-134">Du kör det bara genom att skriva följande kommando och trycka på Retur:</span><span class="sxs-lookup"><span data-stu-id="5dd06-134">To run it, type the following command and press enter:</span></span>
 
-    <span data-ttu-id="79624-133">Om du vill köra ditt nya Q#-program från C# ändrar du `Driver.cs` så att följande C#-kod ingår:</span><span class="sxs-lookup"><span data-stu-id="79624-133">To run your new Q# program from C#, modify `Driver.cs` to include the following C# code:</span></span>
+```Command line
+dotnet run --no-build
+```
 
-    :::code language="csharp" source="~/quantum/samples/algorithms/simple-grover/Host.cs" range="4-23":::
+<span data-ttu-id="5dd06-135">Följande meddelande bör visas i terminalfönstret:</span><span class="sxs-lookup"><span data-stu-id="5dd06-135">You should see the following message displayed in the terminal:</span></span>
 
-    <span data-ttu-id="79624-134">Du kan sedan köra C#-värdprogrammet från kommandoraden:</span><span class="sxs-lookup"><span data-stu-id="79624-134">You can then run your C# host program from the command line:</span></span>
+```
+operations.qs:
+This operation applies Grover's algorithm to search all possible inputs to an operation to find a particular marked state.
+Usage:
+operations.qs [options] [command]
 
-    ```bash
-    $ dotnet run
-    Reflecting about marked state...
-    Reflecting about marked state...
-    Reflecting about marked state...
-    Reflecting about marked state...
-    Result: [Zero,One,Zero,One,Zero]
+--n-qubits <n-qubits> (REQUIRED)
+-s, --simulator <simulator>         The name of the simulator to use.
+--version                           Show version information
+-?, -h, --help                      Show help and usage information
+Commands:
+```
 
-    Press any key to continue...
-    ```
+<span data-ttu-id="5dd06-136">Det beror på att du inte angav hur många kvantbitar du ville använda. Därför visar terminalfönstret vilka kommandon som är tillgängliga för den körbara filen</span><span class="sxs-lookup"><span data-stu-id="5dd06-136">This is because you didn't specify the number of qubits you wanted to use, so the terminal tells you the commands available for the executable.</span></span> <span data-ttu-id="5dd06-137">Om vi vill använda fem kvantbitar skriver vi:</span><span class="sxs-lookup"><span data-stu-id="5dd06-137">If we want to use 5 qubits we should type:</span></span>
 
-    ### <a name="c-with-visual-studio-2019"></a>[<span data-ttu-id="79624-135">C# med Visual Studio 2019</span><span class="sxs-lookup"><span data-stu-id="79624-135">C# with Visual Studio 2019</span></span>](#tab/tabid-vs2019)
+```Command line
+dotnet run --n-qubits 5
+```
 
-    <span data-ttu-id="79624-136">Om du vill köra ditt nya Q#-program från C# i Visual Studio ändrar du `Driver.cs` så att följande C#-kod ingår:</span><span class="sxs-lookup"><span data-stu-id="79624-136">To run your new Q# program from C# in Visual Studio, modify `Driver.cs` to include the following C# code:</span></span>
+<span data-ttu-id="5dd06-138">När du trycker på Retur bör du se följande utdata:</span><span class="sxs-lookup"><span data-stu-id="5dd06-138">Pressing enter you should see the following output:</span></span>
 
-    :::code language="csharp" source="~/quantum/samples/algorithms/simple-grover/Host.cs" range="4-23":::
+```
+Reflecting about marked state...
+Reflecting about marked state...
+Reflecting about marked state...
+Reflecting about marked state...
+[Zero,One,Zero,One,Zero]
+```
 
-    <span data-ttu-id="79624-137">Därefter trycker du på F5. Programmet startas och ett nytt fönster med följande resultat visas:</span><span class="sxs-lookup"><span data-stu-id="79624-137">Then press F5, the program will start execution and a new windows will pop-up with the following results:</span></span> 
+## <a name="next-steps"></a><span data-ttu-id="5dd06-139">Nästa steg</span><span class="sxs-lookup"><span data-stu-id="5dd06-139">Next steps</span></span>
 
-    ```bash
-    $ dotnet run
-    Reflecting about marked state...
-    Reflecting about marked state...
-    Reflecting about marked state...
-    Reflecting about marked state...
-    Result: [Zero,One,Zero,One,Zero]
+<span data-ttu-id="5dd06-140">Om du gillade den här snabbstarten kan du titta närmare på några av resurserna nedan, där du lär dig mer om hur du kan använda Q# för att skriva egna kvantprogram:</span><span class="sxs-lookup"><span data-stu-id="5dd06-140">If you enjoyed this quickstart, check out some of the resources below to learn more about how you can use Q# to write your own quantum applications:</span></span>
 
-    Press any key to continue...
-    ```
-    ***
-
-    <span data-ttu-id="79624-138">Åtgärden `ReflectAboutMarked` anropades bara fyra gånger, men ditt Q#-program hittade indatan ”01010” bland $2^{5} = 32$ möjliga indata!</span><span class="sxs-lookup"><span data-stu-id="79624-138">The `ReflectAboutMarked` operation is called only four times, but your Q# program was able to find the "01010" input amongst $2^{5} = 32$ possible inputs!</span></span>
-
-## <a name="next-steps"></a><span data-ttu-id="79624-139">Nästa steg</span><span class="sxs-lookup"><span data-stu-id="79624-139">Next steps</span></span>
-
-<span data-ttu-id="79624-140">Om du gillade den här snabbstarten kan du titta närmare på några av resurserna nedan, där du lär dig mer om hur du kan använda Q# för att skriva egna kvantprogram:</span><span class="sxs-lookup"><span data-stu-id="79624-140">If you enjoyed this quickstart, check out some of the resources below to learn more about how you can use Q# to write your own quantum applications:</span></span>
-
-- [<span data-ttu-id="79624-141">Tillbaka till guiden Komma igång med QDK</span><span class="sxs-lookup"><span data-stu-id="79624-141">Back to the Getting Started with QDK guide</span></span>](xref:microsoft.quantum.welcome)
-- <span data-ttu-id="79624-142">Prova en mer allmän Grover-sökalgoritm [exempel](https://github.com/microsoft/Quantum/tree/master/samples/algorithms/database-search)</span><span class="sxs-lookup"><span data-stu-id="79624-142">Try a more general Grover's search algorithm [sample](https://github.com/microsoft/Quantum/tree/master/samples/algorithms/database-search)</span></span>
-- [<span data-ttu-id="79624-143">Läs mer om Grovers sökning med Quantum Katas</span><span class="sxs-lookup"><span data-stu-id="79624-143">Learn more about Grover's search with the Quantum Katas</span></span>](xref:microsoft.quantum.overview.katas)
-- <span data-ttu-id="79624-144">Läs mer om [Amplitudförstärkning](xref:microsoft.quantum.libraries.standard.algorithms#amplitude-amplification), kvantberäkningstekniken bakom Grovers sökalgoritm</span><span class="sxs-lookup"><span data-stu-id="79624-144">Read more about [Amplitude amplification](xref:microsoft.quantum.libraries.standard.algorithms#amplitude-amplification), the quantum computing technique behind Grover's search algorithm</span></span>
-- [<span data-ttu-id="79624-145">Begrepp inom kvantberäkning</span><span class="sxs-lookup"><span data-stu-id="79624-145">Quantum computing concepts</span></span>](xref:microsoft.quantum.concepts.intro)
-- [<span data-ttu-id="79624-146">Quantum Development Kit-exempel</span><span class="sxs-lookup"><span data-stu-id="79624-146">Quantum Development Kit Samples</span></span>](https://docs.microsoft.com/samples/browse/?products=qdk)
+- [<span data-ttu-id="5dd06-141">Tillbaka till guiden Komma igång med QDK</span><span class="sxs-lookup"><span data-stu-id="5dd06-141">Back to the Getting Started with QDK guide</span></span>](xref:microsoft.quantum.welcome)
+- <span data-ttu-id="5dd06-142">Prova en mer allmän Grover-sökalgoritm [exempel](https://github.com/microsoft/Quantum/tree/master/samples/algorithms/database-search)</span><span class="sxs-lookup"><span data-stu-id="5dd06-142">Try a more general Grover's search algorithm [sample](https://github.com/microsoft/Quantum/tree/master/samples/algorithms/database-search)</span></span>
+- [<span data-ttu-id="5dd06-143">Läs mer om Grovers sökning med Quantum Katas</span><span class="sxs-lookup"><span data-stu-id="5dd06-143">Learn more about Grover's search with the Quantum Katas</span></span>](xref:microsoft.quantum.overview.katas)
+- <span data-ttu-id="5dd06-144">Läs mer om [Amplitudförstärkning][amplitude-amplification], kvantberäkningstekniken bakom Grovers sökalgoritm</span><span class="sxs-lookup"><span data-stu-id="5dd06-144">Read more about [Amplitude amplification][amplitude-amplification], the quantum computing technique behind Grover's search algorithm</span></span>
+- [<span data-ttu-id="5dd06-145">Begrepp inom kvantberäkning</span><span class="sxs-lookup"><span data-stu-id="5dd06-145">Quantum computing concepts</span></span>](xref:microsoft.quantum.concepts.intro)
+- [<span data-ttu-id="5dd06-146">Quantum Development Kit-exempel</span><span class="sxs-lookup"><span data-stu-id="5dd06-146">Quantum Development Kit Samples</span></span>](https://docs.microsoft.com/samples/browse/?products=qdk)
 
 <!-- LINKS -->
 
 [install]: xref:microsoft.quantum.install
+[amplitude-amplification]: xref:microsoft.quantum.libraries.standard.algorithms#amplitude-amplification
