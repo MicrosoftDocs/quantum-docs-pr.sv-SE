@@ -6,14 +6,14 @@ ms.author: chgranad@microsoft.com
 ms.date: 10/19/2019
 ms.topic: article
 uid: microsoft.quantum.quickstarts.search
-ms.openlocfilehash: 0e64fcd56929fa33397c45bf1b2e99bf687eca6f
-ms.sourcegitcommit: 7d350db4b5e766cd243633aee7d0a839b6274bd6
+ms.openlocfilehash: c67ccd16957ceef694552bdd9c073ba5a35d8aaf
+ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77906958"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82686834"
 ---
-# <a name="quickstart-implement-grovers-search-algorithm-in-q"></a>Snabbstart: Implementera Grovers sökalgoritm i Q#
+# <a name="quickstart-implement-grovers-search-algorithm-in-q"></a>Snabbstart: Implementera Grovers sökalgoritm i Q\#
 
 I den här snabbstarten får du lära dig att skapa och köra Grover-sökning som påskyndar sökningen i ostrukturerade data.  Grovers sökning är en av de mest populära kvantberäkningsalgoritmerna. Den här relativt lilla Q#-implementeringen ger dig en uppfattning om några av fördelarna med programmering av kvantlösningar med kvantprogrammeringsspråket Q# som på hög nivå uttrycker kvantalgoritmer.  I slutet av guiden kommer du att se att simuleringen hittar en specifik sträng i listan med osorterade poster på en bråkdel av den tid det skulle ta att söka igenom hela listan på en klassisk dator.
 
@@ -41,9 +41,9 @@ Antalet stegvisa ökningar är färre än antalet objekt i listan. Det här är 
 
 1. Med hjälp av Quantum Development Kit [skapas ett nytt Q#-projekt](xref:microsoft.quantum.howto.createproject) som kallas `Grover` i valfri utvecklingsmiljö.
 
-1. I projektfilen `Operations.qs` lägger du till följande kod:
+1. I projektfilen `Program.qs` lägger du till följande kod:
 
-    :::code language="qsharp" source="~/quantum/samples/algorithms/simple-grover/SimpleGrover.qs" range="4-40":::
+    :::code language="qsharp" source="~/quantum/samples/algorithms/simple-grover/SimpleGrover.qs" range="4-41":::
 
 1. Definiera listan som vi söker i genom att skapa den nya filen `Reflections.qs` där du klistrar in följande kod:
 
@@ -53,64 +53,54 @@ Antalet stegvisa ökningar är färre än antalet objekt i listan. Det här är 
 
 1. Kör sedan ditt nya Q#-program för att hitta objektet som markerats med `ReflectAboutMarked`.
 
-    ### <a name="python-with-visual-studio-code-or-the-command-line"></a>[Python med Visual Studio Code eller kommandoraden](#tab/tabid-python)
+### <a name="q-command-line-applications-with-visual-studio-or-visual-studio-code"></a>Q#-kommandoradsprogram med Visual Studio eller Visual Studio Code
 
-    Om du vill köra ditt nya Q#-program från Python sparar du följande kod som `host.py`:
+Den körbara filen kör åtgärden eller funktionen som har markerats med attributet `@EntryPoint()` i en simulator eller i ett resursuppskattningsverktyg, beroende på projektkonfigurationen och kommandoradsalternativen.
 
-    :::code language="python" source="~/quantum/samples/algorithms/simple-grover/host.py" range="9-14":::
+Tryck bara på Ctrl+F5 i Visual Studio för att köra skriptet.
 
-    Du kan sedan köra Python-värdprogrammet från kommandoraden:
+Skapa `Program.qs` första gången genom att skriva följande i terminalfönstret i VS Code:
 
-    ```bash
-    $ python host.py
-    Preparing Q# environment...
-    Reflecting about marked state...
-    Reflecting about marked state...
-    Reflecting about marked state...
-    Reflecting about marked state...
-    [0, 1, 0, 1, 0]
-    ```
+```Command line
+dotnet build
+```
 
-    ### <a name="c-with-visual-studio-code-or-the-command-line"></a>[C# med Visual Studio Code eller kommandoraden](#tab/tabid-csharp)
+För efterföljande körningar behöver du inte bygga det igen. Du kör det bara genom att skriva följande kommando och trycka på Retur:
 
-    Om du vill köra ditt nya Q#-program från C# ändrar du `Driver.cs` så att följande C#-kod ingår:
+```Command line
+dotnet run --no-build
+```
 
-    :::code language="csharp" source="~/quantum/samples/algorithms/simple-grover/Host.cs" range="4-23":::
+Följande meddelande bör visas i terminalfönstret:
 
-    Du kan sedan köra C#-värdprogrammet från kommandoraden:
+```
+operations.qs:
+This operation applies Grover's algorithm to search all possible inputs to an operation to find a particular marked state.
+Usage:
+operations.qs [options] [command]
 
-    ```bash
-    $ dotnet run
-    Reflecting about marked state...
-    Reflecting about marked state...
-    Reflecting about marked state...
-    Reflecting about marked state...
-    Result: [Zero,One,Zero,One,Zero]
+--n-qubits <n-qubits> (REQUIRED)
+-s, --simulator <simulator>         The name of the simulator to use.
+--version                           Show version information
+-?, -h, --help                      Show help and usage information
+Commands:
+```
 
-    Press any key to continue...
-    ```
+Det beror på att du inte angav hur många kvantbitar du ville använda. Därför visar terminalfönstret vilka kommandon som är tillgängliga för den körbara filen Om vi vill använda fem kvantbitar skriver vi:
 
-    ### <a name="c-with-visual-studio-2019"></a>[C# med Visual Studio 2019](#tab/tabid-vs2019)
+```Command line
+dotnet run --n-qubits 5
+```
 
-    Om du vill köra ditt nya Q#-program från C# i Visual Studio ändrar du `Driver.cs` så att följande C#-kod ingår:
+När du trycker på Retur bör du se följande utdata:
 
-    :::code language="csharp" source="~/quantum/samples/algorithms/simple-grover/Host.cs" range="4-23":::
-
-    Därefter trycker du på F5. Programmet startas och ett nytt fönster med följande resultat visas: 
-
-    ```bash
-    $ dotnet run
-    Reflecting about marked state...
-    Reflecting about marked state...
-    Reflecting about marked state...
-    Reflecting about marked state...
-    Result: [Zero,One,Zero,One,Zero]
-
-    Press any key to continue...
-    ```
-    ***
-
-    Åtgärden `ReflectAboutMarked` anropades bara fyra gånger, men ditt Q#-program hittade indatan ”01010” bland $2^{5} = 32$ möjliga indata!
+```
+Reflecting about marked state...
+Reflecting about marked state...
+Reflecting about marked state...
+Reflecting about marked state...
+[Zero,One,Zero,One,Zero]
+```
 
 ## <a name="next-steps"></a>Nästa steg
 
@@ -119,10 +109,11 @@ Om du gillade den här snabbstarten kan du titta närmare på några av resurser
 - [Tillbaka till guiden Komma igång med QDK](xref:microsoft.quantum.welcome)
 - Prova en mer allmän Grover-sökalgoritm [exempel](https://github.com/microsoft/Quantum/tree/master/samples/algorithms/database-search)
 - [Läs mer om Grovers sökning med Quantum Katas](xref:microsoft.quantum.overview.katas)
-- Läs mer om [Amplitudförstärkning](xref:microsoft.quantum.libraries.standard.algorithms#amplitude-amplification), kvantberäkningstekniken bakom Grovers sökalgoritm
+- Läs mer om [Amplitudförstärkning][amplitude-amplification], kvantberäkningstekniken bakom Grovers sökalgoritm
 - [Begrepp inom kvantberäkning](xref:microsoft.quantum.concepts.intro)
 - [Quantum Development Kit-exempel](https://docs.microsoft.com/samples/browse/?products=qdk)
 
 <!-- LINKS -->
 
 [install]: xref:microsoft.quantum.install
+[amplitude-amplification]: xref:microsoft.quantum.libraries.standard.algorithms#amplitude-amplification

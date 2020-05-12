@@ -6,29 +6,29 @@ ms.author: megbrow@microsoft.com
 ms.date: 10/25/2019
 ms.topic: article
 uid: microsoft.quantum.quickstarts.qrng
-ms.openlocfilehash: b9c8592b1296a7de1b9ad5d0538ad1972ec25e31
-ms.sourcegitcommit: 7d350db4b5e766cd243633aee7d0a839b6274bd6
+ms.openlocfilehash: 5a433606f08f4c6a4ab7b5df67a7f0c30d2b3f0d
+ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77906992"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82683013"
 ---
-# <a name="quickstart-implement-a-quantum-random-number-generator-in-q"></a>Snabbstart: Implementera en kvantgenerator för slumptal i Q#
-Ett enkelt exempel på en kvantalgoritm som skrivs i Q# och som är en kvantgenerator för slumptal. Den här algoritmen använder kvantmekanik till att generera ett slumptal. 
+# <a name="quickstart-implement-a-quantum-random-number-generator-in-q"></a>Snabbstart: Implementera en kvantgenerator för slumptal i Q\#
+
+Ett enkelt exempel på en kvantalgoritm som skrivs i Q# och som är en kvantgenerator för slumptal. Den här algoritmen använder kvantmekanik till att generera ett slumptal.
 
 ## <a name="prerequisites"></a>Krav
 
 - Microsoft [Quantum Development Kit](xref:microsoft.quantum.install).
 - [Skapa ett Q#-projekt](xref:microsoft.quantum.howto.createproject)
 
-
 ## <a name="write-a-q-operation"></a>Skriv en Q#-åtgärd
 
 ### <a name="q-operation-code"></a>Q#-åtgärdskod
 
-1. Ersätt innehållet i filen Operation.qs med följande kod:
+1. Ersätt innehållet i filen Program.qs med följande kod:
 
- :::code language="qsharp" source="~/quantum/samples/getting-started/qrng/Qrng.qs" range="3-14":::
+:::code language="qsharp" source="~/quantum/samples/getting-started/qrng/Qrng.qs" range="3-15,34":::
 
 Som vi nämnde i artikeln [Vad är kvantberäkning?](xref:microsoft.quantum.overview.what) är en kvantbit en enhet av kvantinformation som kan vara i superposition. När den mäts kan kvantbiten endast vara antingen 0 eller 1. Under körningen representerar dock tillståndet för kvantbiten sannolikheten för att avläsningen blir antingen 0 eller 1 vid en mätning. Detta sannolikhetstillstånd kallas för superposition. Vi kan använda sannolikheten till att generera slumpmässiga tal.
 
@@ -36,7 +36,7 @@ I vår Q#-åtgärd introducerar vi `Qubit`-datatypen, som ingår i Q#. Vi kan ba
 
 Med hjälp av `H`-åtgärden kan vi försätta vår `Qubit` i superposition. Om du vill mäta en kvantbit och läsa dess värde, använder du den inbäddade `M`-åtgärden.
 
-Genom att försätta vår `Qubit` i superposition och mäta den, kommer vårt resultat att bli ett annat värde varje gången koden anropas. 
+Genom att försätta vår `Qubit` i superposition och mäta den, kommer vårt resultat att bli ett annat värde varje gången koden anropas.
 
 När en `Qubit` har frigjorts måste den försättas i `Zero`-tillståndet igen, annars rapporteras ett körningsfel i simulatorn. Ett enkelt sätt att göra detta på är att anropa `Reset`.
 
@@ -52,52 +52,68 @@ Vi kan använda den här representationen till att visualisera vad koden gör:
 
 <img src="~/media/qrng-H.png" width="450" alt="Preparing a qubit in superposition">
 
-
 * Sedan mäter vi kvantbiten och sparar utdatan:
 
 <img src="~/media/qrng-meas.png" width="450" alt="Measuring a qubit and saving the output">
 
 Eftersom resultatet av mätningen är helt slumpmässigt har vi fått en slumpmässig bit. Vi kan anropa den här åtgärden flera gånger för att skapa heltal. Om vi till exempel anropar åtgärden tre gånger för att få tre slumpmässiga bitar, kan vi bygga slumpmässiga 3-bitarstal (det vill säga ett slumptal mellan 0 och 7).
 
-## <a name="creating-a-complete-random-number-generator-using-a-host-program"></a>Skapa en komplett slumptalsgenerator med ett värdprogram
 
-Nu när vi har en Q#-åtgärd som genererar slumpmässiga bitar, kan vi använda den till att skapa en komplett slumptalsgenerator med ett värdprogram.
+## <a name="creating-a-complete-random-number-generator"></a>Skapa en komplett slumptalsgenerator
 
- ### <a name="python-with-visual-studio-code-or-the-command-line"></a>[Python med Visual Studio Code eller kommandoraden](#tab/tabid-python)
- 
- Om du vill köra ditt nya Q#-program från Python sparar du följande kod som `host.py`:
- 
-:::code language="python" source="~/quantum/samples/getting-started/qrng/host.py" range="11-30":::
+Nu när vi har en Q#-åtgärd som genererar slumpmässiga bitar, kan vi använda den till att skapa en komplett kvantgenerator för slumptal. Vi kan använda Q#-kommandoradsprogrammen eller använda ett värdprogram.
 
- Du kan sedan köra Python-värdprogrammet från kommandoraden:
- ```bash
- $ python host.py
- Preparing Q# environment...
- ..The random number generated is 42
- ```
- ### <a name="c-with-visual-studio-code-or-the-command-line"></a>[C# med Visual Studio Code eller kommandoraden](#tab/tabid-csharp)
- 
- Om du vill köra ditt nya Q#-program från C# ändrar du `Driver.cs` så att följande C#-kod ingår:
- 
- :::code language="csharp" source="~/quantum/samples/getting-started/qrng/Host.cs" range="4-39":::
- 
- Du kan sedan köra C#-värdprogrammet från kommandoraden:
- 
- ```bash
- $ dotnet run
- The random number generated is 42
- ```
 
- ### <a name="c-with-visual-studio-2019"></a>[C# med Visual Studio 2019](#tab/tabid-vs2019)
 
- Om du vill köra ditt nya Q#-program från C# i Visual Studio ändrar du `Driver.cs` så att följande C#-kod ingår:
+### <a name="q-command-line-applications-with-visual-studio-or-visual-studio-code"></a>[Q#-kommandoradsprogram med Visual Studio eller Visual Studio Code](#tab/tabid-qsharp)
 
- :::code language="csharp" source="~/quantum/samples/getting-started/qrng/Host.cs" range="4-39":::
+Om du vill skapa det fullständiga Q#-kommandoradsprogrammet lägger du till följande startpunkt i Q#-programmet: 
 
- Därefter trycker du på F5. Programmet startas och ett nytt fönster öppnas med det genererade slumptalet: 
+:::code language="qsharp" source="~/quantum/samples/getting-started/qrng/Qrng.qs" range="17-33":::
 
- ```bash
- $ dotnet run
- The random number generated is 42
- ```
- ***
+Den körbara filen kör åtgärden eller funktionen som har markerats med attributet `@EntryPoint()` i en simulator eller i ett resursuppskattningsverktyg, beroende på projektkonfigurationen och kommandoradsalternativen.
+
+:::code language="qsharp" source="~/quantum/samples/getting-started/qrng/Qrng.qs" range="3-34":::
+
+Tryck bara på Ctrl+F5 i Visual Studio för att köra skriptet.
+
+Skapa Program.qs första gången genom att skriva följande i terminalfönstret i VS Code:
+
+```dotnetcli
+dotnet build
+```
+
+För efterföljande körningar behöver du inte bygga det igen. Du kör det bara genom att skriva följande kommando och trycka på Retur:
+
+```dotnetcli
+dotnet run --no-build
+```
+
+### <a name="python-with-visual-studio-code-or-the-command-line"></a>[Python med Visual Studio Code eller kommandoraden](#tab/tabid-python)
+
+Om du vill köra ditt nya Q#-program från Python sparar du följande kod som `host.py`:
+
+:::code language="python" source="~/quantum/samples/interoperability/qrng/host.py" range="11-30":::
+
+Du kan sedan köra Python-värdprogrammet från kommandoraden:
+
+```bash
+$ python host.py
+Preparing Q# environment...
+..The random number generated is 42
+```
+
+### <a name="c-with-visual-studio-code-or-visual-studio"></a>[C# med Visual Studio Code eller Visual Studio](#tab/tabid-csharp)
+
+Om du vill köra ditt nya Q#-program från C# ändrar du `Driver.cs` så att följande C#-kod ingår:
+
+:::code language="csharp" source="~/quantum/samples/interoperability/qrng/Host.cs" range="4-39":::
+
+Sedan kan du köra C#-värdprogrammet från kommandoraden (i Visual Studio trycker du på F5):
+
+```bash
+$ dotnet run
+The random number generated is 42
+```
+
+***
