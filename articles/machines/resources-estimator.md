@@ -6,23 +6,23 @@ ms.author: anpaz@microsoft.com
 ms.date: 1/22/2019
 ms.topic: article
 uid: microsoft.quantum.machines.resources-estimator
-ms.openlocfilehash: 51186134e9279727fec212cdce84f69493aaa656
-ms.sourcegitcommit: a0e50c5f07841b99204c068cf5b5ec8ed087ffea
+ms.openlocfilehash: 01d242ed405bdd326f65e534f82ff378a464ee7d
+ms.sourcegitcommit: 2317473fdf2b80de58db0f43b9fcfb57f56aefff
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80320817"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83426882"
 ---
-# <a name="the-resourcesestimator-target-machine"></a>Mål datorn för ResourcesEstimator
+# <a name="the-resources-estimator-target-machine"></a>Mål datorn för resurs uppskattning
 
-Som namnet antyder beräknar `ResourcesEstimator` de resurser som krävs för att köra en specifik instans av en Q #-åtgärd på en Quantum-dator.
+När namnet antyder `ResourcesEstimator` beräknar beräkningen de resurser som krävs för att köra en specifik instans av en Q #-åtgärd på en Quantum-dator.
 Detta åstadkommer detta genom att köra åtgärden Quantum utan att faktiskt simulera status för en Quantum-dator. av den anledningen kan IT uppskatta resurser för Q #-åtgärder som använder tusentals qubits, om den klassiska delen av koden kan köras på rimlig tid.
 
 ## <a name="usage"></a>Användning
 
-`ResourcesEstimator` är bara en annan typ av måldator, vilket innebär att den kan användas för att köra en Q #-åtgärd. 
+`ResourcesEstimator`Är bara en annan typ av måldator, vilket innebär att den kan användas för att köra valfri Q #-åtgärd. 
 
-Som andra mål datorer ska du använda den på ett C# värd program för att skapa en instans och skicka den som den första parametern i åtgärdens `Run` metod:
+Som andra mål datorer ska du använda den på ett C#-värdprogram för att skapa en instans och skicka den som den första parametern för åtgärdens `Run` metod:
 
 ```csharp
 using Microsoft.Quantum.Simulation.Core;
@@ -42,7 +42,7 @@ namespace Quantum.MyProgram
 }
 ```
 
-I exemplet visar `ResourcesEstimator` en `ToTSV()` metod för att generera en tabell med Tabbavgränsade värden (TSV) som kan sparas i en fil eller som skrivs till konsolen för analys. Resultatet av programmet ovan bör se ut ungefär så här:
+Som exemplet visar `ResourcesEstimator` tillhandahåller en `ToTSV()` metod för att skapa en tabell med Tabbavgränsade värden (TSV) som kan sparas i en fil eller som skrivs till konsolen för analys. Resultatet av programmet ovan bör se ut ungefär så här:
 
 ```Output
 Metric          Sum
@@ -57,15 +57,15 @@ BorrowedWidth   0
 ```
 
 > [!NOTE]
-> `ResourcesEstimator` återställer inte beräkningarna vid varje körning, om samma instans används för att köra en annan åtgärd, så behåller den agg regeringar som räknas ovanpå befintliga resultat.
+> I `ResourcesEstimator` återställs inte beräkningarna vid varje körning, om samma instans används för att köra en annan åtgärd, kommer den att behålla agg regeringar som räknas ovanpå befintliga resultat.
 > Om du behöver återställa beräkningar mellan körningarna skapar du en ny instans för varje körning.
 
 
 ## <a name="programmatically-retrieving-the-estimated-data"></a>Hämta beräknade data program mässigt
 
-Förutom en TSV-tabell kan de beräknade resurserna hämtas via programmering via `ResourcesEstimator``Data` egenskap. `Data` innehåller en `System.DataTable` instans med två kolumner: `Metric` och `Sum`, indexerad av mått namnen.
+Förutom en TSV-tabell kan de uppskattade resurserna hämtas via programmering via `ResourcesEstimator` `Data` egenskapen. `Data`tillhandahåller en `System.DataTable` instans med två kolumner: `Metric` och `Sum` , indexerad av mått namnen.
 
-Följande kod visar hur du hämtar och skriver ut det totala antalet `QubitClifford`, `T` och `CNOT` portar som används av en Q #-åtgärd:
+Följande kod visar hur du hämtar och skriver ut det totala antalet `QubitClifford` `T` och portar som `CNOT` används av en Q #-åtgärd:
 
 ```csharp
 using Microsoft.Quantum.Simulation.Core;
@@ -91,7 +91,7 @@ namespace Quantum.MyProgram
 
 ## <a name="metrics-reported"></a>Rapporterade mått
 
-Följande är en lista över mått som beräknas av `ResourcesEstimator`:
+Följande är en lista över mått som beräknas av `ResourcesEstimator` :
 
 * __CNOT__: antalet CNOT (kallas även för de kontrollerade Pauli X-grindarna) som körs.
 * __QubitClifford__: antalet enskilda qubit-Clifford och Pauli-portar som körs.
@@ -105,7 +105,7 @@ Följande är en lista över mått som beräknas av `ResourcesEstimator`:
 
 ## <a name="providing-the-probability-of-measurement-outcomes"></a>Ange sannolikheten för mätresultatet
 
-<xref:microsoft.quantum.intrinsic.assertprob> från namn området <xref:microsoft.quantum.intrinsic> kan användas för att ge information om den förväntade sannolikheten för en mätning för att köra körningen av Q #-programmet. Följande exempel illustrerar detta:
+<xref:microsoft.quantum.intrinsic.assertprob>från <xref:microsoft.quantum.intrinsic> namn området kan användas för att ge information om den förväntade sannolikheten för en mätning för att köra körningen av Q #-programmet. Följande exempel illustrerar detta:
 
 ```qsharp
 operation Teleport(source : Qubit, target : Qubit) : Unit {
@@ -127,10 +127,10 @@ operation Teleport(source : Qubit, target : Qubit) : Unit {
 }
 ```
 
-När `ResourcesEstimator` påträffar `AssertProb` registreras att mät `PauliZ` på `source` och `q` bör få ett resultat av `Zero` med sannolikhet 0,5. När den körs `M` senare kommer den att hitta de inspelade värdena för resultatet sannolikhet och `M` returnerar `Zero` eller `One` med sannolikhet 0,5.
+När de `ResourcesEstimator` påträffar `AssertProb` registreras det att mäta `PauliZ` `source` och `q` ska få ett resultat av `Zero` med sannolikhet 0,5. När den körs `M` senare kommer den att hitta de registrerade värdena för resultatet sannolikhet och `M` returnerar `Zero` eller `One` med sannolikhet 0,5.
 
 
 ## <a name="see-also"></a>Se även
 
-`ResourcesEstimator` bygger på den väntande dator [spårnings simulatorn](xref:microsoft.quantum.machines.qc-trace-simulator.intro), som ger en mer omfattande uppsättning mått, möjlighet att rapportera mått för det fullständiga anrops diagrammet och funktioner som [distinkta inmatnings kontroll](xref:microsoft.quantum.machines.qc-trace-simulator.distinct-inputs) för att hitta buggar i Q #-program. Mer information finns i dokumentationen för [spårnings simulatorn](xref:microsoft.quantum.machines.qc-trace-simulator.intro) .
+`ResourcesEstimator`Är byggd ovanpå dator [spårnings simulatorn](xref:microsoft.quantum.machines.qc-trace-simulator.intro)från Quantum, som ger en mer omfattande uppsättning mått, möjlighet att rapportera mått för det fullständiga anrops diagrammet och funktioner som [distinkta inmatnings kontroll](xref:microsoft.quantum.machines.qc-trace-simulator.distinct-inputs) för att hitta buggar i Q #-program. Mer information finns i dokumentationen för [spårnings simulatorn](xref:microsoft.quantum.machines.qc-trace-simulator.intro) .
 

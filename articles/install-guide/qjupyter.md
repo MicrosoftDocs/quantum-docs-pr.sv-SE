@@ -6,12 +6,12 @@ ms.date: 9/30/2019
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.install.jupyter
-ms.openlocfilehash: b7276f9b273f601f30e4938018398353b6a9102d
-ms.sourcegitcommit: f8d6d32d16c3e758046337fb4b16a8c42fb04c39
+ms.openlocfilehash: 38db14ccc5f2406043ff4baee3f562385cdf47a8
+ms.sourcegitcommit: 2317473fdf2b80de58db0f43b9fcfb57f56aefff
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76831077"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83426381"
 ---
 # <a name="develop-with-q-jupyter-notebooks"></a>Utveckla med Q # Jupyter-anteckningsböcker
 
@@ -22,7 +22,7 @@ Jupyter Notebooks möjliggör kod körning på plats tillsammans med instruktion
 IQ# (uttalas i-q-sharp) är ett tillägg som främst används av Jupyter och Python i .NET Core SDK, och som ger grundläggande funktioner för att kompilera och simulera Q#-åtgärder.
 
 > [!NOTE]
-> * I Q # Jupyter Notebooks kan du bara köra Q # Code, och åtgärderna kan inte anropas från externa värd program (t. ex. C# python eller filer). Den här miljön är inte lämplig om målet är att kombinera ett externt klassiskt värd program med Quantum-programmet.
+> * I Q # Jupyter Notebooks kan du bara köra Q # Code, och åtgärderna kan inte anropas från externa värd program (t. ex. python-eller C#-filer). Den här miljön är inte lämplig om målet är att kombinera ett externt klassiskt värd program med Quantum-programmet.
 
 1. Förutsättningar
 
@@ -62,12 +62,12 @@ IQ# (uttalas i-q-sharp) är ett tillägg som främst används av Jupyter och Pyt
         Du bör se `SayHello` i cellens utdata. När du använder Jupyter Notebook kompileras Q#-koden och Notebook visar namnet på den eller de åtgärder som den hittar.
 
 
-    - I en ny cell kör du den åtgärd som du nyss skapade (i en simulator) genom att använda kommandot `%simulate`:
+    - I en ny cell kör du åtgärden som du nyss skapade (i en simulator) genom att använda `%simulate` kommandot:
 
         ![Jupyter Notebook-cell med %simulate magic](~/media/install-guide-jupyter-simulate.png)
 
-        Du bör se meddelandet som skrivs ut på skärmen tillsammans med resultatet av den åtgärd du anropade (här visas den tomma tuppeln `()` eftersom vår åtgärd bara returnerar en `Unit` typ).
+        Du bör se meddelandet som skrivs ut på skärmen tillsammans med resultatet av den åtgärd du anropade (här ser vi den tomma tuppeln `()` eftersom vår åtgärd bara returnerar en `Unit` typ).
 
-## <a name="whats-next"></a>Vad står på tur?
+## <a name="next-steps"></a>Nästa steg
 
-Nu när du har installerat Quantum Development Kit i din önskade miljö, kan du skriva och köra [ditt första kvantprogram](xref:microsoft.quantum.write-program).
+Nu när du har installerat Quantum Development Kit i din önskade miljö, kan du skriva och köra [ditt första kvantprogram](xref:microsoft.quantum.quickstarts.qrng).

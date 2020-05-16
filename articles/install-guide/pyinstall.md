@@ -1,19 +1,19 @@
 ---
-title: Utveckla med Q# och Python
+title: 'Utveckla med Q # och python'
 author: natke
 ms.author: nakersha
 ms.date: 9/30/2019
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.install.python
-ms.openlocfilehash: e1b8a0c68b3ac0c059c6de6e478593321764ff88
-ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+ms.openlocfilehash: a8c5b9c25c069f98ef8eefd6cfbc36bf3376931c
+ms.sourcegitcommit: 2317473fdf2b80de58db0f43b9fcfb57f56aefff
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82680152"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83426369"
 ---
-# <a name="develop-with-q--python"></a>Utveckla med Q# och Python
+# <a name="develop-with-q-and-python"></a>Utveckla med Q # och python
 
 Installera QDK för att utveckla python-värdprogram för att anropa Q #-åtgärder.
 
@@ -83,6 +83,6 @@ Installera QDK för att utveckla python-värdprogram för att anropa Q #-åtgär
 > [!NOTE]
 > * Du kan också använda python Jupyter Notebooks för att skriva det klassiska python-programmet och anropa Q #-åtgärder från cellerna. Python-koden är bara ett vanligt python-program.
 
-## <a name="whats-next"></a>Nästa steg
+## <a name="next-steps"></a>Nästa steg
 
-Nu när du har installerat Quantum Development Kit i din önskade miljö, kan du skriva och köra [ditt första kvantprogram](xref:microsoft.quantum.write-program).
+Nu när du har installerat Quantum Development Kit i din önskade miljö, kan du skriva och köra [ditt första kvantprogram](xref:microsoft.quantum.quickstarts.qrng).

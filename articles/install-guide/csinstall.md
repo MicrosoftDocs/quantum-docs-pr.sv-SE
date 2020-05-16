@@ -1,19 +1,19 @@
 ---
-title: Utveckla med Q# och C#
+title: Utveckla med Q# och .NET
 author: natke
 ms.author: nakersha
 ms.date: 9/30/2019
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.install.cs
-ms.openlocfilehash: 5bcb036b0b32e64d43f90e9a068d9dcc237890ba
-ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+ms.openlocfilehash: 155367dbb1373f00e2b0bd732a5319b32462c9f9
+ms.sourcegitcommit: 2317473fdf2b80de58db0f43b9fcfb57f56aefff
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82680167"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83426493"
 ---
-# <a name="using-q-with-c-and-f"></a>Använda Q # med C\# och F\#
+# <a name="develop-with-q-and-net"></a>Utveckla med Q# och .NET
 
 Q # är utformat för att spelas upp bra med .NET-språk som C# och F #.
 I den här guiden visar vi hur du använder Q # med ett värd program skrivet på ett .NET-språk.
@@ -29,7 +29,7 @@ Det första steget är att skapa projekt för ditt Q #-bibliotek och för den .N
 ### <a name="visual-studio-2019"></a>[Visual Studio 2019](#tab/tabid-vs2019)
 
 - Skapa ett nytt Q #-bibliotek
-  - Gå till **filen** -> **nytt** -> **projekt**
+  - Gå till **filen**  ->  **nytt**  ->  **projekt**
   - Skriv "Q #" i sökrutan
   - Välj **Q #-bibliotek**
   - Välj **Nästa**
@@ -84,9 +84,9 @@ Exempel på .net- [interoperabilitet](https://github.com/microsoft/Quantum/tree/
 
 :::code language="qsharp" source="~/quantum/samples/interoperability/dotnet/qsharp/Operations.qs" range="67-75":::
 
-Om du vill anropa den här åtgärden från .NET på en Quantum-simulator kan `Run` du använda metoden `RunAlgorithm` för .net-klassen som genereras av Q #-kompilatorn:
+Om du vill anropa den här åtgärden från .NET på en Quantum-simulator kan du använda `Run` metoden för `RunAlgorithm` .net-klassen som genereras av Q #-kompilatorn:
 
-### <a name="c"></a>[C #](#tab/tabid-csharp)
+### <a name="c"></a>[C#](#tab/tabid-csharp)
 
 :::code language="csharp" source="~/quantum/samples/interoperability/dotnet/csharp/Host.cs" range="4-":::
 
@@ -96,6 +96,6 @@ Om du vill anropa den här åtgärden från .NET på en Quantum-simulator kan `R
 
 ***
     
-## <a name="whats-next"></a>Nästa steg
+## <a name="next-steps"></a>Nästa steg
 
-Nu när du har Quantum Development Kit konfigurerat för både Q # kommando rads program och för interoperabilitet med .NET, kan du skriva och köra [ditt första Quantum-program](xref:microsoft.quantum.write-program).
+Nu när du har Quantum Development Kit konfigurerat för både Q # kommando rads program och för interoperabilitet med .NET, kan du skriva och köra [ditt första Quantum-program](xref:microsoft.quantum.quickstarts.qrng).

@@ -6,12 +6,12 @@ ms.author: chgranad
 ms.date: 3/9/2020
 ms.topic: article
 uid: microsoft.quantum.contributing.api-design
-ms.openlocfilehash: a8e830e8f46ac6bd53ed5c607ca8cc2897721a20
-ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+ms.openlocfilehash: def6a9f12accfa399fd4db3783b9899fc743f025
+ms.sourcegitcommit: 2317473fdf2b80de58db0f43b9fcfb57f56aefff
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82687346"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83426451"
 ---
 # <a name="q-api-design-principles"></a>Design principer för Q # API
 
@@ -40,20 +40,20 @@ Den här artikeln innehåller de här principerna och ger exempel på hur du kan
 - ✅**Se till att varje** komponent i ett offentligt API har ett motsvarande användnings fall, i stället för att försöka utforma för alla möjliga användnings områden från start.
     Sätt inte på olika offentliga API: er om de är användbara, men se till att varje del av ett API har ett *konkret* exempel där det är användbart.
 
-  *Fler*
+  *Exempel:*
   - @"microsoft.quantum.canon.applytoeachca"kan användas `ApplyToEachCA(H, _)` för att förbereda register i ett enhetligt befattnings tillstånd, en vanlig uppgift i många Quantum-algoritmer. Samma åtgärd kan också användas för många andra uppgifter i förberedelser, siffror och Oracle-baserade algoritmer.
 
 - ✅**Gör** kreativitet och workshop nya API-design för att kontrol lera att de är intuitiva och uppfyller föreslagna användnings fall.
 
-  *Fler*
-  - Kontrol lera den\# aktuella Q-koden för att se hur nya API-Designer kan förenkla och klargöra befintliga implementeringar.
+  *Exempel:*
+  - Kontrol lera den aktuella Q- \# koden för att se hur nya API-Designer kan förenkla och klargöra befintliga implementeringar.
   - Granska föreslagna API-design med representanter för primära mål grupper.
 
 **Nyckel princip:** Utforma API: er som stöder och uppmuntrar till läsbar kod.
 
 - ✅**Se till att koden** kan läsas av domän experter och icke-experter.
 - ✅**Fokusera på** effekterna av varje åtgärd och funktion inom algoritmen på hög nivå, med hjälp av dokumentationen för att gå in på implementerings informationen på lämpligt sätt.
-- ✅**Följ den** vanliga [Q\# stil guiden](xref:microsoft.quantum.contributing.style) när det är tillämpligt.
+- ✅**Följ den** vanliga [Q \# stil guiden](xref:microsoft.quantum.contributing.style) när det är tillämpligt.
 
 **Nyckel princip:** Design-API: er som ska vara stabila och för att vidarebefordra kompatibilitet.
 
@@ -61,12 +61,12 @@ Den här artikeln innehåller de här principerna och ger exempel på hur du kan
 
 - ✅**Ge "** shim"-åtgärder och-funktioner som tillåter att befintlig användar kod fungerar korrekt under utfasningen.
 
-  *Fler*
-  - När du byter namn på en `EstimateExpectation` åtgärd `EstimateAverage`som kallas för, introducerar `EstimateExpectation` en ny åtgärd som anropar den ursprungliga åtgärden med det nya namnet, så att den befintliga koden kan fortsätta att fungera korrekt.
+  *Exempel:*
+  - När du byter namn på en `EstimateExpectation` åtgärd `EstimateAverage` som kallas för, introducerar en ny åtgärd som anropar `EstimateExpectation` den ursprungliga åtgärden med det nya namnet, så att den befintliga koden kan fortsätta att fungera korrekt.
 
 - ✅**Använd** @"microsoft.quantum.core.deprecated" attributet för att kommunicera utfasningar till användaren.
 
-- ✅När du byter namn på en åtgärd eller funktion ska **du ange det** nya namnet som en sträng `@Deprecated`inskrivning till.
+- ✅När du byter namn på en åtgärd eller funktion ska **du ange det** nya namnet som en sträng inskrivning till `@Deprecated` .
 
 - ⛔️ **inte** att ta bort befintliga funktioner eller åtgärder utan en föråldrad period på minst sex månader för för hands versioner, eller minst två år för versioner som stöds.
 
@@ -80,21 +80,21 @@ Den här artikeln innehåller de här principerna och ger exempel på hur du kan
 
 - ✅**Utför** design funktioner och åtgärder för att skapa bra med andra funktioner och åtgärder, både i samma API och i tidigare befintliga bibliotek.
 
-  *Fler*
-  - @"microsoft.quantum.canon.delay" Åtgärden gör minimala antaganden om inaktuella indatatyper och kan därför användas för att fördröja program för båda åtgärderna i Q # standard-biblioteket eller som definieras av användarna.
+  *Exempel:*
+  - @"microsoft.quantum.canon.delay"Åtgärden gör minimala antaganden om inaktuella indatatyper och kan därför användas för att fördröja program för båda åtgärderna i Q # standard-biblioteket eller som definieras av användarna.
     <!-- TODO: define bad example. -->
 
 - ✅**Exponerar** rent deterministisk klassisk logik som funktioner i stället för åtgärder.
 
-  *Fler*
-  - En subrutin som kvadraterar sin flytt ALS indata kan skrivas deterministiskt och bör därför exponeras för användaren som `Squared : Double -> Double` i stället för en åtgärd. `Square : Double => Double` Detta gör att subrutinen kan anropas på fler platser (t. ex. i andra funktioner) och ger användbar optimerings information till kompilatorn som kan påverka prestanda och optimeringar.
+  *Exempel:*
+  - En subrutin som kvadraterar sin flytt ALS indata kan skrivas deterministiskt och bör därför exponeras för användaren som `Squared : Double -> Double` i stället för en åtgärd `Square : Double => Double` . Detta gör att subrutinen kan anropas på fler platser (t. ex. i andra funktioner) och ger användbar optimerings information till kompilatorn som kan påverka prestanda och optimeringar.
   - `ForEach<'TInput, 'TOutput>('TInput => 'TOutput, 'TInput[]) => 'TOutput[]`och `Mapped<'TInput, 'TOutput>('TInput -> 'TOutput, 'TInput[]) -> 'TOutput[]` skiljer sig åt i de garantier som gjorts med avseende på determinism. båda är användbara i olika situationer.
-  - API-rutiner som transformerar tillämpningen av Quantum-åtgärder kan ofta utföras på ett deterministiskt sätt och kan därför göras tillgängliga som funktioner som `CControlled<'T>(op : 'T => Unit) => ((Bool, 'T) => Unit)`.
+  - API-rutiner som transformerar tillämpningen av Quantum-åtgärder kan ofta utföras på ett deterministiskt sätt och kan därför göras tillgängliga som funktioner som `CControlled<'T>(op : 'T => Unit) => ((Bool, 'T) => Unit)` .
 
 - ✅**Generalisera** indatatypen så mycket som rimligt för varje funktion och åtgärd, med hjälp av typ parametrar efter behov.
 
-  *Fler*
-  - `ApplyToEach`har en `<'T>(('T => Unit), 'T[]) => Unit` typ i stället för den specifika typen för det vanligaste programmet `((Qubit => Unit), Qubit[]) => Unit`.
+  *Exempel:*
+  - `ApplyToEach`har en typ i `<'T>(('T => Unit), 'T[]) => Unit` stället för den specifika typen för det vanligaste programmet `((Qubit => Unit), Qubit[]) => Unit` .
 
 > [!TIP]
 > Det är viktigt att förutse framtida behov, men det är också viktigt att lösa konkreta problem för dina användare.
@@ -104,21 +104,21 @@ Den här artikeln innehåller de här principerna och ger exempel på hur du kan
 
 - ✅**Använd tuple** -typer för att logiskt gruppera indata och utdata som bara är viktiga när de betraktas tillsammans. Överväg att använda en användardefinierad typ i dessa fall.
 
-  *Fler*
-  - En funktion för att mata ut den lokala minimi för en annan funktion kan behöva ta gränser för ett Sök intervall som indata, `LocalMinima(fn : (Double -> Double), (left : Double, right : Double)) : Double` som kan vara en lämplig signatur.
-  - En åtgärd för att uppskatta ett derivat av en Machine Learning-klassificerare med parameter Shift-tekniken kan behöva ta både de skiftna och skifta parameter vektorer som indata. En indatatyp som `(unshifted : Double[], shifted : Double[])` liknar kan vara lämplig i det här fallet.
+  *Exempel:*
+  - En funktion för att mata ut den lokala minimi för en annan funktion kan behöva ta gränser för ett Sök intervall som indata, som `LocalMinima(fn : (Double -> Double), (left : Double, right : Double)) : Double` kan vara en lämplig signatur.
+  - En åtgärd för att uppskatta ett derivat av en Machine Learning-klassificerare med parameter Shift-tekniken kan behöva ta både de skiftna och skifta parameter vektorer som indata. En indatatyp som liknar `(unshifted : Double[], shifted : Double[])` kan vara lämplig i det här fallet.
 
 - ✅**Ordna objekt** i indata-och utdataström-tupler konsekvent över olika funktioner och åtgärder.
 
-  *Fler*
-  - Om du överväger två eller Functions eller åtgärder som varje tar en rotations vinkel och en mål qubit som indata, kontrollerar du att de är ordnade i varje tupel. Det vill säga, `ApplyRotation(angle : Double, target : Qubit) : Unit is Adj + Ctl` hellre `DelayedRotation(angle : Double, target : Qubit) : (Unit => Unit is Adj + Ctl)` och `ApplyRotation(target : Qubit, angle : Double) : Unit is Adj + Ctl` till `DelayedRotation(angle : Double, target : Qubit) : (Unit => Unit is Adj + Ctl)`och.
+  *Exempel:*
+  - Om du överväger två eller Functions eller åtgärder som varje tar en rotations vinkel och en mål qubit som indata, kontrollerar du att de är ordnade i varje tupel. Det vill säga, hellre `ApplyRotation(angle : Double, target : Qubit) : Unit is Adj + Ctl` och `DelayedRotation(angle : Double, target : Qubit) : (Unit => Unit is Adj + Ctl)` till `ApplyRotation(target : Qubit, angle : Double) : Unit is Adj + Ctl` och `DelayedRotation(angle : Double, target : Qubit) : (Unit => Unit is Adj + Ctl)` .
 
-**Nyckel princip:** design funktioner och åtgärder för att fungera bra med\# funktioner i Q-språk, till exempel delvis program.
+**Nyckel princip:** design funktioner och åtgärder för att fungera bra med funktioner i Q- \# språk, till exempel delvis program.
 
 - ✅**Sortera objekt** i tupler så att de oftast använda indatana inträffar först (d.v.s.: så att partiella program fungerar på samma sätt som currying).
 
-  *Fler*
-  - En åtgärd `ApplyRotation` som tar ett flytt ALS nummer och en qubit som indata kan ofta tillämpas delvis med flytt ALS indata för användning med åtgärder som förväntar sig indata av typen `Qubit => Unit`. Det innebär att signaturen för`operation ApplyRotation(angle : Double, target : Qubit) : Unit is Adj + Ctl`
+  *Exempel:*
+  - En åtgärd `ApplyRotation` som tar ett flytt ALS nummer och en qubit som indata kan ofta tillämpas delvis med flytt ALS indata för användning med åtgärder som förväntar sig indata av typen `Qubit => Unit` . Det innebär att signaturen för`operation ApplyRotation(angle : Double, target : Qubit) : Unit is Adj + Ctl`
       fungerar mest konsekvent med delvis program.
   - Den här vägledningen innebär vanligt vis att placera alla klassiska data innan alla qubits i indata-tupler, men Använd bra omdöme och kontrol lera hur ditt API anropas i praktiken.
 
@@ -128,76 +128,76 @@ Den här artikeln innehåller de här principerna och ger exempel på hur du kan
 
 - ✅**Introducera nya** användardefinierade typer för att ge en bra kort skrift för långa och/eller komplicerade typer.
 
-  *Fler*
+  *Exempel:*
   - I de fall där en åtgärds typ med tre qubit mat ris indata utförs ofta som indata eller returneras som utdata, vilket ger en UDT som`newtype TimeDependentBlockEncoding = ((Qubit[], Qubit[], Qubit[]) => Unit is Adj + Ctl)`
       kan hjälpa dig att ge en användbar kort skrift.
 
 - ✅**Introducera nya** användardefinierade typer för att indikera att en viss bastyp endast ska användas i en särskilt idé.
 
-  *Fler*
-  - En åtgärd som ska tolkas specifikt som en åtgärd som kodar klassiska data till ett Quantum-register kan vara lämplig för etiketter med en användardefinierad typ `newtype InputEncoder = (Apply : (Qubit[] => Unit))`.
+  *Exempel:*
+  - En åtgärd som ska tolkas specifikt som en åtgärd som kodar klassiska data till ett Quantum-register kan vara lämplig för etiketter med en användardefinierad typ `newtype InputEncoder = (Apply : (Qubit[] => Unit))` .
 
 - ✅**Introducera nya** användardefinierade typer med namngivna objekt som möjliggör framtida utökning (t. ex. en resultat struktur som kan innehålla ytterligare namngivna objekt i framtiden).
 
-  *Fler*
-  - När en åtgärd `TrainModel` visar ett stort antal konfigurations alternativ, exponeras dessa alternativ som en ny `TrainingOptions` UDT och en ny funktion `DefaultTrainingOptions : Unit -> TrainingOptions` gör det möjligt för användare att åsidosätta vissa namngivna objekt i TrainingOptions UDT-värden samtidigt som biblioteks utvecklare kan lägga till nya UDT-objekt efter behov.
+  *Exempel:*
+  - När en åtgärd `TrainModel` visar ett stort antal konfigurations alternativ, exponeras dessa alternativ som en ny `TrainingOptions` UDT och en ny funktion gör det `DefaultTrainingOptions : Unit -> TrainingOptions` möjligt för användare att åsidosätta vissa namngivna objekt i TrainingOptions UDT-värden samtidigt som biblioteks utvecklare kan lägga till nya UDT-objekt efter behov.
 
 - ✅**Deklarera namngivna** objekt för nya användardefinierade typer i prioritetsordning för att kräva att användarna känner till rätt tuple-inkonstruktion.
 
-  *Fler*
-  - När du representerar ett komplext tal i dess polära `newtype ComplexPolar = (Magnitude: Double, Argument: Double)` dekomposition `newtype ComplexPolar = (Double, Double)`föredrar du.
+  *Exempel:*
+  - När du representerar ett komplext tal i dess polära dekomposition föredrar `newtype ComplexPolar = (Magnitude: Double, Argument: Double)` du `newtype ComplexPolar = (Double, Double)` .
 
 **Nyckel princip:** Använd användardefinierade typer på olika sätt för att minska kognitiv belastning och som inte kräver att användaren lär sig ytterligare begrepp och nomenklatur.
 
-- ⛔️ introducerar **inte** användardefinierade typer som kräver att användaren ofta använder sig av unwrap-operatorn (`!`), eller som ofta kräver flera nivåer av avbrytning. Några möjliga lösningar för minskning är:
+- ⛔️ introducerar **inte** användardefinierade typer som kräver att användaren ofta använder sig av unwrap-operatorn ( `!` ), eller som ofta kräver flera nivåer av avbrytning. Några möjliga lösningar för minskning är:
 
-  - När du exponerar en användardefinierad typ med ett enda objekt bör du överväga att definiera ett namn för objektet. Tänk `newtype Encoder = (Apply : (Qubit[] => Unit is Adj + Ctl))` till exempel i preferens till `newtype Encoder = (Qubit[] => Unit is Adj + Ctl)`.
+  - När du exponerar en användardefinierad typ med ett enda objekt bör du överväga att definiera ett namn för objektet. Tänk `newtype Encoder = (Apply : (Qubit[] => Unit is Adj + Ctl))` till exempel i preferens till `newtype Encoder = (Qubit[] => Unit is Adj + Ctl)` .
 
   - Att se till att andra funktioner och åtgärder kan acceptera "figursatta" UDT-instanser direkt.
 
 - ⛔️ introducerar **inte** nya användardefinierade typer som duplicerar inbyggda typer utan att tillhandahålla ytterligare Expressiveness.
 
-  *Fler*
-  - En UDT `newtype QubitRegister = Qubit[]` ger ingen ytterligare Expressiveness över `Qubit[]`, och är därför svårare att använda utan går-förmån.
+  *Exempel:*
+  - En UDT `newtype QubitRegister = Qubit[]` ger ingen ytterligare Expressiveness över `Qubit[]` , och är därför svårare att använda utan går-förmån.
   - En UDT `newtype LittleEndian = Qubit[]` -dokument beskriver hur det underliggande registret ska användas och tolkas och ger därmed ytterligare Expressiveness över dess bastyp.
 
 - ⛔️ introducerar **inte** accessor-funktioner om det inte är absolut nödvändigt.   föredra namngivna objekt i det här fallet.
 
-  *Fler*
-  - När du introducerar `newtype Complex = (Double, Double)`en UDT, föredrar du att `newtype Complex = (Real : Double, Imag : Double)` ändra definitionen till `GetReal : Complex -> Double` att `GetImag : Complex -> Double`introducera funktioner och.
+  *Exempel:*
+  - När du introducerar en UDT `newtype Complex = (Double, Double)` , föredrar du att ändra definitionen till `newtype Complex = (Real : Double, Imag : Double)` att introducera funktioner `GetReal : Complex -> Double` och `GetImag : Complex -> Double` .
 
 ## <a name="namespaces-and-organization"></a>Namn områden och organisation
 
 **Nyckel princip:** Välj namn områdes namn som är förutsägbara och som tydligt kommunicerar syftet med funktioner, åtgärder och användardefinierade typer i varje namnrymd.
 
-- ✅**Gör** namn namn rymder `Publisher.Product.DomainArea`som.
+- ✅**Gör** namn namn rymder som `Publisher.Product.DomainArea` .
 
-  *Fler*
+  *Exempel:*
   - Funktioner, åtgärder och UDTs som publiceras av Microsoft som en del av funktionen Quantum-simulering i Quantum Development Kit placeras i `Microsoft.Quantum.Simulation` namn området.
   - `Microsoft.Quantum.Math`representerar ett namn område som publicerats av Microsoft som en del av Quantum Development Kit som hör till området matematik.
 
 - ✅**Utför** åtgärder, funktioner och användardefinierade typer som används för vissa funktioner i ett namn område som beskriver den funktionen, även när funktionen används i olika problem domäner.
 
-  *Fler*
-  - API: er för tillstånds förberedelse som publicerats av Microsoft som en del av Quantum Development `Microsoft.Quantum.Preparation`Kit skulle placeras i.
-  - API: er för Quantum simulator som publicerats av Microsoft som en del av Quantum Development Kit `Microsoft.Quantum.Simulation`skulle placeras i.
+  *Exempel:*
+  - API: er för tillstånds förberedelse som publicerats av Microsoft som en del av Quantum Development Kit skulle placeras i `Microsoft.Quantum.Preparation` .
+  - API: er för Quantum simulator som publicerats av Microsoft som en del av Quantum Development Kit skulle placeras i `Microsoft.Quantum.Simulation` .
 
 - ✅**Utför** åtgärder, funktioner och användardefinierade typer som enbart används inom vissa domäner i namn områden som indikerar deras domän. Om det behövs använder du under namn rymder för att indikera fokuserade uppgifter inom varje domänbaserat namn område.
 
-  *Fler*
-  - Quantum Machine Learning-biblioteket som publicerades av Microsoft placeras i stort sett @"microsoft.quantum.machinelearning" i namn området, men exempel data uppsättningar tillhandahålls av @"microsoft.quantum.machinelearning.datasets" namn området.
-  - Quantum kemi-API: er som publicerats av Microsoft som en del av Quantum Development Kit `Microsoft.Quantum.Chemistry`bör placeras i. Funktioner som är speciella för att implementera Jordanien-Wigner-dekompositionen kan `Microsoft.Quantum.Chemistry.JordanWigner`placeras i, så att det primära gränssnittet för domän arean Quantum kemi inte är bekymrat till implementeringar.
+  *Exempel:*
+  - Quantum Machine Learning-biblioteket som publicerades av Microsoft placeras i stort sett i @"microsoft.quantum.machinelearning" namn området, men exempel data uppsättningar tillhandahålls av @"microsoft.quantum.machinelearning.datasets" namn området.
+  - Quantum kemi-API: er som publicerats av Microsoft som en del av Quantum Development Kit bör placeras i `Microsoft.Quantum.Chemistry` . Funktioner som är speciella för att implementera Jordanien-Wigner-dekompositionen kan placeras i `Microsoft.Quantum.Chemistry.JordanWigner` , så att det primära gränssnittet för domän arean Quantum kemi inte är bekymrat till implementeringar.
 
 **Nyckel princip:** Använd namn rymder och åtkomst modifierare för att vara avsiktliga om den API-yta som visas för användarna och för att dölja intern information som rör implementering och testning av dina API: er.
 
-- ✅När det är rimligt bör **du** placera alla funktioner och åtgärder som behövs för att implementera ett API i samma namnrymd som API: et som implementeras, men markerat med nyckelorden "privat" eller "internt" för att ange att de inte ingår i den offentliga API-ytan för ett bibliotek. Använd ett namn som börjar med ett under streck`_`() för att visuellt särskilja privata och interna åtgärder och funktioner från offentliga callables.
+- ✅När det är rimligt bör **du** placera alla funktioner och åtgärder som behövs för att implementera ett API i samma namnrymd som API: et som implementeras, men markerat med nyckelorden "privat" eller "internt" för att ange att de inte ingår i den offentliga API-ytan för ett bibliotek. Använd ett namn som börjar med ett under streck ( `_` ) för att visuellt särskilja privata och interna åtgärder och funktioner från offentliga callables.
 
-  *Fler*
+  *Exempel:*
   - Åtgärds namnet `_Features` anger en funktion som är privat för en specifik namnrymd och sammansättning och som ska åtföljas av antingen `internal` nyckelordet.
 
-- ✅I sällsynta fall kan en omfattande uppsättning privata funktioner eller åtgärder behövas för att implementera API: et för ett angivet namn område **, placera** dem i ett nytt namn område som matchar namn området som implementeras `.Private`och slutar.
+- ✅I sällsynta fall kan en omfattande uppsättning privata funktioner eller åtgärder behövas för att implementera API: et för ett angivet namn område **, placera** dem i ett nytt namn område som matchar namn området som implementeras och slutar `.Private` .
 
-- ✅**Placera alla** enhets tester i namn områden som matchar namn området under test och slutar `.Tests`.
+- ✅**Placera alla** enhets tester i namn områden som matchar namn området under test och slutar `.Tests` .
 
 ## <a name="naming-conventions-and-vocabulary"></a>Namngivnings konventioner och vokabulär
 
@@ -209,15 +209,15 @@ Den här artikeln innehåller de här principerna och ger exempel på hur du kan
 
 - ⛔️ **inte** använda ID-namn som inte är nödvändigt för Esoteric, eller som kräver betydande Quantum-algoritmer att läsa.
 
-  *Fler*
+  *Exempel:*
   - Föredra "amplitud förstärkning iteration" till "Grover iteration".
 
-- ✅**Välj drift** -och funktions namn som tydligt förmedlar den avsedda påverkan av en anropad och inte dess implementering. Observera att implementeringen kan och bör dokumenteras i [kommentarer om API-dokumentation](xref:microsoft.quantum.language.statements#documentation-comments).
+- ✅**Välj drift** -och funktions namn som tydligt förmedlar den avsedda påverkan av en anropad och inte dess implementering. Observera att implementeringen kan och bör dokumenteras i [kommentarer om API-dokumentation](xref:microsoft.quantum.guide.filestructure#documentation-comments).
 
-  *Fler*
+  *Exempel:*
   - Föredra "uppskatta överlappande" till "Hadamard test", eftersom den senare kommunicerar hur den tidigare implementeras.
 
-- ✅**Använd ord** på ett konsekvent sätt i alla API:\# er för Q:
+- ✅**Använd ord** på ett konsekvent sätt i alla \# API: er för Q:
 
   - **Verb**
 
@@ -225,36 +225,36 @@ Den här artikeln innehåller de här principerna och ger exempel på hur du kan
 
     - **Uppskattning**: Använd en eller flera eventuellt upprepade mätningar för att beräkna en klassisk kvantitet från mätnings resultaten.
 
-      *Fler*
+      *Exempel:*
       - @"microsoft.quantum.characterization.estimatefrequency"
       - @"microsoft.quantum.characterization.estimateoverlapbetweenstates"
 
     - **Förbered**: tillämpa en Quantum-åtgärd eller en sekvens med åtgärder för en eller flera qubits som antas starta i ett visst ursprungligt tillstånd (vanligt vis $ \ket{00\cdots 0), vilket gör att tillstånden för dessa qubits utvecklas till ett önskat slut tillstånd. I allmänhet **kan** man på andra stater än det som anges i andra länder leda till en odefinierad allmän omvandling, men **bör** fortfarande bevara en åtgärd och dess angränsande "annullera ut" och tillämpa en no-op.
 
-      *Fler*
+      *Exempel:*
       - @"microsoft.quantum.preparation.preparearbitrarystate"
       - @"microsoft.quantum.preparation.prepareuniformsuperposition"
 
     - **Mått**: tillämpa en Quantum-åtgärd eller en sekvens med åtgärder för en eller flera qubits, och Läs sedan ut klassiska data.
 
-      *Fler*
+      *Exempel:*
       - @"microsoft.quantum.intrinsic.measure"
       - @"microsoft.quantum.arithmetic.measurefxp"
       - @"microsoft.quantum.arithmetic.measureinteger"
 
-    - **Tillämpa**: tillämpa en Quantum-åtgärd eller en sekvens med åtgärder på en eller flera qubits, vilket gör att qubits ändras på ett konsekvent sätt. Det här verbet är det mest generella\# verbet i Q-nomenklaturen och **bör inte** användas när ett mer särskilt verb är direkt relevant.
+    - **Tillämpa**: tillämpa en Quantum-åtgärd eller en sekvens med åtgärder på en eller flera qubits, vilket gör att qubits ändras på ett konsekvent sätt. Det här verbet är det mest generella verbet i Q \# -nomenklaturen och **bör inte** användas när ett mer särskilt verb är direkt relevant.
 
   - **Substantiv**:
 
     - **Fakta**: ett booleskt villkor som bara är beroende av sina indata och inte på en måldators tillstånd, dess miljö eller tillståndet för datorns qubits. Till skillnad från en försäkran är ett faktum bara känsligt för de *värden* som anges i detta faktum. Ett exempel:
 
-      *Fler*
+      *Exempel:*
       - @"microsoft.quantum.diagnostics.equalityfacti": representerar ett likhets faktum mellan två heltals indata; antingen är de heltal som anges som indata lika med varandra, eller inte, oberoende av andra program tillstånd.
 
     - **Alternativ:** En UDT som innehåller flera namngivna objekt som kan fungera som valfria argument till en funktion eller åtgärd. Ett exempel:
 
-      *Fler*
-      - @"microsoft.quantum.machinelearning.trainingoptions" UDT innehåller namngivna objekt för inlärnings pris, minibatch storlek och andra konfigurerbara parametrar för ml-utbildning.
+      *Exempel:*
+      - @"microsoft.quantum.machinelearning.trainingoptions"UDT innehåller namngivna objekt för inlärnings pris, minibatch storlek och andra konfigurerbara parametrar för ml-utbildning.
 
   - **Adjektiv**:
 
@@ -264,8 +264,8 @@ Den här artikeln innehåller de här principerna och ger exempel på hur du kan
 
     - **Som:** Visar att en funktions indata och utdata representerar samma information, men att utdata representerar den informationen **som** ett *X* i stället för den ursprungliga representationen. Detta är särskilt vanligt för typ konverterings funktioner.
 
-      *Fler*
-      - `IntAsDouble(2)`anger att både indata (`2`) och utdata (`2.0`) representerar samma information, men använder olika frågor\# för att göra detta.
+      *Exempel:*
+      - `IntAsDouble(2)`anger att både indata ( `2` ) och utdata ( `2.0` ) representerar samma information, men använder olika frågor \# för att göra detta.
 
     - **Från:** För att säkerställa konsekvens **bör** denna förposition inte användas för att indikera typ konverterings funktioner eller andra **fall där det** är lämpligt.
 

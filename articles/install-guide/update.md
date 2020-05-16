@@ -1,5 +1,5 @@
 ---
-title: Lär dig hur du uppdaterar Microsoft Quantum Development Kit (QDK)
+title: Uppdatera Quantum Development Kit (QDK)
 description: 'Beskriver hur du uppdaterar dina Q #-projekt och Microsoft Quantum Development Kit till den aktuella versionen.'
 author: natke
 ms.author: nakersha
@@ -7,12 +7,12 @@ ms.date: 9/30/2019
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.update
-ms.openlocfilehash: bf6d6d3d80af485b555429f25b125bfea685bebf
-ms.sourcegitcommit: c57c271ab73f75f165401651fad2b5bc143e9c8f
+ms.openlocfilehash: 53f72f1d49ae32a5a8572a1cf68a66a1d9b45e4a
+ms.sourcegitcommit: 2317473fdf2b80de58db0f43b9fcfb57f56aefff
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82862215"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83426915"
 ---
 # <a name="update-the-microsoft-quantum-development-kit-qdk"></a>Uppdatera Microsoft Quantum Development Kit (QDK)
 
@@ -34,14 +34,14 @@ Följ dessa anvisningar om du vill uppdatera dina Q #-projekt oavsett om du anv�
     dotnet --version
     ```
 
-    Kontrol lera att utdata `3.1.100` är eller högre. Om inte, installerar du den [senaste versionen](https://dotnet.microsoft.com/download) och kontrollerar igen. Följ sedan anvisningarna nedan beroende på dina inställningar (Visual Studio, Visual Studio Code eller direkt på kommando raden).
+    Kontrol lera att utdata är `3.1.100` eller högre. Om inte, installerar du den [senaste versionen](https://dotnet.microsoft.com/download) och kontrollerar igen. Följ sedan anvisningarna nedan beroende på dina inställningar (Visual Studio, Visual Studio Code eller direkt på kommando raden).
 
 ### <a name="update-q-projects-in-visual-studio"></a>Uppdatera Q #-projekt i Visual Studio
  
 1. Uppdatera till den senaste versionen av Visual Studio 2019 finns [här](https://docs.microsoft.com/visualstudio/install/update-visual-studio?view=vs-2019) för instruktioner
 2. Öppna din lösning i Visual Studio
-3. Välj **Bygg** -> **ren lösning** på menyn
-4. I var och en av dina. CSPROJ-filer uppdaterar du mål `netcoreapp3.1` ramverket `netstandard2.1` till (eller om det är ett biblioteks projekt).
+3. Välj **Bygg**  ->  **ren lösning** på menyn
+4. I var och en av dina. CSPROJ-filer uppdaterar du mål ramverket till `netcoreapp3.1` (eller `netstandard2.1` om det är ett biblioteks projekt).
     Det vill säga Redigera rader i formuläret:
 
     ```xml
@@ -50,7 +50,7 @@ Följ dessa anvisningar om du vill uppdatera dina Q #-projekt oavsett om du anv�
 
     Du hittar mer information om att ange mål ramverk [här](https://docs.microsoft.com/dotnet/standard/frameworks#how-to-specify-target-frameworks).
 5. Spara och Stäng alla filer i lösningen
-6. Välj **verktyg** -> **kommando rad** -> **utvecklare kommando tolk**
+6. Välj **verktyg**  ->  **kommando rad**  ->  **utvecklare kommando tolk**
 7. Kör följande kommando för varje projekt i lösningen:
 
     ```dotnetcli
@@ -58,7 +58,7 @@ Följ dessa anvisningar om du vill uppdatera dina Q #-projekt oavsett om du anv�
     ```
 
    Om dina projekt använder andra Microsoft. Quantum-paket (t. ex. Microsoft. Quantum. numeric) kör du kommandot för dessa.
-8. Stäng kommando tolken och välj **skapa** -> **build-lösning** (Välj *inte* att återskapa lösningen)
+8. Stäng kommando tolken och välj **skapa**  ->  **build-lösning** (Välj *inte* att återskapa lösningen)
 
 Nu kan du gå vidare till [Uppdatera ditt Visual Studio QDK-tillägg](#update-visual-studio-qdk-extension).
 
@@ -66,7 +66,7 @@ Nu kan du gå vidare till [Uppdatera ditt Visual Studio QDK-tillägg](#update-vi
 ### <a name="update-q-projects-in-visual-studio-code"></a>Uppdatera Q #-projekt i Visual Studio Code
 
 1. Öppna mappen som innehåller projektet som ska uppdateras i Visual Studio Code
-2. Välj **Terminal** -> ,**ny terminal**
+2. Välj **Terminal**,  ->  **ny terminal**
 3. Följ anvisningarna för uppdatering med hjälp av kommando raden (direkt nedan)
 
 ### <a name="update-q-projects-using-the-command-line"></a>Uppdatera Q #-projekt med hjälp av kommando raden
@@ -78,7 +78,7 @@ Nu kan du gå vidare till [Uppdatera ditt Visual Studio QDK-tillägg](#update-vi
     dotnet clean [project_name].csproj
     ```
 
-3. I var och en av dina. CSPROJ-filer uppdaterar du mål `netcoreapp3.1` ramverket `netstandard2.1` till (eller om det är ett biblioteks projekt).
+3. I var och en av dina. CSPROJ-filer uppdaterar du mål ramverket till `netcoreapp3.1` (eller `netstandard2.1` om det är ett biblioteks projekt).
     Det vill säga Redigera rader i formuläret:
 
     ```xml
@@ -136,7 +136,7 @@ Välj din utvecklings miljö nedan.
     Jupyter Core: 1.2.20112.0
     ```
 
-    Oroa dig inte om `iqsharp` din version är högre, den ska överensstämma med den [senaste versionen](xref:microsoft.quantum.relnotes).
+    Oroa dig inte om din `iqsharp` version är högre, den ska överensstämma med den [senaste versionen](xref:microsoft.quantum.relnotes).
 
 3. Uppdatera `qsharp` paketet
 
@@ -189,7 +189,7 @@ Välj din utvecklings miljö nedan.
     Jupyter Core: 1.2.20112.0
     ```
 
-    Oroa dig inte om `iqsharp` din version är högre, den ska överensstämma med den [senaste versionen](xref:microsoft.quantum.relnotes).
+    Oroa dig inte om din `iqsharp` version är högre, den ska överensstämma med den [senaste versionen](xref:microsoft.quantum.relnotes).
 
 3. Kör följande kommando från en cell i Jupyter Notebook:
 
@@ -220,7 +220,7 @@ Välj din utvecklings miljö nedan.
 
 2. Uppdatera Quantum-projektmallar:
 
-   - Gå till **Visa** -> **kommando palett**
+   - Gå till **Visa**  ->  **kommando palett**
    - Välj **Q #: installera projektmallar**
    - Efter några sekunder bör du få ett popup-meddelande om att Project-mallar har installerats
 
@@ -231,7 +231,3 @@ Välj din utvecklings miljö nedan.
     ```dotnetcli
     dotnet new -i Microsoft.Quantum.ProjectTemplates
     ```
-
-## <a name="whats-next"></a>Nästa steg
-
-Nu när du har uppdaterat Quantum Development Kit i din önskade miljö kan du fortsätta att utveckla och köra dina Quantum-program. Om du inte har skrivit ett program ännu kan du komma igång med [ditt första Quantum-program](xref:microsoft.quantum.write-program).
