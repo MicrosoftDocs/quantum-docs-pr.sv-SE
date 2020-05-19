@@ -6,12 +6,12 @@ ms.author: nakersha
 ms.date: 09/30/2019
 ms.topic: article
 uid: microsoft.quantum.relnotes
-ms.openlocfilehash: 91f12ef6bd15e27c8920471442c66ff3b1e71122
-ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+ms.openlocfilehash: f365d471d9af73828b78c4fab8579557310a5288
+ms.sourcegitcommit: 2317473fdf2b80de58db0f43b9fcfb57f56aefff
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82677096"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83426767"
 ---
 # <a name="microsoft-quantum-development-kit-release-notes"></a>Viktig information för Microsoft Quantum Development Kit
 
@@ -48,7 +48,7 @@ Den här versionen innehåller några mindre felkorrigeringar för version 0.11.
 
 Den här versionen innehåller följande:
 
-- Nytt stöd för åtkomstmodifierare i Q#. Mer information finns i [Filstrukturer](xref:microsoft.quantum.language.file-structure#internal-declarations)
+- Nytt stöd för åtkomstmodifierare i Q#. Mer information finns i [Filstrukturer](xref:microsoft.quantum.guide.filestructure)
 - Uppdaterades till .NET Core SDK 3.1
 
 Se den fullständiga listan med stängda PR:er för [bibliotek](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed), [kompilator](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+is%3Aclosed), [runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+is%3Aclosed), [exempel](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed) och [Katas](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+is%3Aclosed).  
@@ -86,7 +86,7 @@ Se den fullständiga listan med stängda PR:er för [bibliotek](https://github.c
 
 Den här versionen innehåller följande:
 
-- Nytt testattribut för Q#-enhetstestning: se uppdaterad API-dokumentation [här](https://docs.microsoft.com/qsharp/api/qsharp/microsoft.quantum.diagnostics.test) och uppdaterad vägledning för testning och felsökning [här](xref:microsoft.quantum.techniques.testing-and-debugging)
+- Nytt testattribut för Q#-enhetstestning: se uppdaterad API-dokumentation [här](https://docs.microsoft.com/qsharp/api/qsharp/microsoft.quantum.diagnostics.test) och uppdaterad vägledning för testning och felsökning [här](xref:microsoft.quantum.guide.testingdebugging)
 - Stackspårning har lagts till i händelse av ett körningsfel för #Q-program
 - Stöd för brytpunkter i Visual Studio Code på grund av en uppdatering i [OmniSharp C# Visual Studio Code-tillägget](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp)
 
@@ -133,7 +133,7 @@ Se den fullständiga listan med stängda PR:er för [bibliotek](https://github.c
 
 Den här versionen innehåller följande:
 
-- Nytt stöd för [konjugationsuttryck](xref:microsoft.quantum.language.statements#conjugations) i Q#
+- Nytt stöd för [konjugationsuttryck](xref:microsoft.quantum.guide.operationsfunctions#conjugations) i Q#
 - Nya kodåtgärder i kompilatorn, till exempel ”replace with” (ersätt med), ”add documentation” (lägg till dokumentation) och uppdatering av objekt i enkla matriser
 - Lade till installationsmall och nya projektkommandon i Visual Studio Code-tillägget
 - Lade till nya varianter av ApplyIf-kombinatorn, till exempel [Microsoft.Quantum.Canon.ApplyIfOne](xref:microsoft.quantum.canon.applyifone)
@@ -150,7 +150,7 @@ Se den fullständiga listan med stängda PR:er för [bibliotek](https://github.c
 
 Den här versionen innehåller följande:
 
-- Nya indexeringsplatser för segmentering av matriser. Mer information finns i [språkreferensen](xref:microsoft.quantum.language.expressions#array-slices).
+- Nya indexeringsplatser för segmentering av matriser. Mer information finns i [språkreferensen](xref:microsoft.quantum.guide.expressions#array-slices).
 - Lade till Dockerfile som värdhanteras i [Microsoft-containerregistret](https://github.com/microsoft/ContainerRegistry). Mer information finns på [IQ#-lagringsplatsen](https://github.com/microsoft/iqsharp/blob/master/README.md)
 - Icke-bakåtkompatibel ändring för [spårningssimulatorn](xref:microsoft.quantum.machines.qc-trace-simulator.intro), uppdatering av konfigurationsinställningar, namnändringar; se [.NET API-webbläsaren för de uppdaterade namnen](https://docs.microsoft.com/dotnet/api/microsoft.quantum.simulation.simulators.qctracesimulators.qctracesimulatorconfiguration).
 
@@ -171,10 +171,10 @@ Se den fullständiga listan med stängda PR:er för [bibliotek](https://github.c
 
 ### <a name="q-language-syntax"></a>Språksyntax för Q#
 Den här versionen lägger till ny syntax för Q#-språket:
-* Lägger till namngivna objekt för [användardefinierade typer](xref:microsoft.quantum.language.type-model#user-defined-types).  
+* Lägger till namngivna objekt för [användardefinierade typer](xref:microsoft.quantum.guide.types#user-defined-types).  
 * Användardefinierade konstruktorer kan nu användas som funktioner.
-* Lägger till stöd för [kopiera och uppdatera](xref:microsoft.quantum.language.expressions#copy-and-update-expressions) samt [tillämpa och omtilldela]((xref:microsoft.quantum.language.statements#rebinding-of-mutable-symbols)) i användardefinierade typer.
-* Korrigeringsblock för [upprepas tills det lyckas](xref:microsoft.quantum.language.statements#repeat-until-success-loop)-loopar är nu valfria.
+* Lägger till stöd för [kopiera och uppdatera](xref:microsoft.quantum.guide.expressions#copy-and-update-expressions) samt [tillämpa och omtilldela](xref:microsoft.quantum.guide.variables#rebinding-of-mutable-symbols) i användardefinierade typer.
+* Korrigeringsblock för [upprepas tills det lyckas](xref:microsoft.quantum.guide.controlflow#repeat-until-success-loop)-loopar är nu valfria.
 * Vi stöder nu while-loopar i funktioner (inte i åtgärder).
 
 ### <a name="library"></a>Bibliotek 
@@ -202,10 +202,10 @@ Den här versionen innehåller följande:
 
 ### <a name="q-language-syntax"></a>Språksyntax för Q#
 Den här versionen lägger till ny syntax för Q#-språket:
-* Lägger till ett [kort sätt att uttrycka specialiseringar av kvantåtgärder](xref:microsoft.quantum.language.type-model#functors) (kontroll och angränsande) med `+`-operatorer.  Den gamla syntaxen är inaktuell.  Program som använder den gamla syntaxen (till exempel `: adjoint`) fortsätter att fungera, men det genereras en varning vid kompileringstid.  
-* Lägger till en ny operator för [kopiera-och-uppdatera](xref:microsoft.quantum.language.expressions#copy-and-update-expressions), `w/`, som kan användas för att uttrycka skapande av matris som en ändring av en befintlig matris.
-* Lägger till den vanliga [tillämpa och uppdatera-instruktionen](xref:microsoft.quantum.language.statements#rebinding-of-mutable-symbols), till exempel `+=`, `w/=`.
-* Lägger till ett sätt att ange ett kort namn för namnrymder i [öppna direktiv](xref:microsoft.quantum.language.file-structure#open-directives).
+* Lägger till ett [kort sätt att uttrycka specialiseringar av kvantåtgärder](xref:microsoft.quantum.guide.operationsfunctions#controlled-and-adjoint-operations) (kontroll och angränsande) med `+`-operatorer.  Den gamla syntaxen är inaktuell.  Program som använder den gamla syntaxen (till exempel `: adjoint`) fortsätter att fungera, men det genereras en varning vid kompileringstid.  
+* Lägger till en ny operator för [kopiera-och-uppdatera](xref:microsoft.quantum.guide.expressions#copy-and-update-expressions), `w/`, som kan användas för att uttrycka skapande av matris som en ändring av en befintlig matris.
+* Lägg till den vanliga [”tillämpa och uppdatera”-instruktionen](xref:microsoft.quantum.guide.variables#rebinding-of-mutable-symbols), till exempel `+=`, `w/=`.
+* Lägger till ett sätt att ange ett kort namn för namnrymder i [öppna direktiv](xref:microsoft.quantum.guide.filestructure#open-directives).
 
 Från och med den här versionen tillåter vi inte längre att ett matriselement anges på vänster sida av en set-instruktion.  Detta beror på att den syntaxen antyder att matriser är föränderliga, när resultatet av den här åtgärden i själva verket alltid har varit skapandet av en ny matris med ändringen.  I stället genereras ett kompileringsfel med ett förslag om att använda den nya kopiera och uppdatera-operatorn `w/` för att åstadkomma samma resultat.  
 
@@ -280,7 +280,7 @@ Den här versionen innehåller följande:
 
 - Buggkorrigering för DumpRegister-problem som rapporterats av communityn ([#148](https://github.com/Microsoft/Quantum/issues/148)).
 
-- Lade till möjligheten att returnera inifrån en [using-instruktion](xref:microsoft.quantum.language.statements).
+- Lade till möjligheten att returnera inifrån en [using-instruktion](xref:microsoft.quantum.guide.qubits#allocating-qubits).
 
 - Omarbetade [komma igång-guiden](xref:microsoft.quantum.install).
 
@@ -303,7 +303,7 @@ Den här versionen innehåller följande:
 
 Den här versionen innehåller följande:
 
-- lägger till stöd för en ny primitiv typ, BigInt, som representerar ett heltal med tecken av godtycklig storlek.  Läs mer om [BigInt-typen](xref:microsoft.quantum.language.type-model).
+- lägger till stöd för en ny primitiv typ, BigInt, som representerar ett heltal med tecken av godtycklig storlek.  Läs mer om [BigInt-typen](xref:microsoft.quantum.guide.types).
 - lägger till en ny Toffoli-simulator, en specialiserad snabb simulator som kan simulera X, CNOT och multikontrollerade X-kvantåtgärder med mycket stora antal kvantbitar.  Läs mer om [Toffoli-simulatorn](xref:microsoft.quantum.machines.toffoli-simulator).
 - lägger till ett enkelt resursuppskattningsverktyg som beräknar de resurser som krävs för att köra en specifik instans av en Q#-åtgärd på en kvantdator.  Läs mer om [resursuppskattningsverktyget](xref:microsoft.quantum.machines.resources-estimator).
 
@@ -427,7 +427,7 @@ Den här uppdateringen lägger till nya felsökningsfunktioner:
 * I Visual Studio visas sannolikheten för att mäta en $\ket{1}$ på en enda kvantbit automatiskt i felsökningsfönstret för QuantumSimulator-måldatorn.
 * I Visual Studio har visningen av variabelegenskaper i felsökningsfönstren **Autos** och **Locals** förbättrats. 
 
-Läs mer om [testning och felsökning](xref:microsoft.quantum.techniques.testing-and-debugging).
+Läs mer om [testning och felsökning](xref:microsoft.quantum.guide.testingdebugging).
 
 ### <a name="community-contributions"></a>Bidrag från communityn
 

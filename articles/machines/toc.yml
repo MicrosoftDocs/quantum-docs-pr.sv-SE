@@ -1,10 +1,10 @@
 - name: Översikt
   href: index.md
-- name: Kvantsimulator
+- name: Simulator med fullständigt tillstånd
   href: full-state-simulator.md
 - name: Resursberäknare
   href: resources-estimator.md
-- name: Spårningssimulator för kvantdator
+- name: Spårningssimulator
   topicHref: qc-trace-simulator/index.md
   href: qc-trace-simulator/toc.yml
 - name: Toffoli-simulator
