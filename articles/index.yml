@@ -9,35 +9,33 @@ metadata:
   ms.collection: collection
   author: cjgronlund
   ms.author: cgronlun
-  ms.date: 10/21/2019
-  ms.openlocfilehash: e21b191689c228fa3e7c0590ee2f79f625b3960d
-  ms.sourcegitcommit: 9d1c045cf1a2c3e19030cb38dbc7496dbd24ab58
+  ms.date: 5/10/2020
+  ms.openlocfilehash: 7c0fdf596c3409f0e1db7773b079a258d14a7d9c
+  ms.sourcegitcommit: 2317473fdf2b80de58db0f43b9fcfb57f56aefff
   ms.translationtype: HT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 04/13/2020
-  ms.locfileid: "80320825"
+  ms.lasthandoff: 05/15/2020
+  ms.locfileid: "83426883"
 landingContent:
 - title: Kvantberäkning
   linkLists:
   - linkListType: learn
     links:
-    - text: Vad är kvantberäkning?
-      url: overview/what-is-quantum-computing.md
-    - text: Vad kan en kvantdator göra?
-      url: overview/quantum-computers.md
-    - text: Varför ska man lära sig kvantberäkning?
-      url: overview/why-learn-quantum-computing.md
+    - text: Så här fungerar kvantberäkning
+      url: overview/understanding-quantum-computing.md
+    - text: Kvantdatorer och kvantsimulatorer
+      url: overview/quantum-computers-and-simulators.md
     - text: Vad är Q# och QDK?
-      url: overview/what-is-qsharp.md
-    - text: Hur hittar jag mer information?
-      url: overview/how-to-learn-quantum-computing.md
+      url: overview/what-is-qsharp-and-qdk.md
+    - text: Linjär algebra för kvantberäkning
+      url: overview/algebra-for-quantum-computing.md
   - linkListType: concept
     links:
     - text: Begrepp inom kvantberäkning
       url: concepts/index.md
-- title: Få Quantum Development Kit
+- title: Kom igång med Quantum Development Kit
   linkLists:
-  - linkListType: overview
+  - linkListType: get-started
     links:
     - text: Quantum Development Kit
       url: welcome.md
@@ -49,15 +47,13 @@ landingContent:
       url: install-guide/update.md
 - title: Q#-programmeringsspråket
   linkLists:
-  - linkListType: overview
+  - linkListType: how-to-guide
     links:
-    - text: Introduktion till Q#-språk
-      url: language/index.md
-    - text: Q#-utvecklingstekniker
-      url: techniques/index.md
+    - text: Q#-användarhandbok
+      url: user-guide/index.md
     - text: Kvantsimulatorer och värdprogram
       url: machines/index.md
-  - linkListType: quickstart
+  - linkListType: tutorial
     links:
     - text: Bygga en kvantgenerator för slumptal
       url: quickstarts/qrng.md
