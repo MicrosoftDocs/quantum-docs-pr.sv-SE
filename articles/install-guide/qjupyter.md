@@ -1,19 +1,19 @@
 ---
-title: 'Utveckla med Q # Jupyter-anteckningsböcker'
+title: Utveckla med Q# Jupyter Notebooks
 author: natke
 ms.author: nakersha
 ms.date: 9/30/2019
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.install.jupyter
-ms.openlocfilehash: 3302a9bd0652b2dea86b844058bf8303ee7a4a7f
-ms.sourcegitcommit: c85c1b439807ac576d3a11aadca307d57b059673
+ms.openlocfilehash: 0c4dc856c94b0a694fb99607eda64cec4d5c221d
+ms.sourcegitcommit: 328f45a0b64cb6b325fa9d3b3ddb74a6a7a97ee9
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "83551047"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83660765"
 ---
-# <a name="develop-with-q-jupyter-notebooks"></a>Utveckla med Q # Jupyter-anteckningsböcker
+# <a name="develop-with-q-jupyter-notebooks"></a>Utveckla med Q# Jupyter Notebooks
 
 Installera QDK för utveckling av Q #-åtgärder på Q # Jupyter Notebooks.
 
@@ -45,9 +45,9 @@ IQ# (uttalas i-q-sharp) är ett tillägg som främst används av Jupyter och Pyt
         jupyter notebook
         ```
 
-    - Öppna Jupyter Notebook-kopian och klistra in den URL som tillhandahålls av kommando raden i webbläsaren.
+    - Om du vill öppna Jupyter Notebook kopierar du och klistrar in webb adressen som tillhandahålls av kommando raden i webbläsaren.
 
-    - Skapa en Jupyter Notebook med en Q#-kernel och lägg till följande kod i den första Notebook-cellen:
+    - Skapa en Jupyter Notebook med en Q #-kernel och Lägg till följande kod i den första notebook-cellen:
 
         ```qsharp
         operation SayHello () : Unit {
@@ -57,17 +57,21 @@ IQ# (uttalas i-q-sharp) är ett tillägg som främst används av Jupyter och Pyt
 
     - Kör följande Notebook-cell:
 
-        ![Jupyter Notebook-cell med Q#-kod](~/media/install-guide-jupyter.png)
+        ![Jupyter Notebook cell med Q # Code](~/media/install-guide-jupyter.png)
 
-        Du bör se `SayHello` i cellens utdata. När du använder Jupyter Notebook kompileras Q#-koden och Notebook visar namnet på den eller de åtgärder som den hittar.
+        Du bör se `SayHello` i cellens utdata. När du kör i Jupyter Notebook kompileras Q #-koden och antecknings boken visar namnet på den eller de åtgärder som den hittar.
 
 
     - I en ny cell kör du åtgärden som du nyss skapade (i en simulator) genom att använda `%simulate` kommandot:
 
-        ![Jupyter Notebook-cell med %simulate magic](~/media/install-guide-jupyter-simulate.png)
+        ![Jupyter Notebook cell med% simulera Magic](~/media/install-guide-jupyter-simulate.png)
 
         Du bör se meddelandet som skrivs ut på skärmen tillsammans med resultatet av den åtgärd du anropade (här ser vi den tomma tuppeln `()` eftersom vår åtgärd bara returnerar en `Unit` typ).
 
 ## <a name="next-steps"></a>Nästa steg
 
-Nu när du har installerat Quantum Development Kit i din önskade miljö, kan du skriva och köra [ditt första kvantprogram](xref:microsoft.quantum.quickstarts.qrng).
+Nu när du har installerat QDK för Q # Jupyter Notebooks kan du skriva och köra [ditt första Quantum-program](xref:microsoft.quantum.quickstarts.qrng) genom att skriva din Q #-kod direkt i Jupyter Notebooks miljön.
+
+För fler exempel på vad du kan göra med Q # Jupyter notebooks, kan du ta en titt på:
+- [Introduktion till Q # och Jupyter Notebook](https://docs.microsoft.com/samples/microsoft/quantum/intro-to-qsharp-jupyter/). Där hittar du ett Q #-Jupyter Notebook som visar hur du använder Q # i den här miljön.
+- [Quantum Katas](xref:microsoft.quantum.overview.katas), en samling med öppen källkod i självstudier och uppsättningar av programmerings övningar i form av Q # Jupyter Notebooks. [Datorerna i Quantum Katas-självstudier](https://github.com/microsoft/QuantumKatas#tutorial-topics) är en start punkt. Quantum Katas syftar till att lära dig element i Quantum data behandling och Q #-programmering på samma tidpunkt. De är ett utmärkt exempel på vilken typ av innehåll som du kan skapa med Q # Jupyter Notebooks.

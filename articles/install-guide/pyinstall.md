@@ -6,12 +6,12 @@ ms.date: 9/30/2019
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.install.python
-ms.openlocfilehash: a8c5b9c25c069f98ef8eefd6cfbc36bf3376931c
-ms.sourcegitcommit: 2317473fdf2b80de58db0f43b9fcfb57f56aefff
+ms.openlocfilehash: 35499daae0cd0ae329e39b43b0d8dd5a00183871
+ms.sourcegitcommit: 328f45a0b64cb6b325fa9d3b3ddb74a6a7a97ee9
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83426369"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83660724"
 ---
 # <a name="develop-with-q-and-python"></a>Utveckla med Q # och python
 
@@ -21,7 +21,7 @@ Installera QDK för att utveckla python-värdprogram för att anropa Q #-åtgär
 
     - [Python](https://www.python.org/downloads/) 3.6 eller senare
     - [PIP](https://pip.pypa.io/en/stable/installing) Python-pakethanterare
-    - [.NET Core SDK 3,1 eller senare](https://www.microsoft.com/net/download)
+    - [.NET Core SDK 3,1](https://dotnet.microsoft.com/download/dotnet-core/3.1)
 
 
 1. Installera `qsharp` paketet, ett python-paket som aktiverar interop mellan Q # och python.

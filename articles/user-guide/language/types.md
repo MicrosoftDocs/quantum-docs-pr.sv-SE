@@ -1,19 +1,19 @@
 ---
-title: 'Typer i Q #'
+title: Typer i Q#
 description: 'Lär dig mer om de olika typerna som används i programmeringsspråk för Q #.'
 author: gillenhaalb
 ms.author: a-gibec@microsoft.com
 ms.date: 03/05/2020
 ms.topic: article
 uid: microsoft.quantum.guide.types
-ms.openlocfilehash: 58370193bd62e306197a9e07c28f8611f043e55c
-ms.sourcegitcommit: 2317473fdf2b80de58db0f43b9fcfb57f56aefff
+ms.openlocfilehash: 4a551ee90a0abb6e42953cf04c7f5a8ca3573f26
+ms.sourcegitcommit: 682a4a5f5dd23ca58a4addf62aea4086bb308552
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83431146"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83609149"
 ---
-# <a name="types-in-q"></a>Typer i Q #
+# <a name="types-in-q"></a>Typer i Q#
 
 På den här sidan får du en modell av typen Q # och beskriver syntaxen för att ange och arbeta med typer.
 Nästa sida, [Skriv uttryck](xref:microsoft.quantum.guide.expressions), information om hur du skapar och arbetar med uttryck av dessa typer.
@@ -35,7 +35,7 @@ Q #-språket innehåller flera *primitiva typer*, från vilka andra typer kan ko
    bastyp.
 - `Double`Typen representerar ett flyttal med dubbel precision, t. ex.: `0.0` , `-1.3` , `4e-7` .
 - `Bool`Typen representerar ett booleskt värde som antingen kan vara `true` eller `false` .
-- `Range`Typen representerar en sekvens med heltal, som betecknas av `start..step..stop` , där det finns alternativ för att se om steget är. 
+- `Range`Typen representerar en sekvens med heltal, som betecknas av `start..step..stop` , där det är valfritt att ange steget. 
    Detta `start .. stop` motsvarar `start..1..stop` , och t. ex. `1..2..7` representerar sekvensen $ \{ 1, 3, 5, 7 \} $.
 - `String`Typen är en sekvens med Unicode-tecken som är ogenomskinlig för användaren när den har skapats.
   Den här typen används för att rapportera meddelanden till en klassisk-värd om det uppstår ett fel eller en diagnostisk händelse.
@@ -125,7 +125,7 @@ Vi refererar till denna egenskap som _likhet med singleton-tupel_.
 
 En användardefinierad typ deklaration består av nyckelordet `newtype` , följt av namnet på den användardefinierade typen, en `=` , en giltig typ specifikation och ett avslutande semikolon.
 
-Ett exempel:
+Till exempel:
 
 ```qsharp
 newtype PairOfInts = (Int, Int);
