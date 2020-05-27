@@ -6,16 +6,16 @@ ms.author: chgranad@microsoft.com
 ms.date: 10/19/2019
 ms.topic: article
 uid: microsoft.quantum.quickstarts.search
-ms.openlocfilehash: c67ccd16957ceef694552bdd9c073ba5a35d8aaf
-ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+ms.openlocfilehash: 9562e1937a2cac49d682cc0524d8fb29e276d95c
+ms.sourcegitcommit: 2317473fdf2b80de58db0f43b9fcfb57f56aefff
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82686834"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83426814"
 ---
-# <a name="quickstart-implement-grovers-search-algorithm-in-q"></a>Snabbstart: Implementera Grovers sökalgoritm i Q\#
+# <a name="tutorial-implement-grovers-search-algorithm-in-q"></a>Självstudier: Implementera Grovers sökalgoritm i Q\#
 
-I den här snabbstarten får du lära dig att skapa och köra Grover-sökning som påskyndar sökningen i ostrukturerade data.  Grovers sökning är en av de mest populära kvantberäkningsalgoritmerna. Den här relativt lilla Q#-implementeringen ger dig en uppfattning om några av fördelarna med programmering av kvantlösningar med kvantprogrammeringsspråket Q# som på hög nivå uttrycker kvantalgoritmer.  I slutet av guiden kommer du att se att simuleringen hittar en specifik sträng i listan med osorterade poster på en bråkdel av den tid det skulle ta att söka igenom hela listan på en klassisk dator.
+I den här självstudien lär du dig att skapa och köra Grover-sökning som påskyndar sökningen i ostrukturerade data.  Grovers sökning är en av de mest populära kvantberäkningsalgoritmerna. Den här relativt lilla Q#-implementeringen ger dig en uppfattning om några av fördelarna med programmering av kvantlösningar med kvantprogrammeringsspråket Q# som på hög nivå uttrycker kvantalgoritmer.  I slutet av guiden kommer du att se att simuleringen hittar en specifik sträng i listan med osorterade poster på en bråkdel av den tid det skulle ta att söka igenom hela listan på en klassisk dator.
 
 Grovers algoritm söker i en lista med ostrukturerade data efter vissa objekt. Den kan till exempel svara på frågan: Är det här kortet som drogs ur en kortlek hjärter ess? Märkningen av det speciella objektet kallas för _markerad indata_.
 
@@ -104,7 +104,7 @@ Reflecting about marked state...
 
 ## <a name="next-steps"></a>Nästa steg
 
-Om du gillade den här snabbstarten kan du titta närmare på några av resurserna nedan, där du lär dig mer om hur du kan använda Q# för att skriva egna kvantprogram:
+Om du gillade den här självstudien kan du använda resurserna nedan för att lära dig mer om hur du använder Q# för att skriva egna kvantprogram:
 
 - [Tillbaka till guiden Komma igång med QDK](xref:microsoft.quantum.welcome)
 - Prova en mer allmän Grover-sökalgoritm [exempel](https://github.com/microsoft/Quantum/tree/master/samples/algorithms/database-search)

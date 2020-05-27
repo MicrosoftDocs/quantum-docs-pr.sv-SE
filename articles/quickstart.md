@@ -1,23 +1,25 @@
 ---
-title: Kvantgrunder med Q#
+title: Utforska sammanflätning med Q#
 description: Lär dig hur man skriver ett kvantprogram i Q#. Utveckla ett Bell-tillståndsprogram med Quantum Development Kit (QDK)
 author: natke
 ms.author: nakersha
 ms.date: 10/07/2019
 ms.topic: tutorial
 uid: microsoft.quantum.write-program
-ms.openlocfilehash: 8d3b2d7c8da39a961f4eedcc5989ad3a1e134ade
-ms.sourcegitcommit: 7d350db4b5e766cd243633aee7d0a839b6274bd6
+ms.openlocfilehash: 7836e39227fa2282c6e2faa039f6e625103d5403
+ms.sourcegitcommit: 2317473fdf2b80de58db0f43b9fcfb57f56aefff
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "77906737"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83426847"
 ---
-# <a name="quantum-basics-with-q"></a>Kvantgrunder med Q#
+# <a name="tutorial-explore-entanglement-with-q"></a>Självstudier: Utforska sammanflätning med Q\#
 
-I den här snabbstarten visar vi hur du skriver ett Q#-program som ändrar och mäter kvantbitar, samt visar effekterna av superposition och sammanflätning.  Du får hjälp med att installera QDK, skapa programmet och köra programmet på en kvantsimulator.  
+I den här självstudien visar vi hur du skriver ett Q#-program som ändrar och mäter kvantbitar samt visar effekterna av superposition och sammanflätning.
+Du får hjälp med att installera QDK, skapa programmet och köra programmet på en kvantsimulator.  
 
-Du kommer att skriva ett program med namnet Bell som visar kvantsammanflätning.  Namnet Bell syftar på Bell-tillstånd, vilket är specifika kvanttillstånd för två kvantbitar som används för att visa de enklaste exemplen på superposition och kvantsammanflätning. 
+Du kommer att skriva ett program med namnet Bell som visar kvantsammanflätning.
+Namnet Bell syftar på Bell-tillstånd, vilket är specifika kvanttillstånd för två kvantbitar som används för att visa de enklaste exemplen på superposition och kvantsammanflätning.
 
 ## <a name="pre-requisites"></a>Förutsättningar
 
@@ -30,7 +32,7 @@ Du kan också följa med i texten utan att installera QDK. Du får då en övers
 
 ## <a name="demonstrating-qubit-behavior-with-q"></a>Demonstrera kvantbitsbeteende med Q#
 
-Kommer du ihåg vår enkla [definition av en kvantbit](xref:microsoft.quantum.overview.what#the-qubit)?  Där klassiska bitar innehåller ett enda binärt värde av 0 eller 1, kan tillståndet för en kvantbit vara i en **superposition** med 0 och 1 samtidigt.  Begreppsmässigt kan man tänka på en kvantbit som en riktning (kallas även för vektor).  En kvantbit kan ha någon av de riktningar som är möjliga. De två **klassiska tillstånden** är två riktningar. De motsvarar en chans på 100 % att mäta 0 och en chans på 100 % att mäta 1.  Detta kan även visualiseras med [Bloch-sfären](/quantum/concepts/the-qubit#visualizing-qubits-and-transformations-using-the-bloch-sphere).
+Kommer du ihåg vår enkla [definition av en kvantbit](xref:microsoft.quantum.overview.understanding)?  Där klassiska bitar innehåller ett enda binärt värde av 0 eller 1, kan tillståndet för en kvantbit vara i en **superposition** med 0 och 1 samtidigt.  Begreppsmässigt kan man tänka på en kvantbit som en riktning (kallas även för vektor).  En kvantbit kan ha någon av de riktningar som är möjliga. De två **klassiska tillstånden** är två riktningar. De motsvarar en chans på 100 % att mäta 0 och en chans på 100 % att mäta 1.  Detta kan även visualiseras med [Bloch-sfären](/quantum/concepts/the-qubit#visualizing-qubits-and-transformations-using-the-bloch-sphere).
 
 
 Mätningen genererar ett binärt resultat och ändrar kvantbitens tillstånd. Mätningen genererar ett binärt värde, antingen 0 eller 1.  Kvantbiten går från att vara i superposition (vilken riktning som helst) till ett av de klassiska tillstånden.  När du därefter upprepar samma mätning utan några andra åtgärder får du samma binära resultat.  
@@ -498,7 +500,7 @@ Grattis, du har skrivit ditt första kvantprogram!
 
 ## <a name="whats-next"></a>Nästa steg
 
-Snabbstarten för [Grovers sökning](xref:microsoft.quantum.quickstarts.search) visar hur du skapar och kör Grovers sökning, en av de mest populära kvantberäkningsalgoritmerna. Den är ett bra exempel på ett Q#-program som kan användas för att lösa verkliga problem med kvantberäkning.  
+Självstudien [Grovers sökning](xref:microsoft.quantum.quickstarts.search) visar hur du skapar och kör Grovers sökning, en av de mest populära kvantberäkningsalgoritmerna. Den är ett bra exempel på ett Q#-program som kan användas för att lösa verkliga problem med hjälp av kvantberäkning.  
 
 I [Kom igång med Quantum Development Kit](xref:microsoft.quantum.welcome) finns fler sätt att lära sig Q# och kvantprogrammering på.
 
