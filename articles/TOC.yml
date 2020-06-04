@@ -31,6 +31,8 @@
       href: quickstart.md
     - name: Implementera Grovers sökalgoritm
       href: quickstarts/search.md
+    - name: Programmering på qubitnivå
+      href: tutorials/qft-tutorial.md
     - name: 'Lär dig Q# med Quantum Katas'
       href: intro-to-katas.md
     - name: 'Q#-kodexempel'

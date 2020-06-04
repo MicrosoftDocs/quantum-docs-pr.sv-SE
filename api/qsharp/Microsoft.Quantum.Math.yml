@@ -3,9 +3,9 @@ uid: microsoft.quantum.math
 name: Microsoft.Quantum.Math
 functions:
 - uid: microsoft.quantum.math.abscomplex
-  summary: Returnerar det absoluta värdet för ett komplext tal av `Complex`typen.
+  summary: Returnerar det absoluta värdet för ett komplext tal av typen `Complex` .
 - uid: microsoft.quantum.math.abscomplexpolar
-  summary: Returnerar det absoluta värdet för ett komplext tal av `ComplexPolar`typen.
+  summary: Returnerar det absoluta värdet för ett komplext tal av typen `ComplexPolar` .
 - uid: microsoft.quantum.math.absd
   summary: Returnerar det absoluta värdet av ett flyttal med dubbel precision.
 - uid: microsoft.quantum.math.absi
@@ -13,9 +13,9 @@ functions:
 - uid: microsoft.quantum.math.absl
   summary: Returnerar det absoluta värdet för ett stort heltal.
 - uid: microsoft.quantum.math.abssquaredcomplex
-  summary: Returnerar det absoluta värdet för ett komplext tal av typen `Complex`.
+  summary: Returnerar det absoluta värdet för ett komplext tal av typen `Complex` .
 - uid: microsoft.quantum.math.abssquaredcomplexpolar
-  summary: Returnerar det absoluta värdet för ett komplext tal av typen `ComplexPolar`.
+  summary: Returnerar det absoluta värdet för ett komplext tal av typen `ComplexPolar` .
 - uid: microsoft.quantum.math.arccos
   summary: Returnerar den vinkel vars cosinus är det angivna talet.
 - uid: microsoft.quantum.math.arccosh
@@ -31,35 +31,31 @@ functions:
 - uid: microsoft.quantum.math.arctanh
   summary: Beräknar den inverterade hyperboliska tangens för ett tal.
 - uid: microsoft.quantum.math.argcomplex
-  summary: Returnerar fasen för ett komplext tal av typen `Complex`.
+  summary: Returnerar fasen för ett komplext tal av typen `Complex` .
 - uid: microsoft.quantum.math.argcomplexpolar
-  summary: Returnerar fasen för ett komplext tal av typen `ComplexPolar`.
+  summary: Returnerar fasen för ett komplext tal av typen `ComplexPolar` .
 - uid: microsoft.quantum.math.bitsizei
   summary: >-
-    För ett icke-negativt heltal `a`returnerar antalet bitar som krävs för att representera `a`.
+    För ett icke-negativt heltal `a` returnerar antalet bitar som krävs för att representera `a` .
 
 
     Det vill säga returnerar det minsta $n $ som $a < 2 ^ n $.
 - uid: microsoft.quantum.math.bitsizel
   summary: >-
-    För ett icke-negativt heltal `a`returnerar antalet bitar som krävs för att representera `a`.
+    För ett icke-negativt heltal `a` returnerar antalet bitar som krävs för att representera `a` .
 
 
     Det vill säga returnerar det minsta $n $ som $a < 2 ^ n $.
 - uid: microsoft.quantum.math.ceiling
   summary: Returnerar det minsta heltal som är större än eller lika med det angivna talet.
 - uid: microsoft.quantum.math.complexascomplexpolar
-  summary: Konverterar ett komplext tal av `Complex` typen till ett komplext tal `ComplexPolar`av typen.
+  summary: Konverterar ett komplext tal av typen `Complex` till ett komplext tal av typen `ComplexPolar` .
 - uid: microsoft.quantum.math.complexpolarascomplex
-  summary: Konverterar ett komplext tal av `ComplexPolar` typen till ett komplext tal `Complex`av typen.
-- uid: microsoft.quantum.math.complexpolartocomplex
-  summary: "\n> [!WARNING]\n> Inaktuell\n\nComplexPolarToComplex är föråldrad. Använd @\"microsoft.quantum.math.complexpolarascomplex\" i stället."
-- uid: microsoft.quantum.math.complextocomplexpolar
-  summary: "\n> [!WARNING]\n> Inaktuell\n\nComplexToComplexPolar är föråldrad. Använd @\"microsoft.quantum.math.complexascomplexpolar\" i stället."
+  summary: Konverterar ett komplext tal av typen `ComplexPolar` till ett komplext tal av typen `Complex` .
 - uid: microsoft.quantum.math.continuedfractionconvergenti
-  summary: Söker efter den fortsatta fraktions Convergent `fraction` som ligger närmast med nämnaren mindre än eller lika med`denominatorBound`
+  summary: Söker efter den fortsatta fraktions Convergent som ligger närmast `fraction` med nämnaren mindre än eller lika med`denominatorBound`
 - uid: microsoft.quantum.math.continuedfractionconvergentl
-  summary: Söker efter den fortsatta fraktions Convergent `fraction` som ligger närmast med nämnaren mindre än eller lika med`denominatorBound`
+  summary: Söker efter den fortsatta fraktions Convergent som ligger närmast `fraction` med nämnaren mindre än eller lika med`denominatorBound`
 - uid: microsoft.quantum.math.cos
   summary: Returnerar cosinus för den angivna vinkeln.
 - uid: microsoft.quantum.math.cosh
@@ -145,9 +141,9 @@ functions:
 - uid: microsoft.quantum.math.modpowl
   summary: Utför modulär Division på ett tal upphöjt till ett annat tal.
 - uid: microsoft.quantum.math.modulusi
-  summary: Beräknar de kanoniska resterna `value` av `modulus`modulo.
+  summary: Beräknar de kanoniska resterna av `value` modulo `modulus` .
 - uid: microsoft.quantum.math.modulusl
-  summary: Beräknar de kanoniska resterna `value` av `modulus`modulo.
+  summary: Beräknar de kanoniska resterna av `value` modulo `modulus` .
 - uid: microsoft.quantum.math.negationc
   summary: Returnerar den unära negationen av inmatade värden.
 - uid: microsoft.quantum.math.negationcp
@@ -174,16 +170,16 @@ functions:
   summary: Returnerar summan av två indata.
 - uid: microsoft.quantum.math.pnorm
   summary: >-
-    Returnerar `L(p)` normen för en Vector of `Double`s.
+    Returnerar `L(p)` normen för en Vector of `Double` s.
 
 
-    Det vill säga att en matris $x $ av typ `Double[]`returnerar detta $p $-norm $\|x\|\_p = (\ sum_ {j} | x_j | ^ {p}) ^ {1/p} $.
+    Det vill säga att en matris $x $ av typ `Double[]` returnerar detta $p $-norm $ \| x \| \_ p = (\ sum_ {j} | x_j | ^ {p}) ^ {1/p} $.
 - uid: microsoft.quantum.math.pnormalized
   summary: >-
-    Normaliserar en Vector of `Double`s i `L(p)` normen.
+    Normaliserar en Vector of `Double` s i `L(p)` normen.
 
 
-    Det vill säga, med en matris $x $ av `Double[]`typen, returnerar detta en matris där alla element delas av $p $-norm $\|x\|_p $.
+    Det vill säga, med en matris $x $ av typen `Double[]` , returnerar detta en matris där alla element delas av $p $-norm $ \| x \| _p $.
 - uid: microsoft.quantum.math.powc
   summary: Returnerar ett tal upphöjt till en specifik potens.
 - uid: microsoft.quantum.math.powcp
@@ -230,7 +226,7 @@ functions:
   summary: Beräknar heltals delen av ett tal.
 newtypes:
 - uid: microsoft.quantum.math.bigfraction
-  summary: Representerar ett rationellt antal formulär `p/q`. Integer `p` är det första elementet i tuppeln och `q` är det andra elementet i tuppeln.
+  summary: Representerar ett rationellt antal formulär `p/q` . Integer `p` är det första elementet i tuppeln och `q` är det andra elementet i tuppeln.
 - uid: microsoft.quantum.math.complex
   summary: >-
     Representerar ett komplext tal med verkliga och imaginära komponenter.
@@ -243,7 +239,7 @@ newtypes:
 
     Den polära representationen av ett komplext tal är $c = r e ^ {i t} $.
 - uid: microsoft.quantum.math.fraction
-  summary: Representerar ett rationellt antal formulär `p/q`. Integer `p` är det första elementet i tuppeln och `q` är det andra elementet i tuppeln.
+  summary: Representerar ett rationellt antal formulär `p/q` . Integer `p` är det första elementet i tuppeln och `q` är det andra elementet i tuppeln.
 summary: " # <a name=\"summary\"></a>Sammanfattning\n Det här namn området innehåller klassiska matematiska funktioner och data typer."
 operations:
 - uid: microsoft.quantum.math.randomint
@@ -255,9 +251,9 @@ operations:
 - uid: microsoft.quantum.math.randomsinglequbitpauli
   summary: Returnerar en av Pauli-operatörerna med en qubit enhetligt läge.
 metadata:
-  ms.openlocfilehash: 2ad787a0d29e98e25c733d1fdcf0a79fcc8c2803
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 03b75e3dbaa8be699e58fcbcd13db4fbf1c82f12
+  ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82673159"
+  ms.lasthandoff: 06/03/2020
+  ms.locfileid: "84326508"
