@@ -4,13 +4,13 @@ name: Microsoft.Quantum.Arithmetic
 summary: " # <a name=\"summary\"></a>Sammanfattning\n Det här namn området innehåller funktioner och åtgärder som används för konsekvent beräkning av beräkningar."
 functions:
 - uid: microsoft.quantum.arithmetic.bigendianaslittleendian
-  summary: Konverterar ett `BigEndian` qubit-register till `LittleEndian` ett qubit-register genom att kasta om qubit-ordningen.
+  summary: Konverterar ett `BigEndian` qubit-register till ett `LittleEndian` qubit-register genom att kasta om qubit-ordningen.
 - uid: microsoft.quantum.arithmetic.identicalformatfactfxp
   summary: Observera att alla fasta punkt nummer i den angivna matrisen har identiska punkt positioner och qubit-nummer.
 - uid: microsoft.quantum.arithmetic.identicalpointposfactfxp
   summary: Kontroll av att alla fasta punkt nummer i den angivna matrisen har identiska punkt positioner vid räkning från den minst signifikanta biten. Det vill säga antalet bitar minus punkt position måste vara konstant för alla fasta punkt nummer i matrisen.
 - uid: microsoft.quantum.arithmetic.littleendianasbigendian
-  summary: Konverterar ett `LittleEndian` qubit-register till `BigEndian` ett qubit-register genom att kasta om qubit-ordningen.
+  summary: Konverterar ett `LittleEndian` qubit-register till ett `BigEndian` qubit-register genom att kasta om qubit-ordningen.
 - uid: microsoft.quantum.arithmetic.reversedopbe
   summary: Med en åtgärd som tar big-endian-indatamängd returnerar en ny åtgärd som tar lite-endian-indatamängd.
 - uid: microsoft.quantum.arithmetic.reversedopbea
@@ -33,19 +33,19 @@ operations:
 - uid: microsoft.quantum.arithmetic.addfxp
   summary: Lägger till två värden för fasta punkter som lagras i Quantum-registren.
 - uid: microsoft.quantum.arithmetic.addi
-  summary: Väljer automatiskt mellan tillägg med bär och utan, beroende på register storleken för `ys`.
+  summary: Väljer automatiskt mellan tillägg med bär och utan, beroende på register storleken för `ys` .
 - uid: microsoft.quantum.arithmetic.applyleoperationonphasele
-  summary: Tillämpar en åtgärd som tar ett <xref:microsoft.quantum.arithmetic.phaselittleendian> register som inloggat på ett mål register <xref:microsoft.quantum.arithmetic.littleendian>av typen.
+  summary: Tillämpar en åtgärd som tar ett <xref:microsoft.quantum.arithmetic.phaselittleendian> register som inloggat på ett mål register av typen <xref:microsoft.quantum.arithmetic.littleendian> .
 - uid: microsoft.quantum.arithmetic.applyleoperationonphaselea
-  summary: Tillämpar en åtgärd som tar ett <xref:microsoft.quantum.arithmetic.phaselittleendian> register som inloggat på ett mål register <xref:microsoft.quantum.arithmetic.littleendian>av typen.
+  summary: Tillämpar en åtgärd som tar ett <xref:microsoft.quantum.arithmetic.phaselittleendian> register som inloggat på ett mål register av typen <xref:microsoft.quantum.arithmetic.littleendian> .
 - uid: microsoft.quantum.arithmetic.applyleoperationonphaselec
-  summary: Tillämpar en åtgärd som tar ett <xref:microsoft.quantum.arithmetic.phaselittleendian> register som inloggat på ett mål register <xref:microsoft.quantum.arithmetic.littleendian>av typen.
+  summary: Tillämpar en åtgärd som tar ett <xref:microsoft.quantum.arithmetic.phaselittleendian> register som inloggat på ett mål register av typen <xref:microsoft.quantum.arithmetic.littleendian> .
 - uid: microsoft.quantum.arithmetic.applyleoperationonphaseleca
-  summary: Tillämpar en åtgärd som tar ett <xref:microsoft.quantum.arithmetic.phaselittleendian> register som inloggat på ett mål register <xref:microsoft.quantum.arithmetic.littleendian>av typen.
+  summary: Tillämpar en åtgärd som tar ett <xref:microsoft.quantum.arithmetic.phaselittleendian> register som inloggat på ett mål register av typen <xref:microsoft.quantum.arithmetic.littleendian> .
 - uid: microsoft.quantum.arithmetic.applymajorityinplace
   summary: Tillämpar den tre qubit majoritets åtgärden på plats i ett register över qubits.
 - uid: microsoft.quantum.arithmetic.applyphaseleoperationonle
-  summary: Tillämpar en åtgärd som tar ett <xref:microsoft.quantum.arithmetic.littleendian> register som inloggat på ett mål register <xref:microsoft.quantum.arithmetic.phaselittleendian>av typen.
+  summary: Tillämpar en åtgärd som tar ett <xref:microsoft.quantum.arithmetic.littleendian> register som inloggat på ett mål register av typen <xref:microsoft.quantum.arithmetic.phaselittleendian> .
 - uid: microsoft.quantum.arithmetic.applyphaseleoperationonlea
   summary: ''
 - uid: microsoft.quantum.arithmetic.applyphaseleoperationonlec
@@ -71,34 +71,29 @@ operations:
 - uid: microsoft.quantum.arithmetic.applyxorinplace
   summary: Tillämpar en Bitvis-XOR-åtgärd mellan ett klassiskt heltal och ett heltal som representeras av ett register av qubits.
 - uid: microsoft.quantum.arithmetic.assertallzerofxp
-  summary: Helper-funktionen som förutsätter att ett Quantum-fast punkt-nummer initieras till noll, dvs. alla qubits är i tillstånd $ \ket{0}$.
+  summary: Helper-funktionen som förutsätter att ett Quantum-fast punkt-nummer initieras till noll, dvs. alla qubits är i tillstånd $ \ket {0} $.
 - uid: microsoft.quantum.arithmetic.assertmostsignificantbit
   summary: Förutsätter att den viktigaste qubit i ett qubit-register som representerar ett osignerat heltal är i ett visst tillstånd.
 - uid: microsoft.quantum.arithmetic.assertphaselessthan
-  summary: Förutsätter att den `number` kodade i PhaseLittleEndian är mindre `value`än.
+  summary: Förutsätter att den `number` kodade i PhaseLittleEndian är mindre än `value` .
 - uid: microsoft.quantum.arithmetic.assertprobint
   summary: Förutsätter att sannolikheten för ett enskilt tillstånd för ett Quantum-register har det förväntade värdet.
 - uid: microsoft.quantum.arithmetic.carry
-  summary: Implementerar en omvänd bär grind. En driven `carryIn` bit som `summand1` `summand2` `carryIn`är `summand1` kodad i qubit och två summand-bitar som är kodad i och, beräknar den bitvisa XOR och `summand2` `carryOut` `summand2` i qubit och XoReD till qubit.
-- uid: microsoft.quantum.arithmetic.cascadeccnot
-  summary: >-
-    Implementerar en överlappande av CCNOT-grindar som styrs på motsvarande bitar av två qubit-register, och fungerar på nästa qubit i en av registren.
-
-    Från qubits vid position 0 i båda registren register som kontroller, tillämpas CCNOT på qubit vid position 1 i mål registret, och styrs sedan av qubits vid position 1 på qubit vid position 2 i mål registret, osv., som avslutas med en åtgärd på mål qubit i position `Length(nQubits)-1`.
+  summary: Implementerar en omvänd bär grind. En driven bit som är kodad i qubit `carryIn` och två summand-bitar som är kodad i `summand1` och `summand2` , beräknar den bitvisa XOR `carryIn` `summand1` och `summand2` i qubit `summand2` och XoReD till qubit `carryOut` .
 - uid: microsoft.quantum.arithmetic.comparegreaterthanfxp
   summary: Jämför två tal med fasta punkter som lagras i Quantum-registren och styr en vändning på resultatet.
 - uid: microsoft.quantum.arithmetic.comparegti
-  summary: Wrapper för heltals `result = x > y`jämförelse:.
+  summary: 'Wrapper för heltals jämförelse: `result = x > y` .'
 - uid: microsoft.quantum.arithmetic.comparegtsi
-  summary: Omslutning för signerad `result = xs > ys`heltals jämförelse:.
+  summary: 'Omslutning för signerad heltals jämförelse: `result = xs > ys` .'
 - uid: microsoft.quantum.arithmetic.compareusingripplecarry
   summary: Den här åtgärden testar om ett heltal som representeras av ett register över qubits är större än ett annat heltal, och använder en XOR av resultatet på en qubit.
 - uid: microsoft.quantum.arithmetic.computereciprocalfxp
   summary: Beräknar $1/x $ för ett fast punkt nummer $x $.
 - uid: microsoft.quantum.arithmetic.computereciprocali
-  summary: Beräknar motsvarande 1/x för ett osignerat heltal x med hjälp av heltals division. Resultatet, som tolkas som ett heltal, blir `floor(2^(2*n-1) / x)`.
+  summary: Beräknar motsvarande 1/x för ett osignerat heltal x med hjälp av heltals division. Resultatet, som tolkas som ett heltal, blir `floor(2^(2*n-1) / x)` .
 - uid: microsoft.quantum.arithmetic.copymostsignificantbit
-  summary: Kopierar den mest signifikanta biten i ett qubit `from` -register som representerar ett osignerat heltal till `target`qubit.
+  summary: Kopierar den mest signifikanta biten i ett qubit-register `from` som representerar ett osignerat heltal till qubit `target` .
 - uid: microsoft.quantum.arithmetic.dividei
   summary: Dividerar två Quantum-heltal.
 - uid: microsoft.quantum.arithmetic.evaluateevenpolynomialfxp
@@ -124,7 +119,7 @@ operations:
 - uid: microsoft.quantum.arithmetic.measurefxp
   summary: Mät ett fast punkt nummer, returnerar värdet som Double och återställer alla register till noll.
 - uid: microsoft.quantum.arithmetic.measureinteger
-  summary: Mäter innehållet i ett Quantum-register och konverterar det till ett heltal. Mätningen utförs med avseende på standard beräknings basen, d.v.s. eigenbasis `PauliZ`.
+  summary: Mäter innehållet i ett Quantum-register och konverterar det till ett heltal. Mätningen utförs med avseende på standard beräknings basen, d.v.s. eigenbasis `PauliZ` .
 - uid: microsoft.quantum.arithmetic.multiplyandaddbymodularinteger
   summary: Utför en modulär multiplicering och lägger till en heltals konstant i ett qubit-register.
 - uid: microsoft.quantum.arithmetic.multiplyandaddphasebymodularinteger
@@ -134,9 +129,9 @@ operations:
 - uid: microsoft.quantum.arithmetic.multiplyfxp
   summary: Multiplicerar två fasta nummer i Quantum-registren.
 - uid: microsoft.quantum.arithmetic.multiplyi
-  summary: Multiplicera Heltal `xs` med heltal `ys` och lagra resultatet i `result`, som först måste vara noll.
+  summary: Multiplicera Heltal `xs` med heltal `ys` och lagra resultatet i `result` , som först måste vara noll.
 - uid: microsoft.quantum.arithmetic.multiplysi
-  summary: Multiplicera signerat `xs` heltal med signerat heltal `ys` och lagra resultatet `result`i, vilket måste vara noll först.
+  summary: Multiplicera signerat heltal `xs` med signerat heltal `ys` och lagra resultatet i `result` , vilket måste vara noll först.
 - uid: microsoft.quantum.arithmetic.preparefxp
   summary: Initiera ett Quantum-fast punkt-nummer till en klassisk konstant.
 - uid: microsoft.quantum.arithmetic.reflectaboutinteger
@@ -147,22 +142,22 @@ operations:
   summary: >-
     Reversibel, "på plats"-tillägg av två heltal.
 
-    Med två $n $-bitars heltal som är kodade i `xs` LittleEndian `ys`-registren och, och en qubit-aktivitet, beräknar åtgärden summan av de två heltalen där $n $ minst signifikanta bitar av resultatet hålls i `ys` och den sammanställda biten är XoReD till qubit. `carry`
+    Med två $n $-bitars heltal som är kodade i `xs` LittleEndian `ys` -registren och, och en qubit-aktivitet, beräknar åtgärden summan av de två heltalen där $n $ minst signifikanta bitar av resultatet hålls i `ys` och den sammanställda biten är XoReD till qubit `carry` .
 - uid: microsoft.quantum.arithmetic.ripplecarryaddernocarryttk
   summary: Reversibel, på plats krusning – tillsats av två heltal utan att utföra.
 - uid: microsoft.quantum.arithmetic.ripplecarryadderttk
   summary: >-
     Reversibel, "på plats"-tillägg av två heltal.
 
-    Med två $n $-bitars heltal som är kodade i `xs` LittleEndian `ys`-registren och, och en qubit-aktivitet, beräknar åtgärden summan av de två heltalen där $n $ minst signifikanta bitar av resultatet hålls i `ys` och den sammanställda biten är XoReD till qubit. `carry`
+    Med två $n $-bitars heltal som är kodade i `xs` LittleEndian `ys` -registren och, och en qubit-aktivitet, beräknar åtgärden summan av de två heltalen där $n $ minst signifikanta bitar av resultatet hålls i `ys` och den sammanställda biten är XoReD till qubit `carry` .
 - uid: microsoft.quantum.arithmetic.squarefxp
   summary: Kvadraterar ett fast punkts nummer.
 - uid: microsoft.quantum.arithmetic.squarei
-  summary: Beräknar kvadraten av heltalet `xs` i `result`, som måste vara noll först.
+  summary: Beräknar kvadraten av heltalet `xs` i `result` , som måste vara noll först.
 - uid: microsoft.quantum.arithmetic.squaresi
-  summary: Fyrkantigt signerat heltal `xs` och lagra resultatet `result`i, vilket måste vara noll först.
+  summary: Fyrkantigt signerat heltal `xs` och lagra resultatet i `result` , vilket måste vara noll först.
 - uid: microsoft.quantum.arithmetic.sum
-  summary: Implementerar en omvänd sum-grind. En driven bit som `carryIn` `summand1` `summand2` `carryIn`är `summand1` kodad i qubit och två summand-bitar som är kodad i och, beräknar den bitvisa XOR och `summand2` `summand2` i qubit.
+  summary: Implementerar en omvänd sum-grind. En driven bit som är kodad i qubit `carryIn` och två summand-bitar som är kodad i `summand1` och `summand2` , beräknar den bitvisa XOR `carryIn` `summand1` och `summand2` i qubit `summand2` .
 newtypes:
 - uid: microsoft.quantum.arithmetic.bigendian
   summary: Registrera att koda ett osignerat heltal i big-endian-ordning. Qubit med index `0` kodar den högsta biten av ett osignerat heltal.
@@ -179,9 +174,9 @@ newtypes:
 - uid: microsoft.quantum.arithmetic.signedlittleendian
   summary: Typ av ett signerat heltal lagrat i little endian (se LittleEndian).
 metadata:
-  ms.openlocfilehash: eda1d6d9037caecd7a2f0d91acdc0e59d34efe41
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 6e43f31c738b48413ead40e16fbbfe4185b8a57d
+  ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82675498"
+  ms.lasthandoff: 06/03/2020
+  ms.locfileid: "84326735"

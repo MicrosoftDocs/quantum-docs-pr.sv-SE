@@ -6,12 +6,12 @@ ms.author: a-gibec@microsoft.com
 ms.date: 03/05/2020
 ms.topic: article
 uid: microsoft.quantum.guide.expressions
-ms.openlocfilehash: 93432cef9711b6780192cd59e92b09647a264b5c
-ms.sourcegitcommit: 2317473fdf2b80de58db0f43b9fcfb57f56aefff
+ms.openlocfilehash: c4b2cc0bed44ffdfb191ba522d6526959e7c6708
+ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83431214"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84327313"
 ---
 # <a name="type-expressions-in-q"></a>Skriv uttryck i Q #
 
@@ -221,7 +221,6 @@ let g = Foo(arg)!;      // Syntax error
 En mat ris sträng är en sekvens av ett eller flera element uttryck, avgränsade med kommatecken, som omges av `[` och `]` .
 Alla element måste vara kompatibla med samma typ.
 
-
 Med två matriser av samma typ kan den binära `+` operatorn användas för att skapa en ny matris som är sammanfogningen av de två matriserna.
 Till exempel `[1,2,3] + [4,5,6]` är `[1,2,3,4,5,6]` .
 
@@ -229,6 +228,9 @@ Till exempel `[1,2,3] + [4,5,6]` är `[1,2,3,4,5,6]` .
 
 Med en typ och ett `Int` uttryck `new` kan operatorn användas för att allokera en ny matris med den aktuella storleken.
 Allokera till exempel `new Int[i + 1]` en ny `Int` matris med `i + 1` element.
+
+Tomma mat ris strängar, `[]` tillåts inte.
+I stället använda `new ★[0]` , där `★` är plats hållare för lämplig typ, kan du skapa den önskade matrisen med längden noll.
 
 Elementen i en ny matris initieras till ett typ beroende standardvärde.
 I de flesta fall är detta en variation på noll.
@@ -373,8 +375,7 @@ Till exempel, `Op1` `Op2` , och `Op3` alla `Qubit[] => Unit` , men `Op1` stöder
 - `[Op1, Op3]`är en matris med `(Qubit[] => Unit is Adj)` åtgärder.
 - `[Op2, Op3]`är en matris med `(Qubit[] => Unit is Ctl)` åtgärder.
 
-Tomma mat ris strängar, `[]` tillåts inte.
-I stället använda `new ★[0]` , där `★` är plats hållare för lämplig typ, kan du skapa den önskade matrisen med längden noll.
+Men medan `(Qubit[] => Unit is Adj)` `(Qubit[] => Unit is Ctl)` -åtgärder har den vanligaste bastypen för `(Qubit[] => Unit)` , Observera att matriser *för* dessa operatörer inte delar en gemensam bastyp. Skulle till exempel `[[Op1], [Op2]]` kunna generera ett fel eftersom det försöker skapa en matris av de inkompatibla mat ris typerna `(Qubit[] => Unit is Adj)[]` och `(Qubit[] => Unit is Ctl)[]` .
 
 
 ## <a name="conditional-expressions"></a>Villkors uttryck
@@ -475,8 +476,8 @@ Operatorer i prioritetsordning, från högsta till lägsta:
 
 Operator | Ariteten | Description | Operands typer
 ---------|----------|---------|---------------
- avslutande`!` | Operator | Packa upp | Valfri användardefinierad typ
- `-`, `~~~`, `not` | Operator | Numeriskt negativ, bitvis komplement, logisk negation | `Int`, `BigInt` eller `Double` för `-` , `Int` eller `BigInt` `~~~` för `Bool``not`
+ avslutande`!` | Enställig | Packa upp | Valfri användardefinierad typ
+ `-`, `~~~`, `not` | Enställig | Numeriskt negativ, bitvis komplement, logisk negation | `Int`, `BigInt` eller `Double` för `-` , `Int` eller `BigInt` `~~~` för `Bool``not`
  `^` | Binär | Heltals effekt | `Int`eller `BigInt` för basen `Int` för exponenten
  `/`, `*`, `%` | Binär | Division, multiplikation, heltals-modulus | `Int`, `BigInt` eller `Double` för `/` och `*` , `Int` eller `BigInt` för`%`
  `+`, `-` | Binär | Kombination av addition eller sträng och matris, subtraktion | `Int``BigInt`eller `Double` , även `String` eller valfri mat ris typ för`+`
@@ -486,11 +487,12 @@ Operator | Ariteten | Description | Operands typer
  `&&&` | Binär | Bitvis och | `Int` eller `BigInt`
  `^^^` | Binär | Bitvis XOR | `Int` eller `BigInt`
  <code>\|\|\|</code> | Binär | Bitvis eller | `Int` eller `BigInt`
- `and` | Binär | Logiska och | `Bool`
- `or` | Binär | Logiska eller | `Bool`
+ `and` | Binär | Logiskt AND | `Bool`
+ `or` | Binär | Logiskt OR | `Bool`
  `..` | Binär/ternär | Intervall operator | `Int`
  `?` `|` | Ternär | Villkorsstyrd | `Bool`för den vänstra sidan
 `w/` `<-` | Ternär | Kopiera och uppdatera | Se [Kopiera och uppdatera uttryck](#copy-and-update-expressions)
 
-## <a name="whats-next"></a>Vad står på tur?
+## <a name="next-steps"></a>Nästa steg
+
 Nu när du kan arbeta med uttryck i Q # kan du gå till [åtgärder och funktioner i q #](xref:microsoft.quantum.guide.operationsfunctions) för att lära dig hur du definierar och anropar-åtgärder och-funktioner.

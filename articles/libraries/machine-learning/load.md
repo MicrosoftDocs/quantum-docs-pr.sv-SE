@@ -6,12 +6,12 @@ ms.author: v-edsanc@microsoft.com
 ms.date: 02/16/2020
 ms.topic: article
 uid: microsoft.quantum.libraries.machine-learning.load
-ms.openlocfilehash: 15e63ced6223759a332ce22a43c133a7899f482a
-ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
+ms.openlocfilehash: efa4a65a489446cbef48507d0b02a932da74c71c
+ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77909967"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84327670"
 ---
 # <a name="load-and-classify-your-own-datasets"></a>Läs in och klassificera dina egna data uppsättningar
 
@@ -25,7 +25,7 @@ Vi rekommenderar särskilt att du använder vår mall för att läsa in data, s�
 
 Anta att vi har en tränings data uppsättning $ (x, y) $ med storlek $N = $2 där varje instans $x _i $ $x $ har tre funktioner: $x _ {I1} $, $x _ {I2} $ och $x _ {i3} $.
 Verifierings data uppsättningen har samma struktur.
-Dessa datsets kan representeras av en `data.json`-fil som liknar följande:
+Dessa datsets kan representeras av en `data.json` fil som liknar följande:
 
 ```json
 {
@@ -84,10 +84,10 @@ Anta att vi har en liten data uppsättning med höjd och vikt för olika katter 
 Processen är:
 
 - Först måste vi separera data uppsättningen till utbildning och verifiering. I det här fallet kan vi bara ta de tre första exemplen för utbildning och resten av exemplen för verifiering. I allmänhet är det en bra idé att slumpmässigt testa inlärnings-och validerings data uppsättningen för att undvika oönskade kompensationer i tränings data.
-- För det andra måste vi tilldela en numerisk etikett till varje klass. Observera att för tillfället QML-biblioteket endast admits binära klassificerings problem. Vi kommer att tilldela etiketten 0 till klassen `Dog` och siffran 1 till klassen `Cat`.
+- För det andra måste vi tilldela en numerisk etikett till varje klass. Observera att för tillfället QML-biblioteket endast admits binära klassificerings problem. Vi kommer att tilldela etiketten 0 till klassen `Dog` och siffran 1 till klassen `Cat` .
 - Slutligen fyller vi mallen med hjälp av data från vår data uppsättning. Observera att för stora data uppsättningar bör du skapa ett litet skript för att automatiskt generera mallen från din specifika data uppsättning. Det här skriptet beror på data uppsättningens ursprungliga format.
 
-För vår data uppsättning är `data.json`-filen:
+För vår data uppsättning `data.json` är filen:
 
 ```json
 {
@@ -137,7 +137,7 @@ För vår data uppsättning är `data.json`-filen:
 
 ```
 
-## <a name="loading-the-data"></a>Läser in data
+## <a name="loading-the-data"></a>Läsa in data
 
 När du har serialiserat dina data som en JSON-fil kan du läsa in dem i med hjälp av JSON-bibliotek som ingår i det valda värd språket.
 
@@ -149,12 +149,12 @@ Python tillhandahåller det [inbyggda `json` paketet](https://docs.python.org/3.
 
 ### <a name="c"></a>[C#](#tab/tabid-csharp)
 
-.NET Core Platform tillhandahåller`System.Text.Json`- [paketet](https://www.nuget.org/packages/System.Text.Json) för att arbeta med JSON-serialiserade data:
+.NET Core Platform tillhandahåller [ `System.Text.Json` paketet](https://www.nuget.org/packages/System.Text.Json) för att arbeta med JSON-serialiserade data:
 
 :::code language="csharp" source="~/quantum/samples/machine-learning/half-moons/Host.cs" range="10,64-82":::
 
 ***
 
-## <a name="whats-next"></a>Nästa steg
+## <a name="next-steps"></a>Nästa steg
 
 Nu är du redo att börja köra dina egna experiment med dina egna data uppsättningar. Prova olika klassificerare och data uppsättningar och bidra till communityn som delar dina resultat!

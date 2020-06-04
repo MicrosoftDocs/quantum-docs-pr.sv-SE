@@ -6,6 +6,8 @@ functions:
   summary: Förutsätter att två matriser med booleska värden är lika.
 - uid: microsoft.quantum.diagnostics.allequalityfacti
   summary: Förutsätter att två matriser med heltals värden är lika.
+- uid: microsoft.quantum.diagnostics.contradiction
+  summary: Deklarerar att ett klassiskt villkor är falskt.
 - uid: microsoft.quantum.diagnostics.dumpmachine
   summary: Dumpar den aktuella mål datorns status.
 - uid: microsoft.quantum.diagnostics.dumpregister
@@ -34,15 +36,15 @@ functions:
   summary: Garanterar att ett klassiskt flytt ALS värde har det förväntade värdet upp till en liten tolerans för 1e-10.
 operations:
 - uid: microsoft.quantum.diagnostics.assertallzero
-  summary: Assert att de aktuella qubits är i läget ${0}\ket $.
+  summary: Assert att de aktuella qubits är i läget $ \ket {0} $.
 - uid: microsoft.quantum.diagnostics.assertallzerowithintolerance
-  summary: Assert att de aktuella qubits är i $ \ket{0}$-tillstånd upp till en bestämd tolerans.
+  summary: Assert att de aktuella qubits är i $ \ket {0} $-tillstånd upp till en bestämd tolerans.
 - uid: microsoft.quantum.diagnostics.assertoperationsequalinplace
   summary: >-
     Två åtgärder förutsätter att de fungerar identiskt för alla ingångs tillstånd.
 
 
-    Den här kontrollen implementeras genom att kontrol lera åtgärdens åtgärder på alla stater i formuläret $V _0 \otimes... \otimes V_ {n-1} $, där $V _k $ är ett av tillstånden $ \ket{0}$, $ \ket{1}$, $ \ket{+} $ och $ \ket{i} $ (+ 1 eigenstate av Pauli Y-operatorn).
+    Den här kontrollen implementeras genom att kontrol lera åtgärdens åtgärder på alla stater i formuläret $V _0 \otimes... \otimes V_ {n-1} $, där $V _k $ är ett av tillstånden $ \ket {0} $, $ \ket {1} $, $ \ket{+} $ och $ \ket{i} $ (+ 1 Eigenstate av Pauli Y-operatorn).
 
 
     Den här kontrollen använder $n $ qubits och kräver flera anrop av de åtgärder som jämförs.
@@ -62,7 +64,7 @@ operations:
 
     Denna kontroll kan användas för att se till att en optimerad version av en åtgärd fungerar identiskt med dess naïve-implementering, eller att en åtgärd som agerar på ett intervall av icke-Quantum-indata accepterar kända fall.
 - uid: microsoft.quantum.diagnostics.assertqubit
-  summary: Förutsätter att qubit `q` finns i den förväntade Eigenstate för Pauli Z-operatorn.
+  summary: Förutsätter att qubit `q` finns i den förväntade eigenstate för Pauli Z-operatorn.
 - uid: microsoft.quantum.diagnostics.assertqubitisinstatewithintolerance
   summary: >-
     Förutsätter att en qubit förväntas i det förväntade läget.
@@ -74,7 +76,7 @@ operations:
 
     Det sista argumentet definierar toleransen för vilken kontroll görs.
 - uid: microsoft.quantum.diagnostics.assertqubitwithintolerance
-  summary: Förutsätter att qubit `q` finns i den förväntade Eigenstate för Pauli Z-operatorn upp till en specifik tolerans.
+  summary: Förutsätter att qubit `q` finns i den förväntade eigenstate för Pauli Z-operatorn upp till en specifik tolerans.
 newtypes:
 - uid: microsoft.quantum.diagnostics.enabletestingvianame
   summary: Kompileraren identifierat attribut via vilket ett alternativt namn kan definieras och som kan användas vid inläsning av en typ eller ett anrop för test ändamål.
@@ -82,9 +84,9 @@ newtypes:
   summary: Kompileraren identifierat attribut som används för att markera ett enhets test.
 summary: " # <a name=\"summary\"></a>Sammanfattning\n Det här namn området innehåller funktioner och åtgärder som är användbara för diagnostiska orsaker, inklusive assert-åtgärder och anspråks funktioner."
 metadata:
-  ms.openlocfilehash: 5e580bb50983d5c0e65d3284408bae04a5e92756
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 2c619ac283653d87f2917d7c780ed9fe6ccfa965
+  ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82676947"
+  ms.lasthandoff: 06/03/2020
+  ms.locfileid: "84326599"

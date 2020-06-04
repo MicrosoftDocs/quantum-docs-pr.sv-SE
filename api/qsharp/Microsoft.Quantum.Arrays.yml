@@ -20,7 +20,7 @@ functions:
 - uid: microsoft.quantum.arrays.filtered
   summary: Med tanke på en matris och ett predikat som har definierats för elementen i matrisen, returnerar en matris som består av de element som uppfyller predikatet.
 - uid: microsoft.quantum.arrays.fold
-  summary: Itererar en funktion `f` genom en matris `array`och returnerar `f(f(f(initialState, array[0]), array[1]), ...)`.
+  summary: Itererar en funktion `f` genom en matris `array` och returnerar `f(f(f(initialState, array[0]), array[1]), ...)` .
 - uid: microsoft.quantum.arrays.head
   summary: Returnerar det första elementet i matrisen.
 - uid: microsoft.quantum.arrays.indexof
@@ -29,6 +29,8 @@ functions:
   summary: Med den här matrisen returneras ett intervall över indexets index, vilket är lämpligt för användning i en for-slinga.
 - uid: microsoft.quantum.arrays.isempty
   summary: Returnerar true om och endast om en matris är tom.
+- uid: microsoft.quantum.arrays.ispermutation
+  summary: Utdata är true om och bara om en specifik matris representerar en permutation.
 - uid: microsoft.quantum.arrays.lookupfunction
   summary: Med en matris returneras en funktion som returnerar element i matrisen.
 - uid: microsoft.quantum.arrays.mapped
@@ -69,9 +71,9 @@ operations:
 - uid: microsoft.quantum.arrays.foreach
   summary: Med en matris och en åtgärd som har definierats för elementen i matrisen returnerar en ny matris som består av de avbildningar av den ursprungliga matrisen under åtgärden.
 metadata:
-  ms.openlocfilehash: a9088a037953f62ab7193ea525a6e71d43fe2fb2
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 92eb956a1387a9765354f45e27eb084c6d73f51b
+  ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82673397"
+  ms.lasthandoff: 06/03/2020
+  ms.locfileid: "84326718"

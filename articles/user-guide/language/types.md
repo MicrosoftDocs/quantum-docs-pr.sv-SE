@@ -6,12 +6,12 @@ ms.author: a-gibec@microsoft.com
 ms.date: 03/05/2020
 ms.topic: article
 uid: microsoft.quantum.guide.types
-ms.openlocfilehash: 4a551ee90a0abb6e42953cf04c7f5a8ca3573f26
-ms.sourcegitcommit: 682a4a5f5dd23ca58a4addf62aea4086bb308552
+ms.openlocfilehash: f7a3ac3813966c0ef695068297ce4d9949ead554
+ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83609149"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84327296"
 ---
 # <a name="types-in-q"></a>Typer i Q#
 
@@ -63,7 +63,8 @@ I det andra exemplet noterar du att detta representerar en potentiellt Taggad ma
 Q # ger inte stöd för rektangulära flerdimensionella matriser.
 
 Ett mat ris värde kan skrivas i Q #-källkod med hakparenteser runt elementen i en matris, som i `[PauliI, PauliX, PauliY, PauliZ]` .
-Typen av mat ris literal bestäms av den gemensamma bastypen för alla objekt i matrisen. 
+Typen av mat ris literal bestäms av den gemensamma bastypen för alla objekt i matrisen. Att försöka skapa en matris med element som inte har någon gemensam bastyp kommer att generera ett fel.  
+Ett exempel på detta finns i [matriser med callables](xref:microsoft.quantum.guide.expressions#arrays-of-callables) .
 
 > [!WARNING]
 > Elementen i en matris kan inte ändras efter att matrisen har skapats.
@@ -125,7 +126,7 @@ Vi refererar till denna egenskap som _likhet med singleton-tupel_.
 
 En användardefinierad typ deklaration består av nyckelordet `newtype` , följt av namnet på den användardefinierade typen, en `=` , en giltig typ specifikation och ett avslutande semikolon.
 
-Till exempel:
+Ett exempel:
 
 ```qsharp
 newtype PairOfInts = (Int, Int);
@@ -291,7 +292,8 @@ När du anropar en typ-parameter anrops bara, måste alla argument som har samma
 
 Q # innehåller ingen mekanism för att begränsa de möjliga typer som kan ersättas av en typ parameter.
 
-## <a name="whats-next"></a>Vad står på tur?
+## <a name="next-steps"></a>Nästa steg
+
 Nu när du har sett alla typer som utgör Q #-språket kan du [Ange uttryck i Q #](xref:microsoft.quantum.guide.expressions) för att se hur du skapar och ändrar uttryck för dessa olika typer.
 
 

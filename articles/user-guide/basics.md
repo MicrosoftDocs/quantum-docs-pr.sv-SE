@@ -6,12 +6,12 @@ ms.author: a-gibec@microsoft.com
 ms.date: 02/28/2020
 ms.topic: article
 uid: microsoft.quantum.guide.basics
-ms.openlocfilehash: fd0ea47f00b1456ec460808ef7d451c8427677cd
-ms.sourcegitcommit: 2317473fdf2b80de58db0f43b9fcfb57f56aefff
+ms.openlocfilehash: e77b52d1a6eb7e2f62ab12dedd75d00ac8fec4be
+ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83431163"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84327330"
 ---
 # <a name="q-basics"></a>Q #-grunder
 
@@ -106,8 +106,7 @@ Uttrycks utvärderings uttryck kräver ett avslutande semikolon.
 Nästan alla aspekter av ett Q #-program skapas med hjälp av instruktioner, så att ingen enskild sida kan omfatta all information som rör dem.
 Deras lexikala struktur och formatering beskrivs i avsnittet om [fil struktur för Q #](xref:microsoft.quantum.guide.filestructure) , symbol bindnings tilldelning och omfattning vid [variabler i q #](xref:microsoft.quantum.guide.variables)och kontroll av flödes slingor, till exempel `for` vid [kontroll flöde i q #](xref:microsoft.quantum.guide.controlflow).
 
-
-## <a name="whats-next"></a>Nästa steg
+## <a name="next-steps"></a>Nästa steg
 I resten av den här guiden visar vi hur du använder Q # för att skapa komplexa Quantum-program genom de grundläggande Bygg stenarna för åtgärder, funktioner och typer.
 
 Du kan börja lära dig om [typer i Q #](xref:microsoft.quantum.guide.types)för att komma igång.

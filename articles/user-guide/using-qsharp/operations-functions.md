@@ -6,12 +6,12 @@ ms.author: a-gibec@microsoft.com
 ms.date: 03/05/2020
 ms.topic: article
 uid: microsoft.quantum.guide.operationsfunctions
-ms.openlocfilehash: bc9695b85b68807801225ccbc903a4622b450768
-ms.sourcegitcommit: 2317473fdf2b80de58db0f43b9fcfb57f56aefff
+ms.openlocfilehash: 9e924b973c4f22a59dd862df3f4f0d70278a1b4e
+ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83431078"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84327806"
 ---
 # <a name="operations-and-functions-in-q"></a>Åtgärder och funktioner i Q #
 
@@ -670,5 +670,6 @@ Det finns två viktiga kommentarer om användningen av rekursion, men:
 - Vid körning på en faktisk Quantum-enhet kan stack utrymmet vara begränsat och så att djup rekursion kan leda till ett körnings fel.
   I synnerhet identifierar inte Q #-kompilatorn och körnings miljön och optimerar slut rekursion.
 
-## <a name="whats-next"></a>Vad står på tur?
+## <a name="next-steps"></a>Nästa steg
+
 Lär dig mer om [variabler](xref:microsoft.quantum.guide.variables) i Q #.

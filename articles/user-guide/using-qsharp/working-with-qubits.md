@@ -6,12 +6,12 @@ ms.author: a-gibec@microsoft.com
 ms.date: 03/05/2020
 ms.topic: article
 uid: microsoft.quantum.guide.qubits
-ms.openlocfilehash: e89b9ccfe2a0796e01eedfc99f7ce71038d85f38
-ms.sourcegitcommit: 2317473fdf2b80de58db0f43b9fcfb57f56aefff
+ms.openlocfilehash: 0deb0729a88c49798f32a22a943b935d383c570b
+ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83430942"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84327551"
 ---
 # <a name="working-with-qubits"></a>Arbeta med kvantbitar
 
@@ -221,5 +221,6 @@ Orsaken till detta är att vi vet från strukturen på kretsen som gör det enke
 
 Det är en instruktion att jämföra den här koden med en annan Canon `MultiControlledXClean` -funktion som uppnår samma mål för att implementera en multiplicering-kontrollerad `X` åtgärd, men som använder flera rena qubits med `using` mekanismen. 
 
-## <a name="whats-next"></a>Vad står på tur?
+## <a name="next-steps"></a>Nästa steg
+
 Lär dig mer om [kontroll flöde](xref:microsoft.quantum.guide.controlflow) i Q #.

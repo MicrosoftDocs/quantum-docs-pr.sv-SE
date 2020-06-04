@@ -6,12 +6,12 @@ ms.author: Alan.Geller@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
 uid: microsoft.quantum.glossary
-ms.openlocfilehash: cbc473eb14d8afd255a7072475dc054e18b98e3e
-ms.sourcegitcommit: 2317473fdf2b80de58db0f43b9fcfb57f56aefff
+ms.openlocfilehash: 042e4e27ef4e42cfc0c24fbb0ae2232cf1bbfe36
+ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83426712"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84327619"
 ---
 # <a name="quantum-computing-glossary"></a>Ord lista för Quantum Computing
 
@@ -55,7 +55,7 @@ Den faktor enligt vilken storleken på en [eigenvector](xref:microsoft.quantum.g
 
 En Vector vars riktning är oförändrad av en specifik omvandling och vars storlek ändras av en faktor som motsvarar den Vectorns [eigenvalue](xref:microsoft.quantum.glossary#eigenvalue). Med en fyrkantig matris $M $ och en eigenvalue $c $ och sedan $Mv = ka $, där $v $ är en eigenvector i matrisen och kan vara ett komplext antal argument. Mer information finns i [avancerade mat ris koncept](xref:microsoft.quantum.concepts.matrix-advanced).
 
-## <a name="entanglement"></a>Entanglement
+## <a name="entanglement"></a>Sammanflätning
 
 Quantum-partiklar, till exempel [qubits](xref:microsoft.quantum.glossary#qubit), kan vara anslutna eller *Entangled* så att de inte kan beskrivas oberoende av varandra. Deras mått resultat korreleras även om de avgränsas oändligt långt bort. Entanglement är viktigt för [measuring](xref:microsoft.quantum.glossary#measurement) att mäta [status](xref:microsoft.quantum.glossary#quantum-state) för en qubit.  Mer information finns i [avancerade mat ris koncept](xref:microsoft.quantum.concepts.matrix-advanced).
 
@@ -120,7 +120,11 @@ En uppsättning med tre 2 x 2-matriser som kallas `X` , `Y` och Quantum- `Z` åt
 
 ## <a name="quantum-circuit-diagram"></a>Diagram över Quantum-krets
 
-En metod för att grafiskt representera en sekvens med [åtgärder](xref:microsoft.quantum.glossary#operation) (eller [portar](xref:microsoft.quantum.glossary#gate)) för enkla Quantum-program, till exempel ett ![ krets diagram ](~/media/qpe.png) . Mer information finns i [Quantum-kretsar](xref:microsoft.quantum.concepts.circuits).
+En metod för att grafiskt representera en sekvens med [åtgärder](xref:microsoft.quantum.glossary#operation) (eller [portar](xref:microsoft.quantum.glossary#gate)) för enkla Quantum-program, till exempel 
+
+![Diagram över exempel krets](~/media/qpe.png). 
+
+Mer information finns i [Quantum-kretsar](xref:microsoft.quantum.concepts.circuits).
 
 ## <a name="quantum-libraries"></a>Quantum-bibliotek
 
@@ -144,7 +148,7 @@ En Quantum-algoritm som probabilistically lyckas. Vid fel försöker rutinen ige
 
 ## <a name="superposition"></a>Superposition
 
-Konceptet i Quantum Computing som en [qubit](xref:microsoft.quantum.glossary#qubit) är en linjär kombination av två tillstånd, $ \ket{\0} $ och $ \ket{\1} $, tills den [mäts](xref:microsoft.quantum.glossary#measurement).  Mer information finns i [förstå Quantum Computing](xref:microsoft.quantum.overview.understanding).
+Konceptet i Quantum Computing som en [qubit](xref:microsoft.quantum.glossary#qubit) är en linjär kombination av två tillstånd, $ \ket {0} $ och $ \ket {1} $, tills den [mäts](xref:microsoft.quantum.glossary#measurement).  Mer information finns i [förstå Quantum Computing](xref:microsoft.quantum.overview.understanding).
 
 ## <a name="target-machine"></a>Måldator
 
