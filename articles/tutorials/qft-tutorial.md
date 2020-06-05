@@ -6,12 +6,12 @@ ms.author: a-gibec@microsoft.com
 ms.date: 10/06/2019
 uid: microsoft.quantum.circuit-tutorial
 ms.topic: tutorial
-ms.openlocfilehash: f0b87936c9baf07555e76f295da58c0a6b9ecd17
-ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
+ms.openlocfilehash: 05d3292e1c6e3c8c1163c460f2aaa51c591aa1d5
+ms.sourcegitcommit: 8d9d392bf5e114ae223e6f689ba80d25866ff586
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84328603"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84422248"
 ---
 # <a name="tutorial-write-and-simulate-qubit-level-programs-in-q"></a>Självstudie: Skriv och simulera qubit-program i Q\#
 
@@ -29,7 +29,7 @@ I vårt fall definierar vi en Q #-åtgärd för att utföra en fullständig qubi
 <br/>
 <img src="./qft_full.PNG" alt="Three qubit quantum Fourier transform circuit diagram" width="600">
 
-## <a name="prerequisites"></a>Förutsättningar
+## <a name="prerequisites"></a>Krav
 
 * [Installera](xref:microsoft.quantum.install) Quantum Development Kit med din önskade språk-och utvecklings miljö.
 * Om du redan har installerat QDK kontrollerar du att det är [uppdaterat](xref:microsoft.quantum.update) till den senaste versionen
@@ -386,7 +386,7 @@ I detalj för den första raden i vårt indatamängds tillstånd $ \ket {000} $:
 * **`    ---`**: En grafisk representation av amplitudens fas.
 * **`[ 0.0000 rad ]`**: det numeriska värdet för fasen (i radianer).
 
-Både storleken och fasen visas med en grafisk representation. Representation av storlek är enkel: visar ett fält med `*` och ju högre sannolikhet, desto större är stapeln. För fasen, se avsnittet DumpMachine [här](xref:microsoft.quantum.techniques.testing-and-debugging#dump-functions) för möjliga symbol representationer baserat på vinkel intervall.
+Både storleken och fasen visas med en grafisk representation. Representation av storlek är enkel: visar ett fält med `*` och ju högre sannolikhet, desto större är stapeln. För fasen, se [test och fel sökning: dumpa funktioner](xref:microsoft.quantum.guide.testingdebugging#dump-functions) för möjliga symbol representationer baserat på vinkel intervall.
 
 
 Den utskrivna utmatningen illustrerar därför att våra programmerade portar omvandlade vår status från
