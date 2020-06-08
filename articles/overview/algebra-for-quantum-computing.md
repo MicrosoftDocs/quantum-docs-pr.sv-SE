@@ -6,12 +6,12 @@ ms.author: bradben
 ms.date: 5/5/2020
 ms.topic: overview
 uid: microsoft.quantum.overview.algebra
-ms.openlocfilehash: 9f156a3cc092e295317061dda5e8aa29e9d5ca1e
-ms.sourcegitcommit: 2317473fdf2b80de58db0f43b9fcfb57f56aefff
+ms.openlocfilehash: 4750643d16ad8af6240df42c1b93353565561429
+ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83430857"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84327602"
 ---
 # <a name="linear-algebra-for-quantum-computing"></a>Linjär algebra för kvantberäkning
 
@@ -67,7 +67,7 @@ $$
 
 Resultatet är en fyrdimensionell matris där varje element representerar en sannolikhet. Exempelvis är $ac$ sannolikheten att de två kvantbitarna kollapsar till 0 och 0, $ad$ är sannolikheten för 0 och 1 och så vidare. 
 
-Liksom tillståndet för en kvantbit $\begin{bmatrix} a \\\\  b \end{bmatrix}$ måste uppfylla kravet att $|a|^2 + |b|^2 = 1$ för att representera ett kvanttillstånd måste tillståndet för två kvantbitar $\begin{bmatrix} ac \\\\  ad \\\\  bc \\\\  bd \end{bmatrix}$ uppfylla kravet att $|a|^2 + |b|^2 + |c|^2+ |d|^2 = 1$.
+Liksom tillståndet för en kvantbit $\begin{bmatrix} a \\\\  b \end{bmatrix}$ måste uppfylla kravet att $|a|^2 + |b|^2 = 1$ för att representera ett kvanttillstånd måste tillståndet för två kvantbitar $\begin{bmatrix} ac \\\\  ad \\\\  bc \\\\  bd \end{bmatrix}$ uppfylla kravet att $|ac|^2 + |ad|^2 + |bc|^2+ |bd|^2 = 1$.
 
 ## <a name="summary"></a>Sammanfattning
 
@@ -75,5 +75,4 @@ Linjär algebra är standardspråket för att beskriva kvantberäkning och kvant
 
 ## <a name="next-steps"></a>Nästa steg
 
-> [!div class="nextstepaction"]
-> [Installera QDK](xref:microsoft.quantum.install)
+[Installera QDK](xref:microsoft.quantum.install)

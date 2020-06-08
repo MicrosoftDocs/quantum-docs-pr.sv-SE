@@ -3,15 +3,15 @@ title: Utforska sammanflätning med Q#
 description: Lär dig hur man skriver ett kvantprogram i Q#. Utveckla ett Bell-tillståndsprogram med Quantum Development Kit (QDK)
 author: natke
 ms.author: nakersha
-ms.date: 10/07/2019
+ms.date: 05/29/2020
 ms.topic: tutorial
 uid: microsoft.quantum.write-program
-ms.openlocfilehash: 7836e39227fa2282c6e2faa039f6e625103d5403
-ms.sourcegitcommit: 2317473fdf2b80de58db0f43b9fcfb57f56aefff
+ms.openlocfilehash: 989080e7d9979bb87d14b2580d28732bb1092eb1
+ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83426847"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84327381"
 ---
 # <a name="tutorial-explore-entanglement-with-q"></a>Självstudier: Utforska sammanflätning med Q\#
 
@@ -25,28 +25,27 @@ Namnet Bell syftar på Bell-tillstånd, vilket är specifika kvanttillstånd fö
 
 Om du är redo att börja koda följer du nedanstående steg innan du fortsätter: 
 
-* [Installera](xref:microsoft.quantum.install) Quantum Development Kit för det språk och den utvecklingsmiljö som du använder
+* Installera Quantum Development Kit för [Python](xref:microsoft.quantum.install.python) eller [.NET](xref:microsoft.quantum.install.cs).
 * Om du redan har installerat QDK kontrollerar du att det är [uppdaterat](xref:microsoft.quantum.update) till den senaste versionen
 
 Du kan också följa med i texten utan att installera QDK. Du får då en översikt över Q#-programmeringsspråket och de första begreppen inom kvantberäkning.
 
 ## <a name="demonstrating-qubit-behavior-with-q"></a>Demonstrera kvantbitsbeteende med Q#
 
-Kommer du ihåg vår enkla [definition av en kvantbit](xref:microsoft.quantum.overview.understanding)?  Där klassiska bitar innehåller ett enda binärt värde av 0 eller 1, kan tillståndet för en kvantbit vara i en **superposition** med 0 och 1 samtidigt.  Begreppsmässigt kan man tänka på en kvantbit som en riktning (kallas även för vektor).  En kvantbit kan ha någon av de riktningar som är möjliga. De två **klassiska tillstånden** är två riktningar. De motsvarar en chans på 100 % att mäta 0 och en chans på 100 % att mäta 1.  Detta kan även visualiseras med [Bloch-sfären](/quantum/concepts/the-qubit#visualizing-qubits-and-transformations-using-the-bloch-sphere).
-
+Kommer du ihåg vår enkla [definition av en kvantbit](xref:microsoft.quantum.overview.understanding)?  Medan klassiska bitar innehåller ett enda binärt värde, 0 eller 1, kan tillståndet för en [kvantbit](xref:microsoft.quantum.glossary#qubit) vara i en **superposition** med 0 och 1.  Begreppsmässigt kan man tänka på en kvantbit som en riktning (kallas även för vektor).  En kvantbit kan ha någon av de riktningar som är möjliga. De två **klassiska tillstånden** är två riktningar. De motsvarar en chans på 100 % att mäta 0 och en chans på 100 % att mäta 1.  Detta kan även visualiseras med [Bloch-sfären](/quantum/concepts/the-qubit#visualizing-qubits-and-transformations-using-the-bloch-sphere).
 
 Mätningen genererar ett binärt resultat och ändrar kvantbitens tillstånd. Mätningen genererar ett binärt värde, antingen 0 eller 1.  Kvantbiten går från att vara i superposition (vilken riktning som helst) till ett av de klassiska tillstånden.  När du därefter upprepar samma mätning utan några andra åtgärder får du samma binära resultat.  
 
-Flera kvantbitar kan vara **sammanflätade**. När vi mäter en sammanflätad kvantbit får vi även veta de andra kvantbitarnas tillstånd.
+Flera kvantbitar kan vara [**sammanflätade**](xref:microsoft.quantum.glossary#entanglement). När vi mäter en sammanflätad kvantbit får vi även veta de andra kvantbitarnas tillstånd.
 
 Nu är vi redo att demonstrera hur Q# uttrycker detta beteende.  Du börjar med det enklaste programmet och skapar det för att visa en kvantsuperposition och kvantsammanflätning.
 
 ## <a name="setup"></a>Installation
 
-Program som har utvecklats med Microsofts Quantum Development Kit består av två delar:
+I den här självstudien används värdprogram. Den består av två delar:
 
-1. En eller flera kvantalgoritmer som har implementerats med hjälp av kvantprogrammeringsspråket Q#.
-1. Ett värdprogram som har implementerats i ett programmeringsspråk som Python eller C#, som fungerar som huvudstartpunkt och som anropar Q#-åtgärder för att köra en kvantalgoritm.
+1. En serie med kvantalgoritmer som implementeras med hjälp av kvantprogrammeringsspråket Q#.
+1. Ett värdprogram som implementeras i antingen Python eller C#. Det fungerar som huvudstartpunkt och anropar Q#-åtgärder för att köra kvantalgoritmerna.
 
 #### <a name="python"></a>[Python](#tab/tabid-python)
 
@@ -498,9 +497,8 @@ Som vi visade i översikten har vår statistik för den första kvantbiten inte 
 
 Grattis, du har skrivit ditt första kvantprogram!
 
-## <a name="whats-next"></a>Nästa steg
+## <a name="next-steps"></a>Nästa steg
 
 Självstudien [Grovers sökning](xref:microsoft.quantum.quickstarts.search) visar hur du skapar och kör Grovers sökning, en av de mest populära kvantberäkningsalgoritmerna. Den är ett bra exempel på ett Q#-program som kan användas för att lösa verkliga problem med hjälp av kvantberäkning.  
 
 I [Kom igång med Quantum Development Kit](xref:microsoft.quantum.welcome) finns fler sätt att lära sig Q# och kvantprogrammering på.
-
