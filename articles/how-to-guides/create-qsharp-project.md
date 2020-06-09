@@ -7,12 +7,12 @@ ms.date: 10/19/2019
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.howto.createproject
-ms.openlocfilehash: 8019b32a3290e2d45124ebb1eb75395f6cb758db
-ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
+ms.openlocfilehash: 8af8e3288aab731520ede984d5f89644de292385
+ms.sourcegitcommit: c8ebc5d7d8581444754f5d7bfaca2f25601f1b14
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84327534"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84578219"
 ---
 # <a name="create-a-q-project-in-your-development-environment"></a>Skapa ett Q #-projekt i utvecklings miljön
 
@@ -36,7 +36,7 @@ Välj utvecklings miljö och språk i avsnitten nedan:
 
 1. Skapa en mapp för ditt projekt och navigera till den mappen
 
-1. Skapa en Q #-fil med namnet `Operation.qs` och Lägg till din q #-kod till den. Ett exempel:
+1. Skapa en Q #-fil med namnet `Operation.qs` och Lägg till din q #-kod till den. Till exempel:
 
     ```qsharp
     namespace HelloWorld {
@@ -50,7 +50,7 @@ Välj utvecklings miljö och språk i avsnitten nedan:
     }
     ```
 
-1. Skapa en python-värd fil `host.py` som kallas för att anropa din Q #-åtgärd. Ett exempel:
+1. Skapa en python-värd fil `host.py` som kallas för att anropa din Q #-åtgärd. Till exempel:
 
     ```python
     import qsharp
@@ -62,13 +62,13 @@ Välj utvecklings miljö och språk i avsnitten nedan:
 
 1. Kör programmet:
 
-    ```bash
+    ```
     python host.py
     ```
 
 1. Verifiera utdata. Följande rader ska visas av programmet:
 
-    ```bash
+    ```
     Hello from quantum world!
     0
     ```
@@ -83,7 +83,7 @@ Nu kan du fortsätta att utveckla ditt Quantum-program.
 
 1. Kör följande kommando för att starta Notebook-servern:
 
-    ```bash
+    ```
     jupyter notebook
     ```
 
@@ -179,7 +179,7 @@ Nu kan du fortsätta med din Quantum-utveckling med Visual Studio Code.
 
 1. Gå till den nya programkatalogen
 
-    ```bash
+    ```
     cd <project name>
     ```
 
