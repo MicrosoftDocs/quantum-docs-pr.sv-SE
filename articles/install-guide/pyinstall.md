@@ -6,45 +6,45 @@ ms.date: 9/30/2019
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.install.python
-ms.openlocfilehash: 35499daae0cd0ae329e39b43b0d8dd5a00183871
-ms.sourcegitcommit: 328f45a0b64cb6b325fa9d3b3ddb74a6a7a97ee9
+ms.openlocfilehash: f18d005012dc1c52aab456f1c7b194d182cab786
+ms.sourcegitcommit: c8ebc5d7d8581444754f5d7bfaca2f25601f1b14
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83660724"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84578172"
 ---
-# <a name="develop-with-q-and-python"></a><span data-ttu-id="d0173-102">Utveckla med Q # och python</span><span class="sxs-lookup"><span data-stu-id="d0173-102">Develop with Q# and Python</span></span>
+# <a name="develop-with-q-and-python"></a><span data-ttu-id="68d4c-102">Utveckla med Q # och python</span><span class="sxs-lookup"><span data-stu-id="68d4c-102">Develop with Q# and Python</span></span>
 
-<span data-ttu-id="d0173-103">Installera QDK för att utveckla python-värdprogram för att anropa Q #-åtgärder.</span><span class="sxs-lookup"><span data-stu-id="d0173-103">Install the QDK to develop Python host programs to call Q# operations.</span></span>
+<span data-ttu-id="68d4c-103">Installera QDK för att utveckla python-värdprogram för att anropa Q #-åtgärder.</span><span class="sxs-lookup"><span data-stu-id="68d4c-103">Install the QDK to develop Python host programs to call Q# operations.</span></span>
 
-1. <span data-ttu-id="d0173-104">Förutsättningar</span><span class="sxs-lookup"><span data-stu-id="d0173-104">Pre-requisites</span></span>
+1. <span data-ttu-id="68d4c-104">Förutsättningar</span><span class="sxs-lookup"><span data-stu-id="68d4c-104">Pre-requisites</span></span>
 
-    - <span data-ttu-id="d0173-105">[Python](https://www.python.org/downloads/) 3.6 eller senare</span><span class="sxs-lookup"><span data-stu-id="d0173-105">[Python](https://www.python.org/downloads/) 3.6 or later</span></span>
-    - <span data-ttu-id="d0173-106">[PIP](https://pip.pypa.io/en/stable/installing) Python-pakethanterare</span><span class="sxs-lookup"><span data-stu-id="d0173-106">The [PIP](https://pip.pypa.io/en/stable/installing) Python package manager</span></span>
-    - [<span data-ttu-id="d0173-107">.NET Core SDK 3,1</span><span class="sxs-lookup"><span data-stu-id="d0173-107">.NET Core SDK 3.1</span></span>](https://dotnet.microsoft.com/download/dotnet-core/3.1)
+    - <span data-ttu-id="68d4c-105">[Python](https://www.python.org/downloads/) 3.6 eller senare</span><span class="sxs-lookup"><span data-stu-id="68d4c-105">[Python](https://www.python.org/downloads/) 3.6 or later</span></span>
+    - <span data-ttu-id="68d4c-106">[PIP](https://pip.pypa.io/en/stable/installing) Python-pakethanterare</span><span class="sxs-lookup"><span data-stu-id="68d4c-106">The [PIP](https://pip.pypa.io/en/stable/installing) Python package manager</span></span>
+    - [<span data-ttu-id="68d4c-107">.NET Core SDK 3,1</span><span class="sxs-lookup"><span data-stu-id="68d4c-107">.NET Core SDK 3.1</span></span>](https://dotnet.microsoft.com/download/dotnet-core/3.1)
 
 
-1. <span data-ttu-id="d0173-108">Installera `qsharp` paketet, ett python-paket som aktiverar interop mellan Q # och python.</span><span class="sxs-lookup"><span data-stu-id="d0173-108">Install the `qsharp` package, a Python package that enables interop between Q# and Python.</span></span>
+1. <span data-ttu-id="68d4c-108">Installera `qsharp` paketet, ett python-paket som aktiverar interop mellan Q # och python.</span><span class="sxs-lookup"><span data-stu-id="68d4c-108">Install the `qsharp` package, a Python package that enables interop between Q# and Python.</span></span>
 
-    ```bash
+    ```
     pip install qsharp
     ```
 
-1. <span data-ttu-id="d0173-109">Installera SWEETIQ #, en kernel som används av Jupyter och python och som tillhandahåller grundläggande funktioner för att kompilera och köra frågor i Q #.</span><span class="sxs-lookup"><span data-stu-id="d0173-109">Install IQ#, a kernel used by Jupyter and Python that provides the core functionality for compiling and executing Q# operations.</span></span>
+1. <span data-ttu-id="68d4c-109">Installera SWEETIQ #, en kernel som används av Jupyter och python och som tillhandahåller grundläggande funktioner för att kompilera och köra frågor i Q #.</span><span class="sxs-lookup"><span data-stu-id="68d4c-109">Install IQ#, a kernel used by Jupyter and Python that provides the core functionality for compiling and executing Q# operations.</span></span>
 
-    ```bash
+    ```dotnetcli
     dotnet tool install -g Microsoft.Quantum.IQSharp
     dotnet iqsharp install
     ```
   
-1. <span data-ttu-id="d0173-110">Även om du kan använda Q # med python i en IDE, rekommenderar vi starkt att du använder Visual Studio Code (VS Code) IDE för dina Q # + python-program.</span><span class="sxs-lookup"><span data-stu-id="d0173-110">While you can use Q# with Python in any IDE, we highly recommend using Visual Studio Code (VS Code) IDE for your Q# + Python applications.</span></span> <span data-ttu-id="d0173-111">Genom att använda Visual Studio Code och QDK Visual Studio Code-tillägget får du till gång till mer avancerade funktioner.</span><span class="sxs-lookup"><span data-stu-id="d0173-111">By using Visual Studio Code and the QDK Visual Studio Code extension you gain access to richer functionality.</span></span>
+1. <span data-ttu-id="68d4c-110">Även om du kan använda Q # med python i en IDE, rekommenderar vi starkt att du använder Visual Studio Code (VS Code) IDE för dina Q # + python-program.</span><span class="sxs-lookup"><span data-stu-id="68d4c-110">While you can use Q# with Python in any IDE, we highly recommend using Visual Studio Code (VS Code) IDE for your Q# + Python applications.</span></span> <span data-ttu-id="68d4c-111">Genom att använda Visual Studio Code och QDK Visual Studio Code-tillägget får du till gång till mer avancerade funktioner.</span><span class="sxs-lookup"><span data-stu-id="68d4c-111">By using Visual Studio Code and the QDK Visual Studio Code extension you gain access to richer functionality.</span></span>
 
-    - <span data-ttu-id="d0173-112">Installera [vs Code](https://code.visualstudio.com/download) (Windows, Linux och Mac)</span><span class="sxs-lookup"><span data-stu-id="d0173-112">Install [VS Code](https://code.visualstudio.com/download) (Windows, Linux and Mac)</span></span>
-    - <span data-ttu-id="d0173-113">Installera [QDK-tillägget för vs Code](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode).</span><span class="sxs-lookup"><span data-stu-id="d0173-113">Install the [QDK extension for VS Code](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode).</span></span>
+    - <span data-ttu-id="68d4c-112">Installera [vs Code](https://code.visualstudio.com/download) (Windows, Linux och Mac)</span><span class="sxs-lookup"><span data-stu-id="68d4c-112">Install [VS Code](https://code.visualstudio.com/download) (Windows, Linux and Mac)</span></span>
+    - <span data-ttu-id="68d4c-113">Installera [QDK-tillägget för vs Code](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode).</span><span class="sxs-lookup"><span data-stu-id="68d4c-113">Install the [QDK extension for VS Code](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode).</span></span>
 
-1. <span data-ttu-id="d0173-114">Verifiera installationen genom att skapa ett `Hello World`-program</span><span class="sxs-lookup"><span data-stu-id="d0173-114">Verify the installation by creating a `Hello World` application</span></span>
+1. <span data-ttu-id="68d4c-114">Verifiera installationen genom att skapa ett `Hello World`-program</span><span class="sxs-lookup"><span data-stu-id="68d4c-114">Verify the installation by creating a `Hello World` application</span></span>
 
-    - <span data-ttu-id="d0173-115">Skapa en minimal Q#-åtgärd genom att skapa en fil med namnet `Operation.qs` och lägg till följande kod i den:</span><span class="sxs-lookup"><span data-stu-id="d0173-115">Create a minimal Q# operation, by creating a file called `Operation.qs`, and adding the following code to it:</span></span>
+    - <span data-ttu-id="68d4c-115">Skapa en minimal Q#-åtgärd genom att skapa en fil med namnet `Operation.qs` och lägg till följande kod i den:</span><span class="sxs-lookup"><span data-stu-id="68d4c-115">Create a minimal Q# operation, by creating a file called `Operation.qs`, and adding the following code to it:</span></span>
 
         ```qsharp
         namespace HelloWorld {
@@ -57,7 +57,7 @@ ms.locfileid: "83660724"
         }
         ```
 
-    - <span data-ttu-id="d0173-116">Skapa ett Python-program med namnet `hello_world.py` som anropar åtgärden `SayHello()` Q#:</span><span class="sxs-lookup"><span data-stu-id="d0173-116">Create a Python program called `hello_world.py` to call the Q# `SayHello()` operation:</span></span>
+    - <span data-ttu-id="68d4c-116">Skapa ett Python-program med namnet `hello_world.py` som anropar åtgärden `SayHello()` Q#:</span><span class="sxs-lookup"><span data-stu-id="68d4c-116">Create a Python program called `hello_world.py` to call the Q# `SayHello()` operation:</span></span>
 
         ```python
         import qsharp
@@ -67,22 +67,22 @@ ms.locfileid: "83660724"
         SayHello.simulate()
         ```
 
-    - <span data-ttu-id="d0173-117">Kör programmet:</span><span class="sxs-lookup"><span data-stu-id="d0173-117">Run the program:</span></span>
+    - <span data-ttu-id="68d4c-117">Kör programmet:</span><span class="sxs-lookup"><span data-stu-id="68d4c-117">Run the program:</span></span>
 
-        ```bash
+        ```
         python hello_world.py
         ```
 
-    - <span data-ttu-id="d0173-118">Verifiera utdata.</span><span class="sxs-lookup"><span data-stu-id="d0173-118">Verify the output.</span></span> <span data-ttu-id="d0173-119">Följande rader ska visas av programmet:</span><span class="sxs-lookup"><span data-stu-id="d0173-119">Your program should output the following lines:</span></span>
+    - <span data-ttu-id="68d4c-118">Verifiera utdata.</span><span class="sxs-lookup"><span data-stu-id="68d4c-118">Verify the output.</span></span> <span data-ttu-id="68d4c-119">Följande rader ska visas av programmet:</span><span class="sxs-lookup"><span data-stu-id="68d4c-119">Your program should output the following lines:</span></span>
 
-        ```bash
+        ```
         Hello from quantum world!
-       ```
+        ```
 
 
 > [!NOTE]
-> * <span data-ttu-id="d0173-120">Du kan också använda python Jupyter Notebooks för att skriva det klassiska python-programmet och anropa Q #-åtgärder från cellerna.</span><span class="sxs-lookup"><span data-stu-id="d0173-120">You can also use Python Jupyter notebooks to write the classical Python program and call Q# operations from the cells.</span></span> <span data-ttu-id="d0173-121">Python-koden är bara ett vanligt python-program.</span><span class="sxs-lookup"><span data-stu-id="d0173-121">The Python code is just a normal Python program.</span></span>
+> * <span data-ttu-id="68d4c-120">Du kan också använda python Jupyter Notebooks för att skriva det klassiska python-programmet och anropa Q #-åtgärder från cellerna.</span><span class="sxs-lookup"><span data-stu-id="68d4c-120">You can also use Python Jupyter notebooks to write the classical Python program and call Q# operations from the cells.</span></span> <span data-ttu-id="68d4c-121">Python-koden är bara ett vanligt python-program.</span><span class="sxs-lookup"><span data-stu-id="68d4c-121">The Python code is just a normal Python program.</span></span>
 
-## <a name="next-steps"></a><span data-ttu-id="d0173-122">Nästa steg</span><span class="sxs-lookup"><span data-stu-id="d0173-122">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="68d4c-122">Nästa steg</span><span class="sxs-lookup"><span data-stu-id="68d4c-122">Next steps</span></span>
 
-<span data-ttu-id="d0173-123">Nu när du har installerat Quantum Development Kit i din önskade miljö, kan du skriva och köra [ditt första kvantprogram](xref:microsoft.quantum.quickstarts.qrng).</span><span class="sxs-lookup"><span data-stu-id="d0173-123">Now that you have installed the Quantum Development Kit in your preferred environment, you can write and run [your first quantum program](xref:microsoft.quantum.quickstarts.qrng).</span></span>
+<span data-ttu-id="68d4c-123">Nu när du har installerat Quantum Development Kit i din önskade miljö, kan du skriva och köra [ditt första kvantprogram](xref:microsoft.quantum.quickstarts.qrng).</span><span class="sxs-lookup"><span data-stu-id="68d4c-123">Now that you have installed the Quantum Development Kit in your preferred environment, you can write and run [your first quantum program](xref:microsoft.quantum.quickstarts.qrng).</span></span>
