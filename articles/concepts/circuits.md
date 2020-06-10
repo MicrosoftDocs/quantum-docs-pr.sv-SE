@@ -6,18 +6,89 @@ uid: microsoft.quantum.concepts.circuits
 ms.author: nawiebe@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 43f14d67db76dabda34bf881ccbfae0bfd1784ff
-ms.sourcegitcommit: 2317473fdf2b80de58db0f43b9fcfb57f56aefff
+no-loc:
+- $
+- $
+- '\cdots'
+- bmatrix
+- '\ddots'
+- '\equiv'
+- '\sum'
+- '\begin'
+- '\end'
+- '\sqrt'
+- '\otimes'
+- '{'
+- '}'
+- '\text'
+- '\phi'
+- '\kappa'
+- '\psi'
+- '\alpha'
+- '\beta'
+- '\gamma'
+- '\delta'
+- '\omega'
+- '\bra'
+- '\ket'
+- '\boldone'
+- '\\\\'
+- '\\'
+- =
+- '\frac'
+- '\text'
+- '\mapsto'
+- '\dagger'
+- '\to'
+- "\begin{cases}"
+- "\end{cases}"
+- '\operatorname'
+- '\braket'
+- '\id'
+- '\expect'
+- '\defeq'
+- '\variance'
+- '\dd'
+- '&'
+- "\begin{align}"
+- "\end{align}"
+- '\Lambda'
+- '\lambda'
+- '\Omega'
+- '\mathrm'
+- '\left'
+- '\right'
+- '\qquad'
+- '\times'
+- '\big'
+- '\langle'
+- '\rangle'
+- '\bigg'
+- '\Big'
+- '|'
+- '\mathbb'
+- '\vec'
+- '\in'
+- '\texttt'
+- '\ne'
+- <
+- '>'
+- '\leq'
+- '\geq'
+- ~~
+- "~"
+ms.openlocfilehash: 745f0570bf62c5d98c2896cdc893ec385abd7115
+ms.sourcegitcommit: e23178d32b316d05784a02ba3cd6166dad177e89
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83426612"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84630395"
 ---
 # <a name="quantum-circuits"></a>Quantum-kretsar
-Överväg att ta en stund till den enhetliga omvandlingen $ \text{CNOT} _ {01} (H\otimes 1) $.
+Överväg att ta en stund till den enhetliga omvandlingen $ \text { CNOT} _ {01 } (H \otimes 1) $.
 Den här grind serien är av grundläggande betydelse för Quantum Computing eftersom den skapar ett maximally Entangled-qubit tillstånd:
 
-$ $ \mathrm{CNOT}_ {01} (H\otimes 1) \ket {00} = \frac {1} {\sqrt {2} } \left (\ket {00} + \ket {11} \right), $ $
+$ $ \mathrm{CNOT}_{01 } (H \otimes 1) \ket{00 } = \frac{1 } {\sqrt{2 } } \left (\ket{00 } + \ket{11 } \right), $ $
 
 Åtgärder med den här eller större komplexiteten är allmänt förekommande i Quantum-algoritmer och Quantum Error-korrigering, så det bör vara en bra avläsnings metod för att det ska finnas en enkel metod för visualiseringen som kallas ett *Quantum-krets diagram*.
 Krets diagrammet för att förbereda denna maximally Entangled-Quantum-tillstånd är:
@@ -31,7 +102,7 @@ Det här visuella språket för Quantum Operations kan vara mer enkelt digestibl
 Vi går igenom dessa konventioner nedan.
 
 I ett krets diagram illustrerar varje heldragen linje en qubit eller oftare i ett qubit-register.
-Per konvention är den översta raden qubit-registrerad $0 $ och resten märks sekventiellt. Exempel kretsen ovan illustreras på två qubits (eller motsvarande två register som består av en qubit).
+Per konvention är den översta raden qubit-register $0 $ och resten märks sekventiellt. Exempel kretsen ovan illustreras på två qubits (eller motsvarande två register som består av en qubit).
 Portar som agerar på en eller flera qubit-register betecknas som en box.
 Till exempel symbolen
 
@@ -49,7 +120,7 @@ Det vill säga
 <!-- Can't find a way to easily center this... probably an extension needed:  -->
 ![Diagram över Quantum-grindar som används från vänster till höger](~/media/3.svg)
 
-är den enhetliga matrisen $CBA $.
+är den enhetliga matrisen $CBA $ .
 Matrisen multiplikation följer den motsatta konventionen: den högra matrisen används först. I Quantum-krets diagram används dock den översta porten först.
 Den här skillnaden kan ibland leda till förvirring, så det är viktigt att notera denna betydande skillnad mellan de linjära Algebraic-och Quantum-krets diagrammen.
 
@@ -61,27 +132,27 @@ Om de inte har samma antal utdata som indata kan de inte vara reversibela och d�
 En ruta som ritas i ett krets diagram måste därför ha exakt samma antal kablar som du anger när den avslutas.
 
 Multi-qubit krets diagram följer liknande konventioner för en qubit.
-Som ett exempel på ett klargörande exempel kan vi definiera en qubit-åtgärd $B $ till $ (H S\otimes X) $ och uttrycka kretsen på samma sätt som
+Som ett klargörande exempel kan vi definiera en qubit-åtgärd $B $ att vara $ (H S \otimes X) $ och uttrycka kretsen på samma sätt som
 
 <!--- ![](.\media\4.svg) --->
 <!-- Can't find a way to easily center this... probably an extension needed:  -->
 ![Krets diagram över en qubit, enhetlig åtgärd](~/media/4.svg)
 
-Vi kan också Visa $B $ som har en åtgärd på ett enda qubit-register snarare än 2 1-qubit-registreringar beroende på i vilken kontext kretsen används. Den mest användbara egenskapen för sådana abstrakta krets diagram är att de gör att komplicerade Quantum-algoritmer kan beskrivas på en hög nivå utan att behöva kompilera dem till fundamentala grindar.
+Vi kan också Visa $B $ som har en åtgärd på ett enda qubit-register i stället för 2 1-qubit-registreringar beroende på i vilken kontext kretsen används. Den mest användbara egenskapen för sådana abstrakta krets diagram är att de gör att komplicerade Quantum-algoritmer kan beskrivas på en hög nivå utan att behöva kompilera dem till fundamentala grindar.
 Det innebär att du kan få en intuition om data flödet för en stor Quantum-algoritm utan att behöva förstå all information om hur var och en av under rutinerna i algoritmen fungerar.
 
 ## <a name="controlled-gates"></a>Kontrollerade grindar
 Den andra konstruktion som är inbyggd i qubit-diagram med flera är kontroll.
-Åtgärden för en Quantum., som är betecknad $ \Lambda (G) $, där ett enskilt qubit värde styr programmet för $G $, kan förstås genom att titta i följande exempel på en produkt tillstånds ingång $ \Lambda (G) (\alpha \ket {0} + \beta \ket {1} ) \ket{\psi} = \alpha \ket {0} \ket{\psi} + \beta \ket {1} G\ket {\ psi} $.
-Det vill säga att den kontrollerade porten gäller $G $ till registret som innehåller $ \psi $ om och bara om kontrollen qubit tar värdet $1 $.
+Åtgärden för en Quantum., som är betecknad $ \Lambda (G) $, där ett enskilt qubit värde styr programmet för $G $ , kan förstås genom att titta i följande exempel på en produkt tillstånds ingång $ \Lambda (G) (\alpha \ket{0 } + \beta \ket{1 } ) \ket { \psi } = \alpha \ket{0 \Ket \psi } { } + \beta \ket{1 } G \ket { \psi } $.
+Det vill säga att den kontrollerade porten tillämpar $G $ på registret som innehåller $ \psi $ , om och bara om kontrollen qubit tar värdet $1 $ .
 I allmänhet beskriver vi sådana kontrollerade åtgärder i krets diagram som
 
 <!--- ![](.\media\5.svg) --->
 <!-- Can't find a way to easily center this... probably an extension needed:  -->
 ![Krets diagram över en enkel kontrollerad grind](~/media/5.svg)
 
-Här visas den svarta cirkeln som anger den Quantum-bit där porten styrs och en lodrät kabel anger den färg som tillämpas när kontrollen qubit tar värdet $1 $.
-För de specialfall där $G = X $ och $G = Z $, introducerar vi följande notation för att beskriva den kontrollerade versionen av grindarna (Observera att den kontrollerade X-porten är [$CNOT $ grind](xref:microsoft.quantum.intrinsic.cnot)):
+Här anger den svarta cirkeln den Quantum-bit som porten styrs av och en lodrät kabel anger den färg som tillämpas när kontrollen qubit tar värdet $1 $ .
+För de specialfall där $G = X $ och $G = Z $ introducerar vi följande notation för att beskriva den kontrollerade versionen av grindarna (Observera att den kontrollerade X-porten är [$CNOT- $ grind](xref:microsoft.quantum.intrinsic.cnot)):
 
 <!--- ![](.\media\6.svg) --->
 <!-- Can't find a way to easily center this... probably an extension needed:  -->
@@ -115,7 +186,7 @@ På samma sätt är under kretsen
 <!-- Can't find a way to easily center this... probably an extension needed:  -->
 ![Krets diagram som representerar en kontrollerad åtgärd](~/media/8.svg)
 
-ger en klassisk kontrollerad grind där $G $ tillämpas på den klassiska kontroll biten som värde $1 $.
+ger en klassisk kontrollerad grind där $G $ tillämpas på den klassiska kontroll biten som värde $1 $ .
 
 ## <a name="teleportation-circuit-diagram"></a>Diagram över Teleportion krets
 Quantum Teleportion är kanske den bästa Quantum-algoritmen för att illustrera dessa komponenter.

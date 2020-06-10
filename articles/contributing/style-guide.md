@@ -6,12 +6,12 @@ ms.author: chgranad
 ms.date: 10/12/2018
 ms.topic: article
 uid: microsoft.quantum.contributing.style
-ms.openlocfilehash: dfb2b1779e3ddc77fc74697bc4dc2904b1a0c70f
-ms.sourcegitcommit: 2317473fdf2b80de58db0f43b9fcfb57f56aefff
+ms.openlocfilehash: 948b385948f0b362e7c12500662132883959a798
+ms.sourcegitcommit: e23178d32b316d05784a02ba3cd6166dad177e89
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83426931"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84630237"
 ---
 # <a name="q-style-guide"></a>Stil guide för Q # #
 ## <a name="general-conventions"></a>Allmänna konventioner ##
@@ -49,7 +49,7 @@ Den här skillnaden antyder att vi namnger åtgärder som verb och fungerar som 
 > Från och med detta perspektiv ska användardefinierade typer namnges som substantiv, så att både själva typen och konstruktorn-funktionen har konsekventa namn.
 
 Om det är rimligt bör du se till att åtgärds namnen börjar med verb som tydligt anger vilken åtgärd som vidtas.
-Ett exempel:
+Till exempel:
 
 - `MeasureInteger`
 - `EstimateEnergy`
@@ -235,7 +235,7 @@ Vi rekommenderar:
 Även om den här begränsningen inte finns kvar i framtida versioner av Q #, är det i själva fallet att det ofta finns grupper med relaterade åtgärder eller funktioner som särskiljs genom att functors stöd för indata eller av konkreta typer av argument.
 Dessa grupper kan särskiljas med hjälp av samma rot namn, följt av en eller två bokstäver som anger dess variant.
 
-| Huvudnamnssuffix | Betydelse |
+| Huvudnamnssuffix | Innebörd |
 |--------|---------|
 | `A` | Indatatyp förväntades stödja`Adjoint` |
 | `C` | Indatatyp förväntades stödja`Controlled` |
@@ -296,7 +296,7 @@ Vi rekommenderar:
 
 # <a name="examples"></a>[Exempel](#tab/examples)
 
-|   | Kodfragment | Description |
+|   | Kodfragment | Beskrivning |
 |---|---------|-------------|
 | ☑ | `newtype Oracle = (Apply : Qubit[] => Unit is Adj + Ctl)` | Namnet `Apply` är en `CamelCase` formaterad verbfras som föreslår att det namngivna objektet är en åtgärd. |
 | ☒ | <s>`newtype Oracle = (apply : Qubit[] => Unit is Adj + Ctl) `</s> | Namngivna objekt ska börja med en inledande versal bokstav. |
@@ -453,7 +453,7 @@ Vi rekommenderar:
 
 # <a name="examples"></a>[Exempel](#tab/examples)
 
-|   | Kodfragment | Description |
+|   | Kodfragment | Beskrivning |
 |---|---------|-------------|
 | ☒ | <s>`2+3`</s> | Använd blank steg runt binära operatorer. |
 | ☒ | <s>`target:Qubit`</s> | Använd blank steg runt Skriv anteckningens kolon. |

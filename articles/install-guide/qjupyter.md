@@ -6,12 +6,12 @@ ms.date: 9/30/2019
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.install.jupyter
-ms.openlocfilehash: 9117794d6cf6f05fa34e05c21fad8977d0e76505
-ms.sourcegitcommit: c8ebc5d7d8581444754f5d7bfaca2f25601f1b14
+ms.openlocfilehash: b80d95a160b5f46c1132d3428ba32ad6dcd5656e
+ms.sourcegitcommit: e23178d32b316d05784a02ba3cd6166dad177e89
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 06/09/2020
-ms.locfileid: "84577828"
+ms.locfileid: "84630336"
 ---
 # <a name="develop-with-q-jupyter-notebooks"></a>Utveckla med Q# Jupyter Notebooks
 
@@ -24,7 +24,7 @@ IQ# (uttalas i-q-sharp) är ett tillägg som främst används av Jupyter och Pyt
 > [!NOTE]
 > * I Q # Jupyter Notebooks kan du bara köra Q # Code, och åtgärderna kan inte anropas från externa värd program (t. ex. python-eller C#-filer). Den här miljön är inte lämplig om målet är att kombinera ett externt klassiskt värd program med Quantum-programmet.
 
-1. Förutsättningar
+1. Krav
 
     - [Python](https://www.python.org/downloads/) 3.6 eller senare
     - [Jupyter Notebook](https://jupyter.readthedocs.io/en/latest/install.html)
@@ -36,6 +36,15 @@ IQ# (uttalas i-q-sharp) är ett tillägg som främst används av Jupyter och Pyt
     dotnet tool install -g Microsoft.Quantum.IQSharp
     dotnet iqsharp install
     ```
+
+    > [!NOTE]
+    > Om du får ett fel under `dotnet iqsharp install` steget öppnar du ett nytt terminalfönster och försöker igen.
+    > Om det fortfarande inte fungerar kan du försöka hitta det installerade `dotnet-iqsharp` verktyget (i Windows `dotnet-iqsharp.exe` ) och köra:
+    > ```
+    > /path/to/dotnet-iqsharp install --user --path-to-tool="/path/to/dotnet-iqsharp"
+    > ```
+    > var `/path/to/dotnet-iqsharp` bör ersättas av den absoluta sökvägen till `dotnet-iqsharp` verktyget i fil systemet.
+    > Detta är vanligt vis under `.dotnet/tools` i mappen användar profil.
 
 1. Verifiera installationen genom att skapa ett `Hello World`-program
 

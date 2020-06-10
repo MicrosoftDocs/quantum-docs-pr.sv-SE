@@ -6,12 +6,12 @@ ms.author: mamykhai@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
 uid: microsoft.quantum.guide.testingdebugging
-ms.openlocfilehash: 374ac42255ab6b2c5eff8ab7879b3a5103181f7f
-ms.sourcegitcommit: 2317473fdf2b80de58db0f43b9fcfb57f56aefff
+ms.openlocfilehash: dd6c7ae8a016423f26c37f3eedf0ae9c1d126b78
+ms.sourcegitcommit: e23178d32b316d05784a02ba3cd6166dad177e89
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83430925"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84630033"
 ---
 # <a name="testing-and-debugging"></a>Testa och felsöka
 
@@ -218,7 +218,7 @@ Resten av raderna beskriver sannolikheten för att mäta bas läget Vector $ \ke
 
 * **`∣0❭:`** den här raden motsvarar `0` beräknings bas läget
 * **`0.707107 +  0.000000 i`**: sannolikheten amplitud i kartesiska-format.
-* **` == `**: `equal` signeringen separerar både motsvarande representationer.
+* **` == `**: `equal` tecknet separerar båda motsvarande representationer.
 * **`**********  `**: En grafisk representation av storleken, antalet `*` står i proportion till sannolikheten för att mäta den här tillstånds vektorn.
 * **`[ 0.500000 ]`**: det numeriska värdet för storlek
 * **`    ---`**: En grafisk representation av amplitudens fas (se nedan).

@@ -6,12 +6,12 @@ ms.author: a-gibec@microsoft.com
 ms.date: 03/05/2020
 ms.topic: article
 uid: microsoft.quantum.guide.operationsfunctions
-ms.openlocfilehash: 9e924b973c4f22a59dd862df3f4f0d70278a1b4e
-ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
+ms.openlocfilehash: 6cfc1b14d86e86a1cbf0109d5e81dfe50c3a80bf
+ms.sourcegitcommit: e23178d32b316d05784a02ba3cd6166dad177e89
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84327806"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84630221"
 ---
 # <a name="operations-and-functions-in-q"></a>Åtgärder och funktioner i Q #
 
@@ -151,7 +151,7 @@ Den faktiska implementeringen av varje specialisering kan antingen *implicit* el
 
 ### <a name="implicitly-specifying-implementations"></a>Ange implementeringar implicit
 
-I det här fallet består bröd texten i åtgärds deklarationen enbart av standard implementeringen. Ett exempel:
+I det här fallet består bröd texten i åtgärds deklarationen enbart av standard implementeringen. Till exempel:
 
 ```qsharp
 operation PrepareEntangledPair(here : Qubit, there : Qubit) : Unit 
@@ -273,7 +273,7 @@ is Ctl + Adj {
         CNOT(here, there);
     }
 
-    controlled (cs, ...) { // user defined implementation for the controlled specialization
+    controlled (cs, ...) { // user-defined implementation for the controlled specialization
         Controlled H(cs, here);
         Controlled X(cs + [here], there);
     }

@@ -6,12 +6,12 @@ ms.author: a-gibec@microsoft.com
 ms.date: 03/05/2020
 ms.topic: article
 uid: microsoft.quantum.guide.expressions
-ms.openlocfilehash: c4b2cc0bed44ffdfb191ba522d6526959e7c6708
-ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
+ms.openlocfilehash: b32644382bb88fb11da00d0d7d78bbd797a0eaaa
+ms.sourcegitcommit: e23178d32b316d05784a02ba3cd6166dad177e89
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84327313"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84630001"
 ---
 # <a name="type-expressions-in-q"></a>Skriv uttryck i Q #
 
@@ -63,7 +63,7 @@ Det vill säga att flytta ett steg till vänster eller höger är exakt detsamma
 
 Heltals Division och heltals-Modulus följer samma beteende för negativa tal som C#.
 Det vill säga `a % b` har alltid samma signera som och är `a` `b * (a / b) + a % b` alltid lika med `a` .
-Ett exempel:
+Till exempel:
 
  `A` | `B` | `A / B` | `A % B`
 ---------|----------|---------|---------
@@ -201,7 +201,7 @@ Förutom litteraler är de enda uttrycken av en användardefinierad typ symboler
 I Q # är unwrap-operatorn ett avslutande utrops tecken `!` .
 Om är till exempel `IntPair` en användardefinierad typ med underliggande typ `(Int, Int)` och `s` var en variabel med värde `IntPair(2, 3)` , `s!` skulle det vara `(2, 3)` .
 
-För användardefinierade typer definieras i termer av andra användardefinierade typer. den avbrytande operatorn kan upprepas. `s!!`anger t. ex. dubblerat-värde för `s` .
+För användardefinierade typer som definieras i termer av andra användardefinierade typer, kan den avbrytande operatorn upprepas. `s!!`anger t. ex. dubblerat-värde för `s` .
 Om `WrappedPair` är en användardefinierad typ med underliggande typ `IntPair` och `t` är en variabel med värde `WrappedPair(IntPair(1,2))` , blir `t!!` det alltså `(1,2)` .
 
 `!`Operatören har högre prioritet än andra andra operatorer än `[]` för mat ris indexering och segmentering.
@@ -209,7 +209,7 @@ Om `WrappedPair` är en användardefinierad typ med underliggande typ `IntPair` 
 
 Prioriteten hos `!` operatorn har en effekt som kanske inte är uppenbar.
 Om en funktion eller åtgärd returnerar ett värde som sedan blir omsluten, måste funktionen eller åtgärds anropet omges av parenteser, så att argumentet tupel binder till anropet i stället för att avbrytas.
-Ett exempel:
+Till exempel:
 
 ```qsharp
 let f = (Foo(arg))!;    // Calls Foo(arg), then unwraps the result
@@ -474,7 +474,7 @@ Parenteser för åtgärds-och funktions anrop binder också före en operator, m
 
 Operatorer i prioritetsordning, från högsta till lägsta:
 
-Operator | Ariteten | Description | Operands typer
+Operator | Ariteten | Beskrivning | Operands typer
 ---------|----------|---------|---------------
  avslutande`!` | Enställig | Packa upp | Valfri användardefinierad typ
  `-`, `~~~`, `not` | Enställig | Numeriskt negativ, bitvis komplement, logisk negation | `Int`, `BigInt` eller `Double` för `-` , `Int` eller `BigInt` `~~~` för `Bool``not`

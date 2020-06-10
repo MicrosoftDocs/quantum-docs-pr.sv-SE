@@ -6,12 +6,12 @@ ms.author: v-edsanc@microsoft.com
 ms.date: 02/17/2020
 ms.topic: article
 uid: microsoft.quantum.libraries.machine-learning.design
-ms.openlocfilehash: 4899336f437c1b7712a7831b97fd6ec1431b59a2
-ms.sourcegitcommit: 6ccea4a2006a47569c4e2c2cb37001e132f17476
+ms.openlocfilehash: b304b9d1a15f164f4dfe758aaed31b7b2369b18c
+ms.sourcegitcommit: e23178d32b316d05784a02ba3cd6166dad177e89
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77909729"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84630248"
 ---
 # <a name="design-your-own-classifier"></a>Utforma din egen klassificerare
 
@@ -25,9 +25,9 @@ Precis som i klassisk djup inlärning finns det ingen allmän regel för att vä
 
 ## <a name="how-to-build-a-classifier-with-q"></a>Så här skapar du en klassificerare med Q\#
 
-För att bygga en klassificerare ska vi kombinera parametrized kontrollerade rotationer i vår krets modell. För att göra det kan vi använda typen [`ControlledRotation`](xref:microsoft.quantum.machinelearning.controlledrotation) som definierats i biblioteket Quantum Machine Learning. Den här typen accepterar fyra argument som avgör: indexet för mål-qubit, matrisen med index-qubits, rotations axeln och index för den associerade parametern i matrisen med parametrar som definierar modellen.
+För att bygga en klassificerare ska vi kombinera parametrized kontrollerade rotationer i vår krets modell. För att göra det kan vi använda den typ som [`ControlledRotation`](xref:microsoft.quantum.machinelearning.controlledrotation) definierats i Quantum Machine Learning-biblioteket. Den här typen accepterar fyra argument som avgör: indexet för mål-qubit, matrisen med index-qubits, rotations axeln och index för den associerade parametern i matrisen med parametrar som definierar modellen.
 
-Nu ska vi se ett exempel på en klassificerare. I [exemplen på halv måne](https://github.com/microsoft/Quantum/tree/master/samples/machine-learning/half-moons)kan vi hitta följande klassificerare som definierats i filen `Training.qs`.
+Nu ska vi se ett exempel på en klassificerare. I [exemplen på halv måne](https://github.com/microsoft/Quantum/tree/master/samples/machine-learning/half-moons)kan vi hitta följande klassificerare som definierats i filen `Training.qs` .
 
 ```qsharp
     function ClassifierStructure() : ControlledRotation[] {
@@ -44,18 +44,18 @@ Nu ska vi se ett exempel på en klassificerare. I [exemplen på halv måne](http
     }
  ```
 
-Vad vi definierar här är en funktion som returnerar en matris med `ControlledRotation` element, som tillsammans med en matris med parametrar och en förskjutning definierar våra [`SequentialModel`](xref:microsoft.quantum.machinelearning.sequentialmodel). Den här typen är grundläggande i Quantum Machine Learning-biblioteket och definierar klassificeraren. Den krets som definieras i funktionen ovan är en del av en klassificerare där varje exempel i data uppsättningen innehåller två funktioner. Därför behöver vi bara två qubits. Den grafiska åter givningen av kretsen är:
+Vad vi definierar här är en funktion som returnerar en element mat ris `ControlledRotation` , som tillsammans med en matris med parametrar och en förskjutning definierar vår [`SequentialModel`](xref:microsoft.quantum.machinelearning.sequentialmodel) . Den här typen är grundläggande i Quantum Machine Learning-biblioteket och definierar klassificeraren. Den krets som definieras i funktionen ovan är en del av en klassificerare där varje exempel i data uppsättningen innehåller två funktioner. Därför behöver vi bara två qubits. Den grafiska åter givningen av kretsen är:
 
  ![Exempel på krets modell](~/media/circuit_model_1.PNG)
 
 ## <a name="use-the-library-functions-to-write-layers-of-gates"></a>Använd biblioteks funktionerna för att skriva lager med portar
 
-Anta att vi har en data uppsättning med 784-funktioner per instans, t. ex. bilder på 28 × 28 pixlar som MNIST-datauppsättningen. I det här fallet blir kretsens bredd tillräckligt stor så att skrivning av varje enskild grind blir en möjlig men opraktisk uppgift. Detta är anledningen till att Quantum Machine Learning-biblioteket innehåller en uppsättning verktyg som automatiskt genererar lager av parametrized-rotationer. Till exempel returnerar funktionen [`LocalRotationsLayer`](xref:microsoft.quantum.machinelearning.localrotationslayer) en matris med okontrollerade qubit rotationer längs en viss axel, med en rotation för varje qubit i registret, varje parametrized med en annan modell parameter. `LocalRotationsLayer(4, X)` returnerar till exempel följande port uppsättning:
+Anta att vi har en data uppsättning med 784-funktioner per instans, t. ex. bilder på 28 × 28 pixlar som MNIST-datauppsättningen. I det här fallet blir kretsens bredd tillräckligt stor så att skrivning av varje enskild grind blir en möjlig men opraktisk uppgift. Detta är anledningen till att Quantum Machine Learning-biblioteket innehåller en uppsättning verktyg som automatiskt genererar lager av parametrized-rotationer. Funktionen returnerar till exempel [`LocalRotationsLayer`](xref:microsoft.quantum.machinelearning.localrotationslayer) en matris med okontrollerade qubit rotationer längs en viss axel, med en rotation för varje qubit i registret, varje parametrized med en annan modell parameter. `LocalRotationsLayer(4, X)`Returnerar exempelvis följande port uppsättning:
 
  ![Lokalt rotations skikt](~/media/local_rotations_layer.PNG)
 
-Vi rekommenderar att du utforskar [API-referenece för Quantum Machine Learning-biblioteket](xref:microsoft.quantum.machinelearning) för att identifiera alla verktyg som är tillgängliga för att effektivisera krets designen.
+Vi rekommenderar att du utforskar [API-referensen för Quantum Machine Learning-biblioteket](xref:microsoft.quantum.machinelearning) för att identifiera alla verktyg som är tillgängliga för att effektivisera krets designen.
 
 ## <a name="next-steps"></a>Nästa steg
 
- Prova olika strukturer i exemplen som tillhandahålls av exemplen. Ser du ändringar i modellens prestanda? I nästa självstudie [`Load your own datasets`](xref:microsoft.quantum.libraries.machine-learning.load)får du lära dig hur du läser in data uppsättningar för att testa och utforska nya arkitekturer i klassificeraren.
+ Prova olika strukturer i exemplen som tillhandahålls av exemplen. Ser du ändringar i modellens prestanda? I nästa självstudie får [`Load your own datasets`](xref:microsoft.quantum.libraries.machine-learning.load) du lära dig hur du läser in data uppsättningar för att testa och utforska nya arkitekturer i klassificeraren.
