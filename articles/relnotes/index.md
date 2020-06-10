@@ -6,12 +6,12 @@ ms.author: nakersha
 ms.date: 09/30/2019
 ms.topic: article
 uid: microsoft.quantum.relnotes
-ms.openlocfilehash: 9a54c1d7a4403a98f945181fdad8ba8a7fdb1175
-ms.sourcegitcommit: 8d9d392bf5e114ae223e6f689ba80d25866ff586
+ms.openlocfilehash: 6b24ebe9f0b5fd3318e8adfe1a62bafaf9d1961e
+ms.sourcegitcommit: c8ebc5d7d8581444754f5d7bfaca2f25601f1b14
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84422231"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84578142"
 ---
 # <a name="microsoft-quantum-development-kit-release-notes"></a>Viktig information för Microsoft Quantum Development Kit
 
@@ -25,6 +25,12 @@ Uppdateringsanvisningar finns i [uppdateringsguiden](xref:microsoft.quantum.upda
 
 *Utgivningsdatum: 4 juni 2020*
 
+Den här lanseringen åtgärdar en bugg som påverkar kompilering av Q#-projekt.
+
+## <a name="version-0112006207"></a>Version 0.11.2006.207
+
+*Utgivningsdatum: 3 juni 2020*
+
 Den här versionen innehåller följande:
 
 - Q#-notebook-filer och Python-värdprogram slutar inte längre att fungera när det finns en Q#-startpunkt
@@ -33,6 +39,9 @@ Den här versionen innehåller följande:
 - Flera inaktuella funktioner och åtgärder har tagits bort enligt det schema som beskrivs i våra [API-principer](xref:microsoft.quantum.contributing.api-design). Q#-program och -bibliotek som kompileras utan varningar i version 0.11.2004.2825 fortsätter nu att fungera oförändrade.
 
 Se den fullständiga listan med stängda PR:er för [bibliotek](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed), [kompilator](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+is%3Aclosed), [runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+is%3Aclosed), [exempel](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed), [IQ#](https://github.com/microsoft/iqsharp/pulls?q=is%3Apr+is%3Aclosed) och [Katas](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+is%3Aclosed).  
+
+> [!NOTE]
+> Den här versionen innehåller en bugg som påverkar kompilering av Q#-projekt. Vi rekommenderar att du uppgraderar till en nyare version.
 
 ## <a name="version-01120042825"></a>Version 0.11.2004.2825
 
