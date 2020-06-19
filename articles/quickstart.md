@@ -6,12 +6,12 @@ ms.author: nakersha
 ms.date: 05/29/2020
 ms.topic: tutorial
 uid: microsoft.quantum.write-program
-ms.openlocfilehash: 989080e7d9979bb87d14b2580d28732bb1092eb1
-ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
+ms.openlocfilehash: 271eb7f496835f152573be930d0fe24e59f2d15d
+ms.sourcegitcommit: e23178d32b316d05784a02ba3cd6166dad177e89
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84327381"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84630079"
 ---
 # <a name="tutorial-explore-entanglement-with-q"></a>Självstudier: Utforska sammanflätning med Q\#
 
@@ -21,7 +21,7 @@ Du får hjälp med att installera QDK, skapa programmet och köra programmet på
 Du kommer att skriva ett program med namnet Bell som visar kvantsammanflätning.
 Namnet Bell syftar på Bell-tillstånd, vilket är specifika kvanttillstånd för två kvantbitar som används för att visa de enklaste exemplen på superposition och kvantsammanflätning.
 
-## <a name="pre-requisites"></a>Förutsättningar
+## <a name="prerequisites"></a>Krav
 
 Om du är redo att börja koda följer du nedanstående steg innan du fortsätter: 
 
@@ -59,7 +59,7 @@ I den här självstudien används värdprogram. Den består av två delar:
 
 1. Skapa ett nytt Q#-projekt:
 
-    ```bash
+    ```
     dotnet new console -lang Q# --output Bell
     cd Bell
     ```
@@ -68,7 +68,7 @@ I den här självstudien används värdprogram. Den består av två delar:
 
 1. Byt namn på Q#-filen
 
-    ```bash
+    ```
     mv Operation.qs Bell.qs
     ```
 
@@ -282,7 +282,7 @@ Init:1    0s=0    1s=1000
 
 1. Kör följande i terminalen:
 
-    ```bash
+    ```dotnetcli
     dotnet run
     ```
 
