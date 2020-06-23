@@ -1,0 +1,10 @@
+- name: Djupräknare
+  href: depth-counter.md
+- name: Kontroll av distinkta indata
+  href: distinct-inputs-checker.md
+- name: Kontroll av användning av upphävda kvantbitar
+  href: invalidated-qubits-use-checker.md
+- name: Räknare för primitiva åtgärder
+  href: primitive-operations-counter.md
+- name: Breddräknare
+  href: width-counter.md
