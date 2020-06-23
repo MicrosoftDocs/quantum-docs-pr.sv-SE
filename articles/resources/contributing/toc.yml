@@ -1,0 +1,14 @@
+- name: Rapportera buggar
+  href: reporting-bugs.md
+- name: Förbättra dokumentationen
+  href: docs.md
+- name: Öppna pull-begäranden
+  href: pull-requests.md
+- name: Bidra med kod
+  href: code.md
+- name: Bidra med exempel
+  href: samples.md
+- name: Stilguide
+  href: style-guide.md
+- name: Designprinciper för API
+  href: api-design-principles.md

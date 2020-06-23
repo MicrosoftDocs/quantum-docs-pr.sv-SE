@@ -1,12 +1,14 @@
 - name: Översikt/innehåll
   href: index.md
-- name: 'Grunderna i Q#'
+- name: Grunderna i Q#
   href: basics.md
-- name: 'Q#-språket'
+- name: Q#-språket
   href: language/toc.yml
-- name: 'Använda Q#'
+- name: Använda Q#
   href: using-qsharp/toc.yml
 - name: Simulatorer och resursberäknare
-  href: ../machines/toc.yml
+  href: machines/toc.yml
+- name: Q#-bibliotek
+  href: libraries/toc.yml
 - name: Snabbreferens
   href: quickref/toc.yml
