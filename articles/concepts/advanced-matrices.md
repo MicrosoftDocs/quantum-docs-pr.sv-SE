@@ -9,6 +9,13 @@ ms.topic: article
 no-loc:
 - $
 - $
+- $
+- $
+- $
+- $
+- $$
+- $$
+- $$
 - '\cdots'
 - bmatrix
 - '\ddots'
@@ -77,12 +84,15 @@ no-loc:
 - '\geq'
 - ~~
 - "~"
-ms.openlocfilehash: 8d3c646715f13c454e51b9295cbfdabf6a236ffc
-ms.sourcegitcommit: e23178d32b316d05784a02ba3cd6166dad177e89
+- "\begin{bmatrix}"
+- "\end{bmatrix}"
+- '\_'
+ms.openlocfilehash: 71923247121eae6a1d4e26d2664d8e547370ba3a
+ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84630156"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85269464"
 ---
 # <a name="advanced-matrix-concepts"></a>Avancerade mat ris koncept #
 
@@ -104,7 +114,7 @@ $$
 
 Vektorerna
 
-$ $ \begin{ bmatrix } 1 \\ \\ 0 \\ \\ 0 \end{ bmatrix } , \begin{ bmatrix } 0 \\ \\ 1 \\ \\ 0 \end { bmatrix } och \begin{ bmatrix } 0 0 \\ \\ \\ \\ 1 \end {bmatrix}$$
+$ $ \begin{ bmatrix } 1 \\ \\ 0 \\ \\ 0 \end{ bmatrix } , \begin{ bmatrix } 0 \\ \\ 1 \\ \\ 0 \end{bmatrix} och \begin{ bmatrix } 0 \\ \\ 0 \\ \\ 1\end{bmatrix}$$
 
 är eigenvectors i matrisen med Eigenvalues $d _1 $ , $d _2 $ och $d _3 $ . Om $d _1 $ , $d _2 $ och $d _3 $ är distinkta tal, är dessa vektorer (och deras multiplar) de enda eigenvectors för mat ris $D $ . I allmänhet är det enkelt att läsa av Eigenvalues och eigenvectors för en diagonal matris. Eigenvalues är alla siffror som visas i diagonalen och deras respektive eigenvectors är enhets vektorerna med en post som motsvarar $1 $ och de återstående posterna som motsvarar $0 $ .
 

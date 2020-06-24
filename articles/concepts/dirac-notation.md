@@ -9,6 +9,10 @@ ms.topic: article
 no-loc:
 - $
 - $
+- $
+- $
+- $
+- $
 - '\cdots'
 - bmatrix
 - '\ddots'
@@ -77,12 +81,15 @@ no-loc:
 - '\geq'
 - ~~
 - "~"
-ms.openlocfilehash: 958910452109fc722999acddd70894c458e38357
-ms.sourcegitcommit: e23178d32b316d05784a02ba3cd6166dad177e89
+- "\begin{bmatrix}"
+- "\end{bmatrix}"
+- '\_'
+ms.openlocfilehash: f9dddfa25e9fd1e3d8aaf92b2e3b17c96ed8b72a
+ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84630386"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85269514"
 ---
 # <a name="dirac-notation"></a>Dirac-notation
 
@@ -123,7 +130,7 @@ $$
 
 Som ett exempel på Dirac-notation bör du överväga bromsen $ \braket{0 | 1 } $, som är den inre produkten mellan $0 $ och $1 $ .  Den kan skrivas som 
 
-$ $ \braket{0 | 1 } = \begin{ bmatrix } 1 & 0 \end{ bmatrix } \begin{ bmatrix } 0 \\\\ 1 \end { bmatrix } = 0. $ $
+$ $ \braket{0 | 1 } = \begin{ bmatrix } 1 & 0 \end{ bmatrix } \begin{ bmatrix } 0 \\\\ 1 \end{bmatrix} = 0. $ $
 
 Det betyder att $ \ket{0 } $ och $ \ket{1 } $ är rätvinkliga vektorer, vilket innebär att $ \braket{0 | 1 } = \braket{1 | 0 } = 0 $ .  Även efter definition $ \braket{0 | 0 } = \braket{1 | 1 } = 1 $ , vilket innebär att de två beräknings bas vektorerna också kan kallas *orthonormal*.
 Dessa orthonormal-egenskaper är användbara i följande exempel. Om vi har ett tillstånd $ \ket { \psi } = {\frac{3 } {5 } } \ket{1 } + {\frac{4 } {5 } } \ket{0 } $ sedan $ \braket{1 | 0 } = 0 $ sannolikheten för att mäta $1 $ är  
@@ -173,7 +180,7 @@ Det faktum att det negativa tecknet visas i beräkningen av sannolikheten är en
 ## <a name="ketbra-or-outer-product"></a>ketbra eller yttre produkt
 Det slutliga objektet som är värt att diskutera i Dirac-notation är *ketbra* eller yttre produkten.  Den yttre produkten representeras i Dirac-notationer som $ \ket { \psi } \bra { \phi } $ och kallas ibland ketbras eftersom Bras och kets sker i motsatt ordning som bromsar.  Den yttre produkten definieras via Matrix multiplikation som $ \ket { \psi } \bra { \phi } = \psi \phi ^ \dagger $ för Quantum State Vectors $ \psi $ och $ \phi $ .  Det enklaste, och utan tvekant vanliga exemplet i den här notationen, är
 
-$ $ \ket{0 } \bra{0 } = \begin{ bmatrix } 1 \\\\ 0 \end{ bmatrix } \begin{ bmatrix } 1&0 \end{ bmatrix } = \begin{ bmatrix } 1 &0 \\\\ 0 &0 \end { bmatrix } \qquad \ket{1 } \bra{1 } = \begin{ bmatrix } 0 \\\\ 1 \end{ bmatrix } \begin{ bmatrix } 0&1 \end{ bmatrix } = \begin{ bmatrix } 0 &0 \\\\ 0 &1 \end { bmatrix } .
+$ $ \ket{0 } \bra{0 } = \begin{ bmatrix } 1 \\\\ 0 \end{ bmatrix } \begin{ bmatrix } 1&0 \end{ bmatrix } = \begin{ bmatrix } 1 &0 \\\\ 0 &0 \end{bmatrix} \qquad \ket{1 } \bra{1 } = \begin{ bmatrix } 0 \\\\ 1 \end{ bmatrix } \begin{ bmatrix } 0&1 \end{ bmatrix } = \begin{ bmatrix } 0 &0 \\\\ 0 &1 \end{bmatrix} .
 $$
 
 Ketbras kallas ofta för projektorer eftersom de projicerar ett Quantum-tillstånd till ett fast värde.  Eftersom dessa åtgärder inte är enhetliga (och inte ens bevarar normen i en Vector) bör det inte vara så överraskning att en Quantum-dator inte kan deterministiskt tillämpa en projektor.  Projektorer gör dock ett snyggt jobb för att beskriva den åtgärd som mätningen har på ett Quantum-tillstånd.  Om vi till exempel mäter ett tillstånd $ \ket { \psi } $ till $0 $ kommer den resulterande omvandlingen att tillstånds upplevelsen som ett resultat av mätningen

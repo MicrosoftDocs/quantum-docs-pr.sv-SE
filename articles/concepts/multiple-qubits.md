@@ -9,6 +9,10 @@ ms.topic: article
 no-loc:
 - $
 - $
+- $
+- $
+- $
+- $
 - '\cdots'
 - bmatrix
 - '\ddots'
@@ -77,12 +81,15 @@ no-loc:
 - '\geq'
 - ~~
 - "~"
-ms.openlocfilehash: 224bd5165f508f6cd1fdb85fb5c14ba2e23e59ea
-ms.sourcegitcommit: e23178d32b316d05784a02ba3cd6166dad177e89
+- "\begin{bmatrix}"
+- "\end{bmatrix}"
+- '\_'
+ms.openlocfilehash: 1ac235bef473efa82b096cae4159e2c724ba7c0e
+ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84630369"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85269498"
 ---
 # <a name="multiple-qubits"></a>Flera qubits
 
@@ -138,7 +145,7 @@ $$
 
 Det är också möjligt att mäta bara en qubit av ett qubit Quantum-tillstånd. I de fall där du endast mäter en av qubits är effekten av måttet olika, eftersom hela statusen inte är komprimerad till ett beräknings underlag, i stället komprimeras endast till ett under system.  I sådana fall kan du med andra ord bara mäta en qubit för att minimera ett av under systemen, men inte alla.  
 
-För att se detta bör du mäta det första qubit av följande tillstånd, som bildas genom att använda Hadamard-transformeringen $H $ på två qubits från början till status "0": $ $ H ^ {\otimes 2 } \left (\begin{ bmatrix } 1 \\ \\ 0 \end{ bmatrix } \otimes \begin{ bmatrix } 1 \\ \\ 0 \end{ bmatrix } \right) = \frac{1 } {2 } \begin{ bmatrix } 1 & 1 & 1 & 1 \\ \\ 1 &-1 & 1 &-1 \\ \\ 1 & 1 &-1 &-1 1 &- \\ \\ 1 &-1 & 1 \end{ bmatrix } \begin{} 1 0 0 bmatrix \\\\ \\\\ \\\\ \end { bmatrix } = \frac{1 } {2 } \begin{ bmatrix } 1 1 1 \\\\ \\\\ \\\\ 1 \end { bmatrix } \mapsto \begin{Cases } \text{Outcome} = 0 & \frac{1 } {\sqrt{2 } } \begin{ bmatrix } 1 \\\\ 1 \\\\ 0 \\\\ \end{ bmatrix } \\ \\ \text{Outcome \frac{1} = 1 & \sqrt{2 } {\begin{ } } \end{ bmatrix } 0 \\\\ 0 \\\\ 1 \\\\ 1 \end{Cases bmatrix } \\ \\ } .
+För att se detta bör du mäta det första qubit av följande tillstånd, som bildas genom att använda Hadamard-transformeringen $H $ på två qubits från början till status "0": $ $ H ^ {\otimes 2 } \left (\begin{ bmatrix } 1 \\ \\ 0 \end{ bmatrix } \otimes \begin{ bmatrix } 1 \\ \\ 0 \end{ bmatrix } \right) = \frac{1 } {2 } \begin{ bmatrix } 1 & 1 & 1 & 1 \\ \\ 1 &-1 & 1 &-1 \\ \\ 1 & 1 &-1 &-1 1 &- \\ \\ 1 &-1 & 1 \end{ bmatrix } \begin{ bmatrix } 1 0 \\\\ \\\\ \\\\ \end{bmatrix} = \frac{1 } {2 } \begin{} 1 1 1 bmatrix \\\\ \\\\ \\\\ \end{bmatrix} \mapsto \begin{Cases } \text{Outcome} = 0 & \frac{1 } {\sqrt{2 } } \begin{ bmatrix } 1 \\\\ 1 \\\\ 0 \\\\ 0 \end{ bmatrix } \\ \\ \text{Outcome} = 1 & \frac{1 } {\sqrt{2 } } \begin{ bmatrix } 0 \\\\ 0 \\\\ 1 \\\\ 1 \end{ bmatrix } \\ \\ \end{Cases } .
 $ $ Båda resultat har en sannolikhet på 50%.  Resultatet som 50% sannolikheten för båda kan Reformas från det faktum att den inledande Quantum-delläges vektorn är invariant under växlingen $0 $ med $1 $ på den första qubit.
 
 Den matematiska regeln för att mäta den första eller andra qubit är enkel.  Om vi låter $e _k $ vara $k ^ {\rm $- } beräknings bas vektor och låta $S $ vara en uppsättning $e _k $ så att qubit i fråga tar värdet $1 $ för det värdet $k $ .  Om vi till exempel är intresserade av att mäta de första qubit skulle $S $ bestå av $e _1 \equiv 10 $ och $e _3 \equiv 11 $ .  På samma sätt kan vi, om vi är intresserade av den andra qubit $S, $ bestå av $e _2 \equiv 01 $ och $e _3 \equiv 11 $ .  Sannolikheten för att mäta de valda qubit $ är $1 för tillstånds vektor $ \psi$
@@ -167,12 +174,12 @@ $$
 Observera att detta är bara summan av de två sannolikheter som skulle förväntas för att mäta resultaten $10 $ och $11 $ var att alla qubits mäts.
 I vårt exempel utvärderas detta till
 
-$ $ \frac{1 } {4 } \left | \begin{ bmatrix } 0&0&1&0 \end { bmatrix } \begin{ bmatrix } 1 1 1 \\\\ \\\\ \\\\ \end { bmatrix } \right | ^ 2 + \frac{1 } {4 } \left | \begin{ bmatrix } 0&0&0&1 \end { bmatrix } \begin{ bmatrix } 1 \\\\ 1 \\\\ 1 \\\\ 1 \end { bmatrix } \right | ^ 2 = \frac{1 } {2 } .
+$ $ \frac{1 } {4 } \left | \begin{ bmatrix } 0&0&1&0 \end{bmatrix} \begin{ bmatrix } 1 1 1 \\\\ \\\\ \\\\ \end{bmatrix} \right | ^ 2 + \frac{1 } {4 } \left | \begin{ bmatrix } 0&0&0&1 \end{bmatrix} \begin{} 1 1 1 bmatrix \\\\ \\\\ \\\\ 1 \end{bmatrix} \right | ^ 2 = \frac{1 } {2 } .
 $$
 
 vilket perfekt matchar vad vår intuition anger för oss att sannolikheten ska vara.  På samma sätt kan tillstånd skrivas som
 
-$ $ \frac { \frac{e_1 } {2 } + \frac{e_3 } {2 } } {\sqrt { \frac{1 } {2 } }} = \frac{1 } {\sqrt{2 } } \begin{ bmatrix } 0 \\\\ 0 \\\\ 1 \\\\ 1 \end {bmatrix}
+$ $ \frac { \frac{e_1 } {2 } + \frac{e_3 } {2 } } {\sqrt { \frac{1 } {2 } }} = \frac{1 } {\sqrt{2 } } \begin{ bmatrix } 0 \\\\ 0 \\\\ 1 \\\\ 1\end{bmatrix}
 $$
 
 återigen i enlighet med våra intuition.
