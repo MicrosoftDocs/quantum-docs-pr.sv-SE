@@ -1,8 +1,0 @@
-- name: Få beräkningar av energinivå
-  href: molecular-hydrogen.md
-- name: Läsa in ett hamiltonskt värde från en fil
-  href: loading-from-file.md
-- name: Få resursantal
-  href: resource-counts.md
-- name: Slutpunkt till slutpunkt med NWChem
-  href: end-to-end.md
