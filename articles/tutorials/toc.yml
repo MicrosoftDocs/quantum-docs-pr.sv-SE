@@ -1,0 +1,12 @@
+- name: Kvantgenerator för slumptal
+  href: quantum-random-number-generator.md
+- name: Utforska sammanflätning med Q#
+  href: explore-entanglement.md
+- name: Implementera Grovers sökalgoritm
+  href: search.md
+- name: Programmering på qubitnivå
+  href: qubit-level.md
+- name: Lär dig Q# med Quantum Katas
+  href: intro-to-katas.md
+- name: Q#-kodexempel
+  href: 'https://docs.microsoft.com/en-us/samples/browse/?languages=qsharp'
