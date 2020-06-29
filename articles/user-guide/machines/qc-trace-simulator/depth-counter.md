@@ -6,17 +6,17 @@ ms.author: vadym@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
 uid: microsoft.quantum.machines.qc-trace-simulator.depth-counter
-ms.openlocfilehash: d532a9f512b8c87d83d62ed26e3bb67e1b6f668b
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+ms.openlocfilehash: 0029a00e6a3563dc542daeda2afa7cabf42441fb
+ms.sourcegitcommit: af10179284967bd7a72a52ae7e1c4da65c7d128d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85275630"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85415276"
 ---
 # <a name="depth-counter"></a>Djup räknare
 
 `Depth Counter`Är en del av Quantum Computer [trace Simulator](xref:microsoft.quantum.machines.qc-trace-simulator.intro).
-Det används för att samla in antalet djup för varje åtgärd som anropas i ett Quantum-program. Alla åtgärder från <xref:microsoft.quantum.intrinsic> uttrycks som enskilda qubit-rotationer, T-grindar, enkla qubit Clifford-portar, CNOT-portar och mätningar av multi-qubit Pauli observables. Användare kan ange djupet för varje primitiv åtgärd via `gateTimes` fältet i <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulatorConfiguration> .
+Den används för att samla in antal som representerar den nedre gränserna för varje åtgärd som anropas i ett Quantum-program. Alla åtgärder från <xref:microsoft.quantum.intrinsic> uttrycks som enskilda qubit-rotationer, T-grindar, enkla qubit Clifford-portar, CNOT-portar och mätningar av multi-qubit Pauli observables. Användare kan ange djupet för varje primitiv åtgärd via `gateTimes` fältet i <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulatorConfiguration> .
 
 Som standard har alla åtgärder djup 0, förutom T-porten som har djup 1. Detta innebär att endast T-djupet beräknas (vilket är ofta önskvärt) som standard. Insamlad statistik sammanställs över alla kanter i åtgärds anrops diagrammet. 
 

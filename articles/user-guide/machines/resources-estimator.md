@@ -6,12 +6,12 @@ ms.author: anpaz@microsoft.com
 ms.date: 1/22/2019
 ms.topic: article
 uid: microsoft.quantum.machines.resources-estimator
-ms.openlocfilehash: b0c800c3946d2e4ba4457127fb9495dc9dcf2934
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+ms.openlocfilehash: cbb1c274b64738cc4b47869563d7d02eb717afbc
+ms.sourcegitcommit: af10179284967bd7a72a52ae7e1c4da65c7d128d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85275550"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85415273"
 ---
 # <a name="the-resources-estimator-target-machine"></a>Mål datorn för resurs uppskattning
 
@@ -98,8 +98,8 @@ Följande är en lista över mått som beräknas av `ResourcesEstimator` :
 * __Mått__: antalet utförda mätningar.
 * __R__: antalet enskilda qubit-rotationer som körs, med undantag för T-, Clifford-och Pauli-portar.
 * __T__: antalet t-grindar och deras konjugat, inklusive T-grind, T_x = H. T. H och T_y = hy. T. hy, körs.
-* __Djup__: djupet i Quantum-kretsen som körs av åtgärden Q #. Som standard räknas bara T-portar i djupet. mer information finns i [djup räknare](xref:microsoft.quantum.machines.qc-trace-simulator.depth-counter) .
-* __Width__: det högsta antalet qubits som tilldelas under körningen av Q #-åtgärden.
+* __Djup__: den nedre gränserna för djupet i Quantum-kretsen som körs av åtgärden Q #. Som standard räknas bara T-portar i djupet. mer information finns i [djup räknare](xref:microsoft.quantum.machines.qc-trace-simulator.depth-counter) .
+* __Width__: den nedre gränsen för maximalt antal allokerade qubits under körningen av Q #-åtgärden. Det kanske inte går att uppnå både __djup__ och __Bredd__ nedre gränser samtidigt.
 * __BorrowedWidth__: det maximala antalet qubits som lånas inom Q #-åtgärden.
 
 

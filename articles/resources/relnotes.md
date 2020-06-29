@@ -6,12 +6,12 @@ ms.author: bradben
 ms.date: 5/30/2020
 ms.topic: article
 uid: microsoft.quantum.relnotes
-ms.openlocfilehash: e48f4157438fba063877b2b79fbc7629710fc9f3
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+ms.openlocfilehash: 0fcdec1a304730b593224283421539ea3ca9c913
+ms.sourcegitcommit: af10179284967bd7a72a52ae7e1c4da65c7d128d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85275390"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85415463"
 ---
 # <a name="microsoft-quantum-development-kit-release-notes"></a>Viktig information för Microsoft Quantum Development Kit
 
@@ -344,8 +344,6 @@ Om du tidigare hade installerat tillägget behöver du installera det igen genom
 
 Den här versionen åtgärdar en bugg som hindrade vissa användare från att läsa in Visual Studio-tillägget.
 
-Om du uppgraderar från en 0.2-version av Quantum Development Kit kan du läsa mer om [Q#-språkändringar och migrering av ditt Q#-program](xref:microsoft.quantum.relnotes.migration-0-3).
-
 ## <a name="version-031811203"></a>Version 0.3.1811.203
 
 *Utgivningsdatum: 2 november 2018*
@@ -356,8 +354,6 @@ Den här versionen innehåller några buggkorrigeringar, inklusive:
 * Tog bort kompileringsvarningar vid kompilering av projekt med hjälp av en tidigare .NET Core-version än 2.1.403.
 * Rensning av dokumentationen, särskilt de knappbeskrivningar som visas när muspekaren hovras i VS Code eller Visual Studio.
 
-Om du uppgraderar från en 0.2-version av Quantum Development Kit kan du läsa mer om [Q#-språkändringar och migrering av ditt Q#-program](xref:microsoft.quantum.relnotes.migration-0-3).
-
 ## <a name="version-0318102508"></a>Version 0.3.1810.2508
 
 *Utgivningsdatum: 29 oktober 2018*
@@ -367,8 +363,6 @@ Den här versionen innehåller nya språkfunktioner och en förbättrad utveckla
 * Den här versionen innehåller en språkserver för Q# samt klientintegreringar för Visual Studio och Visual Studio Code. Detta möjliggör en ny uppsättning IntelliSense-funktioner samt live-feedback för skrivning i form av vågiga understrykningar under fel och varningar. 
 * Den här uppdateringen förbättrar avsevärt de diagnostiska meddelandena i allmänhet, med enkel navigering till och exakta intervall för diagnostik samt ytterligare information i den hovringsinformation som visas.
 * Q#-språket har utökats så att utvecklarnas sätt att utföra vanliga åtgärder blir mer enhetligt. Det finns även nya förbättringar av språkfunktionerna för kraftfulla uttryck av kvantberäkning.  Det finns flera icke-bakåtkompatibla ändringar av Q#-språket i den här versionen.   
-
-Läs mer om [Q#-språkändringar och migrering av ditt Q#-program](xref:microsoft.quantum.relnotes.migration-0-3).
 
 Den här versionen innehåller även ett nytt kvantkemibibliotek:
 

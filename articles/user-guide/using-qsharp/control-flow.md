@@ -6,43 +6,41 @@ ms.author: a-gibec@microsoft.com
 ms.date: 03/05/2020
 ms.topic: article
 uid: microsoft.quantum.guide.controlflow
-ms.openlocfilehash: 1f1b641563fe35879abeee32b4f0aeeb7001b1a0
-ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
+ms.openlocfilehash: 0cf62a128170bd0c28ff77f00fc23414567b1ea4
+ms.sourcegitcommit: af10179284967bd7a72a52ae7e1c4da65c7d128d
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84326548"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85415311"
 ---
 # <a name="control-flow-in-q"></a>Kontroll flöde i Q #
 
-I en åtgärd eller funktion körs varje instruktion i ordning, på liknande sätt som de flesta vanliga tvingande klassiska språk.
-Det här kontroll flödet kan ändras, men på tre olika sätt:
+I en åtgärd eller funktion körs varje instruktion i ordning, på liknande sätt som andra vanliga tvingande klassiska språk.
+Du kan dock ändra kontroll flödet på tre olika sätt:
 
-- `if`instruktioner
-- `for`slingor
-- `repeat`-`until`slingor
+* `if`instruktioner
+* `for`slingor
+* `repeat-until-success`slingor
 
-Vi skjuter upp diskussionen om det [senare.](#repeat-until-success-loop)
-`if` `for` Kontroll flödes-och kontroll flödes konstruktionerna går dock bra att känna till i de flesta klassiska programmeringsspråk.
+`if` `for` Konstruktionerna för och kontroll flödet fortsätter att vara bekanta med de flesta klassiska programmeringsspråk. [`Repeat-until-success`](#repeat-until-success-loop)slingor beskrivs längre fram i den här artikeln.
 
-`for`Det är viktigt att slingor och `if` uttryck även kan användas i åtgärder för vilka specialisering genereras automatiskt. I så fall kastar det intilliggande av en `for` slinga riktningen och tar det angränsande av varje iteration.
-Det här följer principen "skor-och-SOCKS": om du vill ångra att du kommer igång på SOCKS och sedan skor måste du ångra att sätta på skor och sedan ångra att sätta igång på SOCKS.
-Det fungerar mindre bra om du vill prova och ta din SOCKS medan du fortfarande använder dina skor!
+Det är viktigt `for` att du använder slingor och `if` uttryck i åtgärder för vilka [specialisering](xref:microsoft.quantum.guide.operationsfunctions) genereras automatiskt. I det scenariot kastar det intilliggande av en `for` slinga riktningen och tar det angränsande av varje iteration.
+Den här åtgärden följer principen "skor-och-SOCKS": om du vill ångra att sätta igång på SOCKS och sedan skor måste du ångra att sätta på skor och sedan ångra att sätta igång på SOCKS. 
 
 ## <a name="if-else-if-else"></a>Om, annars, annars
 
 `if`Instruktionen stöder villkorlig körning.
-Det består av nyckelordet `if` , en öppen parentes `(` , ett booleskt uttryck, en avslutande parentes `)` och ett instruktions block ( _then_ -block).
-Detta kan följas av valfri mängd Else-If-satser, som består av nyckelordet `elif` , en öppen parentes `(` , ett booleskt uttryck, en högerparentes `)` och ett instruktions block ( _Else-If-_ block).
+Det består av nyckelordet `if` , ett booleskt uttryck inom parentes och ett instruktions block ( _then_ -blocket).
+Valfritt antal Else-If-satser kan följa, var och en består av nyckelordet `elif` , ett booleskt uttryck inom parentes och ett instruktions block ( _Else-If-_ block).
 Slutligen kan instruktionen avslutas med en Else-sats som består av nyckelordet `else` följt av ett annat instruktions block ( _Else_ -blocket).
 
-`if`Villkoret utvärderas och om det är sant körs blocket.
-Om villkoret är falskt utvärderas det första Else-If-villkoret. om det är sant körs det Else-If-blocket.
-Annars testas det andra-IF-blocket, och sedan den tredje, och så vidare tills en sats med ett True-villkor påträffas eller det inte finns några Else If-satser.
-Om det ursprungliga IF-villkoret och alla Else-If-satser utvärderas till false körs Else-blocket om ett har angetts.
+`if`Villkoret utvärderas och om det är *Sant*körs blocket. *then*
+Om villkoret är *falskt*utvärderas det första Else-If-villkoret. om detta är sant körs *Else-If-* blocket.
+Annars utvärderar det andra-IF-blocket och sedan den tredje, och så vidare tills en sats med ett True-villkor påträffas eller det inte finns några Else If-satser.
+Om det ursprungliga *IF* -villkoret och alla Else-If-satserna evalueras till *false*körs *Else* -blocket om det anges.
 
 Observera att det körs på det egna omfånget.
-Bindningar som görs inuti ett `if` , `elif` eller- `else` block visas inte efter dess slut.
+Bindningar som görs inuti ett `if` , `elif` eller- `else` block visas inte när blocket slutar.
 
 Exempel:
 
@@ -69,18 +67,18 @@ if (i == 1) {
 
 ## <a name="for-loop"></a>For-slinga
 
-`for`Instruktionen stöder iteration över ett heltals intervall eller över en matris.
-Instruktionen består av nyckelordet `for` , en öppen parentes `(` följt av en symbol-eller symbol-tupel, nyckelordet `in` , ett uttryck av typen `Range` eller matris, en högerparentes `)` och ett instruktions block.
+`for`Instruktionen stöder iteration över ett heltals intervall eller en matris.
+Instruktionen består av nyckelordet `for` följt av en symbol-eller symbol-tupel, nyckelordet `in` och ett uttryck av typen `Range` eller matris, allt inom parentes och ett instruktions block.
 
-Instruktions blocket (bröd texten i slingan) körs upprepade gånger, med de definierade symbolerna (loop-variabeln) som är kopplade till varje värde i intervallet eller matrisen.
+Instruktions blocket (bröd texten i slingan) körs flera gånger, med den definierade symbolen (loop-variabeln) kopplad till varje värde i intervallet eller matrisen.
 Observera att om intervall uttrycket utvärderas till ett tomt intervall eller en matris, körs inte bröd texten alls.
-Uttrycket utvärderas fullständigt innan det går in i loopen och ändras inte när slingan körs.
+Uttrycket utvärderas fullständigt innan loopen inleds, och ändras inte när loopen körs.
 
 Loop-variabeln binds vid varje ingång till loop-texten och är obunden i slutet av bröd texten.
-I synnerhet är loop-variabeln inte kopplad efter att for-slingan har slutförts.
-Bindningen för de deklarerade symbolerna är oföränderlig och följer samma regler som andra variabel bindningar. 
+Loop-variabeln är inte kopplad efter att for-slingan har slutförts.
+Bindningen för sling-variabeln är oföränderlig och följer samma regler som andra variabel bindningar. 
 
-I vissa exempel är supposing `qubits` ett register över qubits (t. ex. av typ `Qubit[]` ). 
+I de här exemplen `qubits` är ett register över qubits (t. ex. typ `Qubit[]` ). 
 
 ```qsharp
 // ...
@@ -101,15 +99,15 @@ for ((index, measured) in results) { // iterates over the tuple values in result
     }
 }
 ```
-Observera att i slutet använder vi den aritmetiska operatorn Shift-vänstra, `<<<` och information om vilka som kan hittas på [numeriska uttryck](xref:microsoft.quantum.guide.expressions#numeric-expressions)
 
+Observera att vi i slutet använder den aritmetiska operatorn Shift-vänstra binära operatorn `<<<` . Mer information finns i [numeriska uttryck](xref:microsoft.quantum.guide.expressions#numeric-expressions).
 
 ## <a name="repeat-until-success-loop"></a>Upprepa-tills-lyckad-slinga
 
 Med hjälp av Q #-språket kan ett klassiskt kontroll flöde vara beroende av resultatet av att mäta qubits.
-Den här funktionen aktiverar implementering av kraftfulla Probabilistic-gadgetar som kan minska beräknings kostnaden för att implementera unitaries.
-Som exempel är det enkelt att implementera så kallade ru: er-mönster ( *REPEAT-until-lyckades* ) i Q #.
-Dessa ru: er-mönster är Probabilistic-program som har en *förväntad* låg kostnad i termer av elementära grindar, men för vilka den faktiska kostnaden är beroende av en faktisk körning och en faktisk Interfoliering av olika möjliga grenar.
+Med den här funktionen aktive ras implementera kraftfulla Probabilistic-gadgetar som kan minska beräknings kostnaden för att implementera unitaries.
+Exempel på detta är ru: er-mönster ( *REPEAT-until-lyckat* ) i Q #.
+Dessa ru: er-mönster är Probabilistic-program som har en *förväntad* låg kostnad i termer av elementära grindar. kostnaden beror på den faktiska körningen och Interfoliering av flera möjliga grenar.
 
 Q # stöder konstruktioner för att under lätta upprepningar av ru: er-mönster.
 
@@ -125,31 +123,33 @@ fixup {
 
 var `expression` är ett giltigt uttryck som utvärderas till ett värde av typen `Bool` .
 Loop-texten körs och sedan utvärderas villkoret.
-Om villkoret är sant slutförs instruktionen. annars utförs korrigeringen och instruktionen körs igen från och med loop-texten.
+Om villkoret är sant slutförs instruktionen. annars körs korrigeringen och instruktionen körs igen, från och med loop-texten.
 
-Alla tre delarna av en REPEAT/until-slinga (bröd texten, testet och korrigeringen) behandlas som ett enda omfång *för varje upprepning*, så symboler som är kopplade till texten är tillgängliga i testet och i korrigeringen.
+Alla tre delar av en ru: er-slinga (bröd texten, testet och korrigeringen) behandlas som ett enda omfång *för varje upprepning*, så symboler som är kopplade till innehållet är tillgängliga i både testet och korrigeringen.
 Att slutföra körningen av korrigeringen avslutar dock omfånget för instruktionen, så att symbol bindningar som görs under bröd texten eller korrigeringen inte är tillgängliga i efterföljande upprepningar.
 
 Vidare `fixup` är uttrycket ofta användbart men inte alltid nödvändigt.
 I fall där det inte behövs, konstruktionen
+
 ```qsharp
 repeat {
     // do stuff
 }
 until (expression);
 ```
+
 är också ett giltigt ru: er-mönster.
 
-Längst ned på sidan presenteras några [exempel på ru: er-slingor](#repeat-until-success-examples).
+Fler exempel och mer information finns i [Upprepa-till-Slutför-exempel](#repeat-until-success-examples) i den här artikeln.
 
 > [!TIP]   
-> Undvik att använda repetitions-till-Slutför-slingor inuti functions. Motsvarande funktioner tillhandahålls av while-slingor i functions. 
+> Undvik att använda repetitions-till-Slutför-slingor inuti functions. Använd *while* -slingor för att tillhandahålla motsvarande funktioner i functions. 
 
 ## <a name="while-loop"></a>While-slinga
 
-Upprepa-tills-lyckad-mönster har en mycket Quantum-speciell connotation. De används ofta i vissa klasser av Quantum-algoritmer – därför är den dedikerade språk konstruktionen i Q #. Loopar som bryts baserat på ett villkor och vars körnings längd alltså är okänd vid kompileringen måste dock hanteras med särskild försiktighet i en Quantum-körning. Deras användning i functions å andra sidan är problematisk, eftersom dessa endast innehåller kod som ska köras på konventionell (icke-Quantum) maskin vara. 
+Upprepa-tills-lyckad-mönster har en mycket Quantum-speciell connotation. De används ofta i vissa klasser av Quantum-algoritmer – därför är den dedikerade språk konstruktionen i Q #. Loopar som bryts baserat på ett villkor och vars körnings längd är således okänd vid kompileringen, hanteras dock med särskild försiktighet i en Quantum-körning. Användningen i functions är dock inte problematisk eftersom dessa slingor bara innehåller kod som körs på konventionell (icke-Quantum) maskin vara. 
 
-Q # stöder därför endast användningen av while-slingor i functions. En `while` instruktion består av nyckelordet `while` , en öppen parentes `(` , ett villkor (t. ex. ett booleskt uttryck), en avslutande parentes `)` och ett instruktions block.
+Q # stöder därför endast användning av while-slingor i functions. En `while` instruktion består av nyckelordet `while` , ett booleskt uttryck inom parentes och ett instruktions block.
 Instruktions blocket (bröd texten i slingan) körs så länge villkoret utvärderas till `true` .
 
 ```qsharp
@@ -161,18 +161,10 @@ while (index < Length(arr) && item < 0) {
 }
 ```
 
-
 ## <a name="return-statement"></a>Return-instruktion
 
 Return-instruktionen avslutar körningen av en åtgärd eller funktion och returnerar ett värde till anroparen.
 Det består av nyckelordet `return` följt av ett uttryck av lämplig typ och ett avslutande semikolon.
-
-Ett anrop som returnerar en tom tupel, `()` kräver ingen Return-instruktion.
-Om en tidig avslutning önskas, `return ()` kan användas i det här fallet.
-Callables som returnerar någon annan typ kräver en slutgiltig Return-instruktion.
-
-Det finns inget maximalt antal retur uttryck i en åtgärd.
-Kompilatorn kan generera en varning om instruktioner följer en Return-instruktion i ett block.
 
 Exempel:
 ```qsharp
@@ -180,23 +172,27 @@ return 1;
 ```
 eller
 ```qsharp
-return ();
-```
-eller
-```qsharp
 return (results, qubits);
 ```
 
+* Ett anrop som returnerar en tom tupel, `()` kräver ingen Return-instruktion.
+* Om du vill ange en tidig utträde från åtgärden eller funktionen använder du `return ();` .
+Callables som returnerar någon annan typ kräver en slutgiltig Return-instruktion.
+* Det finns inget maximalt antal retur uttryck i en åtgärd.
+Kompilatorn kan generera en varning om instruktioner följer en Return-instruktion i ett block.
+
+   
 ## <a name="fail-statement"></a>Instruktionen misslyckande
 
 Instruktionen Error avslutar körningen av en åtgärd och returnerar ett felvärde till anroparen.
 Det består av nyckelordet `fail` följt av en sträng och ett avslutande semikolon.
-Strängen returneras till den klassiska driv rutinen som fel meddelande.
+Instruktionen returnerar strängen till den klassiska driv rutinen som fel meddelande.
 
 Det finns ingen begränsning för antalet misslyckande uttryck i en åtgärd.
 Kompilatorn kan generera en varning om instruktioner följer en felaktig instruktion i ett block.
 
 Exempel:
+
 ```qsharp
 fail $"Impossible state reached";
 ```
@@ -209,7 +205,7 @@ fail $"Syndrome {syn} is incorrect";
 
 ### <a name="rus-pattern-for-single-qubit-rotation-about-an-irrational-axis"></a>RU: er-mönster för en qubit rotation om en onormal axel 
 
-I ett vanligt användnings fall implementerar följande Q #-åtgärd en rotation runt en onormal axel om $ (I + 2i Z)/\sqrt {5} $ på Bloch-sfären. Detta åstadkoms med hjälp av ett känt ru: er-mönster:
+I ett vanligt användnings fall implementerar följande Q #-åtgärd en rotation runt en onormal axel om $ (I + 2i Z)/\sqrt {5} $ på Bloch-sfären. Implementeringen använder ett känt ru: er-mönster:
 
 ```qsharp
 operation ApplyVRotationUsingRUS(qubit : Qubit) : Unit {
@@ -232,9 +228,9 @@ operation ApplyVRotationUsingRUS(qubit : Qubit) : Unit {
 }
 ```
 
-### <a name="rus-loop-with-mutable-variable-in-scope"></a>RU: er-slinga med föränderligt-variabel i omfånget
+### <a name="rus-loop-with-a-mutable-variable-in-scope"></a>RU: er-slinga med en föränderligt-variabel i omfånget
 
-Det här exemplet visar användningen av en föränderligt-variabel `finished` som ligger inom omfånget för hela upprepnings-till-korrigering-loopen och som initieras före loopen och uppdateras i korrigerings steget.
+I det här exemplet visas användningen av en föränderligt-variabel, `finished` som ligger inom omfånget för hela upprepnings-tills-korrigering-loopen och som initieras före loopen och uppdateras i korrigerings steget.
 
 ```qsharp
 mutable iter = 1;
@@ -251,7 +247,7 @@ fixup {
 
 ### <a name="rus-without-fixup"></a>RU: er utan`fixup`
 
-Följande kod är till exempel en Probabilistic-krets som implementerar en viktig rotations grind $V _3 = (\boldone + 2 i Z)/\sqrt {5} $ med hjälp av- `H` och- `T` grindarna.
+I det här exemplet visas en ru: er-slinga utan korrigerings steget. Koden är en Probabilistic-krets som implementerar en viktig rotations grind $V _3 = (\boldone + 2 i Z)/\sqrt {5} $ med hjälp av `H` och- `T` grindarna.
 Slingan slutar i $ \frac {8} {5} $-upprepningar i genomsnitt.
 Se [*REPEAT-until-lyckades: icke-deterministisk dekomposition av Single-qubit unitaries*](https://arxiv.org/abs/1311.1074) (Paetznick och Svore, 2014) för mer information.
 
@@ -277,8 +273,14 @@ using (qubit = Qubit()) {
 
 ### <a name="rus-to-prepare-a-quantum-state"></a>RU: er för att förbereda ett Quantum-tillstånd
 
-Slutligen visar vi ett exempel på ett ru: er-mönster för att förbereda ett Quantum-tillstånd $ \frac {1} {\sqrt {3} } \left (\sqrt {2} \ket {0} + \ket {1} \right) $, med början från $ \ket{+} $ State.
-Se även [exempel på enhets testning som tillhandahålls med standard biblioteket](https://github.com/microsoft/Quantum/blob/master/samples/diagnostics/unit-testing/RepeatUntilSuccessCircuits.qs):
+Slutligen är det ett exempel på ett ru: er-mönster för att förbereda ett Quantum-tillstånd $ \frac {1} {\sqrt {3} } \left (\sqrt {2} \ket {0} + \ket {1} \right) $, med början från $ \ket{+} $ State.
+
+Viktiga programmerings funktioner som visas i den här åtgärden är:
+
+* En mer komplex `fixup` del av slingan, som inbegriper Quantum-åtgärder. 
+* Användning av `AssertProb` instruktioner för att fastställa sannolikheten för att mäta Quantum-tillstånd vid vissa angivna punkter i programmet.
+
+Mer information om [`Assert`](xref:microsoft.quantum.intrinsic.assert) [`AssertProb`](xref:microsoft.quantum.intrinsic.assertprob) -och-åtgärder finns i [testa och felsöka](xref:microsoft.quantum.guide.testingdebugging).
 
 ```qsharp
 operation PrepareStateUsingRUS(target : Qubit) : Unit {
@@ -325,9 +327,7 @@ operation PrepareStateUsingRUS(target : Qubit) : Unit {
 }
 ```
 
-Viktiga programmerings funktioner som visas i den här åtgärden är en mer komplex `fixup` del av slingan, vilket inbegriper Quantum-åtgärder och användningen av- `AssertProb` instruktioner för att fastställa sannolikheten för att mäta Quantum-tillstånd vid vissa angivna punkter i programmet.
-Se även [testning och fel sökning](xref:microsoft.quantum.guide.testingdebugging) för mer information om- [`Assert`](xref:microsoft.quantum.intrinsic.assert) och- [`AssertProb`](xref:microsoft.quantum.intrinsic.assertprob) åtgärder.
-
+Mer information finns i avsnittet [om enhets testning som tillhandahålls med standard biblioteket](https://github.com/microsoft/Quantum/blob/master/samples/diagnostics/unit-testing/RepeatUntilSuccessCircuits.qs):
 
 ## <a name="next-steps"></a>Nästa steg
 
