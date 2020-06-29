@@ -6,18 +6,18 @@ ms.author: a-gibec@microsoft.com
 ms.date: 03/05/2020
 ms.topic: article
 uid: microsoft.quantum.guide
-ms.openlocfilehash: f535aaedbe6ce181375d48f7023409ad8212c702
-ms.sourcegitcommit: 2317473fdf2b80de58db0f43b9fcfb57f56aefff
+ms.openlocfilehash: c5611f3e2907791f2dfc1644be0a45515d50dfd7
+ms.sourcegitcommit: af10179284967bd7a72a52ae7e1c4da65c7d128d
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83430619"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85415378"
 ---
 # <a name="the-q-user-guide"></a>Användarhandboken för Q#
 
 Välkommen till användarhandboken för Q#! 
 
-Här går vi igenom huvudbegreppen i språket Q#, och du får all information som du behöver för att skriva kvantprogram.
+I de olika ämnena i den här guiden går vi igenom huvudbegreppen i språket Q#. Du får all information som du behöver för att skriva kvantprogram.
 
 ## <a name="user-guide-contents"></a>Innehåll i användarhandboken
 
@@ -37,29 +37,28 @@ Här går vi igenom huvudbegreppen i språket Q#, och du får all information so
     Här kan du se hur du definierar och anropar dem, inklusive relaterade och kontrollerade versioner av kvantåtgärder.
 
 - [Variabler](xref:microsoft.quantum.guide.variables): Beskriver variablernas roll i Q#-program och hur du använder dem på ett effektivt sätt. 
-    Du hittar till exempel information om bindande omfång och om skillnaden mellan oföränderliga/föränderliga variabler och hur du tilldelar/omtilldelar dem.
+    Du hittar till exempel information om bindande omfång och om skillnaden mellan oföränderliga och föränderliga variabler och hur du tilldelar eller omtilldelar dem.
 
-- [Arbeta med kvantbitar](xref:microsoft.quantum.guide.qubits): Beskriver de funktioner i Q# som används för enskilda kvantbitar och system med kvantbitar. 
-    Det innebär mer specifikt deras allokering, att utföra åtgärder på dem och slutligen deras mått. 
+- [Arbeta med kvantbitar](xref:microsoft.quantum.guide.qubits): Beskriver de funktioner i Q# som används för enskilda kvantbitar och system med kvantbitar, mer specifikt hur du allokerar dem, utför åtgärder på dem och mäter dem. 
 
-- [Kontrollflöde](xref:microsoft.quantum.guide.controlflow): Beskriver kontrollflödesmönstren för programmering i Q#, som har stöd för många standardtekniker (villkorlig körning, for-loopar, while-loopar osv.) samt det kvantspecifika ”upprepa-tills-lyckas”-mönstret.
+- [Kontrollflöde](xref:microsoft.quantum.guide.controlflow): Beskriver kontrollflödesmönstren för programmering i Q# som har stöd för många standardtekniker (t.ex. villkorlig körning, for-loopar, while-loopar) samt det kvantspecifika ”upprepa-tills-lyckas”-mönstret.
 
 - [Testa och felsöka](xref:microsoft.quantum.guide.testingdebugging): Beskriver några tekniker som du kan använda för att se till att koden gör det den ska göra. 
     På grund av den övergripande komplexiteten i kvantinformation, kan det krävas särskilda tekniker när kvantprogram ska felsökas. 
-    Lyckligtvis stöder Q# många av de klassiska felsökningstekniker som programmerare brukar använda, samt även de som är kvantspecifika. Detta innefattar att skapa/köra enhetstester i Q#, bädda in *kontroller* av värden och sannolikheter i koden, samt `Dump`-funktioner som visar status för måldatorn. 
-    Den senare kan användas tillsammans med vår simulator med fullständigt tillstånd för att felsöka särskilda delar av beräkningarna genom att kringgå vissa kvantbegränsningar (t.ex. ”no-cloning theorem”).
+    Lyckligtvis stöder Q# många av de klassiska felsökningstekniker som programmerare är vana vid, samt även de som är kvantspecifika. Dessa tekniker omfattar tekniker som att skapa och köra enhetstester i Q#, att bädda in *kontroller* för värden och sannolikheter i koden, samt `Dump`-funktioner som visar måldatorernas status. 
+    Den senare kan användas tillsammans med vår simulator med fullständigt tillstånd för att felsöka särskilda delar av beräkningarna genom att kringgå vissa kvantbegränsningar, t.ex. [no-cloning theorem](xref:microsoft.quantum.concepts.pauli).
 
 ### <a name="quantum-simulators-and-resource-estimators"></a>Kvantsimulatorer och resursberäknare
 
-- [Kvantsimulatorer och värdprogram](xref:microsoft.quantum.machines): En översikt över de olika tillgängliga simulatorerna, samt den generella modellen för körning mellan värdprogram och måldatorer.
+- [Kvantsimulatorer och värdprogram](xref:microsoft.quantum.machines): En översikt över de olika tillgängliga simulatorerna samt den generella modellen för körning mellan värdprogram och måldatorer.
 
-- [Simulator med fullständigt tillstånd](xref:microsoft.quantum.machines.full-state-simulator): Måldatorn som simulerar det fullständiga kvanttillståndet. Användbart för fullständig körning eller felsökning av program i mindre skala (mindre än ett par dussin kvantbitar)
+- [Simulator med fullständigt tillstånd](xref:microsoft.quantum.machines.full-state-simulator): Måldatorn som simulerar det fullständiga kvanttillståndet. Användbart för fullständig körning eller felsökning av program i mindre skala (mindre än ett dussintal kvantbitar)
 
 - [Resursberäknare](xref:microsoft.quantum.machines.resources-estimator): Beräknar de resurser som krävs för att köra en specifik instans av en Q#-åtgärd på en kvantdator.
 
-- [Spårningssimulator](xref:microsoft.quantum.machines.qc-trace-simulator.intro): Kör ett kvantprogram utan att egentligen simulera tillståndet i en kvantdator och kan därför köra kvantprogram som använder tusentals kvantbitar. Användbart för felsökning av klassisk kod i ett kvantprogram, samt för att beräkna de resurser som krävs.
+- [Spårningssimulator](xref:microsoft.quantum.machines.qc-trace-simulator.intro): Kör ett kvantprogram utan att egentligen simulera tillståndet i en kvantdator. Det kan därför köra kvantprogram som använder tusentals kvantbitar. Användbart för felsökning av klassisk kod i ett kvantprogram, samt för att beräkna de resurser som krävs.
 
-- [Toffoli-simulator](xref:microsoft.quantum.machines.toffoli-simulator): En specialutvecklad kvantsimulator som kan användas med flera miljoner kvantbitar, men endast för program med en begränsad uppsättning kvantåtgärder (närmare bestämt X, CNOT och multistyrd X).
+- [Toffoli-simulator](xref:microsoft.quantum.machines.toffoli-simulator): En specialutvecklad kvantsimulator som kan användas med flera miljoner kvantbitar, men endast för program med en begränsad uppsättning kvantåtgärder – X, CNOT och multistyrd X.
 
 ### <a name="quick-reference-pages"></a>Snabbreferenssidor
 
