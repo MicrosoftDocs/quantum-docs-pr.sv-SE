@@ -1,0 +1,49 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.synthesis.applytransposition
+name: ApplyTransposition
+type: operation
+namespace: Microsoft.Quantum.Synthesis
+summary: Den här åtgärden byter till amplituden vid indexet `a` med amplituden vid indexet `b` i det aktuella tillståndets vektor med `register` längden $n $.  Om `a` det är lika med `b` ändras inte tillstånds vektorn.
+examples: >-
+  Förbered en enhetlig överplacering av nummer tillstånden $ | 1 \ rangle $, $ | 2 \ rangle $ och $ | 3 \ rangle $ på 2 qubits.
+
+
+  ```Q#
+
+  using (qubits = Qubit[2]) {
+    let register = LittleEndian(qubits);
+    PrepareUniformSuperposition(3, register);
+    ApplyTransposition(0, 3, register);
+  }
+
+  ```
+syntax: 'operation ApplyTransposition (a : Int, b : Int, qubits : Microsoft.Quantum.Arithmetic.LittleEndian) : Unit'
+input:
+  content: '(a : Int, b : Int, qubits : Microsoft.Quantum.Arithmetic.LittleEndian)'
+  types:
+  - name: a
+    summary: Första index (måste vara ett värde mellan 0 och $2 ^ n-$1)
+    isPrimitive: true
+    uid: Int
+  - name: b
+    summary: Andra indexet (måste vara ett värde mellan 0 och $2 ^ n-$1)
+    isPrimitive: true
+    uid: Int
+  - name: qubits
+    summary: En lista över $n $ qubits som införlivaren tillämpas på.
+    uid: microsoft.quantum.arithmetic.littleendian
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+functors:
+- Adjoint
+- Controlled
+metadata:
+  ms.openlocfilehash: de888c27a7d897492283c7285c6d2d828fe5821b
+  ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
+  ms.translationtype: MT
+  ms.contentlocale: sv-SE
+  ms.lasthandoff: 07/02/2020
+  ms.locfileid: "85887083"

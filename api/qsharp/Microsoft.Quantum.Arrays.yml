@@ -1,7 +1,6 @@
 ### YamlMime:QSharpNamespace
 uid: microsoft.quantum.arrays
 name: Microsoft.Quantum.Arrays
-summary: " # <a name=\"summary\"></a>Sammanfattning\n Det här namn området innehåller funktioner för att skapa och ändra data mat ris."
 functions:
 - uid: microsoft.quantum.arrays.all
   summary: Tilldelas en matris och ett predikat som har definierats för elementen i matrisen och kontrollerar om alla element i matrisen uppfyller predikatet.
@@ -67,13 +66,16 @@ functions:
   summary: Med tre matriser returnerar en ny matris med 3-tupler, så att varje 3-tupel innehåller ett element från varje ursprunglig matris.
 - uid: microsoft.quantum.arrays.zip4
   summary: Med fyra matriser returnerar en ny matris med 4-tupler, så att varje 4-tupel innehåller ett element från varje ursprunglig matris.
+summary: " # <a name=\"summary\"></a>Sammanfattning\n Det här namn området innehåller funktioner för att skapa och ändra data mat ris."
 operations:
+- uid: microsoft.quantum.arrays.drawmany
+  summary: Upprepar en åtgärd för ett angivet antal exempel, och samlar in utdata i en matris.
 - uid: microsoft.quantum.arrays.foreach
   summary: Med en matris och en åtgärd som har definierats för elementen i matrisen returnerar en ny matris som består av de avbildningar av den ursprungliga matrisen under åtgärden.
 metadata:
-  ms.openlocfilehash: 92eb956a1387a9765354f45e27eb084c6d73f51b
-  ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
+  ms.openlocfilehash: 32aeecb419739a89792bdf1e9761e3821abcf380
+  ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 06/03/2020
-  ms.locfileid: "84326718"
+  ms.lasthandoff: 07/02/2020
+  ms.locfileid: "85884684"

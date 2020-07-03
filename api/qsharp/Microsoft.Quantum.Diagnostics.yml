@@ -39,6 +39,10 @@ operations:
   summary: Assert att de aktuella qubits är i läget $ \ket {0} $.
 - uid: microsoft.quantum.diagnostics.assertallzerowithintolerance
   summary: Assert att de aktuella qubits är i $ \ket {0} $-tillstånd upp till en bestämd tolerans.
+- uid: microsoft.quantum.diagnostics.assertmeasurement
+  summary: Förutsätter att mätningen av den aktuella qubits i den aktuella Pauli-basen alltid har det aktuella resultatet.
+- uid: microsoft.quantum.diagnostics.assertmeasurementprobability
+  summary: Förutsätter att mätningen av den aktuella qubits i den aktuella Pauli-grunden har det resultat som har givit den sannolikheten, inom viss tolerans.
 - uid: microsoft.quantum.diagnostics.assertoperationsequalinplace
   summary: >-
     Två åtgärder förutsätter att de fungerar identiskt för alla ingångs tillstånd.
@@ -79,14 +83,14 @@ operations:
   summary: Förutsätter att qubit `q` finns i den förväntade eigenstate för Pauli Z-operatorn upp till en specifik tolerans.
 newtypes:
 - uid: microsoft.quantum.diagnostics.enabletestingvianame
-  summary: Kompileraren identifierat attribut via vilket ett alternativt namn kan definieras och som kan användas vid inläsning av en typ eller ett anrop för test ändamål.
+  summary: Compile-känt attribut som kan användas för att definiera ett alternativt namn som kan användas vid inläsning av en typ eller som kan anropas i test syfte.
 - uid: microsoft.quantum.diagnostics.test
-  summary: Kompileraren identifierat attribut som används för att markera ett enhets test.
+  summary: Compile-känt attribut som används för att markera ett enhets test.
 summary: " # <a name=\"summary\"></a>Sammanfattning\n Det här namn området innehåller funktioner och åtgärder som är användbara för diagnostiska orsaker, inklusive assert-åtgärder och anspråks funktioner."
 metadata:
-  ms.openlocfilehash: 2c619ac283653d87f2917d7c780ed9fe6ccfa965
-  ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
+  ms.openlocfilehash: c8e1cd7f3458e736a47749dd057174eb4961c31d
+  ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 06/03/2020
-  ms.locfileid: "84326599"
+  ms.lasthandoff: 07/02/2020
+  ms.locfileid: "85884576"
