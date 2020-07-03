@@ -1,7 +1,7 @@
 ### YamlMime:QSharpNamespace
 uid: microsoft.quantum.machinelearning
 name: Microsoft.Quantum.MachineLearning
-summary: " # <a name=\"summary\"></a>Sammanfattning\n Det här namn området innehåller funktioner och åtgärder som används i Quantum Machine Learning-program.\n\n # <a name=\"references\"></a>Referenser\n - Maria Schuld, Alex Bocharov, krysta Svore, Nathan Wiebe, \"Kretsbaserade Quantum-klassificerare\", https://arxiv.org/abs/1804.00633."
+summary: " # <a name=\"summary\"></a>Sammanfattning\n Det här namn området innehåller funktioner och åtgärder som används i Quantum Machine Learning-program.\n\n # <a name=\"references\"></a>Referenser\n - Maria Schuld, Alex Bocharov, krysta Svore, Nathan Wiebe, \"Kretsbaserade Quantum-klassificerare\", https://arxiv.org/abs/1804.00633 ."
 functions:
 - uid: microsoft.quantum.machinelearning.approximateinputencoder
   summary: Med hänsyn till en uppsättning koefficienter och en tolerans, returnerar en tillstånds förberedelse åtgärd som förbereder varje koefficient som motsvarande amplitud i ett beräknings bas tillstånd, upp till den angivna toleransen.
@@ -64,9 +64,9 @@ newtypes:
 - uid: microsoft.quantum.machinelearning.validationresults
   summary: Resultatet från att ha verifierat en klassificerare mot en uppsättning exempel.
 metadata:
-  ms.openlocfilehash: 43b40489e34a2483ff9331b34b6cd289e3a7bb56
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 85728552e323a640d5abd78f6a2bada5c37e6919
+  ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82673175"
+  ms.lasthandoff: 07/02/2020
+  ms.locfileid: "85885258"

@@ -3,28 +3,23 @@ uid: microsoft.quantum.intrinsic.assert
 name: Assert
 type: operation
 namespace: Microsoft.Quantum.Intrinsic
-summary: Förutsätter att mätningen av den aktuella qubits i den aktuella Pauli-basen alltid har det aktuella resultatet.
-remarks: Observera att det inte går att kontrol lera villkoret i intilliggande och kontrollerade versioner av den här åtgärden.
+summary: Assert är inaktuell. Använd @"microsoft.quantum.diagnostics.assertmeasurement" i stället.
 syntax: 'operation Assert (bases : Pauli[], qubits : Qubit[], result : Result, msg : String) : Unit'
 input:
   content: '(bases : Pauli[], qubits : Qubit[], result : Result, msg : String)'
   types:
   - name: bases
-    summary: En mätnings funktion som försäkrar sannolikheten för, uttryckt som en Pauli-operatör med flera qubit.
     isArray: true
     isPrimitive: true
     uid: Pauli
   - name: qubits
-    summary: En register som ska göra försäkran.
     isArray: true
     isPrimitive: true
     uid: Qubit
   - name: result
-    summary: Det förväntade resultatet av `Measure(bases, qubits)`.
     isPrimitive: true
     uid: Result
   - name: msg
-    summary: Ett meddelande som ska rapporteras om kontrollen Miss lyckas.
     isPrimitive: true
     uid: String
 output:
@@ -35,12 +30,10 @@ output:
 functors:
 - Adjoint
 - Controlled
-seeAlso:
-- assertprob
 metadata:
-  ms.openlocfilehash: ececd74240ef9340666795142719faeeb0cbef7b
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 56e41923bfeaa5ecf10bd47130260c78fbce7970
+  ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82674170"
+  ms.lasthandoff: 07/02/2020
+  ms.locfileid: "85885739"
