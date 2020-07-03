@@ -6,12 +6,12 @@ ms.author: bradben
 ms.date: 5/30/2020
 ms.topic: article
 uid: microsoft.quantum.relnotes
-ms.openlocfilehash: 0fcdec1a304730b593224283421539ea3ca9c913
-ms.sourcegitcommit: af10179284967bd7a72a52ae7e1c4da65c7d128d
+ms.openlocfilehash: d10f81a1e49235be8e02661dcd6d3c839485af6e
+ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85415463"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85885045"
 ---
 # <a name="microsoft-quantum-development-kit-release-notes"></a>Viktig information för Microsoft Quantum Development Kit
 
@@ -20,6 +20,27 @@ Den här artikeln innehåller information om varje version av Quantum Developmen
 Installationsanvisningar finns i [installationsguiden](xref:microsoft.quantum.install).
 
 Uppdateringsanvisningar finns i [uppdateringsguiden](xref:microsoft.quantum.update).
+
+## <a name="version-01220070124"></a>Version 0.12.20070124
+
+*Utgivnings datum: den 2 juli, 2020*
+
+Den här versionen innehåller följande:
+
+- Nytt `qdk-chem` verktyg för att konvertera äldre elektroniska struktur problem serialiserade format (t. ex.: FCIDUMP) till [Broombridge](xref:microsoft.quantum.libraries.chemistry.schema.broombridge)
+- Nya funktioner och åtgärder i [ `Microsoft.Quantum.Synthesis` namn området](xref:microsoft.quantum.synthesis) för sammanhängande tillämpning av klassiska Oracle med hjälp av omvandlings-och dekompositions syntes algoritmer.
+- SWEETIQ # tillåter nu argument till `%simulate` , `%estimate` , och andra Magic-kommandon. Mer information finns i [ `%simulate` kommando referensen för Magic](xref:microsoft.quantum.iqsharp.magic-ref.simulate) .
+- Nya fas visnings alternativ i SWEETIQ #. Mer information finns i [ `%config` kommando referensen för Magic](xref:microsoft.quantum.iqsharp.magic-ref.config) .
+- SWEETIQ # och `qsharp` python-paketet tillhandahålls nu via Conda-paket ([qsharp](https://anaconda.org/quantum-engineering/qsharp) och [iqsharp](https://anaconda.org/quantum-engineering/iqsharp)) för att förenkla lokal installation av Q # Jupyter och python-funktioner till en Conda-miljö. Se [q # Jupyter Notebooks](xref:microsoft.quantum.install.jupyter) och [q # med python](xref:microsoft.quantum.install.python) -installations guider för mer information.
+- När du använder simulatorn behöver qubits inte längre vara i ⟩-läget | 0 vid lanseringen, men kan återställas automatiskt om de mättes omedelbart innan de släpps.
+- Uppdateringar för att göra det enklare för SWEETIQ #-användare att använda biblioteks paket med olika QDK-versioner, vilket bara kräver högre & lägre versions nummer matchar i stället för exakt samma version
+- Borttagen inaktuell `Microsoft.Quantum.Primitive.*` namnrymd
+- Flyttade åtgärder:
+  - `Microsoft.Quantum.Intrinsic.Assert`är nu`Microsoft.Quantum.Diagnostics.AssertMeasurement`
+  - `Microsoft.Quantum.Intrinsic.AssertProb`är nu`Microsoft.Quantum.Diagnostics.AssertMeasurementProbability`
+- Felkorrigeringar 
+
+Se den fullständiga listan med stängda PR:er för [bibliotek](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed), [kompilator](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+is%3Aclosed), [runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+is%3Aclosed), [exempel](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed), [IQ#](https://github.com/microsoft/iqsharp/pulls?q=is%3Apr+is%3Aclosed) och [Katas](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+is%3Aclosed).  
 
 ## <a name="version-0112006403"></a>Version 0.11.2006.403
 
@@ -425,7 +446,7 @@ Den här versionen är bara en snabb korrigering av [problem #48 som rapporterat
 
 *Utgivningsdatum: 22 juni 2018*
 
-Den här versionen innehåller flera bidrag från communityn samt en förbättrad felsökningsupplevelse och bättre prestanda.  Mer specifikt:
+Den här versionen innehåller flera bidrag från communityn samt en förbättrad felsökningsupplevelse och bättre prestanda.  Specifikt:
 
 * Prestandaförbättringar för både små och stora simuleringar för QuantumSimulator-måldatorn.
 * Förbättrade felsökningsfunktioner.

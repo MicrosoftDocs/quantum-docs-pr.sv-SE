@@ -6,12 +6,12 @@ ms.author: chgranad
 ms.date: 10/12/2018
 ms.topic: article
 uid: microsoft.quantum.contributing.style
-ms.openlocfilehash: f8e398b5c9932a5079222fed7ad20e54de814eb8
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+ms.openlocfilehash: 3ddb5d67b972f69df1774b476a10e74dd16d97b7
+ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85275377"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85884197"
 ---
 # <a name="q-style-guide"></a>Stil guide för Q # #
 ## <a name="general-conventions"></a>Allmänna konventioner ##
@@ -49,7 +49,7 @@ Den här skillnaden antyder att vi namnger åtgärder som verb och fungerar som 
 > Från och med detta perspektiv ska användardefinierade typer namnges som substantiv, så att både själva typen och konstruktorn-funktionen har konsekventa namn.
 
 Om det är rimligt bör du se till att åtgärds namnen börjar med verb som tydligt anger vilken åtgärd som vidtas.
-Exempel:
+Ett exempel:
 
 - `MeasureInteger`
 - `EstimateEnergy`
@@ -105,6 +105,31 @@ Vi rekommenderar:
 | ☑ | `newtype GeneratorTerm` | Användningen av Substantiv frasen avser tydligt resultatet av att anropa UDT-konstruktorn. |
 | ☒ | <s>`@Attribute() newtype RunOnce()`</s> | Användning av verbfras föreslår att UDT-konstruktorn är en åtgärd. |
 | ☑ | `@Attribute() newtype Deprecated(Reason : String)` | Användningen av Substantiv frasen kommunicerar användningen av attributet. |
+
+***
+
+### <a name="entry-points"></a>Startpunkter
+
+När du definierar en start punkt i ett Q #-program, identifierar Q #-kompilatorn [ `@EntryPoint()` attributet](xref:microsoft.quantum.core.entrypoint) och kräver att start punkterna har ett visst namn (t. ex.: `main` , `Main` eller `__main__` ).
+Det vill säga från en Q #-utvecklare är start punkter vanliga åtgärder som är kommenterade `@EntryPoint()` .
+Dessutom kan Q #-startpunkter vara ingångs punkter för ett helt program (d.v.s.: i Q # fristående körbara filer) eller kan vara ett gränssnitt mellan ett Q #-program och värd programmet för ett program (d.v.s.: när du använder Q # med python eller .NET), så att namnet "Main" kan vara missvisande när det tillämpas på en start punkt för Q #.
+
+Vi rekommenderar att du använder namngivnings punkter för att återspegla användningen av `@EntryPoint()` attributet genom att följa de allmänna råd som anges ovan.
+
+
+# <a name="guidance"></a>[Vägledning](#tab/guidance)
+
+Vi rekommenderar:
+
+- Ge inte namn på Start punkts åtgärder som "Main".
+- Namn start punkt åtgärder som vanliga åtgärder.
+
+# <a name="examples"></a>[Exempel](#tab/examples)
+
+|   | Name | Beskrivning |
+|---|------|-------------|
+| ☑ | `@EntryPoint() operation RunSimulation` | Kommunicerar tydligt syftet med start punkten via åtgärds namn. |
+| ☒ | <s>`@EntryPoint() operation Main`</s> | Användning av `Main` är inte tydligt syftet med start punkten och är redundant med `@EntryPoint()` attribut. |
 
 ***
 

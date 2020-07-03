@@ -6,12 +6,12 @@ uid: microsoft.quantum.more-information
 ms.author: nawiebe@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: bcc26f66a4ba3e861800ceca122b38b8d3ef6ad5
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+ms.openlocfilehash: d3c252c6579e1286aae71a0f18ac7b6b02a5c1ed
+ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85275374"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85884146"
 ---
 # <a name="more-quantum-computing-learning-resources"></a>Fler utbildnings resurser för Quantum Computing
 
@@ -24,6 +24,14 @@ Det här avsnittet innehåller valda referenser till djup täckning av Quantum C
 + Kitaev, A. Y., Jansson, A., & Vyalyi, M. N. (2002). Klassisk och Quantum-beräkning (vol. 47). Providence: American matematiskt samhälle.
 + Kaye, P., Laflamme, R., & Mosca, M. (2007). En introduktion till Quantum Computing. Oxford University Press.
 + Rieffel, t. ex., & Polak, W. H. (2011). Quantum Computing: en försiktig introduktion. MIT Press.
++ Sarah C. Kaiser och Christopher E. granade (Manning tidigt Access program startade april 2019-publikation i 2020). [Lär dig Quantum Computing med python och Q # – en praktisk metod](https://www.manning.com/books/learn-quantum-computing-with-python-and-q-sharp).
+
+## <a name="online-courses"></a>Onlinekurser ##
+
++ [MS lär dig Quantum Computing-moduler](https://docs.microsoft.com/users/buildcollections2020-6557/collections/1o2iogrmn8x4r). En steget själv studie kurs om Quantum Computing-koncept och praxis. 
++ [Quantum Computing – fantastisk kurs](https://brilliant.org/courses/quantum-computing/). Lär dig att skapa Quantum-algoritmer från grunden med en Quantum-dator som simuleras i webbläsaren.
++ [Introduktion till Quantum Computing – LinkedIn-utbildning](https://www.linkedin.com/learning/introduction-to-quantum-computing). 1h25m video introduktion. 
++ [Quantum Computing genom seriesida](https://hackaday.io/project/168554-introduction-to-quantum-computing). Vecko praktisk praktisk community-klass. 
 
 ## <a name="elementary-techniques-for-building-controlled-gates"></a>Element tekniker för att skapa kontrollerade grindar ##
 
