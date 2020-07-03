@@ -6,12 +6,12 @@ ms.author: bradben
 ms.date: 5/5/2020
 ms.topic: overview
 uid: microsoft.quantum.overview.algebra
-ms.openlocfilehash: 4750643d16ad8af6240df42c1b93353565561429
-ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
+ms.openlocfilehash: 4cf6cce870c7661a7fffc21dcb60dd53cf281ddd
+ms.sourcegitcommit: af10179284967bd7a72a52ae7e1c4da65c7d128d
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84327602"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85415453"
 ---
 # <a name="linear-algebra-for-quantum-computing"></a>Linjär algebra för kvantberäkning
 
@@ -62,8 +62,7 @@ I exemplen ovan beskrevs statusen för en kvantbit med hjälp av matrisen med en
 
 Kom ihåg att varje kvantbit är ett vektorrum och därför inte kan multipliceras rakt av. I stället använder du en **tensorprodukt**, en relaterad åtgärd som skapar ett nytt vektorrum från enskilda vektorrum. Den representeras av symbolen $\otimes$. Till exempel beräknas tensorprodukten för tillståndet för två kvantbitar $\begin{bmatrix} a \\\\  b \end{bmatrix}$ and $\begin{bmatrix} c \\\\  d \end{bmatrix}$ så här:
 
-$$ \begin{bmatrix} a \\\\  b \end{bmatrix} \otimes \begin{bmatrix} c \\\\  d \end{bmatrix} =\begin{bmatrix} a \begin{bmatrix} c \\\\  d \end{bmatrix} \\\\ b \begin{bmatrix}c \\\\  d \end{bmatrix} \end{bmatrix} = \begin{bmatrix} ac \\\\  ad \\\\  bc \\\\  bd \end{bmatrix}.
-$$
+$$ \begin{bmatrix} a \\\\  b \end{bmatrix} \otimes \begin{bmatrix} c \\\\  d \end{bmatrix} =\begin{bmatrix} a \begin{bmatrix} c \\\\  d \end{bmatrix} \\\\ b \begin{bmatrix}c \\\\  d \end{bmatrix} \end{bmatrix} = \begin{bmatrix} ac \\\\  ad \\\\  bc \\\\  bd \end{bmatrix}. $$
 
 Resultatet är en fyrdimensionell matris där varje element representerar en sannolikhet. Exempelvis är $ac$ sannolikheten att de två kvantbitarna kollapsar till 0 och 0, $ad$ är sannolikheten för 0 och 1 och så vidare. 
 
