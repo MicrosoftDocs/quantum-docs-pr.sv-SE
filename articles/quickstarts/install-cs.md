@@ -6,17 +6,19 @@ ms.date: 5/30/2020
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.install.cs
-ms.openlocfilehash: 2b0b16bdd9fccc3b668036e6df2b20e11b32f8b6
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+ms.openlocfilehash: 714c15d9589095f0fe395fcd6941672167879dca
+ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85274156"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85885494"
 ---
 # <a name="develop-with-q-and-net"></a>Utveckla med Q# och .NET
 
 Q# är utformat att fungera med .NET-språk som C# och F# .
-I den här guiden visar vi hur du använder Q# med ett värdprogram skrivet med ett .NET-språk.
+I den här guiden visar vi hur du använder Q# med ett värdprogram som skrivits i ett .NET-språk.
+
+Först skapar vi Q#-programmet och .NET-värden, och sedan visar vi hur du anropar Q# från värden.
 
 ## <a name="prerequisites"></a>Krav
 
@@ -26,23 +28,8 @@ I den här guiden visar vi hur du använder Q# med ett värdprogram skrivet med 
 
 Det första steget är att skapa projekt för ditt Q#-bibliotek och för den .NET-värd som ska anropa åtgärder och funktioner som definierats i ditt Q#-bibliotek.
 
-### <a name="visual-studio-2019"></a>[Visual Studio 2019](#tab/tabid-vs2019)
-
-- Skapa ett nytt Q#-bibliotek
-  - Gå till **Arkiv** -> **Nytt** -> **Projekt**
-  - Skriv ”Q#” i sökrutan
-  - Välj **Q#-bibliotek**
-  - Välj **Nästa**
-  - Välj ett namn och en plats för ditt bibliotek
-  - Kontrollera att ”Placera projektet och lösningen i samma katalog” är **avmarkerat**
-  - Välj **Skapa**
-- Skapa ett nytt C#- eller F#-värdprogram
-  - Gå till **Arkiv** → **Nytt** → **Projekt**
-  - Välj ”Konsolapp (.NET Core”)” för antingen C# eller F#
-  - Välj **Nästa**
-  - Under *Lösning*väljer du ”Lägg till i lösning”
-  - Välj ett namn på värdprogrammet
-  - Välj **Skapa**
+Följ anvisningarna på den flik som motsvarar din utvecklingsmiljö.
+Om du använder ett annat redigeringsprogram än Visual Studio eller VS Code följer du bara stegen för kommandoraden.
 
 ### <a name="visual-studio-code-or-command-line"></a>[Visual Studio Code eller kommandorad](#tab/tabid-cmdline)
 
@@ -72,6 +59,24 @@ Det första steget är att skapa projekt för ditt Q#-bibliotek och för den .NE
   dotnet sln quantum-dotnet.sln add ./quantum/quantum.csproj
   dotnet sln quantum-dotnet.sln add ./host/host.csproj
   ```
+
+### <a name="visual-studio-2019"></a>[Visual Studio 2019](#tab/tabid-vs2019)
+
+- Skapa ett nytt Q#-bibliotek
+  - Gå till **Arkiv** -> **Nytt** -> **Projekt**
+  - Skriv ”Q#” i sökrutan
+  - Välj **Q#-bibliotek**
+  - Välj **Nästa**
+  - Välj ett namn och en plats för ditt bibliotek
+  - Kontrollera att ”Placera projektet och lösningen i samma katalog” är **avmarkerat**
+  - Välj **Skapa**
+- Skapa ett nytt C#- eller F#-värdprogram
+  - Gå till **Arkiv** → **Nytt** → **Projekt**
+  - Välj ”Konsolapp (.NET Core”)” för antingen C# eller F#
+  - Välj **Nästa**
+  - Under *Lösning*väljer du ”Lägg till i lösning”
+  - Välj ett namn på värdprogrammet
+  - Välj **Skapa**
 
 ***
 

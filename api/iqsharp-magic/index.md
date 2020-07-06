@@ -2,6 +2,13 @@
 
 | Magiskt kommando | Sammanfattning |
 |---------------|---------|
+| [`%azure.connect`](xref:microsoft.quantum.iqsharp.magic-ref.azure.connect) | Ansluter till en Azure Quantum-arbetsyta eller visar aktuell anslutningsstatus. |
+| [`%azure.execute`](xref:microsoft.quantum.iqsharp.magic-ref.azure.execute) | Kör ett jobb på en Azure-Quantum-arbetsyta. |
+| [`%azure.jobs`](xref:microsoft.quantum.iqsharp.magic-ref.azure.jobs) | Visar en lista med jobb på den aktuella Azure Quantum-arbetsytan. |
+| [`%azure.output`](xref:microsoft.quantum.iqsharp.magic-ref.azure.output) | Visar resultat för ett jobb på den aktuella Azure Quantum-arbetsytan. |
+| [`%azure.status`](xref:microsoft.quantum.iqsharp.magic-ref.azure.status) | Visar status för ett jobb på den aktuella Azure Quantum-arbetsytan. |
+| [`%azure.submit`](xref:microsoft.quantum.iqsharp.magic-ref.azure.submit) | Skickar ett jobb till en Azure-Quantum-arbetsyta. |
+| [`%azure.target`](xref:microsoft.quantum.iqsharp.magic-ref.azure.target) | Anger eller visar det aktiva körningsmålet för Q#-jobbsändning på en Azure Quantum-arbetsyta. |
 | [`%check_kata`](xref:microsoft.quantum.iqsharp.magic-ref.check_kata) | Kontrollerar referensimplementeringen för ett enskilt Kata-test. |
 | [`%chemistry.broombridge`](xref:microsoft.quantum.iqsharp.magic-ref.chemistry.broombridge) | Läser in och returnerar en representation av ett elektroniskt strukturproblem (Broombridge) från en given YAML-fil. |
 | [`%chemistry.encode`](xref:microsoft.quantum.iqsharp.magic-ref.chemistry.encode) | Kodar en fermionisk Hamiltonian till ett format som kan användas i Q#. |
@@ -12,9 +19,9 @@
 | [`%estimate`](xref:microsoft.quantum.iqsharp.magic-ref.estimate) | Kör en given funktion eller åtgärd på ResourcesEstimator-måldatorn. |
 | [`%kata`](xref:microsoft.quantum.iqsharp.magic-ref.kata) | Kör ett enskilt test. |
 | [`%lsmagic`](xref:microsoft.quantum.iqsharp.magic-ref.lsmagic) | Returnerar en lista över alla tillgängliga magiska kommandon. |
-| [`%package`](xref:microsoft.quantum.iqsharp.magic-ref.package) | Ger möjlighet att läsa in ett Nuget-paket. Paketet måste vara tillgängligt i listan med Nuget-källor, vilket vanligtvis innefattar nuget.org. |
+| [`%package`](xref:microsoft.quantum.iqsharp.magic-ref.package) | Ger möjlighet att läsa in ett NuGet-paket. |
 | [`%performance`](xref:microsoft.quantum.iqsharp.magic-ref.performance) | Rapporterar aktuella prestandamått för denna kernel. |
 | [`%simulate`](xref:microsoft.quantum.iqsharp.magic-ref.simulate) | Kör en given funktion eller åtgärd på QuantumSimulator-måldatorn. |
-| [`%toffoli`](xref:microsoft.quantum.iqsharp.magic-ref.toffoli) | Kör en given funktion eller åtgärd på ToffoliSimulator-måldatorn (simulatorn). |
-| [`%who`](xref:microsoft.quantum.iqsharp.magic-ref.who) | Tillhandahåller åtgärder för aktuell arbetsyta. |
-| [`%workspace`](xref:microsoft.quantum.iqsharp.magic-ref.workspace) | Returnerar en lista över alla åtgärder och funktioner, antingen inaktivt eller inlästa från aktuell arbetsyta. |
+| [`%toffoli`](xref:microsoft.quantum.iqsharp.magic-ref.toffoli) | Kör en given funktion eller åtgärd på ToffoliSimulator-måldatorn. |
+| [`%who`](xref:microsoft.quantum.iqsharp.magic-ref.who) | Visar de Q#-åtgärder som är tillgängliga i den aktuella sessionen. |
+| [`%workspace`](xref:microsoft.quantum.iqsharp.magic-ref.workspace) | Tillhandahåller åtgärder för aktuell arbetsyta. |

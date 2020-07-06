@@ -6,12 +6,12 @@ ms.date: 4/24/2020
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.install.standalone
-ms.openlocfilehash: 4311ebf9f72254485a20ba721ea2ce19163f4371
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+ms.openlocfilehash: 15015d1673f47faf5a13dde516f834916b4319d6
+ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85274194"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85884274"
 ---
 # <a name="develop-with-q-command-line-applications"></a>Utveckla med Q#-kommandoradsprogram
 
@@ -23,7 +23,7 @@ Q#-program kan köras fristående, utan någon drivrutin på ett värdspråk som
 
 ## <a name="installation"></a>Installation
 
-Även om du kan skapa Q#-kommandoradsprogram i vilken IDE som helst, rekommenderar vi att du använder IDE:n för Visual Studio Code (VS Code) eller Visual Studio till dina Q#-program. Utveckling med dessa verktyg ger tillgång till omfattande funktioner.
+Även om du kan skapa Q#-kommandoradsprogram i vilken IDE som helst, rekommenderar vi att du använder IDE:n för Visual Studio Code (VS Code) eller Visual Studio till dina Q#-program. Utveckling i dessa miljöer inbegriper de omfattande funktionerna i QDK-tillägget, däribland varningar, syntaxmarkeringar, projektmallar och mer.
 
 Konfigurera VS Code:
 
@@ -35,8 +35,17 @@ Konfigurera Visual Studio:
 1. Ladda ned och installera [Visual Studio](https://visualstudio.microsoft.com/downloads/) 16.3 eller senare, med arbetsbelastningen för .NET Core plattformsoberoende utveckling aktiverat.
 2. Ladda ned och installera [Microsoft QDK](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit).
 
+Installera QDK för en annan miljö genom att ange följande på kommandoraden:
 
-## <a name="develop-with-q-using-vs-code"></a>Utveckla i C# med VS Code
+```dotnetcli
+dotnet new -i Microsoft.Quantum.ProjectTemplates
+```
+
+## <a name="develop-with-q"></a>Utveckla med Q#
+
+Följ anvisningarna på den flik som motsvarar din miljö.
+
+### <a name="vs-code"></a>[VS-kod](#tab/tabid-vscode)
 
 Installera Q#-projektmallarna:
 
@@ -64,7 +73,7 @@ Så här kör du programmet:
 > [!NOTE]
 > Arbetsytor med flera rotmappar stöds för närvarande inte av VS Code-tillägget för Q#. Om du har flera projekt på en VS Code-arbetsyta, måste alla projekten finnas i samma rotmapp.
 
-## <a name="develop-with-q-using-visual-studio"></a>Utveckla med Q# och Visual Studio
+### <a name="visual-studio"></a>[Visual Studio](#tab/tabid-vs)
 
 Verifiera din Visual Studio-installation genom att skapa ett Q# `Hello World`-program.
 
@@ -83,6 +92,30 @@ Så här kör du programmet:
 > [!NOTE]
 > Om du har flera projekt i en Visual Studio-lösning, måste alla projekt i lösningen finnas i samma mapp som lösningen eller i någon av dess undermappar.  
 
+### <a name="other-editors-with-the-command-line"></a>[Andra redigeringsprogram med kommandoraden](#tab/tabid-cmdline)
+
+Verifiera din installation genom att skapa ett Q# `Hello World`-program.
+
+1. Skapa ett nytt program:
+    ```dotnetcli
+    dotnet new console -lang Q# -o runSayHello
+    ```
+
+2. Gå till programkatalogen:
+    ```dotnetcli
+    cd runSayHello
+    ```
+
+    Den här katalogen bör du innehålla filen `Program.qs`, vilket är ett Q#-program som definierar en enkel åtgärd för att skriva ut ett meddelande till konsolen. Du kan ändra den här mallen med ett textredigeringsprogram och skriva över den med dina egna kvantprogram. 
+
+3. Kör programmet:
+    ```dotnetcli
+    dotnet run
+    ```
+
+4. Du bör se följande text skrivas ut: `Hello quantum world!`
+
+***
 
 ## <a name="next-steps"></a>Nästa steg
 
