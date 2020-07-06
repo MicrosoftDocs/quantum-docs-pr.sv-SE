@@ -1,3 +1,17 @@
+- href: azure.connect.md
+  name: '%azure.connect magiskt kommando'
+- href: azure.execute.md
+  name: '%azure.execute magiskt kommando'
+- href: azure.jobs.md
+  name: '%azure.jobs magiskt kommando'
+- href: azure.output.md
+  name: '%azure.output magiskt kommando'
+- href: azure.status.md
+  name: '%azure.status magiskt kommando'
+- href: azure.submit.md
+  name: '%azure.submit magiskt kommando'
+- href: azure.target.md
+  name: '%azure.target magiskt kommando'
 - href: check_kata.md
   name: '%check_kata magiskt kommando'
 - href: chemistry.broombridge.md
