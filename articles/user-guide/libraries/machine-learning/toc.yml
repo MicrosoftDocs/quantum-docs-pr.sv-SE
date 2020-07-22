@@ -1,5 +1,5 @@
 - name: Introduktion till kvantmaskininlärning
-  href: introduction.md
+  href: intro.md
 - name: Grundläggande klassificering
   href: basic-classification.md
 - name: Utforma din egen klassificerare

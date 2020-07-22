@@ -1,4 +1,2 @@
-- name: Installation och validering
-  href: installation.md
 - name: Använda det numeriska biblioteket
   href: numerics.md
