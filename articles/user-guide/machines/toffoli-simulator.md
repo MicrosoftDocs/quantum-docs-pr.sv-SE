@@ -1,28 +1,33 @@
 ---
-title: Quantum Development Kit Toffoli-Simulator
+title: Quantum Toffoli Simulator – Quantum Development Kit
 description: Lär dig mer om Microsoft QDKe Toffoli simulator, en speciell funktion Quantum simulator som kan användas med miljon tals qubits.
 author: alan-geller
 ms.author: ageller@microsoft.com
-ms.date: 01/16/2019
+ms.date: 6/25/2020
 ms.topic: article
 uid: microsoft.quantum.machines.toffoli-simulator
-ms.openlocfilehash: 8a29caaa0fa058600a74e7d130e644374cbfa19c
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+ms.openlocfilehash: a6ceee592e628215511ec83475d9e25bf54674f7
+ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85276027"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86870625"
 ---
-# <a name="quantum-development-kit-toffoli-simulator"></a>Quantum Development Kit Toffoli-Simulator
+# <a name="quantum-development-kit-qdk-toffoli-simulator"></a>Toffoli Simulator för Quantum Development Kit (QDK)
 
-Quantum Development Kit tillhandahåller en Toffoli-simulator, som är en särskild simulator som kan simulera Quantum-algoritmer som är begränsade till X-, CNOT-och multi-styrda X-Quantum-åtgärder (all klassisk logik och beräkningar är tillgängliga).
+QDK Toffoli-simulatorn är en särskild simulator med en begränsad omfattning och stöder bara `X` , `CNOT` och flera kontrollerade `X` Quantum-åtgärder. All klassisk logik och alla beräkningar är tillgängliga.
 
-Även om Toffoli-simulatorn är mycket mer begränsad i drift än [hela tillstånds simulatorn](xref:microsoft.quantum.machines.full-state-simulator)kan den simulera mycket mer qubits.
-Toffoli-simulatorn kan användas med miljon tals qubits, medan hela tillstånds simulatorn är allmänt begränsad till cirka 30.
-Den kan köra och felsöka en begränsad uppsättning Quantum-algoritmer skrivna i Q # på din dator. till exempel kan Oracle som utvärderar booleska funktioner implementeras med hjälp av dessa portar och testas på olika qubits med den här simulatorn.
+Även om Toffoli-simulatorn är mer begränsad i funktionalitet än med [hela tillstånds simulatorn](xref:microsoft.quantum.machines.full-state-simulator), har den fördelen att kunna simulera mycket mer qubits. Toffoli-simulatorn kan användas med miljon tals qubits, medan hela tillstånds simulatorn är begränsad till cirka 30 qubits. Detta är användbart, till exempel med Oracle som utvärderar booleska funktioner – de kan implementeras med den begränsade uppsättningen algoritmer som stöds och testas på ett stort antal qubits.
 
-Den här Quantum simulatorn exponeras via `ToffoliSimulator` klassen.
-Om du vill använda simulatorn skapar du bara en instans av den här klassen och skickar den till `Run` metoden för den Quantum-åtgärd som du vill köra tillsammans med resten av parametrarna:
+## <a name="invoking-the-toffoli-simulator"></a>Anropar Toffoli-simulatorn
+
+Du exponerar Toffoli-simulatorn via- `ToffoliSimulator` klassen. Mer information finns i [sätt att köra ett Q #-program](xref:microsoft.quantum.guide.host-programs).
+
+### <a name="invoking-the-toffoli-simulator-from-c"></a>Anropar Toffoli-simulatorn från C #
+
+Precis som med andra mål datorer skapar du först en instans av `ToffoliSimulator` klassen och skickar den som den första parametern för en åtgärds `Run` metod.
+
+Observera att om klassen till skillnad från `QuantumSimulator` klassen `ToffoliSimulator` implementerar inte <xref:System.IDisposable> gränssnittet, och därför behöver du inte ange det i en `using` instruktion.
 
 ```csharp
     var sim = new ToffoliSimulator();
@@ -30,25 +35,54 @@ Om du vill använda simulatorn skapar du bara en instans av den här klassen och
     ///...
 ```
 
-## <a name="other-operations"></a>Andra åtgärder
+### <a name="invoking-the-toffoli-simulator-from-python"></a>Anropar Toffoli-simulatorn från python
 
-`ToffoliSimulator`Stöder rotationer och Exponentiated Paulis, till exempel `R` och `Exp` , när den resulterande åtgärden är lika med `X` eller för identiteten.
+Använd metoden [toffoli_simulate ()](https://docs.microsoft.com/python/qsharp/qsharp.loader.qsharpcallable) från python-biblioteket med den importerade Q #-åtgärden:
 
-Mått och assert stöds, men endast i Pauli- `Z` basen.
-Observera att sannolikheten för viss mätning alltid är 0 eller 1; Det finns ingen slumpmässighet i Toffoli-simulatorn.
+```python
+qubit_result = myOperation.toffoli_simulate()
+```
 
-`DumpMachine`och `DumpRegister` stöds.
-Båda utvärderar den aktuella `Z` bas statusen för varje qubit, en qubit per rad.
+### <a name="invoking-the-toffoli-simulator-from-the-command-line"></a>Anropar Toffoli-simulatorn från kommando raden
 
-## <a name="qubitcount"></a>QubitCount
+När du kör ett Q #-program från kommando raden använder du parametern **--Simulator** (eller **-s** Shortcut) för att ange Toffoli Simulator mål dator. Följande kommando kör ett program med hjälp av resurs uppskattningen: 
 
-Som standard `ToffoliSimulator` allokeras utrymme för 65 536 qubits.
-Om algoritmen kräver mer än så kan du ändra antalet qubit genom att ange ett värde för parametern för `qubitCount` konstruktorn.
-För varje ytterligare qubit krävs ytterligare byte av minne, så det finns ingen betydande kostnad för att uppskatta antalet qubits som du behöver.
+```dotnetcli
+dotnet run -s ToffoliSimulator
+```
 
-Till exempel:
+### <a name="invoking-the-toffoli-simulator-from-juptyer-notebooks"></a>Anropar Toffoli-simulatorn från Juptyer Notebooks
+
+Använd SWEETIQ # Magic kommandot [% Toffoli](xref:microsoft.quantum.iqsharp.magic-ref.toffoli) för att köra Q #-åtgärden.
+
+```
+%toffoli myOperation
+```
+
+## <a name="supported-operations"></a>Åtgärder som stöds
+
+Toffoli Simulator stöder:
+
+* Rotationer och exponentiated Paulis, till exempel `R` och `Exp` , när den resulterande åtgärden är lika med `X` eller identitets mat ris.
+* Mått och [assert](xref:microsoft.quantum.diagnostics.assertmeasurement) -åtgärder, men endast i Pauli- `Z` basen. Observera att sannolikheten för en mått åtgärd alltid är **0** eller **1**; Det finns ingen slumpmässighet i Toffoli-simulatorn.
+* `DumpMachine`och- `DumpRegister` funktioner.
+Båda funktionerna utvärderar aktuell `Z` bas status för varje qubit, en qubit per rad.
+
+## <a name="specifying-the-number-of-qubits"></a>Ange antalet qubits
+
+Som standard `ToffoliSimulator` allokerar en instans utrymme för 65 536 qubits.
+Om algoritmen kräver mer qubits kan du ange antalet qubit genom att ange ett värde för `qubitCount` parametern för konstruktorn.
+För varje ytterligare qubit krävs bara en byte av minne, så det finns ingen betydande kostnad för att uppskatta antalet qubits som du behöver.
+
+Exempel:
 
 ```csharp
     var sim = new ToffoliSimulator(qubitCount: 1000000);
     var res = myLargeOperation.Run(sim).Result;
 ```
+
+## <a name="see-also"></a>Se även
+
+- [Uppskattning av Quantum-resurser](xref:microsoft.quantum.machines.resources-estimator)
+- [Quantum trace Simulator](xref:microsoft.quantum.machines.qc-trace-simulator.intro)
+- [Quantum, fullständig tillstånds Simulator](xref:microsoft.quantum.machines.full-state-simulator) 

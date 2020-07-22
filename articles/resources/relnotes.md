@@ -6,12 +6,12 @@ ms.author: bradben
 ms.date: 5/30/2020
 ms.topic: article
 uid: microsoft.quantum.relnotes
-ms.openlocfilehash: d10f81a1e49235be8e02661dcd6d3c839485af6e
-ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
+ms.openlocfilehash: 4b5e7b657f0e11fb4a14308c20859f4007729146
+ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85885045"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86871563"
 ---
 # <a name="microsoft-quantum-development-kit-release-notes"></a>Viktig information för Microsoft Quantum Development Kit
 
@@ -21,6 +21,17 @@ Installationsanvisningar finns i [installationsguiden](xref:microsoft.quantum.in
 
 Uppdateringsanvisningar finns i [uppdateringsguiden](xref:microsoft.quantum.update).
 
+
+## <a name="version-01220072031"></a>Version 0.12.20072031
+
+*Utgivnings datum: 21 juli 2020*
+
+Den här versionen innehåller följande:
+
+- Öppna namn rymder i Q # Notebooks är nu tillgängliga för alla framtida cell körningar. Detta gör att du till exempel kan öppna namn områden en gång i en cell överst i antecknings boken, i stället för att behöva öppna relevanta namn områden i varje kod cell. Ett nytt `%lsopen` magisk-kommando visar en lista över namn områden som har öppnats för tillfället.
+
+Se den fullständiga listan med stängda PR:er för [bibliotek](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed), [kompilator](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+is%3Aclosed), [runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+is%3Aclosed), [exempel](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed), [IQ#](https://github.com/microsoft/iqsharp/pulls?q=is%3Apr+is%3Aclosed) och [Katas](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+is%3Aclosed).  
+
 ## <a name="version-01220070124"></a>Version 0.12.20070124
 
 *Utgivnings datum: den 2 juli, 2020*
@@ -28,7 +39,7 @@ Uppdateringsanvisningar finns i [uppdateringsguiden](xref:microsoft.quantum.upda
 Den här versionen innehåller följande:
 
 - Nytt `qdk-chem` verktyg för att konvertera äldre elektroniska struktur problem serialiserade format (t. ex.: FCIDUMP) till [Broombridge](xref:microsoft.quantum.libraries.chemistry.schema.broombridge)
-- Nya funktioner och åtgärder i [ `Microsoft.Quantum.Synthesis` namn området](xref:microsoft.quantum.synthesis) för sammanhängande tillämpning av klassiska Oracle med hjälp av omvandlings-och dekompositions syntes algoritmer.
+- Nya funktioner och åtgärder i [`Microsoft.Quantum.Synthesis`](xref:microsoft.quantum.synthesis) namn området för sammanhängande tillämpning av klassiska Oracle med hjälp av omvandlings-och dekompositions syntes algoritmer.
 - SWEETIQ # tillåter nu argument till `%simulate` , `%estimate` , och andra Magic-kommandon. Mer information finns i [ `%simulate` kommando referensen för Magic](xref:microsoft.quantum.iqsharp.magic-ref.simulate) .
 - Nya fas visnings alternativ i SWEETIQ #. Mer information finns i [ `%config` kommando referensen för Magic](xref:microsoft.quantum.iqsharp.magic-ref.config) .
 - SWEETIQ # och `qsharp` python-paketet tillhandahålls nu via Conda-paket ([qsharp](https://anaconda.org/quantum-engineering/qsharp) och [iqsharp](https://anaconda.org/quantum-engineering/iqsharp)) för att förenkla lokal installation av Q # Jupyter och python-funktioner till en Conda-miljö. Se [q # Jupyter Notebooks](xref:microsoft.quantum.install.jupyter) och [q # med python](xref:microsoft.quantum.install.python) -installations guider för mer information.
@@ -446,7 +457,7 @@ Den här versionen är bara en snabb korrigering av [problem #48 som rapporterat
 
 *Utgivningsdatum: 22 juni 2018*
 
-Den här versionen innehåller flera bidrag från communityn samt en förbättrad felsökningsupplevelse och bättre prestanda.  Specifikt:
+Den här versionen innehåller flera bidrag från communityn samt en förbättrad felsökningsupplevelse och bättre prestanda.  Tänk särskilt på att:
 
 * Prestandaförbättringar för både små och stora simuleringar för QuantumSimulator-måldatorn.
 * Förbättrade felsökningsfunktioner.

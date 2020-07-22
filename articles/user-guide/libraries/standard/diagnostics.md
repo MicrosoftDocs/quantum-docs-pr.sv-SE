@@ -5,12 +5,12 @@ author: cgranade
 uid: microsoft.quantum.libraries.diagnostics
 ms.author: chgranad@microsoft.com
 ms.topic: article
-ms.openlocfilehash: fa5173f710dd9e0b0b2c110e45aa0bf019111aca
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+ms.openlocfilehash: 324753cfa1b7d940bf5a0bbe7665f19cc6dda82c
+ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85275710"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86870642"
 ---
 # <a name="diagnostics"></a>Diagnostik #
 
@@ -61,19 +61,19 @@ Standard biblioteken för Q # innehåller flera olika funktioner för att repres
 
 I praktiken förlitar sig på att de klassiska simuleringarna av Quantum Mechanics inte behöver följa [no-klonings-satsen](https://arxiv.org/abs/quant-ph/9607018), så att vi kan göra icke-fysiska mätningar och intyg när de använder en simulator för vår mål dator.
 Därför kan vi testa enskilda åtgärder på en klassisk Simulator innan du distribuerar på maskin vara.
-På mål datorer som inte tillåter utvärdering av intyg kan anrop till <xref:microsoft.quantum.intrinsic.assert> ignoreras på ett säkert sätt.
+På mål datorer som inte tillåter utvärdering av intyg kan anrop till <xref:microsoft.quantum.diagnostics.assertmeasurement> ignoreras på ett säkert sätt.
 
-I allmänhet är <xref:microsoft.quantum.intrinsic.assert> åtgärden som mäter att mät qubits i angivet Pauli alltid det resultat som visas.
+I allmänhet är <xref:microsoft.quantum.diagnostics.assertmeasurement> åtgärden som mäter att mät qubits i angivet Pauli alltid det resultat som visas.
 Om kontrollen Miss lyckas avslutas körningen genom `fail` att anropa med det aktuella meddelandet.
 Den här åtgärden är inte implementerad som standard. simulatorer som har stöd för den bör tillhandahålla en implementering som utför körnings kontroll.
-`Assert`har signatur `((Pauli[], Qubit[], Result, String) -> ())` .
-Eftersom `Assert` är en funktion med en tom tupel som Utdatatyp, kan inga effekter från att anropas `Assert` vara synliga i ett Q #-program.
+`AssertMeasurement`har signatur `((Pauli[], Qubit[], Result, String) -> ())` .
+Eftersom `AssertMeasurement` är en funktion med en tom tupel som Utdatatyp, kan inga effekter från att anropas `AssertMeasurement` vara synliga i ett Q #-program.
 
-<xref:microsoft.quantum.intrinsic.assertprob>Funktionen funktion förutsätter att mätning av de tilldelade qubits i den aktuella Pauli-grunden har det resultat som har givit den sannolikheten, inom viss tolerans.
+<xref:microsoft.quantum.diagnostics.assertmeasurementprobability>Funktionen funktion förutsätter att mätning av de tilldelade qubits i den aktuella Pauli-grunden har det resultat som har givit den sannolikheten, inom viss tolerans.
 Toleransen är additiv (t. ex. `abs(expected-actual) < tol` ).
 Om kontrollen Miss lyckas avslutas körningen genom `fail` att anropa med det aktuella meddelandet.
 Den här åtgärden är inte implementerad som standard. simulatorer som har stöd för den bör tillhandahålla en implementering som utför körnings kontroll.
-`AssertProb`har signatur `((Pauli[], Qubit[], Result, Double, String, Double) -> Unit)` . De första `Double` parametrarna ger den önskade sannolikheten för resultatet och den andra som är toleransen.
+`AssertMeasurementProbability`har signatur `((Pauli[], Qubit[], Result, Double, String, Double) -> Unit)` . De första `Double` parametrarna ger den önskade sannolikheten för resultatet och den andra som är toleransen.
 
 Vi kan göra mer än att kontrol lera en enda mätning, med hjälp av att den klassiska information som används av en simulator för att representera det interna läget för en qubit är lämpar att kopiera, så att vi inte behöver utföra någon mätning för att testa vår kontroll.
 I synnerhet gör detta att vi kan ta del av *inkompatibla* mått som skulle vara omöjliga vid den faktiska maskin varan.
@@ -100,7 +100,7 @@ using (register = Qubit()) {
 ```
 
 I allmänhet är det dock inte säkert att vi har åtkomst till intyg om tillstånd som inte sammanfaller med eigenstates av Pauli-operatörer.
-Till exempel, $ \ket{\psi} = (\ket {0} + e ^ {i \pi/8} \ket {1} )/\sqrt {2} $ är inte en Eigenstate av någon Pauli-Operator, så att vi inte kan använda <xref:microsoft.quantum.intrinsic.assertprob> för att unikt fastställa att ett tillstånd $ \ket{\psi '} $ är lika med $ \ket{\psi} $.
+Till exempel, $ \ket{\psi} = (\ket {0} + e ^ {i \pi/8} \ket {1} )/\sqrt {2} $ är inte en Eigenstate av någon Pauli-Operator, så att vi inte kan använda <xref:microsoft.quantum.diagnostics.assertmeasurementprobability> för att unikt fastställa att ett tillstånd $ \ket{\psi '} $ är lika med $ \ket{\psi} $.
 I stället måste du dela upp intyget $ \ket{\psi '} = \ket{\psi} $ i antaganden som kan testas direkt med hjälp av de primitiver som stöds av vår Simulator.
 Det gör du genom att låta $ \ket{\psi} = \alpha \ket {0} + \beta \ket {1} $ för komplexa tal $ \alpha = a \_ r + a \_ i $ och $ \beta $.
 Observera att det här uttrycket kräver fyra reella tal $ \{ a \_ r, a \_ , b \_ r, b \_ i \} $ för att ange, eftersom varje komplext tal uttrycks som summan av en verklig och en imaginär del.

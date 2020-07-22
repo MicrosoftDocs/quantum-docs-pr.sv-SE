@@ -6,12 +6,12 @@ ms.author: chgranad
 ms.date: 10/12/2018
 ms.topic: article
 uid: microsoft.quantum.contributing.style
-ms.openlocfilehash: 3ddb5d67b972f69df1774b476a10e74dd16d97b7
-ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
+ms.openlocfilehash: 26de7d5f639ea1b4df24232127b6f95cee3a041e
+ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85884197"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86871390"
 ---
 # <a name="q-style-guide"></a>Stil guide för Q # #
 ## <a name="general-conventions"></a>Allmänna konventioner ##
@@ -49,7 +49,7 @@ Den här skillnaden antyder att vi namnger åtgärder som verb och fungerar som 
 > Från och med detta perspektiv ska användardefinierade typer namnges som substantiv, så att både själva typen och konstruktorn-funktionen har konsekventa namn.
 
 Om det är rimligt bör du se till att åtgärds namnen börjar med verb som tydligt anger vilken åtgärd som vidtas.
-Ett exempel:
+Exempel:
 
 - `MeasureInteger`
 - `EstimateEnergy`
@@ -64,7 +64,7 @@ Andra verb kan vara användbara även i det här fallet, som i `IterateThroughCa
 | ---- | ------ |
 | Använd | En åtgärd som angetts som indata kallas |
 | Assert | En hypotes om resultatet av en möjlig Quantum-mätning kontrol leras av en simulator |
-| Beräkning | Ett klassiskt värde returneras som representerar en uppskattning som skapats från en eller flera mätningar |
+| Uppskattning | Ett klassiskt värde returneras som representerar en uppskattning som skapats från en eller flera mätningar |
 | Mått | En Quantum-mätning utförs och resultatet returneras till användaren |
 | Förbereda | Ett visst register av qubits initieras i ett visst tillstånd |
 | Exempel | Ett klassiskt värde returneras slumpmässigt från en distribution |
@@ -320,7 +320,7 @@ Vi rekommenderar:
 
 # <a name="examples"></a>[Exempel](#tab/examples)
 
-|   | Kodfragment | Beskrivning |
+|   | Kodfragment | Description |
 |---|---------|-------------|
 | ☑ | `newtype Oracle = (Apply : Qubit[] => Unit is Adj + Ctl)` | Namnet `Apply` är en `CamelCase` formaterad verbfras som föreslår att det namngivna objektet är en åtgärd. |
 | ☒ | <s>`newtype Oracle = (apply : Qubit[] => Unit is Adj + Ctl) `</s> | Namngivna objekt ska börja med en inledande versal bokstav. |
@@ -386,9 +386,8 @@ Den kompilator som medföljer Quantum Development Kit extraherar dessa kommentar
 På samma sätt använder den språk server som ingår i Quantum Development Kit dessa kommentarer för att ge användarna hjälp när de hovrar över symboler i sin Q #-kod.
 Genom att använda dokumentations kommentarer kan du därför hjälpa användarna att förstå kod genom att ange en användbar referens för detaljer som inte är lätta att använda i de andra konventionerna i det här dokumentet.
 
-<div class="nextstepaction">
-    [Dokumentation kommentar syntax referens](xref:microsoft.quantum.guide.filestructure#documentation-comments)
-</div>
+> [!div class="nextstepaction"]
+> [Dokumentation kommentar syntax referens](xref:microsoft.quantum.guide.filestructure#documentation-comments).
 
 För att effektivt kunna använda den här funktionen för att hjälpa användarna, rekommenderar vi att du håller några saker i åtanke när du skriver dokumentations kommentarer.
 
@@ -477,7 +476,7 @@ Vi rekommenderar:
 
 # <a name="examples"></a>[Exempel](#tab/examples)
 
-|   | Kodfragment | Beskrivning |
+|   | Kodfragment | Description |
 |---|---------|-------------|
 | ☒ | <s>`2+3`</s> | Använd blank steg runt binära operatorer. |
 | ☒ | <s>`target:Qubit`</s> | Använd blank steg runt Skriv anteckningens kolon. |

@@ -1,25 +1,29 @@
 ---
-title: Fullständig tillstånds Simulator
+title: Fullständigt tillstånd Quantum Simulator – Quantum Development Kit
 description: 'Lär dig hur du kör dina Q #-program i Microsoft Quantum Development Kit fullständig tillstånds Simulator.'
 author: anpaz-msft
 ms.author: anpaz@microsoft.com
-ms.date: 12/7/2017
+ms.date: 06/26/2020
 ms.topic: article
 uid: microsoft.quantum.machines.full-state-simulator
-ms.openlocfilehash: f73abbc4366b003e4b22366ed83ca9c897737307
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+ms.openlocfilehash: 563fdbd2a45461d112e4c46651eddd75c6fc3db2
+ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85275646"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86871186"
 ---
-# <a name="quantum-development-kit-full-state-simulator"></a>Quantum Development Kit full State Simulator
+# <a name="quantum-development-kit-qdk-full-state-simulator"></a>Quantum Development Kit (QDK) fullständig tillstånds Simulator
 
-Quantum Development Kit innehåller en fullständigt tillstånd Quantum simulator som liknar [LIQ $ UI | \rangle $](http://stationq.github.io/Liquid/) från Microsoft Research.
-Den här simulatorn kan användas för att köra och felsöka Quantum-algoritmer skrivna i Q # på din dator.
+QDK tillhandahåller en fullständig tillstånds simulator som simulerar en Quantum-dator på din lokala dator. Du kan använda den fullständiga tillstånds simulatorn för att köra och felsöka Quantum-algoritmer skrivna i Q # och använda upp till 30 qubits. Den fullständiga tillstånds simulatorn liknar den Quantum simulator som används i [LIQ $ UI | \rangle $](http://stationq.github.io/Liquid/) Platform från Microsoft Research.
 
-Den här Quantum simulatorn exponeras via `QuantumSimulator` klassen. Om du vill använda simulatorn skapar du bara en instans av den här klassen och skickar den till `Run` metoden för den Quantum-åtgärd som du vill köra tillsammans med resten av parametrarna:
+## <a name="invoking-and-running-the-full-state-simulator"></a>Anropa och köra fullständig tillstånds Simulator
 
+Du exponerar hela tillstånds simulatorn via- `QuantumSimulator` klassen. Mer information finns i [sätt att köra ett Q #-program](xref:microsoft.quantum.guide.host-programs).
+
+### <a name="invoking-the-simulator-from-c"></a>Anropa simulatorn från C #
+
+Skapa en instans av `QuantumSimulator` klassen och skicka den sedan till `Run` metoden för en Quantum-åtgärd, tillsammans med eventuella ytterligare parametrar.
 ```csharp
     using (var sim = new QuantumSimulator())
     {
@@ -28,13 +32,35 @@ Den här Quantum simulatorn exponeras via `QuantumSimulator` klassen. Om du vill
     }
 ```
 
-## <a name="idisposable"></a>IDisposable
+Eftersom `QuantumSimulator` klassen implementerar <xref:System.IDisposable> gränssnittet måste du anropa `Dispose` metoden när du inte behöver instansen av simulatorn längre. Det bästa sättet att göra detta är att omsluta Simulator deklarationen och åtgärderna i en [using](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/using-statement) -instruktion som automatiskt anropar- `Dispose` metoden.
 
-`QuantumSimulator`Klassen implementerar <xref:System.IDisposable> , vilket innebär att `Dispose` metoden ska anropas när instansen av simulatorn inte används längre. Det bästa sättet att göra detta är att figursätta simulatorn i en `using` instruktion, som i exemplet ovan.
+### <a name="invoking-the-simulator-from-python"></a>Anropa simulatorn från python
 
-## <a name="seed"></a>Dirigeringsrouter
+Använd metoden [simulera ()](https://docs.microsoft.com/python/qsharp/qsharp.loader.qsharpcallable) från q # python-biblioteket med den importerade q #-åtgärden:
 
-`QuantumSimulator`Använder en slump tals generator för att simulera Quantum-slumpmässig het. I test syfte är det ibland användbart att ha deterministiska resultat. Detta kan åstadkommas genom att tillhandahålla ett start värde för slump tals generatorn i `QuantumSimulator` konstruktorn via `randomNumberGeneratorSeed` parametern:
+```python
+qubit_result = myOperation.simulate()
+```
+
+### <a name="invoking-the-simulator-from-the-command-line"></a>Anropa simulatorn från kommando raden
+
+När du kör ett Q #-program från kommando raden är den fullständiga tillstånds simulatorn standard mål datorn. Alternativt kan du använda parametern **--Simulator** (eller **-s** genväg) för att ange önskad måldator. Följande kommandon kör ett program med fullständig tillstånds Simulator. 
+
+```dotnetcli
+dotnet run
+dotnet run -s QuantumSimulator
+```
+
+### <a name="invoking-the-simulator-from-juptyer-notebooks"></a>Anropa simulatorn från Juptyer Notebooks
+
+Använd SWEETIQ # Magic kommandot [% simulera](xref:microsoft.quantum.iqsharp.magic-ref.simulate) för att köra Q #-åtgärden.
+
+```
+%simulate myOperation
+```
+## <a name="seeding-the-simulator"></a>Dirigera simulatorn
+
+Som standard använder den fullständiga tillstånds simulatorn en slump tals generator för att simulera Quantum-slumpmässig het. I test syfte är det ibland användbart att ha deterministiska resultat. I ett C#-program kan du göra detta genom att tillhandahålla ett start värde för slump tals generatorn i `QuantumSimulator` konstruktorn via `randomNumberGeneratorSeed` parametern.
 
 ```csharp
     using (var sim = new QuantumSimulator(randomNumberGeneratorSeed: 42))
@@ -44,7 +70,12 @@ Den här Quantum simulatorn exponeras via `QuantumSimulator` klassen. Om du vill
     }
 ```
 
-## <a name="threads"></a>Konversation
+## <a name="configuring-threads"></a>Konfigurera trådar
 
-`QuantumSimulator` [OpenMP](http://www.openmp.org/) används för att parallellisera de linjära algebra som krävs. Som standard använder OpenMP alla tillgängliga maskinvarutrådar, vilket innebär att program med små antal kvantbitar ofta körs långsamt eftersom den samordning som krävs vida överstiger det faktiska arbetet. Detta kan åtgärdas genom att ställa in miljövariabeln `OMP_NUM_THREADS` på ett litet tal. Som en mycket generell tumregel räcker 1 tråd för upp till cirka 4 kvantbitar, och därefter kan ytterligare en tråd införas per kvantbit. Detta beror dock starkt på din algoritm.
+Den fullständiga tillstånds simulatorn använder [OpenMP](http://www.openmp.org/) för att parallellisera de linjära algebra som krävs. Som standard använder OpenMP alla tillgängliga maskin varu trådar, vilket innebär att program med små antal qubits ofta körs långsamt, eftersom den samordning som krävs för Dwarfs det faktiska arbetet. Du kan åtgärda detta genom att ställa in miljövariabeln `OMP_NUM_THREADS` på ett litet nummer. Som en regel för tummen konfigurerar du en tråd för upp till fyra qubits och sedan en ytterligare tråd per qubit. Du kan behöva justera variabeln beroende på algoritmen.
 
+## <a name="see-also"></a>Se även
+
+- [Uppskattning av Quantum-resurser](xref:microsoft.quantum.machines.resources-estimator)
+- [Quantum Toffoli-Simulator](xref:microsoft.quantum.machines.toffoli-simulator)
+- [Quantum trace Simulator](xref:microsoft.quantum.machines.qc-trace-simulator.intro)

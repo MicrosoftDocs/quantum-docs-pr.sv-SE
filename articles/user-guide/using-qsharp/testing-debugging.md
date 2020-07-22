@@ -6,12 +6,12 @@ ms.author: mamykhai@microsoft.com
 ms.date: 06/01/2020
 ms.topic: article
 uid: microsoft.quantum.guide.testingdebugging
-ms.openlocfilehash: cd619607af9e2b601f3bec1304c5729d84312f35
-ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
+ms.openlocfilehash: db6e49e94e5ceb3b1b0b2d6ab57391618084072b
+ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85884080"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86870982"
 ---
 # <a name="testing-and-debugging"></a>Testa och felsöka
 
@@ -50,7 +50,7 @@ Den här filen innehåller en inlednings prov enhet `AllocateQubit` som kontroll
     operation AllocateQubit () : Unit {
 
         using (qubit = Qubit()) {
-            Assert([PauliZ], [qubit], Zero, "Newly allocated qubit must be in the |0⟩ state.");
+            AssertMeasurement([PauliZ], [qubit], Zero, "Newly allocated qubit must be in the |0⟩ state.");
         }
         
         Message("Test passed");
@@ -177,7 +177,7 @@ Här använder vi åtgärden <xref:microsoft.quantum.environment.getqubitsavaila
 Eftersom detta beror på programmets globala tillstånd och dess körnings miljö, `AssertQubitsAreAvailable` måste även vår definition vara en åtgärd.
 Vi kan dock använda det globala läget för att ge ett enkelt `Bool` värde som inmatat för `Fact` funktionen.
 
-[Inledning, som](xref:microsoft.quantum.libraries.standard.prelude)bygger på dessa idéer, erbjuder två särskilt användbara intyg <xref:microsoft.quantum.intrinsic.assert> och <xref:microsoft.quantum.intrinsic.assertprob> båda modellerade som-åtgärder på `()` . Dessa intyg var och en tar en Pauli-operatör som beskriver en viss värdering av intresse, ett Quantum-register som en mätning utförs på och ett hypotetiskt resultat.
+[Inledning, som](xref:microsoft.quantum.libraries.standard.prelude)bygger på dessa idéer, erbjuder två särskilt användbara intyg <xref:microsoft.quantum.diagnostics.assertmeasurement> och <xref:microsoft.quantum.diagnostics.assertmeasurementprobability> båda modellerade som-åtgärder på `()` . Dessa intyg var och en tar en Pauli-operatör som beskriver en viss värdering av intresse, ett Quantum-register som en mätning utförs på och ett hypotetiskt resultat.
 Mål datorer som arbetar med simuleringen är inte kopplade till [någon-kloning-satsen](https://en.wikipedia.org/wiki/No-cloning_theorem)och kan utföra sådana mätningar utan att störa det register som skickas till sådana intyg.
 En simulator kan sedan, som liknar `PositivityFact` funktionen föregående, stoppa beräkningen om det hypotetiska resultatet inte observeras i övningen:
 
@@ -185,14 +185,14 @@ En simulator kan sedan, som liknar `PositivityFact` funktionen föregående, sto
 using (register = Qubit()) 
 {
     H(register);
-    Assert([PauliX], [register], Zero);
+    AssertMeasurement([PauliX], [register], Zero);
     // Even though we do not have access to states in Q#,
     // we know by the anthropic principle that the state
     // of register at this point is |+〉.
 }
 ```
 
-På fysisk Quantum-maskinvara där ingen-kloning-satsen förhindrar granskning av ett Quantum-tillstånd, `Assert` returnerar och fungerar de `AssertProb` bara utan `()` någon annan påverkan.
+På fysisk Quantum-maskinvara där ingen-kloning-satsen förhindrar granskning av ett Quantum-tillstånd, `AssertMeasurement` returnerar och fungerar de `AssertMeasurementProbability` bara utan `()` någon annan påverkan.
 
 <xref:microsoft.quantum.diagnostics>Namn området innehåller flera fler funktioner i `Assert` serien, där du kan kontrol lera mer avancerade villkor. 
 
