@@ -32,6 +32,8 @@
   name: '%kata magiskt kommando'
 - href: lsmagic.md
   name: '%lsmagic magiskt kommando'
+- href: lsopen.md
+  name: '%lsopen magiskt kommando'
 - href: package.md
   name: '%package magiskt kommando'
 - href: performance.md
