@@ -1,5 +1,18 @@
+---
+title: Magiska kommandon för IQ#
+author: rmshaffer
+uid: microsoft.quantum.iqsharp.magic-ref.index
+ms.author: rmshaffer
+ms.date: 07/21/2020
+ms.topic: article
+ms.openlocfilehash: 971787adae03af35d2e5b408fb88356a8b7df90a
+ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
+ms.translationtype: HT
+ms.contentlocale: sv-SE
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86870710"
+---
 # <a name="iq-magic-commands"></a>Magiska kommandon för IQ#
-
 | Magiskt kommando | Sammanfattning |
 |---------------|---------|
 | [`%azure.connect`](xref:microsoft.quantum.iqsharp.magic-ref.azure.connect) | Ansluter till en Azure Quantum-arbetsyta eller visar aktuell anslutningsstatus. |
@@ -19,6 +32,7 @@
 | [`%estimate`](xref:microsoft.quantum.iqsharp.magic-ref.estimate) | Kör en given funktion eller åtgärd på ResourcesEstimator-måldatorn. |
 | [`%kata`](xref:microsoft.quantum.iqsharp.magic-ref.kata) | Kör ett enskilt test. |
 | [`%lsmagic`](xref:microsoft.quantum.iqsharp.magic-ref.lsmagic) | Returnerar en lista över alla tillgängliga magiska kommandon. |
+| [`%lsopen`](xref:microsoft.quantum.iqsharp.magic-ref.lsopen) | Visar en lista med namnområden som har öppnats och deras alias. |
 | [`%package`](xref:microsoft.quantum.iqsharp.magic-ref.package) | Ger möjlighet att läsa in ett NuGet-paket. |
 | [`%performance`](xref:microsoft.quantum.iqsharp.magic-ref.performance) | Rapporterar aktuella prestandamått för denna kernel. |
 | [`%simulate`](xref:microsoft.quantum.iqsharp.magic-ref.simulate) | Kör en given funktion eller åtgärd på QuantumSimulator-måldatorn. |

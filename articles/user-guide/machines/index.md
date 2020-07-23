@@ -1,160 +1,54 @@
 ---
-title: Kvantsimulatorer och värdprogram | Microsoft Docs
-description: Beskriver hur du använder kvantsimulatorer med ett klassiskt .NET-språk, vanligtvis antingen C# eller Q#.
+title: Kvantsimulatorer och Q#-program
+description: Beskriver de kvantsimulatorer som är tillgängliga som måldatorer för Q#-program.
 author: QuantumWriter
 ms.author: Alan.Geller@microsoft.com
-ms.date: 12/11/2017
+ms.date: 6/17/2020
 ms.topic: article
 uid: microsoft.quantum.machines
-ms.openlocfilehash: 14aed75ed0ed192f88699b1c7dbacfae23f74642
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+ms.openlocfilehash: c81226ba3e50b65cb1012e885866bd6fcc3764d7
+ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85273809"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86871169"
 ---
-# <a name="quantum-simulators-and-host-applications"></a>Kvantsimulatorer och värdprogram
+# <a name="quantum-simulators"></a>Kvantsimulatorer
 
-## <a name="what-youll-learn"></a>Detta får du lära dig
-
-> [!div class="checklist"]
-> * Hur kvantalgoritmer körs
-> * Vilka kvantsimulatorer som ingår i den här versionen
-> * Hur du skriver en C#-drivrutin för kvantalgoritmen
-
-## <a name="the-quantum-development-kit-execution-model"></a>Körningsmodell för Quantum Development Kit
-
-I [Att skriva ett kvantprogram](xref:microsoft.quantum.write-program) körde vi vår kvantalgoritm genom att skicka ett `QuantumSimulator`-objekt till algoritmklassens `Run`-metod.
-`QuantumSimulator`-klassen kör kvantalgoritmen genom att helt simulera kvanttillståndets vektor, vilket är perfekt när man vill köra och testa `Teleport`.
-I [Begreppsguide](xref:microsoft.quantum.concepts.intro) finns mer information om kvanttillståndsvektorer.
-
-Andra måldatorer kan användas för att köra en kvantalgoritm.
-Datorn ansvarar för att tillhandahålla implementeringar av kvantprimitiver för algoritmen.
-Detta inkluderar primitiva åtgärder som t. ex. H, CNOT och Measure, samt hantering och spårning av kvantbitar.
-Olika klasser i kvantdatorer representerar olika körningsmodeller för samma kvantalgoritm.
-
-Varje typ av kvantdator kan ge olika implementeringar av dessa primitiver.
-Till exempel utför spårningssimulatorn för kvantdatorn som ingår i utvecklingspaketet inte någon simulering alls.
-I stället spårar den grind-, kvantbits- och annan resursanvändning för algoritmen.
-
-### <a name="quantum-machines"></a>Kvantdatorer
-
-Senare definierar vi ytterligare kvantdatorklasser som har stöd för andra typer av simulering och stöd för körning på topologiska kvantdatorer.
-Om algoritmen tillåts vara konstant samtidigt som den underliggande datorimplementeringen varierar, blir det enkelt att testa och felsöka en algoritm i simuleringen. Den kan sedan köras på verklig maskinvara och man kan vara säker på att algoritmen inte har ändrats.
-
-### <a name="whats-included-in-this-release"></a>Vad ingår i den här versionen?
-
-Den här versionen av Quantum Developer Kit innehåller flera kvantdatorklasser.
-Alla definieras i namnområdet `Microsoft.Quantum.Simulation.Simulators`.
-
-* En [vektorsimulator för fullständigt tillstånd](xref:microsoft.quantum.machines.full-state-simulator), `QuantumSimulator`-klassen.
-* En [enkel resursberäknare](xref:microsoft.quantum.machines.resources-estimator), `ResourcesEstimator`-klassen. Beräknaren gör en analys på toppnivå av vilka resurser som krävs för att köra en kvantalgoritm.
-* En [spårningsbaserad resursberäknare](xref:microsoft.quantum.machines.qc-trace-simulator.intro), `QCTraceSimulator`-klassen. Beräknaren möjliggör avancerad analys av resursförbrukningen för algoritmens hela anropsgraf.
-* En [Toffoli-simulator](xref:microsoft.quantum.machines.toffoli-simulator), `ToffoliSimulator`-klassen.
-
-## <a name="writing-a-host-application"></a>Skriva ett värdprogram
-
-I [Att skriva ett kvantprogram](xref:microsoft.quantum.write-program) skrev vi en enkel C#-drivrutin för vår teleporteringsalgoritm. En C#-drivrutin har fyra huvudsakliga syften:
-
-* Skapa måldatorn
-* Beräkna eventuella argument som krävs för kvantalgoritmen
-* Köra kvantalgoritmen med simulatorn
-* Bearbeta resultatet av åtgärden
-
-Här diskuterar vi varje steg mer ingående.
-
-### <a name="constructing-the-target-machine"></a>Skapa måldatorn
-
-Kvantdatorer är instanser av vanliga .NET-klasser, vilket innebär att de skapas genom att anropa sin konstruktor, precis som alla andra .NET-klasser.
-Vissa simulatorer, inklusive `QuantumSimulator`, implementerar .NET <xref:System.IDisposable?displayProperty=nameWithType>-gränssnittet och ska omslutas i en C#`using`-instruktion.
-
-### <a name="computing-arguments-for-the-algorithm"></a>Beräkna argument för algoritmen
-
-I vårt `Teleport`-exempel beräknade vi några relativt artificiella argument som ska skickas till vår kvantalgoritm.
-Det är dock vanligare att det finns viktiga data som krävs av kvantalgoritmen, och det är enklast att tillhandahålla den från den klassiska drivrutinen.
-
-Vid kemiska simuleringar kräver till exempel kvantalgoritmen en stor tabell med interaktionsintegraler för molekylorbitaler.
-De läses vanligtvis in från en fil som tillhandahålls när algoritmen körs.
-Eftersom Q# inte har någon metod för att komma åt filsystemet, samlas dessa datatyper in bäst av den klassiska drivrutinen och skickas sedan till kvantalgoritmens `Run`-metod.
-
-Ett annat fall där den klassiska drivrutinen spelar en nyckelroll är i variationsmetoder.
-I den här algoritmklassen förbereds ett kvanttillstånd som baseras på vissa klassiska parametrar. Detta tillstånd används sedan för att beräkna specifika intressanta värden.
-Parametrarna justeras baserat på algoritmtypen hill climbing eller maskininlärning, varefter kvantalgoritmen körs igen.
-Vid sådana algoritmer implementeras hill climbing-algoritmen bäst som en helt klassisk funktion som anropas av den klassiska drivrutinen. Resultatet av hill climbing-algoritmen skickas sedan till nästa körning av kvantalgoritmen.
-
-### <a name="running-the-quantum-algorithm"></a>Köra kvantalgoritmen
-
-Den här delen är i allmänhet rätt okomplicerad.
-Varje Q#-åtgärd kompileras till en klass som tillhandahåller en statisk `Run`-metod.
-Argumenten till den här metoden kommer från den utplattade argumenttuppeln för själva åtgärden, plus ett ytterligare första argument som är simulatorn som ska köras. För en åtgärd som förväntar sig den namngivna tuppeln av typen `(a: String, (b: Double, c: Double))`, är dess utplattade motsvarighet av typen `(String a, Double b, Double c)`.
+Kvantsimulatorer är program som körs på klassiska datorer och fungerar som *måldatorer* för Q#-program. Detta gör det möjligt att köra och testa kvantprogram i en miljö som kan förutsäga hur kvantbitar kommer att reagera på olika åtgärder. I den här artikeln beskrivs vilka kvantsimulatorer som ingår i Quantum Development Kit (QDK) och olika sätt att skicka Q#-program på till kvantsimulatorer, till exempel via kommandoraden eller med hjälp av drivrutinskod som skrivs på ett klassiskt språk.  
 
 
-Det finns vissa saker att tänka på när argument skickas till en `Run`-metod:
 
-* Matriser måste vara omslutna i ett `Microsoft.Quantum.Simulation.Core.QArray<T>`-objekt.
-    En `QArray`-klass har en konstruktor som kan hantera alla sorterade samlingar (`IEnumerable<T>`) med lämpliga objekt.
-* Den tomma tuppeln, `()` i Q#, representeras av `QVoid.Instance` i C#.
-* Tupplar som inte är tomma representeras som `ValueTuple`-instanser i .NET.
-* Q#-användardefinierade typer skickas som bastypen.
-* Om du vill skicka en åtgärd eller en funktion till en `Run`-metod, måste du hämta en instans av åtgärdens eller funktionens klass med hjälp av simulatorns `Get<>`-metod.
+## <a name="the-quantum-development-kit-qdk-quantum-simulators"></a>Kvantsimulatorer i Quantum Development Kit (QDK)
 
-### <a name="processing-the-results"></a>Bearbeta resultat
-
-Resultatet av kvantalgoritmen returneras från `Run`-metoden.
-`Run`-metoden körs asynkront och returnerar därför en instans av <xref:System.Threading.Tasks.Task`1>.
-Det finns flera sätt att hämta det faktiska åtgärdsresultatet på. Det enklaste är att använda `Task`:s [`Result`-egenskap](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1.result):
-
-```csharp
-    var res = BellTest.Run(sim, 1000, initial).Result;
-```
-Men andra tekniker, som att använda [`Wait`-metoden](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task.wait) eller [`await`-nyckelord](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/await) i C# fungerar också.
-
-Precis som i argument visas Q#-tupplar som `ValueTuple`-instanser och Q#-matriser visas som `QArray`-instanser.
-Användardefinierade typer skickas som bastyper.
-Den tomma tuppeln, `()`, returneras som en instans av klassen `QVoid`.
-
-Många kvantalgoritmer kräver avsevärd efterbearbetning för att kunna härleda användbara svar.
-Till exempel är kvantdelen av Shors algoritm bara början av en beräkning som hittar faktorerna i ett tal.
-
-I de flesta fall är det enklast att göra denna typ av efterbearbetning i den klassiska drivrutinen.
-Det är bara den klassiska drivrutinen som kan rapportera resultat till användaren eller skriva dem till disk.
-Den klassiska drivrutinen har åtkomst till analysbibliotek och andra matematiska funktioner som inte visas i Q#.
+Kvantsimulatorn ansvarar för att tillhandahålla implementeringar av kvantprimitiver för en algoritm. Detta inkluderar primitiva åtgärder som t.ex. `H`, `CNOT` och `Measure`, samt hantering och spårning av kvantbitar. QDK innehåller olika klasser av kvantsimulatorer som motsvarar olika körningsmodeller för samma kvantalgoritm. 
 
 
-## <a name="failures"></a>Fel
+Varje typ av kvantsimulator kan ge olika implementeringar av dessa primitiver. Till exempel kör en [simulator med fullständigt tillstånd](xref:microsoft.quantum.machines.full-state-simulator) kvantalgoritmen genom att helt simulera [kvanttillståndsvektorn](xref:microsoft.quantum.glossary#quantum-state), medan [spårningssimulatorn för kvantdatorer](xref:microsoft.quantum.machines.qc-trace-simulator.intro) inte bryr sig om det faktiska kvanttillståndet alls. I stället spårar den grind-, kvantbits- och annan resursanvändning för algoritmen.
 
-När Q# `fail`-instruktionen nås under körningen av en åtgärd, utlöses ett `ExecutionFailException`.
+### <a name="quantum-machine-classes"></a>Kvantdatorklasser
 
-Eftersom `System.Task` har använts i `Run`-metoden utlöses ett undantagsfel som orsakas av att en `fail`-instruktion kommer att omslutas i ett `System.AggregateException`.
-För att hitta den faktiska orsaken till det här felet måste du iterera i `AggregateException` 
-`InnerExceptions`, till exempel:
+Framöver kommer QDK:n att kunna definiera ytterligare kvantdatorklasser som har stöd för andra typer av simulering och stöd för körning på kvantmaskinvara. Om algoritmen tillåts vara konstant samtidigt som den underliggande datorimplementeringen varierar, blir det enkelt att testa och felsöka en algoritm i simuleringen. Den kan sedan köras på verklig maskinvara och man kan vara säker på att algoritmen inte har ändrats.
 
-```csharp
+QDK:n innehåller flera kvantdatorklasser som definieras i namnområdet `Microsoft.Quantum.Simulation.Simulators`.
 
-            try
-            {
-                using(var sim = new QuantumSimulator())
-                {
-                    /// call your operations here...
-                }
-            }
-            catch (AggregateException e)
-            {
-                // Unwrap AggregateException to get the message from Q# fail statement.
-                // Go through all inner exceptions.
-                foreach (Exception inner in e.InnerExceptions)
-                {
-                    // If the exception of type ExecutionFailException
-                    if (inner is ExecutionFailException failException)
-                    {
-                        // Print the message it contains
-                        Console.WriteLine($" {failException.Message}");
-                    }
-                }
-            }
-```
+|Simulator |Klass|Beskrivning|
+|-----|------|---|
+|[Simulator med fullständigt tillstånd](xref:microsoft.quantum.machines.full-state-simulator)| `QuantumSimulator` | Kör och felsöker kvantalgoritmer och är begränsad till cirka 30 kvantbitar. |
+|[Enkel resursberäknare](xref:microsoft.quantum.machines.resources-estimator)| `ResourcesEstimator` | Gör en analys på toppnivå av vilka resurser som krävs för att köra en kvantalgoritm och har stöd för tusentals kvantbitar.|
+|[Spårningsbaserad resursberäknare](xref:microsoft.quantum.machines.qc-trace-simulator.intro)|  `QCTraceSimulator` |Kör avancerad analys av resursförbrukningen för algoritmens hela anropsgraf och har stöd för tusentals kvantbitar.|
+|[Toffoli-simulator](xref:microsoft.quantum.machines.toffoli-simulator)| `ToffoliSimulator` |Simulerar kvantalgoritmer som är begränsade till `X`, `CNOT` och multistyrda `X` kvantåtgärder och har stöd för miljontals kvantbitar. |
 
-## <a name="other-classical-languages"></a>Andra klassiska språk
+## <a name="invoking-the-quantum-simulator"></a>Anropa kvantsimulatorn
 
-Även om de exempel som vi har visat är i C#, F# och Python, har Quantum Development Kit också stöd för att skriva klassiska värdprogram på andra språk.
-Om du till exempel vill skriva ett värdprogram i Visual Basic [går det utmärkt](https://github.com/tcNickolas/MiscQSharp/blob/master/Quantum_VBNet/README.md#using-q-with-visual-basic-net).
+I [Sätt att köra ett Q#-program på](xref:microsoft.quantum.guide.host-programs) visas tre sätt att skicka Q#-koden på till kvantsimulatorn: 
+
+* Använda kommandoraden
+* Använda ett Python-värdprogram
+* Använda ett C#-värdprogram
+
+Kvantdatorer är instanser av vanliga .NET-klasser, vilket innebär att de skapas genom att anropa sin konstruktor, precis som alla andra .NET-klasser. Hur du gör detta beror på hur du kör Q#-programmet.
+
+## <a name="next-steps"></a>Nästa steg
+
+* Mer information om hur du anropar måldatorer för Q#-program i olika miljöer finns i [Sätt att köra ett Q#-program på](xref:microsoft.quantum.guide.host-programs).

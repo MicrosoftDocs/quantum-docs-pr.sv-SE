@@ -1,53 +1,32 @@
 ---
-title: Spårningssimulator för kvantdator
-description: Lär dig hur du använder Microsofts spårningssimulator för kvantdatorer för att felsöka klassisk kod och beräkna resurskraven för ett kvantprogram.
+title: Spårningssimulator för kvantdator – Quantum Development Kit
+description: Lär dig att använda Microsofts spårningssimulator för kvantdatorer som felsöker klassisk kod och beräknar resurskraven för ett Q#-program.
 author: vadym-kl
 ms.author: vadym@microsoft.com
-ms.date: 12/11/2017
+ms.date: 06/25/2020
 ms.topic: article
 uid: microsoft.quantum.machines.qc-trace-simulator.intro
-ms.openlocfilehash: 4cec688da35951271d87396d9b6a8fed744defc6
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+ms.openlocfilehash: c01f01973ea08153cbfa35d87a588a4eae46f1b7
+ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85273770"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86871118"
 ---
-# <a name="quantum-trace-simulator"></a>Spårningssimulator för kvantdator
+# <a name="microsoft-quantum-development-kit-qdk-quantum-trace-simulator"></a>Spårningssimulator för kvantdator i Microsoft Quantum Development Kit (QDK)
 
-Microsofts spårningssimulator för kvantdatorer kör ett kvantprogram utan att egentligen simulera tillståndet i en kvantdator.  Det innebär att spårningssimulatorn kan köra kvantprogram som använder tusentals kvantbitar.  Det är användbart av två viktiga orsaker: 
+QDK-klassen <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator> kör ett kvantprogram utan att egentligen simulera tillståndet för en kvantdator. Det innebär att kvantspårningssimulatorn kan köra kvantprogram som använder tusentals kvantbitar.  Det är användbart av två viktiga orsaker: 
 
 * Vid felsökning av klassisk kod som ingår i ett kvantprogram. 
-* Vid beräkning av vilka resurser som krävs för att köra en specifik instans av ett kvantprogram på en kvantdator.
+* Vid beräkning av vilka resurser som krävs för att köra en specifik instans av ett kvantprogram på en kvantdator. Faktum är att [resursberäknaren](xref:microsoft.quantum.machines.resources-estimator), som ger en mer begränsad uppsättning mätvärden, bygger på spårningssimulatorn.
 
-Spårningssimulatorn måste erhålla ytterligare information från användaren när mätningarna ska utföras. Mer information om detta finns i avsnittet [Ange sannolikheten för mätresultatet](#providing-the-probability-of-measurement-outcomes). 
+## <a name="invoking-the-quantum-trace-simulator"></a>Anropa kvantspårningssimulatorn
 
-## <a name="providing-the-probability-of-measurement-outcomes"></a>Ange sannolikheten för mätresultatet
+Du kan använda kvantspårningssimulatorn till att köra valfri Q#-åtgärd.
 
-Det finns två typer av mått som syns i kvantalgoritmer. Den första typen används när användaren vanligtvis känner till sannolikheten för resultatet. I detta fall kan användaren skriva <xref:microsoft.quantum.intrinsic.assertprob> från namnområdet <xref:microsoft.quantum.intrinsic> för att visa att kunskapen finns. Följande exempel illustrerar detta:
+Precis som med andra måldatorer skapar du först en instans av klassen `QCTraceSimulator` och skickar den sedan som den första parametern för en åtgärds `Run`-metod.
 
-```qsharp
-operation TeleportQubit(source : Qubit, target : Qubit) : Unit {
-    using (qubit = Qubit()) {
-        H(qubit);
-        CNOT(qubit, target);
-        CNOT(source, qubit);
-        H(source);
-
-        AssertProb([PauliZ], [source], Zero, 0.5, "Outcomes must be equally likely", 1e-5);
-        AssertProb([PauliZ], [q], Zero, 0.5, "Outcomes must be equally likely", 1e-5);
-
-        if (M(source) == One)  { Z(target); X(source); }
-        if (M(q) == One) { X(target); X(q); }
-    }
-}
-```
-
-När spårningssimulatorn kör `AssertProb` kommer den registrera att mätning av `PauliZ` i `source` och `q` bör få ett resultat på `Zero` med sannolikheten 0,5. När simulatorn senare kör `M` kommer den att hitta de registrerade värdena för resultatets sannolikhet och `M` returnerar `Zero` eller `One` med sannolikheten 0,5. När samma kod körs på en simulator som håller koll på kvanttillståndet, kontrollerar simulatorn att de angivna sannolikheterna i `AssertProb` är korrekta.
-
-## <a name="running-your-program-with-the-quantum-computer-trace-simulator"></a>Köra ditt program med spårningssimulatorn för kvantdatorer 
-
-Spårningssimulatorn för kvantdatorer kan betraktas som en annan måldator. C#-drivrutinen för att använda den liknar den som finns för andra kvantsimulatorer: 
+Observera att i motsats till `QuantumSimulator`-klassen implementerar `QCTraceSimulator`-klassen inte <xref:System.IDisposable>-gränssnittet och därför behöver du inte ange det i en `using`-instruktion.
 
 ```csharp
 using Microsoft.Quantum.Simulation.Core;
@@ -69,18 +48,53 @@ namespace Quantum.MyProgram
 }
 ```
 
-Observera att om det finns minst en mätning som inte är kommenterad med `AssertProb`, kommer simulatorn att utlösa `UnconstrainedMeasurementException` från namnområdet `Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators`. Mer information finns i API-dokumentationen om [UnconstrainedMeasurementException](xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.UnconstrainedMeasurementException).
+## <a name="providing-the-probability-of-measurement-outcomes"></a>Ange sannolikheten för mätresultatet
 
-Förutom att köra kvantprogram levereras spårningssimulatorn med fem komponenter som identifierar buggar i program och utför uppskattningar av kvantprogramresurser: 
+Eftersom kvantspårningssimulatorn inte simulerar det faktiska kvanttillståndet, kan den inte beräkna sannolikheten för mätresultatet i en åtgärd. 
 
-* [Kontroll av distinkta indata](xref:microsoft.quantum.machines.qc-trace-simulator.distinct-inputs)
-* [Upphävd användningskontroll för kvantbitar](xref:microsoft.quantum.machines.qc-trace-simulator.invalidated-qubits)
-* [Räknare för primitiva åtgärder](xref:microsoft.quantum.machines.qc-trace-simulator.primitive-counter)
-* [Räknare för kretsdjup](xref:microsoft.quantum.machines.qc-trace-simulator.depth-counter)
-* [Räknare för kretsbredd](xref:microsoft.quantum.machines.qc-trace-simulator.width-counter)
+Om en åtgärd inkluderar mätningar måste du därför uttryckligen ange dessa sannolikheter med hjälp av <xref:microsoft.quantum.diagnostics.assertmeasurementprobability>-åtgärden från namnområdet <xref:microsoft.quantum.diagnostics>. Följande exempel illustrerar detta:
 
-Var och en av dessa komponenter kan aktiveras genom att lämpliga flaggor anges i `QCTraceSimulatorConfiguration`. Mer information om hur du använder de olika komponenterna finns i tillhörande referensfiler. Mer information finns i API-dokumentationen om [QCTraceSimulatorConfiguration](https://docs.microsoft.com/dotnet/api/Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulatorConfiguration).
+```qsharp
+operation TeleportQubit(source : Qubit, target : Qubit) : Unit {
+    using (qubit = Qubit()) {
+        H(qubit);
+        CNOT(qubit, target);
+        CNOT(source, qubit);
+        H(source);
+
+        AssertMeasurementProbability([PauliZ], [source], Zero, 0.5, "Outcomes must be equally likely", 1e-5);
+        AssertMeasurementProbability([PauliZ], [q], Zero, 0.5, "Outcomes must be equally likely", 1e-5);
+
+        if (M(source) == One)  { Z(target); X(source); }
+        if (M(q) == One) { X(target); X(q); }
+    }
+}
+```
+
+När kvantspårningssimulatorn påträffar `AssertMeasurementProbability` kommer den registrera att mätning av `PauliZ` i `source` och `q` bör visa ett resultat på `Zero`, med sannolikheten **0,5**. När `M`-åtgärden körs senare hittar den de registrerade värdena i resultatets sannolikhet och `M` returnerar `Zero` eller `One`, med sannolikheten **0,5**. När samma kod körs i en simulator som håller koll på kvanttillståndet, kontrollerar simulatorn att de angivna sannolikheterna i `AssertMeasurementProbability` är korrekta.
+
+Observera att om det finns minst en mätningsåtgärd som inte är kommenterad med `AssertMeasurementProbability`, utlöser simulatorn ett [`UnconstrainedMeasurementException`](https://docs.microsoft.com/dotnet/api/microsoft.quantum.simulation.simulators.qctracesimulators.unconstrainedmeasurementexception).
+
+## <a name="quantum-trace-simulator-tools"></a>Verktyg för kvantspårningssimulator
+
+QDK:n innehåller fem verktyg som du kan använda med kvantspårningssimulatorn för att hitta buggar i dina program och utföra beräkningar av kvantprogramresurser: 
+
+|Verktyg | Beskrivning |
+|-----| -----|
+|[Kontroll av distinkta indata](xref:microsoft.quantum.machines.qc-trace-simulator.distinct-inputs) |Söker efter potentiella konflikter med delade kvantbitar |
+|[Kontroll av användning av upphävda kvantbitar](xref:microsoft.quantum.machines.qc-trace-simulator.invalidated-qubits)  |Kontrollerar om programmet tillämpar en åtgärd på en kvantbit som redan har släppts |
+|[Räknare för primitiva åtgärder](xref:microsoft.quantum.machines.qc-trace-simulator.primitive-counter)  | Räknar antalet primitiva körningar som används av varje åtgärd som anropas i ett kvantprogram  |
+|[Djupräknare](xref:microsoft.quantum.machines.qc-trace-simulator.depth-counter)  |Samlar in antal som representerar de nedre gränserna för djupet i varje åtgärd som anropas i ett kvantprogram   |
+|[Breddräknare](xref:microsoft.quantum.machines.qc-trace-simulator.width-counter)  |Räknar antalet allokerade och lånade kvantbitar för varje åtgärd i ett kvantprogram |
+
+Vart och ett av dessa verktyg aktiveras genom att ställa in lämpliga flaggor i `QCTraceSimulatorConfiguration` och sedan skicka konfigurationen till `QCTraceSimulator`-deklarationen. Information om hur du använder de olika verktygen finns i länkarna i föregående lista. Mer information om hur du konfigurerar `QCTraceSimulator` finns i [QCTraceSimulatorConfiguration](xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulatorConfiguration).
+
+## <a name="qctracesimulator-methods"></a>QCTraceSimulator-metoder
+
+`QCTraceSimulator` har flera inbyggda metoder för att hämta värdena för de mått som spåras under en kvantåtgärd. Exempel på [QCTraceSimulator.GetMetric](https://docs.microsoft.com/dotnet/api/microsoft.quantum.simulation.simulators.qctracesimulators.qctracesimulator.getmetric)- och [QCTraceSimulator.ToCSV](https://docs.microsoft.com/dotnet/api/microsoft.quantum.simulation.simulators.qctracesimulators.qctracesimulator.tocsv)-metoderna finns i artiklarna [Räknare för primitiva åtgärder](xref:microsoft.quantum.machines.qc-trace-simulator.primitive-counter), [Djupräknare](xref:microsoft.quantum.machines.qc-trace-simulator.depth-counter) och [Breddräknare](xref:microsoft.quantum.machines.qc-trace-simulator.width-counter). Mer information om alla tillgängliga metoder finns i [QCTraceSimulator](xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator) i Q# API-referensen.  
 
 ## <a name="see-also"></a>Se även
-C#-referens till [spårningssimulator](xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator) för kvantdator 
 
+- [Kvantresursberäknare](xref:microsoft.quantum.machines.resources-estimator)
+- [Toffoli-kvantsimulator](xref:microsoft.quantum.machines.toffoli-simulator)
+- [Kvantsimulator med fullständigt tillstånd](xref:microsoft.quantum.machines.full-state-simulator) 

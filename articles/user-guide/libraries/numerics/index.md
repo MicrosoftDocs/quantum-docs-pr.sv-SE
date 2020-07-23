@@ -6,12 +6,12 @@ ms.author: thhaner
 ms.date: 5/14/2019
 ms.topic: article
 uid: microsoft.quantum.numerics.intro
-ms.openlocfilehash: efd1a712616534ac281433fc008f0983271881d7
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+ms.openlocfilehash: 9552f3683e1df8cb10d19d0b3f85223df056f83d
+ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85273966"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86871356"
 ---
 # <a name="introduction-to-the-quantum-numerics-library"></a>Introduktion till kvantmatematikbiblioteket
 
@@ -33,9 +33,10 @@ Detta är anledningen till att Quantum Development Kit har stöd för en mängd 
 
 Utöver den heltalsaritmetik som vi har gått igenom hittills tillhandahåller matematikbiblioteket
 
- - Funktioner för (o)signerade heltal (multiplikation, kvadratrot, division med rest, inversion, ...) med ett eller två kvantheltal som indata
- - Funktioner för fast punkt (lägg till/subtrahera, multiplicera, kvadratrot, 1/x, polynomisk utvärdering) med ett eller två kvanttal med fast punkt som indata
+- Funktioner för (o)signerade heltal (multiplikation, kvadratrot, division med rest, inversion, ...) med ett eller två kvantheltal som indata
+- Funktioner för fast punkt (lägg till/subtrahera, multiplicera, kvadratrot, 1/x, polynomisk utvärdering) med ett eller två kvanttal med fast punkt som indata
 
 ## <a name="getting-started"></a>Komma igång
 
-Om du vill komma igång med matematikbiblioteket kan du läsa [installationsguiden](xref:microsoft.quantum.numerics.installation) och läsa mer om hur du [använder matematikbiblioteket](xref:microsoft.quantum.numerics.usage).
+> [!div class="nextstepaction"]
+> [Läs mer om att använda det numeriska biblioteket](xref:microsoft.quantum.numerics.usage)

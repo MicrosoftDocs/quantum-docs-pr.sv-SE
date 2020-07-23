@@ -3,6 +3,8 @@
 - name: Standardbibliotek
   topicHref: standard/index.md
   href: standard/toc.yml
+- name: Använda fler Q#-bibliotek
+  href: additional-libraries.md
 - name: Bibliotek för kvantkemi
   topicHref: chemistry/index.md
   href: chemistry/toc.yml
