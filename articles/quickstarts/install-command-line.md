@@ -6,12 +6,12 @@ ms.date: 4/24/2020
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.install.standalone
-ms.openlocfilehash: 15015d1673f47faf5a13dde516f834916b4319d6
-ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
+ms.openlocfilehash: 3d70838289e72afdd0a48bbdff0bec407428d125
+ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85884274"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86871441"
 ---
 # <a name="develop-with-q-command-line-applications"></a>Utveckla med Q#-kommandoradsprogram
 
@@ -23,7 +23,7 @@ Q#-program kan köras fristående, utan någon drivrutin på ett värdspråk som
 
 ## <a name="installation"></a>Installation
 
-Även om du kan skapa Q#-kommandoradsprogram i vilken IDE som helst, rekommenderar vi att du använder IDE:n för Visual Studio Code (VS Code) eller Visual Studio till dina Q#-program. Utveckling i dessa miljöer inbegriper de omfattande funktionerna i QDK-tillägget, däribland varningar, syntaxmarkeringar, projektmallar och mer.
+Även om du kan skapa Q#-kommandoradsprogram i vilken IDE som helst, rekommenderar vi att du använder Visual Studio Code (VS Code) eller Visual Studio IDE när du utvecklar Q#-program lokalt. Vi rekommenderar att du använder Visual Studio Codespaces om du tänker utveckla i molnet via en webbläsare. Utveckling i dessa miljöer inbegriper de omfattande funktionerna i QDK-tillägget, däribland varningar, syntaxmarkeringar, projektmallar och mer. 
 
 Konfigurera VS Code:
 
@@ -34,6 +34,13 @@ Konfigurera Visual Studio:
 
 1. Ladda ned och installera [Visual Studio](https://visualstudio.microsoft.com/downloads/) 16.3 eller senare, med arbetsbelastningen för .NET Core plattformsoberoende utveckling aktiverat.
 2. Ladda ned och installera [Microsoft QDK](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit).
+
+Så här konfigurerar du Visual Studio Codespaces:
+
+1. Skapa ett [Azure-konto](https://azure.microsoft.com/free/).
+2. Skapa en Codespaces-miljö. Följ [snabbstartsguiden](https://docs.microsoft.com/visualstudio/online/quickstarts/browser). När du skapar ett codespace rekommenderar vi att du anger `microsoft/Quantum` i fältet Git Repository (Git-lagringsplats) för att läsa in QDK-specifika inställningar.
+3. Nu kan du starta din nya miljö och börja utveckla i webbläsaren via [VS Codespaces Cloud IDE](https://online.visualstudio.com/environments). Du kan också använda en lokal installation av VS Code och använda Codespaces som en [fjärrmiljö](https://docs.microsoft.com/visualstudio/online/how-to/vscode).
+
 
 Installera QDK för en annan miljö genom att ange följande på kommandoraden:
 
@@ -46,14 +53,6 @@ dotnet new -i Microsoft.Quantum.ProjectTemplates
 Följ anvisningarna på den flik som motsvarar din miljö.
 
 ### <a name="vs-code"></a>[VS-kod](#tab/tabid-vscode)
-
-Installera Q#-projektmallarna:
-
-1. Öppna VS Code.
-2. Klicka på **Visa** -> **Kommandopalett**.
-3. Välj **Q#: Installera projektmallar**.
-
-När **Projektmallar har installerats** visas, kan QDK:n användas med dina egna program och bibliotek.
 
 Skapa ett nytt projekt:
 
@@ -96,24 +95,30 @@ Så här kör du programmet:
 
 Verifiera din installation genom att skapa ett Q# `Hello World`-program.
 
+1. Installera projektmallarna.
+
+    ```dotnetcli
+    dotnet new -i Microsoft.Quantum.ProjectTemplates
+    ```
+
 1. Skapa ett nytt program:
     ```dotnetcli
     dotnet new console -lang Q# -o runSayHello
     ```
 
-2. Gå till programkatalogen:
+1. Gå till programkatalogen:
     ```dotnetcli
     cd runSayHello
     ```
 
     Den här katalogen bör du innehålla filen `Program.qs`, vilket är ett Q#-program som definierar en enkel åtgärd för att skriva ut ett meddelande till konsolen. Du kan ändra den här mallen med ett textredigeringsprogram och skriva över den med dina egna kvantprogram. 
 
-3. Kör programmet:
+1. Kör programmet:
     ```dotnetcli
     dotnet run
     ```
 
-4. Du bör se följande text skrivas ut: `Hello quantum world!`
+1. Du bör se följande text skrivas ut: `Hello quantum world!`
 
 ***
 

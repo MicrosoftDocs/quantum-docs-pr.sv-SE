@@ -6,12 +6,12 @@ ms.date: 5/30/2020
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.install.python
-ms.openlocfilehash: 7fbbb81b1ee51bff74b287745bf4447004a0254c
-ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
+ms.openlocfilehash: ec5e66e0c85d89888a8ff1e7d6bf18bf89ff44ac
+ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85885541"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86871594"
 ---
 # <a name="develop-with-q-and-python"></a>Utveckla med Q# och Python
 
@@ -21,7 +21,7 @@ Installera QDK:n om du vill utveckla Python-värdprogram som anropar Q#-åtgärd
 
 ### <a name="install-using-conda-recommended"></a>[Installera med hjälp av conda (rekommenderas)](#tab/tabid-conda)
 
-1. Installera [Miniconda](https://docs.conda.io/en/latest/miniconda.html) eller [Anaconda](https://www.anaconda.com/products/individual#Downloads).
+1. Installera [Miniconda](https://docs.conda.io/en/latest/miniconda.html) eller [Anaconda](https://www.anaconda.com/products/individual#Downloads). **Obs!** 64-bitarsinstallation krävs.
 
 1. Öppna en Anaconda-prompt.
 

@@ -7,12 +7,12 @@ ms.date: 5/30/2020
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.update
-ms.openlocfilehash: 457083ea4756d64375834e5a276c2d91031138fe
-ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
+ms.openlocfilehash: 69b83997773896583258a4996a61b6f334edf407
+ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85885156"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86871407"
 ---
 # <a name="update-the-microsoft-quantum-development-kit-qdk"></a>Uppdatera Microsoft Quantum Development Kit (QDK)
 
@@ -53,7 +53,7 @@ Du kan följa dessa anvisningar för att uppdatera Q#-projekt, oavsett om du anv
 5. I var och en av .csproj-filerna ställer du in SDK:n på `Microsoft.Quantum.Sdk`, enligt raden nedan. Observera att versionsnumret måste vara det senaste tillgängliga. Du hittar det i [Viktig information](https://docs.microsoft.com/quantum/relnotes/).
 
     ```xml
-    <Project Sdk="Microsoft.Quantum.Sdk/0.11.2006.207">
+    <Project Sdk="Microsoft.Quantum.Sdk/0.12.20072031">
     ```
 
 6. Spara och stäng alla filer i lösningen.
@@ -93,7 +93,7 @@ Nu kan du gå vidare med att [uppdatera ditt Visual Studio QDK-tillägg](#update
     dotnet clean [project_name].csproj
     ```
 
-3. Fastställ den aktuella QDK-versionen. För att hitta den kan du läsa [Viktig information](https://docs.microsoft.com/quantum/relnotes/). Versionen är i ett format som liknar `0.11.2006.207`.
+3. Fastställ den aktuella QDK-versionen. För att hitta den kan du läsa [Viktig information](https://docs.microsoft.com/quantum/relnotes/). Versionen är i ett format som liknar `0.12.20072031`.
 
 4. Gå igenom följande steg för alla dina `.csproj`-filer:
 
@@ -108,7 +108,7 @@ Nu kan du gå vidare med att [uppdatera ditt Visual Studio QDK-tillägg](#update
     - Ersätt referensen till SDK:n i projektdefinitionen. Kontrollera att versionsnumret motsvarar det värde som fastställdes i **steg 3**.
 
         ```xml
-        <Project Sdk="Microsoft.Quantum.Sdk/0.11.2006.207">
+        <Project Sdk="Microsoft.Quantum.Sdk/0.12.20072031">
         ```
 
     - Ta bort referensen till paket `Microsoft.Quantum.Development.Kit`, om ett sådant finns, vilket anges i följande post:
@@ -127,7 +127,7 @@ Nu kan du gå vidare med att [uppdatera ditt Visual Studio QDK-tillägg](#update
         Referenser till paket har följande format:
 
         ```xml
-        <PackageReference Include="Microsoft.Quantum.Compiler" Version="0.11.2006.207" />
+        <PackageReference Include="Microsoft.Quantum.Compiler" Version="0.12.20072031" />
         ```
 
     - Spara den uppdaterade filen.
@@ -194,7 +194,7 @@ Uppdateringsproceduren beror på om du ursprungligen installerade med hjälp av 
     Du bör se följande utdata:
 
     ```
-    iqsharp: 0.12.20070124
+    iqsharp: 0.12.20072031
     Jupyter Core: 1.4.0.0
     ```
 
@@ -216,7 +216,7 @@ Uppdateringsproceduren beror på om du ursprungligen installerade med hjälp av 
 
     ```
     Name: qsharp
-    Version: 0.12.20070124
+    Version: 0.12.2007.2031
     Summary: Python client for Q#, a domain-specific quantum programming language
     ...
     ```
@@ -267,7 +267,7 @@ Uppdateringsproceduren beror på om du ursprungligen installerade med hjälp av 
     Ditt resultat bör likna följande:
 
     ```
-    iqsharp: 0.12.20070124
+    iqsharp: 0.12.20072031
     Jupyter Core: 1.4.0.0
     ```
 
@@ -302,16 +302,19 @@ Nu kan du använda den uppdaterade IQ#-kärnan för att köra dina befintliga Q#
     - Välj tillägget **Microsoft Quantum Development Kit för Visual Studio Code**
     - Läs in tillägget på nytt
 
-2. Uppdatera Quantum-projektmallarna:
-
-   - Gå till **Visa** -> **Kommandopaletten**
-   - Välj **Q#: Installera projektmallar**
-   - Efter några sekunder bör du få ett popup-meddelande som bekräftar att ”projektmallar har installerats”
-
 ### <a name="c-using-the-dotnet-command-line-tool"></a>C#, med hjälp av kommandoradsverktyget `dotnet`
 
 1. Uppdatera Quantum-projektmallar för .NET
 
+    Från kommandoraden:
+
     ```dotnetcli
     dotnet new -i Microsoft.Quantum.ProjectTemplates
     ```
+
+   Om du tänker använda kommandoradsmallarna och redan har installerat QDK-tillägget för VS Code kan du också uppdatera projektmallarna från själva tillägget:
+
+   - [Uppdatera QDK-tillägget](#update-vs-code-qdk-extension)
+   - Gå till **Visa** -> **Kommandopaletten** i VS Code
+   - Välj **Q#: Installera projektmallar från kommandoraden**
+   - Efter några sekunder bör du få ett popup-meddelande som bekräftar att ”projektmallar har installerats”
