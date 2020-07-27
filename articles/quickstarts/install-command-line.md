@@ -6,117 +6,122 @@ ms.date: 4/24/2020
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.install.standalone
-ms.openlocfilehash: 15015d1673f47faf5a13dde516f834916b4319d6
-ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
+ms.openlocfilehash: 3d70838289e72afdd0a48bbdff0bec407428d125
+ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85884274"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86871441"
 ---
-# <a name="develop-with-q-command-line-applications"></a><span data-ttu-id="5b1fe-102">Utveckla med Q#-kommandoradsprogram</span><span class="sxs-lookup"><span data-stu-id="5b1fe-102">Develop with Q# command line applications</span></span>
+# <a name="develop-with-q-command-line-applications"></a><span data-ttu-id="30e00-102">Utveckla med Q#-kommandoradsprogram</span><span class="sxs-lookup"><span data-stu-id="30e00-102">Develop with Q# command line applications</span></span>
 
-<span data-ttu-id="5b1fe-103">Q#-program kan köras fristående, utan någon drivrutin på ett värdspråk som C#, F# eller Python.</span><span class="sxs-lookup"><span data-stu-id="5b1fe-103">Q# programs can be executed on their own, without a driver in a host language like C#, F#, or Python.</span></span>
+<span data-ttu-id="30e00-103">Q#-program kan köras fristående, utan någon drivrutin på ett värdspråk som C#, F# eller Python.</span><span class="sxs-lookup"><span data-stu-id="30e00-103">Q# programs can be executed on their own, without a driver in a host language like C#, F#, or Python.</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="5b1fe-104">Krav</span><span class="sxs-lookup"><span data-stu-id="5b1fe-104">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="30e00-104">Krav</span><span class="sxs-lookup"><span data-stu-id="30e00-104">Prerequisites</span></span>
 
-- [<span data-ttu-id="5b1fe-105">.NET Core SDK 3.1 eller senare</span><span class="sxs-lookup"><span data-stu-id="5b1fe-105">.NET Core SDK 3.1 or later</span></span>](https://www.microsoft.com/net/download)
+- [<span data-ttu-id="30e00-105">.NET Core SDK 3.1 eller senare</span><span class="sxs-lookup"><span data-stu-id="30e00-105">.NET Core SDK 3.1 or later</span></span>](https://www.microsoft.com/net/download)
 
-## <a name="installation"></a><span data-ttu-id="5b1fe-106">Installation</span><span class="sxs-lookup"><span data-stu-id="5b1fe-106">Installation</span></span>
+## <a name="installation"></a><span data-ttu-id="30e00-106">Installation</span><span class="sxs-lookup"><span data-stu-id="30e00-106">Installation</span></span>
 
-<span data-ttu-id="5b1fe-107">Även om du kan skapa Q#-kommandoradsprogram i vilken IDE som helst, rekommenderar vi att du använder IDE:n för Visual Studio Code (VS Code) eller Visual Studio till dina Q#-program.</span><span class="sxs-lookup"><span data-stu-id="5b1fe-107">While you can build Q# command line applications in any IDE, we recommend using Visual Studio Code (VS Code) or Visual Studio IDE for your Q# applications.</span></span> <span data-ttu-id="5b1fe-108">Utveckling i dessa miljöer inbegriper de omfattande funktionerna i QDK-tillägget, däribland varningar, syntaxmarkeringar, projektmallar och mer.</span><span class="sxs-lookup"><span data-stu-id="5b1fe-108">Developing in these environments includes the rich functionality of the QDK extension, which includes warnings, syntax highlighting, project templates, and more.</span></span>
+<span data-ttu-id="30e00-107">Även om du kan skapa Q#-kommandoradsprogram i vilken IDE som helst, rekommenderar vi att du använder Visual Studio Code (VS Code) eller Visual Studio IDE när du utvecklar Q#-program lokalt.</span><span class="sxs-lookup"><span data-stu-id="30e00-107">While you can build Q# command line applications in any IDE, we recommend using Visual Studio Code (VS Code) or Visual Studio IDE for developing your Q# applications locally.</span></span> <span data-ttu-id="30e00-108">Vi rekommenderar att du använder Visual Studio Codespaces om du tänker utveckla i molnet via en webbläsare.</span><span class="sxs-lookup"><span data-stu-id="30e00-108">For developing in the Cloud via the web browser, we recommend Visual Studio Codespaces.</span></span> <span data-ttu-id="30e00-109">Utveckling i dessa miljöer inbegriper de omfattande funktionerna i QDK-tillägget, däribland varningar, syntaxmarkeringar, projektmallar och mer.</span><span class="sxs-lookup"><span data-stu-id="30e00-109">Developing in these environments includes the rich functionality of the QDK extension, which includes warnings, syntax highlighting, project templates, and more.</span></span> 
 
-<span data-ttu-id="5b1fe-109">Konfigurera VS Code:</span><span class="sxs-lookup"><span data-stu-id="5b1fe-109">To configure VS Code:</span></span>
+<span data-ttu-id="30e00-110">Konfigurera VS Code:</span><span class="sxs-lookup"><span data-stu-id="30e00-110">To configure VS Code:</span></span>
 
-1. <span data-ttu-id="5b1fe-110">Ladda ned och installera [VS Code](https://code.visualstudio.com/download) (Windows, Linux och Mac).</span><span class="sxs-lookup"><span data-stu-id="5b1fe-110">Download and install [VS Code](https://code.visualstudio.com/download) (Windows, Linux and Mac).</span></span>
-2. <span data-ttu-id="5b1fe-111">Installera [Microsoft QDK för VS Code](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode).</span><span class="sxs-lookup"><span data-stu-id="5b1fe-111">Install the [Microsoft QDK for VS Code](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode).</span></span>
+1. <span data-ttu-id="30e00-111">Ladda ned och installera [VS Code](https://code.visualstudio.com/download) (Windows, Linux och Mac).</span><span class="sxs-lookup"><span data-stu-id="30e00-111">Download and install [VS Code](https://code.visualstudio.com/download) (Windows, Linux and Mac).</span></span>
+2. <span data-ttu-id="30e00-112">Installera [Microsoft QDK för VS Code](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode).</span><span class="sxs-lookup"><span data-stu-id="30e00-112">Install the [Microsoft QDK for VS Code](https://marketplace.visualstudio.com/items?itemName=quantum.quantum-devkit-vscode).</span></span>
 
-<span data-ttu-id="5b1fe-112">Konfigurera Visual Studio:</span><span class="sxs-lookup"><span data-stu-id="5b1fe-112">To configure Visual Studio:</span></span>
+<span data-ttu-id="30e00-113">Konfigurera Visual Studio:</span><span class="sxs-lookup"><span data-stu-id="30e00-113">To configure Visual Studio:</span></span>
 
-1. <span data-ttu-id="5b1fe-113">Ladda ned och installera [Visual Studio](https://visualstudio.microsoft.com/downloads/) 16.3 eller senare, med arbetsbelastningen för .NET Core plattformsoberoende utveckling aktiverat.</span><span class="sxs-lookup"><span data-stu-id="5b1fe-113">Download and install [Visual Studio](https://visualstudio.microsoft.com/downloads/) 16.3 or greater, with the .NET Core cross-platform development workload enabled.</span></span>
-2. <span data-ttu-id="5b1fe-114">Ladda ned och installera [Microsoft QDK](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit).</span><span class="sxs-lookup"><span data-stu-id="5b1fe-114">Download and install the [Microsoft QDK](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit).</span></span>
+1. <span data-ttu-id="30e00-114">Ladda ned och installera [Visual Studio](https://visualstudio.microsoft.com/downloads/) 16.3 eller senare, med arbetsbelastningen för .NET Core plattformsoberoende utveckling aktiverat.</span><span class="sxs-lookup"><span data-stu-id="30e00-114">Download and install [Visual Studio](https://visualstudio.microsoft.com/downloads/) 16.3 or greater, with the .NET Core cross-platform development workload enabled.</span></span>
+2. <span data-ttu-id="30e00-115">Ladda ned och installera [Microsoft QDK](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit).</span><span class="sxs-lookup"><span data-stu-id="30e00-115">Download and install the [Microsoft QDK](https://marketplace.visualstudio.com/items?itemName=quantum.DevKit).</span></span>
 
-<span data-ttu-id="5b1fe-115">Installera QDK för en annan miljö genom att ange följande på kommandoraden:</span><span class="sxs-lookup"><span data-stu-id="5b1fe-115">To install the QDK for another environment, enter in the command line:</span></span>
+<span data-ttu-id="30e00-116">Så här konfigurerar du Visual Studio Codespaces:</span><span class="sxs-lookup"><span data-stu-id="30e00-116">To configure Visual Studio Codespaces:</span></span>
+
+1. <span data-ttu-id="30e00-117">Skapa ett [Azure-konto](https://azure.microsoft.com/free/).</span><span class="sxs-lookup"><span data-stu-id="30e00-117">Create an [Azure account](https://azure.microsoft.com/free/).</span></span>
+2. <span data-ttu-id="30e00-118">Skapa en Codespaces-miljö.</span><span class="sxs-lookup"><span data-stu-id="30e00-118">Create a Codespaces environment.</span></span> <span data-ttu-id="30e00-119">Följ [snabbstartsguiden](https://docs.microsoft.com/visualstudio/online/quickstarts/browser).</span><span class="sxs-lookup"><span data-stu-id="30e00-119">Please follow the [quickstart guide](https://docs.microsoft.com/visualstudio/online/quickstarts/browser).</span></span> <span data-ttu-id="30e00-120">När du skapar ett codespace rekommenderar vi att du anger `microsoft/Quantum` i fältet Git Repository (Git-lagringsplats) för att läsa in QDK-specifika inställningar.</span><span class="sxs-lookup"><span data-stu-id="30e00-120">When creating the Codespace, we recommend to enter `microsoft/Quantum` in the "Git Repository" field to load QDK-specific settings.</span></span>
+3. <span data-ttu-id="30e00-121">Nu kan du starta din nya miljö och börja utveckla i webbläsaren via [VS Codespaces Cloud IDE](https://online.visualstudio.com/environments).</span><span class="sxs-lookup"><span data-stu-id="30e00-121">You can now launch your new environment and start developing in the browser via the [VS Codespaces Cloud IDE](https://online.visualstudio.com/environments).</span></span> <span data-ttu-id="30e00-122">Du kan också använda en lokal installation av VS Code och använda Codespaces som en [fjärrmiljö](https://docs.microsoft.com/visualstudio/online/how-to/vscode).</span><span class="sxs-lookup"><span data-stu-id="30e00-122">Alternatively, it is possible to use your local installation of VS Code and use Codespaces as a [remote environment](https://docs.microsoft.com/visualstudio/online/how-to/vscode).</span></span>
+
+
+<span data-ttu-id="30e00-123">Installera QDK för en annan miljö genom att ange följande på kommandoraden:</span><span class="sxs-lookup"><span data-stu-id="30e00-123">To install the QDK for another environment, enter in the command line:</span></span>
 
 ```dotnetcli
 dotnet new -i Microsoft.Quantum.ProjectTemplates
 ```
 
-## <a name="develop-with-q"></a><span data-ttu-id="5b1fe-116">Utveckla med Q#</span><span class="sxs-lookup"><span data-stu-id="5b1fe-116">Develop with Q#</span></span>
+## <a name="develop-with-q"></a><span data-ttu-id="30e00-124">Utveckla med Q#</span><span class="sxs-lookup"><span data-stu-id="30e00-124">Develop with Q#</span></span>
 
-<span data-ttu-id="5b1fe-117">Följ anvisningarna på den flik som motsvarar din miljö.</span><span class="sxs-lookup"><span data-stu-id="5b1fe-117">Follow the instructions at the tab corresponding to your environment.</span></span>
+<span data-ttu-id="30e00-125">Följ anvisningarna på den flik som motsvarar din miljö.</span><span class="sxs-lookup"><span data-stu-id="30e00-125">Follow the instructions at the tab corresponding to your environment.</span></span>
 
-### <a name="vs-code"></a>[<span data-ttu-id="5b1fe-118">VS-kod</span><span class="sxs-lookup"><span data-stu-id="5b1fe-118">VS Code</span></span>](#tab/tabid-vscode)
+### <a name="vs-code"></a>[<span data-ttu-id="30e00-126">VS-kod</span><span class="sxs-lookup"><span data-stu-id="30e00-126">VS Code</span></span>](#tab/tabid-vscode)
 
-<span data-ttu-id="5b1fe-119">Installera Q#-projektmallarna:</span><span class="sxs-lookup"><span data-stu-id="5b1fe-119">Install the Q# project templates:</span></span>
+<span data-ttu-id="30e00-127">Skapa ett nytt projekt:</span><span class="sxs-lookup"><span data-stu-id="30e00-127">To create a new project:</span></span>
 
-1. <span data-ttu-id="5b1fe-120">Öppna VS Code.</span><span class="sxs-lookup"><span data-stu-id="5b1fe-120">Open VS Code.</span></span>
-2. <span data-ttu-id="5b1fe-121">Klicka på **Visa** -> **Kommandopalett**.</span><span class="sxs-lookup"><span data-stu-id="5b1fe-121">Click **View** -> **Command Palette**.</span></span>
-3. <span data-ttu-id="5b1fe-122">Välj **Q#: Installera projektmallar**.</span><span class="sxs-lookup"><span data-stu-id="5b1fe-122">Select **Q#: Install project templates**.</span></span>
-
-<span data-ttu-id="5b1fe-123">När **Projektmallar har installerats** visas, kan QDK:n användas med dina egna program och bibliotek.</span><span class="sxs-lookup"><span data-stu-id="5b1fe-123">When **Project templates installed successfully** displays, the QDK is ready to use with your own applications and libraries.</span></span>
-
-<span data-ttu-id="5b1fe-124">Skapa ett nytt projekt:</span><span class="sxs-lookup"><span data-stu-id="5b1fe-124">To create a new project:</span></span>
-
-1. <span data-ttu-id="5b1fe-125">Klicka på **Visa** -> **Kommandopalett** och välj **Q#: Skapa nytt projekt**.</span><span class="sxs-lookup"><span data-stu-id="5b1fe-125">Click **View** -> **Command Palette** and select **Q#: Create New Project**.</span></span>
-2. <span data-ttu-id="5b1fe-126">Klicka på **Fristående konsolprogram**.</span><span class="sxs-lookup"><span data-stu-id="5b1fe-126">Click **Standalone console application**.</span></span>
-3. <span data-ttu-id="5b1fe-127">Gå till platsen där du vill spara projektet och klicka på **Skapa projekt**.</span><span class="sxs-lookup"><span data-stu-id="5b1fe-127">Navigate to the location to save the project and click **Create Project**.</span></span>
-4. <span data-ttu-id="5b1fe-128">När projektet har skapats klickar du på **Öppna nytt projekt...** längst ned till höger.</span><span class="sxs-lookup"><span data-stu-id="5b1fe-128">When the project is successfully created, click **Open new project...** in the lower right.</span></span>
+1. <span data-ttu-id="30e00-128">Klicka på **Visa** -> **Kommandopalett** och välj **Q#: Skapa nytt projekt**.</span><span class="sxs-lookup"><span data-stu-id="30e00-128">Click **View** -> **Command Palette** and select **Q#: Create New Project**.</span></span>
+2. <span data-ttu-id="30e00-129">Klicka på **Fristående konsolprogram**.</span><span class="sxs-lookup"><span data-stu-id="30e00-129">Click **Standalone console application**.</span></span>
+3. <span data-ttu-id="30e00-130">Gå till platsen där du vill spara projektet och klicka på **Skapa projekt**.</span><span class="sxs-lookup"><span data-stu-id="30e00-130">Navigate to the location to save the project and click **Create Project**.</span></span>
+4. <span data-ttu-id="30e00-131">När projektet har skapats klickar du på **Öppna nytt projekt...** längst ned till höger.</span><span class="sxs-lookup"><span data-stu-id="30e00-131">When the project is successfully created, click **Open new project...** in the lower right.</span></span>
         
-<span data-ttu-id="5b1fe-129">Inspektera projektet.</span><span class="sxs-lookup"><span data-stu-id="5b1fe-129">Inspect the project.</span></span> <span data-ttu-id="5b1fe-130">Du bör se en källfil med namnet `Program.qs`, vilket är ett Q#-program som definierar en enkel åtgärd för att skriva ut ett meddelande till konsolen.</span><span class="sxs-lookup"><span data-stu-id="5b1fe-130">You should see a source file named `Program.qs`, which is a Q# program that defines a simple operation to print a message to the console.</span></span>
+<span data-ttu-id="30e00-132">Inspektera projektet.</span><span class="sxs-lookup"><span data-stu-id="30e00-132">Inspect the project.</span></span> <span data-ttu-id="30e00-133">Du bör se en källfil med namnet `Program.qs`, vilket är ett Q#-program som definierar en enkel åtgärd för att skriva ut ett meddelande till konsolen.</span><span class="sxs-lookup"><span data-stu-id="30e00-133">You should see a source file named `Program.qs`, which is a Q# program that defines a simple operation to print a message to the console.</span></span>
 
-<span data-ttu-id="5b1fe-131">Så här kör du programmet:</span><span class="sxs-lookup"><span data-stu-id="5b1fe-131">To run the application:</span></span>
-1. <span data-ttu-id="5b1fe-132">Välj **Terminal** -> **Ny terminal**.</span><span class="sxs-lookup"><span data-stu-id="5b1fe-132">Click **Terminal** -> **New Terminal**.</span></span>
-2. <span data-ttu-id="5b1fe-133">I terminalprompten anger du `dotnet run`.</span><span class="sxs-lookup"><span data-stu-id="5b1fe-133">At the terminal prompt, enter `dotnet run`.</span></span>
-3. <span data-ttu-id="5b1fe-134">Du bör se följande text i utdatafönstret `Hello quantum world!`</span><span class="sxs-lookup"><span data-stu-id="5b1fe-134">You should see the following text in the output window `Hello quantum world!`</span></span>
+<span data-ttu-id="30e00-134">Så här kör du programmet:</span><span class="sxs-lookup"><span data-stu-id="30e00-134">To run the application:</span></span>
+1. <span data-ttu-id="30e00-135">Välj **Terminal** -> **Ny terminal**.</span><span class="sxs-lookup"><span data-stu-id="30e00-135">Click **Terminal** -> **New Terminal**.</span></span>
+2. <span data-ttu-id="30e00-136">I terminalprompten anger du `dotnet run`.</span><span class="sxs-lookup"><span data-stu-id="30e00-136">At the terminal prompt, enter `dotnet run`.</span></span>
+3. <span data-ttu-id="30e00-137">Du bör se följande text i utdatafönstret `Hello quantum world!`</span><span class="sxs-lookup"><span data-stu-id="30e00-137">You should see the following text in the output window `Hello quantum world!`</span></span>
 
 
 > [!NOTE]
-> <span data-ttu-id="5b1fe-135">Arbetsytor med flera rotmappar stöds för närvarande inte av VS Code-tillägget för Q#.</span><span class="sxs-lookup"><span data-stu-id="5b1fe-135">Workspaces with multiple root folders are not currently supported by the VS Code Q# extension.</span></span> <span data-ttu-id="5b1fe-136">Om du har flera projekt på en VS Code-arbetsyta, måste alla projekten finnas i samma rotmapp.</span><span class="sxs-lookup"><span data-stu-id="5b1fe-136">If you have multiple projects within one VS Code workspace, all projects need to be contained within the same root folder.</span></span>
+> <span data-ttu-id="30e00-138">Arbetsytor med flera rotmappar stöds för närvarande inte av VS Code-tillägget för Q#.</span><span class="sxs-lookup"><span data-stu-id="30e00-138">Workspaces with multiple root folders are not currently supported by the VS Code Q# extension.</span></span> <span data-ttu-id="30e00-139">Om du har flera projekt på en VS Code-arbetsyta, måste alla projekten finnas i samma rotmapp.</span><span class="sxs-lookup"><span data-stu-id="30e00-139">If you have multiple projects within one VS Code workspace, all projects need to be contained within the same root folder.</span></span>
 
-### <a name="visual-studio"></a>[<span data-ttu-id="5b1fe-137">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="5b1fe-137">Visual Studio</span></span>](#tab/tabid-vs)
+### <a name="visual-studio"></a>[<span data-ttu-id="30e00-140">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="30e00-140">Visual Studio</span></span>](#tab/tabid-vs)
 
-<span data-ttu-id="5b1fe-138">Verifiera din Visual Studio-installation genom att skapa ett Q# `Hello World`-program.</span><span class="sxs-lookup"><span data-stu-id="5b1fe-138">Verify your Visual Studio installation by creating a Q# `Hello World` application.</span></span>
+<span data-ttu-id="30e00-141">Verifiera din Visual Studio-installation genom att skapa ett Q# `Hello World`-program.</span><span class="sxs-lookup"><span data-stu-id="30e00-141">Verify your Visual Studio installation by creating a Q# `Hello World` application.</span></span>
 
-<span data-ttu-id="5b1fe-139">Skapa ett nytt Q#-program:</span><span class="sxs-lookup"><span data-stu-id="5b1fe-139">To create a new Q# application:</span></span>
-1. <span data-ttu-id="5b1fe-140">Öppna Visual Studio och klicka på **Arkiv** -> **Nytt** -> **Projekt**.</span><span class="sxs-lookup"><span data-stu-id="5b1fe-140">Open Visual Studio and click **File** -> **New** -> **Project**.</span></span>
-2. <span data-ttu-id="5b1fe-141">Skriv `Q#` i sökrutan, välj **Q#-program** och klicka på **Nästa**.</span><span class="sxs-lookup"><span data-stu-id="5b1fe-141">Type `Q#` in the search box, select **Q# Application** and click **Next**.</span></span>
-3. <span data-ttu-id="5b1fe-142">Ange ett namn och en plats för programmet och klicka på **Skapa**.</span><span class="sxs-lookup"><span data-stu-id="5b1fe-142">Enter a name and location for your application and click **Create**.</span></span>
+<span data-ttu-id="30e00-142">Skapa ett nytt Q#-program:</span><span class="sxs-lookup"><span data-stu-id="30e00-142">To create a new Q# application:</span></span>
+1. <span data-ttu-id="30e00-143">Öppna Visual Studio och klicka på **Arkiv** -> **Nytt** -> **Projekt**.</span><span class="sxs-lookup"><span data-stu-id="30e00-143">Open Visual Studio and click **File** -> **New** -> **Project**.</span></span>
+2. <span data-ttu-id="30e00-144">Skriv `Q#` i sökrutan, välj **Q#-program** och klicka på **Nästa**.</span><span class="sxs-lookup"><span data-stu-id="30e00-144">Type `Q#` in the search box, select **Q# Application** and click **Next**.</span></span>
+3. <span data-ttu-id="30e00-145">Ange ett namn och en plats för programmet och klicka på **Skapa**.</span><span class="sxs-lookup"><span data-stu-id="30e00-145">Enter a name and location for your application and click **Create**.</span></span>
 
 
-<span data-ttu-id="5b1fe-143">Inspektera projektet.</span><span class="sxs-lookup"><span data-stu-id="5b1fe-143">Inspect the project.</span></span> <span data-ttu-id="5b1fe-144">Du bör se en källfil med namnet `Program.qs`, vilket är ett Q#-program som definierar en enkel åtgärd för att skriva ut ett meddelande till konsolen.</span><span class="sxs-lookup"><span data-stu-id="5b1fe-144">You should see a source file named `Program.qs`, which is a Q# program that defines a simple operation to print a message to the console.</span></span>
+<span data-ttu-id="30e00-146">Inspektera projektet.</span><span class="sxs-lookup"><span data-stu-id="30e00-146">Inspect the project.</span></span> <span data-ttu-id="30e00-147">Du bör se en källfil med namnet `Program.qs`, vilket är ett Q#-program som definierar en enkel åtgärd för att skriva ut ett meddelande till konsolen.</span><span class="sxs-lookup"><span data-stu-id="30e00-147">You should see a source file named `Program.qs`, which is a Q# program that defines a simple operation to print a message to the console.</span></span>
 
-<span data-ttu-id="5b1fe-145">Så här kör du programmet:</span><span class="sxs-lookup"><span data-stu-id="5b1fe-145">To run the application:</span></span>
-1. <span data-ttu-id="5b1fe-146">Välj **Felsökning** -> **Starta utan felsökning**.</span><span class="sxs-lookup"><span data-stu-id="5b1fe-146">Select **Debug** -> **Start Without Debugging**.</span></span>
-2. <span data-ttu-id="5b1fe-147">Du bör se att texten `Hello quantum world!` skrivs till ett konsolfönster.</span><span class="sxs-lookup"><span data-stu-id="5b1fe-147">You should see the text `Hello quantum world!` printed to a console window.</span></span>
+<span data-ttu-id="30e00-148">Så här kör du programmet:</span><span class="sxs-lookup"><span data-stu-id="30e00-148">To run the application:</span></span>
+1. <span data-ttu-id="30e00-149">Välj **Felsökning** -> **Starta utan felsökning**.</span><span class="sxs-lookup"><span data-stu-id="30e00-149">Select **Debug** -> **Start Without Debugging**.</span></span>
+2. <span data-ttu-id="30e00-150">Du bör se att texten `Hello quantum world!` skrivs till ett konsolfönster.</span><span class="sxs-lookup"><span data-stu-id="30e00-150">You should see the text `Hello quantum world!` printed to a console window.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="5b1fe-148">Om du har flera projekt i en Visual Studio-lösning, måste alla projekt i lösningen finnas i samma mapp som lösningen eller i någon av dess undermappar.</span><span class="sxs-lookup"><span data-stu-id="5b1fe-148">If you have multiple projects within one Visual Studio solution, all projects contained in the solution need to be in the same folder as the solution, or in one of its sub-folders.</span></span>  
+> <span data-ttu-id="30e00-151">Om du har flera projekt i en Visual Studio-lösning, måste alla projekt i lösningen finnas i samma mapp som lösningen eller i någon av dess undermappar.</span><span class="sxs-lookup"><span data-stu-id="30e00-151">If you have multiple projects within one Visual Studio solution, all projects contained in the solution need to be in the same folder as the solution, or in one of its sub-folders.</span></span>  
 
-### <a name="other-editors-with-the-command-line"></a>[<span data-ttu-id="5b1fe-149">Andra redigeringsprogram med kommandoraden</span><span class="sxs-lookup"><span data-stu-id="5b1fe-149">Other editors with the command line</span></span>](#tab/tabid-cmdline)
+### <a name="other-editors-with-the-command-line"></a>[<span data-ttu-id="30e00-152">Andra redigeringsprogram med kommandoraden</span><span class="sxs-lookup"><span data-stu-id="30e00-152">Other editors with the command line</span></span>](#tab/tabid-cmdline)
 
-<span data-ttu-id="5b1fe-150">Verifiera din installation genom att skapa ett Q# `Hello World`-program.</span><span class="sxs-lookup"><span data-stu-id="5b1fe-150">Verify your installation by creating a Q# `Hello World` application.</span></span>
+<span data-ttu-id="30e00-153">Verifiera din installation genom att skapa ett Q# `Hello World`-program.</span><span class="sxs-lookup"><span data-stu-id="30e00-153">Verify your installation by creating a Q# `Hello World` application.</span></span>
 
-1. <span data-ttu-id="5b1fe-151">Skapa ett nytt program:</span><span class="sxs-lookup"><span data-stu-id="5b1fe-151">Create a new application:</span></span>
+1. <span data-ttu-id="30e00-154">Installera projektmallarna.</span><span class="sxs-lookup"><span data-stu-id="30e00-154">Install the project templates.</span></span>
+
+    ```dotnetcli
+    dotnet new -i Microsoft.Quantum.ProjectTemplates
+    ```
+
+1. <span data-ttu-id="30e00-155">Skapa ett nytt program:</span><span class="sxs-lookup"><span data-stu-id="30e00-155">Create a new application:</span></span>
     ```dotnetcli
     dotnet new console -lang Q# -o runSayHello
     ```
 
-2. <span data-ttu-id="5b1fe-152">Gå till programkatalogen:</span><span class="sxs-lookup"><span data-stu-id="5b1fe-152">Navigate to the application directory:</span></span>
+1. <span data-ttu-id="30e00-156">Gå till programkatalogen:</span><span class="sxs-lookup"><span data-stu-id="30e00-156">Navigate to the application directory:</span></span>
     ```dotnetcli
     cd runSayHello
     ```
 
-    <span data-ttu-id="5b1fe-153">Den här katalogen bör du innehålla filen `Program.qs`, vilket är ett Q#-program som definierar en enkel åtgärd för att skriva ut ett meddelande till konsolen.</span><span class="sxs-lookup"><span data-stu-id="5b1fe-153">This directory should now contain a file `Program.qs`, which is a Q# program that defines a simple operation to print a message to the console.</span></span> <span data-ttu-id="5b1fe-154">Du kan ändra den här mallen med ett textredigeringsprogram och skriva över den med dina egna kvantprogram.</span><span class="sxs-lookup"><span data-stu-id="5b1fe-154">You can modfiy this template with a text editor and overwrite it with your own quantum applications.</span></span> 
+    <span data-ttu-id="30e00-157">Den här katalogen bör du innehålla filen `Program.qs`, vilket är ett Q#-program som definierar en enkel åtgärd för att skriva ut ett meddelande till konsolen.</span><span class="sxs-lookup"><span data-stu-id="30e00-157">This directory should now contain a file `Program.qs`, which is a Q# program that defines a simple operation to print a message to the console.</span></span> <span data-ttu-id="30e00-158">Du kan ändra den här mallen med ett textredigeringsprogram och skriva över den med dina egna kvantprogram.</span><span class="sxs-lookup"><span data-stu-id="30e00-158">You can modfiy this template with a text editor and overwrite it with your own quantum applications.</span></span> 
 
-3. <span data-ttu-id="5b1fe-155">Kör programmet:</span><span class="sxs-lookup"><span data-stu-id="5b1fe-155">Run the program:</span></span>
+1. <span data-ttu-id="30e00-159">Kör programmet:</span><span class="sxs-lookup"><span data-stu-id="30e00-159">Run the program:</span></span>
     ```dotnetcli
     dotnet run
     ```
 
-4. <span data-ttu-id="5b1fe-156">Du bör se följande text skrivas ut: `Hello quantum world!`</span><span class="sxs-lookup"><span data-stu-id="5b1fe-156">You should see the following text printed: `Hello quantum world!`</span></span>
+1. <span data-ttu-id="30e00-160">Du bör se följande text skrivas ut: `Hello quantum world!`</span><span class="sxs-lookup"><span data-stu-id="30e00-160">You should see the following text printed: `Hello quantum world!`</span></span>
 
 ***
 
-## <a name="next-steps"></a><span data-ttu-id="5b1fe-157">Nästa steg</span><span class="sxs-lookup"><span data-stu-id="5b1fe-157">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="30e00-161">Nästa steg</span><span class="sxs-lookup"><span data-stu-id="30e00-161">Next steps</span></span>
 
-<span data-ttu-id="5b1fe-158">Nu när du har installerat Quantum Development Kit i din önskade miljö, kan du skriva och köra [ditt första kvantprogram](xref:microsoft.quantum.quickstarts.qrng).</span><span class="sxs-lookup"><span data-stu-id="5b1fe-158">Now that you have installed the Quantum Development Kit in your preferred environment, you can write and run [your first quantum program](xref:microsoft.quantum.quickstarts.qrng).</span></span>
+<span data-ttu-id="30e00-162">Nu när du har installerat Quantum Development Kit i din önskade miljö, kan du skriva och köra [ditt första kvantprogram](xref:microsoft.quantum.quickstarts.qrng).</span><span class="sxs-lookup"><span data-stu-id="30e00-162">Now that you have installed the Quantum Development Kit in your preferred environment, you can write and run [your first quantum program](xref:microsoft.quantum.quickstarts.qrng).</span></span>
