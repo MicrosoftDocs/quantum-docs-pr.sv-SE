@@ -6,12 +6,12 @@ ms.author: chgranad
 ms.date: 10/12/2018
 ms.topic: article
 uid: microsoft.quantum.contributing
-ms.openlocfilehash: 108a50302422e5ae41e14b30ef22169370c2a35a
-ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
+ms.openlocfilehash: c5acd6c2b3163488a9b4c6e52e6d34489a8f4056
+ms.sourcegitcommit: 2f4c637e194dc2b5d18539469ed37444e2800199
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86871424"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87436573"
 ---
 # <a name="contributing-to-the-quantum-development-kit"></a>Bidra till Quantum Development Kit
 
@@ -19,7 +19,7 @@ Quantum Development Kit är mer än en samling av verktyg för att skriva kvantp
 Det ingår i en stor community av personer som har upptäckt kvantberäkning, som forskar i kvantalgoritmer, som utvecklar nya program för kvantenheter och som på andra sätt arbetar för att få ut det mesta av kvantprogrammeringen.
 Som medlem i communityn kan Quantum Development Kit erbjuda kvantutvecklare med olika bakgrunder de funktioner som de behöver.
 Dina bidrag till Quantum Development Kit hjälper till att uppnå det målet genom att förbättra de verktyg som används av andra kvantutvecklare, hur dessa verktyg dokumenteras och även genom att skapa nya funktioner som gör hela kvantprogrammeringens community till en bättre plats där man kan upptäcka och skapa.
-Vi är tacksamma för dina bidrag och för möjligheten att arbeta tillsammans med dig för att göra vår community till den allra bästa.
+Vi är tacksamma för dina bidrag och för möjligheten att arbeta tillsammans med dig för att göra vår community till den allra bästa. 
 
 I den här guiden ger vi några tips på hur du gör ditt bidrag så användbart som möjligt för den bredare communityn inom kvantprogrammering.
 

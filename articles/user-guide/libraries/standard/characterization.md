@@ -6,12 +6,12 @@ uid: microsoft.quantum.libraries.characterization
 ms.author: martinro@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 7ed92c29020ccf389faa099f5bd80516af525578
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+ms.openlocfilehash: 9d763d11ef9c08cc0941cade217dbb2942ef4bf9
+ms.sourcegitcommit: 2f4c637e194dc2b5d18539469ed37444e2800199
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85275761"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87436534"
 ---
 # <a name="quantum-characterization-and-statistics"></a>Quantum-karakterisering och statistik #
 
@@ -96,7 +96,7 @@ Exakt Bayesian-härledning är i praktiken indragbar.
 För att se det här vill vi veta en $n $-bitars variabel $x $.
 Den tidigare distributionen $ \Pr (x) $ har stöd för över $2 ^ n $ hypotetiska värden för $x $.
 Det innebär att om vi behöver en mycket exakt uppskattning av $x $ kan Bayesian-fasen uppskattning kräva minnes-och bearbetnings tid.
-När det gäller vissa program, till exempel Quantum-simulering, utesluter limitted-noggrannheten inte sådana metoder som andra program, till exempel Shor, kan inte använda en exakt Bayesian-härledning inom sitt fas beräknings steg.  Därför ger vi även implementeringar för ungefärliga Bayesian-metoder, till exempel [slumpmässig stegvis uppskattning (RWPE)](xref:microsoft.quantum.research.randomwalkphaseestimation.randomwalkphaseestimation) och även icke-Bayesian metoder som [robust fas uppskattning](xref:microsoft.quantum.characterization.robustphaseestimation).
+När det gäller vissa program, till exempel Quantum-simulering, utesluter limitted-noggrannheten inte sådana metoder som andra program, till exempel Shor, kan inte använda en exakt Bayesian-härledning inom sitt fas beräknings steg.  Därför ger vi även implementeringar för ungefärliga Bayesian-metoder, till exempel [slumpmässig stegvis uppskattning (RWPE)](xref:microsoft.quantum.research.characterization.randomwalkphaseestimation) och även icke-Bayesian metoder som [robust fas uppskattning](xref:microsoft.quantum.characterization.robustphaseestimation).
 
 ### <a name="robust-phase-estimation"></a>Robust fas uppskattning ###
 
