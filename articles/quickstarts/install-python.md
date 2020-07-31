@@ -6,12 +6,12 @@ ms.date: 5/30/2020
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.install.python
-ms.openlocfilehash: ec5e66e0c85d89888a8ff1e7d6bf18bf89ff44ac
-ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
+ms.openlocfilehash: 4d148435f01d975e690828dd02335758fc71dfe4
+ms.sourcegitcommit: 2f4c637e194dc2b5d18539469ed37444e2800199
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86871594"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87436544"
 ---
 # <a name="develop-with-q-and-python"></a>Utveckla med Q# och Python
 
@@ -97,7 +97,7 @@ Nu är du redo att verifiera installationen av Python-paketet `qsharp` genom att
     import qsharp
     from Qrng import SampleQuantumRandomNumberGenerator
 
-    SampleQuantumRandomNumberGenerator.simulate()
+    print(SampleQuantumRandomNumberGenerator.simulate())
     ```
 
 1. Från den miljö som du skapade under installationen (det vill säga den conda- eller Python-miljö där du installerade `qsharp`) kör du programmet:
@@ -106,7 +106,7 @@ Nu är du redo att verifiera installationen av Python-paketet `qsharp` genom att
     python host.py
     ```
 
-1. Du bör se resultatet av den åtgärd du anropade. Eftersom åtgärden genererar ett slumpmässigt resultat visas i det här fallet antingen `Zero` eller `One` på skärmen. Om du kör programmet upprepade gånger bör du se varje resultat ungefär varannan gång.
+1. Du bör se resultatet av den åtgärd du anropade. Eftersom åtgärden genererar ett slumpmässigt resultat visas i det här fallet antingen `0` eller `1` på skärmen. Om du kör programmet upprepade gånger bör du se varje resultat ungefär varannan gång.
 
 > [!NOTE]
 > * Python-koden är bara ett vanligt Python-program. Du kan använda valfri Python-miljö, däribland Python-baserade Jupyter Notebooks, för att skriva Python-programmet och anropa Q#-åtgärder. Python-programmet kan importera Q#-åtgärder från .qs-filer som finns i samma mapp som själva Python-koden.
