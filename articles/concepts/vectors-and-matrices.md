@@ -1,6 +1,8 @@
 ---
 rubrik: vektorer och matriser i Beskrivning av Quantum Computing: Lär dig grunderna för hur du arbetar med vektorer och matriser.
 författare: QuantumWriter UID: Microsoft. Quantum. Concepts. Vectors MS. author: nawiebe@microsoft.com MS. Date: 12/11/2017 MS. topic: artikeln No-Loc:
+- "Q#"
+- "$$v"
 - "$$"
 - "$$"
 - "$"
@@ -87,7 +89,7 @@ En del bekant med vektorer och matriser är viktigt för att förstå Quantum Co
 
 En kolumn vektor (eller bara [*Vector*](https://en.wikipedia.org/wiki/Vector_(mathematics_and_physics))) $ v $ av dimension (eller storlek) $ n $ är en samling med $ n $ komplexa tal $ (v_1, v_2, \ldots, V_n) $ ordnade som en kolumn:
 
-$$lodrät=\begin{bmatrix}
+$$v =\begin{bmatrix}
 v_1\\\\
 v_2\\\\
 \vdots\\\\

@@ -1,17 +1,20 @@
 ---
-title: 'Använda Microsoft Q #-biblioteket'
+title: Använda Microsoft- Q# numeriska biblioteket
 description: Lär dig mer om de typer och åtgärder som är tillgängliga i Microsoft Quantum numeric-biblioteket.
 author: thomashaener
 ms.author: thhaner
 ms.date: 5/14/2019
 ms.topic: article
 uid: microsoft.quantum.numerics.usage
-ms.openlocfilehash: 10d5675e0ef182211a38db4d09347b05afe109c3
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 474fc74b9c92fbf28c0618a3090905d025699d32
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85276117"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87868805"
 ---
 # <a name="using-the-numerics-library"></a>Använda det numeriska biblioteket
 
@@ -36,7 +39,7 @@ Det numeriska biblioteket stöder följande typer
 1. **`SignedLittleEndian`**: Samma som `LittleEndian` förutom att det representerar ett signerat heltal som lagras i två komplement.
 1. **`FixedPoint`**: Representerar ett reellt tal bestående av en qubit `qArr2 : Qubit[]` -matris och en binär punkt position `pos` , vilket räknar antalet binära siffror till vänster om den binära punkten. `qArr2`lagras på samma sätt som `SignedLittleEndian` .
 
-## <a name="operations"></a>Operations
+## <a name="operations"></a>Åtgärder
 
 Det finns flera olika åtgärder för var och en av de tre typerna ovan:
 
@@ -64,7 +67,7 @@ Det finns flera olika åtgärder för var och en av de tre typerna ovan:
     - Motsvarighet (1/x)
     - Mått (klassisk dubbel)
 
-Mer information och detaljerad dokumentation för var och en av dessa åtgärder finns i referens dokument för Q #-bibliotek på [docs.Microsoft.com](https://docs.microsoft.com/quantum)
+Mer information och detaljerad dokumentation för var och en av dessa åtgärder finns i Q# biblioteks referens dokument på [docs.Microsoft.com](https://docs.microsoft.com/quantum)
 
 ## <a name="sample-integer-addition"></a>Exempel: heltals tillägg
 
@@ -99,7 +102,7 @@ EvaluatePolynomialFxP([1.0, 2.0], x, y);
 Resultatet, $P (x) = 1 + 2x $, kommer att lagras i `yFxP` .
 
 Den andra, `EvaluateEvenPolynomialFxP` och den tredje, `EvaluateOddPolynomialFxP` är specialiseringar för fall av jämna respektive udda funktioner. Det vill säga för en jämn/udda funktion $f (x) $ och $ $ P_ {jämna} (x) = a_0 + a_1 x ^ 2 + a_2 x ^ 4 + \cdots + a_d x ^ {2D}, $ $ $f (x) $ approximeras bra genom att $P _ {t.o.m.} (x) $ eller $P _ {udda} (x): = x\cdot P_ {jämna} (x) $.
-I Q # kan dessa två fall hanteras på följande sätt:
+I Q# kan dessa två fall hanteras på följande sätt:
 ```qsharp
 EvaluateEvenPolynomialFxP([1.0, 2.0], x, y);
 ```

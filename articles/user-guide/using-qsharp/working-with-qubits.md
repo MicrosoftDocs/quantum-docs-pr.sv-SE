@@ -6,18 +6,21 @@ ms.author: a-gibec@microsoft.com
 ms.date: 03/05/2020
 ms.topic: article
 uid: microsoft.quantum.guide.qubits
-ms.openlocfilehash: 1655d18ab9d8638ad356e6fb90994b5c1fd76a25
-ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 6808a852ee0de7d3a38ea44e9637eeaa6bea382a
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85885305"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87867870"
 ---
 # <a name="working-with-qubits"></a>Arbeta med kvantbitar
 
 Qubits är det grundläggande informations objektet i Quantum Computing. En allmän introduktion till qubits finns i [förstå Quantum Computing](xref:microsoft.quantum.overview.understanding)och för att gå djupare till deras matematiska åter givning, se [qubit](xref:microsoft.quantum.concepts.qubit). 
 
-I den här artikeln lär du dig hur du använder och arbetar med qubits i ett Q #-program. 
+I den här artikeln lär du dig hur du använder och arbetar med qubits i ett Q# program. 
 
 > [!IMPORTANT]
 >Ingen av de instruktioner som beskrivs i den här artikeln är giltiga i bröd texten i en funktion. De är endast giltiga inom åtgärder.
@@ -25,7 +28,7 @@ I den här artikeln lär du dig hur du använder och arbetar med qubits i ett Q 
 ## <a name="allocating-qubits"></a>Allokerar qubits
 
 Eftersom fysiska qubits är en värdefull resurs på en Quantum-dator är en del av kompilatorns jobb att se till att de används så effektivt som möjligt.
-Därför måste du ange att Q # ska *tilldela* qubits för användning i ett visst instruktions block.
+Därför måste du ange Q# att *allokera* qubits för användning i ett visst instruktions block.
 Du kan allokera qubits som en enda qubit, eller som en matris med qubits, som kallas *Registrera*. 
 
 ### <a name="clean-qubits"></a>Rengör qubits
@@ -82,17 +85,17 @@ När du lånar qubits försöker systemet först fylla i begäran från qubits s
 Om det inte finns tillräckligt med sådana qubits, allokerar den nya qubits för att slutföra begäran.
 
 Bland de kända användnings fallen av smutsig qubits är implementeringar av multi-styrda CNOT-portar som bara kräver mycket få qubits och implementering av steg.
-Ett exempel på hur de används i Q # finns i avsnittet om att [låna qubits-exempel](#borrowing-qubits-example) i den här artikeln, eller pappers [*faktorn med 2n + 2 qubits med Toffoli-baserad modulär multiplikation*](https://arxiv.org/abs/1611.07995) (Haner, Roetteler och Svore 2017) för en algoritm som använder lånad qubits.
+Ett exempel på hur de används i Q# finns i avsnittet om [upplåning av qubits](#borrowing-qubits-example) i den här artikeln, eller pappers [*faktorn med 2n + 2 qubits med Toffoli baserad modulär multiplikation*](https://arxiv.org/abs/1611.07995) (Haner, Roetteler och Svore 2017) för en algoritm som använder lånad qubits.
 
 ## <a name="intrinsic-operations"></a>Inre åtgärder
 
 När du har allokerat kan du skicka en qubit till funktioner och åtgärder.
-I viss mening är detta allt att ett Q #-program kan utföras med en qubit, eftersom de åtgärder som kan vidtas är definierade som åtgärder.
+I en viss mening är detta allt som ett Q# program kan göra med en qubit, eftersom de åtgärder som kan vidtas är definierade som åtgärder.
 
-I den här artikeln beskrivs några användbara Q #-åtgärder som du kan använda för att interagera med qubits.
+I den här artikeln beskrivs några användbara Q# åtgärder som du kan använda för att interagera med qubits.
 Mer information om dessa och andra finns i [inbyggda funktioner och funktioner](xref:microsoft.quantum.libraries.standard.prelude). 
 
-Först visas qubit Pauli-operatörer $X $, $Y $ och $Z $ i Q # av de inbyggda åtgärderna [`X`](xref:microsoft.quantum.intrinsic.x) , [`Y`](xref:microsoft.quantum.intrinsic.y) och [`Z`](xref:microsoft.quantum.intrinsic.z) som var och en har typen `(Qubit => Unit is Adj + Ctl)` .
+Först, qubit Pauli-operatörerna $X $, $Y $ och $Z $, representeras Q# av de inbyggda åtgärderna [`X`](xref:microsoft.quantum.intrinsic.x) , [`Y`](xref:microsoft.quantum.intrinsic.y) och [`Z`](xref:microsoft.quantum.intrinsic.z) , var och en av dessa är av typen `(Qubit => Unit is Adj + Ctl)` .
 
 Som det beskrivs i de [inre driften och funktionerna](xref:microsoft.quantum.libraries.standard.prelude)kan du tänka på $X $ och därmed `X` en åtgärd med bit vändning eller inte grind.
 Du kan använda `X` åtgärden för att förbereda statusarna i formatet $ \ket{s_0 s_1 \dots s_n} $ för viss klassisk bit-sträng $s $:
@@ -124,7 +127,7 @@ operation RunExample() : Unit {
 > [!TIP]
 > Senare visas fler kompakta sätt att skriva den här åtgärden som inte kräver manuellt kontroll flöde.
 
-Du kan också förbereda tillstånd som $ \ket{+} = \left (\ket {0} + \ket {1} \right)/\sqrt {2} $ och $ \ket {-} = \left (\ket {0} -\ket {1} \right)/\sqrt {2} $ genom att använda Hadamard Transform $H $, som representeras i Q # av den inre åtgärden [`H`](xref:microsoft.quantum.intrinsic.h) (även av typen (qubit => Unit rejust + CTL) "):
+Du kan också förbereda tillstånd som $ \ket{+} = \left (\ket {0} + \ket {1} \right)/\sqrt {2} $ och $ \ket {-} = \left (\ket {0} -\ket {1} \right)/\sqrt {2} $ genom att använda Hadamard Transform $H $, som representeras Q# av den inre åtgärden [`H`](xref:microsoft.quantum.intrinsic.h) (även av typen (qubit => Unit rejust + CTL) '):
 
 ```qsharp
 operation PreparePlusMinusState(bitstring : Bool[], register : Qubit[]) : Unit {
@@ -242,4 +245,4 @@ Det är en instruktion att jämföra den här koden med en annan Canon `MultiCon
 
 ## <a name="next-steps"></a>Nästa steg
 
-Lär dig mer om [kontroll flöde](xref:microsoft.quantum.guide.controlflow) i Q #.
+Lär dig mer om [kontroll flöde](xref:microsoft.quantum.guide.controlflow) i Q# .

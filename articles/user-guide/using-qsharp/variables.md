@@ -1,28 +1,31 @@
 ---
-title: 'Variabler i Q #'
+title: Variabler iQ#
 description: fyllnings Beskrivning
 author: gillenhaalb
 ms.author: a-gibec@microsoft.com
 ms.date: 03/05/2020
 ms.topic: article
 uid: microsoft.quantum.guide.variables
-ms.openlocfilehash: 08301f408dcb2211ba25c582a5e5aa43310b714a
-ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 00af0989cd5a1f9ccc7d9f2545acd0d256bc7eb9
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85885286"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87867853"
 ---
-# <a name="variables-in-q"></a>Variabler i Q #
+# <a name="variables-in-no-locq"></a>Variabler iQ#
 
-Q # skiljer sig mellan föränderligt och oföränderliga symboler, eller *variabler*som är kopplade till/tilldelas till uttryck.
+Q#särskiljer mellan föränderligt och oföränderliga symboler, eller *variabler*, som är kopplade/tilldelade till uttryck.
 I allmänhet uppmuntras användningen av oföränderliga symboler eftersom den tillåter kompilatorn att utföra mer optimeringar.
 
 Den vänstra sidan av en bindning består av en symbol tupel och högra sidan av ett uttryck.
 
 ## <a name="immutable-variables"></a>Variabler som inte är oföränderlig
 
-Du kan tilldela ett värde av vilken typ som helst i Q # till en variabel för åter användning i en åtgärd eller funktion med hjälp av `let` nyckelordet. 
+Du kan tilldela ett värde av vilken typ som helst i Q# en variabel för åter användning i en åtgärd eller funktion med hjälp av `let` nyckelordet. 
 
 En oföränderlig bindning består av nyckelordet `let` följt av en symbol-eller Symbols tupel, ett likhets tecken `=` , ett uttryck för att binda symbolerna till och ett avslutande semikolon.
 
@@ -107,7 +110,7 @@ function ComplexSum(reals : Double[], ims : Double[]) : Complex[] {
 }
 ```
 
-Om det finns matriser [`Microsoft.Quantum.Arrays`](xref:microsoft.quantum.arrays) innehåller standard biblioteket för Q # de verktyg som krävs för många vanliga behov av initiering och manipulering av matris, och därför kan du undvika att behöva uppdatera mat ris objekt på den första platsen. 
+Om det finns matriser [`Microsoft.Quantum.Arrays`](xref:microsoft.quantum.arrays) Q# innehåller standard biblioteket de verktyg som krävs för många vanliga behov av initiering och manipulering av matris, och därför kan du undvika att behöva uppdatera mat ris objekt på den första platsen. 
 
 Uppdaterings-och omtilldelnings instruktioner ger ett alternativ om det behövs:
 
@@ -163,7 +166,7 @@ En tilldelning av det här formuläret är att *avkonstruera* elementen i denna 
 Om bindningens högra sida är en tupel kan du dekonstruera denna tupel vid tilldelning.
 Sådana dekonstruktioner kan omfatta kapslade tupler och all fullständig eller delvis inbyggnad är giltig så länge formen på tuppeln på den högra sidan är kompatibel med symbolens tuple-form.
 
-Ett exempel:
+Exempel:
 
 ```qsharp
 let (i, f) = (5, 0.1); // i is bound to 5 and f to 0.1
@@ -236,4 +239,4 @@ if (a == b) {
 
 ## <a name="next-steps"></a>Nästa steg
 
-Lär dig mer om att [arbeta med qubits](xref:microsoft.quantum.guide.qubits) i Q #.
+Lär dig mer om att [arbeta med qubits](xref:microsoft.quantum.guide.qubits) i Q# .

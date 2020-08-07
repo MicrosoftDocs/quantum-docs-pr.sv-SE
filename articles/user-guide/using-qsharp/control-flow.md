@@ -1,19 +1,22 @@
 ---
-title: 'Kontroll flöde i Q #'
+title: Kontroll flöde iQ#
 description: Slingor, villkor osv.
 author: gillenhaalb
 ms.author: a-gibec@microsoft.com
 ms.date: 03/05/2020
 ms.topic: article
 uid: microsoft.quantum.guide.controlflow
-ms.openlocfilehash: b652736168a71b905deaf7c4fdb29a8751b3dfaf
-ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: fc619d64bfebfc27d7feac6dafb2dd4cf22825d6
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86870999"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87867956"
 ---
-# <a name="control-flow-in-q"></a>Kontroll flöde i Q #
+# <a name="control-flow-in-no-locq"></a>Kontroll flöde iQ#
 
 I en åtgärd eller funktion körs varje instruktion i ordning, på liknande sätt som andra vanliga tvingande klassiska språk.
 Du kan dock ändra kontroll flödet på tre olika sätt:
@@ -104,12 +107,12 @@ Observera att vi i slutet använder den aritmetiska operatorn Shift-vänstra bin
 
 ## <a name="repeat-until-success-loop"></a>Upprepa-tills-lyckad-slinga
 
-Med hjälp av Q #-språket kan ett klassiskt kontroll flöde vara beroende av resultatet av att mäta qubits.
+Q#Språket tillåter att klassiskt kontroll flöde är beroende av resultatet av att mäta qubits.
 Med den här funktionen aktive ras implementera kraftfulla Probabilistic-gadgetar som kan minska beräknings kostnaden för att implementera unitaries.
-Exempel på detta är ru: er-mönster ( *REPEAT-until-lyckat* ) i Q #.
+Exempel på detta är ru: er-mönster ( *REPEAT-until-lyckat* ) i Q# .
 Dessa ru: er-mönster är Probabilistic-program som har en *förväntad* låg kostnad i termer av elementära grindar. kostnaden beror på den faktiska körningen och Interfoliering av flera möjliga grenar.
 
-Q # stöder konstruktioner för att under lätta upprepningar av ru: er-mönster.
+För att under lätta upprepade tills klart (ru: er) mönster, Q# stöder konstruktioner
 
 ```qsharp
 repeat {
@@ -147,9 +150,9 @@ Fler exempel och mer information finns i [Upprepa-till-Slutför-exempel](#repeat
 
 ## <a name="while-loop"></a>While-slinga
 
-Upprepa-tills-lyckad-mönster har en mycket Quantum-speciell connotation. De används ofta i vissa klasser av Quantum-algoritmer – därför är den dedikerade språk konstruktionen i Q #. Loopar som bryts baserat på ett villkor och vars körnings längd är således okänd vid kompileringen, hanteras dock med särskild försiktighet i en Quantum-körning. Användningen i functions är dock inte problematisk eftersom dessa slingor bara innehåller kod som körs på konventionell (icke-Quantum) maskin vara. 
+Upprepa-tills-lyckad-mönster har en mycket Quantum-speciell connotation. De används ofta i vissa klasser av Quantum-algoritmer – därför den dedikerade språk konstruktionen i Q# . Loopar som bryts baserat på ett villkor och vars körnings längd är således okänd vid kompileringen, hanteras dock med särskild försiktighet i en Quantum-körning. Användningen i functions är dock inte problematisk eftersom dessa slingor bara innehåller kod som körs på konventionell (icke-Quantum) maskin vara. 
 
-Q # stöder därför endast användning av while-slingor i functions. En `while` instruktion består av nyckelordet `while` , ett booleskt uttryck inom parentes och ett instruktions block.
+Q#stöder därför endast användningen av while-slingor i functions. En `while` instruktion består av nyckelordet `while` , ett booleskt uttryck inom parentes och ett instruktions block.
 Instruktions blocket (bröd texten i slingan) körs så länge villkoret utvärderas till `true` .
 
 ```qsharp
@@ -205,7 +208,7 @@ fail $"Syndrome {syn} is incorrect";
 
 ### <a name="rus-pattern-for-single-qubit-rotation-about-an-irrational-axis"></a>RU: er-mönster för en qubit rotation om en onormal axel 
 
-I ett vanligt användnings fall implementerar följande Q #-åtgärd en rotation runt en onormal axel om $ (I + 2i Z)/\sqrt {5} $ på Bloch-sfären. Implementeringen använder ett känt ru: er-mönster:
+I ett vanligt användnings fall Q# implementerar följande åtgärd en rotation runt en onormal axel om $ (i + 2i Z)/\sqrt {5} $ på Bloch-sfären. Implementeringen använder ett känt ru: er-mönster:
 
 ```qsharp
 operation ApplyVRotationUsingRUS(qubit : Qubit) : Unit {
@@ -331,4 +334,4 @@ Mer information finns i avsnittet [om enhets testning som tillhandahålls med st
 
 ## <a name="next-steps"></a>Nästa steg
 
-Lär dig mer om [testning och fel sökning](xref:microsoft.quantum.guide.testingdebugging) i Q #.
+Lär dig mer om att [testa och felsöka](xref:microsoft.quantum.guide.testingdebugging) i Q# .

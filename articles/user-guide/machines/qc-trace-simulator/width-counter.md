@@ -1,21 +1,24 @@
 ---
 title: Bredd räknare – Quantum Development Kit
-description: 'Lär dig mer om Microsoft QDK width-räknaren, som använder Quantum trace Simulator för att räkna antalet qubits som tilldelas och lånas av åtgärder i ett Q #-program.'
+description: Lär dig mer om Microsoft QDK width-räknaren, som använder Quantum trace Simulator för att räkna antalet qubits som tilldelas och lånas av åtgärder i ett Q# program.
 author: vadym-kl
 ms.author: vadym@microsoft.com
 ms.date: 06/25/2020
 ms.topic: article
 uid: microsoft.quantum.machines.qc-trace-simulator.width-counter
-ms.openlocfilehash: af8609dc5c05f7a19b8d21755281427feb29b84c
-ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 02f4937aaccf7bf49d6450355c6b42b273071b2e
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86871531"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87868210"
 ---
 # <a name="quantum-trace-simulator-width-counter"></a>Quantum trace Simulator: bredd räknare
 
-Bredd räknaren är en del av Quantum Development Kit [Quantum trace Simulator](xref:microsoft.quantum.machines.qc-trace-simulator.intro). Du kan använda det för att räkna antalet qubits som tilldelas och lånas av varje åtgärd i ett Q #-program. Vissa primitiva åtgärder kan allokera extra qubits, till exempel multiplicera kontrollerade `X` åtgärder eller kontrollerade `T` åtgärder.
+Bredd räknaren är en del av Quantum Development Kit [Quantum trace Simulator](xref:microsoft.quantum.machines.qc-trace-simulator.intro). Du kan använda det för att räkna antalet qubits som tilldelas och lånas av varje åtgärd i ett Q# program. Vissa primitiva åtgärder kan allokera extra qubits, till exempel multiplicera kontrollerade `X` åtgärder eller kontrollerade `T` åtgärder.
 
 ## <a name="invoking-the-width-counter"></a>Anropar bredd räknaren
 
@@ -29,7 +32,7 @@ var sim = new QCTraceSimulator(config);
 
 ## <a name="using-the-width-counter-in-a-c-host-program"></a>Använda bredd räknaren i ett C#-värd program
 
-C#-exemplet som följer i det här avsnittet beräknar antalet extra qubits som allokerats av implementeringen av en <xref:microsoft.quantum.intrinsic.x> utförd multiplicering-åtgärd baserat på följande Q # exempel kod:
+C#-exemplet som följer i det här avsnittet beräknar antalet extra qubits som allokerats av implementeringen av en <xref:microsoft.quantum.intrinsic.x> utförd multiplicering-åtgärd, baserat på följande Q# exempel kod:
 
 ```qsharp
 open Microsoft.Quantum.Intrinsic;

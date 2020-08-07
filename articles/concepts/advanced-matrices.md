@@ -1,6 +1,8 @@
 ---
 rubrik: Beskrivning av avancerade Matrix-begrepp: Lär dig mer om eigenvectors, Eigenvalues och matriser, de grundläggande verktyg som används för att beskriva och simulera Quantum-algoritmer.
 författare: QuantumWriter-UID: Microsoft. Quantum. Concepts. Matrix-Advanced MS. author: nawiebe@microsoft.com MS. Date: 12/11/2017 MS. topic: artikeln No-Loc:
+- "Q#"
+- "$$v"
 - "$$"
 - "$$"
 - "$"
@@ -124,7 +126,7 @@ $$
 e ^ A = \boldone + a + a \frac { ^ 2 } { 2! } + \frac { En ^ 3 } { 3!}+\cdots
 $$
 
-Detta är viktigt eftersom en Quantum mekanisk tids utveckling beskrivs av en enhetlig matris i formatet $ e ^ { IB } $ för Hermitian Matrix $ B $ .  Av den anledningen är framställningen av matriser en grundläggande del av Quantum data behandling och som t. ex. Q # innehåller inbyggda rutiner för att beskriva dessa åtgärder.
+Detta är viktigt eftersom en Quantum mekanisk tids utveckling beskrivs av en enhetlig matris i formatet $ e ^ { IB } $ för Hermitian Matrix $ B $ .  Av den anledningen är framställningen av matriser en grundläggande del av Quantum data behandling och det Q# finns inbyggda rutiner för att beskriva dessa åtgärder.
 Det finns många sätt att beräkna en matris på en klassisk dator, och i stort sett en så stor uppskattning som en exponent är fraught med Peril.  Se [*Cleve moler och Charles Van-lånet. "Nineteen misstänkta-sätt att beräkna exponenten för en matris." SIAM granska 20,4 (1978): 801-836*](https://doi.org/10.1137/S00361445024180) för mer information om de utmaningar som uppstår.
 
 Det enklaste sättet att förstå hur du beräknar exponenten för en matris är genom Eigenvalues och eigenvectors i matrisen.  Mer specifikt säger Spectral-satsen ovan om att $ $ det finns en enhetlig matris $ U $ och en diagonal matris $ D $ , till exempel en $ = u ^ \dagger D u $ för varje Hermitian eller en enhetlig matris.  På grund av egenskaperna för unitarity har vi $ en ^ 2 = u ^ \dagger d ^ 2 u $ och på samma sätt för alla Power $ p $ $ A ^ p = u ^ \dagger d ^ p u $ .  Om vi ersätter detta i Operator definitionen för operatorn exponentiell, får vi:

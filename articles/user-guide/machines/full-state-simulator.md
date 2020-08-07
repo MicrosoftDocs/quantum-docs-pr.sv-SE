@@ -1,25 +1,28 @@
 ---
 title: Fullständigt tillstånd Quantum Simulator – Quantum Development Kit
-description: 'Lär dig hur du kör dina Q #-program i Microsoft Quantum Development Kit fullständig tillstånds Simulator.'
+description: Lär dig hur du kör dina Q# program på Microsoft Quantum Development Kit fullständiga tillstånds simulatorn.
 author: anpaz-msft
 ms.author: anpaz@microsoft.com
 ms.date: 06/26/2020
 ms.topic: article
 uid: microsoft.quantum.machines.full-state-simulator
-ms.openlocfilehash: 563fdbd2a45461d112e4c46651eddd75c6fc3db2
-ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: b15af66123dadae09815cde1966c69b3ce2e9e64
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86871186"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87868346"
 ---
 # <a name="quantum-development-kit-qdk-full-state-simulator"></a>Quantum Development Kit (QDK) fullständig tillstånds Simulator
 
-QDK tillhandahåller en fullständig tillstånds simulator som simulerar en Quantum-dator på din lokala dator. Du kan använda den fullständiga tillstånds simulatorn för att köra och felsöka Quantum-algoritmer skrivna i Q # och använda upp till 30 qubits. Den fullständiga tillstånds simulatorn liknar den Quantum simulator som används i [LIQ $ UI | \rangle $](http://stationq.github.io/Liquid/) Platform från Microsoft Research.
+QDK tillhandahåller en fullständig tillstånds simulator som simulerar en Quantum-dator på din lokala dator. Du kan använda den fullständiga tillstånds simulatorn för att köra och felsöka Quantum-algoritmer som skrivits i Q# , med upp till 30 qubits. Den fullständiga tillstånds simulatorn liknar den Quantum simulator som används i [LIQ $ UI | \rangle $](http://stationq.github.io/Liquid/) Platform från Microsoft Research.
 
 ## <a name="invoking-and-running-the-full-state-simulator"></a>Anropa och köra fullständig tillstånds Simulator
 
-Du exponerar hela tillstånds simulatorn via- `QuantumSimulator` klassen. Mer information finns i [sätt att köra ett Q #-program](xref:microsoft.quantum.guide.host-programs).
+Du exponerar hela tillstånds simulatorn via- `QuantumSimulator` klassen. Mer information finns i [sätt att köra ett Q# program](xref:microsoft.quantum.guide.host-programs).
 
 ### <a name="invoking-the-simulator-from-c"></a>Anropa simulatorn från C #
 
@@ -36,7 +39,7 @@ Eftersom `QuantumSimulator` klassen implementerar <xref:System.IDisposable> grä
 
 ### <a name="invoking-the-simulator-from-python"></a>Anropa simulatorn från python
 
-Använd metoden [simulera ()](https://docs.microsoft.com/python/qsharp/qsharp.loader.qsharpcallable) från q # python-biblioteket med den importerade q #-åtgärden:
+Använd metoden [simulera ()](https://docs.microsoft.com/python/qsharp/qsharp.loader.qsharpcallable) från Q# python-biblioteket med den importerade Q# åtgärden:
 
 ```python
 qubit_result = myOperation.simulate()
@@ -44,7 +47,7 @@ qubit_result = myOperation.simulate()
 
 ### <a name="invoking-the-simulator-from-the-command-line"></a>Anropa simulatorn från kommando raden
 
-När du kör ett Q #-program från kommando raden är den fullständiga tillstånds simulatorn standard mål datorn. Alternativt kan du använda parametern **--Simulator** (eller **-s** genväg) för att ange önskad måldator. Följande kommandon kör ett program med fullständig tillstånds Simulator. 
+När du kör ett Q# program från kommando raden är den fullständiga tillstånds simulatorn standard mål datorn. Alternativt kan du använda parametern **--Simulator** (eller **-s** genväg) för att ange önskad måldator. Följande kommandon kör ett program med fullständig tillstånds Simulator. 
 
 ```dotnetcli
 dotnet run
@@ -53,7 +56,7 @@ dotnet run -s QuantumSimulator
 
 ### <a name="invoking-the-simulator-from-juptyer-notebooks"></a>Anropa simulatorn från Juptyer Notebooks
 
-Använd SWEETIQ # Magic kommandot [% simulera](xref:microsoft.quantum.iqsharp.magic-ref.simulate) för att köra Q #-åtgärden.
+Använd kommandot I Q# trollen [% simulera](xref:microsoft.quantum.iqsharp.magic-ref.simulate) för att köra Q# åtgärden.
 
 ```
 %simulate myOperation
@@ -76,6 +79,6 @@ Den fullständiga tillstånds simulatorn använder [OpenMP](http://www.openmp.or
 
 ## <a name="see-also"></a>Se även
 
-- [Uppskattning av Quantum-resurser](xref:microsoft.quantum.machines.resources-estimator)
-- [Quantum Toffoli-Simulator](xref:microsoft.quantum.machines.toffoli-simulator)
+- [Kvantresursberäknare](xref:microsoft.quantum.machines.resources-estimator)
+- [Toffoli-kvantsimulator](xref:microsoft.quantum.machines.toffoli-simulator)
 - [Quantum trace Simulator](xref:microsoft.quantum.machines.qc-trace-simulator.intro)

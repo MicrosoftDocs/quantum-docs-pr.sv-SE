@@ -1,17 +1,20 @@
 ---
 title: Få beräkningar av energinivå
-description: 'Gå igenom ett exempel på ett Q #-program som beräknar energi nivå värden för molekyl väte.'
+description: Gå igenom ett exempel Q# program som beräknar energi nivå värden för molekyl väte.
 author: guanghaolow
 ms.author: gulow
 ms.date: 07/02/2020
 ms.topic: article-type-from-white-list
 uid: microsoft.quantum.chemistry.examples.energyestimate
-ms.openlocfilehash: b26538980366cf4cbe01fc2ef59580ae182f1e8a
-ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: a2df4b829a3f4946c6de6e6b80ad72a5bc192b2c
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86871576"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87869213"
 ---
 # <a name="obtaining-energy-level-estimates"></a>Få beräkningar av energinivå
 Att uppskatta värdena för energi nivåer är ett av de viktigaste programmen i Quantum kemi. Den här artikeln beskriver hur du kan utföra detta för det kanoniska exemplet på molekylen väte. Exemplet som refereras i det här avsnittet finns [`MolecularHydrogen`](https://github.com/microsoft/Quantum/tree/master/samples/chemistry/MolecularHydrogen) i databasen för kemi-exempel. Ett mer visuellt exempel som ritar utdata är [`MolecularHydrogenGUI`](https://github.com/microsoft/Quantum/tree/master/samples/chemistry/MolecularHydrogenGUI) demonstrationen.
@@ -121,7 +124,7 @@ operation GetEnergyByTrotterization (
 }
 ```
 
-Du kan nu anropa Q #-koden från värd programmet. Följande C#-kod skapar en komplett-tillstånds Simulator och kör `GetEnergyByTrotterization` för att hämta jord tillstånds energi.
+Du kan nu anropa Q# koden från värd programmet. Följande C#-kod skapar en komplett-tillstånds Simulator och kör `GetEnergyByTrotterization` för att hämta jord tillstånds energi.
 
 ```csharp
 using (var qsim = new QuantumSimulator())

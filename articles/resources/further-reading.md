@@ -6,12 +6,15 @@ uid: microsoft.quantum.more-information
 ms.author: nawiebe@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: d3c252c6579e1286aae71a0f18ac7b6b02a5c1ed
-ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 7c5063fccbe73478aeb917e0cd2fe2f7fe51c070
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85884146"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87866850"
 ---
 # <a name="more-quantum-computing-learning-resources"></a>Fler utbildnings resurser för Quantum Computing
 
@@ -24,7 +27,7 @@ Det här avsnittet innehåller valda referenser till djup täckning av Quantum C
 + Kitaev, A. Y., Jansson, A., & Vyalyi, M. N. (2002). Klassisk och Quantum-beräkning (vol. 47). Providence: American matematiskt samhälle.
 + Kaye, P., Laflamme, R., & Mosca, M. (2007). En introduktion till Quantum Computing. Oxford University Press.
 + Rieffel, t. ex., & Polak, W. H. (2011). Quantum Computing: en försiktig introduktion. MIT Press.
-+ Sarah C. Kaiser och Christopher E. granade (Manning tidigt Access program startade april 2019-publikation i 2020). [Lär dig Quantum Computing med python och Q # – en praktisk metod](https://www.manning.com/books/learn-quantum-computing-with-python-and-q-sharp).
++ Sarah C. Kaiser och Christopher E. granade (Manning tidigt Access program startade april 2019-publikation i 2020). [Lär dig Quantum Computing med python och Q# en praktisk metod](https://www.manning.com/books/learn-quantum-computing-with-python-and-q-sharp).
 
 ## <a name="online-courses"></a>Onlinekurser ##
 

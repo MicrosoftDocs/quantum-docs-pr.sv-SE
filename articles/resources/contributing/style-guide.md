@@ -1,22 +1,25 @@
 ---
-title: 'Microsoft Q # stil guide'
-description: 'Lär dig mer om namngivning, indatamängd, dokumentation och formatering för Q #-program och-bibliotek.'
+title: Microsoft- Q# stil guide
+description: Lär dig mer om namngivning, indatamängd, dokumentation och formatering för Q# program och bibliotek.
 author: cgranade
 ms.author: chgranad
 ms.date: 10/12/2018
 ms.topic: article
 uid: microsoft.quantum.contributing.style
-ms.openlocfilehash: 26de7d5f639ea1b4df24232127b6f95cee3a041e
-ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 27a2ae5ae9d00329fc369268edae24228a9a9d0d
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86871390"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87867598"
 ---
-# <a name="q-style-guide"></a>Stil guide för Q # #
+# <a name="no-locq-style-guide"></a>Q#Stil guide #
 ## <a name="general-conventions"></a>Allmänna konventioner ##
 
-De konventioner som föreslås i den här guiden är avsedda att hjälpa till att göra program och bibliotek skrivna i Q # lättare att läsa och förstå.
+De konventioner som föreslås i den här hand boken är avsedda att hjälpa till att göra det Q# lättare att läsa och förstå program och bibliotek.
 
 ## <a name="guidance"></a>Vägledning
 
@@ -29,13 +32,13 @@ Vi rekommenderar:
 Vid erbjudandet från Quantum Development Kit strävar vi efter funktions-och åtgärds namn som hjälper fantastiska utvecklare att skriva program som är lätta att läsa och som minimerar överraskningen.
 En viktig del av detta är att när vi väljer namn för funktioner, åtgärder och typer, upprättar vi den *vokabulär* som programmerare använder för att uttrycka Quantum-koncept. med våra val kan vi antingen hjälpa dig eller hindra dem att kommunicera tydligt.
 På så sätt får vi ett ansvar för oss att se till att namnen vi presenterar ger klarhet i stället för skymt.
-I det här avsnittet beskriver vi hur vi uppfyller denna skyldighet i termer av uttryckliga rikt linjer som hjälper oss att göra det bästa med utvecklings gruppen för Q-nummer.
+I det här avsnittet beskriver vi hur vi uppfyller denna skyldighet i termer av uttryckliga rikt linjer som hjälper oss att göra det bästa av Q# utvecklings gruppen.
 
 ### <a name="operations-and-functions"></a>Åtgärder och funktioner ###
 
 Ett av de första saker som ett namn bör fastställa är om en specifik symbol representerar en funktion eller en åtgärd.
 Skillnaden mellan Functions och Operations är avgörande för att förstå hur ett kod block beter sig.
-För att kunna kommunicera mellan funktioner och åtgärder för användare, förlitar vi oss på att det finns Quantum åtgärder i Q #-modeller genom användning av sido effekter.
+För att kunna kommunicera skillnaden mellan funktioner och åtgärder för användare, förlitar vi dig på att Q# modeller Quantum åtgärder genom användning av sido effekter.
 Det vill säga en åtgärd *gör* något.
 
 Funktionen kontrast beskriver däremot de matematiska relationerna mellan data.
@@ -93,12 +96,12 @@ Vi rekommenderar:
 
 # <a name="examples"></a>[Exempel](#tab/examples)
 
-|   | Name | Beskrivning |
+|   | Namn | Beskrivning |
 |---|------|-------------|
 | ☑ | `operation ReflectAboutStart` | Rensa användningen av ett verb ("reflektera") för att ange hur åtgärden ska fungera. |
 | ☒ | <s>`operation XRotation`</s> | Användning av en Substantiv-fras föreslår funktion i stället för åtgärd. |
-| ☒ | <s>`operation search_oracle`</s> | Användning av `snake_case` bryter mot Q #-notation. |
-| ☒ | <s>`operation Search_Oracle`</s> | Användning av under streck till åtgärds namn bestrider Q #-notation. |
+| ☒ | <s>`operation search_oracle`</s> | Användning av överliggande `snake_case` Q# notation. |
+| ☒ | <s>`operation Search_Oracle`</s> | Användning av under streck till åtgärds namn överträder Q# . |
 | ☑ | `function StatePreparationOracle` | Användning av Substantiv fras föreslår att funktionen returnerar en åtgärd. |
 | ☑ | `function EqualityFact` | Clear use of Substantiv ("faktumet") för att indikera att detta är en funktion, medan adjektiv. |
 | ☒ | <s>`function GetRotationAngles`</s> | Användning av verb ("Get") föreslår att detta är en åtgärd. |
@@ -110,9 +113,9 @@ Vi rekommenderar:
 
 ### <a name="entry-points"></a>Startpunkter
 
-När du definierar en start punkt i ett Q #-program, identifierar Q #-kompilatorn [ `@EntryPoint()` attributet](xref:microsoft.quantum.core.entrypoint) och kräver att start punkterna har ett visst namn (t. ex.: `main` , `Main` eller `__main__` ).
-Det vill säga från en Q #-utvecklare är start punkter vanliga åtgärder som är kommenterade `@EntryPoint()` .
-Dessutom kan Q #-startpunkter vara ingångs punkter för ett helt program (d.v.s.: i Q # fristående körbara filer) eller kan vara ett gränssnitt mellan ett Q #-program och värd programmet för ett program (d.v.s.: när du använder Q # med python eller .NET), så att namnet "Main" kan vara missvisande när det tillämpas på en start punkt för Q #.
+När du definierar en start punkt i ett Q# program, Q# identifierar kompileraren [ `@EntryPoint()` attributet](xref:microsoft.quantum.core.entrypoint) och kräver att start punkterna har ett visst namn (t. ex.: `main` , `Main` eller `__main__` ).
+Det vill säga från en Q# utvecklares perspektiv är start punkter vanliga åtgärder som är kommenterade `@EntryPoint()` .
+Dessutom Q# kan start punkter vara ingångs punkter för ett helt program (t. ex.: i Q# fristående körbara filer) eller kan vara ett gränssnitt mellan ett Q# program och värd programmet för ett program (d.v.s.: när du använder Q# med python eller .net), så att namnet "Main" kan vara missvisande när det tillämpas på en Q# Start punkt.
 
 Vi rekommenderar att du använder namngivnings punkter för att återspegla användningen av `@EntryPoint()` attributet genom att följa de allmänna råd som anges ovan.
 
@@ -126,7 +129,7 @@ Vi rekommenderar:
 
 # <a name="examples"></a>[Exempel](#tab/examples)
 
-|   | Name | Beskrivning |
+|   | Namn | Beskrivning |
 |---|------|-------------|
 | ☑ | `@EntryPoint() operation RunSimulation` | Kommunicerar tydligt syftet med start punkten via åtgärds namn. |
 | ☒ | <s>`@EntryPoint() operation Main`</s> | Användning av `Main` är inte tydligt syftet med start punkten och är redundant med `@EntryPoint()` attribut. |
@@ -168,7 +171,7 @@ Vi rekommenderar:
 
 # <a name="examples"></a>[Exempel](#tab/examples)
 
-|   | Name | Beskrivning |
+|   | Namn | Beskrivning |
 |---|------|-------------|
 | ☑ | `X` | Välförstått kort för "tillämpa en $X $-transformering" |
 | ☑ | `CNOT` | Välförståttt snabb kort för "styrd-NOT" |
@@ -190,11 +193,11 @@ Especially in a field such as quantum computing that is rich with domain experti
 In naming code symbols, one way that this cognizance expresses itself is as an awareness of the convention from physics of adopting as the names of algorithms and operations the names of their original publishers.
 While we must maintain the history and intellectual provenance of concepts in quantum computing, demanding that all users be versed in this history to use even the most basic of functions and operations places a barrier to entry that is in most cases severe enough to even present an ethical compromise. -->
 Därför rekommenderar vi att när rimliga, vanliga substantiv som beskriver ett koncept antas i starka preferenser till rätt substantiv som beskriver ett Koncepts publicerings historik.
-Som ett särskilt exempel kallas den oavsiktligt kontrollerade VÄXLINGen och den dubblerade kontrollerade inte åtgärderna "Fredkin" och "Toffoli"-åtgärder i den akademiska dokumentationen, men de identifieras i Q # främst som `CSWAP` och `CCNOT` .
+Som ett särskilt exempel kallas den enkelt kontrollerade VÄXLINGen och den dubblerade kontrollerade inte åtgärderna för åtgärderna "Fredkin" och "Toffoli" i den akademiska dokumentationen, men identifieras i Q# huvudsak som `CSWAP` och `CCNOT` .
 I båda fallen ger kommentarer till API-dokumentation synonyma namn baserat på korrekta substantiv, tillsammans med alla lämpliga citat tecken.
 
-Den här inställningen är särskilt viktig, men det är särskilt viktigt att viss användning av rätt Substantiv alltid är nödvändig: Q # följer tradition som har angetts av många klassiska språk, till exempel, och refererar till `Bool` typer i referens till boolesk logik, som i sin tur har värdet George bool.
-Några Quantum-koncept har liknande namn på liknande sätt, inklusive den `Pauli` typ som är inbyggd på språket Q #.
+Den här inställningen är särskilt viktig, men det är särskilt viktigt att en viss användning av rätt Substantiv alltid är nödvändig – Q# efter tradition som har angetts av många klassiska språk, till exempel, och refererar till `Bool` typer i referens till boolesk logik, som i sin tur har värdet George bool.
+Några Quantum-koncept har liknande namn på liknande sätt, inklusive den `Pauli` typ som är inbyggd på Q# språket.
 Genom att minimera användningen av rätt substantiv, om sådan användning inte är nödvändig, minskar vi effekten där rätt Substantiv inte kan undvikas rimligen.
 
 # <a name="guidance"></a>[Vägledning](#tab/guidance) 
@@ -209,9 +212,9 @@ Vi rekommenderar:
 
 ### <a name="type-conversions"></a>Typ konverteringar ###
 
-Eftersom Q # är ett starkt och statiskt typ språk kan ett värde av en typ endast användas som ett värde av en annan typ med hjälp av ett explicit anrop till en typ konverterings funktion.
+Eftersom Q# är ett starkt och statiskt språk skrivet, kan ett värde av en typ endast användas som ett värde av en annan typ med hjälp av ett explicit anrop till en typ konverterings funktion.
 Detta är i motsats till språk som tillåter att värden ändrar typer implicit (t. ex.: typ befordran) eller genom databyte.
-Resultatet är att typ konverterings funktioner spelar en viktig roll i Q # biblioteks utveckling och utgör ett av de vanligaste besluten om namngivning.
+Resultatet är att typ konverterings funktioner spelar en viktig roll i Q# biblioteks utveckling och utgör ett av de vanligaste besluten om namngivning.
 Vi noterar dock att eftersom typ konverteringen alltid är _deterministisk_, kan de skrivas som funktioner och därmed omfattas av ovanstående råd.
 I synnerhet rekommenderar vi att typ konverterings funktioner aldrig ska namnges som verb (t. ex.: `ConvertToX` ) eller adverb-förpositions fraser ( `ToX` ), men ska vara namngivna som adjektiv befattnings fraser som anger käll-och mål typerna ( `XAsY` ).
 När du anger mat ris typer i typ konverterings funktions namn rekommenderar vi kort skrift `Arr` .
@@ -225,7 +228,7 @@ Vi rekommenderar:
 
 # <a name="examples"></a>[Exempel](#tab/examples)
 
-|   | Name | Beskrivning |
+|   | Namn | Beskrivning |
 |---|------|-------------|
 | ☒ | <s>`ToDouble`</s> | Förpositionen "till" resulterar i en verbfras som indikerar en åtgärd och inte en funktion. |
 | ☒ | <s>`AsDouble`</s> | Indatatypen är inte klar från funktions namnet. |
@@ -244,11 +247,11 @@ Om en åtgärd eller funktion inte är avsedd för direkt användning, utan bör
 
 Vi rekommenderar:
 
-- Om en funktion, åtgärd eller användardefinierad typ inte är en del av det offentliga API: t för ett Q #-bibliotek eller program, kontrollerar du att den har marker ATS som intern genom att placera `internal` nyckelordet före `function` , `operation` eller- `newtype` deklarationen.
+- Om en funktion, åtgärd eller användardefinierad typ inte är en del av det offentliga API: t för ett Q# bibliotek eller program, kontrollerar du att den har marker ATS som intern genom att placera `internal` nyckelordet före `function` , `operation` eller- `newtype` deklarationen.
 
 # <a name="examples"></a>[Exempel](#tab/examples)
 
-|   | Name | Beskrivning |
+|   | Namn | Beskrivning |
 |---|------|-------------|
 | ☒ | <s>`operation _ApplyDecomposedOperation`</s> | Använd inte ett under streck `_` för att ange att den här åtgärden endast är för intern användning. |
 | ☑ | `internal operation ApplyDecomposedOperation` | `internal`Nyckelordet i början visar tydligt att den här åtgärden endast är för intern användning. |
@@ -256,7 +259,7 @@ Vi rekommenderar:
 ***
 ### <a name="variants"></a>Varianter ###
 
-Även om den här begränsningen inte finns kvar i framtida versioner av Q #, är det i själva fallet att det ofta finns grupper med relaterade åtgärder eller funktioner som särskiljs genom att functors stöd för indata eller av konkreta typer av argument.
+Även om den här begränsningen inte finns kvar i framtida versioner av Q# , är det oftast så att det ofta finns grupper av relaterade åtgärder eller funktioner som särskiljs genom att functors stöd för indata eller av konkreta typer av argument.
 Dessa grupper kan särskiljas med hjälp av samma rot namn, följt av en eller två bokstäver som anger dess variant.
 
 | Huvudnamnssuffix | Innebörd |
@@ -281,7 +284,7 @@ Vi rekommenderar:
 
 ### <a name="arguments-and-variables"></a>Argument och variabler ###
 
-Ett viktigt mål för Q #-koden för en funktion eller åtgärd är att den är lätt att läsa och förstå.
+Ett nyckel mål för Q# koden för en funktion eller åtgärd är att den är lätt att läsa och förstå.
 På samma sätt bör namnen på indata-och typ argumenten kommunicera hur en funktion eller ett argument ska användas när det har angetts.
 
 
@@ -320,7 +323,7 @@ Vi rekommenderar:
 
 # <a name="examples"></a>[Exempel](#tab/examples)
 
-|   | Kodfragment | Description |
+|   | Kodfragment | Beskrivning |
 |---|---------|-------------|
 | ☑ | `newtype Oracle = (Apply : Qubit[] => Unit is Adj + Ctl)` | Namnet `Apply` är en `CamelCase` formaterad verbfras som föreslår att det namngivna objektet är en åtgärd. |
 | ☒ | <s>`newtype Oracle = (apply : Qubit[] => Unit is Adj + Ctl) `</s> | Namngivna objekt ska börja med en inledande versal bokstav. |
@@ -380,10 +383,10 @@ Vi rekommenderar:
 
 ## <a name="documentation-conventions"></a>Dokumentations konventioner ##
 
-Med Q #-språket kan du bifoga dokumentation till åtgärder, funktioner och användardefinierade typer genom att använda särskilt formaterade dokumentations kommentarer.
+Q#Språket gör det möjligt att bifoga dokumentation till åtgärder, funktioner och användardefinierade typer genom att använda särskilt formaterade dokumentations kommentarer.
 De kommentarer som anges med tredubbla snedstreck ( `///` ) är små [DocFX markdown-](https://dotnet.github.io/docfx/spec/docfx_flavored_markdown.html) dokument som kan användas för att beskriva syftet med varje åtgärd, funktion och användardefinierad typ, vilka data som förväntas, och så vidare.
 Den kompilator som medföljer Quantum Development Kit extraherar dessa kommentarer och använder dem för att hjälpa utskrivna-dokumentationen som på https://docs.microsoft.com/quantum .
-På samma sätt använder den språk server som ingår i Quantum Development Kit dessa kommentarer för att ge användarna hjälp när de hovrar över symboler i sin Q #-kod.
+På samma sätt använder den språk server som ingår i Quantum Development Kit dessa kommentarer för att ge användarna hjälp när de hovrar över symboler i Q# koden.
 Genom att använda dokumentations kommentarer kan du därför hjälpa användarna att förstå kod genom att ange en användbar referens för detaljer som inte är lätta att använda i de andra konventionerna i det här dokumentet.
 
 > [!div class="nextstepaction"]
@@ -454,8 +457,8 @@ is Adj + Ctl {
 
 Förutom föregående förslag är det bra att hjälpa till att göra kod så läslig som möjligt att använda konsekventa formateringsregler.
 Sådan formatering av regler efter art tenderar att vara något godtycklig och starkt uppdaterad till personliga smak uppgifter.
-Vi rekommenderar dock att du underhåller en konsekvent uppsättning format konventioner inom en grupp medarbetare och särskilt för stora Q #-projekt, till exempel Quantum Development Kit.
-Dessa regler kan tillämpas automatiskt med hjälp av det format verktyg som är integrerat med Q #-kompilatorn.
+Vi rekommenderar dock att du underhåller en konsekvent uppsättning format konventioner inom en grupp medarbetare och särskilt för stora Q# projekt, till exempel Quantum Development Kit.
+Dessa regler kan tillämpas automatiskt med hjälp av verktyget formatering som integreras med Q# kompileraren.
 
 # <a name="guidance"></a>[Vägledning](#tab/guidance) 
 
@@ -476,7 +479,7 @@ Vi rekommenderar:
 
 # <a name="examples"></a>[Exempel](#tab/examples)
 
-|   | Kodfragment | Description |
+|   | Kodfragment | Beskrivning |
 |---|---------|-------------|
 | ☒ | <s>`2+3`</s> | Använd blank steg runt binära operatorer. |
 | ☒ | <s>`target:Qubit`</s> | Använd blank steg runt Skriv anteckningens kolon. |

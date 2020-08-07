@@ -1,17 +1,20 @@
 ---
 title: Ogiltig qubits användnings kontroll – Quantum Development Kit
-description: 'Lär dig mer om den invaliderade qubits i Microsoft QDK, som använder Quantum trace Simulator för att kontrol lera din Q #-kod för potentiellt ogiltiga qubits.'
+description: Lär dig mer om den invaliderade qubits i Microsoft QDK, som använder Quantum trace Simulator för att kontrol lera Q# koden för potentiellt ogiltig qubits.
 author: vadym-kl
 ms.author: vadym@microsoft.com
 ms.date: 06/25/2020
 ms.topic: article
 uid: microsoft.quantum.machines.qc-trace-simulator.invalidated-qubits
-ms.openlocfilehash: fccf6d5784b587f4ad9b659e23027619acd06ffa
-ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: c451747badba03801bd4ecd419420f131ac502d6
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86871101"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87868295"
 ---
 # <a name="quantum-trace-simulator-invalidated-qubits-use-checker"></a>Quantum trace Simulator: ogiltig användnings kontroll för qubits
 
@@ -19,7 +22,7 @@ Den invaliderade qubits use-kontrollen är en del av Quantum Development Kit [Qu
 
 ## <a name="invalid-qubits"></a>Ogiltig qubits
 
-Tänk på följande i Q # Code för att illustrera de problem som upptäckts av den invaliderade qubits-användnings kontrollen:
+Tänk på följande Q# kod för att illustrera de problem som upptäckts av den invaliderade qubits-användnings kontrollen:
 
 ```qsharp
 operation UseReleasedQubit() : Unit {

@@ -1,29 +1,32 @@
 ---
-title: 'Skriv uttryck i Q #'
-description: 'Förstå hur du anger, refererar till och kombinerar konstanter, variabler, operatorer, åtgärder och funktioner som uttryck i Q #.'
+title: Uttryck iQ#
+description: Förstå hur du anger, refererar till och kombinerar konstanter, variabler, operatorer, åtgärder och funktioner som uttryck i Q# .
 author: gillenhaalb
 ms.author: a-gibec@microsoft.com
 ms.date: 03/05/2020
 ms.topic: article
 uid: microsoft.quantum.guide.expressions
-ms.openlocfilehash: 1821df6a3a51a62b44f3ccd96b127577c5db990a
-ms.sourcegitcommit: af10179284967bd7a72a52ae7e1c4da65c7d128d
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: b6cc97dfee05dc843e213e84f17043714a8a9656
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85415396"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87869621"
 ---
-# <a name="type-expressions-in-q"></a>Skriv uttryck i Q #
+# <a name="expressions-in-no-locq"></a>Uttryck iQ#
 
 ## <a name="numeric-expressions"></a>Numeriska uttryck
 
 Numeriska uttryck är uttryck av typen `Int` , `BigInt` eller `Double` .
 Det vill säga att de är antingen heltals-eller flytt ALS nummer.
 
-`Int`litteraler i Q # skrivs som en följd av siffror.
+`Int`litteraler i Q# skrivs som en sekvens med siffror.
 Hexadecimala och binära heltal stöds och skrivs med `0x` `0b` prefixet respektive.
 
-`BigInt`litteraler i Q # har ett efterföljande `l` eller `L` suffix.
+`BigInt`litteraler i Q# har ett efterföljande `l` eller `L` suffix.
 Hexadecimala Big-heltal stöds och skrivs med ett "0x"-prefix.
 Det innebär att följande är giltig användning av `BigInt` litteraler:
 
@@ -33,7 +36,7 @@ let bigHex = 0x123456789abcdef123456789abcdefL;
 let bigOne = bigZero + 1L;
 ```
 
-`Double`litteraler i Q # är flytt ALS siffror som skrivs med decimal siffror.
+`Double`litteraler i Q# är flytt ALS siffror som skrivs med decimal siffror.
 De kan skrivas med eller utan ett decimal tecken, `.` eller en exponentiell del som anges med "e" eller "e" (efter vilken endast ett möjligt negativt tecken och decimal siffror är giltiga).
 Följande är giltiga `Double` litteraler: `0.0` , `1.2e5` , `1e-5` .
 
@@ -63,14 +66,14 @@ Det vill säga att flytta ett steg till vänster eller höger är detsamma som a
 
 Heltals Division och heltals-Modulus följer samma beteende för negativa tal som C#.
 Det vill säga `a % b` alltid samma tecken som `a` och `b * (a / b) + a % b` alltid lika med `a` .
-Till exempel:
+Exempel:
 
  `A` | `B` | `A / B` | `A % B`
 ---------|----------|---------|---------
  5 | 2 | 2 | 1
- 5 | -2 | -2 | 1
- -5 | 2 | -2 | -1
- -5 | -2 | 2 | -1
+ 5 | −2 | −2 | 1
+ -5 | 2 | −2 | -1
+ -5 | −2 | 2 | -1
 
 Big Integer-och Modulus-åtgärder fungerar på samma sätt.
 
@@ -86,7 +89,7 @@ De två `Bool` literala värdena är `true` och `false` .
 Om du har två uttryck av samma primitiva typ `==` kan de och `!=` binära operatorerna användas för att skapa ett `Bool` uttryck.
 Uttrycket är sant om de två uttrycken är lika och falskt om inte.
 
-Värden för användardefinierade typer kan inte jämföras, men endast de värden som inte är figursatta kan jämföras. Du kan till exempel använda operatorn "unwrap" `!` (förklaras i detalj på [typer i Q #](xref:microsoft.quantum.guide.types#access-anonymous-items-with-the-unwrap-operator)).
+Värden för användardefinierade typer kan inte jämföras, men endast de värden som inte är figursatta kan jämföras. Du kan till exempel använda operatorn "unwrap" `!` (förklaras i detalj vid [typer i Q# ](xref:microsoft.quantum.guide.types#access-anonymous-items-with-the-unwrap-operator)).
 
 ```qsharp
 newtype WrappedInt = Int;     // Yes, this is a contrived example
@@ -100,7 +103,7 @@ Likhets jämförelse för `Qubit` värden är identitets likhet, det vill säga 
 Tillstånden för de två qubits jämförs, används, mäts eller ändras inte i jämförelsen.
 
 Jämförelse av `Double` värden kan vara missvisande på grund av avrundnings effekter.
-Exempelvis `49.0 * (1.0/49.0) != 1.0`.
+Till exempel `49.0 * (1.0/49.0) != 1.0`.
 
 Två numeriska uttryck, de binära operatorerna,, `>` `<` `>=` och `<=` kan användas för att skapa ett nytt booleskt uttryck som är sant om det första uttrycket är större än, mindre än, större än eller lika med eller mindre än eller lika med det andra uttrycket.
 
@@ -110,24 +113,24 @@ Med alla booleska uttryck kan den `not` unära operatorn användas för att skap
 
 ## <a name="string-expressions"></a>Stränguttryck
 
-Q # tillåter att strängar används i `fail` instruktionen (förklaras i [kontroll flödet](xref:microsoft.quantum.guide.controlflow#fail-statement)) och i [`Message`](xref:microsoft.quantum.intrinsic.message) funktionen standard. Det speciella beteendet för den senare beror på vilken simulator som används men skriver vanligt vis ett meddelande till värd konsolen när den anropas under ett Q #-program.
+Q#tillåter att strängar används i `fail` instruktionen (förklaras i [kontroll flödet](xref:microsoft.quantum.guide.controlflow#fail-statement)) och i [`Message`](xref:microsoft.quantum.intrinsic.message) funktionen standard. Det speciella beteendet för den senare beror på vilken simulator som används men skriver vanligt vis ett meddelande till värd konsolen när den anropas under ett Q# program.
 
-Strängar i Q # är antingen litteraler eller interpolerade strängar.
+Strängar i Q# är antingen litteraler eller interpolerade strängar.
 
 Sträng litteraler liknar enkla sträng litteraler på de flesta språk: en sekvens med Unicode-tecken som omges av dubbla citat tecken `" "` .
 I en sträng använder du omvänt snedstreck `\` för att undvika ett dubbelt citat tecken ( `\"` ) eller infoga en ny rad ( `\n` ), en vagn retur ( `\r` ) eller en flik ( `\t` ).
-Till exempel:
+Exempel:
 
 ```qsharp
 "\"Hello world!\", she said.\n"
 ```
 ### <a name="interpolated-strings"></a>Interpolerade strängar
 
-Q #-syntaxen för String-interpolation är en delmängd av C#-syntaxen. Följande är viktiga punkter som de gäller för Q #:
+Q#Syntaxen för String-interpolation är en delmängd av C#-syntaxen. Följande är viktiga punkter som de gäller för Q# :
 
 * För att identifiera en tecken sträng som en interpolerad sträng, lägga den med `$` symbolen. Det får inte finnas något tomt utrymme mellan `$` och `"` som startar en tecken sträng.
 
-* Följande är ett grundläggande exempel [`Message`](xref:microsoft.quantum.intrinsic.message) som använder funktionen för att skriva resultatet av en mätning till-konsolen, tillsammans med andra Q #-uttryck.
+* Följande är ett grundläggande exempel [`Message`](xref:microsoft.quantum.intrinsic.message) som använder funktionen för att skriva resultatet av en mätning till-konsolen, tillsammans med andra Q# uttryck.
 
 ```qsharp
     let num = 8;       // some Q# expression
@@ -135,9 +138,9 @@ Q #-syntaxen för String-interpolation är en delmängd av C#-syntaxen. Följand
     Message($"Number: {num}, Result: {res}");
 ```
 
-* Alla giltiga Q #-uttryck kan visas i en interpolerad sträng.
+* Ett giltigt Q# uttryck kan visas i en interpolerad sträng.
 
-* Uttryck i en interpolerad sträng följer Q # syntax, inte C#-syntax. Den mest viktiga skillnaden är att Q # inte stöder orda Grant-interpolerade strängar (multi-line).
+* Uttryck i en interpolerad sträng följer Q# syntax, inte C#-syntax. Den viktigaste skillnaden är att Q# inte stöder orda Grant-interpolerade strängar (multi-line).
 
 Mer information om C#-syntaxen finns i [*interpolerade strängar*](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/interpolated-strings).
 
@@ -197,7 +200,7 @@ Förutom litteraler är de enda uttrycken av en användardefinierad typ symboler
 
 ## <a name="unwrap-expressions"></a>Packa upp uttryck
 
-I Q # är unwrap-operatorn ett avslutande utrops tecken `!` .
+I Q# är unwrap-operatorn ett avslutande utrops tecken `!` .
 Om är till exempel `IntPair` en användardefinierad typ med den underliggande typen `(Int, Int)` och `s` är en variabel med värde `IntPair(2, 3)` , `s!` är det `(2, 3)` .
 
 För användardefinierade typer som definieras i termer av andra användardefinierade typer, kan du upprepa operatorn unwrap. Anger till exempel `s!!` dubblerat-värde för `s` .
@@ -208,7 +211,7 @@ Om `WrappedPair` är en användardefinierad typ med underliggande typ `IntPair` 
 
 Prioriteten hos `!` operatorn har en effekt som kanske inte är uppenbar.
 Om en funktion eller åtgärd returnerar ett värde som sedan blir omsluten, måste funktionen eller åtgärds anropet omges av parenteser, så att argumentet tupel binder till anropet i stället för att avbrytas.
-Till exempel:
+Exempel:
 
 ```qsharp
 let f = (Foo(arg))!;    // Calls Foo(arg), then unwraps the result
@@ -240,7 +243,7 @@ Matriser som innehåller qubits eller callables måste initieras med icke-standa
 
 Standardvärdena för varje typ är:
 
-Typ | Standard
+Typ | Standardvärde
 ---------|----------
  `Int` | `0`
  `BigInt` | `0L`
@@ -270,7 +273,7 @@ Om till exempel `a` `b` båda är matriser av typen `Int` uttrycks ett element f
 (a + b)[13]
 ```
 
-Alla matriser i Q # är noll-baserade.
+Alla matriser i Q# är noll-baserade.
 Det vill säga det första elementet i en matris `a` är alltid `a[0]` .
 
 
@@ -318,7 +321,7 @@ let slice10 = arr[...];       // slice10 is [1,2,3,4,5,6];
 
 ### <a name="copy-and-update-expressions"></a>Kopiera och uppdatera uttryck
 
-Eftersom alla Q #-typer är värde typer (med qubits som tar en lite speciell roll) skapas en "kopia" när ett värde är kopplat till en symbol eller när en symbol har bundits. Detta är att säga att Q # är detsamma som om en kopia skapades med en tilldelnings operator. 
+Eftersom alla Q# typer är värde typer (med qubits som tar en lite speciell roll) skapas en "kopia" av en "kopia" när ett värde är kopplat till en symbol eller när en symbol har bundits. Detta är att säga att beteendet i Q# är detsamma som om en kopia skapades med en tilldelnings operator. 
 
 I praktiken återskapas bara relevanta delar vid behov. Detta påverkar hur du kopierar matriser eftersom det inte går att uppdatera mat ris objekt. Om du vill ändra en befintlig matris måste du använda en *kopierings-och-uppdaterings* funktion.
 
@@ -381,7 +384,7 @@ Men även om åtgärderna `(Qubit[] => Unit is Adj)` och `(Qubit[] => Unit is Ct
 
 Skulle till exempel `[[Op1], [Op2]]` kunna generera ett fel eftersom det försöker skapa en matris med de två inkompatibla mat ris typerna `(Qubit[] => Unit is Adj)[]` och `(Qubit[] => Unit is Ctl)[]` .
 
-Mer information om callables finns i [anrops bara uttryck](#callable-expressions) på den här sidan eller [åtgärder och funktioner i Q #](xref:microsoft.quantum.guide.operationsfunctions).
+Mer information om callables finns i [anrops bara uttryck](#callable-expressions) på den här sidan eller [åtgärder och funktioner Q# i ](xref:microsoft.quantum.guide.operationsfunctions).
 
 ## <a name="conditional-expressions"></a>Villkors uttryck
 
@@ -446,7 +449,7 @@ För att anropa resultatet av anrop `Builder` från föregående stycke är där
 ```
 
 När du anropar en [typ-parameter](xref:microsoft.quantum.guide.operationsfunctions#generic-type-parameterized-callables) som kan anropas kan du ange de faktiska typ parametrarna inom vinkelparenteser `< >` efter det anrops bara uttrycket.
-Den här åtgärden är vanligt vis onödig eftersom Q #-kompilatorn härleder de faktiska typerna.
+Den här åtgärden är vanligt vis onödigt eftersom Q# kompilatorn härleder de faktiska typerna.
 *Det krävs* dock för [partiella program](xref:microsoft.quantum.guide.operationsfunctions#partial-application) om ett argument av typen parameter lämnas ospecificerade.
 Det är också användbart när du skickar åtgärder med olika Functor-funktioner som kan anropas.
 
@@ -469,9 +472,9 @@ Typ specifikationen krävs eftersom `Op3` och `Op1` har olika typer, så att kom
 
 * Parenteser för åtgärds-och funktions anrop binder också före en operator, men efter mat ris indexering och functors.
 
-Q #-operatorer i prioritetsordning, från högsta till lägsta:
+Q#operatorer i prioritetsordning, från högsta till lägsta:
 
-Operator | Ariteten | Description | Operands typer
+Operator | Ariteten | Beskrivning | Operands typer
 ---------|----------|---------|---------------
  avslutande`!` | Enställig | Packa upp | Valfri användardefinierad typ
  `-`, `~~~`, `not` | Enställig | Numeriskt negativ, bitvis komplement, logisk negation | `Int`, `BigInt` eller `Double` för `-` , `Int` eller `BigInt` `~~~` för `Bool``not`
@@ -492,4 +495,4 @@ Operator | Ariteten | Description | Operands typer
 
 ## <a name="next-steps"></a>Nästa steg
 
-Nu när du kan arbeta med uttryck i Q # kan du gå vidare till [åtgärder och funktioner i q #](xref:microsoft.quantum.guide.operationsfunctions) för att lära dig hur du definierar och anropar-åtgärder och-funktioner.
+Nu när du kan arbeta med uttryck i Q# , kan du gå vidare till [åtgärder och Q# funktioner i](xref:microsoft.quantum.guide.operationsfunctions) för att lära dig hur du definierar och anropar-åtgärder och-funktioner.

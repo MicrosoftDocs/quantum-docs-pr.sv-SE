@@ -1,23 +1,26 @@
 ---
-title: 'Quantum-algoritmer i Q #'
+title: Quantum-algoritmer iQ#
 description: Lär dig mer om grundläggande Quantum Computing-algoritmer, inklusive amplitud-förstärkning, Fourier Transform, Draper och Beauregard Adders och fas uppskattning.
 author: QuantumWriter
 ms.author: martinro@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
 uid: microsoft.quantum.libraries.standard.algorithms
-ms.openlocfilehash: 7f4916353c53d6459356243098281ccb16b17278
-ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 0b5972480061c460345057285bbfe53305acc122
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86871322"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87868822"
 ---
 # <a name="quantum-algorithms"></a>Quantum-algoritmer #
 
 ## <a name="amplitude-amplification"></a>Amplitudförstärkning ##
 
-*Amplitud förstärkning* är ett av de grundläggande verktygen i Quantum Computing. Det är den grundläggande idén som ligger under Grover sökning, amplitud uppskattning och många Quantum Machine Learning-algoritmer.  Det finns många varianter och i Q # tillhandahåller vi en allmän version som baseras på Oblivious amplitud-förstärkning med partiella reflektioner för att tillåta det största programmet.
+*Amplitud förstärkning* är ett av de grundläggande verktygen i Quantum Computing. Det är den grundläggande idén som ligger under Grover sökning, amplitud uppskattning och många Quantum Machine Learning-algoritmer.  Det finns många varianter, och i Q# vi erbjuder vi en allmän version som baseras på Oblivious amplitud-förstärkning med partiella reflektioner för att tillåta det bredaste programmet.
 
 Den centrala idén bakom amplitud förstärkning är att utvidga sannolikheten för att ett önskat resultat inträffar genom att utföra en följd av reflektioner.  Dessa reflektioner roterar det initiala läget närmare ett önskat mål tillstånd, ofta kallat ett märkt tillstånd.  Om sannolikheten för att mäta det initiala läget ska vara i ett markerat tillstånd är $ \sin ^ 2 (\theta) $ sedan efter att ha använt amplitud-förstärkning $m $ gånger sannolikheten att lyckas blir $ \sin ^ 2 ((2 m + 1) \theta) $.  Det innebär att om $ \theta = \ Pi/[2 (2n + 1)] $ för ett värde av $n $, kan amplitud-förstärkningen förbättra sannolikheten att lyckas till $100 \\ % $ efter $n $-iterationer av amplitud förstärkning.  Sedan $ \theta = \sin ^ {-1} (\sqrt{\Pr (lyckades)}) $ betyder det att antalet iterationer som krävs för att hämta en lyckad deterministiskt är på rätt sätt lägre än det förväntade antalet som krävs för att hitta ett markerat tillstånd som inte är deterministiskt med slumpmässig provtagning.
 
@@ -27,7 +30,7 @@ Logiken bakom amplitud-förstärkningen följer direkt från Eigen-dekomposition
 
 En annan användbar egenskap som kommer från detta är att eigenvalue $ \theta $ är direkt relaterad till sannolikheten att det ursprungliga läget skulle markeras (i det fall där $P _0 $ är en projektor på endast det ursprungliga läget).  Eftersom eigenphases i $Q $ är $2 \ theta = 2 \ sin ^ {-1} (\sqrt{\Pr (lyckades)}) $, följer det sedan på att om vi tillämpar fas uppskattning i $Q $ kan vi lära dig sannolikheten för en enhetlig Quantum-procedur.  Detta är användbart eftersom det kräver kvadratiskt färre program i Quantum-proceduren för att få en bra sannolikhet än vad som annars skulle behövas.
 
-Q # introducerar amplitud-förstärkning som en specialisering av Oblivious amplitud-förstärkning.  Oblivious amplitud-förstärkningen använder denna moniker eftersom projektorn på den ursprungliga eigenspace inte behöver vara en projektor i det ursprungliga läget.  I detta mening är protokollet Oblivious till det ursprungliga läget.  Nyckel tillämpningen av Oblivious amplitud-förstärkning är i vissa *linjära kombinationer av enhetliga* Hamiltonian-simulerings metoder, där start tillstånd är okänt men blir Entangled med en Ancilla-registrering i simulerings protokollet.  Om det här Ancilla-registret skulle mätas som ett fast värde, t. ex. $0 $, tillämpar dessa simulerings metoder den önskade enhetliga omvandlingen för återstående qubits (kallas system registret).  Alla andra mått kommer att leda till ett problem.  Oblivious amplitud-förstärkning gör att det går att öka sannolikheten för att denna mätning ska höjas till $100 \\ % $ med ovanstående orsak.  Dessutom motsvarar den vanliga amplitud förstärkningen det fall där system registret är tomt.  Det här är anledningen till att Q # använder Oblivious amplitud-förstärkning som dess grundläggande amplituds förstärknings subrutin.
+Q#introducerar amplitud-förstärkning som en specialisering av Oblivious amplitud-förstärkning.  Oblivious amplitud-förstärkningen använder denna moniker eftersom projektorn på den ursprungliga eigenspace inte behöver vara en projektor i det ursprungliga läget.  I detta mening är protokollet Oblivious till det ursprungliga läget.  Nyckel tillämpningen av Oblivious amplitud-förstärkning är i vissa *linjära kombinationer av enhetliga* Hamiltonian-simulerings metoder, där start tillstånd är okänt men blir Entangled med en Ancilla-registrering i simulerings protokollet.  Om det här Ancilla-registret skulle mätas som ett fast värde, t. ex. $0 $, tillämpar dessa simulerings metoder den önskade enhetliga omvandlingen för återstående qubits (kallas system registret).  Alla andra mått kommer att leda till ett problem.  Oblivious amplitud-förstärkning gör att det går att öka sannolikheten för att denna mätning ska höjas till $100 \\ % $ med ovanstående orsak.  Dessutom motsvarar den vanliga amplitud förstärkningen det fall där system registret är tomt.  Detta är varför Q# använder Oblivious amplitud-förstärkning som dess grundläggande amplitud förstärknings subrutin.
 
 Den allmänna rutinen ( `AmpAmpObliviousByReflectionPhases` ) har två register som vi kallar `ancillaRegister` och `systemRegister` . Den accepterar också två Oracle-uppgifter för nödvändiga reflektioner. De `ReflectionOracle` fungerar bara på de `ancillaRegister` åtgärder som utförs `ObliviousOracle` gemensamt i båda registren. Indatamängden till `ancillaRegister` måste initieras till en-1-eigenstate av den första reflektions operatorn $ \boldone-2P_1 $.
 
@@ -116,4 +119,4 @@ Om du fortsätter på det här sättet kan vi hämta ett register över formatet
 Om vi antar att $ \phi = 2 \pi p/2 ^ k $ för ett heltal $p $, känner vi igen detta som $ \ket{\psi} = \operatorname{QFT} \ket{p_0 p_1 \dots p_n} $, där $p _j $ är $j ^ {\textrm{th}} $ bit $2 \pi $.
 Genom att använda det angränsande av Quantum Fourier-transformeringen får vi därför en binär representation av fasen som är kodad som ett Quantum-tillstånd.
 
-I Q # implementeras detta av <xref:microsoft.quantum.characterization.quantumphaseestimation> åtgärden, som använder ett <xref:microsoft.quantum.oracles.discreteoracle> implementerings program av $U ^ m $ som en funktion av positiva heltal $m $.
+I Q# implementeras detta av <xref:microsoft.quantum.characterization.quantumphaseestimation> åtgärden, som använder ett <xref:microsoft.quantum.oracles.discreteoracle> implementerings program av $U ^ m $ som en funktion av positiva heltal $m $.

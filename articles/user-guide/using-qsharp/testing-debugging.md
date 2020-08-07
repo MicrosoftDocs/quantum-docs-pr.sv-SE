@@ -6,30 +6,33 @@ ms.author: mamykhai@microsoft.com
 ms.date: 06/01/2020
 ms.topic: article
 uid: microsoft.quantum.guide.testingdebugging
-ms.openlocfilehash: db6e49e94e5ceb3b1b0b2d6ab57391618084072b
-ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 2b5276da594ba263177d435c1153f6d96e29c4e8
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86870982"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87867921"
 ---
 # <a name="testing-and-debugging"></a>Testa och felsöka
 
 Precis som med klassisk programmering är det viktigt att kunna kontrol lera att Quantum-program fungerar som avsett och för att kunna diagnostisera felaktig funktion.
-I det här avsnittet tar vi upp de verktyg som erbjuds av Q # för testning och fel sökning av Quantum-program.
+I det här avsnittet tar vi upp de verktyg som erbjuds av Q# för att testa och felsöka Quantum-program.
 
 ## <a name="unit-tests"></a>Enhets tester
 
 En vanlig metod för att testa klassiska program är att skriva små program som heter *enhets test*, som kör kod i ett bibliotek och jämför dess utdata med förväntade utdata.
 Du kan till exempel se till att `Square(2)` returer `4` sedan du vet att du vet *en föregående* , $2 ^ 2 = $4.
 
-Q # stöder skapande av enhets test för Quantum-program och som kan köras som tester i [xUnit](https://xunit.github.io/) unit test Framework.
+Q#har stöd för att skapa enhets tester för Quantum-program och som kan köras som tester i [xUnit](https://xunit.github.io/) unit test Framework.
 
 ### <a name="creating-a-test-project"></a>Skapa ett test projekt
 
 #### <a name="visual-studio-2019"></a>[Visual Studio 2019](#tab/tabid-vs2019)
 
-Öppna Visual Studio 2019. Gå till **Arkiv** -menyn och välj **nytt > projekt.**... I det övre högra hörnet söker du efter `Q#` och väljer sedan projekt mal len för **Q #-test** .
+Öppna Visual Studio 2019. Gå till **Arkiv** -menyn och välj **nytt > projekt.**... I det övre högra hörnet söker du efter `Q#` och väljer mallen ** Q# testa projekt** .
 
 #### <a name="command-line--visual-studio-code"></a>[Kommandorad/Visual Studio Code](#tab/tabid-vscode)
 
@@ -42,7 +45,7 @@ $ code . # To open in Visual Studio Code
 
 ****
 
-Det nya projektet har en enda fil `Tests.qs` som ger en praktisk plats för att definiera nya Q # Unit-tester.
+Det nya projektet har en enda fil `Tests.qs` som ger en praktisk plats för att definiera nya Q# enhets test.
 Den här filen innehåller en inlednings prov enhet `AllocateQubit` som kontrollerar att en nyligen allokerad qubit är i läget $ \ket {0} $ och skriver ut ett meddelande:
 
 ```qsharp
@@ -57,7 +60,7 @@ Den här filen innehåller en inlednings prov enhet `AllocateQubit` som kontroll
     }
 ```
 
-En Q #-åtgärd eller-funktion som tar ett argument av typen `Unit` och returer `Unit` kan markeras som ett enhets test via `@Test("...")` attributet. I föregående exempel är argumentet till attributet, `"QuantumSimulator"` , anger målet som testet körs på. Ett enda test kan köras på flera mål. Du kan till exempel lägga till ett attribut `@Test("ResourcesEstimator")` före `AllocateQubit` . 
+Varje Q# åtgärd eller funktion som tar ett argument av typen `Unit` och returer `Unit` kan markeras som ett enhets test via `@Test("...")` attributet. I föregående exempel är argumentet till attributet, `"QuantumSimulator"` , anger målet som testet körs på. Ett enda test kan köras på flera mål. Du kan till exempel lägga till ett attribut `@Test("ResourcesEstimator")` före `AllocateQubit` . 
 ```qsharp
     @Test("QuantumSimulator")
     @Test("ResourcesEstimator")
@@ -66,9 +69,9 @@ En Q #-åtgärd eller-funktion som tar ett argument av typen `Unit` och returer 
 ```
 Spara filen och kör alla tester. Det bör nu finnas två enhets test, en där `AllocateQubit` körs på `QuantumSimulator` och en där den körs i `ResourcesEstimator` . 
 
-I Q #-kompilatorn identifieras de inbyggda målen `"QuantumSimulator"` , `"ToffoliSimulator"` och `"ResourcesEstimator"` som giltiga körnings mål för enhets tester. Det är också möjligt att ange ett fullständigt kvalificerat namn för att definiera ett anpassat körnings mål. 
+Q#Kompilatorn känner igen de inbyggda målen `"QuantumSimulator"` , `"ToffoliSimulator"` och `"ResourcesEstimator"` som giltiga körnings mål för enhets tester. Det är också möjligt att ange ett fullständigt kvalificerat namn för att definiera ett anpassat körnings mål. 
 
-### <a name="running-q-unit-tests"></a>Köra Q # enhets test
+### <a name="running-no-locq-unit-tests"></a>Köra Q# enhets tester
 
 #### <a name="visual-studio-2019"></a>[Visual Studio 2019](#tab/tabid-vs2019)
 
@@ -137,9 +140,9 @@ Vid misslyckade tester skrivs utdata också ut till-konsolen för att hjälpa ti
 
 ## <a name="facts-and-assertions"></a>Fakta och intyg
 
-Eftersom funktioner i Q # inte har några _logiska_ sido effekter, kan du aldrig Observera, från ett Q #-program, vilken annan typ av effekt som helst från att köra en funktion vars Utdatatyp är den tomma tuppeln `()` .
-Det innebär att en måldator kan välja att inte köra någon funktion som returnerar `()` med garantin att denna utelämnande inte ändrar beteendet för någon av följande Q #-koder.
-Detta beteende gör att funktioner returnerar `()` (till exempel `Unit` ) ett användbart verktyg för att bädda in kontroller och fel söknings logik i Q #-program. 
+Eftersom funktioner i Q# inte har några _logiska_ sid effekter kan du aldrig se, från ett Q# program, andra typer av effekter från att köra en funktion vars Utdatatyp är den tomma tuppeln `()` .
+Det vill säga att mål datorn kan välja att inte köra någon funktion som returnerar `()` med garantin att detta utelämnande inte ändrar beteendet för någon av följande Q# koder.
+Detta beteende gör att funktioner returnerar `()` (till exempel `Unit` ) ett användbart verktyg för att bädda in kontroller och fel söknings logik i Q# program. 
 
 Vi ska tänka på ett enkelt exempel:
 
@@ -153,8 +156,8 @@ function PositivityFact(value : Double) : Unit
 }
 ```
 
-Här anger nyckelordet `fail` att beräkningen inte ska fortsätta och genererar ett undantag på mål datorn som kör Q #-programmet.
-Efter definition kan ett problem av den här typen inte observeras inifrån Q #, eftersom mål datorn inte längre kör Q #-kod efter att ha nått en `fail` instruktion.
+Här anger nyckelordet `fail` att beräkningen inte ska fortsätta och genererar ett undantag på mål datorn som kör Q# programmet.
+Efter definition kan ett problem av den här typen inte observeras inifrån Q# , eftersom mål datorn inte längre kör Q# koden efter att ha nått en `fail` instruktion.
 Om vi fortsätter att gå förbi ett anrop till `PositivityFact` kan vi därför vara säker på att inaktuella inaktuella inkommer till positiv.
 
 Observera att vi kan implementera samma beteende som att `PositivityFact` använda [`Fact`](xref:microsoft.quantum.diagnostics.fact) funktionen från <xref:microsoft.quantum.diagnostics> namn området:
@@ -354,7 +357,7 @@ I allmänhet är statusen för ett register som är Entangled med ett annat regi
 Qubits provided (0;) are entangled with some other qubit.
 ```
 
-I följande exempel visas hur du kan använda både <xref:microsoft.quantum.diagnostics.dumpregister> och <xref:microsoft.quantum.diagnostics.dumpmachine> i din Q #-kod:
+I följande exempel visas hur du kan använda både <xref:microsoft.quantum.diagnostics.dumpregister> och <xref:microsoft.quantum.diagnostics.dumpmachine> i din Q# kod:
 
 ```qsharp
 namespace app
@@ -381,6 +384,6 @@ namespace app
 
 ## <a name="debugging"></a>Felsökning
 
-I början av `Assert` och `Dump` Functions och Operations har Q # stöd för en delmängd vanliga fel söknings funktioner i Visual Studio: att [ställa in linje Bryt punkter](https://docs.microsoft.com/visualstudio/debugger/using-breakpoints), [stega igenom kod med hjälp av F10](https://docs.microsoft.com/visualstudio/debugger/navigating-through-code-with-the-debugger)och [kontrol lera värden för klassiska variabler](https://docs.microsoft.com/visualstudio/debugger/autos-and-locals-windows) är alla möjliga vid kod körning i simulatorn.
+Utöver funktionerna och `Assert` `Dump` fungerar har stöd för Q# en delmängd av standard funktioner för Visual Studio-fel sökning: [ställa in rad Bryt punkter](https://docs.microsoft.com/visualstudio/debugger/using-breakpoints), [stega igenom kod med hjälp av F10](https://docs.microsoft.com/visualstudio/debugger/navigating-through-code-with-the-debugger)och [kontrol lera att värden för klassiska variabler](https://docs.microsoft.com/visualstudio/debugger/autos-and-locals-windows) är möjliga vid kod körning i simulatorn.
 
 Fel sökning i Visual Studio Code utnyttjar de fel söknings funktioner som anges i C# för Visual Studio Code-tillägg som drivs av OmniSharp och som kräver installation av den [senaste versionen](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp). 

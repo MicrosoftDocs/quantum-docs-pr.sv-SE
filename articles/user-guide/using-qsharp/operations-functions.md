@@ -1,28 +1,31 @@
 ---
-title: 'Åtgärder och funktioner i Q #'
+title: Åtgärder och funktioner iQ#
 description: Så här definierar och anropar du åtgärder och funktioner, och de kontrollerade och angränsande drifts specialiseringarna.
 author: gillenhaalb
 ms.author: a-gibec@microsoft.com
 ms.date: 03/05/2020
 ms.topic: article
 uid: microsoft.quantum.guide.operationsfunctions
-ms.openlocfilehash: 08eaf150a38afd789f8a23f567ff111d002bac07
-ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 76437c83df894fa86409e680f961d97e267c6869
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85884207"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87867887"
 ---
-# <a name="operations-and-functions-in-q"></a>Åtgärder och funktioner i Q #
+# <a name="operations-and-functions-in-no-locq"></a>Åtgärder och funktioner iQ#
 
 ## <a name="defining-new-operations"></a>Definiera nya åtgärder
 
-Åtgärder är kärnan i Q #.
-När de har deklarerats kan de antingen anropas från klassiska .NET-program, till exempel med hjälp av en simulator eller av andra åtgärder inom Q #.
-Varje åtgärd som definierats i Q # kan anropa valfritt antal andra åtgärder, inklusive inbyggda, inbyggda åtgärder som definieras av språket. Det specifika sätt i vilket Q # definierar dessa inre åtgärder beror på mål datorn.
+Åtgärder är kärnan i Q# .
+När de har deklarerats kan de antingen anropas från klassiska .NET-program, till exempel med hjälp av en simulator eller av andra åtgärder i Q# .
+Varje åtgärd som definierats i Q# kan anropa valfritt antal andra åtgärder, inklusive de inbyggda inbyggda operationerna som definieras av språket. Det specifika sätt som Q# definierar dessa inre åtgärder beror på mål datorn.
 När de kompileras visas varje åtgärd som en .NET-klass typ som kan tillhandahållas mål datorer.
 
-Varje Q #-källfil kan definiera valfritt antal åtgärder.
+Varje Q# källfil kan definiera ett valfritt antal åtgärder.
 Åtgärds namn måste vara unika inom ett namn område och kan inte stå i konflikt med typ-eller funktions namn.
 
 En åtgärds deklaration består av nyckelordet `operation` , följt av symbolen som är åtgärdens namn, en typ av identifierare som definierar argumenten för åtgärden, ett kolon `:` , en typ anteckning som beskriver åtgärdens resultat typ, eventuellt en anteckning med åtgärds egenskaper, en öppen klammerparentes och sedan texten i åtgärds deklarationen som omges av klammerparenteser `{ }` .
@@ -61,16 +64,16 @@ operation DecodeSuperdense(here : Qubit, there : Qubit) : (Result, Result) {
 ```
 
 > [!NOTE]
-> Varje åtgärd i Q # tar exakt en indata och returnerar exakt en utmatning.
+> Varje åtgärd i Q# tar exakt en indata och returnerar exakt en utdata.
 > Flera indata och utdata representeras med hjälp av *tupler*, som samlar in flera värden i ett enda värde.
-> I detta hänseende är Q # ett "tupel-in-tupel"-språk.
+> I detta hänseende Q# är ett "tupel-in-tupel"-språk.
 > Efter det här konceptet måste en uppsättning tomma parenteser `()` läsas som "Empty"-tupel, som har typen `Unit` .
 
 ## <a name="controlled-and-adjoint-operations"></a>Kontrollerade och närliggande aktiviteter
 
-Om en åtgärd implementerar en enhetlig omvandling, vilket är fallet för många åtgärder i Q #, är det möjligt att definiera hur åtgärden fungerar när *adjointed* eller *styrs*. En *angränsande* specialisering av en åtgärd anger hur "invertering" av åtgärden agerar, medan en *kontrollerad* specialisering anger hur en åtgärd agerar när dess program villkoras i tillståndet för en viss Quantum-registrering.
+Om en åtgärd implementerar en enhetlig omvandling, vilket är fallet för många åtgärder i Q# , är det möjligt att definiera hur åtgärden fungerar när *adjointed* eller *styrs*. En *angränsande* specialisering av en åtgärd anger hur "invertering" av åtgärden agerar, medan en *kontrollerad* specialisering anger hur en åtgärd agerar när dess program villkoras i tillståndet för en viss Quantum-registrering.
 
-Angränsande av Quantum-åtgärder är avgörande för många aspekter av Quantum Computing. Ett exempel på en sådan situation som diskuteras tillsammans med en användbar Q # programmerings teknik finns i [Conjugations](#conjugations) i den här artikeln. 
+Angränsande av Quantum-åtgärder är avgörande för många aspekter av Quantum Computing. Ett exempel på en sådan situation som diskuteras tillsammans med en användbar Q# programmerings teknik finns i [Conjugations](#conjugations) i den här artikeln. 
 
 Den kontrollerade versionen av en åtgärd är en ny åtgärd som effektivt tillämpar bas åtgärden endast om alla qubits för kontrollen är i ett visst tillstånd.
 Om kontrollens qubits är i superposition tillämpas bas åtgärden på samma sätt som den aktuella delen av superpositionen.
@@ -83,15 +86,15 @@ Naturligt, en *kontrollerad angränsande* specialisering kan också finnas, och 
 > Genom att använda en åtgärd och sedan dess angränsande status till ett tillstånd blir det oförändrat, vilket visas i det faktum att $UU ^ \dagger = U ^ \dagger U = \id $, identitets mat ris.
 > Den enhetliga representationen av en kontrollerad åtgärd är något mer nyanserade, men du hittar mer information om [Quantum Computing-koncept: flera qubits](xref:microsoft.quantum.concepts.multiple-qubits).
 
-I följande avsnitt beskrivs hur du anropar dessa olika specialiseringar i din Q #-kod och hur du definierar åtgärder för att stödja dem.
+I följande avsnitt beskrivs hur du anropar dessa olika specialiseringar i din Q# kod och hur du definierar åtgärder för att stödja dem.
 
 ### <a name="calling-operation-specializations"></a>Anropar åtgärds-specialiseringar
 
-En *Functor* i Q # är en fabrik som definierar en ny åtgärd från en annan åtgärd.
-De två standard functors i Q # är `Adjoint` och `Controlled` .
+En *Functor* i Q# är en fabrik som definierar en ny åtgärd från en annan åtgärd.
+De två standard functors i Q# är `Adjoint` och `Controlled` .
 
 Functors har åtkomst till implementeringen av bas åtgärden när du definierar implementeringen av den nya åtgärden.
-Det innebär att functors kan utföra mer komplexa funktioner än vanliga funktioner på högre nivå. Functors har ingen representation i Q #-typ systemet. Det är därför inte möjligt att binda dem till en variabel eller skicka dem som argument. 
+Det innebär att functors kan utföra mer komplexa funktioner än vanliga funktioner på högre nivå. Functors har ingen representation i Q# typ systemet. Det är därför inte möjligt att binda dem till en variabel eller skicka dem som argument. 
 
 Använd en Functor genom att använda den för en åtgärd som returnerar en ny åtgärd.
 Om du till exempel använder `Adjoint` Functor till `Y` åtgärden returneras den nya åtgärden `Adjoint Y` . Du kan anropa den nya åtgärden som vilken annan åtgärd som helst.
@@ -109,7 +112,7 @@ I synnerhet stöder den nya åtgärden även `Adjoint` och stöder `Controlled` 
 På samma sätt `Controlled X(controls, target)` tillämpar `Controlled` Functor på `X` åtgärden för att generera en ny åtgärd och tillämpar den nya åtgärden i `controls` och `target` .
 
 > [!NOTE]
-> I Q # tar kontrollerade versioner alltid en matris med kontroll-qubits, och kontrollen är alltid baserad på alla kontroll qubits som är i beräknings `PauliZ` läge () `One` , $ \ket {1} $.
+> I Q# tar kontrollerade versioner alltid en matris med kontroll-qubits, och kontrollen är alltid baserad på alla kontroll qubits som är i beräknings `PauliZ` läge () `One` , $ \ket {1} $.
 > Kontroll som bygger på andra tillstånd uppnås genom att tillämpa lämplig enhetlig drift till kontrollen qubits före den kontrollerade åtgärden, och sedan använda inversen av den enhetliga åtgärden efter den kontrollerade åtgärden.
 > Om du till exempel använder en `X` åtgärd i en kontroll qubit före och efter en kontrollerad åtgärd, så gör åtgärden att kontrol lera `Zero` status ($ \ket {0} $) för den qubit, att tillämpa en `H` åtgärd före och efter kontroller i `PauliX` `One` tillstånd, d.v.s. eigenvalue för Pauli X, $ \ket {-} \mathrel{: =} (\ket {0} -\ket {1} )/\sqrt {2} $ i stället för `PauliZ` `One` tillstånd.
 
@@ -140,7 +143,7 @@ I den första åtgärds deklarationen i föregående exempel, åtgärderna `BitF
 Eftersom `DecodeSuperdense` omfattar mätningar är det inte en enhetlig åtgärd och därför kan ingen kontrollerad icke-angränsande specialisering finnas (återkalla det relaterade kravet att en sådan åtgärd returnerar `Unit` ).
 Eftersom `BitFlip` du bara utför den enhetliga <xref:microsoft.quantum.intrinsic.x> åtgärden kan du dock ha definierat den med båda specialiseringarna.
 
-I det här avsnittet beskrivs hur du kan ta med specialiseringar i dina deklarationer för Q #-åtgärder, vilket innebär att de kan anropas tillsammans med `Adjoint` eller `Controlled` functors.
+I det här avsnittet beskrivs hur du kan ta med specialiseringar i dina Q# Åtgärds deklarationer, vilket ger dem möjlighet att anropas tillsammans med `Adjoint` eller `Controlled` functors.
 För ytterligare information om några av de situationer där det är antingen giltigt eller inte giltigt för att deklarera vissa specialiseringar, se [omständigheter för giltiga definiering av specialiseringar](#circumstances-for-validly-defining-specializations) i den här artikeln.
 
 Åtgärds egenskaper definierar vilka typer av functors som du kan tillämpa på den deklarerade åtgärden och vilken inverkan de har. Förekomsten av dessa specialiseringar kan deklareras som en del av åtgärdens signatur, särskilt genom en anteckning med drift egenskaper: `is Adj` , `is Ctl` eller `is Adj + Ctl` .
@@ -148,7 +151,7 @@ Den faktiska implementeringen av varje specialisering kan antingen *implicit* el
 
 ### <a name="implicitly-specifying-implementations"></a>Ange implementeringar implicit
 
-I det här fallet består bröd texten i åtgärds deklarationen enbart av standard implementeringen. Ett exempel:
+I det här fallet består bröd texten i åtgärds deklarationen enbart av standard implementeringen. Exempel:
 
 ```qsharp
 operation PrepareEntangledPair(here : Qubit, there : Qubit) : Unit 
@@ -189,7 +192,7 @@ Följande är ett fullständigt utbud av möjligheter, med några exempel på ex
 
 #### <a name="explicit-specialization-declarations"></a>Explicita specialiserings deklarationer
 
-Q #-åtgärder kan innehålla följande uttryckliga specialiserings deklarationer:
+Q#åtgärder kan innehålla följande uttryckliga specialiserings deklarationer:
 
 - `body`Specialiseringen anger implementeringen av åtgärden utan att functors tillämpas.
 - `adjoint`Specialiseringen anger implementeringen av åtgärden med `Adjoint` Functor tillämpad.
@@ -224,7 +227,7 @@ Direktiven och `auto` alla kräver ett avslutande semikolon `;` .
 > [!TIP]   
 > Om en åtgärd är självständig kan du uttryckligen ange antingen den angränsande eller den kontrollerade intill-specialiseringen via generations direktivet `self` så att kompilatorn kan använda den informationen i optimerings syfte.
 
-En specialiserings deklaration som innehåller en användardefinierad implementering består av en argument tupel följt av ett instruktions block med den Q #-kod som implementerar specialiseringen.
+En specialiserings deklaration som innehåller en användardefinierad implementering består av en argument tupel följt av ett instruktions block med den Q# kod som implementerar specialiseringen.
 I argument listan används för `...` att representera argumenten som har deklarerats för åtgärden som helhet.
 För `body` och ska `adjoint` argument listan alltid vara `(...)` . för och måste `controlled` `adjoint controlled` argument listan vara en symbol som representerar matrisen med kontroll qubits, följt av `...` , inom parentes, till exempel `(controls,...)` .
 
@@ -326,9 +329,9 @@ För en åtgärd vars brödtext innehåller anrop till andra åtgärder som inte
 
 Använd en åtgärd med ytterligare functors som stöds överallt där du använder en åtgärd med färre functors men samma signatur. Använd till exempel en åtgärd av typen `(Qubit => Unit is Adj)` överallt där du använder en åtgärd av typen `(Qubit => Unit)` .
 
-Q # är *samvariant* med avseende på anrops bara Retur typer: ett anrop som returnerar en typ `'A` är kompatibelt med ett anrop med samma Indatatyp och en resultat typ som är kompatibel med `'A` .
+Q#är *samvariant* med avseende på anrops bara Retur typer: ett anrop som returnerar en typ `'A` är kompatibelt med ett anrop med samma Indatatyp och en resultat typ som är kompatibel med `'A` .
 
-Q # är *contravariant* med avseende på indatatyper: ett anrop som tar en typ `'A` som indatatyp är kompatibelt med ett anrop med samma resultat typ och en indatatyp som är kompatibel med `'A` .
+Q#är *contravariant* med avseende på indatatyper: ett anrop som använder en typ `'A` som indatamängd är kompatibelt med ett anrop med samma resultat typ och en indatatyp som är kompatibel med `'A` .
 
 Det innebär att man får följande definitioner,
 
@@ -357,7 +360,7 @@ Du kan
 - Returnera ett värde av typen `(Qubit[] => Unit is Adj + Ctl)` från `ConjugateInvertWith` .
 
 > [!IMPORTANT]
-> Q # 0,3 introducerade en betydande skillnad i beteendet för användardefinierade typer.
+> Q#0,3 introducerade en betydande skillnad i beteendet för användardefinierade typer.
 
 Användardefinierade typer behandlas som en omsluten version av den underliggande typen, i stället för som en undertyp.
 Det innebär att det inte går att använda ett värde av en användardefinierad typ där du förväntar dig ett värde av den underliggande typen.
@@ -380,7 +383,7 @@ operation ApplyWith<'T>(
 }
 ```
 
-Från och med vår 0,9-utgåva stöder Q # en conjugation-instruktion som implementerar föregående omvandling. Med den här instruktionen `ApplyWith` kan åtgärden implementeras på följande sätt:
+Från och med vår 0,9-version Q# har stöd för en conjugation-instruktion som implementerar föregående omvandling. Med den här instruktionen `ApplyWith` kan åtgärden implementeras på följande sätt:
 
 ```qsharp
 operation ApplyWith<'T>(
@@ -405,12 +408,12 @@ Eftersom alla föränderligt-variabler som används som en del av inom-blocket i
 
 ## <a name="defining-new-functions"></a>Definiera nya funktioner
 
-Functions är helt deterministiska, klassiska rutiner i Q #, som skiljer sig från åtgärder i så att de inte får ha några effekter utöver att beräkna ett utdata-värde.
+Functions är helt deterministiska, klassiska rutiner i Q# , som är distinkta från åtgärder i så att de inte får ha några effekter utöver att beräkna ett utdata-värde.
 I synnerhet kan funktioner inte anropa åtgärder. agera på, allokera eller låna qubits; exempel på slumpmässiga siffror; eller på annat sätt är beroende av ett tillstånd bortom indatavärdet till en funktion.
-Som en följd är Q #-funktioner *rena*, där de alltid mappar samma indatavärden till samma utdata-värden.
-Det här beteendet tillåter Q #-kompilatorn att på ett säkert sätt ändra ordning på hur och när de anropar funktioner när de genererar drifts specialisering.
+Som en följd Q# är funktioner *rena*, där de alltid mappar samma indatavärden till samma utdata-värden.
+Det här beteendet gör det möjligt Q# för kompileraren att på ett säkert sätt ändra ordning på hur och när du ska anropa funktioner när du genererar specialisering
 
-Varje Q #-källfil kan definiera valfritt antal funktioner.
+Varje Q# källfil kan definiera valfritt antal funktioner.
 Funktions namn måste vara unika inom ett namn område och får inte stå i konflikt med åtgärds-eller typnamn.
 
 Att definiera en funktion fungerar på samma sätt för att definiera en åtgärd, förutom att inga angränsande eller kontrollerade specialiseringar kan definieras för en funktion.
@@ -442,7 +445,7 @@ function DotProduct(a : Double[], b : Double[]) : Double {
 
 När det är möjligt är det bra att skriva ut klassisk logik i termer av funktioner i stället för åtgärder så att åtgärder kan användas mer. Om du till exempel hade skrivit den tidigare `Square` deklarationen som en *åtgärd*skulle kompileraren inte ha kunnat garantera att anropet till den med samma indata skulle skapa samma utdata konsekvent.
 
-Om du vill ta del av skillnaden mellan funktioner och åtgärder bör du tänka på problemet med att slumpmässigt sampla ett slumpmässigt tal från en Q #-åtgärd:
+Om du vill ta del av skillnaden mellan Functions och åtgärder kan du tänka på problemet med att slumpmässigt sampla ett slumpmässigt nummer i en Q# åtgärd:
 
 ```qsharp
 operation U(target : Qubit) : Unit {
@@ -464,7 +467,7 @@ Att isolera så mycket klassisk logik som möjligt i functions gör det lätt at
 
 Många funktioner och åtgärder som du kanske vill definiera är inte tungt förlitade på typerna av deras indata, utan används i stället för att implicit använda sina typer via en annan funktion eller åtgärd.
 Anta till exempel att *mappnings* konceptet är gemensamt för många funktionella språk; med en Function $f (x) $ och en samling värden $ \{ x_1, x_2, \dots, x_n \} $, returnerar kartan en ny samling $ \{ f (x_1), f (x_2), \dots, f (x_n) \} $.
-Om du vill implementera detta i Q # kan du dra nytta av det faktum att funktionerna är första klass.
+För att implementera detta i Q# , dra nytta av det faktum att funktionerna är första klass.
 Här är ett snabbt exempel på `Map` , `T` som använder som plats hållare när du tar reda på vilka typer du behöver.
 
 ```qsharp
@@ -504,17 +507,17 @@ Om du skapar en ny tupel eller UDT måste du dessutom också skapa en ny `Map` f
 Även om det här är ett litet antal sådana funktioner kan det vara orimligt att införa fler och fler funktioner i samma formulär som `Map` , men kostnaden för att introducera nya typer blir orimligt stor i relativt kort ordning.
 
 Det är dock mycket av detta problem att du inte har gett kompilatorn den information som krävs för att identifiera hur de olika versionerna av `Map` är relaterade.
-Du vill att kompileraren ska behandla `Map` som en typ av matematisk funktion från q # *typer* till q # functions.
+I praktiken vill du att kompileraren ska behandla `Map` som en typ av matematisk funktion från Q# *typer* till Q# functions.
 
-Q # formalizes det här begreppet genom att tillåta att funktioner och åtgärder har *typ parametrar*, samt de vanliga tuple-parametrarna.
+Q#formalizes det här begreppet genom att tillåta att funktioner och åtgärder har *typ parametrar*, samt de vanliga tuple-parametrarna.
 I föregående exempel vill du tänka på att `Map` ha typ parametrar `Int, Pauli` i det första fallet och `Double, String` i det andra fallet.
 För det mesta använder du de här typ parametrarna som om de var vanliga typer. Använd värden av typen parametrar för att skapa matriser och tupler, anropa funktioner och åtgärder och tilldela till vanliga variabler eller föränderligt.
 
 > [!NOTE]
-> Det mest extrema fallet med indirekt beroende är att qubits, där ett Q #-program inte kan förlita sig på typen av struktur, `Qubit` men **måste** skicka sådana typer till andra funktioner och funktioner.
+> Det mest extrema fallet med indirekt beroende är att qubits, där ett Q# program inte kan förlita sig på typen av struktur, `Qubit` men **måste** skicka sådana typer till andra funktioner och funktioner.
 
 När du återvänder till det tidigare exemplet ser du att `Map` måste ha typ parametrar, en för att representera indata till `fn` och en för att representera utdata från `fn` .
-I Q # skrivs detta genom att lägga till vinkelparenteser (det vill säga att `<>` inte bromsar $ \braket {} $!) efter namnet på en funktion eller åtgärd i dess deklaration, och genom att ange varje typ parameter.
+I Q# skrivs detta genom att lägga till vinkelparenteser (det vill säga `<>` inte bromsar $ \braket {} $!) efter namnet på en funktion eller åtgärd i dess deklaration, och genom att ange varje typ parameter.
 Namnet på varje typ parameter måste börja med en Ticket `'` , vilket indikerar att det är en typ parameter och inte en vanlig typ (kallas även *konkret* typ).
 Därför `Map` skrivs:
 
@@ -541,8 +544,8 @@ let paulis = Map(IntToPauli, ints);
 ```
 
 > [!TIP]
-> Att skriva allmänna funktioner och åtgärder är en plats där "tupel-in-tupel" är ett mycket användbart sätt att tänka på när det gäller Q #-funktioner och-åtgärder.
-> Eftersom varje funktion tar exakt en indata och returnerar exakt en utdata, matchar en indata av typen `'T -> 'U` *valfri* Q #-funktion.
+> Att skriva allmänna funktioner och åtgärder är en plats där "tuple-in-tupel" är ett mycket användbart sätt att tänka på Q# funktioner och åtgärder.
+> Eftersom varje funktion tar exakt en indata och returnerar exakt en utmatning, matchar en indata typen `'T -> 'U` *all* Q# funktion.
 > På samma sätt kan du skicka alla åtgärder till en indatatyp `'T => 'U` .
 
 Som ett andra exempel bör du tänka på utmaningen med att skriva en funktion som returnerar kompositionen av två andra funktioner:
@@ -571,15 +574,15 @@ function Compose<'A, 'B, 'C>(outerFn : ('B -> 'C), innerFn : ('A -> 'B)) : ('A -
 }
 ```
 
-Standard biblioteken för Q # innehåller en mängd olika typer av typ parametrar och funktioner som gör det lättare att uttrycka ett kontroll flöde med högre ordning.
-Dessa beskrivs ytterligare i guiden för [Q # standard library](xref:microsoft.quantum.libraries.standard.intro).
+Q#Standard biblioteken tillhandahåller en rad olika typer av parameter åtgärder och funktioner som gör det enklare att uttrycka kontroll flödet.
+Dessa beskrivs ytterligare i [ Q# standard biblioteks guiden](xref:microsoft.quantum.libraries.standard.intro).
 
 
 ## <a name="callables-as-first-class-values"></a>Callables som värden i den första klassen
 
-En viktig teknik för uppföljning av kontroll flöde och klassisk logik med hjälp av funktioner i stället för åtgärder är att använda dessa åtgärder och funktioner i Q # är *första-klass*.
+En viktig teknik för att motivera att kontrol lera flöde och klassisk logik med hjälp av funktioner i stället för åtgärder är att använda samma åtgärder och funktioner i som Q# *första klass*.
 Det innebär att de är varje värde på språket i sin egen rätt.
-Följande är till exempel en perfekt giltig Q #-kod, om en liten indirekta:
+Till exempel är följande en perfekt giltig Q# kod, om en liten indirekta:
 
 ```qsharp
 operation FirstClassExample(target : Qubit) : Unit {
@@ -649,12 +652,12 @@ function SquareOperation(op : (Qubit => Unit)) : (Qubit => Unit) {
 }
 ```
 
-I princip skulle den klassiska logiken i `SquareOperation` ha varit mycket mer engagerad, men den är fortfarande isolerad från resten av en åtgärd av de garantier som kompileraren kan erbjuda om functions. Standard biblioteket för Q # använder den här metoden i hela för att uttrycka klassiskt kontroll flöde på ett sätt som kan användas av Quantum-program.
+I princip skulle den klassiska logiken i `SquareOperation` ha varit mycket mer engagerad, men den är fortfarande isolerad från resten av en åtgärd av de garantier som kompileraren kan erbjuda om functions. Q#Standard biblioteket använder den här metoden i hela för att uttrycka klassiskt kontroll flöde på ett sätt som kan användas av Quantum-program.
 
 
 ## <a name="recursion"></a>Rekursion
 
-Q # callables kan vara direkt eller indirekt rekursivt.
+Q#callables kan vara direkt eller indirekt rekursivt.
 Det vill säga en åtgärd eller funktion kan anropa sig själv, eller så kan den anropa ett annat anrop som direkt eller indirekt anropar den anropande åtgärden.
 
 Det finns två viktiga kommentarer om användningen av rekursion, men:
@@ -662,8 +665,8 @@ Det finns två viktiga kommentarer om användningen av rekursion, men:
 - Användningen av rekursion i åtgärder är sannolikt att störa vissa optimeringar.
   Den här störningen kan ha en betydande inverkan på körnings tiden för algoritmen.
 - När det körs på en faktisk Quantum-enhet kan stack utrymmet vara begränsat och så att djup rekursion kan leda till ett körnings fel.
-  I synnerhet identifierar inte Q #-kompilatorn och körnings miljön och optimerar slut rekursion.
+  I synnerhet Q# identifierar kompileraren och körnings miljön inte och optimerar slut för and rekursion.
 
 ## <a name="next-steps"></a>Nästa steg
 
-Lär dig mer om [variabler](xref:microsoft.quantum.guide.variables) i Q #.
+Lär dig mer om [variabler](xref:microsoft.quantum.guide.variables) i Q# .

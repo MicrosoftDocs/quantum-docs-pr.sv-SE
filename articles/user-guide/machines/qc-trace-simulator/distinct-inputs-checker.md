@@ -1,17 +1,20 @@
 ---
 title: Distinkta inmatnings kontroll – Quantum Development Kit
-description: 'Läs mer om Microsoft QDK DISTINCT Inputs Checker, som använder Quantum trace Simulator för att kontrol lera din Q #-kod för potentiella konflikter med delade qubits.'
+description: Läs mer om Microsoft QDK DISTINCT Inputs Checker, som använder Quantum trace Simulator för att kontrol lera din Q# kod för potentiella konflikter med delade qubits.
 author: vadym-kl
 ms.author: vadym@microsoft.com
 ms.date: 06/25/2020
 ms.topic: article
 uid: microsoft.quantum.machines.qc-trace-simulator.distinct-inputs
-ms.openlocfilehash: 49a1ccc5f37acfeaa1ee08bd974be45a40a76f93
-ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 750c94e7f861678d37f051619ff5b29bf4fd3d3e
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86871152"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87868278"
 ---
 # <a name="quantum-trace-simulator-distinct-inputs-checker"></a>Quantum trace Simulator: distinkt inmatnings kontroll
 
@@ -19,7 +22,7 @@ Kontrollen distinkta indata är en del av Quantum Development Kit [Quantum trace
 
 ## <a name="conflicts-with-shared-qubits"></a>Konflikter med delade qubits
 
-Tänk på följande i Q # Code för att illustrera de problem som upptäckts av den distinkta indata-kontrollen:
+Överväg följande Q# kod avsnitt för att illustrera de problem som upptäckts av den distinkta indata-kontrollen:
 
 ```qsharp
 operation ApplyBoth(
@@ -47,7 +50,7 @@ operation ApplyWithNonDistinctInputs() : Unit {
 }
 ```
 
-Observera att `op1` och `op2` båda är hämtade med delar av program och delar en qubit. När du anropar `ApplyBoth` i det här exemplet beror resultatet av åtgärden på ordningen på `op1` och `op2` `ApplyBoth` inte vad du förväntar dig. När du aktiverar den distinkta inmatnings kontrollen identifierar den sådana situationer och returnerar en `DistinctInputsCheckerException` . Mer information finns <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.DistinctInputsCheckerException> i i Q # API-biblioteket.
+Observera att `op1` och `op2` båda är hämtade med delar av program och delar en qubit. När du anropar `ApplyBoth` i det här exemplet beror resultatet av åtgärden på ordningen på `op1` och `op2` `ApplyBoth` inte vad du förväntar dig. När du aktiverar den distinkta inmatnings kontrollen identifierar den sådana situationer och returnerar en `DistinctInputsCheckerException` . Mer information finns <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.DistinctInputsCheckerException> i i API- Q# biblioteket.
 
 ## <a name="invoking-the-distinct-inputs-checker"></a>Anropar den distinkta inmatnings kontrollen
 

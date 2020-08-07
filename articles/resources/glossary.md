@@ -1,101 +1,93 @@
 ---
-title: Ord lista för Quantum Computing
-description: En ord lista med vanliga termer, åtgärder och objekt som används i Quantum Computing.
-author: QuantumWriter
-ms.author: Alan.Geller@microsoft.com
-ms.date: 12/11/2017
-ms.topic: article
-uid: microsoft.quantum.glossary
-no-loc:
-- $
-- $
-- $
-- $
-- $
-- $
-- '\cdots'
-- bmatrix
-- '\ddots'
-- '\equiv'
-- '\sum'
-- '\begin'
-- '\end'
-- '\sqrt'
-- '\otimes'
-- '{'
-- '}'
-- '\text'
-- '\phi'
-- '\kappa'
-- '\psi'
-- '\alpha'
-- '\beta'
-- '\gamma'
-- '\delta'
-- '\omega'
-- '\bra'
-- '\ket'
-- '\boldone'
-- '\\\\'
-- '\\'
-- =
-- '\frac'
-- '\text'
-- '\mapsto'
-- '\dagger'
-- '\to'
+rubrik: Quantum Computing ord lista Beskrivning: en ord lista med vanliga termer, åtgärder och objekt som används i Quantum Computing.
+författare: QuantumWriter MS. author: Alan.Geller@microsoft.com MS. Date: 12/11/2017 MS. topic: artikel-UID: Microsoft. Quantum. ordbok No-Loc:
+- "Q#"
+- "$$v"
+- "$$"
+- "$$"
+- "$"
+- "$"
+- "$"
+- "$$"
+- "\cdots"
+- "bmatrix"
+- "\ddots"
+- "\equiv"
+- "\sum"
+- "\begin"
+- "\end"
+- "\sqrt"
+- "\otimes"
+- "{"
+- "}"
+- "\text"
+- "\phi"
+- "\kappa"
+- "\psi"
+- "\alpha"
+- "\beta"
+- "\gamma"
+- "\delta"
+- "\omega"
+- "\bra"
+- "\ket"
+- "\boldone"
+- "\\\\"
+- "\\"
+- "="
+- "\frac"
+- "\text"
+- "\mapsto"
+- "\dagger"
+- "\to"
 - "\begin{cases}"
 - "\end{cases}"
-- '\operatorname'
-- '\braket'
-- '\id'
-- '\expect'
-- '\defeq'
-- '\variance'
-- '\dd'
-- '&'
+- "\operatorname"
+- "\braket"
+- "\id"
+- "\expect"
+- "\defeq"
+- "\variance"
+- "\dd"
+- "&"
 - "\begin{align}"
 - "\end{align}"
-- '\Lambda'
-- '\lambda'
-- '\Omega'
-- '\mathrm'
-- '\left'
-- '\right'
-- '\qquad'
-- '\times'
-- '\big'
-- '\langle'
-- '\rangle'
-- '\bigg'
-- '\Big'
-- '|'
-- '\mathbb'
-- '\vec'
-- '\in'
-- '\texttt'
-- '\ne'
-- <
-- '>'
-- '\leq'
-- '\geq'
-- ~~
+- "\Lambda"
+- "\lambda"
+- "\Omega"
+- "\mathrm"
+- "\left"
+- "\right"
+- "\qquad"
+- "\times"
+- "\big"
+- "\langle"
+- "\rangle"
+- "\bigg"
+- "\Big"
+- "|"
+- "\mathbb"
+- "\vec"
+- "\in"
+- "\texttt"
+- "\ne"
+- "<"
+- ">"
+- "\leq"
+- "\geq"
+- "~~"
 - "~"
 - "\begin{bmatrix}"
 - "\end{bmatrix}"
-- '\_'
-ms.openlocfilehash: ba4d171d84d808f082b919dcc6156d9c65df7c05
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
-ms.translationtype: MT
-ms.contentlocale: sv-SE
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85275361"
+- "\_"
+
 ---
+
 # <a name="quantum-computing-glossary"></a>Ord lista för Quantum Computing
 
 ## <a name="adjoint"></a>Angränsande
 
-Den komplexa konjugats transponeren för en [åtgärd](xref:microsoft.quantum.glossary#operation). För åtgärder som implementerar en [enhetlig](xref:microsoft.quantum.glossary#unitary-operator) operator är det intilliggande är inversen till åtgärden och anges av en Dagger symbol. Om åtgärden till exempel `U` representerar den enhetliga operatorn $U $ , `Adjoint U` representerar $U ^ \dagger $ . Mer information finns i [angränsande](xref:microsoft.quantum.guide.operationsfunctions#controlled-and-adjoint-operations).
+Den komplexa konjugats transponeren för en [åtgärd](xref:microsoft.quantum.glossary#operation). För åtgärder som implementerar en [enhetlig](xref:microsoft.quantum.glossary#unitary-operator) operator är det intilliggande är inversen till åtgärden och anges av en Dagger symbol. Om åtgärden till exempel `U` representerar den enhetliga operatorn $ u $ , `Adjoint U` motsvarar $ u ^ \dagger $ . Mer information finns i [angränsande](xref:microsoft.quantum.guide.operationsfunctions#controlled-and-adjoint-operations).
 
 ## <a name="ancilla"></a>Ancilla
 
@@ -103,7 +95,7 @@ En [qubit](xref:microsoft.quantum.glossary#qubit) som fungerar som temporärt mi
 
 ## <a name="bell-state"></a>Klock status
 
-Ett av fyra olika maximally [Entangled](xref:microsoft.quantum.glossary#entanglement) [Quantum-tillstånd](xref:microsoft.quantum.glossary#quantum-state) för två qubits. De fyra tillstånden definieras $ \ket { \ beta_ { } } = (\Mathbb{I } \Otimes X ^ iz ^ j) (\ket{00 } + \ket{11 } )/\sqrt{2 } $. En klock status kallas även för ett [EPR-par](xref:microsoft.quantum.glossary#epr-pair).
+Ett av fyra olika maximally [Entangled](xref:microsoft.quantum.glossary#entanglement) [Quantum-tillstånd](xref:microsoft.quantum.glossary#quantum-state) för två qubits. De fyra tillstånden definieras _ till och med $ \ket { \beta { } } = ( \mathbb { I } \otimes X ^ iz ^ j) ( \ket { 00 }  +  \ket { 11 } )/ \sqrt { 2 } $ . En klock status kallas även för ett [EPR-par](xref:microsoft.quantum.glossary#epr-pair).
 
 ## <a name="bloch-sphere"></a>Bloch-sfär
 
@@ -111,11 +103,11 @@ En grafisk representation av ett[qubit](xref:microsoft.quantum.glossary#qubit) [
 
 ## <a name="callable"></a>Anropningsbara
 
-En [funktion](xref:microsoft.quantum.glossary#operation) eller [funktion](xref:microsoft.quantum.glossary#function) på språket Q #. Mer information finns i [åtgärder och funktioner](xref:microsoft.quantum.guide.operationsfunctions).
+En [funktion](xref:microsoft.quantum.glossary#operation) eller [funktion](xref:microsoft.quantum.glossary#function) på Q# språket. Mer information finns i [åtgärder och funktioner](xref:microsoft.quantum.guide.operationsfunctions).
 
 ## <a name="clifford-group"></a>Clifford-grupp
 
-Den uppsättning åtgärder som upptar octants för Bloch- [sfären](xref:microsoft.quantum.glossary#bloch-sphere) och [Pauli-operatörernas-operatorer](xref:microsoft.quantum.glossary#pauli-operators). Detta omfattar åtgärder [$X $ ](xref:microsoft.quantum.intrinsic.x), [$Y $ ](xref:microsoft.quantum.intrinsic.y), [$Z $ ](xref:microsoft.quantum.intrinsic.z), [$H $ ](xref:microsoft.quantum.intrinsic.h) och [$S $ ](xref:microsoft.quantum.intrinsic.s).
+Den uppsättning åtgärder som upptar octants för Bloch- [sfären](xref:microsoft.quantum.glossary#bloch-sphere) och [Pauli-operatörernas-operatorer](xref:microsoft.quantum.glossary#pauli-operators). Dessa omfattar åtgärderna [ $ X $ ](xref:microsoft.quantum.intrinsic.x), [ $ Y $ ](xref:microsoft.quantum.intrinsic.y), [ $ Z $ ](xref:microsoft.quantum.intrinsic.z), [ $ H $ ](xref:microsoft.quantum.intrinsic.h) och [ $ S $ ](xref:microsoft.quantum.intrinsic.s).
 
 ## <a name="controlled"></a>Styr
 
@@ -123,15 +115,15 @@ En Quantum- [åtgärd](xref:microsoft.quantum.glossary#operation) som tar en ell
 
 ## <a name="dirac-notation"></a>Dirac-notation
 
-Ett symboliskt kort som fören klar åter givningen av [Quantum-tillstånd](xref:microsoft.quantum.glossary#quantum-state), även kallat *bra-ket* notation.  *Bra* -delen representerar en rad vektor, till exempel $ \bra{A } = \begin{ bmatrix } a {_1 } & a {_2 } \end{ bmatrix } $ och *ket* -delen representerar en kolumn vektor, $ \ket{B } = \begin{ bmatrix } b {_1 } \\ \\ b {_2 } \end{ bmatrix } $. Mer information finns i [Dirac notation](xref:microsoft.quantum.concepts.dirac).
+Ett symboliskt kort som fören klar åter givningen av [Quantum-tillstånd](xref:microsoft.quantum.glossary#quantum-state), även kallat *bra-ket* notation.  *Bra* -delen representerar en rad vektor, till exempel en $ \bra { } = \begin{bmatrix} { _1- } & { _2 } \end{bmatrix} $ och *ket* -delen representerar en kolumn vektor, $ \ket { b } = \begin{bmatrix} b { _1 } \\\\ b { _2 } \end{bmatrix} $ . Mer information finns i [Dirac notation](xref:microsoft.quantum.concepts.dirac).
 
 ## <a name="eigenvalue"></a>Eigenvalue
 
-Den faktor enligt vilken storleken på en [eigenvector](xref:microsoft.quantum.glossary#eigenvector) för en specifik omvandling ändras av omvandlingens program.  Om du har fått en fyrkantig matris $M $ och en eigenvector $v $ $MV = ka $ , där $c $ är eigenvalue och kan vara ett komplext antal argument. Mer information finns i [avancerade mat ris koncept](xref:microsoft.quantum.concepts.matrix-advanced).
+Den faktor enligt vilken storleken på en [eigenvector](xref:microsoft.quantum.glossary#eigenvector) för en specifik omvandling ändras av omvandlingens program.  Med en fyrkantig matris $ M $ och en eigenvector $ v $ , $ MV = ka $ , där $ c $ är eigenvalue och kan vara ett komplext antal argument. Mer information finns i [avancerade mat ris koncept](xref:microsoft.quantum.concepts.matrix-advanced).
 
 ## <a name="eigenvector"></a>Eigenvector
 
-En Vector vars riktning är oförändrad av en specifik omvandling och vars storlek ändras av en faktor som motsvarar den Vectorns [eigenvalue](xref:microsoft.quantum.glossary#eigenvalue). Om du har fått en fyrkantig matris $M $ och en eigenvalue $c $ $MV = ka $ , där $v $ är en eigenvector i matrisen och kan vara ett komplext antal argument. Mer information finns i [avancerade mat ris koncept](xref:microsoft.quantum.concepts.matrix-advanced).
+En Vector vars riktning är oförändrad av en specifik omvandling och vars storlek ändras av en faktor som motsvarar den Vectorns [eigenvalue](xref:microsoft.quantum.glossary#eigenvalue). Med en fyrkantig matris $ M $ och en eigenvalue $ c $ , sedan $ MV = ka $ , där $ v $ är en eigenvector i matrisen och kan vara ett komplext antal argument. Mer information finns i [avancerade mat ris koncept](xref:microsoft.quantum.concepts.matrix-advanced).
 
 ## <a name="entanglement"></a>Sammanflätning
 
@@ -139,14 +131,14 @@ Quantum-partiklar, till exempel [qubits](xref:microsoft.quantum.glossary#qubit),
 
 ## <a name="epr-pair"></a>EPR-par
 
-Ett av fyra olika maximally Entangled [Quantum-tillstånd](xref:microsoft.quantum.glossary#quantum-state) för två [qubits](xref:microsoft.quantum.glossary#qubit). De fyra tillstånden definieras $ \ket { \ beta_ { } } = (\Mathbb{1 } \Otimes X ^ iz ^ j) (\ket{00 } + \ket{11 } )/\sqrt{2 } $. Ett EPR-par kallas även för [klock status](xref:microsoft.quantum.glossary#bell-state)
+Ett av fyra olika maximally Entangled [Quantum-tillstånd](xref:microsoft.quantum.glossary#quantum-state) för två [qubits](xref:microsoft.quantum.glossary#qubit). De fyra tillstånden definieras _ föriZ $ \ket { \beta { } } = ( \mathbb { 1 } \otimes X ^ ^ j) ( \ket { 00 }  +  \ket { 11 } )/ \sqrt { 2 } $ . Ett EPR-par kallas även för [klock status](xref:microsoft.quantum.glossary#bell-state)
 
 ## <a name="evolution"></a>Utveckling
 
 Hur ett [Quantum-tillstånd](xref:microsoft.quantum.glossary#quantum-state) ändras med tiden. Mer information finns i [matriss exponentieller](xref:microsoft.quantum.concepts.matrix-advanced#matrix-exponentials).
 
 ## <a name="function"></a>Funktion
-En typ av subrutin på det Q #-språk som är helt Klassiskt (icke-Quantum). Medan Functions används i Quantum-algoritmer, kan de inte agera på [qubits](xref:microsoft.quantum.glossary#qubit) -eller anrops [åtgärder](xref:microsoft.quantum.glossary#operation). Mer information finns i [åtgärder och funktioner](xref:microsoft.quantum.guide.operationsfunctions).
+En typ av underrutin på det Q# språk som är rent Klassiskt (icke-Quantum). Medan Functions används i Quantum-algoritmer, kan de inte agera på [qubits](xref:microsoft.quantum.glossary#qubit) -eller anrops [åtgärder](xref:microsoft.quantum.glossary#operation). Mer information finns i [åtgärder och funktioner](xref:microsoft.quantum.guide.operationsfunctions).
 
 ## <a name="gate"></a>Gate
 
@@ -154,15 +146,15 @@ En äldre term för en Quantum- [åtgärd](xref:microsoft.quantum.glossary#opera
 
 ## <a name="global-phase"></a>Global fas
 
-När två [tillstånd](xref:microsoft.quantum.glossary#quantum-state) är identiska med en multipel av ett komplext tal $e ^ {i \phi } $, är de på samma sätt som en global fas. Till skillnad från lokala faser går det inte att observera globala faser genom något [mätbart mätbart](xref:microsoft.quantum.glossary#measurement)behov. Mer information finns i [qubit](xref:microsoft.quantum.concepts.qubit).
+När två [tillstånd](xref:microsoft.quantum.glossary#quantum-state) är identiska med en multipel av ett komplext tal $ e ^ { i \phi } $ är de beroende av upp till en global fas. Till skillnad från lokala faser går det inte att observera globala faser genom något [mätbart mätbart](xref:microsoft.quantum.glossary#measurement)behov. Mer information finns i [qubit](xref:microsoft.quantum.concepts.qubit).
 
 ## <a name="hadamard"></a>Hadamard
 
-Hadamard-åtgärden (kallas även Hadamard-grind eller transformering) fungerar på en enda [qubit](xref:microsoft.quantum.glossary#qubit) och placerar den i ett jämnt [överplacerat](xref:microsoft.quantum.glossary#superposition) $ \ket{0 } $ eller $ \ket{1 } $ om qubit är inlednings vis i $ \ket{0 } $ State. I Q # tillämpas den här åtgärden av den fördefinierade [`H`](xref:microsoft.quantum.intrinsic.h) åtgärden.
+Hadamard-åtgärden (kallas även Hadamard-grind eller Transform) agerar på en enskild [qubit](xref:microsoft.quantum.glossary#qubit) och placerar den i en jämnt [överposition](xref:microsoft.quantum.glossary#superposition) på $ \ket { 0 } $ eller $ \ket { 1 } $ om qubit är inlednings vis i $ \ket { status 0 } $ . I Q# tillämpas den här åtgärden av den fördefinierade [`H`](xref:microsoft.quantum.intrinsic.h) åtgärden.
 
 ## <a name="immutable"></a>Inte kan ändras
 
-En variabel vars värde inte kan ändras. En oföränderlig variabel i Q # skapas med hjälp av `let` nyckelordet. Om du vill deklarera variabler som *kan* ändras använder du nyckelordet [föränderligt](xref:microsoft.quantum.glossary#immutable) för att deklarera och `set` nyckelordet för att ändra värdet. 
+En variabel vars värde inte kan ändras. En oföränderlig variabel i Q# skapas med hjälp av `let` nyckelordet. Om du vill deklarera variabler som *kan* ändras använder du nyckelordet [föränderligt](xref:microsoft.quantum.glossary#immutable) för att deklarera och `set` nyckelordet för att ändra värdet. 
 
 ## <a name="measurement"></a>Mått
 
@@ -170,7 +162,7 @@ En manipulering av en [qubit](xref:microsoft.quantum.glossary#qubit) (eller en u
 
 ## <a name="mutable"></a>Föränderlig
 
-En variabel vars värde kan ändras efter att det har skapats. En föränderligt-variabel i Q # deklareras med hjälp av `mutable` nyckelordet och modifieras med hjälp av `set` nyckelordet. Variabler som skapas med `let` nyckelordet är [oföränderliga](xref:microsoft.quantum.glossary#immutable) och deras värde kan inte ändras.
+En variabel vars värde kan ändras efter att det har skapats. En föränderligt-variabel i Q# deklareras med hjälp av `mutable` nyckelordet och ändras med hjälp av `set` nyckelordet. Variabler som skapas med `let` nyckelordet är [oföränderliga](xref:microsoft.quantum.glossary#immutable) och deras värde kan inte ändras.
 
 ## <a name="namespace"></a>Namnområde
 
@@ -178,7 +170,7 @@ En etikett för en samling relaterade namn (t. ex. [åtgärder](xref:microsoft.q
 
 ## <a name="operation"></a>Åtgärd
 
-Den grundläggande enheten för Quantum-körning i Q #. Det är ungefär detsamma som en funktion i C, C++ eller python, eller en statisk metod i C# eller Java. Mer information finns i [åtgärder och funktioner](xref:microsoft.quantum.guide.operationsfunctions).
+Den grundläggande enheten för Quantum-körning i Q# . Det är ungefär detsamma som en funktion i C, C++ eller python, eller en statisk metod i C# eller Java. Mer information finns i [åtgärder och funktioner](xref:microsoft.quantum.guide.operationsfunctions).
 
 ## <a name="operator-application"></a>Operatörs program
 
@@ -194,7 +186,7 @@ Anropa en [funktion](xref:microsoft.quantum.glossary#function) eller [åtgärd](
 
 ## <a name="pauli-operators"></a>Pauli-operatörer
 
-En uppsättning med tre 2 x 2-matriser som kallas `X` , `Y` och Quantum- `Z` åtgärder. Identitets mat ris $I $ , ingår ofta även i uppsättningen.  $I = \begin{ bmatrix } 1 & 0 \\ \\ 0 & 1 \end{ bmatrix } $, $X = \begin{ bmatrix } 0 & 1 \\ \\ 1 & 0 \end{ bmatrix } $, $Y = \begin{ bmatrix } 0 &-i \\ \\ & 0 \end{ bmatrix } $, $Z = \begin{ bmatrix } 1 & 0 \\ \\ 0 &-1 \end{ bmatrix } $.   Mer information finns i [åtgärder med en qubit](xref:microsoft.quantum.concepts.qubit#single-qubit-operations).
+En uppsättning med tre 2 x 2-matriser som kallas `X` , `Y` och Quantum- `Z` åtgärder. Identitets mat ris, $ i $ , ingår ofta även i uppsättningen.  $= \begin{bmatrix} 1 0 & \\\\ 0 & 1 \end{bmatrix} $ , $ X = \begin{bmatrix} 0 & 1 \\\\ 1 & 0 \end{bmatrix} $ , $ Y = \begin{bmatrix} 0 & -i \\\\ & 0 \end{bmatrix} $ , $ Z = \begin{bmatrix} 1 & 0 \\\\ & -1 \end{bmatrix} $ .   Mer information finns i [åtgärder med en qubit](xref:microsoft.quantum.concepts.qubit#single-qubit-operations).
 
 ## <a name="quantum-circuit-diagram"></a>Diagram över Quantum-krets
 
@@ -206,7 +198,7 @@ Mer information finns i [Quantum-kretsar](xref:microsoft.quantum.concepts.circui
 
 ## <a name="quantum-libraries"></a>Quantum-bibliotek
 
-Samlingar med [åtgärder](xref:microsoft.quantum.glossary#operation), [funktioner](xref:microsoft.quantum.glossary#function) och [användardefinierade typer](xref:microsoft.quantum.glossary#user-defined-type) för att skapa Q #-program. [Standard biblioteket](xref:microsoft.quantum.libraries.standard.intro) installeras som standard. Andra tillgängliga bibliotek är [kemi-biblioteket](xref:microsoft.quantum.chemistry.concepts.intro), det [numeriska biblioteket](xref:microsoft.quantum.numerics.intro) och [Machine Learning-biblioteket](xref:microsoft.quantum.machine-learning.concepts.intro).
+Samlingar med [åtgärder](xref:microsoft.quantum.glossary#operation), [funktioner](xref:microsoft.quantum.glossary#function) och [användardefinierade typer](xref:microsoft.quantum.glossary#user-defined-type) för att skapa Q# program. [Standard biblioteket](xref:microsoft.quantum.libraries.standard.intro) installeras som standard. Andra tillgängliga bibliotek är [kemi-biblioteket](xref:microsoft.quantum.chemistry.concepts.intro), det [numeriska biblioteket](xref:microsoft.quantum.numerics.intro) och [Machine Learning-biblioteket](xref:microsoft.quantum.machine-learning.concepts.intro).
 
 ## <a name="quantum-state"></a>Quantum-tillstånd
 
@@ -222,11 +214,11 @@ En Quantum-algoritm som probabilistically lyckas. Vid fel försöker rutinen ige
 
 ## <a name="standard-libraries"></a>Standardbibliotek
 
-[Åtgärder](xref:microsoft.quantum.glossary#operation), [funktioner](xref:microsoft.quantum.glossary#function) och [användardefinierade typer](xref:microsoft.quantum.glossary#user-defined-type) som installeras tillsammans med Q #-kompilatorn under installationen. Standard biblioteks implementeringen är oberoende med avseende på mål datorer. Mer information finns i [standard bibliotek](xref:microsoft.quantum.libraries.standard.intro).
+[Åtgärder](xref:microsoft.quantum.glossary#operation), [funktioner](xref:microsoft.quantum.glossary#function) och [användardefinierade typer](xref:microsoft.quantum.glossary#user-defined-type) som installeras tillsammans med Q# kompilatorn under installationen. Standard biblioteks implementeringen är oberoende med avseende på mål datorer. Mer information finns i [standard bibliotek](xref:microsoft.quantum.libraries.standard.intro).
 
 ## <a name="superposition"></a>Superposition
 
-Konceptet i Quantum Computing som en [qubit](xref:microsoft.quantum.glossary#qubit) är en linjär kombination av två tillstånd, $ \ket{0 } $ och $ \ket{1 } $, tills den [mäts](xref:microsoft.quantum.glossary#measurement).  Mer information finns i [förstå Quantum Computing](xref:microsoft.quantum.overview.understanding).
+Konceptet i Quantum Computing som en [qubit](xref:microsoft.quantum.glossary#qubit) är en linjär kombination av två tillstånd, $ \ket { 0 } $ och $ \ket { 1 } $ , tills den [mäts](xref:microsoft.quantum.glossary#measurement).  Mer information finns i [förstå Quantum Computing](xref:microsoft.quantum.overview.understanding).
 
 ## <a name="target-machine"></a>Måldator
 
@@ -238,11 +230,11 @@ En metod för att återskapa data eller Quantum- [tillstånd](xref:microsoft.qua
 
 ## <a name="tuple"></a>Tupel
 
-En samling kommaavgränsade värden som fungerar som ett enda värde. *Typen* av en tupel definieras av de typer av värden som den innehåller. I Q # är tupler [oföränderliga](xref:microsoft.quantum.glossary#immutable) och kan kapslas, innehålla matriser eller användas i en matris. Mer information finns i [tuple-typer](xref:microsoft.quantum.guide.types#tuple-types).
+En samling kommaavgränsade värden som fungerar som ett enda värde. *Typen* av en tupel definieras av de typer av värden som den innehåller. I Q# är tupler [oföränderliga](xref:microsoft.quantum.glossary#immutable) och kan kapslas, innehålla matriser eller användas i en matris. Mer information finns i [tuple-typer](xref:microsoft.quantum.guide.types#tuple-types).
 
 ## <a name="unitary-operator"></a>Enhetlig operatör
 
-En operator vars motsatta värde är lika med den [angränsande](xref:microsoft.quantum.glossary#adjoint), d.v.s. $uu ^ {\dagger } = \id $ .
+En operator vars motsatta värde är lika med dess [intilliggande](xref:microsoft.quantum.glossary#adjoint), d.v.s. $ UU ^ { \dagger } = \id $ .
 
 ## <a name="user-defined-type"></a>Användardefinierad typ
 

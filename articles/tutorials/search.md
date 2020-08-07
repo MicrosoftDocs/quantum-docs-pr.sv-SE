@@ -1,21 +1,24 @@
 ---
-title: Kör Grovers sökalgoritm i Q# – Quantum Development Kit
-description: Skapa ett Q#-projekt som visar Grovers algoritm, en av de legendariska kvantalgoritmerna.
+title: Kör Grover Sök algoritm i Q# Quantum Development Kit
+description: Bygg ett Q# projekt som demonstrerar Grover-algoritmen, en av de kanoniska Quantum-algoritmerna.
 author: cgranade
 ms.author: chgranad@microsoft.com
 ms.date: 10/19/2019
 ms.topic: article
 uid: microsoft.quantum.quickstarts.search
-ms.openlocfilehash: 9e4c53b4d5159cf07f0654603c1d477ad09eb7c6
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 5c23d71209eb484a510f102e8b581ba4ec21829a
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85275265"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87869672"
 ---
 # <a name="tutorial-implement-grovers-search-algorithm-in-q"></a>Självstudier: Implementera Grovers sökalgoritm i Q\#
 
-I den här självstudien lär du dig att skapa och köra Grover-sökning som påskyndar sökningen i ostrukturerade data.  Grovers sökning är en av de mest populära kvantberäkningsalgoritmerna. Den här relativt lilla Q#-implementeringen ger dig en uppfattning om några av fördelarna med programmering av kvantlösningar med kvantprogrammeringsspråket Q# som på hög nivå uttrycker kvantalgoritmer.  I slutet av guiden kommer du att se att simuleringen hittar en specifik sträng i listan med osorterade poster på en bråkdel av den tid det skulle ta att söka igenom hela listan på en klassisk dator.
+I den här självstudien lär du dig att skapa och köra Grover-sökning som påskyndar sökningen i ostrukturerade data.  Grover: s sökning är en av de mest populära Quantum Computing-algoritmerna, och den här relativt små Q# implementeringen ger dig en uppfattning om några av fördelarna med programmering av Quantum-lösningar med ett högnivå Q# Quantum programmeringsspråk för att uttrycka Quantum-algoritmer.  I slutet av guiden kommer du att se att simuleringen hittar en specifik sträng i listan med osorterade poster på en bråkdel av den tid det skulle ta att söka igenom hela listan på en klassisk dator.
 
 Grovers algoritm söker i en lista med ostrukturerade data efter vissa objekt. Den kan till exempel svara på frågan: Är det här kortet som drogs ur en kortlek hjärter ess? Märkningen av det speciella objektet kallas för _markerad indata_.
 
@@ -39,7 +42,7 @@ Antalet stegvisa ökningar är färre än antalet objekt i listan. Det här är 
 
 ## <a name="write-the-code"></a>Skriva koden
 
-1. Använd Quantum Development Kit för att [skapa ett nytt Q#-projekt för kommandoradsprogrammet](xref:microsoft.quantum.install.standalone). Ge projektet rubriken `Grover`.
+1. [Skapa ett nytt Q# projekt för kommando rads programmet](xref:microsoft.quantum.install.standalone)med hjälp av Quantum Development Kit. Ge projektet rubriken `Grover`.
 
 1. I projektfilen `Program.qs` lägger du till följande kod:
 
@@ -51,9 +54,9 @@ Antalet stegvisa ökningar är färre än antalet objekt i listan. Det här är 
 
     Åtgärden `ReflectAboutMarked` definierar den markerade indata som du söker efter: Strängen med alternerande nollor och ettor. I det här exemplet hårdkodas markerad indata, vilket kan utökas till att söka efter olika indata eller generaliseras för alla indata.
 
-1. Kör sedan ditt nya Q#-program för att hitta objektet som markerats med `ReflectAboutMarked`.
+1. Kör sedan det nya Q# programmet för att hitta objektet som marker ATS av `ReflectAboutMarked` .
 
-### <a name="q-command-line-applications-with-visual-studio-or-visual-studio-code"></a>Q#-kommandoradsprogram med Visual Studio eller Visual Studio Code
+### <a name="no-locq-command-line-applications-with-visual-studio-or-visual-studio-code"></a>Q#kommando rads program med Visual Studio eller Visual Studio Code
 
 Den körbara filen kör åtgärden eller funktionen som har markerats med attributet `@EntryPoint()` i en simulator eller i ett resursuppskattningsverktyg, beroende på projektkonfigurationen och kommandoradsalternativen.
 
@@ -104,7 +107,7 @@ Reflecting about marked state...
 
 ## <a name="next-steps"></a>Nästa steg
 
-Om du gillade den här självstudien kan du använda resurserna nedan för att lära dig mer om hur du använder Q# för att skriva egna kvantprogram:
+Om du gillade den här själv studie kursen kan du läsa mer om hur du kan använda Q# för att skriva egna Quantum-program på några av resurserna nedan.
 
 - [Tillbaka till guiden Komma igång med QDK](xref:microsoft.quantum.welcome)
 - Prova en mer allmän Grover-sökalgoritm [exempel](https://github.com/microsoft/Quantum/tree/master/samples/algorithms/database-search)

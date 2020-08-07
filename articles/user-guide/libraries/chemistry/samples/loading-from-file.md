@@ -6,12 +6,15 @@ ms.author: gulow
 ms.date: 10/23/2018
 ms.topic: article-type-from-white-list
 uid: microsoft.quantum.chemistry.examples.loadhamiltonian
-ms.openlocfilehash: 715dbcefc10ecc5af45f2bdd228890f1cb28886b
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 57e25bf55009797b01695cef0f3d29b94662ccc0
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85275246"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87869247"
 ---
 # <a name="loading-a-hamiltonian-from-file"></a>Läsa in ett hamiltonskt värde från en fil
 Tidigare konstruerade vi Hamiltonians genom att lägga till enskilda villkor till den. Även om det här är bra för små exempel kräver Quantum kemi i skala Hamiltonians med miljon tals eller miljarder villkor. Sådana Hamiltonians, som genereras av kemi-paket som NWChem, är för stora för att kunna importeras manuellt. I det här exemplet illustrerar vi hur en `FermionHamiltonian` instans kan genereras automatiskt från en molekyl som representeras av [Broombridge-schemat](xref:microsoft.quantum.libraries.chemistry.schema.broombridge). En kan till exempel granska det tillhandahållna `LithiumHydrideGUI` exemplet eller `RunSimulation` exemplet. Begränsad support är också tillgängligt för import från formatet som används av [LIQUi |>](https://www.microsoft.com/en-us/research/project/language-integrated-quantum-operations-liqui/).
@@ -40,7 +43,7 @@ var fermionHamiltonian = orbitalIntegralHamiltonian.ToFermionHamiltonian(IndexCo
 var jordanWignerEncoding = fermionHamiltonian.ToPauliHamiltonian(Pauli.QubitEncoding.JordanWigner);
 ```
 
-Broombridge-schemat innehåller också förslag på det inledande tillstånd som ska förberedas. Etiketterna, t. ex. `"|G⟩"` eller `"|E1⟩"` , för dessa tillstånd kan ses genom att du inspekterar filen. För att förbereda de här inledande tillstånden kommer den `qSharpData` förbrukade delen av Q # Quantum-algoritmerna att få liknande [föregående avsnitt](xref:microsoft.quantum.chemistry.examples.energyestimate), men med ytterligare en parameter som väljer det ursprungliga tillståndet. Till exempel,
+Broombridge-schemat innehåller också förslag på det inledande tillstånd som ska förberedas. Etiketterna, t. ex. `"|G⟩"` eller `"|E1⟩"` , för dessa tillstånd kan ses genom att du inspekterar filen. För att förbereda de här inledande tillstånden kommer den `qSharpData` förbrukade metoden från Q# Quantum-algoritmerna att uppnås på samma sätt som i [föregående avsnitt](xref:microsoft.quantum.chemistry.examples.energyestimate), men med ytterligare en parameter som väljer önskat initialt tillstånd. Till exempel,
 ```csharp
 // The desired initial state, assuming that a description of it is present in the
 // Broombridge schema.

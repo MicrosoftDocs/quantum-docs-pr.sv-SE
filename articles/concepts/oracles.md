@@ -1,6 +1,8 @@
 ---
 title: Quantum Oracle-Beskrivning: Lär dig hur du arbetar med och definierar Quantum Oracles, svarta Box-åtgärder som används som inmatade i en annan algoritm.
 författare: cgranade UID: Microsoft. Quantum. Concepts. Oracles MS. author: Christopher.Granade@microsoft.com MS. Date: 07/11/2018 MS. topic: artikeln No-Loc:
+- "Q#"
+- "$$v"
 - "$$"
 - "$$"
 - "$"
@@ -105,7 +107,7 @@ $$
 Nu $ = \dagger $ måste vi ha löst båda de tidigare problemen.
 
 > [!TIP]
->Om du vill se den $ o ^ = { \dagger } $ 2-e-postmeddelandet som $ o ^ 2 = \boldone $ sedan $ en \oplus b-\oplus b = a $ för alla $ a, b \in \[ ! Öpp. NO-LOC ({)] 0, 1 \[ ! Öpp. NO-LOC (})] $ .
+>Om du vill se att o $ = { \dagger } $ $ ^ 2 = \boldone $ sedan $ \oplus b \oplus b = a $ för alla $ a, b \in \: :: No-Loc ({)::: 0, 1 \: :: No-Loc (}): $ ::.
 >Det innebär att $ O \ket { x } \ket { y \oplus f (x) } = \ket { x } \ket { y \oplus f (x) \oplus f (x) } = \ket { x } \ket { y } $ .
 
 Det är viktigt att definiera en Oracle på det här sättet för varje beräknings bas status $ \ket { x } \ket { y } $ definierar också hur $ O $ fungerar för alla andra tillstånd.

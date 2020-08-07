@@ -6,16 +6,19 @@ ms.author: bradben
 ms.date: 06/02/2020
 ms.topic: overview
 uid: microsoft.quantum.overview.katas
-ms.openlocfilehash: 1c4dfa5c47aa38935cd5936cd256e357b6605371
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: b2a3b25bf90109468f02c98c6c687befb83648bc
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85276220"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87869689"
 ---
 # <a name="learn-quantum-computing-with-the-quantum-katas"></a>Lära sig kvantberäkning med Quantum Katas
 
-[Quantum Katas](https://github.com/Microsoft/QuantumKatas/) är en öppen källkod, självstudier och programmerings övningar som syftar till att lära sig elementen i Quantum data behandling och Q #-programmering på samma tidpunkt.
+[Quantum Katas](https://github.com/Microsoft/QuantumKatas/) är en öppen källkod, självstudier och programmerings övningar som syftar till att lära sig elementen i Quantum data behandling och Q# programmering på samma tidpunkt.
 
 ## <a name="learning-by-doing"></a>Lära genom att göra
 
@@ -42,15 +45,15 @@ Utforska grunderna och grunderna i Quantum Computing eller gå djupare till Quan
 |[Linjär algebra](https://github.com/microsoft/QuantumKatas/tree/master/tutorials/LinearAlgebra)|Linjär algebra används för att representera Quantum-tillstånd och åtgärder i Quantum Computing. I den här självstudien beskrivs grunderna, inklusive matriser och vektorer.|
 |[Kvantbitsbegreppet](https://github.com/microsoft/QuantumKatas/tree/master/tutorials/Qubit)|Lär dig mer om qubits – en av kärn koncepten för Quantum Computing. |
 |[Kvantgrindar med en kvantbit](https://github.com/microsoft/QuantumKatas/tree/master/tutorials/SingleQubitGates)|I den här självstudien introduceras en qubit Quantum-grind, som fungerar som bygg stenar av Quantum-algoritmer och transformera Quantum qubit-tillstånd på olika sätt.|
-|[System med flera kvantbitar](https://github.com/microsoft/QuantumKatas/tree/master/tutorials/MultiQubitSystems)|I den här självstudien introduceras qubit system, deras representation i matematisk notation och i Q # Code och begreppet entanglement.|
+|[System med flera kvantbitar](https://github.com/microsoft/QuantumKatas/tree/master/tutorials/MultiQubitSystems)|I den här självstudien introduceras qubit system, deras representation i matematisk notation och i Q# kod samt begreppet entanglement.|
 |[Qubit Quantum Gates](https://github.com/microsoft/QuantumKatas/tree/master/tutorials/MultiQubitGates)|Den här självstudien följer själv studie kursen om [en qubit Quantum Gates](https://github.com/microsoft/QuantumKatas/tree/master/tutorials/SingleQubitGates) och fokuserar på att tillämpa Quantum-grindar på qubit-system.|
 
 ### <a name="quantum-computing-fundamentals"></a>Grunderna i kvantberäkning
 
 | Kata | Beskrivning |
 |:-----|-------------|
-|[Känna igen kvantgrindar](https://github.com/microsoft/QuantumKatas/tree/master/BasicGates)|En serie övningar utformade för att bekanta dig med de grundläggande Quantum-grindarna i Q #. Innehåller övningar för grundläggande qubit-och multi-qubit-portar, intilliggande och kontrollerade portar och hur man använder portar för att ändra tillstånd för en qubit.|
-|[Skapa en kvantsuperposition](https://github.com/microsoft/QuantumKatas/tree/master/Superposition)|Använd de här övningarna för att lära dig begreppet superposition och programmering i Q #. Innehåller övningar för grundläggande qubit-och multi-qubit-portar, superposition och flödes reglering och rekursion i Q #.|
+|[Känna igen kvantgrindar](https://github.com/microsoft/QuantumKatas/tree/master/BasicGates)|En serie övningar utformade för att bekanta dig med de grundläggande Quantum-portarna i Q# . Innehåller övningar för grundläggande qubit-och multi-qubit-portar, intilliggande och kontrollerade portar och hur man använder portar för att ändra tillstånd för en qubit.|
+|[Skapa en kvantsuperposition](https://github.com/microsoft/QuantumKatas/tree/master/Superposition)|Använd de här övningarna för att bekanta dig med begreppet överposition och programmering i Q# . Innehåller övningar för grundläggande qubit-och multi-qubit-portar, superposition och flödes kontroll och rekursion i Q# .|
 |[Särskilja kvanttillstånd med hjälp av mätningar](https://github.com/microsoft/QuantumKatas/tree/master/Measurements)|Lös de här övningarna och lär dig om Quantum-mått och rätvinkliga och icke-rätvinkliga stater. |
 |[Kopplade mätningar](https://github.com/microsoft/QuantumKatas/tree/master/JointMeasurements)|Lär dig mer om gemensamma paritets mätningar och hur du använder [mått](xref:microsoft.quantum.intrinsic.measure) åtgärden för att särskilja Quantum-tillstånd.|
 
@@ -72,7 +75,7 @@ Utforska grunderna och grunderna i Quantum Computing eller gå djupare till Quan
 |:-----|-------------|
 |[BB84-protokoll för distribution av kvantnycklar](https://github.com/microsoft/QuantumKatas/tree/master/KeyDistribution_BB84)|Läs om och implementera ett Quantum Key Distribution Protocol, [BB84](https://en.wikipedia.org/wiki/BB84), med hjälp av qubits till Exchange-kryptografiska nycklar. |
 |[Bit-flip fel vid korrigering av kod](https://github.com/microsoft/QuantumKatas/tree/master/QEC_BitFlipCode)|Utforska Quantum-felkorrigeringen med den enklaste av Quantum Error-Correction (QEC) Codes (qubit bit-flip kod).|
-|[Fasuppskattning](https://github.com/microsoft/QuantumKatas/blob/master/PhaseEstimation)|Algoritmer för fas uppskattning är några av de mest grundläggande Bygg stenarna för Quantum Computing. Lär dig mer om fas uppskattning med de här övningarna som beskriver uppskattning av Quantum-fasen och hur du förbereder och kör fas uppskattnings rutiner i Q #.|
+|[Fasuppskattning](https://github.com/microsoft/QuantumKatas/blob/master/PhaseEstimation)|Algoritmer för fas uppskattning är några av de mest grundläggande Bygg stenarna för Quantum Computing. Lär dig mer om fas uppskattning med de här övningarna som beskriver uppskattning av Quantum-fasen och hur du förbereder och kör fas uppskattnings rutiner i Q# .|
 |[Quantum-aritmetiska: skapa krusning – bär Adders](https://github.com/microsoft/QuantumKatas/blob/master/RippleCarryAdder)|En djupgående serie med övningar som utforskar [krusningar](https://en.wikipedia.org/wiki/Adder_(electronics)#Ripple-carry_adder) som har lagts till på en Quantum-dator. Bygg en egenskapsangivning Quantum-, utöka den med en annan algoritm och bygg sedan en på plats en Quantum-under traktor.   |
 
 ### <a name="entanglement-games"></a>Sammanflätningsspel

@@ -6,12 +6,15 @@ ms.author: chgranad
 ms.date: 10/12/2018
 ms.topic: article
 uid: microsoft.quantum.contributing.samples
-ms.openlocfilehash: 3bd0de04a448c74eea6c3e8e3a15dcbb19f9d705
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 20da0e1765a242c172cc595f03d7791a0e8b8d2d
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85275393"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87867526"
 ---
 # <a name="contributing-samples-to-the-quantum-development-kit"></a>Bidra till exempel i Quantum Development Kit
 
@@ -47,8 +50,8 @@ Vi tittar på de filer som utgör varje mapp, låt oss ta en titt på [`algorith
 
 | Fil              | Beskrivning                                                |
 |-------------------|------------------------------------------------------------|
-| `CHSHGame.csproj` | Q #-projekt som används för att bygga exemplet med .NET Core SDK |
-| `Game.qs`         | Q #-åtgärder och-funktioner för exemplet                 |
+| `CHSHGame.csproj` | Q#projekt som används för att bygga exemplet med .NET Core SDK |
+| `Game.qs`         | Q#funktioner och funktioner för exemplet                 |
 | `Host.cs`         | C#-värd program som används för att köra exemplet                     |
 | `host.py`         | Python-värdprogram som används för att köra exemplet                 |
 | `README.md`       | Dokumentation om vad exemplet gör och hur det används    |

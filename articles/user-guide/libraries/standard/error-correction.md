@@ -1,17 +1,20 @@
 ---
-title: 'Fel korrigering i standard biblioteken för Q #'
-description: 'Lär dig hur du använder fel när du korrigerar koder i dina Q #-program samtidigt som du skyddar qubits-tillstånd.'
+title: Fel korrigering i Q# standard biblioteken
+description: Lär dig hur du använder fel när du korrigerar koder i dina Q# program samtidigt som du skyddar qubits-tillstånd.
 author: QuantumWriter
 uid: microsoft.quantum.libraries.error-correction
 ms.author: martinro@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 514fe68f603b9a3a0b4607390719b08a43fe4967
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 8b1f008793281121bc547d1a6ac3b960feb082ab
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85275726"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87868499"
 ---
 # <a name="error-correction"></a>Fel korrigering #
 
@@ -48,7 +51,7 @@ Observera att $Z _0 Z_1 \ket {000} = \ket {000} $ och att $Z _0 Z_1 \ket {111} =
 Å andra sidan $Z _0 Z_1 \ket {100} =-\ket {100} $ och $Z _0 Z_1 \ket {011} =-\ket {011} $, så resultatet av att mäta $Z _0 Z_1 $ visar användbar information om vilket fel som har inträffat.
 
 För att framhäva detta upprepas tabellen ovan, men du kan lägga till resultaten från Mät $Z _0 Z_1 $ och $Z _1 Z_2 $ på varje rad.
-Vi betecknar resultaten av varje mätning genom tecknet för det eigenvalue som observeras, antingen $ + $ eller $-$, som motsvarar Q #- `Result` värdena för `Zero` respektive `One` .
+Vi betecknar resultaten av varje mätning genom tecknet för det eigenvalue som observeras, antingen $ + $ eller $-$, som motsvarar respektive Q# `Result` `Zero` `One` respektive.
 
 | Fel $E $ | $E \ket{\overline {0} } $ | $E \ket{\overline {1} } $ | Resultat av $Z _0 Z_1 $ | Resultat av $Z _1 Z_2 $ |
 | --- | --- | --- | --- | --- |
@@ -68,16 +71,16 @@ I synnerhet betonar vi att återställningen är en *klassisk* härlednings proc
 > Ofta kan koder skapas för att hantera större antal fel och för att hantera $Z $-fel samt $X $-fel.
 
 Insikter om att vi kan beskriva mätningar i en Quantum-fel korrigering som fungerar på samma sätt i alla kod stater, är grunden för den *stabiliseringsbaserade formaliteten*.
-I Q # Canon finns ett ramverk för att beskriva kodning i och avkodning från stabiliserings koder och för att beskriva hur en återställning av fel uppstår.
+Q#Canon innehåller ett ramverk för att beskriva kodning i och avkodning från stabiliserings koder och för att beskriva hur en återställning av fel uppstår.
 I det här avsnittet beskriver vi det här ramverket och dess program till några vanliga Quantum Error-felkorrigerings koder.
 
 > [!TIP]
 > En fullständig introduktion till stabiliserings-och stabiliserings funktionen ligger utanför det här avsnittets omfattning.
 > Vi refererar till läsare som är intresserade av att lära sig mer till [Gottesman 2009](https://arxiv.org/abs/0904.2557).
 
-## <a name="representing-error-correcting-codes-in-q"></a>Visar fel vid korrigering av koder i Q # ##
+## <a name="representing-error-correcting-codes-in-no-locq"></a>Motsvarar fel korrigerings koder iQ# ##
 
-För att hjälpa till att ange fel som korrigerar koder innehåller Q # Canon flera olika användardefinierade typer:
+För att hjälpa till att ange fel som korrigerar koder Q# ger Canon flera olika användardefinierade typer:
 
 - <xref:microsoft.quantum.errorcorrection.logicalregister>`= Qubit[]`: Anger att ett register över qubits ska tolkas som kod block för en felkorrigerande kod.
 - <xref:microsoft.quantum.errorcorrection.syndrome>`= Result[]`: Anger att en matris med mått resultat ska tolkas som Syndrome mätt i ett kodblock.
@@ -119,4 +122,4 @@ using (scratch = Qubit[nScratch]) {
 
 Vi utforskar detta mer detaljerat i [kod exemplet bit flip](https://github.com/microsoft/Quantum/tree/master/samples/error-correction/bit-flip-code).
 
-Från bit-flip-koden tillhandahålls Q # Canon med implementeringar av den [qubit perfekta koden](https://arxiv.org/abs/quant-ph/9602019)och den [sju qubit koden](https://arxiv.org/abs/quant-ph/9705052), som båda kan korrigera ett godtyckligt qubit-fel.
+Från bit-flip-koden Q# tillhandahålls Canon med implementeringar av den [qubit perfekta koden](https://arxiv.org/abs/quant-ph/9602019), och [koden för sju qubit](https://arxiv.org/abs/quant-ph/9705052), som båda kan åtgärda ett godtyckligt qubit-fel.

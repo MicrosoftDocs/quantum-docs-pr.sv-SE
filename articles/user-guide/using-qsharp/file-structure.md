@@ -1,21 +1,24 @@
 ---
-title: 'Q # fil struktur'
-description: 'Beskriver strukturen och syntaxen för en Q #-fil.'
+title: Q#Fil struktur
+description: Beskriver strukturen och syntaxen för en Q# fil.
 author: gillenhaalb
 ms.author: a-gibec@microsoft.com
 ms.date: 03/05/2020
 ms.topic: article
 uid: microsoft.quantum.guide.filestructure
-ms.openlocfilehash: 54efc2b9d6b7f1956cdf9a335c88620b29f7729d
-ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: ac73962b1a718cd04aa87ee3476c66781fe3ac2b
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85884175"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87867938"
 ---
-# <a name="q-file-structure"></a>Q # fil struktur
+# <a name="no-locq-file-structure"></a>Q#Fil struktur
 
-En Q #-fil består av en sekvens med *namn områdes deklarationer*.
+En Q# fil består av en sekvens med *namn områdes deklarationer*.
 Varje namn områdes deklaration innehåller deklarationer för användardefinierade typer, åtgärder och funktioner och kan innehålla valfritt antal varje typ av deklaration och i vilken ordning som helst.
 Mer information om deklarationer i ett namn område finns i [användardefinierade typer](xref:microsoft.quantum.guide.types#user-defined-types), [åtgärder](xref:microsoft.quantum.guide.operationsfunctions#defining-new-operations)och [funktioner](xref:microsoft.quantum.guide.operationsfunctions#defining-new-functions).
 
@@ -24,10 +27,10 @@ I synnerhet är dokumentations kommentarer för ett namn område före deklarati
 
 ## <a name="namespace-declarations"></a>Namn områdes deklarationer
 
-En Q #-fil har vanligt vis bara en namn områdes deklaration, men kan ha ingen (och vara tom eller bara innehålla kommentarer) eller innehålla flera namn områden.
+En Q# fil har vanligt vis bara en namn områdes deklaration, men kan ha ingen (och vara tom eller bara innehålla kommentarer) eller innehålla flera namn områden.
 Namespace-deklarationer kan inte kapslas.
 
-Du kan deklarera samma namnrymd i flera Q #-filer som kompileras tillsammans, så länge det inte finns någon typ, åtgärd eller funktions deklaration med samma namn.
+Du kan deklarera samma namnrymd i flera Q# filer som kompileras tillsammans, så länge det inte finns någon typ, åtgärd eller funktions deklaration med samma namn.
 I synnerhet är det inte tillåtet att definiera samma typ i samma namnrymd i flera filer, även om deklarationerna är identiska.
 
 En namn områdes deklaration består av nyckelordet `namespace` , följt av namnet på namn området och de deklarationer som finns i namn området som omges av klammerparenteser `{ }` .
@@ -61,7 +64,7 @@ om en deklarerad åtgärd använder en åtgärd `Op` från `Microsoft.Quantum.In
 För att anropa en viss funktion `Fn` från `Microsoft.Quantum.Math` måste du dock anropa den med hjälp av `Math.Fn` .
 
 `open`Direktivet gäller hela namn områdes blocket i en fil.
-Om du definierar ytterligare ett namn område i samma Q #-fil som `NS` tidigare, skulle alla åtgärder/funktioner/typer som definierats i den andra namn rymden inte ha åtkomst till något från `Microsoft.Quantum.Intrinsic` eller `Microsoft.Quantum.Math` om du inte upprepade de öppna direktiven där. 
+Om du definierar ytterligare ett namn område i samma Q# fil som `NS` tidigare, kommer alla åtgärder/funktioner/typer som definierats i det andra namn området inte ha åtkomst till något från `Microsoft.Quantum.Intrinsic` eller `Microsoft.Quantum.Math` om du inte har upprepat de öppna direktiven där. 
 
 Om du vill referera till en typ eller en anropad typ som är definierad i en annan namnrymd som *inte* är öppen i det aktuella namn området, måste du referera till den efter dess fullständiga namn.
 Till exempel, med en åtgärd `Op` som heter från `X.Y` namn området:
@@ -73,13 +76,13 @@ Till exempel, med en åtgärd `Op` som heter från `X.Y` namn området:
 Det är vanligt vis bättre att inkludera ett namn område med hjälp av ett `open` direktiv.
 Att använda ett fullständigt kvalificerat namn krävs om två namn rymder definierar konstruktioner med samma namn och den aktuella källan använder konstruktioner från båda.
 
-Q # följer samma regler för namngivning som andra .NET-språk.
-Q # stöder dock inte relativa referenser till namn områden.
+Q#följer samma regler för namngivning som andra .NET-språk.
+Stöder dock Q# inte relativa referenser till namn områden.
 Om namn området till exempel `a.b` är öppet matchas inte en referens till en åtgärd `c.d` med *not* namnet med fullständigt namn `a.b.c.d` .
 
 ## <a name="formatting"></a>Formatering
 
-De flesta Q #-instruktioner och direktiv slutar med ett avslutande semikolon `;` .
+De flesta Q# instruktioner och direktiv slutar med ett avslutande semikolon `;` .
 Instruktioner och deklarationer som `for` och `operation` som slutar med ett instruktions block (se följande avsnitt) kräver inte ett avslutande semikolon.
 Varje instruktions Beskrivning noterar om avslutande semikolon krävs.
 
@@ -88,14 +91,14 @@ Undvik att placera flera instruktioner på en enda rad.
 
 ## <a name="statement-blocks"></a>Instruktions block
 
-Q #-instruktioner grupperas i instruktions block, vilka ingår i klammerparenteser `{ }` . Ett instruktions block börjar med en inledande `{` och slutar med en stängning `}` .
+Q#-instruktioner grupperas i instruktions block, som finns i klammerparenteser `{ }` . Ett instruktions block börjar med en inledande `{` och slutar med en stängning `}` .
 
 Ett instruktions block som är lexikalt omslutet i ett annat block anses vara ett under block av det innehåll ande blocket. innehåller och underordnade block kallas även för yttre och inre block.
 
 ## <a name="comments"></a>Kommentarer
 
 Kommentarer börjar med två snedstreck, `//` och fortsätter till slutet av raden.
-En kommentar kan finnas var som helst i en Q #-källfil.
+En kommentar kan visas var som helst i en Q# källfil.
 
 ## <a name="documentation-comments"></a>Dokumentations kommentarer
 
@@ -103,10 +106,10 @@ Kommentarer som börjar med tre snedstreck, `///` behandlas särskilt av kompila
 I så fall behandlar kompileraren dem som dokumentation för den definierade typen av anropad eller användardefinierad typ, samma som andra .NET-språk.
 
 I `///` kommentarer är text som ska visas som en del av API-dokumentationen formaterad som [markdown](https://daringfireball.net/projects/markdown/syntax), med olika delar av dokumentationen som anges av särskilt namngivna huvuden.
-I markdown använder du `@"<ref target>"` tillägget för kors referens åtgärder, funktioner och användardefinierade typer i Q #. Ersätt `<ref target>` med det fullständigt kvalificerade namnet på det refererade kodvärdet.
+I markdown använder du `@"<ref target>"` tillägget för kors referens åtgärder, funktioner och användardefinierade typer i Q# . Ersätt `<ref target>` med det fullständigt kvalificerade namnet på det refererade kodvärdet.
 Olika dokumentations motorer kan också ha stöd för ytterligare markdown-tillägg.
 
-Ett exempel:
+Exempel:
 
 ```qsharp
 /// # Summary
@@ -153,4 +156,4 @@ Följande namn är giltiga som dokumentation kommentars rubriker.
 
 ## <a name="next-steps"></a>Nästa steg
 
-Lär dig mer om [åtgärder och funktioner](xref:microsoft.quantum.guide.operationsfunctions) i Q #.
+Lär dig mer om [åtgärder och funktioner](xref:microsoft.quantum.guide.operationsfunctions) i Q# .

@@ -1,21 +1,24 @@
 ---
-title: 'Diagnostik i standard biblioteken för Q #'
-description: 'Lär dig mer om diagnostiska funktioner och åtgärder i de Q # standard-bibliotek som används för att fånga misstag eller fel i Quantum-program.'
+title: Diagnostik i Q# standard biblioteken
+description: Lär dig mer om diagnostiska funktioner och åtgärder i de Q# standard bibliotek som används för att fånga misstag eller fel i Quantum-program.
 author: cgranade
 uid: microsoft.quantum.libraries.diagnostics
 ms.author: chgranad@microsoft.com
 ms.topic: article
-ms.openlocfilehash: 324753cfa1b7d940bf5a0bbe7665f19cc6dda82c
-ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 4a98795b2459adaa4e47c888751121fffdc70971
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86870642"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87868550"
 ---
 # <a name="diagnostics"></a>Diagnostik #
 
 Precis som med klassisk utveckling är det viktigt att kunna diagnostisera misstag och fel i Quantum-program.
-Standard biblioteken för Q # är en mängd olika sätt att säkerställa att Quantum program är korrekt, enligt beskrivningen i <xref:microsoft.quantum.guide.testingdebugging> .
+Q#Standard biblioteken ger en mängd olika sätt att säkerställa att Quantum program är korrekt, enligt beskrivningen i <xref:microsoft.quantum.guide.testingdebugging> .
 Den här supporten är i stort sett i form av funktioner och åtgärder som antingen instruerar mål datorn att tillhandahålla ytterligare diagnostikinformation till värd programmet eller utvecklaren, eller så tillämpar du rätt villkor och invarianter som uttrycks av funktions-eller åtgärds anropet.
 
 ## <a name="machine-diagnostics"></a>Machine Diagnostics ##
@@ -30,7 +33,7 @@ Message($"About to rotate by an angle of {angle}...");
 ```
 
 > [!NOTE]
-> `Message`har signatur `(String -> Unit)` , återigen som visar att ett fel söknings logg meddelande inte kan observeras inifrån Q #.
+> `Message`har signatur `(String -> Unit)` , återigen som visar att ett fel söknings logg meddelande inte kan observeras inifrån Q# .
 
 <xref:microsoft.quantum.diagnostics.dumpmachine> <xref:microsoft.quantum.diagnostics.dumpregister> Callables instruerar mål datorerna att tillhandahålla diagnostikinformation om alla aktuella allokerade qubits eller om ett särskilt register över qubits.
 Varje måldator varierar i vilken diagnostikinformation som anges som svar på en dump-instruktion.
@@ -49,7 +52,7 @@ Dessa villkor kan komma i form av antingen _fakta_, som kontrollerar värdena f�
 Till exempel `EqualityFactI(1 + 1, 2, "1 + 1 != 2")` representerar det matematiska faktum att $1 + 1 = $2, medan `AssertQubit(One, qubit)` representerar det villkor som mäts `qubit` `One` med säkerhet.
 I det förra fallet kan vi kontrol lera att villkoret är korrekt, men i det senare måste vi känna till något om status för qubit för att utvärdera försäkran.
 
-Standard biblioteken för Q # innehåller flera olika funktioner för att representera fakta, inklusive:
+Q#Standard biblioteken innehåller flera olika funktioner för att representera fakta, inklusive:
 
 - <xref:microsoft.quantum.diagnostics.fact>
 - <xref:microsoft.quantum.diagnostics.equalitywithintolerancefact>
@@ -67,7 +70,7 @@ I allmänhet är <xref:microsoft.quantum.diagnostics.assertmeasurement> åtgärd
 Om kontrollen Miss lyckas avslutas körningen genom `fail` att anropa med det aktuella meddelandet.
 Den här åtgärden är inte implementerad som standard. simulatorer som har stöd för den bör tillhandahålla en implementering som utför körnings kontroll.
 `AssertMeasurement`har signatur `((Pauli[], Qubit[], Result, String) -> ())` .
-Eftersom `AssertMeasurement` är en funktion med en tom tupel som Utdatatyp, kan inga effekter från att anropas `AssertMeasurement` vara synliga i ett Q #-program.
+Eftersom `AssertMeasurement` är en funktion med en tom tupel som Utdatatyp, kan inga effekter som kan anropas `AssertMeasurement` vara synliga i ett Q# program.
 
 <xref:microsoft.quantum.diagnostics.assertmeasurementprobability>Funktionen funktion förutsätter att mätning av de tilldelade qubits i den aktuella Pauli-grunden har det resultat som har givit den sannolikheten, inom viss tolerans.
 Toleransen är additiv (t. ex. `abs(expected-actual) < tol` ).

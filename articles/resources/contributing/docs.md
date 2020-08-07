@@ -6,12 +6,15 @@ ms.author: chgranad
 ms.date: 10/12/2018
 ms.topic: article
 uid: microsoft.quantum.contributing.docs
-ms.openlocfilehash: ed5ab5df9de5d71ccd922cd430cf15779806dd6a
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 1110f32a6486de1a346b115fa928a098749b6690
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85275502"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87866884"
 ---
 # <a name="improving-documentation"></a>Förbättra dokumentationen
 
@@ -25,7 +28,7 @@ Vi antar ungefär [MathJax](https://www.mathjax.org/) -biblioteket för att kunn
 Detta innebär att varje form av dokumentation varierar något i detaljerna:
 
 - Den **konceptuella dokumentationen** består av en uppsättning artiklar som publiceras till https://docs.microsoft.com/quantum och som beskriver allt från grunderna i Quantum Computing till de tekniska specifikationerna för Interchange Format. De här artiklarna är skrivna i [DocFX-markdown (DFM)](https://dotnet.github.io/docfx/spec/docfx_flavored_markdown.html), en markdown-variant som används för att skapa rika dokumentations uppsättningar.
-- **API-referensen** är en uppsättning sidor för varje Q #-funktion, operation och användardefinierad typ, publicerad till https://docs.microsoft.com/qsharp/api/ . Dessa sidor dokumenterar indata och åtgärder för varje anrop, tillsammans med exempel och länkar till mer information. API-referensen extraheras automatiskt från små DFM-dokument i Q # käll kod som en del av varje version.
+- **API-referensen** är en uppsättning sidor för varje Q# funktion, åtgärd och användardefinierad typ, publicerad till https://docs.microsoft.com/qsharp/api/ . Dessa sidor dokumenterar indata och åtgärder för varje anrop, tillsammans med exempel och länkar till mer information. API-referensen extraheras automatiskt från små DFM dokument i Q# käll koden som en del av varje version.
 - **README <!----> . MD** -filerna som ingår i varje exempel och Kata beskriver hur du använder det exemplet eller Kata används, vad det täcker och hur det är relaterat till resten av Quantum Development Kit. De här filerna skrivs med [GitHub-markdown (GFM)](https://github.github.com/gfm/), ett mer lätt alternativ till DFM som är populärt för att bifoga dokumentation direkt till kod centraler.
 
 ## <a name="contributing-to-the-conceptual-documentation"></a>Bidra till den konceptuella dokumentationen
@@ -49,7 +52,7 @@ Om du vill inkludera kod från [exempel databasen](https://github.com/Microsoft/
 :::code language="qsharp" source="~/quantum/samples/algorithms/chsh-game/Game.qs" range="4-8":::
 ```
 
-Det här kommandot importerar rader 4 till 8 av [ `Game.qs` filen från `chsh-game` exemplet](https://github.com/microsoft/Quantum/blob/master/samples/algorithms/chsh-game/Game.qs)och markerar dem som Q # kod för markering av syntax.
+Det här kommandot importerar rader 4 till 8 av [ `Game.qs` filen från `chsh-game` exemplet](https://github.com/microsoft/Quantum/blob/master/samples/algorithms/chsh-game/Game.qs)och markerar dem som Q# kod för markering av syntax.
 Med det här kommandot kan du undvika att duplicera kod mellan konceptuella artiklar och exempel databasen, så att exempel koden i dokumentationen alltid är så aktuell som möjligt.
 
 ## <a name="contributing-to-the-api-references"></a>Bidrag till API-referenser
@@ -64,7 +67,7 @@ När vi kompilerar varje version av Quantum Development Kit, används dessa komm
 
 Anta till exempel funktionen `ControlledOnBitString<'T> (bits : Bool[], oracle : ('T => Unit is Adj + Ctl)) : ((Qubit[], 'T) => Unit is Adj + Ctl)` .
 En dokumentations kommentar bör hjälpa en användare att lära sig hur man tolkar `bits` och `oracle` och vad funktionen är för.
-Var och en av dessa olika informations delar kan ges till Q #-kompilatorn med ett särskilt namngivet markdown-avsnitt i dokumentations kommentaren.
+Var och en av dessa olika delar av information kan ges till Q# kompilatorn med ett särskilt namngivet markdown-avsnitt i dokumentations kommentaren.
 Vi kan till exempel `ControlledOnBitString` skriva något som liknar följande:
 
 ```qsharp
@@ -139,7 +142,7 @@ Du kan se den återgivna versionen av koden ovan i API- [dokumentationen för `C
 
 Förutom den allmänna metoden för dokumentations skrivning, i skriva API-dokumentation kommentarer, hjälper det till att hålla några saker i åtanke:
 
-- Formatet för varje dokumentations kommentar måste matcha vad Q #-kompilatorn förväntar sig att din dokumentation ska visas korrekt. Vissa avsnitt, till exempel `/// # Remarks` för att tillåta fri hands innehåll, medan avsnitt som `/// # See Also` avsnittet är mer restriktiva.
+- Formatet för varje dokumentations kommentar måste matcha vad Q# kompileraren förväntar sig att din dokumentation ska visas korrekt. Vissa avsnitt, till exempel `/// # Remarks` för att tillåta fri hands innehåll, medan avsnitt som `/// # See Also` avsnittet är mer restriktiva.
 - En läsare kan läsa API-dokumentationen på huvud-API-referens webbplatsen, på sammanfattningen för varje namn område eller till och med i IDE genom att använda hov rings information. Se till att det `/// # Summary` inte är längre än om en mening hjälper läsaren att snabbt sortera om de behöver läsa mer eller titta någon annan stans, och kan hjälpa till att snabbt söka igenom sammanfattningar av namn områden.
 - Dokumentationen kan vara mycket längre än själva koden, men det är OK! Även en liten del av koden kan ha oväntade effekter för användare som inte känner till sammanhanget där koden finns. Genom att tillhandahålla konkreta exempel och tydliga förklaringar kan du hjälpa användarna att göra den bästa användningen av den kod som är tillgänglig för dem.
 

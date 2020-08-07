@@ -6,12 +6,15 @@ uid: microsoft.quantum.libraries.characterization
 ms.author: martinro@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 9d763d11ef9c08cc0941cade217dbb2942ef4bf9
-ms.sourcegitcommit: 2f4c637e194dc2b5d18539469ed37444e2800199
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 0090fb2b9ac5f3c9d195a3ab02dcd21c848d8ef7
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87436534"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87868635"
 ---
 # <a name="quantum-characterization-and-statistics"></a>Quantum-karakterisering och statistik #
 
@@ -19,7 +22,7 @@ Det är viktigt att kunna karakterisera effekterna av åtgärder för att utveck
 Detta är en utmaning eftersom varje mätning av ett Quantum-system ger högst en information.
 För att kunna lära sig en eigenvalue, så att det blir ett Quantum-tillstånd, måste resultatet av många mätningar sammanföras tillsammans så att användaren kan få de många bitar av information som krävs för att representera dessa begrepp.
 Quantum State är särskilt vexing eftersom [no-kloningsing satsen](xref:microsoft.quantum.concepts.pauli#the-no-cloning-theorem) säger att det inte finns något sätt att lära sig ett godtyckligt Quantum-tillstånd från en enda kopia av tillståndet, eftersom det gör att du kan göra kopior av tillståndet.
-Den här döljande av Quantum-tillstånd från användaren återspeglas i det faktum att Q # inte visar eller ens definierar vad ett tillstånd *är* till Quantum-program.
+Den här döljande av Quantum-tillstånd från användaren återspeglas i det faktum att Q# inte visar eller ens definierar vad ett tillstånd *är* till Quantum-program.
 Vi närmar sig en Quantum-karakterisering genom att behandla drift och tillstånd som svart ruta. den här metoden delar mycket gemensamt med experiment metoden för Quantum-karakterisering, verifiering och validering (QCVV).
 
 Karakteriseringen skiljer sig från många av de andra bibliotek som beskrivits tidigare.
@@ -36,7 +39,7 @@ Detta har fördelen att vi bara behöver en enda ytterligare qubit för att utf�
 Var och en av de metoder som föreslås nedan använder en annan strategi för att utforma experiment och olika data bearbetnings metoder för att lära dig fasen.  De har en unik fördel som sträcker sig från att ha rigorösa fel gränser, till förmåga att ta med tidigare information, tolerera fel eller köra på minnes limitted klassiska datorer.
 
 I att diskutera iterativa fas uppskattningar kommer vi att betrakta en enhetlig $U $ som en svart Box-åtgärd.
-Som det beskrivs i avsnittet om Oracle i [data strukturer](xref:microsoft.quantum.libraries.data-structures), kommer Q # Canon att modellera sådana åtgärder av den <xref:microsoft.quantum.oracles.discreteoracle> användardefinierade typen, som definieras av tuple-typen `((Int, Qubit[]) => Unit : Adjoint, Controlled)` .
+Som det beskrivs i avsnittet om Oracle i [data strukturer](xref:microsoft.quantum.libraries.data-structures), kan Q# Canon modellera sådana åtgärder av den <xref:microsoft.quantum.oracles.discreteoracle> användardefinierade typen som definieras av tuple-typen `((Int, Qubit[]) => Unit : Adjoint, Controlled)` .
 Konkret, om `U : DiscreteOracle` , `U(m)` implementerar $U ^ m $ för `m : Int` .
 
 Med den här definitionen på plats fortsätter varje steg i upprepnings fas uppskattningen genom att förbereda en tilläggs qubit i $ \ket{+} $ State tillsammans med det inledande tillstånd $ \ket{\phi} $ som vi antar är en [eigenvector](xref:microsoft.quantum.concepts.matrix-advanced) av $U (m) $, d.v.s. $U (m) \ket{\phi} = e ^ {im\phi} \ ket {\ Phi} $.  
@@ -47,7 +50,7 @@ Den hjälp qubit som används som en kontroll för `U(m)` mäts sedan i $X $-bas
 
 I det här läget är det ett klassiskt statistiskt problem med att konstruera om fasen från `Result` värdena som erhålls genom iterativ fas uppskattning.
 Att hitta värdet för $m $ som maximerar den information som erhålls, med en fast härlednings metod, är bara ett problem i statistiken.
-Vi betonar detta genom en kort beskrivning av den iterativa fasens uppskattning på en teoretisk nivå i Bayesian parameter bedömning innan du fortsätter med att beskriva de statistiska algoritmer som finns i Q # Canon för att lösa detta problem med den här klassiska lösningen.
+Vi understryker detta genom att en kort beskrivning av uppskattning av iterativa faser på en teoretisk nivå i Bayesian parameter bedömning innan du fortsätter med att beskriva de statistiska algoritmer som finns i Q# Canon för att lösa detta problem med den här klassiska lösningen.
 
 ### <a name="iterative-phase-estimation-without-eigenstates"></a>Uppskattning av iterativa faser utan Eigenstates ###
 
@@ -127,7 +130,7 @@ Med hjälp av fas uppskattning med kontinuerliga frågor kan vi alltså lära si
 
 ### <a name="random-walk-phase-estimation"></a>Beräkning av slumpmässig stegvis fas ###
 
-Q # ger en användbar uppskattning av Bayesian-fasens uppskattning som är utformad för användning nära Quantum-enheter som fungerar genom att en slumpmässig genom gång av data posten hämtas från en iterativ fas uppskattning.
+Q#ger en användbar uppskattning av Bayesian-fasens uppskattning avsedd för användning nära Quantum-enheter som fungerar genom att en slumpmässig genom gång av data posten hämtas från en iterativ fas uppskattning.
 Den här metoden är både anpassningsbar och helt deterministisk, vilket ger optimal skalning av fel i den uppskattade fasen $ \hat{\phi} $ med mycket låga minnes omkostnader.
 
 Protokollet använder en ungefärlig Bayesian-härlednings metod som förutsätter att den tidigare distributionen är Gaussisk.
@@ -141,7 +144,7 @@ Med möjligheten att gå baklänges kan algoritmen även lära sig även om den 
 
 ## <a name="calling-phase-estimation-algorithms"></a>Algoritmer för att anropa fas uppskattning ##
 
-Varje fas uppskattnings åtgärd som medföljer Q # Canon tar en annan uppsättning inmatningar som använder den kvalitet som vi efterfrågar för den slutliga uppskattningen $ \hat{\phi} $.
+Varje fas uppskattnings åtgärd som tillhandahålls med Q# Canon tar en annan uppsättning indata som Parameters ATS till den kvalitet som vi tar emot från den slutliga uppskattningen $ \hat{\phi} $.
 Dessa olika indata, men alla delar flera indata, så att partiell program över kvalitets parametrarna resulterar i en gemensam signatur.
 Den <xref:microsoft.quantum.characterization.robustphaseestimation> åtgärd som diskuteras i nästa avsnitt har till exempel följande signatur:
 

@@ -5,12 +5,15 @@ ms.author: alexei.bocharov@microsoft.com
 ms.date: 2/27/2020
 ms.topic: article
 uid: microsoft.quantum.libraries.machine-learning.training
-ms.openlocfilehash: f9b33a607a892179795d0700ba3080f9a24ab94a
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 52c3f69fb99384270a27e57c4f32212d18bee1a4
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85276207"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87868907"
 ---
 # <a name="quantum-machine-learning-glossary"></a>Quantum Machine Learning-ordlista
 
@@ -48,7 +51,7 @@ Som en tumregel kan det första antalet mätningar vara cirka $1/\ mbox {toleran
 
 ### <a name="training-threads"></a>Utbildnings trådar
 
-Sannolikhets funktionen för klassificeraren är mycket sällan konvex, vilket innebär att det vanligt vis har en mängd lokala OPTIMA i parameter utrymmet som kan variera avsevärt beroende på kvalitet. Eftersom SGD-processen kan konvergera enbart till en särskilt optimal, är det viktigt att utforska flera inledande parameter vektorer. Vanliga metoder i Machine Learning är att initiera sådana start vektorer slumpmässigt. API: et API för träning accepterar en godtycklig matris av sådana start vektorer, men den underliggande koden utforskar dem i tur och ordning. På en dator med flera kärnor eller i själva verket för en parallell data behandling är det lämpligt att utföra flera anrop till API: n # utbildnings-API parallellt med olika parameter initieringar i anropen.
+Sannolikhets funktionen för klassificeraren är mycket sällan konvex, vilket innebär att det vanligt vis har en mängd lokala OPTIMA i parameter utrymmet som kan variera avsevärt beroende på kvalitet. Eftersom SGD-processen kan konvergera enbart till en särskilt optimal, är det viktigt att utforska flera inledande parameter vektorer. Vanliga metoder i Machine Learning är att initiera sådana start vektorer slumpmässigt. Q#Utbildnings-API: et accepterar en godtycklig matris av sådana start vektorer, men den underliggande koden utforskar dem i turordning. På en dator med flera kärnor eller i själva verket för en parallell data behandling är det lämpligt att utföra flera anrop till Q# Training API parallellt med olika parameter initieringar i anropen.
 
 #### <a name="how-to-modify-the-hyperparameters"></a>Ändra de båda parametrarna
 

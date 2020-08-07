@@ -6,16 +6,19 @@ uid: microsoft.quantum.libraries.standard.prelude
 ms.author: martinro@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 19674620475e68b41c855023807a5fd1f7945ec9
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 283504a5f5635a4996c804e514a6f52eb4966d22
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85275665"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87868448"
 ---
 # <a name="the-prelude"></a>Inledning #
 
-Q #-kompilatorn och mål datorerna som ingår i Quantum Development Kit innehåller en uppsättning inbyggda funktioner och åtgärder som kan användas när du skriver Quantum-program i Q #.
+Q#Kompilatorn och mål datorerna som ingår i Quantum Development Kit innehåller en uppsättning inbyggda funktioner och åtgärder som kan användas när du skriver Quantum-program i Q# .
 
 ## <a name="intrinsic-operations-and-functions"></a>Inbyggda funktioner och funktioner ##
 
@@ -27,11 +30,11 @@ De inbyggda åtgärder som definieras i standard biblioteket är i stort sett en
 - Åtgärder som implementerar mätningar.
 
 Eftersom port uppsättningen Clifford + $T $ är [universell](xref:microsoft.quantum.concepts.multiple-qubits) för Quantum Computing, räcker dessa åtgärder för att implementera alla Quantum-algoritmer inom försumbart litet fel.
-Genom att tillhandahålla rotationer kan du också använda Q # för att programmerare ska fungera inom ett enda qubit-port bibliotek med CNOT. Det här biblioteket är mycket enklare att tänka på eftersom programmeraren inte behöver uttrycka Clifford + $T $-dekompositionen och eftersom det finns mycket effektiva metoder för att kompilera enskilda qubit-unitaries i Clifford och $T $ Gates (mer information finns [här](xref:microsoft.quantum.more-information) ).
+Genom att tillhandahålla rotationer kan Q# programmeraren fungera i ett enda qubit-port bibliotek med CNOT. Det här biblioteket är mycket enklare att tänka på eftersom programmeraren inte behöver uttrycka Clifford + $T $-dekompositionen och eftersom det finns mycket effektiva metoder för att kompilera enskilda qubit-unitaries i Clifford och $T $ Gates (mer information finns [här](xref:microsoft.quantum.more-information) ).
 
 Där det är möjligt kan de åtgärder som definierats i inledning som agerar på qubits tillåta att använda `Controlled` varianten, så att mål datorn utför lämplig dekomposition.
 
-Många av funktionerna och åtgärderna som definierats i den här delen av inledning finns i @"microsoft.quantum.intrinsic" namn området, så att de flesta Q # källfiler har ett `open Microsoft.Quantum.Intrinsic;` direktiv direkt efter den inledande namn rymds deklarationen.
+Många av de funktioner och åtgärder som definierats i den här delen av inledning finns i @"microsoft.quantum.intrinsic" namn området, så att de flesta Q# källfiler har ett `open Microsoft.Quantum.Intrinsic;` direktiv direkt efter den inledande namn rymds deklarationen.
 <xref:microsoft.quantum.core>Namn området öppnas automatiskt, så att funktioner som <xref:microsoft.quantum.core.length> kan användas utan någon `open` instruktion alls.
 
 ### <a name="common-single-qubit-unitary-operations"></a>Vanliga åtgärder med en enda qubit ###
@@ -96,9 +99,9 @@ Den innehåller en signatur `(Qubit => Unit is Adj + Ctl)` och motsvarar den end
 \begin{Equation} \begin{bmatrix} 1 & 0 \\ \\ % fixme: för närvarande används quadwhack hackare.
 0 & i \end{bmatrix}-\end{Equation}
 
-#### <a name="rotations"></a>Rotation ####
+#### <a name="rotations"></a>Rotationer ####
 
-Utöver Pauli-och Clifford-åtgärderna ovan tillhandahåller Q # inledning en mängd olika sätt att uttrycka rotationer.
+Utöver Pauli-och Clifford-åtgärderna ovan Q# tillhandahåller inledning en mängd olika sätt att uttrycka rotationer.
 Som beskrivs i [en qubit-åtgärd](xref:microsoft.quantum.concepts.qubit#single-qubit-operations)är möjligheten att rotera kritiskt för Quantum-algoritmer.
 
 Vi börjar med att komma ihåg att vi kan uttrycka en enskild qubit-åtgärd med hjälp av $H $ och $T $-grindarna, där $H $ är Hadamard-åtgärden och där \begin{Equation} T \mathrel{: =} \begin{bmatrix} 1 & 0 \\ \\ % fixme: det här använder för närvarande Whack hackare.
@@ -229,7 +232,7 @@ return rs;
 
 ## <a name="extension-functions-and-operations"></a>Funktioner och åtgärder för tillägg ##
 
-Dessutom definierar inledning en omfattande uppsättning matematiska och typ konverterings funktioner på .NET-nivån för användning inom Q # Code.
+Dessutom definierar inledning en omfattande uppsättning matematiska och typ konverterings funktioner på .NET-nivå för användning i Q# kod.
 Till exempel <xref:microsoft.quantum.math> definierar namn området användbara åtgärder som <xref:microsoft.quantum.math.sin> och <xref:microsoft.quantum.math.log> .
 Den implementering som tillhandahålls av Quantum Development Kit använder det klassiska .NET-klass biblioteket och kan därmed omfatta en ytterligare överföring av kommunikation mellan Quantum-program och deras klassiska driv rutiner.
 Även om detta inte visar något problem för en lokal simulator kan detta vara ett prestanda problem när du använder en fjärrsimulator eller en faktisk maskin vara som mål dator.
@@ -238,7 +241,7 @@ I detta fall kan en enskild måldator minimera den här prestanda påverkan geno
 ### <a name="math"></a>Matematik ###
 
 <xref:microsoft.quantum.math>Namn området innehåller många användbara funktioner i .NET Base Class-bibliotekets [ `System.Math` klass](https://docs.microsoft.com/dotnet/api/system.math?view=netframework-4.7.1).
-Dessa funktioner kan användas på samma sätt som andra Q #-funktioner:
+Dessa funktioner kan användas på samma sätt som andra Q# funktioner:
 
 ```qsharp
 open Microsoft.Quantum.Math;
@@ -246,7 +249,7 @@ open Microsoft.Quantum.Math;
 let y = Sin(theta);
 ```
 
-Om en statisk metod för .NET har överlagrats baserat på typen av argument är motsvarande Q #-funktion kommenterad med ett suffix som anger indatatypen:
+Om en statisk metod för .NET har överlagrats baserat på typen av argument, Q# är motsvarande funktion kommenterad med ett suffix som anger indatatypen:
 
 ```qsharp
 let x = AbsI(-3); // x : Int = 3

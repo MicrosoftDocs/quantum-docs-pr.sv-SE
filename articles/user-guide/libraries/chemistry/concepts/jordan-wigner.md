@@ -6,12 +6,15 @@ ms.author: nawiebe@microsoft.com
 ms.date: 10/09/2017
 ms.topic: article-type-from-white-list
 uid: microsoft.quantum.chemistry.concepts.jordanwigner
-ms.openlocfilehash: 17cb473c6d33e3356d5da886f47985c3828d4d1f
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 9f1455ebbecf6a3500ec11a5196e7662455c9a78
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85275919"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87869519"
 ---
 # <a name="jordan-wigner-representation"></a>Jordanien – Wigner-representation
 
@@ -28,7 +31,7 @@ Sedan har vi $a ^ \ dagger_j \ket {0} _J = \ket {1} _J $ och $a ^ \ dagger_j \ke
 Det är enkelt att verifiera att \begin{align} a ^ \ dagger_j &= \begin{bmatrix}0 & 0 \\ \ 1 &0 \end{bmatrix} = \frac{X_j-iY_j} {2} , \nonumber \\ \\ a_j &= \begin{bmatrix}0 & 1 \\ \ 0 &0 \end{bmatrix} = \frac{X_j + iY_j} {2} , \end{align} där $X _J $ och $Y _J $ är Pauli-$X $ och-$Y $-operatörer som agerar på qubit $j $.
 
 >[!NOTE]
-> I Q # visar $ \ket {0} $ statusen + 1 eigenstate för operatorn $Z $. I vissa områden av fysik $ \ket {0} $ representerar jord-och $Z eigenstate på låg energi nivå. Därför kan vissa formler skilja sig från populära litteratur.
+> I Q# läget $ \ket {0} $ representerar den + 1 eigenstate av $Z $-operatorn. I vissa områden av fysik $ \ket {0} $ representerar jord-och $Z eigenstate på låg energi nivå. Därför kan vissa formler skilja sig från populära litteratur.
 
 I kemi-biblioteket använder vi $ \ket {0} $ för att representera ett intaget varv-orbital.
 Detta visar att för ett enda varv-orbital är det enkelt att representera skapande-och Annihilation-operatörer i termer av enhetliga matriser som Quantum Computers förstår.

@@ -1,30 +1,33 @@
 ---
 title: Skapa en kvantgenerator för slumptal
-description: Skapa ett Q#-projekt som demonstrerar grundläggande kvantbegrepp som t.ex. superposition genom att skapa en kvantgenerator för slumptal.
+description: Skapa ett Q# projekt som visar grundläggande Quantum-koncept som överposition genom att skapa en Quantum slump tals Generator.
 author: bromeg
 ms.author: megbrow@microsoft.com
 ms.date: 10/25/2019
 ms.topic: article
 uid: microsoft.quantum.quickstarts.qrng
-ms.openlocfilehash: 18e8975e513a87c0a67a6dbb5586cc7dab5a93fb
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 8db892091794cb1166e41744572d8938d975abf2
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85275281"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87869774"
 ---
 # <a name="tutorial-implement-a-quantum-random-number-generator-in-q"></a>Självstudier: Implementera en kvantgenerator för slumptal i Q\#
 
-Ett enkelt exempel på en kvantalgoritm som skrivs i Q# och som är en kvantgenerator för slumptal. Den här algoritmen använder kvantmekanik till att generera ett slumptal.
+Ett enkelt exempel på en Quantum-algoritm som Q# är skrivet i är en Quantum slump tals Generator. Den här algoritmen använder kvantmekanik till att generera ett slumptal.
 
 ## <a name="prerequisites"></a>Krav
 
 - Microsoft [Quantum Development Kit](xref:microsoft.quantum.install).
-- Skapa ett Q#-projekt antingen [genom att använda Q# från kommandoraden](xref:microsoft.quantum.install.standalone), eller med ett [Python-värdprogram](xref:microsoft.quantum.install.python) eller ett [C#-värdprogram](xref:microsoft.quantum.install.cs).
+- Skapa ett Q# projekt för att antingen [använda Q# från kommando raden](xref:microsoft.quantum.install.standalone)eller med ett [python-värdprogram](xref:microsoft.quantum.install.python) eller [C#-värd program](xref:microsoft.quantum.install.cs).
 
-## <a name="write-a-q-operation"></a>Skriv en Q#-åtgärd
+## <a name="write-a-no-locq-operation"></a>Skriv en Q# åtgärd
 
-### <a name="q-operation-code"></a>Q#-åtgärdskod
+### <a name="no-locq-operation-code"></a>Q#åtgärds kod
 
 1. Ersätt innehållet i filen Program.qs med följande kod:
 
@@ -32,13 +35,13 @@ Ett enkelt exempel på en kvantalgoritm som skrivs i Q# och som är en kvantgene
 
 Som vi nämnde i artikeln [Så här fungerar kvantberäkning](xref:microsoft.quantum.overview.understanding) är en kvantbit en enhet för kvantinformation som kan vara i superposition. När den mäts kan kvantbiten endast vara antingen 0 eller 1. Under körningen representerar dock tillståndet för kvantbiten sannolikheten för att avläsningen blir antingen 0 eller 1 vid en mätning. Detta sannolikhetstillstånd kallas för superposition. Vi kan använda sannolikheten till att generera slumpmässiga tal.
 
-I vår Q#-åtgärd introducerar vi `Qubit`-datatypen, som ingår i Q#. Vi kan bara allokera en `Qubit` med en `using`-instruktion. När den tilldelas är kvantbiten alltid  i `Zero`-tillståndet. 
+I vår Q# åtgärd introducerar vi `Qubit` data typen, intern för Q# . Vi kan bara allokera en `Qubit` med en `using`-instruktion. När den tilldelas är kvantbiten alltid  i `Zero`-tillståndet. 
 
 Med hjälp av `H`-åtgärden kan vi försätta vår `Qubit` i superposition. Om du vill mäta en kvantbit och läsa dess värde, använder du den inbäddade `M`-åtgärden.
 
 Genom att försätta vår `Qubit` i superposition och mäta den, kommer vårt resultat att bli ett annat värde varje gången koden anropas.
 
-När en `Qubit` har frigjorts måste den uttryckligen anges till `Zero` tillstånd, annars rapporterar simulatorn ett körnings fel. Ett enkelt sätt att göra detta på är att anropa `Reset`.
+När en `Qubit` har frigjorts måste den försättas i `Zero`-tillståndet igen. Annars rapporteras ett körningsfel i simulatorn. Ett enkelt sätt att göra detta på är att anropa `Reset`.
 
 ### <a name="visualizing-the-code-with-the-bloch-sphere"></a>Visualisera koden med Bloch-sfären
 
@@ -61,13 +64,13 @@ Eftersom resultatet av mätningen är helt slumpmässigt har vi fått en slumpm�
 
 ## <a name="creating-a-complete-random-number-generator"></a>Skapa en komplett slumptalsgenerator
 
-Nu när vi har en Q#-åtgärd som genererar slumpmässiga bitar, kan vi använda den till att skapa en komplett kvantgenerator för slumptal. Vi kan använda Q#-kommandoradsprogrammen eller använda ett värdprogram.
+Nu när vi har en Q# åtgärd som genererar slumpmässiga bitar kan vi använda den för att bygga en komplett Quantum slump tals Generator. Vi kan använda Q# kommando rads program eller använda ett värd program.
 
 
 
-### <a name="q-command-line-applications-with-visual-studio-or-visual-studio-code"></a>[Q#-kommandoradsprogram med Visual Studio eller Visual Studio Code](#tab/tabid-qsharp)
+### <a name="no-locq-command-line-applications-with-visual-studio-or-visual-studio-code"></a>[Q#kommando rads program med Visual Studio eller Visual Studio Code](#tab/tabid-qsharp)
 
-Om du vill skapa det fullständiga Q#-kommandoradsprogrammet lägger du till följande startpunkt i Q#-programmet: 
+Om du vill skapa ett fullständigt Q# kommando rads program lägger du till följande start punkt i Q# programmet: 
 
 :::code language="qsharp" source="~/quantum/samples/getting-started/qrng/Qrng.qs" range="17-33":::
 
@@ -91,7 +94,7 @@ dotnet run --no-build
 
 ### <a name="python-with-visual-studio-code-or-the-command-line"></a>[Python med Visual Studio Code eller kommandoraden](#tab/tabid-python)
 
-Om du vill köra ditt nya Q#-program från Python sparar du följande kod som `host.py`:
+Om du vill köra det nya Q# programmet från python sparar du följande kod som `host.py` :
 
 :::code language="python" source="~/quantum/samples/interoperability/qrng/host.py" range="11-30":::
 
@@ -105,7 +108,7 @@ Preparing Q# environment...
 
 ### <a name="c-with-visual-studio-code-or-visual-studio"></a>[C# med Visual Studio Code eller Visual Studio](#tab/tabid-csharp)
 
-Om du vill köra ditt nya Q#-program från C# ändrar du `Driver.cs` så att följande C#-kod ingår:
+Om du vill köra det nya Q# programmet från C# ändrar `Driver.cs` du till att inkludera följande C#-kod:
 
 :::code language="csharp" source="~/quantum/samples/interoperability/qrng/Host.cs" range="4-39":::
 

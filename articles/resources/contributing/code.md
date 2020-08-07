@@ -6,12 +6,15 @@ ms.author: chgranad
 ms.date: 10/12/2018
 ms.topic: article
 uid: microsoft.quantum.contributing.code
-ms.openlocfilehash: edc52dc4434e91258bece28812fd76b66329c6f9
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 956b0957a5261b8a77bf18d776fbcc2853bfbfe7
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85275486"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87866917"
 ---
 # <a name="contributing-code"></a>Bidra med kod
 
@@ -28,10 +31,10 @@ Därför är det användbart när funktioner som läggs till av ett bidrag är v
 
 ### <a name="unit-tests"></a>Enhets tester
 
-De Q #-funktioner, åtgärder och användardefinierade typer som utgör bibliotek, till exempel Canon, testas automatiskt som en del av utvecklingen på [**Microsoft/QuantumLibraries**](https://github.com/Microsoft/QuantumLibraries/) -lagringsplatsen.
+De Q# funktioner, åtgärder och användardefinierade typer som utgör bibliotek, till exempel Canon, testas automatiskt som en del av utvecklingen på [**Microsoft/QuantumLibraries**](https://github.com/Microsoft/QuantumLibraries/) -lagringsplatsen.
 När en ny pull-begäran öppnas, till exempel så kontrollerar vår [Azure-pipeline](https://azure.microsoft.com/services/devops/pipelines/) att ändringarna i pull-begäran inte bryter några befintliga funktioner som program varan Quantum Programming är beroende av.
 
-Med den senaste Q # versionen definieras enhets test med hjälp av- `@Test("QuantumSimulator")` attributet. Argumentet kan vara antingen "QuantumSimulator", "ToffoliSimulator", "TraceSimulator" eller ett fullständigt kvalificerat namn som anger körnings målet. Flera attribut som definierar olika körnings mål kan kopplas till samma anrops bara. Några av våra tester använder fortfarande det inaktuella [Microsoft. Quantum. Xunit](https://www.nuget.org/packages/Microsoft.Quantum.Xunit/) -paketet som visar alla Q #-funktioner och-åtgärder som avslutas med `Test` [Xunit](https://xunit.github.io/) -ramverket. Det här paketet behövs inte längre för att definiera enhets test. 
+Med den senaste Q# versionen definieras enhets test med hjälp av- `@Test("QuantumSimulator")` attributet. Argumentet kan vara antingen "QuantumSimulator", "ToffoliSimulator", "TraceSimulator" eller ett fullständigt kvalificerat namn som anger körnings målet. Flera attribut som definierar olika körnings mål kan kopplas till samma anrops bara. Några av våra tester använder fortfarande det inaktuella [Microsoft. Quantum. Xunit](https://www.nuget.org/packages/Microsoft.Quantum.Xunit/) -paketet som visar alla Q# funktioner och åtgärder som avslutas med `Test` [Xunit](https://xunit.github.io/) -ramverket. Det här paketet behövs inte längre för att definiera enhets test. 
 
 Följande funktion används för att se till att <xref:microsoft.quantum.canon.fst> och <xref:microsoft.quantum.canon.snd> fungerar både för att returnera rätt utdata i ett representativt exempel.
 Om resultatet `Fst` `Snd` är felaktigt `fail` används instruktionen för att göra så att testet inte kan köras.
@@ -92,7 +95,7 @@ Det kan vara svårt att göra allt, så vi planerar ut vilka funktioner vi kan a
 Detta kan vara ett annat fall där en funktion släpps som ett bibliotek från tredje part kan göra mycket bra.
 Du kan också be om hjälp med att ändra en funktion som passar bättre i vår översikt så att vi kan utföra det bästa arbetet med den.
 
-Vi kommer också att be om ändringar i en pull-begäran om den kräver mer dokumentation eller enhets test för att hjälpa oss att använda den, eller om den är tillräckligt stor från resten av de Q #-bibliotek som det gör det svårare för användarna att hitta din funktion.
+Vi kommer också att be om ändringar i en pull-begäran om den kräver mer dokumentation eller enhets test för att hjälpa oss att använda den, eller om den är tillräckligt stor från resten av Q# biblioteken som det gör det svårare för användarna att hitta din funktion.
 I dessa fall kommer vi att försöka erbjuda några råd i kod granskningar om vad som kan läggas till eller ändras för att göra ditt bidrag enklare för oss att ta med.
 
 Slutligen kan vi inte ta emot bidrag som skadar den Quantum Computing-gruppen, enligt beskrivningen i [Microsofts regler för öppen källkod för uppförande](https://opensource.microsoft.com/codeofconduct/).
@@ -102,10 +105,10 @@ Vi uppskattar din hjälp att realisera detta mål.
 ## <a name="next-steps"></a>Nästa steg
 
 Tack för att du hjälper till att göra Quantum Development Kit till en fantastisk resurs för hela Quantum Programming-gruppen!
-Om du vill veta mer kan du fortsätta med följande guide på Q #-format.
+Om du vill veta mer kan du fortsätta med följande guide på Q# format.
 
 > [!div class="nextstepaction"]
-> [Läs mer om rikt linjer för Q #-format](xref:microsoft.quantum.contributing.style)
+> [Lär dig mer om Q# stil rikt linjer](xref:microsoft.quantum.contributing.style)
 
 Beroende på vilken typ av kod som du bidrar kan det finnas ytterligare saker att tänka på och som kan hjälpa dig att göra ditt bidrag så mycket som möjligt för communityn.
 

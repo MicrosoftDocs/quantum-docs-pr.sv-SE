@@ -6,12 +6,15 @@ ms.author: v-edsanc@microsoft.com
 ms.date: 02/17/2020
 ms.topic: article
 uid: microsoft.quantum.libraries.machine-learning.design
-ms.openlocfilehash: b304b9d1a15f164f4dfe758aaed31b7b2369b18c
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 60e694e9f7c2f01a6679ef960f5a7774c8bd6a62
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85276040"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87868956"
 ---
 # <a name="design-your-own-classifier"></a>Utforma din egen klassificerare
 
@@ -47,6 +50,8 @@ Nu ska vi se ett exempel på en klassificerare. I [exemplen på halv måne](http
 Vad vi definierar här är en funktion som returnerar en element mat ris `ControlledRotation` , som tillsammans med en matris med parametrar och en förskjutning definierar vår [`SequentialModel`](xref:microsoft.quantum.machinelearning.sequentialmodel) . Den här typen är grundläggande i Quantum Machine Learning-biblioteket och definierar klassificeraren. Den krets som definieras i funktionen ovan är en del av en klassificerare där varje exempel i data uppsättningen innehåller två funktioner. Därför behöver vi bara två qubits. Den grafiska åter givningen av kretsen är:
 
  ![Exempel på krets modell](~/media/circuit_model_1.PNG)
+
+Observera att som standard åtgärder i Quantum Machine Learning-biblioteket, mäter den sista qubit i registret för att uppskatta klassificeringen sannolikhet. Tänk på detta när du utformar din krets.
 
 ## <a name="use-the-library-functions-to-write-layers-of-gates"></a>Använd biblioteks funktionerna för att skriva lager med portar
 

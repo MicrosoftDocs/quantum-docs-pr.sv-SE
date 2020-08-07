@@ -1,32 +1,35 @@
 ---
-title: 'Design principer för Q # API'
-description: 'Design principer för Q # API'
+title: Q#Design principer för API
+description: Q#Design principer för API
 author: cgranade
 ms.author: chgranad
 ms.date: 3/9/2020
 ms.topic: article
 uid: microsoft.quantum.contributing.api-design
-ms.openlocfilehash: def6a9f12accfa399fd4db3783b9899fc743f025
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 580fcaea575ff544ed2c5f31eba7e963bea4534b
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85275489"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87866902"
 ---
-# <a name="q-api-design-principles"></a>Design principer för Q # API
+# <a name="no-locq-api-design-principles"></a>Q#Design principer för API
 
 ## <a name="introduction"></a>Introduktion
 
-Som ett språk och en plattform ger Q # användare möjlighet att skriva, köra, förstå och utforska Quantum-program.
-För att användarna ska kunna utforma Q #-bibliotek följer vi en uppsättning design principer för API: er som vägleder våra design och hjälper oss att göra användbara bibliotek för den Quantum Development-gruppen.
-Den här artikeln innehåller de här principerna och ger exempel på hur du kan använda dem när du utformar Q # API: er.
+Som ett språk och som plattform ger Q# användare möjlighet att skriva, köra, förstå och utforska Quantum-program.
+För att användarna ska kunna utforma Q# bibliotek följer vi en uppsättning API design-principer som vägleder våra design och hjälper oss att göra användbara bibliotek för den Quantum Development-communityn.
+Den här artikeln innehåller de här principerna och ger exempel på hur du kan använda dem när du skapar Q# API: er.
 
 > [!TIP]
 > Det här är ett ganska detaljerat dokument som hjälper dig att hjälpa till med biblioteks utveckling och djupgående biblioteks bidrag.
-> Du kommer förmodligen att upptäcka det mest användbart om du skriver dina egna bibliotek i Q #, eller om du bidrar med större funktioner till [lagrings platsen för Q #-bibliotek](https://github.com/microsoft/QuantumLibraries).
+> Du kommer förmodligen att upptäcka det mest användbart om du skriver dina egna bibliotek i Q# , eller om du bidrar med större funktioner till [ Q# biblioteks lagrings platsen](https://github.com/microsoft/QuantumLibraries).
 >
 > Å andra sidan rekommenderar vi att du börjar med [bidrags hand boken](xref:microsoft.quantum.contributing), om du vill lära dig att bidra till Quantum Development Kit.
-> Om du vill ha mer allmän information om hur vi rekommenderar att du formaterar din Q #-kod kanske du är intresse rad av att checka ut [stil guiden](xref:microsoft.quantum.contributing.style).
+> Om du vill ha mer allmän information om hur vi rekommenderar att du formaterar Q# koden kan du vara intresse rad av att checka ut [stil guiden](xref:microsoft.quantum.contributing.style).
 
 ## <a name="general-principles"></a>Allmänna principer
 
@@ -81,7 +84,7 @@ Den här artikeln innehåller de här principerna och ger exempel på hur du kan
 - ✅**Utför** design funktioner och åtgärder för att skapa bra med andra funktioner och åtgärder, både i samma API och i tidigare befintliga bibliotek.
 
   *Exempel:*
-  - @"microsoft.quantum.canon.delay"Åtgärden gör minimala antaganden om inaktuella indatatyper och kan därför användas för att fördröja program för båda åtgärderna i Q # standard-biblioteket eller som definieras av användarna.
+  - @"microsoft.quantum.canon.delay"Åtgärden gör minimala antaganden om inaktuella indatatyper och kan därför användas för att fördröja program för båda driften i Q# standard biblioteket eller som definieras av användarna.
     <!-- TODO: define bad example. -->
 
 - ✅**Exponerar** rent deterministisk klassisk logik som funktioner i stället för åtgärder.

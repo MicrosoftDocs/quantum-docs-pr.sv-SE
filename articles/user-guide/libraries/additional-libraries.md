@@ -1,36 +1,39 @@
 ---
-title: 'Använda ytterligare Q #-bibliotek'
-description: 'Lär dig hur du lägger till ytterligare Q #-bibliotek i dina Quantum-program.'
+title: Använda ytterligare Q# bibliotek
+description: Lär dig hur du lägger till ytterligare Q# bibliotek i dina Quantum-program.
 author: cgranade
 ms.author: chgranad
 ms.date: 06/30/2020
 ms.topic: article
 uid: microsoft.quantum.libraries.using
-ms.openlocfilehash: b82113b925870d07c8a28aecd50176e009826062
-ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: ef88ca765a394a7092eb0a60bf6f3615c082ef6a
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86872642"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87869587"
 ---
-# <a name="using-additional-q-libraries"></a>Använda ytterligare Q #-bibliotek
+# <a name="using-additional-no-locq-libraries"></a>Använda ytterligare Q# bibliotek
 
-Quantum Development Kit innehåller ytterligare domänfunktionalitet med _NuGet-paket_ som kan läggas till i dina Q #-projekt.
+Quantum Development Kit innehåller ytterligare domänfunktionalitet med _NuGet-paket_ som kan läggas till i dina Q# projekt.
 
-| Q #-bibliotek  | NuGet-paket | Kommentarer |
+| Q#Bibliotek  | NuGet-paket | Obs! |
 |---------|---------|--------|
-| [Q # standard bibliotek](xref:microsoft.quantum.libraries.standard.intro) | [**Microsoft. Quantum. standard**](https://www.nuget.org/packages/Microsoft.Quantum.Standard) | Ingår som standard |
+| [Q#standard bibliotek](xref:microsoft.quantum.libraries.standard.intro) | [**Microsoft. Quantum. standard**](https://www.nuget.org/packages/Microsoft.Quantum.Standard) | Ingår som standard |
 | [Bibliotek för kvantkemi](xref:microsoft.quantum.chemistry.concepts.intro) | [**Microsoft.Quantum.Chemistry**](https://www.nuget.org/packages/Microsoft.Quantum.Chemistry) | |
 | [Bibliotek för kvantmatematik](xref:microsoft.quantum.numerics.intro) | [**Microsoft. Quantum. numeric**](https://www.nuget.org/packages/Microsoft.Quantum.Numerics) | |
 | [Bibliotek för kvantmaskininlärning](xref:microsoft.quantum.libraries.machine-learning.intro) | [**Microsoft.Quantum.MachineLearning**](https://www.nuget.org/packages/Microsoft.Quantum.MachineLearning) | |
 
-När du har installerat Quantum Development Kit för användning med din önskade miljö och värd språk kan du enkelt lägga till bibliotek i enskilda Q #-projekt utan någon ytterligare installation.
+När du har installerat Quantum Development Kit för användning med din önskade miljö och ditt värd språk kan du enkelt lägga till bibliotek i enskilda Q# projekt utan någon ytterligare installation.
 
 > [!NOTE]
-> Vissa Q #-bibliotek kan fungera bra med ytterligare verktyg som fungerar tillsammans med dina Q #-program eller som integreras med dina värd program.
+> Vissa Q# bibliotek kan fungera bra med ytterligare verktyg som fungerar tillsammans Q# med dina program eller som integreras med dina värd program.
 > [Installations anvisningarna för kemi Library](xref:microsoft.quantum.chemistry.concepts.installation) beskriver till exempel hur du använder [ **Microsoft. Quantum. kemi** -paketet](https://www.nuget.org/packages/Microsoft.Quantum.Chemistry) tillsammans med NWChem-plattformen för beräknings kemi och hur du installerar `qdk-chem` kommando rads verktygen för att arbeta med Quantum kemi-data.
 
-## <a name="q-command-line-applications-or-net-interopability"></a>[Q # kommando rads program eller .NET-interop](#tab/tabid-csproj)
+## <a name="no-locq-command-line-applications-or-net-interopability"></a>[Q#kommando rads program eller .NET-interop](#tab/tabid-csproj)
 
 **Kommando rad eller Visual Studio Code:** Med hjälp av kommando raden på egen hand eller i Visual Studio Code kan du använda `dotnet` kommandot för att lägga till en NuGet-paket referens i projektet.
 Om du till exempel vill lägga till paketet [**Microsoft. Quantum. numeric**](https://www.nuget.org/packages/Microsoft.Quantum.Numerics) kör du följande kommando:
@@ -39,7 +42,7 @@ Om du till exempel vill lägga till paketet [**Microsoft. Quantum. numeric**](ht
 dotnet add package Microsoft.Quantum.Numerics
 ```
 
-**Visual Studio:** Om du använder Visual Studio 2019 eller senare kan du lägga till ytterligare Q #-paket med hjälp av NuGet Package Manager.
+**Visual Studio:** Om du använder Visual Studio 2019 eller senare kan du lägga till ytterligare Q# paket med NuGet Package Manager.
 Så här läser du in ett paket: 
 1. Öppna ett projekt i Visual Studio och välj **Hantera NuGet-paket...** från **projekt** -menyn.
 
@@ -61,17 +64,17 @@ Install-Package Microsoft.Quantum.Numerics
 
 Mer information finns i Guide till [Package Manager-konsolen](https://docs.microsoft.com/nuget/tools/package-manager-console).
 
-## <a name="iq-notebooks"></a>[SWEETIQ # Notebooks](#tab/tabid-notebook)
+## <a name="ino-locq-notebooks"></a>[I Q# antecknings böcker](#tab/tabid-notebook)
 
-Du kan göra ytterligare paket tillgängliga för användning i en SWEETIQ # Notebook med [ `%package` kommandot Magic](xref:microsoft.quantum.iqsharp.magic-ref.package).
-Om du till exempel vill lägga till paketet [**Microsoft. Quantum. numeric**](https://www.nuget.org/packages/Microsoft.Quantum.Numerics) för användning i en Sweetiq # Notebook kör du följande kommando i en Notebook-cell:
+Du kan göra ytterligare paket tillgängliga för användning i en I- Q# anteckningsbok med hjälp av [ `%package` kommandot Magic](xref:microsoft.quantum.iqsharp.magic-ref.package).
+Om du till exempel vill lägga till paketet [**Microsoft. Quantum. numeric**](https://www.nuget.org/packages/Microsoft.Quantum.Numerics) för användning I en i Q# -anteckningsbok, kör du följande kommando i en Notebook-cell:
 
 ```
 %package Microsoft.Quantum.Numerics
 ```
 
 Efter det här kommandot är paketet tillgängligt för alla celler i antecknings boken.
-Om du vill göra paketet tillgängligt från Q # kod i den aktuella arbets ytan läser du in arbets ytan igen när du har lagt till ditt paket:
+Om du vill göra paketet tillgängligt från Q# kod i den aktuella arbets ytan läser du in arbets ytan igen när du har lagt till ditt paket:
 
 ```
 %workspace reload
@@ -81,15 +84,15 @@ Om du vill göra paketet tillgängligt från Q # kod i den aktuella arbets ytan 
 
 
 Du kan göra ytterligare paket tillgängliga för användning i ett python-värdprogram med hjälp av- [`qsharp.packages.add`](https://docs.microsoft.com/python/qsharp/qsharp.packages.packages) metoden.
-Om du till exempel vill lägga till paketet [**Microsoft. Quantum. numeric**](https://www.nuget.org/packages/Microsoft.Quantum.Numerics) för användning i en Sweetiq # Notebook kör du följande python-kod:
+Om du till exempel vill lägga till paketet [**Microsoft. Quantum. numeric**](https://www.nuget.org/packages/Microsoft.Quantum.Numerics) för användning I en i Q# -anteckningsbok kör du följande python-kod:
 
 ```python
 import qsharp
 qsharp.packages.add("Microsoft.Quantum.Numerics")
 ```
 
-Efter det här kommandot kommer paketet att göras tillgängligt för all Q #-kod som kompileras med `qsharp.compile` .
-Om du vill göra paketet tillgängligt från Q # kod i den aktuella arbets ytan läser du in arbets ytan igen när du har lagt till ditt paket:
+Efter det här kommandot kommer paketet att göras tillgängligt för all Q# kod som kompileras med `qsharp.compile` .
+Om du vill göra paketet tillgängligt från Q# kod i den aktuella arbets ytan läser du in arbets ytan igen när du har lagt till ditt paket:
 
 ```python
 qsharp.reload()

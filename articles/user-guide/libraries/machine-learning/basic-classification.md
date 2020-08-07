@@ -1,28 +1,31 @@
 ---
 title: Grundläggande klassificering med Quantum Machine Learning-biblioteket
-description: 'Lär dig hur du kör en Quantum-följd som skrivits i Q # med Quantum Machine Learning-biblioteket för Microsoft-QDK.'
+description: Lär dig hur du kör en Quantum-klassificeraren som skrivits i Q# med hjälp av quantum Machine Learning-biblioteket för Microsoft-QDK.
 author: geduardo
 ms.author: v-edsanc@microsoft.com
 ms.date: 02/16/2020
 ms.topic: article
 uid: microsoft.quantum.libraries.machine-learning.basics
-ms.openlocfilehash: 1d2538fd164c4c61c2712978d3b5c57b0eb766e6
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: f9c3e7ab85c0f0d1a6063e593607d35c5cb76936
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85275790"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87868975"
 ---
 # <a name="basic-classification-classify-data-with-the-qdk"></a>Grundläggande klassificering: klassificera data med QDK
 
-I den här snabb starten får du lära dig hur du kör en Quantum-följd som skrivits i Q # med Quantum Machine Learning-biblioteket för QDK. 
+I den här snabb starten får du lära dig hur du kör en Quantum-klassificeraren som skrivits i Q# med quantum Machine Learning-biblioteket för QDK. 
 
-I den här hand boken kommer vi att använda den halva måne-datauppsättningen med en klassificerings struktur som definierats i Q #.
+I den här hand boken kommer vi att använda den halva måne-datauppsättningen med en klassificerings struktur som definierats i Q# .
 
 ## <a name="prerequisites"></a>Krav
 
 - Microsoft [Quantum Development Kit](xref:microsoft.quantum.install).
-- Skapa ett Q #-projekt för antingen ett [python-värdprogram](xref:microsoft.quantum.install.python) eller [C#-värd program](xref:microsoft.quantum.install.cs).
+- Skapa ett Q# projekt för antingen ett [python-värdprogram](xref:microsoft.quantum.install.python) eller ett [C#-värd program](xref:microsoft.quantum.install.cs).
 
 ## <a name="host-program"></a>Värd program
 
@@ -34,7 +37,7 @@ Ditt värd program består av tre delar:
 
     ### <a name="python-with-visual-studio-code-or-the-command-line"></a>[Python med Visual Studio Code eller kommandoraden](#tab/tabid-python)
 
-    Om du vill köra är du Q #-klassificeraren från python och sparar följande kod som `host.py` . Kom ihåg att du även behöver den Q #-fil `Training.qs` som beskrivs senare i den här självstudien.
+    Om du vill köra du är Q# klassificeraren från python sparar du följande kod som `host.py` . Kom ihåg att du även behöver Q# filen `Training.qs` som beskrivs senare i den här självstudien.
 
     :::code language="python" source="~/quantum/samples/machine-learning/half-moons/host.py" range="3-42":::
 
@@ -49,7 +52,7 @@ Ditt värd program består av tre delar:
 
     ### <a name="c-with-visual-studio-code-or-the-command-line"></a>[C# med Visual Studio Code eller kommandoraden](#tab/tabid-csharp)
 
-    Om du vill köra är du Q # klassificerare från C# och sparar följande kod som `Host.cs` . Kom ihåg att du även behöver den Q #-fil `Training.qs` som beskrivs senare i den här självstudien.
+    Om du vill köra du är Q# klassificeraren från C# sparar du följande kod som `Host.cs` . Kom ihåg att du även behöver Q# filen `Training.qs` som beskrivs senare i den här självstudien.
 
     :::code language="csharp" source="~/quantum/samples/machine-learning/half-moons/Host.cs" range="4-86":::
 
@@ -63,7 +66,7 @@ Ditt värd program består av tre delar:
 
     ### <a name="c-with-visual-studio-2019"></a>[C# med Visual Studio 2019](#tab/tabid-vs2019)
 
-    Om du vill köra ditt nya Q #-program från C# i Visual Studio ändrar `Host.cs` du till att inkludera följande C#-kod. Kom ihåg att du även behöver den Q #-fil `Training.qs` som beskrivs senare i den här självstudien.
+    Om du vill köra det nya Q# programmet från C# i Visual Studio ändrar `Host.cs` du till att inkludera följande C#-kod. Kom ihåg att du även behöver Q# filen `Training.qs` som beskrivs senare i den här självstudien.
 
     :::code language="csharp" source="~/quantum/samples/machine-learning/half-moons/Host.cs" range="4-86":::
 
@@ -78,7 +81,7 @@ Ditt värd program består av tre delar:
 
 ## <a name="q-classifier-code"></a>Q- \# klassificerings kod
 
-Nu ska vi se hur de åtgärder som anropas av värd programmet definieras i Q #.
+Nu ska vi se hur de åtgärder som anropas av värd programmet definieras i Q# .
 Vi sparar följande kod i en fil med namnet `Training.qs` .
 
 :::code language="qsharp" source="~/quantum/samples/machine-learning/half-moons/Training.qs" range="4-116":::

@@ -1,21 +1,24 @@
 ---
-title: Utforska sammanflätning med Q#
-description: Lär dig hur man skriver ett kvantprogram i Q#. Utveckla ett Bell-tillståndsprogram med Quantum Development Kit (QDK)
+title: Utforska entanglement medQ#
+description: Lär dig hur du skriver ett Quantum-program i Q# . Utveckla ett Bell-tillståndsprogram med Quantum Development Kit (QDK)
 author: geduardo
 ms.author: v-edsanc@microsoft.com
 ms.date: 05/29/2020
 ms.topic: tutorial
 uid: microsoft.quantum.write-program
-ms.openlocfilehash: 16c93b3dd17363c06602529cb34e8fc84aadc7a8
-ms.sourcegitcommit: af10179284967bd7a72a52ae7e1c4da65c7d128d
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: c66d26b5ea253d6fc2633fbe52fa35ba703d185d
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85415430"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87869706"
 ---
 # <a name="tutorial-explore-entanglement-with-q"></a>Självstudier: Utforska sammanflätning med Q\#
 
-I den här självstudien visar vi hur du skriver ett Q#-program som ändrar och mäter kvantbitar samt visar effekterna av superposition och sammanflätning.
+I den här självstudien visar vi hur du skriver ett Q# program som manipulerar och mäter qubits och demonstrerar effekterna av superposition och entanglement.
 
 Du kommer att skriva ett program med namnet Bell som visar kvantsammanflätning.
 Namnet Bell syftar på Bell-tillstånd, vilket är specifika kvanttillstånd för två kvantbitar som används för att visa de enklaste exemplen på superposition och kvantsammanflätning.
@@ -27,14 +30,14 @@ Om du är redo att börja koda följer du nedanstående steg innan du fortsätte
 * [Installera](xref:microsoft.quantum.install) Quantum Development Kit med din önskade språk-och utvecklings miljö.
 * Om du redan har installerat QDK kontrollerar du att det är [uppdaterat](xref:microsoft.quantum.update) till den senaste versionen
 
-Du kan också följa med i beräkningen utan att installera QDK, granska översikterna för Q #-programmeringsspråket och de första koncepten med Quantum Computing.
+Du kan också följa med i beräkningen utan att installera QDK, granska övervisningen av Q# programmeringsspråket och de första koncepten med Quantum Computing.
 
 ## <a name="in-this-tutorial-youll-learn-how-to"></a>I den här självstudien får du lära dig att:
 
 > [!div class="checklist"]
 > * Skapa och kombinera åtgärder i Q\#
 > * Skapa åtgärder för att placera qubits i superposition, entangle och mät dem.
-> * Demonstrera Quantum entanglement med ett Q #-program som körs i en simulator. 
+> * Demonstrera Quantum entanglement med ett Q# program som körs i en simulator. 
 
 ## <a name="demonstrating-qubit-behavior-with-the-qdk"></a>Demonstrera qubit-beteende med QDK
 
@@ -45,20 +48,20 @@ Måttet genererar ett binärt värde, antingen 0 eller 1.  Kvantbiten går från
 
 Flera kvantbitar kan vara [**sammanflätade**](xref:microsoft.quantum.glossary#entanglement).  När vi mäter en sammanflätad kvantbit får vi även veta de andra kvantbitarnas tillstånd.
 
-Nu är vi redo att demonstrera hur Q# uttrycker detta beteende.  Du börjar med det enklaste programmet och skapar det för att visa en kvantsuperposition och kvantsammanflätning.
+Nu är vi redo att demonstrera hur Q# uttrycker det här beteendet.  Du börjar med det enklaste programmet och skapar det för att visa en kvantsuperposition och kvantsammanflätning.
 
-## <a name="creating-a-q-project"></a>Skapa ett Q #-projekt
+## <a name="creating-a-no-locq-project"></a>Skapa ett Q# projekt
 
-Det första vi behöver göra är att skapa ett nytt Q #-projekt. I den här självstudien kommer vi att använda miljön baserat på [kommando rads program med vs Code](xref:microsoft.quantum.install.standalone).
+Det första vi behöver göra är att skapa ett nytt Q# projekt. I den här självstudien kommer vi att använda miljön baserat på [kommando rads program med vs Code](xref:microsoft.quantum.install.standalone).
 
 Så här skapar du ett nytt projekt i VS Code: 
 
-1. Klicka på **Visa**  ->  **kommando palett** och välj **Q #: skapa nytt projekt**.
-2. Klicka på **fristående konsol program**.
-3. Navigera till platsen där du vill spara projektet och klicka på **skapa projekt**.
-4. När projektet har skapats klickar du på **Öppna nytt projekt...** i det nedre högra hörnet.
+1. Klicka på **Visa**  ->  **kommando palett** och välj ** Q# : skapa nytt projekt**.
+2. Klicka på **Fristående konsolprogram**.
+3. Gå till platsen där du vill spara projektet och klicka på **Skapa projekt**.
+4. När projektet har skapats klickar du på **Öppna nytt projekt...** längst ned till höger.
 
-I det här fallet kallas vi för projektet `Bell` . Detta genererar två filer: `Bell.csproj` , projekt filen och `Program.qs` en mall för ett Q #-program som vi ska använda för att skriva vårt program. Innehållet i `Program.qs` ska vara:
+I det här fallet kallas vi för projektet `Bell` . Detta genererar två filer: `Bell.csproj` , projekt filen och `Program.qs` en mall för ett Q# program som vi ska använda för att skriva vårt program. Innehållet i `Program.qs` ska vara:
 
 ```qsharp
    namespace Bell {
@@ -76,11 +79,11 @@ I det här fallet kallas vi för projektet `Bell` . Detta genererar två filer: 
 
 ## <a name="write-the-q-application"></a>Skriv Q- \# programmet
  
-Vårt mål är att förbereda två kvantbitar i ett särskilt kvanttillstånd, demonstrera hur du använder kvantbitar med Q# för att ändra deras tillstånd, samt demonstrera effekterna av superposition och sammanflätning. Vi bygger upp den här delen av en del för att presentera qubit-tillstånd,-åtgärder och-mått.
+Vårt mål är att förbereda två qubits i ett särskilt Quantum-tillstånd som visar hur du kan arbeta med qubits med Q# för att ändra deras tillstånd och demonstrera effekterna av superposition och entanglement. Vi bygger upp den här delen av en del för att presentera qubit-tillstånd,-åtgärder och-mått.
 
 ### <a name="initialize-qubit-using-measurement"></a>Initiera qubit med hjälp av mått
 
-I den första koden nedan visar vi dig hur man arbetar med kvantbitar i Q#.  Vi introducerar två åtgärder [`M`](xref:microsoft.quantum.intrinsic.m) och [`X`](xref:microsoft.quantum.intrinsic.x) som transformerar statusen för en qubit. I det här kodfragmentet definieras åtgärden `SetQubitState` som använder en parameter som kvantbit och en annan parameter, `desired`, som representerar det tillstånd som vi vill att kvantbiten ska ha.  Åtgärden `SetQubitState` utför en mätning på kvantbiten med åtgärden `M`.  I Q # returnerar en qubit-mätning alltid antingen `Zero` eller `One` .  Om mätningen returnerar ett värde som inte är lika med det önskade värdet `SetQubitState` "vänder" qubit; som är, körs en `X` åtgärd som ändrar qubit-tillstånd till ett nytt tillstånd där sannolikheten för en mätning returneras `Zero` och `One` återförs. På så sätt `SetQubitState` placeras alltid mål qubit i önskat tillstånd.
+I den första koden nedan visar vi dig hur du arbetar med qubits i Q# .  Vi introducerar två åtgärder [`M`](xref:microsoft.quantum.intrinsic.m) och [`X`](xref:microsoft.quantum.intrinsic.x) som transformerar statusen för en qubit. I det här kodfragmentet definieras åtgärden `SetQubitState` som använder en parameter som kvantbit och en annan parameter, `desired`, som representerar det tillstånd som vi vill att kvantbiten ska ha.  Åtgärden `SetQubitState` utför en mätning på kvantbiten med åtgärden `M`.  I Q# returnerar en qubit-mätning alltid antingen `Zero` eller `One` .  Om mätningen returnerar ett värde som inte är lika med det önskade värdet `SetQubitState` "vänder" qubit; som är, körs en `X` åtgärd som ändrar qubit-tillstånd till ett nytt tillstånd där sannolikheten för en mätning returneras `Zero` och `One` återförs. På så sätt `SetQubitState` placeras alltid mål qubit i önskat tillstånd.
 
 Ersätt innehållet i `Program.qs` med följande kod:
 
@@ -103,15 +106,15 @@ Den här åtgärden kan nu anropas för att försätta en kvantbit i ett klassis
 
 Åtgärden `SetQubitState` mäter kvantbiten. Om kvantbiten är i det tillstånd som vi vill ha, lämnar `SetQubitState` den oförändrad. Annars ändrar vi kvantbitens tillstånd till önskat tillstånd genom att köra åtgärden `X`.
 
-#### <a name="about-q-operations"></a>Om Q#-åtgärder
+#### <a name="about-no-locq-operations"></a>Om Q# åtgärder
 
-En Q#-åtgärd är en kvantsubrutin. Det vill säga att det är en rutin som kan anropas och som innehåller anrop till andra Quantum-åtgärder.
+En Q# åtgärd är en Quantum-underrutin. Det vill säga att det är en rutin som kan anropas och som innehåller anrop till andra Quantum-åtgärder.
 
 Argumenten i en åtgärd anges som en tuppel inom parentes.
 
-Returtypen för åtgärden anges efter ett kolon. I det här fallet saknar `SetQubitState`-åtgärden en retur, så den markeras som en retur för `Unit`. Detta är Q#-motsvarigheten till `unit` i F#, vilket är ungefär detsamma som `void` i C# och en tom tuppel (`Tuple[()]`) i Python.
+Returtypen för åtgärden anges efter ett kolon. I det här fallet saknar `SetQubitState`-åtgärden en retur, så den markeras som en retur för `Unit`. Detta är Q# detsamma `unit` som i F #, som är ungefär detsamma som `void` i C# och en tom tupel ( `Tuple[()]` ) i python.
 
-Du använde två kvantåtgärder i din första Q#-åtgärd:
+Du har använt två Quantum-åtgärder i din första Q# åtgärd:
 
 * [`M`](xref:microsoft.quantum.intrinsic.m)Åtgärden, som mäter status för qubit
 * [`X`](xref:microsoft.quantum.intrinsic.x)Åtgärden, som vänder sig till status för en qubit
@@ -154,19 +157,19 @@ Observera att vi har lagt till en rad innan `return` du skriver ut ett för klar
 
 #### <a name="about-variables-in-q"></a>Om variabler i Q\#
 
-Som standard är variablerna i Q# oföränderliga. Värdet kan inte ändras efter att de har bundits. Nyckelordet `let` används för att ange bindningen för en oföränderlig variabel. Åtgärdsargument är alltid oföränderliga.
+Som standard är variabler i Q# inte oföränderliga. deras värde kan inte ändras efter att de har bundits. Nyckelordet `let` används för att ange bindningen för en oföränderlig variabel. Åtgärdsargument är alltid oföränderliga.
 
 Om du behöver en variabel vars värde kan ändras, till exempel `numOnes` i exemplet, kan du deklarera variabeln med nyckelordet `mutable`. Ett värde för en föränderlig variabel kan ändras med hjälp av en `setQubitState`-instruktion.
 
-I båda fallen härleds variabeltypen av kompileraren. Q# kräver inte någon typanteckning för variabler.
+I båda fallen härleds variabeltypen av kompileraren. Q#kräver inte någon typ av kommentarer för variabler.
 
 #### <a name="about-using-statements-in-q"></a>Om `using` instruktioner i Q\#
 
-`using`-instruktionen är också unik för Q#. Den används till att allokera kvantbitar som ska användas i ett kodblock. I Q# allokeras och frigörs alla kvantbitar dynamiskt, i stället för att vara fasta resurser som finns där under hela livslängden för en komplex algoritm. En `using`-instruktion allokerar en uppsättning kvantbitar vid starten och frigör dem sedan i slutet av blocket.
+`using`Instruktionen är också speciell för Q# . Den används till att allokera kvantbitar som ska användas i ett kodblock. I Q# tilldelas alla qubits dynamiskt och frigörs, i stället för fasta resurser som är där under hela livs längden för en komplex algoritm. En `using`-instruktion allokerar en uppsättning kvantbitar vid starten och frigör dem sedan i slutet av blocket.
 
 ## <a name="execute-the-code-from-the-command-line"></a>Kör koden från kommando raden
 
-För att kunna köra koden måste vi ange vilken kompilator *som* kan anropas för att köras när vi anger `dotnet run` kommandot. Detta görs med en enkel ändring i Q #-filen genom att lägga till en rad med `@EntryPoint()` direkt föregående anrops funktion: `TestBellState` åtgärden i det här fallet. Den fullständiga koden ska vara:
+För att kunna köra koden måste vi ange vilken kompilator *som* kan anropas för att köras när vi anger `dotnet run` kommandot. Detta görs med en enkel ändring i Q# filen genom att lägga till en rad med `@EntryPoint()` direkt föregående anrop: `TestBellState` åtgärden i det här fallet. Den fullständiga koden ska vara:
 
 ```qsharp
 namespace Bell {
@@ -230,7 +233,7 @@ Test results (# of 0s, # of 1s):
 
 ## <a name="prepare-superposition"></a>Förbered superposition
 
-Nu ska vi titta på hur Q # uttrycker sätt att placera qubits i superposition.  Kom ihåg att tillståndet för en kvantbit kan vara i en superposition på 0 och 1.  Vi använder `Hadamard`-åtgärden för att åstadkomma detta. Om kvantbiten finns i något av de klassiska tillstånden (där en mätning alltid returnerar `Zero` eller `One`), kommer `Hadamard`- eller `H`-åtgärden att försätta kvantbiten i ett tillstånd där en mätning returnerar `Zero` 50 % av tiden och `One` 50 % av tiden.  Begreppsmässigt kan man tänka att kvantbiten är halvvägs mellan `Zero` och `One`.  När vi nu simulerar `TestBellState`-åtgärden ser vi att resultaten returnerar ungefär lika många `Zero` och `One` efter mätningen.  
+Nu ska vi titta på hur Q# uttrycker sätt att placera qubits i superposition.  Kom ihåg att tillståndet för en kvantbit kan vara i en superposition på 0 och 1.  Vi använder `Hadamard`-åtgärden för att åstadkomma detta. Om kvantbiten finns i något av de klassiska tillstånden (där en mätning alltid returnerar `Zero` eller `One`), kommer `Hadamard`- eller `H`-åtgärden att försätta kvantbiten i ett tillstånd där en mätning returnerar `Zero` 50 % av tiden och `One` 50 % av tiden.  Begreppsmässigt kan man tänka att kvantbiten är halvvägs mellan `Zero` och `One`.  När vi nu simulerar `TestBellState`-åtgärden ser vi att resultaten returnerar ungefär lika många `Zero` och `One` efter mätningen.  
 
 ### <a name="x-flips-qubit-state"></a>`X`vänder qubit-tillstånd
 
@@ -296,7 +299,7 @@ Detta kallas för **superposition** och ger oss den första verkliga inblicken i
 
 ## <a name="prepare-entanglement"></a>Förbereda sammanflätning
 
-Nu ska vi titta på hur Q# uttrycker de sätt som finns för att sammanfläta kvantbitar.
+Nu ska vi titta på hur Q# uttrycker sätt att entangle qubits.
 Först försätter vi den första kvantbiten i det ursprungliga tillståndet och sedan använder vi `H`-åtgärden för att placera den i superposition.  Innan vi mäter den första qubit använder vi en ny åtgärd ( `CNOT` ), som står för kontrollerad – inte.  Resultatet när vi har kört åtgärden på två kvantbitar är att vända den andra kvantbiten om den första kvantbiten är `One`.  Nu är de två kvantbitarna sammanflätade.  Vår statistik för den första kvantbiten har inte ändrats (50/50 möjlighet för `Zero` eller `One` efter mätningen), men när vi nu mäter den andra kvantbiten är det __alltid__ samma resultat som för den första kvantbiten. Vår `CNOT` har sammanflätat de två kvantbitarna, vilket innebär att det som händer med en av dem händer även för den andra. Om du skulle omvända mätningarna (den andra kvantbiten före den första), skulle samma sak inträffa. Det första måttet blir slumpmässigt och det andra blir låst med det värde som identifierades för den första mätningen.
 
 Det första vi behöver göra är att allokera två qubits i stället för en i `TestBellState` :
@@ -412,6 +415,6 @@ Som vi visade i översikten har vår statistik för den första kvantbiten inte 
 
 ## <a name="next-steps"></a>Nästa steg
 
-Självstudien [Grovers sökning](xref:microsoft.quantum.quickstarts.search) visar hur du skapar och kör Grovers sökning, en av de mest populära kvantberäkningsalgoritmerna. Den är ett bra exempel på ett Q#-program som kan användas för att lösa verkliga problem med hjälp av kvantberäkning.  
+I självstudien om [Grover](xref:microsoft.quantum.quickstarts.search) får du lära dig hur du skapar och kör Grover search, en av de mest populära Quantum Computing-algoritmerna och erbjuder ett bra exempel på ett Q# program som kan användas för att lösa verkliga problem med Quantum Computing.  
 
-I [Kom igång med Quantum Development Kit](xref:microsoft.quantum.welcome) finns fler sätt att lära sig Q# och kvantprogrammering på.
+[Kom igång med Quantum Development Kit](xref:microsoft.quantum.welcome) rekommenderar fler sätt att lära sig Q# och Quantum-programmering.

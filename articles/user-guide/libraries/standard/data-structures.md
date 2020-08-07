@@ -1,17 +1,20 @@
 ---
-title: 'Data strukturer i Q # standard-bibliotek'
-description: 'Lär dig mer om data strukturer, Oracle och dynamiska generatorer i Microsoft Q # standard-bibliotek.'
+title: Data strukturer i Q# standard biblioteken
+description: Lär dig mer om data strukturer, Oracle och dynamiska generatorer i Microsofts Q# standard bibliotek.
 author: QuantumWriter
 uid: microsoft.quantum.libraries.data-structures
 ms.author: martinro@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
-ms.openlocfilehash: 46ac6794d1e21e111aa1d98e11a6f83194f8d54e
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 222fa7d0d33d4ac6c15e9ee9e6e97f380867a145
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85275729"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87868532"
 ---
 # <a name="data-structures-and-modeling"></a>Data strukturer och modeller #
 
@@ -34,7 +37,7 @@ ApplyToEach(H, Snd(pair)); // No need to deconstruct to access the register.
 ### <a name="arrays"></a>Matriser ###
 
 Canon innehåller flera funktioner för att ändra matriser.
-Dessa funktioner är Type-parametered och kan därför användas med matriser av valfri Q #-typ.
+Dessa funktioner är Type-parameterd och kan därför användas med matriser av valfri Q# typ.
 Funktionen returnerar till exempel <xref:microsoft.quantum.arrays.reversed> en ny matris vars element är i omvänd ordning från dess Indatatyp.
 Detta kan användas för att ändra hur ett Quantum-register representeras vid anrop av åtgärder:
 
@@ -72,7 +75,7 @@ I steg-för- [steg-uppskattning](https://en.wikipedia.org/wiki/Quantum_phase_est
 Här är termen Oracle en blackbox Quantum-underrutin som agerar på en uppsättning qubits och returnerar svaret som en fas.
 Den här subrutinen kan ofta ses som en inläsning av en Quantum-algoritm som godkänner Oracle, förutom andra parametrar, och som använder en serie Quantum-åtgärder och som behandlar ett anrop till den här Quantum-underrutinen som om det vore en grundläggande grind.
 För att du ska kunna implementera den större algoritmen måste en konkret nedbrytning av Oracle till fundamental Gates tillhandahållas, men sådan dekomposition behövs inte för att förstå algoritmen som anropar Oracle.
-I Q # representeras den här abstraktionen med hjälp av de här åtgärderna är de första klass värdena, så att åtgärder kan skickas till implementeringar av Quantum-algoritmer i ett svart-box.
+I Q# representeras den här abstraktionen med hjälp av den här typen av värden i första klass, så att åtgärder kan skickas till implementeringar av Quantum-algoritmer i ett svart-box.
 Dessutom används användardefinierade typer för att märka olika Oracle-representationer på ett typ säkert sätt, vilket gör det svårt att oavsiktligt dela olika typer av svarta Box-åtgärder.
 
 Sådana Oracle visas i ett antal olika kontexter, inklusive berömda-exempel, till exempel [Grover search](https://en.wikipedia.org/wiki/Grover%27s_algorithm) -och Quantum simulering-algoritmer.
@@ -189,7 +192,7 @@ Den enhetliga som beskriver den här Quantum Dynamics är $U (t) = R_z (2 \ Omeg
 I det här sammanhanget kan vi simulera $U (t) $ för alla $t $ med en enda $R _z $-grind och eftersom sådana inte behöver begränsa skapar till enbart diskreta frågor till den enhetliga.
 En sådan kontinuerlig modell har också egenskapen att frekvenser som är större än $2 \ PI $ kan hämtas från fas uppskattnings processer som använder kontinuerliga frågor, eftersom den information som annars annars skulle maskeras av gren-klippen i logaritm-funktionen kan visas från resultaten av experiment som har utförts på värden som inte ligger i proportion till $t $.
 Därför är det inte bara lämpligt för problem som den här kontinuerliga fråg ande frågan för fas uppskattning av Oracle, men det är också bättre än den diskreta fråge modellen.
-Av den här anledningen har Q # funktioner för båda typerna av frågor och lämna dem till användaren för att bestämma en algoritm för fas uppskattning som passar deras behov och vilken typ av Oracle som är tillgänglig.
+Av den här orsaken Q# finns funktioner för båda typerna av frågor och lämna dem till användaren för att bestämma en fas uppskattnings algoritm som passar deras behov och vilken typ av Oracle som är tillgänglig.
 
 ## <a name="dynamical-generator-modeling"></a>Modell för dynamisk Generator ##
 

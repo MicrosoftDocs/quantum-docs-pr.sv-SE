@@ -1,33 +1,36 @@
 ---
 title: Uppskattningar av Quantum Resources-Quantum Development Kit
-description: 'Lär dig mer om Microsoft QDKs resurs uppskattning, som beräknar de resurser som krävs för att köra en specifik instans av en Q #-åtgärd på en Quantum-dator.'
+description: Lär dig mer om Microsoft QDKs resurs uppskattning, som beräknar de resurser som krävs för att köra en specifik instans av en Q# åtgärd på en Quantum-dator.
 author: anpaz-msft
 ms.author: anpaz@microsoft.com
 ms.date: 06/26/2020
 ms.topic: article
 uid: microsoft.quantum.machines.resources-estimator
-ms.openlocfilehash: 0909a050e89d6295664e54ab63cfda5d407a8f12
-ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: d5338eb740716d9d7f408703347f572688bbccb2
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86870556"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87868193"
 ---
 # <a name="quantum-development-kit-qdk-resources-estimator"></a>Uppskatta QDK-resurser (Quantum Development Kit)
 
-Som namnet antyder `ResourcesEstimator` beräknar klassen de resurser som krävs för att köra en specifik instans av en Q #-åtgärd på en Quantum-dator. Detta åstadkommer detta genom att köra åtgärden Quantum utan att faktiskt simulera status för en Quantum-dator. av den anledningen beräknar den resurser för frågor för Q # som använder tusentals qubits, förutsatt att den klassiska delen av koden körs på rimlig tid.
+Som namnet antyder `ResourcesEstimator` beräknar klassen de resurser som krävs för att köra en specifik instans av en Q# åtgärd på en Quantum-dator. Detta åstadkommer detta genom att köra åtgärden Quantum utan att faktiskt simulera status för en Quantum-dator. av den anledningen beräknar den resurser för Q# åtgärder som använder tusentals qubits, förutsatt att den klassiska delen av koden körs på rimlig tid.
 
-Resurs uppräkningen är byggd ovanpå [Quantum trace Simulator](xref:microsoft.quantum.machines.qc-trace-simulator.intro), som ger en mer omfattande uppsättning mått och verktyg som hjälper dig att felsöka Q #-program.
+Resurs uppräkningen är byggd ovanpå [Quantum trace Simulator](xref:microsoft.quantum.machines.qc-trace-simulator.intro), som ger en mer omfattande uppsättning mått och verktyg som hjälper dig att felsöka Q# program.
 
 ## <a name="invoking-and-running-the-resources-estimator"></a>Anropar och kör resurs uppskattningen
 
-Du kan använda resurs uppskattningen för att köra en Q #-åtgärd. Mer information finns i [sätt att köra ett Q #-program](xref:microsoft.quantum.guide.host-programs).
+Du kan använda resurs uppskattningen för att köra alla Q# åtgärder. Mer information finns i [sätt att köra ett Q# program](xref:microsoft.quantum.guide.host-programs).
 
 ### <a name="invoking-the-resources-estimator-from-c"></a>Anropar resurs uppskattningen från C # 
 
-Precis som med andra mål datorer skapar du först en instans av `ResourceEstimator` klassen och skickar den som den första parametern för en åtgärds `Run` metod.
+Precis som med andra måldatorer skapar du först en instans av klassen `ResourceEstimator` och skickar den sedan som den första parametern för en åtgärds `Run`-metod.
 
-Observera att om klassen till skillnad från `QuantumSimulator` klassen `ResourceEstimator` implementerar inte <xref:System.IDisposable> gränssnittet, och därför behöver du inte ange det i en `using` instruktion.
+Observera att i motsats till `QuantumSimulator`-klassen implementerar `ResourceEstimator`-klassen inte <xref:System.IDisposable>-gränssnittet och därför behöver du inte ange det i en `using`-instruktion.
 
 ```csharp
 using Microsoft.Quantum.Simulation.Core;
@@ -66,7 +69,7 @@ BorrowedWidth   0
 
 ### <a name="invoking-the-resources-estimator-from-python"></a>Anropar resurs uppskattningen från python
 
-Använd metoden [estimate_resources ()](https://docs.microsoft.com/python/qsharp/qsharp.loader.qsharpcallable) från python-biblioteket med den importerade Q #-åtgärden:
+Använd metoden [estimate_resources ()](https://docs.microsoft.com/python/qsharp/qsharp.loader.qsharpcallable) från python-biblioteket med den importerade Q# åtgärden:
 
 ```python
 qubit_result = myOperation.estimate_resources()
@@ -74,7 +77,7 @@ qubit_result = myOperation.estimate_resources()
 
 ### <a name="invoking-the-resources-estimator-from-the-command-line"></a>Anropar resurs uppskattningen från kommando raden
 
-När du kör ett Q #-program från kommando raden använder du parametern **--Simulator** (eller **-s** Shortcut) för att ange `ResourcesEstimator` mål datorn. Följande kommando kör ett program med hjälp av resurs uppskattningen: 
+När du kör ett Q# program från kommando raden använder du parametern **--Simulator** (eller **-s** Shortcut) för att ange `ResourcesEstimator` mål datorn. Följande kommando kör ett program med hjälp av resurs uppskattningen: 
 
 ```dotnetcli
 dotnet run -s ResourcesEstimator
@@ -82,7 +85,7 @@ dotnet run -s ResourcesEstimator
 
 ### <a name="invoking-the-resources-estimator-from-juptyer-notebooks"></a>Anropar resurs uppskattningen från Juptyer Notebooks
 
-Använd SWEETIQ # Magic kommandot [% uppskattning](xref:microsoft.quantum.iqsharp.magic-ref.simulate) för att köra Q #-åtgärden.
+Använd Q# kommandot% unmagic kommandot [%](xref:microsoft.quantum.iqsharp.magic-ref.simulate) för att köra Q# åtgärden.
 
 ```
 %estimate myOperation
@@ -92,7 +95,7 @@ Använd SWEETIQ # Magic kommandot [% uppskattning](xref:microsoft.quantum.iqshar
 
 Förutom en TSV-tabell kan du program mässigt hämta de beräknade resurserna under körning via `Data` egenskapen för resurs uppskattningen. `Data`Egenskapen ger en `System.DataTable` instans med två kolumner: `Metric` och `Sum` , indexerat av måttets namn.
 
-Följande kod visar hur du hämtar och skriver ut det totala antalet `QubitClifford` `T` och åtgärder som `CNOT` används av en Q #-åtgärd:
+Följande kod visar hur du hämtar och skriver ut det totala antalet `QubitClifford` - `T` och- `CNOT` åtgärder som används av en Q# åtgärd:
 
 ```csharp
 using Microsoft.Quantum.Simulation.Core;
@@ -127,16 +130,16 @@ Resurs uppskattningen spårar följande mått:
 |__Mått__    |Antalet körningar av alla mätningar.  |
 |__R__    |Antalet körningar av en enskild-qubit rotations, exklusive `T` , Clifford och Pauli åtgärder.  |
 |__T__    |Antalet körningar av `T` åtgärder och deras konjugat, inklusive `T` åtgärderna, T_x = H. T. H och T_y = hy. T. hy.  |
-|__Djuplodande__|Den nedre gränserna för djupet i Quantum-kretsen som körs med åtgärden Q #. Djup måttet räknar som standard bara `T` grindar. Mer information finns i [djup räknare](xref:microsoft.quantum.machines.qc-trace-simulator.depth-counter).   |
-|__Bredd__    |Den nedre gränsen för maximalt antal allokerade qubits under körningen av Q #-åtgärden. Det kanske inte går att uppnå både __djup__ och __Bredd__ nedre gränser samtidigt.  |
-|__BorrowedWidth__    |Det maximala antalet qubits som lånas inom Q #-åtgärden.  |
+|__Djuplodande__|Den nedre gränserna för djupet i Quantum-kretsen som körs av Q# åtgärden. Djup måttet räknar som standard bara `T` grindar. Mer information finns i [djup räknare](xref:microsoft.quantum.machines.qc-trace-simulator.depth-counter).   |
+|__Bredd__    |Den nedre gränsen för maximalt antal allokerade qubits under körningen av Q# åtgärden. Det kanske inte går att uppnå både __djup__ och __Bredd__ nedre gränser samtidigt.  |
+|__BorrowedWidth__    |Det maximala antalet qubits som lånas i Q# åtgärden.  |
 
-## <a name="providing-the-probability-of-measurement-outcomes"></a>Ange sannolikheten för mått resultat
+## <a name="providing-the-probability-of-measurement-outcomes"></a>Ange sannolikheten för mätresultatet
 
 Du kan använda <xref:microsoft.quantum.diagnostics.assertmeasurementprobability> från <xref:microsoft.quantum.diagnostics> namn området för att ge information om den förväntade sannolikheten för en mätnings åtgärd. Mer information finns i [Quantum trace Simulator](xref:microsoft.quantum.machines.qc-trace-simulator.intro)
 
 ## <a name="see-also"></a>Se även
 
 - [Quantum trace Simulator](xref:microsoft.quantum.machines.qc-trace-simulator.intro)
-- [Quantum Toffoli-Simulator](xref:microsoft.quantum.machines.toffoli-simulator)
-- [Quantum, fullständig tillstånds Simulator](xref:microsoft.quantum.machines.full-state-simulator) 
+- [Toffoli-kvantsimulator](xref:microsoft.quantum.machines.toffoli-simulator)
+- [Kvantsimulator med fullständigt tillstånd](xref:microsoft.quantum.machines.full-state-simulator) 
