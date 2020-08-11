@@ -6,16 +6,19 @@ ms.author: Alan.Geller@microsoft.com
 ms.date: 6/17/2020
 ms.topic: article
 uid: microsoft.quantum.machines
-ms.openlocfilehash: c81226ba3e50b65cb1012e885866bd6fcc3764d7
-ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 77401ca3642b89d708f338f852dc60bf7346b87b
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86871169"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87868312"
 ---
 # <a name="quantum-simulators"></a>Kvantsimulatorer
 
-Kvantsimulatorer är program som körs på klassiska datorer och fungerar som *måldatorer* för Q#-program. Detta gör det möjligt att köra och testa kvantprogram i en miljö som kan förutsäga hur kvantbitar kommer att reagera på olika åtgärder. I den här artikeln beskrivs vilka kvantsimulatorer som ingår i Quantum Development Kit (QDK) och olika sätt att skicka Q#-program på till kvantsimulatorer, till exempel via kommandoraden eller med hjälp av drivrutinskod som skrivs på ett klassiskt språk.  
+Kvantsimulatorer är program som körs på klassiska datorer och fungerar som *måldatorer* för Q#-program. Detta gör det möjligt att köra och testa kvantprogram i en miljö som kan förutsäga hur kvantbitar kommer att reagera på olika åtgärder. I den här artikeln beskrivs vilka kvantsimulatorer som ingår i Quantum Development Kit (QDK) och olika sätt att skicka Q#-program till kvantsimulatorer, till exempel via kommandoraden eller med hjälp av drivrutinskod som skrivs på ett klassiskt språk.  
 
 
 
@@ -41,7 +44,7 @@ QDK:n innehåller flera kvantdatorklasser som definieras i namnområdet `Microso
 
 ## <a name="invoking-the-quantum-simulator"></a>Anropa kvantsimulatorn
 
-I [Sätt att köra ett Q#-program på](xref:microsoft.quantum.guide.host-programs) visas tre sätt att skicka Q#-koden på till kvantsimulatorn: 
+I [Sätt att köra ett Q#-program på](xref:microsoft.quantum.guide.host-programs) visas tre sätt att skicka Q#-koden till kvantsimulatorn: 
 
 * Använda kommandoraden
 * Använda ett Python-värdprogram

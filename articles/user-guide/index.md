@@ -6,14 +6,17 @@ ms.author: a-gibec@microsoft.com
 ms.date: 03/05/2020
 ms.topic: article
 uid: microsoft.quantum.guide
-ms.openlocfilehash: 078d86c808b26c7f0b7b2577020cd9cef9491a9d
-ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 4fae2949bdcab0c3735b40ef029d70bf7ea3fb9f
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85885003"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87869638"
 ---
-# <a name="the-q-user-guide"></a>Användarhandboken för Q#
+# <a name="the-no-locq-user-guide"></a>Användarhandboken för Q#
 
 Välkommen till användarhandboken för Q#! 
 
@@ -21,21 +24,21 @@ I de olika ämnena i den här guiden går vi igenom huvudbegreppen i språket Q#
 
 ## <a name="user-guide-contents"></a>Innehåll i användarhandboken
 
-- [Grunderna i Q#](xref:microsoft.quantum.guide.basics): En introduktionsöversikt om syftet med och funktionerna i programmeringsspråket Q#. 
+- [Grunderna om Q#](xref:microsoft.quantum.guide.basics): En introduktionsöversikt om syftet med och funktionerna i programmeringsspråket Q#. 
 
-- [Sätt att köra ett Q#-program](xref:microsoft.quantum.guide.host-programs): beskriver hur ett Q#-program körs och ger en översikt av olika sätt att anropa programmet: från kommandoraden, i Q# Jupyter Notebooks eller från ett klassiskt värdprogram som skrivits i Python eller ett .NET-språk.
+- [Sätt att köra ett Q#-program](xref:microsoft.quantum.guide.host-programs): beskriver hur ett Q#-program körs och ger en översikt av olika sätt att anropa programmet: från kommandoraden, i Q#-Jupyter Notebooks eller från ett klassiskt värdprogram som skrivits i Python eller ett .NET-språk.
 
-### <a name="q-language"></a>Språket Q#
+### <a name="no-locq-language"></a>Språket Q#
 
-- [Typer i Q#](xref:microsoft.quantum.guide.types): Beskriver typmodellen i Q# och syntaxen som används för att ange och arbeta med typer.
+- [Typer i Q#](xref:microsoft.quantum.guide.types): Beskriver typmodellen i Q# och den syntax som används för att ange och arbeta med typer.
 
 - [Typuttryck](xref:microsoft.quantum.guide.expressions): Beskriver hur du anger, refererar till, kombinerar och arbetar med värden för varje typ i Q#. 
 
-### <a name="using-q"></a>Använda Q#
+### <a name="using-no-locq"></a>Använda Q#
 
-- [Q#-filstruktur](xref:microsoft.quantum.guide.filestructure): Beskriver strukturen och syntaxen för en `*.qs`-Q#-fil.
+- [Filstruktur för Q#](xref:microsoft.quantum.guide.filestructure): Beskriver strukturen och syntaxen för en `*.qs` Q#-fil.
 
-- [Åtgärder och funktioner](xref:microsoft.quantum.guide.operationsfunctions): Beskriver de två anropningsbara typerna i Q#-språket: *åtgärder*, som används för åtgärder med kvantbitsregister, samt *funktioner*, som enbart används med klassisk information. 
+- [Åtgärder och funktioner](xref:microsoft.quantum.guide.operationsfunctions): Beskriver de två anropningsbara typerna i språket Q#: *åtgärder*, som används för åtgärder med kvantbitsregister, samt *funktioner*, som enbart används med klassisk information. 
     Här kan du se hur du definierar och anropar dem, inklusive relaterade och kontrollerade versioner av kvantåtgärder.
 
 - [Variabler](xref:microsoft.quantum.guide.variables): Beskriver variablernas roll i Q#-program och hur du använder dem på ett effektivt sätt. 
@@ -43,11 +46,11 @@ I de olika ämnena i den här guiden går vi igenom huvudbegreppen i språket Q#
 
 - [Arbeta med kvantbitar](xref:microsoft.quantum.guide.qubits): Beskriver de funktioner i Q# som används för enskilda kvantbitar och system med kvantbitar, mer specifikt hur du allokerar dem, utför åtgärder på dem och mäter dem. 
 
-- [Kontrollflöde](xref:microsoft.quantum.guide.controlflow): Beskriver kontrollflödesmönstren för programmering i Q# som har stöd för många standardtekniker (t.ex. villkorlig körning, for-loopar, while-loopar) samt det kvantspecifika ”upprepa-tills-lyckas”-mönstret.
+- [Kontrollflöde](xref:microsoft.quantum.guide.controlflow): Beskriver kontrollflödesmönstren för programmering i Q# som har stöd för många standardtekniker (till exempel villkorlig körning, for-loopar och while-loopar) samt det kvantspecifika ”upprepa-tills-lyckas”-mönstret.
 
 - [Testa och felsöka](xref:microsoft.quantum.guide.testingdebugging): Beskriver några tekniker som du kan använda för att se till att koden gör det den ska göra. 
     På grund av den övergripande komplexiteten i kvantinformation, kan det krävas särskilda tekniker när kvantprogram ska felsökas. 
-    Lyckligtvis stöder Q# många av de klassiska felsökningstekniker som programmerare är vana vid, samt även de som är kvantspecifika. Dessa tekniker omfattar tekniker som att skapa och köra enhetstester i Q#, att bädda in *kontroller* för värden och sannolikheter i koden, samt `Dump`-funktioner som visar måldatorernas status. 
+    Lyckligtvis stöder Q# många av de klassiska felsökningstekniker som programmerare är vana vid samt även dem som är kvantspecifika. Dessa omfattar tekniker som att skapa och köra enhetstester i Q#, att bädda in *kontroller* för värden och sannolikheter i koden samt `Dump`-funktioner som visar måldatorernas tillstånd. 
     Den senare kan användas tillsammans med vår simulator med fullständigt tillstånd för att felsöka särskilda delar av beräkningarna genom att kringgå vissa kvantbegränsningar, t.ex. [no-cloning theorem](xref:microsoft.quantum.concepts.pauli).
 
 ### <a name="quantum-simulators-and-resource-estimators"></a>Kvantsimulatorer och resursberäknare
@@ -64,4 +67,4 @@ I de olika ämnena i den här guiden går vi igenom huvudbegreppen i språket Q#
 
 ### <a name="quick-reference-pages"></a>Snabbreferenssidor
 
-- [Magiska kommandon för IQ#](xref:microsoft.quantum.guide.quickref.iqsharp): Snabbreferenssida för magiska kommandon för IQ# i Q# Jupyter Notebooks.
+- [Magiska IQ#-kommandon](xref:microsoft.quantum.guide.quickref.iqsharp): Snabbreferenssida för magiska IQ#-kommandon i Q#-Jupyter Notebooks.

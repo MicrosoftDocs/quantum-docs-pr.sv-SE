@@ -6,14 +6,17 @@ ms.date: 4/24/2020
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.install.standalone
-ms.openlocfilehash: 3d70838289e72afdd0a48bbdff0bec407428d125
-ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 630dc7b8acf2dd8f258eb27dfbc367b812cd1c19
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86871441"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87867615"
 ---
-# <a name="develop-with-q-command-line-applications"></a>Utveckla med Q#-kommandoradsprogram
+# <a name="develop-with-no-locq-command-line-applications"></a>Utveckla med Q#-kommandoradsprogram
 
 Q#-program kan köras fristående, utan någon drivrutin på ett värdspråk som C#, F# eller Python.
 
@@ -48,7 +51,7 @@ Installera QDK för en annan miljö genom att ange följande på kommandoraden:
 dotnet new -i Microsoft.Quantum.ProjectTemplates
 ```
 
-## <a name="develop-with-q"></a>Utveckla med Q#
+## <a name="develop-with-no-locq"></a>Utveckla med Q#
 
 Följ anvisningarna på den flik som motsvarar din miljö.
 
@@ -74,9 +77,9 @@ Så här kör du programmet:
 
 ### <a name="visual-studio"></a>[Visual Studio](#tab/tabid-vs)
 
-Verifiera din Visual Studio-installation genom att skapa ett Q# `Hello World`-program.
+Verifiera din Visual Studio-installation genom att skapa ett Q#-program för `Hello World`.
 
-Skapa ett nytt Q#-program:
+Så här skapar du ett nytt Q#-program:
 1. Öppna Visual Studio och klicka på **Arkiv** -> **Nytt** -> **Projekt**.
 2. Skriv `Q#` i sökrutan, välj **Q#-program** och klicka på **Nästa**.
 3. Ange ett namn och en plats för programmet och klicka på **Skapa**.

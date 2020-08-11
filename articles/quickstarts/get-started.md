@@ -6,12 +6,15 @@ author: bradben
 ms.author: bradben
 ms.date: 5/10/2020
 ms.topic: overview
-ms.openlocfilehash: ff4a3dc829423525e18d89d5ed3d621079d1a524
-ms.sourcegitcommit: 0181e7c9e98f9af30ea32d3cd8e7e5e30257a4dc
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: ff5eb9984da0b22a65f3919599ee18605a206fa0
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85274199"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87867529"
 ---
 # <a name="get-started-with-the-quantum-development-kit-qdk"></a>Kom igång med Quantum Development Kit (QDK)
 
@@ -54,14 +57,14 @@ Om kvantutveckling är nytt för dig vet vi att det här ämnet kan verka svårt
 
 Den aktuella dokumentationen innehåller följande ytterligare ämnen.
 
-### <a name="q-developer-guides"></a>Guider för Q#-utvecklare
+### <a name="no-locq-developer-guides"></a>Utvecklarguider om Q#
 
-* [Användarhandbok för Q#](xref:microsoft.quantum.guide) beskriver de viktiga begrepp som används vid skapandet av kvantprogram i Q#.
+* [Användarhandboken för Q#](xref:microsoft.quantum.guide) beskriver de viktiga begrepp som används vid skapandet av kvantprogram i Q#.
 * [Kvantsimulatorer och värdprogram](xref:microsoft.quantum.machines) beskriver hur kvantalgoritmer körs, vilka kvantdatorer som är tillgängliga samt hur man skriver en icke-Q#-drivrutin för kvantprogrammet.
 
-### <a name="q-libraries"></a>Q#-bibliotek
+### <a name="no-locq-libraries"></a>Q#-bibliotek
 
-* [Q#-standardbiblioteket](xref:microsoft.quantum.libraries.standard.intro) beskriver de operationer och funktioner som stöder både det klassiska språkkontrollkravet och Q#-kvantalgoritmerna. 
+* [Q#-standardbibliotek](xref:microsoft.quantum.libraries.standard.intro) beskriver de operationer och funktioner som stöder både det klassiska språkkontrollkravet och Q#-kvantalgoritmerna. 
     Avsnitten omfattar kontrollflöde, datastrukturer, felkorrigering, testning och felsökning. 
 * [Q#-kemibiblioteket](xref:microsoft.quantum.chemistry.concepts.intro) beskriver de operationer och funktioner som stöder kvantkemisimulering – en viktig tillämpning av kvantberäkning. Ämnena omfattar simulering av hamiltonsk mekanik, kvantfasberäkning och mer.
 * [Q#-nummerbiblioteket](xref:microsoft.quantum.numerics.intro) beskriver de operationer och funktioner som stöder uttryck av komplicerade aritmetiska funktioner i termer som gäller för måldatorernas inbyggda operationer.
@@ -79,7 +82,7 @@ Den aktuella dokumentationen innehåller följande ytterligare ämnen.
 * [Viktig information för Microsoft Quantum Development Kit](xref:microsoft.quantum.relnotes).
 
 
-## <a name="be-a-part-of-the-q-open-source-community"></a>Gå med i communityn för Q# med öppen källkod
+## <a name="be-a-part-of-the-no-locq-open-source-community"></a>Gå med i communityn för Q# med öppen källkod
 
 Quantum Development Kit är ett utvecklingspaket med öppen källkod som gör det möjligt för utvecklare att göra kvantberäkning mer lättillgängligt för alla, så att vi kan lösa några av världens mest aktuella utmaningar.  Akademiska institutioner som behöver programvara med öppen källkod kommer att kunna distribuera Q# för sina utbildningar och sin utveckling inom kvantteknik. Tack vare att källkoden för utvecklingspaketet är öppen har utvecklare och domänexperter möjligheten att bidra med förbättringar och idéer via egen kod.
 

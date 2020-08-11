@@ -6,14 +6,17 @@ ms.author: bradben
 ms.date: 5/5/2020
 ms.topic: overview
 uid: microsoft.quantum.overview.q-sharp
-ms.openlocfilehash: ede4ad005090e4ac8ffd9b05d27edfa91f8c50ab
-ms.sourcegitcommit: a35498492044be4018b4d1b3b611d70a20e77ecc
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 3ee9e897eb142bbc9503a617cc3e25c1a665ff35
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84327720"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87866952"
 ---
-# <a name="what-are-the-q-programming-language-and-qdk"></a>Vad är programmeringsspråket Q# och QDK?
+# <a name="what-are-the-no-locq-programming-language-and-qdk"></a>Vad är programmeringsspråket Q# och QDK?
 
 Q# är Microsofts programmeringsspråk med öppen källkod för utveckling och körning av kvantalgoritmer. Det ingår i Quantum Development Kit (QDK), som innehåller [Q#-bibliotek](xref:microsoft.quantum.libraries), [kvantsimulatorer](xref:microsoft.quantum.machines), [tillägg för andra programmeringsmiljöer](xref:microsoft.quantum.install) och [API-dokumentation](xref:microsoft.quantum.standardlibsintro). Utöver standardbiblioteket för Q# innehåller QDK även biblioteken för kemi, maskininlärning och tal.
 
@@ -43,7 +46,7 @@ Kör kvantprogram i en kvantsimulator med fullständigt tillstånd eller en Toff
 | **Jag vill gå in närmare på språket Q#** | Utforska typer, uttryck, variabler och kvantprogramstrukturer i [användarhandboken för Q#](xref:microsoft.quantum.guide).|
 | **Jag vill bara börja skriva kvantprogram** | Konfigurera din Q#-miljö och börja skriva kvantprogram i [Snabbstarter](xref:microsoft.quantum.install).|
 
-## <a name="how-does-q-work"></a>Hur fungerar Q#?
+## <a name="how-does-no-locq-work"></a>Hur fungerar Q#?
 
 Q#-program kan kompileras till ett fristående kommandoradsprogram eller anropas av ett värdprogram som är skrivet i antingen Python eller ett .NET-språk.
 

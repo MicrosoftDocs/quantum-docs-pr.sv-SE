@@ -6,14 +6,17 @@ ms.date: 5/30/2020
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.install.cs
-ms.openlocfilehash: 714c15d9589095f0fe395fcd6941672167879dca
-ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 13d73bdf0287941c89e03ba63869095e5fca4e70
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85885494"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87867564"
 ---
-# <a name="develop-with-q-and-net"></a>Utveckla med Q# och .NET
+# <a name="develop-with-no-locq-and-net"></a>Utveckla med Q# och .NET
 
 Q# är utformat att fungera med .NET-språk som C# och F# .
 I den här guiden visar vi hur du använder Q# med ett värdprogram som skrivits i ett .NET-språk.
@@ -24,7 +27,7 @@ Först skapar vi Q#-programmet och .NET-värden, och sedan visar vi hur du anrop
 
 - Installera Quantum Development Kit [för användning med kommandoradsprojekt i Q#](xref:microsoft.quantum.install.standalone).
 
-## <a name="creating-a-q-library-and-a-net-host"></a>Skapa ett Q#-bibliotek och en .NET-värd
+## <a name="creating-a-no-locq-library-and-a-net-host"></a>Skapa ett Q#-bibliotek och en .NET-värd
 
 Det första steget är att skapa projekt för ditt Q#-bibliotek och för den .NET-värd som ska anropa åtgärder och funktioner som definierats i ditt Q#-bibliotek.
 
@@ -64,7 +67,7 @@ Om du använder ett annat redigeringsprogram än Visual Studio eller VS Code fö
 
 - Skapa ett nytt Q#-bibliotek
   - Gå till **Arkiv** -> **Nytt** -> **Projekt**
-  - Skriv ”Q#” i sökrutan
+  - Skriv "Q#" i sökrutan
   - Välj **Q#-bibliotek**
   - Välj **Nästa**
   - Välj ett namn och en plats för ditt bibliotek
@@ -80,12 +83,12 @@ Om du använder ett annat redigeringsprogram än Visual Studio eller VS Code fö
 
 ***
 
-## <a name="calling-into-q-from-net"></a>Anropa Q# från .NET
+## <a name="calling-into-no-locq-from-net"></a>Anropa till Q# från .NET
 
 När du har konfigurerat dina projekt enligt anvisningarna ovan, kan du anropa Q# från ditt .NET-konsolprogram.
 Q#-kompileraren skapar .NET-klasser för varje Q#-åtgärd och funktion, så att du kan köra kvantprogrammen i en simulator.
 
-[I exemplet på .NET-interoperabilitet](https://github.com/microsoft/Quantum/tree/master/samples/interoperability/dotnet) visas följande Q#-åtgärd:
+[I exemplet på .NET-interoperabilitet](https://github.com/microsoft/Quantum/tree/master/samples/interoperability/dotnet) finns följande exempel på en Q#-åtgärd:
 
 :::code language="qsharp" source="~/quantum/samples/interoperability/dotnet/qsharp/Operations.qs" range="67-75":::
 
@@ -103,4 +106,4 @@ Om du vill anropa den här åtgärden från .NET i en kvantsimulator, kan du anv
     
 ## <a name="next-steps"></a>Nästa steg
 
-Nu när du har konfigurerat Quantum Development Kit för både Q#-kommandoradsprogram och för interoperabilitet med .NET, kan du skriva och köra [ditt första kvantprogram](xref:microsoft.quantum.quickstarts.qrng).
+Nu när du har konfigurerat Quantum Development Kit för både Q#-kommandoradsprogram och för interoperabilitet med .NET kan du skriva och köra [ditt första kvantprogram](xref:microsoft.quantum.quickstarts.qrng).

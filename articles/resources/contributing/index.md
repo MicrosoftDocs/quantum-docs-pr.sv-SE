@@ -6,12 +6,15 @@ ms.author: chgranad
 ms.date: 10/12/2018
 ms.topic: article
 uid: microsoft.quantum.contributing
-ms.openlocfilehash: c5acd6c2b3163488a9b4c6e52e6d34489a8f4056
-ms.sourcegitcommit: 2f4c637e194dc2b5d18539469ed37444e2800199
+no-loc:
+- Q#
+- $$v
+ms.openlocfilehash: 0fbbe127b9f4c6b98bdc2cf0e46098bf40a816e3
+ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87436573"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87866867"
 ---
 # <a name="contributing-to-the-quantum-development-kit"></a>Bidra till Quantum Development Kit
 
@@ -53,9 +56,9 @@ Var och en av dessa delar finns på en särskild lagringsplats, så en av de fö
 - [**microsoft/Quantum**](https://github.com/Microsoft/Quantum): Exempel och verktyg som hjälper dig att komma igång med Quantum Development Kit.
 - [**microsoft/QuantumLibraries**](https://github.com/Microsoft/QuantumLibraries): Standardbibliotek och domänspecifika bibliotek för Quantum Development Kit.
 - [**microsoft/QuantumKatas**](https://github.com/Microsoft/QuantumKatas): Programmeringsövningar i egen takt för att lära sig kvantberäkning och programmeringsspråket Q#.
-- [**microsoft/qsharp-compiler**](https://github.com/microsoft/qsharp-compiler): Q#-kompilerare, Visual Studio-tillägg och Visual Studio Code-tillägg.
+- [**microsoft/qsharp-compiler**](https://github.com/microsoft/qsharp-compiler): Q#-kompileraren, Visual Studio-tillägget och Visual Studio Code-tillägget.
 - [**microsoft/qsharp-runtime**](https://github.com/microsoft/qsharp-runtime): Ramverk för simulering, kodgenerering och måldatorer till simulering för Quantum Development Kit.
-- [**microsoft/iqsharp**](https://github.com/microsoft/iqsharp): Q#-funktioner för Jupyter-kernel och Python-värd, samt Docker-avbildningar för användning av IQ# i molnmiljöer.
+- [**microsoft/iqsharp**](https://github.com/microsoft/iqsharp): Jupyter-kernel och Python-värdfunktioner för Q# samt Docker-avbildningar för användning av IQ# i molnmiljöer.
 - [**MicrosoftDocs/quantum-docs-pr**](https://github.com/MicrosoftDocs/quantum-docs-pr): Källkoden för den dokumentation som publicerats på https://docs.microsoft.com/quantum.
 
 > [!NOTE]
@@ -63,7 +66,7 @@ Var och en av dessa delar finns på en särskild lagringsplats, så en av de fö
 
 Det finns också några andra mer specialiserade lagringsplatser som fokuserar på extra funktioner i Quantum Development Kit.
 
-- [**msr-quarc/qsharp.sty**](https://github.com/msr-quarc/qsharp.sty): Stöd för LaTeX-formatering av Q#-syntax.
+- [**msr-quarc/qsharp.sty**](https://github.com/msr-quarc/qsharp.sty): Stöd för LaTeX-formatering för Q#-syntax.
 
 ## <a name="next-steps"></a>Nästa steg
 
