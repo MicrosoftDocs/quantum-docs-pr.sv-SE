@@ -1,0 +1,43 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.random.drawrandomdouble
+name: DrawRandomDouble
+type: operation
+namespace: Microsoft.Quantum.Random
+summary: Ritar ett slumpmässigt reellt tal i ett angivet inklusiv-intervall.
+remarks: Miss lyckas om `max <= min` .
+examples: >-
+  Följande Q #-kodfragment ritar slumpmässigt en vinkel mellan $0 $ och $2 \pi $:
+
+
+  ```Q#
+
+  let angle = DrawRandomDouble(0.0, 2.0 * PI());
+
+  ```
+syntax: 'operation DrawRandomDouble (min : Double, max : Double) : Double'
+input:
+  content: '(min : Double, max : Double)'
+  types:
+  - name: min
+    summary: Det minsta reella tal som ska ritas.
+    isPrimitive: true
+    uid: Double
+  - name: max
+    summary: Det största reella tal som ska ritas.
+    isPrimitive: true
+    uid: Double
+output:
+  content: Double
+  types:
+  - summary: Ett slumpmässigt reellt tal i inkluderar-intervallet från `min` till `max` med enhetlig sannolikhet.
+    isPrimitive: true
+    uid: Double
+seeAlso:
+- microsoft.quantum.continuousuniformdistribution
+metadata:
+  ms.openlocfilehash: 8c029f8bf351b99900db8032012dc05ad7bda6ce
+  ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
+  ms.translationtype: MT
+  ms.contentlocale: sv-SE
+  ms.lasthandoff: 08/25/2020
+  ms.locfileid: "88864494"

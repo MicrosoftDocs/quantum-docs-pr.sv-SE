@@ -1,0 +1,55 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.diagnostics.assertphase
+name: AssertPhase
+type: operation
+namespace: Microsoft.Quantum.Diagnostics
+summary: >-
+  Förutsätter att fasen för ett Equal-positions läge har det förväntade värdet.
+
+
+  Den här åtgärden förutsätter att fasen $ \phi $ i ett Quantum-tillstånd som kan uttryckas som $ \frac{e ^ {i t}} {\sqrt {2} } (e ^ {i\phi} \ ket {0} + e ^ {-i\phi} \ ket {1} ) $ för vissa valfria verkliga $t $ har det förväntade värdet.
+examples: >-
+  Följande kontroll lyckas: `qubit` är i läget $ \ket{\psi} = e ^ {i 0,5} \ sqrt {1/2} \ ket {0} + e ^ {i 0,5} \ sqrt {1/2} \ ket {1} $;
+
+
+  - `AssertPhase(0.0,qubit,10e-10);`
+
+
+  `qubit` är i tillstånd $ \ket{\psi} = e ^ {i 0,5} \ sqrt {1/2} \ ket {0} + e ^ {-i 0,5} \ sqrt {1/2} \ ket {1} $;
+
+
+  - `AssertPhase(0.5,qubit,10e-10);`
+
+
+  `qubit` är i tillstånd $ \ket{\psi} = e ^ {-i 2,2} \ sqrt {1/2} \ ket {0} + e ^ {i 0,2} \ sqrt {1/2} \ ket {1} $;
+
+
+  - `AssertPhase(-1.2,qubit,10e-10);`
+syntax: 'operation AssertPhase (expected : Double, qubit : Qubit, tolerance : Double) : Unit'
+input:
+  content: '(expected : Double, qubit : Qubit, tolerance : Double)'
+  types:
+  - name: expected
+    summary: Det förväntade värdet för $ \phi \in (-\pi, \pi] $.
+    isPrimitive: true
+    uid: Double
+  - name: qubit
+    summary: Qubit som lagrar det förväntade läget.
+    isPrimitive: true
+    uid: Qubit
+  - name: tolerance
+    summary: Absolut tolerans för skillnaden mellan faktiskt och förväntat värde.
+    isPrimitive: true
+    uid: Double
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+metadata:
+  ms.openlocfilehash: 5be9fdb82a955282a824b06dd921e6a59a0828a2
+  ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
+  ms.translationtype: MT
+  ms.contentlocale: sv-SE
+  ms.lasthandoff: 08/25/2020
+  ms.locfileid: "88864400"

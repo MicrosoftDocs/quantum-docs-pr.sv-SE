@@ -450,11 +450,7 @@ operations:
 - uid: microsoft.quantum.canon.assertlessthanphasele
   summary: "\n> [!WARNING]\n> Inaktuell\n\nAssertLessThanPhaseLE är föråldrad. Använd @\"microsoft.quantum.arithmetic.assertphaselessthan\" i stället.\nAnvänd @\"Microsoft.Quantum.Arithmetic.AssertPhaseLessThan\"."
 - uid: microsoft.quantum.canon.assertphase
-  summary: >-
-    Förutsätter att fasen för ett Equal-positions läge har det förväntade värdet.
-
-
-    Mer specifikt förutsätter att fasen $ \phi $ i ett Quantum-tillstånd som kan uttryckas som $ \frac{e ^ {i t}} {\sqrt {2} } (e ^ {i\phi} \ ket {0} + e ^ {-i\phi} \ ket {1} ) $ för en viss godtycklig verklig t har det förväntade värdet.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nAssertPhase är föråldrad. Använd @\"microsoft.quantum.diagnostics.assertphase\" i stället."
 - uid: microsoft.quantum.canon.cascadeccnot
   summary: "\n> [!WARNING]\n> Inaktuell\n\nCascadeCCNOT är föråldrad. Använd @\"microsoft.quantum.canon.applyccnotchain\" i stället."
 - uid: microsoft.quantum.canon.cascadecnot
@@ -585,9 +581,9 @@ newtypes:
 - uid: microsoft.quantum.canon.resultstack
   summary: "\n> [!WARNING]\n> Inaktuell\n\nResultStack är föråldrad."
 metadata:
-  ms.openlocfilehash: ab6e8a58dd163e4a9b2ea299e544a4e487d61e23
-  ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
+  ms.openlocfilehash: 72e806d0a44fdcc372ab0d10edcaceb501713180
+  ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 07/02/2020
-  ms.locfileid: "85884671"
+  ms.lasthandoff: 08/25/2020
+  ms.locfileid: "88862949"

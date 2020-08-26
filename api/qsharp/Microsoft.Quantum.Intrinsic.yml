@@ -86,12 +86,7 @@ operations:
 
     > Den här åtgärden använder **motsatt** inloggnings konvention från @"microsoft.quantum.intrinsic.r" och inkluderar inte faktorn på $1/2 $ som ingår i @"microsoft.quantum.intrinsic.r1" .
 - uid: microsoft.quantum.intrinsic.random
-  summary: >-
-    Den slumpmässiga åtgärden tar en matris med dubbla värden som indatatyper och returnerar ett slumpmässigt markerat index i matrisen som en `Int` .
-
-    Sannolikheten för att välja ett speciellt index är proportionerlig till värdet för mat ris elementet i det indexet.
-
-    Mat ris element som är lika med noll ignoreras och deras index returneras aldrig. Om något mat ris element är mindre än noll, eller om inget mat ris element är större än noll, så Miss lyckas åtgärden.
+  summary: "\n> [!WARNING]\n> Inaktuell\n\nSlumpmässig är inaktuell. Använd @\"microsoft.quantum.random.drawcategorical\" i stället."
 - uid: microsoft.quantum.intrinsic.reset
   summary: Med en enda qubit, mäter den och ser till att den är i ⟩-läget | 0, så att den kan släppas på ett säkert sätt.
 - uid: microsoft.quantum.intrinsic.resetall
@@ -157,9 +152,9 @@ operations:
 
     \end{align}
 metadata:
-  ms.openlocfilehash: c0be1da035393f32fa2949214d79ecb8a4c5ccb3
-  ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
+  ms.openlocfilehash: 87002c73fd66a4b05e690daec1bed37d09708118
+  ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 07/02/2020
-  ms.locfileid: "85885230"
+  ms.lasthandoff: 08/25/2020
+  ms.locfileid: "88862716"

@@ -3,31 +3,24 @@ uid: microsoft.quantum.intrinsic.random
 name: Random
 type: operation
 namespace: Microsoft.Quantum.Intrinsic
-summary: >-
-  Den slumpmässiga åtgärden tar en matris med dubbla värden som indatatyper och returnerar ett slumpmässigt markerat index i matrisen som en `Int`.
-
-  Sannolikheten för att välja ett speciellt index är proportionerlig till värdet för mat ris elementet i det indexet.
-
-  Mat ris element som är lika med noll ignoreras och deras index returneras aldrig. Om något mat ris element är mindre än noll, eller om inget mat ris element är större än noll, så Miss lyckas åtgärden.
+summary: Slumpmässig är inaktuell. Använd @"microsoft.quantum.random.drawcategorical" i stället.
 syntax: 'operation Random (probs : Double[]) : Int'
 input:
   content: '(probs : Double[])'
   types:
   - name: probs
-    summary: En matris med flytt ALS siffror som är proportionella mot sannolikheten för att välja varje index.
     isArray: true
     isPrimitive: true
     uid: Double
 output:
   content: Int
   types:
-  - summary: Ett heltal $i $ med sannolikhet $ \Pr (i) = p_i/\ sum_i p_i $, där $p _i $ är $i $ th-elementet i `probs`.
-    isPrimitive: true
+  - isPrimitive: true
     uid: Int
 metadata:
-  ms.openlocfilehash: b269b780b5e8ad048d1563e3dca98524a5ed63d2
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: eb8c26f5085dc728c558bb996ebc6cf068fa6cb4
+  ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82686809"
+  ms.lasthandoff: 08/25/2020
+  ms.locfileid: "88863359"

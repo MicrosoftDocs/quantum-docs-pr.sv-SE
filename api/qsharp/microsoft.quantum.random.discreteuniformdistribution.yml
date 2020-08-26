@@ -1,0 +1,44 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.random.discreteuniformdistribution
+name: DiscreteUniformDistribution
+type: function
+namespace: Microsoft.Quantum.Random
+summary: Returnerar en enhetlig distribution över ett angivet inklusivt intervall.
+remarks: Miss lyckas om `max <= min` .
+examples: >-
+  Följande Q #-kodfragment rullar slumpmässigt en sida med sex sidor:
+
+
+  ```Q#
+
+  let dieDistribution = DiscreteUniformDistribution(1, 6);
+
+  let dieRoll = dieDistribution::Sample();
+
+  ```
+syntax: 'function DiscreteUniformDistribution (min : Int, max : Int) : Microsoft.Quantum.Random.DiscreteDistribution'
+input:
+  content: '(min : Int, max : Int)'
+  types:
+  - name: min
+    summary: Det minsta heltal som ska ritas.
+    isPrimitive: true
+    uid: Int
+  - name: max
+    summary: Det största heltal som ska ritas.
+    isPrimitive: true
+    uid: Int
+output:
+  content: Microsoft.Quantum.Random.DiscreteDistribution
+  types:
+  - summary: En distribution vars slumpmässiga variates är heltal i mängd intervallet från `min` till `max` med enhetlig sannolikhet.
+    uid: microsoft.quantum.random.discretedistribution
+seeAlso:
+- microsoft.quantum.drawrandomdouble
+metadata:
+  ms.openlocfilehash: 3a74db8f7dec3050bd92cae3768760ca67c87002
+  ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
+  ms.translationtype: MT
+  ms.contentlocale: sv-SE
+  ms.lasthandoff: 08/25/2020
+  ms.locfileid: "88864507"

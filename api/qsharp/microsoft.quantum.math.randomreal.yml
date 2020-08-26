@@ -3,19 +3,12 @@ uid: microsoft.quantum.math.randomreal
 name: RandomReal
 type: operation
 namespace: Microsoft.Quantum.Math
-summary: Returnerar ett slumpmässigt reellt tal i intervallet som är större än eller lika med noll och mindre än ett.
-remarks: Den här funktionen <xref:microsoft.quantum.intrinsic.random>anropar, så att dess slumpmässighet beror på `Random`implementeringen av.
+summary: RandomReal är föråldrad. Använd @"microsoft.quantum.random.drawrandomdouble" i stället.
 syntax: 'operation RandomReal (bitsRandom : Int) : Double'
 input:
   content: '(bitsRandom : Int)'
   types:
   - name: bitsRandom
-    summary: >-
-      Antalet precisions bitar som det slumpmässiga talet ska samplas med.
-
-          # Output
-
-      Ett reellt tal $x = k/2 ^ {\texttt{bitsRandom}} $ för ett heltal som $k $ samplas från intervallet $ [0, 2 ^ {\texttt{bitsRandom}}) $ med sannolikheten $ \Pr (k) = 1/2 ^ {\texttt{bitsRandom}} $.
     isPrimitive: true
     uid: Int
 output:
@@ -24,9 +17,9 @@ output:
   - isPrimitive: true
     uid: Double
 metadata:
-  ms.openlocfilehash: b3974f5b12f8d49cc7920021caad98f6e2f3a60c
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 2cb70e92b47d9233d241eee730337c5fcf709ca8
+  ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82681533"
+  ms.lasthandoff: 08/25/2020
+  ms.locfileid: "88863581"
