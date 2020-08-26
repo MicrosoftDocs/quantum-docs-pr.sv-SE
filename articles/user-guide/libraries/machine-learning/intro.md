@@ -8,18 +8,18 @@ uid: microsoft.quantum.libraries.machine-learning.intro
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 9a24d0b4145d0db2fd8c4e16be807165fff5fb32
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 65b0aa6a7f385765933d4d89ce34901f77cf76ec
+ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87868924"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88863105"
 ---
 # <a name="introduction-to-quantum-machine-learning"></a>Introduktion till Quantum Machine Learning
 
 ## <a name="framework-and-goals"></a>Ramverk och mål
 
-Quantum encoding och bearbetning av information är ett kraftfullt alternativ till klassisk Machine Learning Quantum-klassificerare, särskilt kodar data i Quantum-register som är koncisa i förhållande till antalet funktioner, som systematiskt använder Quantum entanglement som beräknings resurs och använder Quantum-mått för klass härledning.
+Quantum encoding och bearbetning av information är ett kraftfullt alternativ till klassisk Machine Learning Quantum-klassificerare. I synnerhet gör det möjligt för oss att koda data i Quantum-register som är koncisa i förhållande till antalet funktioner, som systematiskt använder Quantum entanglement som beräknings resurs och använder Quantum-mätning för klass härledning.
 Krets centrerad Quantum-klassificerare är en relativt enkel Quantum-lösning som kombinerar data kodning med en snabbt Entangling/disentangling Quantum-krets följt av mått för att härleda klass etiketter för data exempel.
 Målet är att säkerställa klassisk karakterisering och lagring av ämnes kretsar, samt hybrid-och klassisk utbildning för krets parametrarna, även för mycket stora funktions utrymmen.
 
@@ -29,14 +29,18 @@ Klassificering är en övervakad maskin inlärnings uppgift där målet är att 
 I likhet med traditionella metoder består Quantum klassificering av tre steg:
 - data kodning
 - förberedelse av ett klassificerings tillstånd
-- mått på grund av måttets Probabilistic karaktär måste dessa tre steg upprepas flera gånger. Måttet kan visas som en Quantum-motsvarighet till icke-linjär aktivering.
-Både kodningen och bearbetningen av klassificerings statusen görs med hjälp av *Quantum-kretsar*. Även om kodnings kretsen vanligt vis är data driven och parameter fri, innehåller klassificerings kretsen en tillräckligt stor uppsättning parametrar. 
+- mått på grund av måttets Probabilistic karaktär måste dessa tre steg upprepas flera gånger. Både kodningen och bearbetningen av klassificerings statusen görs med hjälp av *Quantum-kretsar*. Även om kodnings kretsen vanligt vis är data driven och parameter fri, innehåller klassificerings kretsen en tillräckligt stor uppsättning parametrar. 
 
 I den föreslagna lösningen består klassificerings kretsen av en qubit rotation och två qubit kontrollerade rotationer. De lär sig parametrarna här är rotations vinklarna. Rotations-och kontrollerade rotations grindarna har visat sig vara *universella* för Quantum-beräkning, vilket innebär att en enhetlig vikt mat ris kan delas upp i en tillräckligt lång krets som består av sådana grindar.
 
+I den föreslagna versionen stöds endast en krets följt av en beräkning med en frekvens.
+Det innebär att lösningen är en Quantum analog av en support vektor dator med en mindre grad polynom kernel.
+
 ![Multilayer Perceptron vs. krets-inriktad klassificerare](~/media/DLvsQCC.png)
 
-Vi kan jämföra den här modellen med en Multilayer-Perceptron för att få en bättre förståelse för den grundläggande strukturen. I Perceptron är $p (y | x, \theta) $ parametrized med den mängd vikter som är $ \theta $ som fastställer de linjära funktionerna som ansluter icke-linjära aktiverings funktioner (neurons). Dessa parametrar kan tränas för att skapa modellen. På output-lagret kan vi få sannolikheten för ett sampel som tillhör en klass med icke-linjära aktiverings funktioner som SOFTMAX. I den kretsbaserade klassificeraren är förväntaren parametrized i rotations vinkeln för qubit och två qubit kontrollerade rotationer för modell kretsen. På liknande sätt kan dessa parametrar tränas av en hybrid Quantum/klassisk version av brantaste-algoritmen för övertoning. För att beräkna utdata, i stället för att använda icke-linjära aktiverings funktioner, erhålls sannolikheten för klassen genom att läsa upprepade mätningar över en speciell qubit efter den kontrollerade rotationen. För att koda de klassiska data i ett Quantum-tillstånd använder vi en kontrollerbar kodnings krets för förberedelse av tillstånd.
+En enkel Quantum klassificerare-design kan jämföras med en vanlig SVM-lösning (support Vector Machine). Den här härledningen för ett data exempel $x $ i händelse av SVM görs med ett optimalt kernel-formulär $ \sum \ alpha_j k (x_j, x) $ där $k $ är en viss kernel-funktion.
+
+Däremot använder en Quantum-klassificeraren $p (y │ x, U (\theta)) = 〈 U (\theta) x | M | U (\theta) x 〉 $, som liknar sprit men tekniskt ganska annorlunda. Det innebär att när en enkel amplitud-kodning används, $p (y │ x, U (\theta)) $ är en kvadratisk form i amplituderna för $x $, men koefficienterna för det här formuläret har inte längre lärts oberoende. de sammanställs i stället från mat ris elementen i krets $U (\theta) $, som vanligt vis har betydligt mindre lärt parametrar $ \theta $ än dimensionerna i Vector $x $. Polynom graden av $p (y │ x, U (\theta)) $ i de ursprungliga funktionerna kan höjas till $2 ^ l $ genom att använda en Quantum produkt kodning på $l $ kopior av $x $.
 
 Vår arkitektur utforskar relativt lite-kretsar som därför måste vara *snabbt Entangling* för att kunna samla in alla korrelationer mellan data funktionerna i alla intervall. Ett exempel på den mest användbara Entangling krets-komponenten visas på bilden nedan. Även om en krets med den här geometrin bara består av $3 n + 1 $ grindar, säkerställer den enhetliga vikt mat ris som den beräknar betydande kors samtal mellan $2 ^ n $-funktioner.
 
@@ -69,3 +73,5 @@ En utbildnings väska $ (x, y) \in \mathcal{D} $ betraktas som en *felklassifice
 ### <a name="reference"></a>Referens
 
 Den här informationen bör vara tillräckligt stor för att börja spela med koden. Men om du vill lära dig mer om den här modellen läser du det ursprungliga förslaget: [ *"kretsbaserade Quantum-klassificerare", Maria Schuld, Alex Bocharov, krysta Svore och Nathan Wiebe*](https://arxiv.org/abs/1804.00633)
+
+Förutom kod exemplet som visas i nästa steg kan du också börja utforska Quantum-klassificeringen i [den här självstudien](https://github.com/microsoft/QuantumKatas/tree/master/tutorials/QuantumClassification) 

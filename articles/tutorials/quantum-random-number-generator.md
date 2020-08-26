@@ -9,12 +9,12 @@ uid: microsoft.quantum.quickstarts.qrng
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 8db892091794cb1166e41744572d8938d975abf2
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: d80f1c640ac7ddb0104ccbbb6de6d0e26ba05fd6
+ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87869774"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88863632"
 ---
 # <a name="tutorial-implement-a-quantum-random-number-generator-in-q"></a>Självstudier: Implementera en kvantgenerator för slumptal i Q\#
 
@@ -23,11 +23,11 @@ Ett enkelt exempel på en Quantum-algoritm som Q# är skrivet i är en Quantum s
 ## <a name="prerequisites"></a>Krav
 
 - Microsoft [Quantum Development Kit](xref:microsoft.quantum.install).
-- Skapa ett Q# projekt för att antingen [använda Q# från kommando raden](xref:microsoft.quantum.install.standalone)eller med ett [python-värdprogram](xref:microsoft.quantum.install.python) eller [C#-värd program](xref:microsoft.quantum.install.cs).
+- Skapa ett Q# projekt för antingen ett [ Q# program](xref:microsoft.quantum.install.standalone), med ett [python-värdprogram](xref:microsoft.quantum.install.python)eller ett [C#-värd program](xref:microsoft.quantum.install.cs).
 
 ## <a name="write-a-no-locq-operation"></a>Skriv en Q# åtgärd
 
-### <a name="no-locq-operation-code"></a>Q#åtgärds kod
+### <a name="no-locq-operation-code"></a>Q# åtgärds kod
 
 1. Ersätt innehållet i filen Program.qs med följande kod:
 
@@ -64,13 +64,13 @@ Eftersom resultatet av mätningen är helt slumpmässigt har vi fått en slumpm�
 
 ## <a name="creating-a-complete-random-number-generator"></a>Skapa en komplett slumptalsgenerator
 
-Nu när vi har en Q# åtgärd som genererar slumpmässiga bitar kan vi använda den för att bygga en komplett Quantum slump tals Generator. Vi kan använda Q# kommando rads program eller använda ett värd program.
+Nu när vi har en Q# åtgärd som genererar slumpmässiga bitar kan vi använda den för att bygga en komplett Quantum slump tals Generator. Vi kan använda ett Q# program eller använda ett värd program.
 
 
 
-### <a name="no-locq-command-line-applications-with-visual-studio-or-visual-studio-code"></a>[Q#kommando rads program med Visual Studio eller Visual Studio Code](#tab/tabid-qsharp)
+### <a name="no-locq-applications-with-visual-studio-or-visual-studio-code"></a>[Q# program med Visual Studio eller Visual Studio Code](#tab/tabid-qsharp)
 
-Om du vill skapa ett fullständigt Q# kommando rads program lägger du till följande start punkt i Q# programmet: 
+Om du vill skapa hela Q# programmet lägger du till följande start punkt i Q# programmet: 
 
 :::code language="qsharp" source="~/quantum/samples/getting-started/qrng/Qrng.qs" range="17-33":::
 
@@ -92,13 +92,13 @@ För efterföljande körningar behöver du inte bygga det igen. Du kör det bara
 dotnet run --no-build
 ```
 
-### <a name="python-with-visual-studio-code-or-the-command-line"></a>[Python med Visual Studio Code eller kommandoraden](#tab/tabid-python)
+### <a name="python-with-visual-studio-code-or-the-command-prompt"></a>[Python med Visual Studio Code eller kommando tolken](#tab/tabid-python)
 
 Om du vill köra det nya Q# programmet från python sparar du följande kod som `host.py` :
 
 :::code language="python" source="~/quantum/samples/interoperability/qrng/host.py" range="11-30":::
 
-Du kan sedan köra Python-värdprogrammet från kommandoraden:
+Du kan sedan köra python-värd programmet från kommando tolken:
 
 ```bash
 $ python host.py
@@ -112,7 +112,7 @@ Om du vill köra det nya Q# programmet från C# ändrar `Driver.cs` du till att 
 
 :::code language="csharp" source="~/quantum/samples/interoperability/qrng/Host.cs" range="4-39":::
 
-Sedan kan du köra C#-värdprogrammet från kommandoraden (i Visual Studio trycker du på F5):
+Du kan sedan köra C#-värd programmet från kommando tolken (i Visual Studio bör du trycka på F5):
 
 ```bash
 $ dotnet run

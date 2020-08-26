@@ -1,5 +1,5 @@
 ---
-title: Skriv och simulera qubit-program iQ#
+title: Skriv och simulera qubit-program i Q#
 description: Stegvisa anvisningar om hur du skriver och simulerar ett Quantum-program som fungerar på individuell qubit-nivå
 author: gillenhaalb
 ms.author: a-gibec@microsoft.com
@@ -9,12 +9,12 @@ ms.topic: tutorial
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 22c79e4e01db1a0d0c291d0dcff81dbfa8df5cd3
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 39b2d762c0efbfa4bb3a60a1dcee6bcbe2bd91a9
+ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87869723"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88863337"
 ---
 # <a name="tutorial-write-and-simulate-qubit-level-programs-in-q"></a>Självstudie: Skriv och simulera qubit-program i Q\#
 
@@ -41,17 +41,17 @@ I vårt fall definierar vi en Q# åtgärd för att utföra en fullständig qubit
 ## <a name="in-this-tutorial-youll-learn-how-to"></a>I den här självstudien får du lära dig att:
 
 > [!div class="checklist"]
-> * Definiera Quantum-åtgärder iQ#
-> * Anropa Q# åtgärder direkt från kommando raden eller med hjälp av ett klassiskt värd program
+> * Definiera Quantum-åtgärder i Q#
+> * Anropa Q# åtgärder direkt från kommando tolken eller med hjälp av ett klassiskt värd program
 > * Simulera en Quantum-åtgärd från qubit-allokering till mått utdata
 > * Observera hur Quantum Systems simulerade wavefunction utvecklas under hela åtgärden
 
 Att köra ett Quantum-program med Microsofts Quantum Development Kit består vanligt vis av två delar:
 1. Själva programmet, som implementeras med hjälp av Q# Quantum-programmeringsspråk, och sedan anropas för körning på en Quantum-dator eller Quantum-Simulator. Detta består av 
-    - Q#åtgärder: under rutiner som fungerar på Quantum-register och 
-    - Q#Functions: klassiska under rutiner som används inom Quantum-algoritmen.
+    - Q# åtgärder: under rutiner som fungerar på Quantum-register och 
+    - Q# Functions: klassiska under rutiner som används inom Quantum-algoritmen.
 2. Start punkten som används för att anropa programmet Quantum och ange den måldator som den ska köras på.
-    Detta kan göras direkt från kommando raden eller via ett värd program som skrivits i ett klassiskt programmeringsspråk som python eller C#.
+    Detta kan göras direkt från kommando tolken eller via ett värd program som skrivits i ett klassiskt programmeringsspråk som python eller C#.
     Den här självstudien innehåller instruktioner för vilken metod du föredrar.
 
 ## <a name="allocate-qubits-and-define-quantum-operations"></a>Allokera qubits och definiera Quantum-åtgärder
@@ -92,7 +92,7 @@ Nu definierar vi `Perform3qubitQFT` åtgärden:
 För tillfället tar åtgärden inga argument och returnerar inte något---i det här fallet skriver vi att den returnerar ett `Unit` objekt, som är via till `void` i C# eller en tom tupel, `Tuple[()]` i python.
 Senare kommer vi att ändra den så att den returnerar en matris med mät resultat, då `Unit` ersätts punkten med `Result[]` . 
 
-### <a name="allocate-qubits-with-using"></a>Allokera qubits med`using`
+### <a name="allocate-qubits-with-using"></a>Allokera qubits med `using`
 I vår Q# åtgärd allokerar vi först ett register över tre qubits med `using` instruktionen:
 
 ```qsharp
@@ -114,7 +114,7 @@ Med `using` tilldelas qubits automatiskt i $ \ket {0} $-tillstånd. Vi kan verif
 ### <a name="applying-single-qubit-and-controlled-gates"></a>Använda en qubit och kontrollerade portar
 
 Därefter tillämpar vi de portar som utgör själva åtgärden.
-Q#innehåller redan många grundläggande Quantum-grindar som åtgärder i [`Microsoft.Quantum.Intrinsic`](xref:microsoft.quantum.intrinsic) namn området och dessa är inget undantag. 
+Q# innehåller redan många grundläggande Quantum-grindar som åtgärder i [`Microsoft.Quantum.Intrinsic`](xref:microsoft.quantum.intrinsic) namn området och dessa är inget undantag. 
 
 I en Q# åtgärd körs de instruktioner som anropar callables i turordning.
 Den första porten som ska tillämpas är därför [`H`](xref:microsoft.quantum.intrinsic.h) (Hadamard) för den första qubit:
@@ -134,10 +134,10 @@ En `R1(θ, <qubit>)` åtgärd i allmänhet lämnar $ \ket {0} $-komponenten i qu
 
 #### <a name="controlled-operations"></a>Kontrollerade åtgärder
 
-Q#gör det mycket enkelt att utvärdera körningen av en åtgärd på en eller flera qubits.
+Q# gör det mycket enkelt att utvärdera körningen av en åtgärd på en eller flera qubits.
 I allmänhet inleder vi bara anropet med `Controlled` och åtgärds argumenten ändras som:
 
- `Op(<normal args>)`$ \to $ `Controlled Op([<control qubits>], (<normal args>))` .
+ `Op(<normal args>)` $ \to $ `Controlled Op([<control qubits>], (<normal args>))` .
 
 Observera att kontrollen qubits måste anges som en matris, även om det är en enskild qubit.
 
@@ -157,7 +157,7 @@ Observera att vi använder [`PI()`](xref:microsoft.quantum.math.pi) funktionen f
 Dessutom delas vi upp av en `Double` (t. ex. `2.0` ) eftersom division av ett heltal `2` skulle resultera i ett typ fel. 
 
 > [!TIP]
-> `R1(π/2)`och `R1(π/4)` motsvarar `S` `T` -och-åtgärderna (även i `Microsoft.Quantum.Intrinsic` ).
+> `R1(π/2)` och `R1(π/4)` motsvarar `S` `T` -och-åtgärderna (även i `Microsoft.Quantum.Intrinsic` ).
 
 
 Efter att ha tillämpat relevanta `H` åtgärder och kontrollerade rotationer för den andra och tredje qubits:
@@ -249,11 +249,11 @@ När Q# filen och åtgärden har slutförts är vårt Quantum-program klart att 
 När du har definierat vår Q# åtgärd i en `.qs` fil måste vi nu anropa den åtgärden och observera eventuella data som returneras.
 Nu finns det inga returnerade (kom ihåg att vår åtgärd som definierats ovan returnerar `Unit` ), men när vi senare ändrar Q# åtgärden för att returnera en matris med mått resultat ( `Result[]` ), kommer vi att adressera detta.
 
-Även om Q# programmet är allmänt förekommandet i de miljöer som används för att anropa det, kan det vara självklart att göra det. Det gör du genom att följa anvisningarna i den flik som motsvarar din installation: arbeta från Q# kommando rads programmet eller använda ett värd program i python eller C#.
+Även om Q# programmet är allmänt förekommandet i de miljöer som används för att anropa det, kan det vara självklart att göra det. Det gör du genom att följa anvisningarna i den flik som motsvarar din installation: arbeta från Q# programmet eller använda ett värd program i python eller C#.
 
-#### <a name="command-line"></a>[Kommandorad](#tab/tabid-cmdline)
+#### <a name="command-prompt"></a>[Kommando tolk](#tab/tabid-cmdline)
 
-Att köra Q# programmet från kommando raden kräver bara en liten ändring i Q# filen.
+Att köra Q# programmet från kommando tolken kräver bara en liten ändring i Q# filen.
 
 Lägg bara till `@EntryPoint()` på en rad före åtgärds definitionen:
 
@@ -396,7 +396,7 @@ Den utskrivna utmatningen illustrerar därför att våra programmerade portar om
 
 $ $ \ket{\psi} \_ {initial} = \ket {000} $ $
 
-till 
+på 
 
 $ $ \begin{align} \ket{\psi} \_ {Final} &= \frac {1} {\sqrt {8} } \left (\ket {000} + \ket {001} + \ket {010} + \ket {011} + \ket {100} + \ket {101} + \ket {110} + \ket {111} \right) \\ \\ &= \frac {1} {\sqrt{2 ^ n}} \sum \_ {j = 0} ^ {2 ^ n-1} \ket{j}, \end{align} $ $
 
@@ -445,7 +445,7 @@ Varje uppmätt `Result` typ (antingen `Zero` eller `One` ) läggs sedan till i m
 
 Nyckelordet `set` används alltid för att omtilldela variabler som binds med `mutable` .
 
-#### <a name="return-resultarray"></a>Returrelaterade`resultArray`
+#### <a name="return-resultarray"></a>Returrelaterade `resultArray`
 
 Med alla tre qubits som mäts och resultaten som har lagts till i `resultArray` , är det säkert att återställa och frigöra qubits som tidigare.
 När `using` blockets Stäng visas infogar du
@@ -499,10 +499,10 @@ Den slutgiltiga åtgärds koden bör se ut så här:
 }
 ```
 
-Om du arbetar från kommando raden skrivs den returnerade matrisen bara ut direkt till-konsolen i slutet av körningen.
+Om du arbetar från kommando tolken skrivs den returnerade matrisen bara ut direkt till-konsolen i slutet av körningen.
 Annars uppdaterar du värd programmet för att bearbeta den returnerade matrisen.
 
-#### <a name="command-line"></a>[Kommandorad](#tab/tabid-cmdline)
+#### <a name="command-prompt"></a>[Kommando tolk](#tab/tabid-cmdline)
 
 Om du vill ha mer förståelse för den returnerade matrisen som ska skrivas ut i-konsolen kan vi lägga till en annan `Message` i Q# filen precis innan `return` instruktionen:
 

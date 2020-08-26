@@ -91,8 +91,8 @@ När du arbetar med Q# , är den vanligaste typen av mätningar som du kommer at
 I sådana fall är det vanligt att diskutera en Pauli-operatör i allmänhet en operator som $ X, Y, z $ eller $ z \otimes z, x \otimes x, x \otimes Y $ och så vidare.
 
 > [!TIP]
->I Q# , representeras qubit Pauli-operatörer vanligt vis av matriser av typen `Pauli[]` .
->Om du till exempel vill representera $ X \otimes Z \otimes Y $ kan du använda matrisen `[PauliX, PauliZ, PauliY]` .
+> I Q# , representeras qubit Pauli-operatörer vanligt vis av matriser av typen `Pauli[]` .
+> Om du till exempel vill representera $ X \otimes Z \otimes Y $ kan du använda matrisen `[PauliX, PauliZ, PauliY]` .
 
 Att diskutera mått i Pauli-operatörer är särskilt vanligt i underfältet för en Quantum-fel korrigering.
 I Q# följer vi en liknande konvention. vi förklarar nu den här alternativa vyn av mått.
@@ -122,7 +122,7 @@ Pauli-mätningarna hänvisar till den enhetliga motsvarigheten genom $ att ident
 De här måtten anges nedan för bekvämlighet.
 
 
-|Pauli mått- | transformering|
+|Pauli mått-  | transformering  |
 |-------------------|------------------------|
 |$ $ Z |               $\boldone$             |
 |$ $ X | $H               $                    |
@@ -173,15 +173,15 @@ Exempel:
 $$
 \begin{align}
     \otimes \boldone Z =\begin{bmatrix}
-        1 & 0 & 0 & 0\\\\
-        0 & 1 & 0 & 0\\\\
-        0 & 0 & -1 & 0\\\\
-        0 & 0 & & -1 \end{bmatrix} .
+        1 &  0 &  0 &  0 \\\\
+        0 &  1 &  0 &  0 \\\\
+        0 &  0 & -1 &  0 \\\\
+        0 &  0 & & -1 \end{bmatrix} .
 \end{align}
 $$
 
 Precis som tidigare beskriver en enhetlig omvandling av sådana matriser även två hälften-blank steg som är märkta med $ \pm 1 $ Eigenvalues.
-Till exempel $ x \otimes x = h \otimes h (z \otimes z) h \otimes h $ från den identitet som Z- $ = HXH $ .
+Till exempel $ x \otimes x = h \otimes h (z \otimes z) h \otimes h $  från den identitet som Z- $ = HXH $ .
 På samma sätt som med ett-qubit-fall kan alla qubits Pauli-mått skrivas som $ u ^ \dagger (Z \otimes \id ) u $ för $ 4 4 höga \times $ matriser $ U $ . Vi räknar upp omvandlingarna i följande tabell.
 
 > [!NOTE]
@@ -189,16 +189,15 @@ På samma sätt som med ett-qubit-fall kan alla qubits Pauli-mått skrivas som $
 > \begin{align}
 >     \operatorname{Växla } &=
 >     \left( \begin { matris}
->1 & 0 & 0 & 0\\\\
->0 & 0 & 1 & 0\\\\
->0 & 1 & 0 & 0\\\\
+>         1 & 0 & 0 & 0 \\\\
+>         0 & 0 & 1 & 0 \\\\
+>         0 & 1 & 0 & 0 \\\\
 >0 & 0 & 0 & 1 > \end { matris } \right ) >     \end{align}
 > $$
->används för att simulera den inbyggda åtgärden [`SWAP`](xref:microsoft.quantum.intrinsic) .
+> används för att simulera den inbyggda åtgärden [`SWAP`](xref:microsoft.quantum.intrinsic) .
 
-|Pauli mått- | transformering|
+|Pauli mått-     | transformering  |
 |----------------------|------------------------|
-|$ \otimes \boldone Z $ | $\boldone \otimes \boldone$|
 |$ \otimes \boldone Z $ | $\boldone\otimes \boldone$|
 |$ \otimes \boldone X $ | $ \otimes \boldone H $|
 |$ \otimes \boldone Y $ | $ HS \dagger \otimes \boldone ^ $|
@@ -240,7 +239,7 @@ De sammanfaller därför med de krav som anges ovan.
 I Q# kan sådana mätningar returnera $ j $ om mätningen ger ett resultat i eigenspace $ (-1) ^ j $ .
 Att ha Pauli mätningar som en inbyggd funktion i Q# är till hjälp eftersom du kan mäta sådana operatörer som kräver långa kedjor av kontrollerade, icke-portar och bas omvandlingar för att beskriva hur mycket $ U-grind som $ krävs för att uttrycka åtgärden som en beskrivare produkt i $ Z $ och $ \id $ .
 Genom att kunna ange att du vill göra en av dessa fördefinierade mätningar behöver du inte oroa dig för att du ska kunna omvandla din grund till att en beräknings bas mätning ger nödvändig information.
-Q#hanterar alla transformeringar som behövs automatiskt.
+Q# hanterar alla transformeringar som behövs automatiskt.
 Mer information finns i [`Measure`](xref:microsoft.quantum.intrinsic.measure) [`MeasurePaulis`](xref:microsoft.quantum.measurement.measurepaulis) åtgärderna och.
 
 ## <a name="the-no-cloning-theorem"></a>No-Kloningsing-satsen
@@ -257,7 +256,7 @@ Det fullständiga beviset på No-kloning-satsen är lite för tekniskt för vår
 
 För en sådan Quantum-dator måste klonings åtgärden beskrivas av en enhetlig matris.
 Vi tillåter inte mätningar, eftersom det skulle skada det Quantum-tillstånd som vi försöker klona.
-För att simulera klonings åtgärden vill vi att den enhetliga matrisen som används för att ha den egenskap som$$
+För att simulera klonings åtgärden vill vi att den enhetliga matrisen som används för att ha den egenskap som $$
   U \ket { \psi } \ket { 0 } = \ket { \psi }\ket{\psi}
 $$
 för alla tillstånd $ \ket { \psi } $ .

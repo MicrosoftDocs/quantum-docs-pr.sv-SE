@@ -9,20 +9,20 @@ uid: microsoft.quantum.libraries.using
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: ef88ca765a394a7092eb0a60bf6f3615c082ef6a
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: c558e25bf0d906ba6480cd7c41d3ece4ea97c2d1
+ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87869587"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88863075"
 ---
 # <a name="using-additional-no-locq-libraries"></a>Använda ytterligare Q# bibliotek
 
 Quantum Development Kit innehåller ytterligare domänfunktionalitet med _NuGet-paket_ som kan läggas till i dina Q# projekt.
 
-| Q#Bibliotek  | NuGet-paket | Obs! |
+| Q# Bibliotek  | NuGet-paket | Anteckningar |
 |---------|---------|--------|
-| [Q#standard bibliotek](xref:microsoft.quantum.libraries.standard.intro) | [**Microsoft. Quantum. standard**](https://www.nuget.org/packages/Microsoft.Quantum.Standard) | Ingår som standard |
+| [Q# standard bibliotek](xref:microsoft.quantum.libraries.standard.intro) | [**Microsoft. Quantum. standard**](https://www.nuget.org/packages/Microsoft.Quantum.Standard) | Ingår som standard |
 | [Bibliotek för kvantkemi](xref:microsoft.quantum.chemistry.concepts.intro) | [**Microsoft.Quantum.Chemistry**](https://www.nuget.org/packages/Microsoft.Quantum.Chemistry) | |
 | [Bibliotek för kvantmatematik](xref:microsoft.quantum.numerics.intro) | [**Microsoft. Quantum. numeric**](https://www.nuget.org/packages/Microsoft.Quantum.Numerics) | |
 | [Bibliotek för kvantmaskininlärning](xref:microsoft.quantum.libraries.machine-learning.intro) | [**Microsoft.Quantum.MachineLearning**](https://www.nuget.org/packages/Microsoft.Quantum.MachineLearning) | |
@@ -33,9 +33,9 @@ När du har installerat Quantum Development Kit för användning med din önskad
 > Vissa Q# bibliotek kan fungera bra med ytterligare verktyg som fungerar tillsammans Q# med dina program eller som integreras med dina värd program.
 > [Installations anvisningarna för kemi Library](xref:microsoft.quantum.chemistry.concepts.installation) beskriver till exempel hur du använder [ **Microsoft. Quantum. kemi** -paketet](https://www.nuget.org/packages/Microsoft.Quantum.Chemistry) tillsammans med NWChem-plattformen för beräknings kemi och hur du installerar `qdk-chem` kommando rads verktygen för att arbeta med Quantum kemi-data.
 
-## <a name="no-locq-command-line-applications-or-net-interopability"></a>[Q#kommando rads program eller .NET-interop](#tab/tabid-csproj)
+## <a name="no-locq-applications-or-net-interopability"></a>[Q# program eller .NET-interop](#tab/tabid-csproj)
 
-**Kommando rad eller Visual Studio Code:** Med hjälp av kommando raden på egen hand eller i Visual Studio Code kan du använda `dotnet` kommandot för att lägga till en NuGet-paket referens i projektet.
+**Kommando tolk eller Visual Studio-kod:** Med hjälp av kommando tolken på egen hand eller i Visual Studio Code kan du använda `dotnet` kommandot för att lägga till en NuGet-paket referens i projektet.
 Om du till exempel vill lägga till paketet [**Microsoft. Quantum. numeric**](https://www.nuget.org/packages/Microsoft.Quantum.Numerics) kör du följande kommando:
 
 ```dotnetcli
@@ -54,7 +54,7 @@ Mer information finns i UI- [guiden för paket hanteraren](https://docs.microsof
 
 Du kan också använda Package Manager-konsolen för att lägga till ett numeriskt bibliotek i projektet via kommando rads gränssnittet.
 
-![Använda Package Manager-konsolen från kommando raden](~/media/vs2017-nuget-console-menu.png)
+![Använda Package Manager-konsolen från kommando tolken](~/media/vs2017-nuget-console-menu.png)
 
 Kör följande från Package Manager-konsolen:
 

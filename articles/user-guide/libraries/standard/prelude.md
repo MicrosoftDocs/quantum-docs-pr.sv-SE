@@ -2,19 +2,19 @@
 title: Inbyggda funktioner och funktioner i QDK
 description: Lär dig mer om de inbyggda funktionerna och funktionerna i QDK, inklusive funktioner för klassisk verksamhet, rotation och mätning.
 author: QuantumWriter
-uid: microsoft.quantum.libraries.standard.prelude
 ms.author: martinro@microsoft.com
 ms.date: 12/11/2017
 ms.topic: article
+uid: microsoft.quantum.libraries.standard.prelude
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 283504a5f5635a4996c804e514a6f52eb4966d22
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 4eb10e82a64381c503703be440be90e60f3a8622
+ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87868448"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88863732"
 ---
 # <a name="the-prelude"></a>Inledning #
 
@@ -128,27 +128,27 @@ I Quantum-algoritmer är det ofta användbart att uttrycka rotationer som dyadic
 Det skiljer sig från <xref:microsoft.quantum.intrinsic.r> i att rotations vinkeln har angetts som två indata av typen `Int` , tolkas som en dyadic fraktion.
 Därför `RFrac` har signatur `((Pauli, Int, Int, Qubit) => Unit is Adj + Ctl)` .
 Den implementerar en qubit-\exp (i \pi k \sigma/2 ^ n) $, där $ \sigma $ är den Pauli matris som motsvarar det första argumentet, $k $ är det andra argumentet och $n $ är det tredje argumentet.
-`RFrac(_,k,n,_)`är detsamma som `R(_,-πk/2^n,_)` . Observera att vinkeln är *negativ* för bråket.
+`RFrac(_,k,n,_)` är detsamma som `R(_,-πk/2^n,_)` . Observera att vinkeln är *negativ* för bråket.
 
 <xref:microsoft.quantum.intrinsic.rx>Åtgärden implementerar en rotation runt Pauli-$X $-axeln.
 Den har signatur `((Double, Qubit) => Unit is Adj + Ctl)` .
-`Rx(_, _)`är samma som `R(PauliX, _, _)` .
+`Rx(_, _)` är samma som `R(PauliX, _, _)` .
 
 <xref:microsoft.quantum.intrinsic.ry>Åtgärden implementerar en rotation runt Pauli-$Y $-axeln.
 Den har signatur `((Double, Qubit) => Unit is Adj + Ctl)` .
-`Ry(_, _)`är samma som `R(PauliY,_ , _)` .
+`Ry(_, _)` är samma som `R(PauliY,_ , _)` .
 
 <xref:microsoft.quantum.intrinsic.rz>Åtgärden implementerar en rotation runt Pauli-$Z $-axeln.
 Den har signatur `((Double, Qubit) => Unit is Adj + Ctl)` .
-`Rz(_, _)`är samma som `R(PauliZ, _, _)` .
+`Rz(_, _)` är samma som `R(PauliZ, _, _)` .
 
 <xref:microsoft.quantum.intrinsic.r1>Åtgärden implementerar en rotation med den mängd som finns runt $ \ket {1} $, $-$1-eigenstate för $Z $.
 Den har signatur `((Double, Qubit) => Unit is Adj + Ctl)` .
-`R1(phi,_)`är detsamma som `R(PauliZ,phi,_)` följt av `R(PauliI,-phi,_)` .
+`R1(phi,_)` är detsamma som `R(PauliZ,phi,_)` följt av `R(PauliI,-phi,_)` .
 
 <xref:microsoft.quantum.intrinsic.r1frac>Åtgärden implementerar en fraktions rotation med den mängd som finns runt Z = 1-eigenstate.
 Den har signatur `((Int,Int, Qubit) => Unit is Adj + Ctl)` .
-`R1Frac(k,n,_)`är detsamma som `RFrac(PauliZ,-k.n+1,_)` följt av `RFrac(PauliI,k,n+1,_)` .
+`R1Frac(k,n,_)` är detsamma som `RFrac(PauliZ,-k.n+1,_)` följt av `RFrac(PauliI,k,n+1,_)` .
 
 Ett exempel på en rotations åtgärd (runt Pauli $Z $-axeln, i den här instansen) som är mappad till Bloch-sfären visas nedan:
 
@@ -160,17 +160,17 @@ Förutom de enskilda qubit-åtgärderna ovan definierar inledning också flera �
 
 Först <xref:microsoft.quantum.intrinsic.cnot> utför åtgärden en kontrollerad- `NOT` grind, \begin{Equation} \operatorname{CNOT} \mathrel{: =} \begin{bmatrix} 1 & 0 & 0 & 0 \\ \\ 0 & 1 & 0 & 0 0 & 0 & \\ \\ 0 & 1 \\ \\ 0 & 0 & 1 & 0 \end{bmatrix}.
 \end{Equation} den har signatur `((Qubit, Qubit) => Unit is Adj + Ctl)` , som representerar $ \operatorname{CNOT} $ agerar unitarily på två enskilda qubits.
-`CNOT(q1, q2)`är samma som `(Controlled X)([q1], q2)` .
+`CNOT(q1, q2)` är samma som `(Controlled X)([q1], q2)` .
 Eftersom `Controlled` Functor gör det möjligt att kontrol lera ett register använder vi mat ris strängen `[q1]` för att indikera att vi bara vill ha den enda kontrollen.
 
 <xref:microsoft.quantum.intrinsic.ccnot>Åtgärden utför dubblerad-styrd icke-grind, ibland även kallat Toffoli-porten.
 Den har signatur `((Qubit, Qubit, Qubit) => Unit is Adj + Ctl)` .
-`CCNOT(q1, q2, q3)`är samma som `(Controlled X)([q1, q2], q3)` .
+`CCNOT(q1, q2, q3)` är samma som `(Controlled X)([q1, q2], q3)` .
 
 <xref:microsoft.quantum.intrinsic.swap>Åtgärden byter ut Quantum-tillstånden för två qubits.
 Det innebär att den implementerar den enhetliga matrisen \begin{Equation} \operatorname{SWAP} \mathrel{: =} \begin{bmatrix} 1 & 0 & 0 & 0 \\ \\ 0 & 0 & 1 & 0 \\ \\ 0 & 1 & 0 & \\ \\ 0 & 0 & 0 & 1 \end{bmatrix}.
 \end{Equation} den har signatur `((Qubit, Qubit) => Unit is Adj + Ctl)` .
-`SWAP(q1,q2)`motsvarar `CNOT(q1, q2)` följt av `CNOT(q2, q1)` och sedan `CNOT(q1, q2)` .
+`SWAP(q1,q2)` motsvarar `CNOT(q1, q2)` följt av `CNOT(q2, q1)` och sedan `CNOT(q1, q2)` .
 
 > [!NOTE]
 > VÄXLINGs porten är *inte* samma sak som att ordna om elementen i en variabel med typ `Qubit[]` .
@@ -202,7 +202,7 @@ Mått åtgärder stöder varken `Adjoint` eller `Controlled` Functor.
 
 <xref:microsoft.quantum.intrinsic.measure>Åtgärden utför en gemensam mätning av en eller flera qubits i den angivna produkten av Pauli-operatörer.
 Om Pauli-matrisen och qubit-matrisen har olika längd, Miss lyckas åtgärden.
-`Measure`har signatur `((Pauli[], Qubit[]) => Result)` .
+`Measure` har signatur `((Pauli[], Qubit[]) => Result)` .
 
 Observera att en gemensam mätning inte är samma som att mäta varje qubit individuellt.
 Anta till exempel tillstånd $ \ket {11} = \ket {1} \otimes \Ket {1} = X\otimes X \ket {00} $.
@@ -215,11 +215,11 @@ Den här egenskapen är viktig senare, eftersom vi diskuterar fel korrigering.
 För enkelhetens skull tillhandahåller inledning också två andra åtgärder för att mäta qubits.
 För det första, eftersom det är ganska vanligt att utföra qubit mätningar definierar inledning en kort skrift för det här fallet.
 <xref:microsoft.quantum.intrinsic.m>Åtgärden mäter Pauli $Z $-operatorn på en enskild qubit och har signatur `(Qubit => Result)` .
-`M(q)`motsvarar `Measure([PauliZ], [q])` .
+`M(q)` motsvarar `Measure([PauliZ], [q])` .
 
 <xref:microsoft.quantum.measurement.multim>Måtten Pauli $Z $-operatören *var separat* på var och en av qubits, och returnerar *matrisen* med `Result` värden som hämtats för varje qubit.
 I vissa fall kan detta optimeras. Den har signatur ( `Qubit[] => Result[])` .
-`MultiM(qs)`motsvarar:
+`MultiM(qs)` motsvarar:
 
 ```qsharp
 mutable rs = new Result[Length(qs)];

@@ -9,12 +9,12 @@ uid: microsoft.quantum.quickstarts.search
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 5c23d71209eb484a510f102e8b581ba4ec21829a
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: f2ae56bdca893e8a317c16d0a993da15b9f021b5
+ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87869672"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88863111"
 ---
 # <a name="tutorial-implement-grovers-search-algorithm-in-q"></a>Självstudier: Implementera Grovers sökalgoritm i Q\#
 
@@ -42,7 +42,7 @@ Antalet stegvisa ökningar är färre än antalet objekt i listan. Det här är 
 
 ## <a name="write-the-code"></a>Skriva koden
 
-1. [Skapa ett nytt Q# projekt för kommando rads programmet](xref:microsoft.quantum.install.standalone)med hjälp av Quantum Development Kit. Ge projektet rubriken `Grover`.
+1. [Skapa ett nytt Q# projekt för programmet](xref:microsoft.quantum.install.standalone)med hjälp av Quantum Development Kit. Ge projektet rubriken `Grover`.
 
 1. I projektfilen `Program.qs` lägger du till följande kod:
 
@@ -56,7 +56,7 @@ Antalet stegvisa ökningar är färre än antalet objekt i listan. Det här är 
 
 1. Kör sedan det nya Q# programmet för att hitta objektet som marker ATS av `ReflectAboutMarked` .
 
-### <a name="no-locq-command-line-applications-with-visual-studio-or-visual-studio-code"></a>Q#kommando rads program med Visual Studio eller Visual Studio Code
+### <a name="no-locq-applications-with-visual-studio-or-visual-studio-code"></a>Q# program med Visual Studio eller Visual Studio Code
 
 Den körbara filen kör åtgärden eller funktionen som har markerats med attributet `@EntryPoint()` i en simulator eller i ett resursuppskattningsverktyg, beroende på projektkonfigurationen och kommandoradsalternativen.
 

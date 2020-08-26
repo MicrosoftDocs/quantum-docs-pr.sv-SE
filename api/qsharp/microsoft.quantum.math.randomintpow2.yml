@@ -3,26 +3,23 @@ uid: microsoft.quantum.math.randomintpow2
 name: RandomIntPow2
 type: operation
 namespace: Microsoft.Quantum.Math
-summary: Genererar ett slumpmässigt heltal som samplas från alla heltal som kan representeras i ett givet antal bitar.
-remarks: Den här funktionen <xref:microsoft.quantum.intrinsic.random>anropar, så att dess slumpmässighet beror på `Random`implementeringen av.
+summary: RandomIntPow2 är föråldrad. Använd @"microsoft.quantum.random.drawrandomint" i stället.
 syntax: 'operation RandomIntPow2 (maxBits : Int) : Int'
 input:
   content: '(maxBits : Int)'
   types:
   - name: maxBits
-    summary: Antalet klassiska bitar som krävs för att representera det största heltal som kan returneras av den här åtgärden.
     isPrimitive: true
     uid: Int
 output:
   content: Int
   types:
-  - summary: Ett heltal $x $ enhetligt från $ [0, 2 ^ {\texttt{maxBits}}-1] $; det vill säga med $ \Pr (x) = \frac{1}{2 ^ {\texttt{maxBits}}} $.
-    isPrimitive: true
+  - isPrimitive: true
     uid: Int
 metadata:
-  ms.openlocfilehash: dec46f725da2f805839f7c03306853c851700027
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 61072e350facbf17b13aab9551210d00487cce40
+  ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82681545"
+  ms.lasthandoff: 08/25/2020
+  ms.locfileid: "88863595"

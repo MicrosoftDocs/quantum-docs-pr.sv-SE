@@ -8,12 +8,12 @@ uid: microsoft.quantum.guide.quickref.iqsharp
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: fb7b5543ef9222e6bab2b1cbbc7e3ebb54863438
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 1d2d092588e1a5c69d12e5d50377e3e26412c094
+ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87867989"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88863702"
 ---
 # <a name="ino-locq-magic-commands"></a>I Q# Magic-kommandon
 
@@ -22,8 +22,10 @@ ms.locfileid: "87867989"
 - [`%config`](xref:microsoft.quantum.iqsharp.magic-ref.config): Gör det möjligt att ställa in eller fråga konfigurations alternativ.
 - [`%estimate`](xref:microsoft.quantum.iqsharp.magic-ref.estimate): Kör en specifik funktion eller åtgärd på ResourcesEstimator-mål datorn.
 - [`%lsmagic`](xref:microsoft.quantum.iqsharp.magic-ref.lsmagic): Returnerar en lista med alla tillgängliga Magic-kommandon.
+- [`%lsopen`](xref:microsoft.quantum.iqsharp.magic-ref.lsopen): Visar en lista över namn områden som har öppnats och deras alias.
 - [`%package`](xref:microsoft.quantum.iqsharp.magic-ref.package): Ger möjlighet att läsa in ett NuGet-paket.
 - [`%performance`](xref:microsoft.quantum.iqsharp.magic-ref.performance): Rapporterar aktuella prestanda mått för denna kernel.
+- [`%project`](xref:microsoft.quantum.iqsharp.magic-ref.project): Ger möjlighet att visa eller lägga till Q# projekt referenser. 
 - [`%simulate`](xref:microsoft.quantum.iqsharp.magic-ref.simulate): Kör en specifik funktion eller åtgärd på QuantumSimulator-mål datorn.
 - [`%toffoli`](xref:microsoft.quantum.iqsharp.magic-ref.toffoli): Kör en specifik funktion eller åtgärd på ToffoliSimulator-mål datorn.
 - [`%who`](xref:microsoft.quantum.iqsharp.magic-ref.who): Visar en lista över de Q# åtgärder som är tillgängliga i den aktuella sessionen.
