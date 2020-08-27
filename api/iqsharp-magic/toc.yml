@@ -38,10 +38,14 @@
   name: '%package magiskt kommando'
 - href: performance.md
   name: '%performance magiskt kommando'
+- href: project.md
+  name: '%project magiskt kommando'
 - href: simulate.md
   name: '%simulate magiskt kommando'
 - href: toffoli.md
   name: '%toffoli magiskt kommando'
+- href: trace.md
+  name: '%trace magiskt kommando'
 - href: who.md
   name: '%who magiskt kommando'
 - href: workspace.md
