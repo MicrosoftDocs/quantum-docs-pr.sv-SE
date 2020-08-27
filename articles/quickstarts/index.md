@@ -10,12 +10,12 @@ uid: microsoft.quantum.install
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 378970dc911ea5a794590f8336ffc6d3f9673285
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 3aafe78d5910027e2836f7dce72c064e75fc4436
+ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87867581"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88863716"
 ---
 # <a name="install-the-microsoft-quantum-development-kit-qdk"></a>Installera Microsoft Quantum Development Kit (QDK)
 
@@ -33,7 +33,7 @@ Arbetsflödena för var och en av dessa konfigurationer beskrivs och jämförs i
 
 Om du vill fortsätta med att installera QDK och skapa Q#-projekt väljer du önskad konfiguration:
 
-[Utveckla med Q#-kommandoradsprogram](xref:microsoft.quantum.install.standalone) – välj den här metoden om du vill arbeta med Q# från kommandoraden. För detta krävs inte en drivrutin eller ett värdprogram som alternativen nedan.
+[Utveckla med Q#-program](xref:microsoft.quantum.install.standalone) – välj den här metoden om du vill arbeta med Q# från kommandotolken. För detta krävs inte en drivrutin eller ett värdprogram som alternativen nedan.
 
 [Utveckla med Q#-Jupyter Notebooks](xref:microsoft.quantum.install.jupyter) – välj den här miljön om du vill köra Q#-kod i celler med inbäddad text eller skapa interaktiva självstudier om kvantberäkning. 
 

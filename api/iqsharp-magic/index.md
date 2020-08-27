@@ -3,14 +3,14 @@ title: Magiska kommandon för IQ#
 author: rmshaffer
 uid: microsoft.quantum.iqsharp.magic-ref.index
 ms.author: rmshaffer
-ms.date: 07/21/2020
+ms.date: 08/25/2020
 ms.topic: article
-ms.openlocfilehash: 971787adae03af35d2e5b408fb88356a8b7df90a
-ms.sourcegitcommit: cdf67362d7b157254e6fe5c63a1c5551183fc589
+ms.openlocfilehash: d6bf8407e40be092689b38cf90514c88f798cc2f
+ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86870710"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88862970"
 ---
 # <a name="iq-magic-commands"></a>Magiska kommandon för IQ#
 | Magiskt kommando | Sammanfattning |
@@ -35,7 +35,9 @@ ms.locfileid: "86870710"
 | [`%lsopen`](xref:microsoft.quantum.iqsharp.magic-ref.lsopen) | Visar en lista med namnområden som har öppnats och deras alias. |
 | [`%package`](xref:microsoft.quantum.iqsharp.magic-ref.package) | Ger möjlighet att läsa in ett NuGet-paket. |
 | [`%performance`](xref:microsoft.quantum.iqsharp.magic-ref.performance) | Rapporterar aktuella prestandamått för denna kernel. |
+| [`%project`](xref:microsoft.quantum.iqsharp.magic-ref.project) | Gör det möjligt att visa eller lägga till Q#-projektreferenser. |
 | [`%simulate`](xref:microsoft.quantum.iqsharp.magic-ref.simulate) | Kör en given funktion eller åtgärd på QuantumSimulator-måldatorn. |
 | [`%toffoli`](xref:microsoft.quantum.iqsharp.magic-ref.toffoli) | Kör en given funktion eller åtgärd på ToffoliSimulator-måldatorn. |
+| [`%trace`](xref:microsoft.quantum.iqsharp.magic-ref.trace) | Visualiserar körningssökvägen för åtgärden. |
 | [`%who`](xref:microsoft.quantum.iqsharp.magic-ref.who) | Visar de Q#-åtgärder som är tillgängliga i den aktuella sessionen. |
 | [`%workspace`](xref:microsoft.quantum.iqsharp.magic-ref.workspace) | Tillhandahåller åtgärder för aktuell arbetsyta. |
