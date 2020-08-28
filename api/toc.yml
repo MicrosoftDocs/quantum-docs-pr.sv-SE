@@ -2,7 +2,7 @@
   items:
     - name: API-referens
       href: index.md
-    - name: 'Q#-bibliotek'
+    - name: Q#-bibliotek
       topicHref: qsharp/index.md
       href: qsharp/toc.yml
     - name: .NET-bibliotek
@@ -14,6 +14,6 @@
         - name: Kvantkemi
           href: 'https://docs.microsoft.com/dotnet/api/microsoft.quantum.chemistry'
     - name: Python-bibliotek
-      href: 'https://docs.microsoft.com/python/qsharp'
-    - name: 'Magiska kommandon för IQ#'
+      href: 'https://docs.microsoft.com/python/qsharp-core/qsharp'
+    - name: Magiska kommandon för IQ#
       href: iqsharp-magic/toc.yml
