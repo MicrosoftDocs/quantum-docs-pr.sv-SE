@@ -9,12 +9,12 @@ uid: microsoft.quantum.libraries.using
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: c558e25bf0d906ba6480cd7c41d3ece4ea97c2d1
-ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
+ms.openlocfilehash: 39bf7dc52f4670a6e4536efc437d001c96f9584a
+ms.sourcegitcommit: 11bd357baeb6ab53a402882979e75964d0869b57
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88863075"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88992147"
 ---
 # <a name="using-additional-no-locq-libraries"></a>Använda ytterligare Q# bibliotek
 
@@ -83,7 +83,7 @@ Om du vill göra paketet tillgängligt från Q# kod i den aktuella arbets ytan l
 ## <a name="python-interoperability"></a>[Python-interoperabilitet](#tab/tabid-python)
 
 
-Du kan göra ytterligare paket tillgängliga för användning i ett python-värdprogram med hjälp av- [`qsharp.packages.add`](https://docs.microsoft.com/python/qsharp/qsharp.packages.packages) metoden.
+Du kan göra ytterligare paket tillgängliga för användning i ett python-värdprogram med hjälp av- [`qsharp.packages.add`](https://docs.microsoft.com/python/qsharp-core/qsharp.packages.packages) metoden.
 Om du till exempel vill lägga till paketet [**Microsoft. Quantum. numeric**](https://www.nuget.org/packages/Microsoft.Quantum.Numerics) för användning I en i Q# -anteckningsbok kör du följande python-kod:
 
 ```python

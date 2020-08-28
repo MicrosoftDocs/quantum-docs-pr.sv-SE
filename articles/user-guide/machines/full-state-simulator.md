@@ -9,16 +9,16 @@ uid: microsoft.quantum.machines.full-state-simulator
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: b15af66123dadae09815cde1966c69b3ce2e9e64
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: a27cece9858d62814b9d80c47e61c5d7d3b8c885
+ms.sourcegitcommit: 11bd357baeb6ab53a402882979e75964d0869b57
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87868346"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88992231"
 ---
 # <a name="quantum-development-kit-qdk-full-state-simulator"></a>Quantum Development Kit (QDK) fullständig tillstånds Simulator
 
-QDK tillhandahåller en fullständig tillstånds simulator som simulerar en Quantum-dator på din lokala dator. Du kan använda den fullständiga tillstånds simulatorn för att köra och felsöka Quantum-algoritmer som skrivits i Q# , med upp till 30 qubits. Den fullständiga tillstånds simulatorn liknar den Quantum simulator som används i [LIQ $ UI | \rangle $](http://stationq.github.io/Liquid/) Platform från Microsoft Research.
+QDK tillhandahåller en fullständig tillstånds simulator som simulerar en Quantum-dator på din lokala dator. Du kan använda den fullständiga tillstånds simulatorn för att köra och felsöka Quantum-algoritmer som skrivits i Q# , med upp till 30 qubits. Den fullständiga tillstånds simulatorn liknar den Quantum simulator som används i  [LIQ $ UI | \rangle $](http://stationq.github.io/Liquid/) Platform från Microsoft Research.
 
 ## <a name="invoking-and-running-the-full-state-simulator"></a>Anropa och köra fullständig tillstånds Simulator
 
@@ -39,7 +39,7 @@ Eftersom `QuantumSimulator` klassen implementerar <xref:System.IDisposable> grä
 
 ### <a name="invoking-the-simulator-from-python"></a>Anropa simulatorn från python
 
-Använd metoden [simulera ()](https://docs.microsoft.com/python/qsharp/qsharp.loader.qsharpcallable) från Q# python-biblioteket med den importerade Q# åtgärden:
+Använd metoden [simulera ()](https://docs.microsoft.com/python/qsharp-core/qsharp.loader.qsharpcallable) från Q# python-biblioteket med den importerade Q# åtgärden:
 
 ```python
 qubit_result = myOperation.simulate()

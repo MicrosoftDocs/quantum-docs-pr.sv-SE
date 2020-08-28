@@ -9,12 +9,12 @@ uid: microsoft.quantum.machines.toffoli-simulator
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 8a981645703423856e667be7c3dccf5270a5885f
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 6a0885035c12a99ae43533f04cdc95c5c529380a
+ms.sourcegitcommit: 11bd357baeb6ab53a402882979e75964d0869b57
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87868108"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88992223"
 ---
 # <a name="quantum-development-kit-qdk-toffoli-simulator"></a>Toffoli Simulator för Quantum Development Kit (QDK)
 
@@ -40,7 +40,7 @@ Observera att i motsats till `QuantumSimulator`-klassen implementerar `ToffoliSi
 
 ### <a name="invoking-the-toffoli-simulator-from-python"></a>Anropar Toffoli-simulatorn från python
 
-Använd metoden [toffoli_simulate ()](https://docs.microsoft.com/python/qsharp/qsharp.loader.qsharpcallable) från python-biblioteket med den importerade Q# åtgärden:
+Använd metoden [toffoli_simulate ()](https://docs.microsoft.com/python/qsharp-core/qsharp.loader.qsharpcallable) från python-biblioteket med den importerade Q# åtgärden:
 
 ```python
 qubit_result = myOperation.toffoli_simulate()
@@ -68,7 +68,7 @@ Toffoli Simulator stöder:
 
 * Rotationer och exponentiated Paulis, till exempel `R` och `Exp` , när den resulterande åtgärden är lika med `X` eller identitets mat ris.
 * Mått och [assert](xref:microsoft.quantum.diagnostics.assertmeasurement) -åtgärder, men endast i Pauli- `Z` basen. Observera att sannolikheten för en mått åtgärd alltid är **0** eller **1**; Det finns ingen slumpmässighet i Toffoli-simulatorn.
-* `DumpMachine`och- `DumpRegister` funktioner.
+* `DumpMachine` och- `DumpRegister` funktioner.
 Båda funktionerna utvärderar aktuell `Z` bas status för varje qubit, en qubit per rad.
 
 ## <a name="specifying-the-number-of-qubits"></a>Ange antalet qubits

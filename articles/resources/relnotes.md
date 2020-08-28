@@ -9,12 +9,12 @@ uid: microsoft.quantum.relnotes
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: f94c20281c5a242aac6a731a5091264dc2847712
-ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
+ms.openlocfilehash: 70d0c9b61e49d4ee6142edbe2767310403885f01
+ms.sourcegitcommit: 11bd357baeb6ab53a402882979e75964d0869b57
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88863755"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88992266"
 ---
 # <a name="microsoft-quantum-development-kit-release-notes"></a>Viktig information för Microsoft Quantum Development Kit
 
@@ -32,7 +32,7 @@ Den här versionen innehåller följande:
 
 - Nytt [namn område för Microsoft. Quantum. Random](xref:microsoft.quantum.random), vilket ger ett bekvämare sätt att sampla slumpmässiga värden från Q# program. ([QuantumLibraries # 311](https://github.com/microsoft/QuantumLibraries/pull/311), [qsharp-runtime # 328](https://github.com/microsoft/qsharp-runtime/pull/328))
 - Förbättrat [namn område för Microsoft. Quantum. Diagnostics](xref:microsoft.quantum.diagnostics) med ny [ `DumpOperation` åtgärd](xref:microsoft.quantum.diagnostics.dumpoperation)och nya åtgärder för att begränsa qubit tilldelning och Oracle-anrop. ([QuantumLibraries # 302](https://github.com/microsoft/QuantumLibraries/pull/302))
-- Nytt [ `%project` Magic-kommando](xref:microsoft.quantum.iqsharp.magic-ref.project) i i Q# och [ `qsharp.projects` API](https://docs.microsoft.com/python/qsharp/qsharp.projects.projects) i python för att stödja referenser till Q# projekt utanför den aktuella arbets ytans mapp. Se [iqsharp # 277](https://github.com/microsoft/iqsharp/issues/277) för aktuella begränsningar för den här funktionen. 
+- Nytt [ `%project` Magic-kommando](xref:microsoft.quantum.iqsharp.magic-ref.project) i i Q# och [ `qsharp.projects` API](https://docs.microsoft.com/python/qsharp-core/qsharp.projects.projects) i python för att stödja referenser till Q# projekt utanför den aktuella arbets ytans mapp. Se [iqsharp # 277](https://github.com/microsoft/iqsharp/issues/277) för aktuella begränsningar för den här funktionen. 
 - Stöd för automatisk inläsning av `.csproj` filer för Q# /python-värdar, vilket gör att externa projekt-eller paket referenser kan läsas in vid initierings tiden. Mer information finns i hand boken för användning av [ Q# python-och Jupyter-anteckningsböcker](xref:microsoft.quantum.guide.host-programs) .
 - ErrorCorrection. Syndrome-exemplet har lagts till.
 - Justerbara koppling har lagts till i SimpleIsing.
