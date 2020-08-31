@@ -9,12 +9,12 @@ uid: microsoft.quantum.install.cs
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 13d73bdf0287941c89e03ba63869095e5fca4e70
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 24318380e0e63957a51961762a33446fe0121b21
+ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87867564"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88863678"
 ---
 # <a name="develop-with-no-locq-and-net"></a>Utveckla med Q# och .NET
 
@@ -25,16 +25,16 @@ Först skapar vi Q#-programmet och .NET-värden, och sedan visar vi hur du anrop
 
 ## <a name="prerequisites"></a>Krav
 
-- Installera Quantum Development Kit [för användning med kommandoradsprojekt i Q#](xref:microsoft.quantum.install.standalone).
+- Installera Quantum Development Kit [för användning med projekt i Q#](xref:microsoft.quantum.install.standalone).
 
 ## <a name="creating-a-no-locq-library-and-a-net-host"></a>Skapa ett Q#-bibliotek och en .NET-värd
 
 Det första steget är att skapa projekt för ditt Q#-bibliotek och för den .NET-värd som ska anropa åtgärder och funktioner som definierats i ditt Q#-bibliotek.
 
 Följ anvisningarna på den flik som motsvarar din utvecklingsmiljö.
-Om du använder ett annat redigeringsprogram än Visual Studio eller VS Code följer du bara stegen för kommandoraden.
+Om du använder ett annat redigeringsprogram än Visual Studio eller VS Code följer du bara stegen för kommandotolken.
 
-### <a name="visual-studio-code-or-command-line"></a>[Visual Studio Code eller kommandorad](#tab/tabid-cmdline)
+### <a name="visual-studio-code-or-command-prompt"></a>[Visual Studio Code eller kommandotolk](#tab/tabid-cmdline)
 
 - Skapa ett nytt Q#-bibliotek
 
@@ -106,4 +106,4 @@ Om du vill anropa den här åtgärden från .NET i en kvantsimulator, kan du anv
     
 ## <a name="next-steps"></a>Nästa steg
 
-Nu när du har konfigurerat Quantum Development Kit för både Q#-kommandoradsprogram och för interoperabilitet med .NET kan du skriva och köra [ditt första kvantprogram](xref:microsoft.quantum.quickstarts.qrng).
+Nu när du har konfigurerat Quantum Development Kit för både Q#-program och interoperabilitet med .NET kan du skriva och köra [ditt första kvantprogram](xref:microsoft.quantum.quickstarts.qrng).

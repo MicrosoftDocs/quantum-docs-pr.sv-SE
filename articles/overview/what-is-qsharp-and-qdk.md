@@ -9,12 +9,12 @@ uid: microsoft.quantum.overview.q-sharp
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 3ee9e897eb142bbc9503a617cc3e25c1a665ff35
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 5db574b0380ffa1616cb3959d84925854df4e321
+ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87866952"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88863781"
 ---
 # <a name="what-are-the-no-locq-programming-language-and-qdk"></a>Vad är programmeringsspråket Q# och QDK?
 
@@ -24,7 +24,7 @@ Som programmeringsspråk omfattar Q# välkända element från Python, C# och F#.
 
 ## <a name="what-can-i-do-with-the-qdk"></a>Vad kan jag göra med QDK?
 
-QDK är en komplett development kit för Q# som du kan använda med vanliga verktyg och språk för att utveckla kvantprogram som du kan köra i olika miljöer. Q#-program kan köras som en kommandoradsapp, via Jupyter Notebooks eller med ett Python- eller .NET-värdprogram.
+QDK är en komplett development kit för Q# som du kan använda med vanliga verktyg och språk för att utveckla kvantprogram som du kan köra i olika miljöer. Q#-program kan köras som ett konsolprogram, via Jupyter Notebooks eller med ett Python- eller .NET-värdprogram.
 
 ### <a name="develop-in-common-tools-and-environments"></a>Utveckla i vanliga verktyg och miljöer
 
@@ -48,7 +48,7 @@ Kör kvantprogram i en kvantsimulator med fullständigt tillstånd eller en Toff
 
 ## <a name="how-does-no-locq-work"></a>Hur fungerar Q#?
 
-Q#-program kan kompileras till ett fristående kommandoradsprogram eller anropas av ett värdprogram som är skrivet i antingen Python eller ett .NET-språk.
+Q#-program kan kompileras till ett fristående program eller anropas av ett värdprogram som är skrivet i antingen Python eller ett .NET-språk.
 
 När du kompilerar och kör programmet skapar det en instans av kvantsimulatorn och skickar Q#-koden till den. Simulatorn använder Q#-koden för att skapa kvantbitar (simuleringar av kvantpartiklar) och tillämpa transformeringar för att ändra deras tillstånd. Resultatet av kvantåtgärderna i simulatorn returneras sedan till programmet.  
 
@@ -60,7 +60,7 @@ Isolering av Q#-koden i simulatorn ser till att algoritmerna följer kvantfysike
 
 Allt du behöver för att skriva och köra Q#-program, inklusive Q#-kompilatorn, Q#-bibliotek och kvantsimulatorerna, kan installeras och köras från din lokala dator. Så småningom kan du köra Q#-programmen via fjärranslutning på en riktig kvantdator, men till dess tillhandahåller de kvantsimulatorer som medföljer QDK noggranna och tillförlitliga resultat.
 
-- Att köra [Q# från kommandoraden](xref:microsoft.quantum.install.standalone) är det snabbaste sättet att komma igång.
+- Att utveckla [Q#-program](xref:microsoft.quantum.install.standalone) är det snabbaste sättet att komma igång.
 
 - Kör fristående [Jupyter Notebooks med IQ#](xref:microsoft.quantum.install.jupyter), ett Jupyter-tillägg för kompilering, simulering och visualisering av Q#-program.
 

@@ -9,12 +9,12 @@ ms.topic: overview
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: ff5eb9984da0b22a65f3919599ee18605a206fa0
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 06198f3b5b806bab49abf9fca38b5d2f15cfb65f
+ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87867529"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88863745"
 ---
 # <a name="get-started-with-the-quantum-development-kit-qdk"></a>Kom igång med Quantum Development Kit (QDK)
 
@@ -36,7 +36,7 @@ För att komma igång med kraften hos kvantberäkning kan du prova våra självs
 * [Utforska sammanflätning med Q#](xref:microsoft.quantum.write-program) – den här självstudien vägleder dig genom skrivandet av ett Q#-program som demonstrerar några grundläggande begrepp inom kvantprogrammering.
     Om du inte är redo att börja koda kan du ändå följa med utan att installera QD. Du får då en översikt över Q#-programmeringsspråket och de första begreppen inom kvantberäkning.
 * [Grovers sökalgoritm](xref:microsoft.quantum.quickstarts.search) – utforska det här exemplet på ett Q#-program som visar hur Q# kan uttrycka kvantalgoritmen på ett sätt som beskriver kvantåtgärder på låg nivå.
-    Den här självstudien vägleder dig genom utveckling av programmet som ett Q#-kommandoradsprogram med hjälp av Visual Studio eller Visual Studio Code.
+    Den här självstudien vägleder dig genom utveckling av programmet som ett Q#-program med hjälp av Visual Studio eller Visual Studio Code.
 
 ### <a name="learning-further"></a>Lär dig ännu mer
 * I [Microsoft Learn-modulerna för kvantberäkning](https://docs.microsoft.com/learn/browse/?term=quantum) lär du dig huvudbegreppen i din egen takt. Du kan lära dig grunderna i hur du skapar kvantprogram med QDK och vår [första modul](https://docs.microsoft.com/learn/modules/qsharp-create-first-quantum-development-kit/).

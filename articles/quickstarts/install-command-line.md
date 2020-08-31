@@ -1,5 +1,5 @@
 ---
-title: Utveckla med Q#-kommandoradsprogram
+title: Utveckla med Q#-program
 author: KittyYeungQ
 ms.author: kitty
 ms.date: 4/24/2020
@@ -9,14 +9,14 @@ uid: microsoft.quantum.install.standalone
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 630dc7b8acf2dd8f258eb27dfbc367b812cd1c19
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 6a287dd76162a05d72af7e9d1e46533425283e2a
+ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87867615"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88863668"
 ---
-# <a name="develop-with-no-locq-command-line-applications"></a>Utveckla med Q#-kommandoradsprogram
+# <a name="develop-with-no-locq-applications"></a>Utveckla med Q#-program
 
 Q#-program kan köras fristående, utan någon drivrutin på ett värdspråk som C#, F# eller Python.
 
@@ -26,7 +26,7 @@ Q#-program kan köras fristående, utan någon drivrutin på ett värdspråk som
 
 ## <a name="installation"></a>Installation
 
-Även om du kan skapa Q#-kommandoradsprogram i vilken IDE som helst, rekommenderar vi att du använder Visual Studio Code (VS Code) eller Visual Studio IDE när du utvecklar Q#-program lokalt. Vi rekommenderar att du använder Visual Studio Codespaces om du tänker utveckla i molnet via en webbläsare. Utveckling i dessa miljöer inbegriper de omfattande funktionerna i QDK-tillägget, däribland varningar, syntaxmarkeringar, projektmallar och mer. 
+Även om du kan skapa Q#-program i vilken IDE som helst, rekommenderar vi att du använder Visual Studio Code (VS Code) eller Visual Studio IDE när du utvecklar Q#-program lokalt. Vi rekommenderar att du använder Visual Studio Codespaces om du tänker utveckla i molnet via en webbläsare. Utveckling i dessa miljöer inbegriper de omfattande funktionerna i QDK-tillägget, däribland varningar, syntaxmarkeringar, projektmallar och mer. 
 
 Konfigurera VS Code:
 
@@ -45,7 +45,7 @@ Så här konfigurerar du Visual Studio Codespaces:
 3. Nu kan du starta din nya miljö och börja utveckla i webbläsaren via [VS Codespaces Cloud IDE](https://online.visualstudio.com/environments). Du kan också använda en lokal installation av VS Code och använda Codespaces som en [fjärrmiljö](https://docs.microsoft.com/visualstudio/online/how-to/vscode).
 
 
-Installera QDK för en annan miljö genom att ange följande på kommandoraden:
+Installera QDK för en annan miljö genom att ange följande i kommandotolken:
 
 ```dotnetcli
 dotnet new -i Microsoft.Quantum.ProjectTemplates
@@ -94,7 +94,7 @@ Så här kör du programmet:
 > [!NOTE]
 > Om du har flera projekt i en Visual Studio-lösning, måste alla projekt i lösningen finnas i samma mapp som lösningen eller i någon av dess undermappar.  
 
-### <a name="other-editors-with-the-command-line"></a>[Andra redigeringsprogram med kommandoraden](#tab/tabid-cmdline)
+### <a name="other-editors-with-the-command-prompt"></a>[Andra redigeringsprogram med kommandotolken](#tab/tabid-cmdline)
 
 Verifiera din installation genom att skapa ett Q# `Hello World`-program.
 

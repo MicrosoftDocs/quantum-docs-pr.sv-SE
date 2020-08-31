@@ -10,12 +10,12 @@ uid: microsoft.quantum.update
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: dd7360961aa728a6aa63b8d8c4e4840f5bf2afe8
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 84782d1628dd100c0939b2b12aa0a9aa8ab2b80e
+ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87866765"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88863646"
 ---
 # <a name="update-the-microsoft-quantum-development-kit-qdk"></a>Uppdatera Microsoft Quantum Development Kit (QDK)
 
@@ -37,7 +37,7 @@ Oavsett om du använder C# eller Python för att värdhantera Q#-åtgärder föl
     dotnet --version
     ```
 
-    Kontrollera att utdatan är `3.1.100` eller högre. Om inte, installerar du den [senaste versionen](https://dotnet.microsoft.com/download) och kontrollerar igen. Följ sedan anvisningarna nedan beroende på din konfiguration (Visual Studio, Visual Studio Code eller direkt på kommandoraden).
+    Kontrollera att utdatan är `3.1.100` eller högre. Om inte, installerar du den [senaste versionen](https://dotnet.microsoft.com/download) och kontrollerar igen. Följ sedan anvisningarna nedan beroende på din konfiguration (Visual Studio, Visual Studio Code eller direkt från kommandotolken).
 
 ### <a name="update-no-locq-projects-in-visual-studio"></a>Uppdatera Q#-projekt i Visual Studio
  
@@ -84,9 +84,9 @@ Nu kan du gå vidare med att [uppdatera ditt Visual Studio QDK-tillägg](#update
 
 1. I Visual Studio Code öppnar du mappen med projektet som ska uppdateras.
 2. Välj **Terminal** -> **Ny terminal**.
-3. Följ anvisningarna för uppdatering med kommandoraden (visas nedan).
+3. Följ anvisningarna för uppdatering med kommandotolken (visas nedan).
 
-### <a name="update-no-locq-projects-using-the-command-line"></a>Uppdatera Q#-projekt med kommandoraden
+### <a name="update-no-locq-projects-using-the-command-prompt"></a>Uppdatera Q#-projekt med kommandotolken
 
 1. Gå till mappen med huvudprojektfilen.
 
@@ -309,7 +309,7 @@ Nu kan du använda den uppdaterade IQ#-kärnan för att köra dina befintliga Q#
 
 1. Uppdatera Quantum-projektmallar för .NET
 
-    Från kommandoraden:
+    I kommandotolken:
 
     ```dotnetcli
     dotnet new -i Microsoft.Quantum.ProjectTemplates
