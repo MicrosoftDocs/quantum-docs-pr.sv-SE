@@ -2,7 +2,7 @@
 uid: microsoft.quantum.oracles.obliviousoracle
 name: ObliviousOracle
 type: newtype
-namespace: Microsoft.Quantum.Oracles
+namespace: microsoft.quantum.oracles
 summary: >-
   Representerar en Oblivious amplitud-förstärkning för Oracle.
 
@@ -12,16 +12,16 @@ summary: >-
 
   - Ancilla registrera $a $ som $O $ agerar på.
 
-  - Systemet registrerar $s $ som du vill att den önskade enhetliga $U $ ska tillämpas på, efter att du har valt att registrera $a $ i\_tillstånd $ \ket{t} a $.
+  - Systemet registrerar $s $ som du vill att den önskade enhetliga $U $ ska tillämpas på, efter att du har valt att registrera $a $ i tillstånd $ \ket{t} \_ a $.
 remarks: >-
-  Den här Oracle definieras av $ $ O\ket {s\_} a\ket {\ PSI\_} s =\_\lambda\ket{t} a U\_\ket{\psi} s + \sqrt{1-| \lambda | ^ 2} \ket{t ^\_\perp} a\cdots $ $ agerar i Ancilla state $ \ket{s}\_a $ för att implementera den enhetliga $U $ i alla system tillstånd $\_\ket{\psi} s $ med amplitud $ \lambda $ i det här avsnittet som flaggats\_av $ \ket{t} a $.
+  Den här Oracle definieras av $ $ O\ket {s} \_ a\ket {\ PSI} \_ s = \Lambda\ket{t} \_ a U \ket{\psi} \_ s + \sqrt{1-| \lambda | ^ 2} \ket{t ^ \perp} \_ a\cdots $ $ agerar i Ancilla State $ \ket{s} \_ a $ för att implementera den enhetliga $U $ i alla system tillstånd $ \ket{\psi} \_ s $ med amplitud $ \lambda $ i det här avsnittet som flaggats av $ \ket{t} \_ a $.
 
-  Den första parametern är qubit-registret för $ \ket{s}\_a $. Den andra parametern är qubit-registret för $ \ket{\psi}\_s $.
+  Den första parametern är qubit-registret för $ \ket{s} \_ a $. Den andra parametern är qubit-registret för $ \ket{\psi} \_ s $.
 syntax: newtype ObliviousOracle = ((Qubit[], Qubit[]) => Unit is Adj + Ctl);
 metadata:
-  ms.openlocfilehash: 9d7a799a9069e6d7eb3470d62322f803a68eb2e6
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: c88ad3b0a4fe6067a0e52972c23587d5835c779e
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82681261"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89332018"

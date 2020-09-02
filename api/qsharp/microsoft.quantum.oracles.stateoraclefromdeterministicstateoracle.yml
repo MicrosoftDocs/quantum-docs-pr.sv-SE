@@ -2,27 +2,27 @@
 uid: microsoft.quantum.oracles.stateoraclefromdeterministicstateoracle
 name: StateOracleFromDeterministicStateOracle
 type: function
-namespace: Microsoft.Quantum.Oracles
-summary: Konverterar en Oracle av typen `DeterministicStateOracle` till `StateOracle`.
+namespace: microsoft.quantum.oracles
+summary: Konverterar en Oracle av typen `DeterministicStateOracle` till `StateOracle` .
 syntax: 'function StateOracleFromDeterministicStateOracle (deterministicStateOracle : Microsoft.Quantum.Oracles.DeterministicStateOracle) : Microsoft.Quantum.Oracles.StateOracle'
 input:
   content: '(deterministicStateOracle : Microsoft.Quantum.Oracles.DeterministicStateOracle)'
   types:
   - name: deterministicStateOracle
-    summary: En tillstånds förberedelse Oracle-$A $ `DeterministicStateOracle`av typen.
+    summary: En tillstånds förberedelse Oracle-$A $ av typen `DeterministicStateOracle` .
     uid: microsoft.quantum.oracles.deterministicstateoracle
 output:
   content: Microsoft.Quantum.Oracles.StateOracle
   types:
-  - summary: Samma tillstånd som förbereder Oracle $A $, men nu av typen `StateOracle`. Observera att flagg indexet i det `StateOracle` här är en dummy-variabel och har ingen påverkan.
+  - summary: Samma tillstånd som förbereder Oracle $A $, men nu av typen `StateOracle` . Observera att flagg indexet i det här `StateOracle` är en dummy-variabel och har ingen påverkan.
     uid: microsoft.quantum.oracles.stateoracle
 seeAlso:
 - microsoft.quantum.canon.deterministicstateoracle
 - microsoft.quantum.canon.stateoracle
 metadata:
-  ms.openlocfilehash: 9431b58659bb50de872f73890a4a055c5534b2a0
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 77cdfba157be67bb68cec53f3d8a0780a347bf37
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82685152"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89331746"

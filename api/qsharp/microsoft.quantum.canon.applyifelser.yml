@@ -2,22 +2,22 @@
 uid: microsoft.quantum.canon.applyifelser
 name: ApplyIfElseR
 type: operation
-namespace: Microsoft.Quantum.Canon
+namespace: microsoft.quantum.canon
 summary: >-
   Tillämpar en av två åtgärder, beroende på värdet för ett klassiskt resultat.
 
 
-  På grund av `result`detta `zeroOp` tillämpas åtgärden `zeroInput` med som indatamängden när `result` är lika med `Zero`, och tillämpas `oneOp(oneInput)` när `result == One`.
+  `result`På grund av detta tillämpas åtgärden `zeroOp` med `zeroInput` som indatamängden när `result` är lika med `Zero` , och tillämpas `oneOp(oneInput)` när `result == One` .
 syntax: "operation ApplyIfElseR (result : Result, (zeroOp : ('T => Unit), zeroInput : 'T), (oneOp : ('U => Unit), oneInput : 'U)) : Unit"
 input:
   content: "(result : Result, (zeroOp : ('T => Unit), zeroInput : 'T), (oneOp : ('U => Unit), oneInput : 'U))"
   types:
   - name: result
-    summary: Mät resultatet som används för att avgöra `zeroOp` om `oneOp` eller används.
+    summary: Mät resultatet som används för att avgöra om `zeroOp` eller används `oneOp` .
     isPrimitive: true
     uid: Result
   - name: zeroOp
-    summary: Den åtgärd som ska tillämpas när `result == Zero`.
+    summary: Den åtgärd som ska tillämpas när `result == Zero` .
     isOperation: true
     input:
       types:
@@ -28,11 +28,11 @@ input:
       - isPrimitive: true
         uid: Unit
   - name: zeroInput
-    summary: Indata som ska anges till `zeroOp` när `result == Zero`.
+    summary: Indata som ska anges till `zeroOp` när `result == Zero` .
     uid: "'T"
     isLocal: true
   - name: oneOp
-    summary: Den åtgärd som ska tillämpas när `result == One`.
+    summary: Den åtgärd som ska tillämpas när `result == One` .
     isOperation: true
     input:
       types:
@@ -43,7 +43,7 @@ input:
       - isPrimitive: true
         uid: Unit
   - name: oneInput
-    summary: Indata som ska anges till `oneOp` när `result == One`.
+    summary: Indata som ska anges till `oneOp` när `result == One` .
     uid: "'U"
     isLocal: true
 output:
@@ -63,9 +63,9 @@ seeAlso:
 - microsoft.quantum.canon.applyifelsera
 - microsoft.quantum.canon.applyifelserca
 metadata:
-  ms.openlocfilehash: 4623c321aa2b802b8f27f6a3ec8e65463083b314
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 1614a00214bdebe8d5b761cc8ca0732d76a919f7
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82672749"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89350259"
