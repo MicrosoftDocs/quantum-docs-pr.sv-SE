@@ -4,15 +4,15 @@ name: Microsoft.Quantum.Oracles
 summary: " # <a name=\"summary\"></a>Sammanfattning\n De här namn områdena innehåller användardefinierade typer för att dekorera olika typer av Oracle genom att de är avsedda att användas i Quantum-algoritmer, till exempel fas uppskattning och amplitud förstärkning."
 functions:
 - uid: microsoft.quantum.oracles.deterministicstateoraclefromstateoracle
-  summary: Konverterar en Oracle av typen `StateOracle` till `DeterministicStateOracle`.
+  summary: Konverterar en Oracle av typen `StateOracle` till `DeterministicStateOracle` .
 - uid: microsoft.quantum.oracles.obliviousoraclefromdeterministicstateoracle
-  summary: Kombinerar Oracle- `DeterministicStateOracle` och `ObliviousOracle`.
+  summary: Kombinerar Oracle- `DeterministicStateOracle` och `ObliviousOracle` .
 - uid: microsoft.quantum.oracles.oracletodiscrete
   summary: En åtgärd som representerar en "svart box" Oracle returnerar en separat tids Oracle som representerar den svarta-Box-Oracle som upprepas flera gånger.
 - uid: microsoft.quantum.oracles.reflectionoraclefromdeterministicstateoracle
   summary: Skapar reflektion om ett angivet tillstånd från en Oracle.
 - uid: microsoft.quantum.oracles.stateoraclefromdeterministicstateoracle
-  summary: Konverterar en Oracle av typen `DeterministicStateOracle` till `StateOracle`.
+  summary: Konverterar en Oracle av typen `DeterministicStateOracle` till `StateOracle` .
 newtypes:
 - uid: microsoft.quantum.oracles.continuousoracle
   summary: >-
@@ -28,7 +28,7 @@ newtypes:
     Indatamängden till Oracle-$O $ är:
 
 
-    - Registret som kommer att lagra det önskade Quantum-läget $\_\ket{\psi} s $.
+    - Registret som kommer att lagra det önskade Quantum-läget $ \ket{\psi} \_ s $.
 - uid: microsoft.quantum.oracles.discreteoracle
   summary: >-
     Representerar en separat tid i Oracle.
@@ -45,7 +45,7 @@ newtypes:
 
     - Ancilla registrera $a $ som $O $ agerar på.
 
-    - Systemet registrerar $s $ som du vill att den önskade enhetliga $U $ ska tillämpas på, efter att du har valt att registrera $a $ i\_tillstånd $ \ket{t} a $.
+    - Systemet registrerar $s $ som du vill att den önskade enhetliga $U $ ska tillämpas på, efter att du har valt att registrera $a $ i tillstånd $ \ket{t} \_ a $.
 - uid: microsoft.quantum.oracles.reflectionoracle
   summary: >-
     Representerar en reflektions-Oracle.
@@ -67,11 +67,11 @@ newtypes:
 
     - Ett heltal som indexerar flaggan qubit $f $.
 
-    - Systemet registrerar $s $ som kommer att lagra det önskade Quantum-läget $\_\ket{\psi} s $.
+    - Systemet registrerar $s $ som kommer att lagra det önskade Quantum-läget $ \ket{\psi} \_ s $.
 metadata:
-  ms.openlocfilehash: c1f364d74aab6d318e7b6db078d5532aeae57bcd
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 100ea34895b343c8b24ef4f584bbf534acd9d6ff
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82673113"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89340960"
