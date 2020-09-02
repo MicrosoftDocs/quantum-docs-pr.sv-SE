@@ -2,10 +2,10 @@
 uid: microsoft.quantum.arrays.constantarray
 name: ConstantArray
 type: function
-namespace: Microsoft.Quantum.Arrays
+namespace: microsoft.quantum.arrays
 summary: Skapar en matris med angiven längd med alla element som motsvarar det aktuella värdet.
 examples: >-
-  Följande kod skapar en matris med tre booleska värden, var och en som `true`motsvarar:
+  Följande kod skapar en matris med tre booleska värden, var och en som motsvarar `true` :
 
 
   ```qsharp
@@ -28,14 +28,14 @@ input:
 output:
   content: "'T[]"
   types:
-  - summary: En ny längd `length`mat ris, t `value`. ex. varje element.
+  - summary: En ny längd mat ris `length` , t. ex. varje element `value` .
     isArray: true
     uid: "'T"
     isLocal: true
 metadata:
-  ms.openlocfilehash: e989c80b27c3ce0d90a564181c0bcae2f892ada0
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: df6f39577259d4e3fbfa5401cab6d25b06abe9c7
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82676535"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89352452"

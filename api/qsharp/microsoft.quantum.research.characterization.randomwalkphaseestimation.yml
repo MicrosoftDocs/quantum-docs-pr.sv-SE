@@ -2,13 +2,13 @@
 uid: microsoft.quantum.research.characterization.randomwalkphaseestimation
 name: RandomWalkPhaseEstimation
 type: operation
-namespace: Microsoft.Quantum.Research.Characterization
+namespace: microsoft.quantum.research.characterization
 summary: Utför iterativ fas uppskattning med en slumpmässig genom gång för att approximera Bayesian-härledningen på de klassiska mått resultaten från en specifik Oracle och eigenstate.
 remarks: >-
   ### <a name="iterative-phase-estimation-and-eigenstates"></a>Uppskattning av iterativa faser och Eigenstates
 
 
-  I allmänhet behöver ingångs `eigenstate` registreringen inte vara en eigenstate $ \ket{\phi} $ $U $, men kan vara en överposition över eigenstates. Anta att indatamängden anges av \begin{align} \ket{\psi} & = \sum\_{j} \alpha\_j \ket{\phi\_j}, \end{align} där $\{\alpha\_j\}$ är komplexa koefficienter som $ \sum\_j | \alpha\_j | ^ 2 = $1 och där $U \ket{\phi\_j} = \phi\_j\ket {\ Fi\_j} $.
+  I allmänhet behöver ingångs registreringen `eigenstate` inte vara en eigenstate $ \ket{\phi} $ $U $, men kan vara en överposition över eigenstates. Anta att indatamängden anges av \begin{align} \ket{\psi} & = \sum \_ {j} \alpha \_ j \ket{\phi \_ j}, \end{align} där $ \{ \alpha \_ j \} $ är komplexa koefficienter som $ \sum \_ j | \alpha \_ j | ^ 2 = $1 och där $U \ket{\phi \_ j} = \phi \_ j\ket {\ Fi \_ j} $.
 
 
   Sedan konvergerar periodiska fas uppskattningar till en enda eigenstate enligt beskrivningen i [utvecklings guiden](xref:microsoft.quantum.libraries.characterization#iterative-phase-estimation-without-eigenstates).
@@ -17,7 +17,7 @@ remarks: >-
   ### <a name="experiment-design"></a>Experiment design
 
 
-  Mätnings tiderna $t $ och inversions vinklarna $ \theta $ `oracle` som väljs enligt *partikel gissans heuristik*, \begin{align} \theta \sim \Pr (\phi), \quad t \approx \frac{1}{\variance{\phi}}.
+  Mätnings tiderna $t $ och inversions vinklarna $ \theta $ som `oracle` väljs enligt *partikel gissans heuristik*, \Begin{align} \theta \sim \Pr (\phi), \quad t \approx \frac {1} {\variance{\phi}}.
 
   \end{align} den här heuristiken är optimal för att minska den förväntade föregående avvikelsen i upprepnings fas uppskattningen under antagandet av en normal tidigare period.
 
@@ -74,9 +74,9 @@ output:
     isPrimitive: true
     uid: Double
 metadata:
-  ms.openlocfilehash: 719c8583cb0fe7f0c9c0f7fa617fa469080a9588
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 27841784ec8961f7a5a78c425411fcf0ae8e8f15
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82706745"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89330590"

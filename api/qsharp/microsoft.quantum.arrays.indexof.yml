@@ -2,7 +2,7 @@
 uid: microsoft.quantum.arrays.indexof
 name: IndexOf
 type: function
-namespace: Microsoft.Quantum.Arrays
+namespace: microsoft.quantum.arrays
 summary: Returnerar det första indexet för det första elementet i en matris som uppfyller ett angivet predikat. Returnerar-1 om det inte finns något sådant element.
 examples: >-
   Anta att `IsEven : Int -> Bool` är en funktion som returnerar `true` om och bara om indatatypen är till och med. Sedan kan du använda `IndexOf` för att hitta det första elementet till och med en matris:
@@ -42,9 +42,9 @@ output:
     isPrimitive: true
     uid: Int
 metadata:
-  ms.openlocfilehash: 6fb95357096751e53f601a9c855ff656e2dd1b34
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 6b0097c4feb41a00f0d9c1fcb4c2b5dbcaa186ef
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82681007"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89352129"

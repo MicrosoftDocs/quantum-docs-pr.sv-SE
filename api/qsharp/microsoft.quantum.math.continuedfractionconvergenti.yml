@@ -2,8 +2,8 @@
 uid: microsoft.quantum.math.continuedfractionconvergenti
 name: ContinuedFractionConvergentI
 type: function
-namespace: Microsoft.Quantum.Math
-summary: Söker efter den fortsatta fraktions Convergent `fraction` som ligger närmast med nämnaren mindre än eller lika med`denominatorBound`
+namespace: microsoft.quantum.math
+summary: Söker efter den fortsatta fraktions Convergent som ligger närmast `fraction` med nämnaren mindre än eller lika med `denominatorBound`
 syntax: 'function ContinuedFractionConvergentI (fraction : Microsoft.Quantum.Math.Fraction, denominatorBound : Int) : Microsoft.Quantum.Math.Fraction'
 input:
   content: '(fraction : Microsoft.Quantum.Math.Fraction, denominatorBound : Int)'
@@ -16,12 +16,12 @@ input:
 output:
   content: Microsoft.Quantum.Math.Fraction
   types:
-  - summary: Fortsatt bråk som `fraction` är närmast med nämnaren mindre än eller lika med`denominatorBound`
+  - summary: Fortsatt bråk som är närmast `fraction` med nämnaren mindre än eller lika med `denominatorBound`
     uid: microsoft.quantum.math.fraction
 metadata:
-  ms.openlocfilehash: 4134f4b1f53403eee1c2c87c7442b05931c40026
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 60865a8dd02392f9dcd8585c4301939d5fdcfa17
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82685730"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89344199"
