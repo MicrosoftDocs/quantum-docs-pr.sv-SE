@@ -2,7 +2,7 @@
 uid: microsoft.quantum.arithmetic.applyxorinplace
 name: ApplyXorInPlace
 type: operation
-namespace: Microsoft.Quantum.Arithmetic
+namespace: microsoft.quantum.arithmetic
 summary: >-
   Tillämpar en Bitvis-XOR-åtgärd mellan ett klassiskt heltal och ett heltal som representeras av ett register av qubits.
 
@@ -10,7 +10,7 @@ summary: >-
   Tillämpar `X` åtgärder på qubits i ett litet endian-register baserat på 1 bitar i ett heltal.
 
 
-  Låt oss `value` ange ett och låt y vara ett osignerat heltal som är kodat `target`i och `InPlaceXorLE` utför sedan en åtgärd som anges av följande karta: $ \ket{y}\rightarrow \ket{y\oplus a} $, där $ \OPLUS $ är den bitvisa eller operatorn.
+  Låt oss ange `value` ett och låt y vara ett osignerat heltal som är kodat i `target` och `InPlaceXorLE` utför sedan en åtgärd som anges av följande karta: $ \ket{y}\rightarrow \ket{y\oplus a} $, där $ \oplus $ är den bitvisa eller operatorn.
 syntax: 'operation ApplyXorInPlace (value : Int, target : Microsoft.Quantum.Arithmetic.LittleEndian) : Unit'
 input:
   content: '(value : Int, target : Microsoft.Quantum.Arithmetic.LittleEndian)'
@@ -20,7 +20,7 @@ input:
     isPrimitive: true
     uid: Int
   - name: target
-    summary: Ett Quantum-register som används för att `value` lagra i lite endian-kodning.
+    summary: Ett Quantum-register som används för att lagra `value` i lite endian-kodning.
     uid: microsoft.quantum.arithmetic.littleendian
 output:
   content: Unit
@@ -31,9 +31,9 @@ functors:
 - Adjoint
 - Controlled
 metadata:
-  ms.openlocfilehash: 27568274d343242f3b3bd0eef8de6e48d546de1f
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 7b4e125f76051b966ec65ca43c7edb1efd270ded
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82679915"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89342541"
