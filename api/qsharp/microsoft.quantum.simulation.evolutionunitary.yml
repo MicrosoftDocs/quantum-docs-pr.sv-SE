@@ -2,7 +2,7 @@
 uid: microsoft.quantum.simulation.evolutionunitary
 name: EvolutionUnitary
 type: newtype
-namespace: Microsoft.Quantum.Simulation
+namespace: microsoft.quantum.simulation
 summary: >-
   Representerar en enhetlig tids utvecklings operatör.
 
@@ -10,9 +10,9 @@ summary: >-
   Den första parametern är varaktigheten för tids utvecklingen och den andra parametern är qubit-registret som har åtgärd ATS av den enhetliga.
 syntax: newtype EvolutionUnitary = ((Double, Qubit[]) => Unit is Adj + Ctl);
 metadata:
-  ms.openlocfilehash: db3356176f70d940323e0e19c989e09de467d471
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 92383928301cf31183c97a1d3aefe26d4d12b367
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82673418"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89343187"

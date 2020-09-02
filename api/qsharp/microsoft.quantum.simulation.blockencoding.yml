@@ -2,20 +2,20 @@
 uid: microsoft.quantum.simulation.blockencoding
 name: BlockEncoding
 type: newtype
-namespace: Microsoft.Quantum.Simulation
+namespace: microsoft.quantum.simulation
 summary: >-
   Representerar en topp där en operator av intresse är kodad i det övre vänstra blocket.
 
 
-  `BlockEncoding` Det vill säga att det är en topp $U $ där en godtycklig operatör $H $ av intresse som agerar på system registret `s` är kodad i det övre vänstra blocket som motsvarar hjälp tillstånd $ \ket{0}_A $. Det är
+  Det vill säga att det är `BlockEncoding` en topp $U $ där en godtycklig operatör $H $ av intresse som agerar på system registret `s` är kodad i det övre vänstra blocket som motsvarar hjälp tillstånd $ \ket {0} _A $. Det är
 
 
-  $ $ \begin{align} (\bra{0}_a \otimes I_s) U (\ket{0}_A \Otimes I_s) = H \end{align} $ $.
+  $ $ \begin{align} (\bra {0} _A \otimes I_s) U (\ket {0} _a \otimes I_s) = H \end{align} $ $.
 syntax: newtype BlockEncoding = ((Qubit[], Qubit[]) => Unit is Adj + Ctl);
 metadata:
-  ms.openlocfilehash: 400173be551747127198f8cee52390a2694dbfe4
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 514a67e646d9fa224bc80fdbadef7397f8e23fff
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82681105"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89330233"
