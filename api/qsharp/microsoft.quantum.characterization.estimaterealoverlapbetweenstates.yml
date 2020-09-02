@@ -2,9 +2,9 @@
 uid: microsoft.quantum.characterization.estimaterealoverlapbetweenstates
 name: EstimateRealOverlapBetweenStates
 type: operation
-namespace: Microsoft.Quantum.Characterization
+namespace: microsoft.quantum.characterization
 summary: Med två åtgärder som var och en förbereder kopior av ett tillstånd, beräknar den verkliga delen av överlappningen mellan de stater som förbereds av varje åtgärd.
-remarks: Den här åtgärden använder Hadamard-testet för att hitta den verkliga delen av $ $ \begin{align} \braket{\psi | V ^ {\dagger} U | \psi} \end{align} $ $ där $ \ket{\psi} $ är det tillstånd som förberetts av `commonPreparation`, $U $ är den enhetliga representationen av åtgärden `preparation1`och där $V $ motsvarar `preparation2`.
+remarks: Den här åtgärden använder Hadamard-testet för att hitta den verkliga delen av $ $ \begin{align} \braket{\psi | V ^ {\dagger} U | \psi} \end{align} $ $ där $ \ket{\psi} $ är det tillstånd som förberetts av `commonPreparation` , $U $ är den enhetliga representationen av åtgärden `preparation1` och där $V $ motsvarar `preparation2` .
 syntax: 'operation EstimateRealOverlapBetweenStates (commonPreparation : (Qubit[] => Unit is Adj), preparation1 : (Qubit[] => Unit is Adj + Ctl), preparation2 : (Qubit[] => Unit is Adj + Ctl), nQubits : Int, nMeasurements : Int) : Double'
 references: '- Aharonov *et al.* [Quant-pH/0511096](https://arxiv.org/abs/quant-ph/0511096).'
 input:
@@ -55,7 +55,7 @@ input:
     - Adjoint
     - Controlled
   - name: nQubits
-    summary: Antalet qubits som `commonPreparation`, `preparation1`och `preparation2` alla Act.
+    summary: Antalet qubits som `commonPreparation` , `preparation1` och `preparation2` alla Act.
     isPrimitive: true
     uid: Int
   - name: nMeasurements
@@ -71,9 +71,9 @@ seeAlso:
 - microsoft.quantum.characterization.estimateimagoverlapbetweenstates
 - microsoft.quantum.characterization.estimateoverlapbetweenstates
 metadata:
-  ms.openlocfilehash: 425a9bde577f8c52b0e4fb5f4fe1cb1ecbe1a38d
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 5d1fab5e1bc6125db90c01002aac2f4c2e330af6
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82677670"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89354475"
