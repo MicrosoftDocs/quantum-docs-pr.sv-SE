@@ -1,7 +1,7 @@
 ### YamlMime:QSharpNamespace
 uid: microsoft.quantum.extensions.convert
 name: Microsoft.Quantum.Extensions.Convert
-summary: " # <a name=\"summary\"></a>Sammanfattning\n Detta är några av funktionerna från system. convert-namnrymden för .NET CLR som är relevanta i Q # typ system.\n\n # <a name=\"remarks\"></a>Anmärkningar\n Om det finns flera versioner av funktionen för bool-, int-och Double-typer, har motsvarande funktioner suffix B, I och D."
+summary: " # <a name=\"summary\"></a>Sammanfattning\n Detta är några av funktionerna från system. convert-namnrymden för .NET CLR som är relevanta i Q # typ system.\n\n # <a name=\"remarks\"></a>Kommentarer\n Om det finns flera versioner av funktionen för bool-, int-och Double-typer, har motsvarande funktioner suffix B, I och D."
 functions:
 - uid: microsoft.quantum.extensions.convert.biginttobools
   summary: "\n> [!WARNING]\n> Inaktuell\n\nBigIntToBools är föråldrad. Använd @\"microsoft.quantum.convert.bigintasboolarray\" i stället.\nAnvänd @\"microsoft.quantum.convert.bigintasboolarray\"."
@@ -24,9 +24,9 @@ functions:
 - uid: microsoft.quantum.extensions.convert.tostringiformat
   summary: "\n> [!WARNING]\n> Inaktuell\n\nToStringIFormat är föråldrad. Använd @\"microsoft.quantum.convert.intasstringwithformat\" i stället.\nAnvänd @\"microsoft.quantum.convert.intasstringwithformat\"."
 metadata:
-  ms.openlocfilehash: 8196882d8f7edf417f65bcd1651ecb770c4286f4
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 6f307cfeabec132c2b3b3953f30a2b0ad208f57a
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82673297"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89341028"
