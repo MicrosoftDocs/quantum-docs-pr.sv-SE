@@ -2,22 +2,22 @@
 uid: microsoft.quantum.canon.applyifelsebc
 name: ApplyIfElseBC
 type: operation
-namespace: Microsoft.Quantum.Canon
+namespace: microsoft.quantum.canon
 summary: >-
   Använder en av två kontrollerbara åtgärder, beroende på värdet för en klassisk bit.
 
 
-  Med en bit `bit` `trueOp` , använder åtgärden med `trueInput` som indatatyp när `bit` är `true`, och gäller `falseOp(falseInput)` när `bit` är. `false`
+  Med en bit `bit` , använder åtgärden `trueOp` med `trueInput` som indatatyp när `bit` är `true` , och gäller `falseOp(falseInput)` när `bit` är `false` .
 syntax: "operation ApplyIfElseBC (bit : Bool, (trueOp : ('T => Unit is Ctl), trueInput : 'T), (falseOp : ('U => Unit is Ctl), falseInput : 'U)) : Unit"
 input:
   content: "(bit : Bool, (trueOp : ('T => Unit is Ctl), trueInput : 'T), (falseOp : ('U => Unit is Ctl), falseInput : 'U))"
   types:
   - name: bit
-    summary: Det booleska värde som används för att `trueOp` avgöra `falseOp` om eller används.
+    summary: Det booleska värde som används för att avgöra om `trueOp` eller `falseOp` används.
     isPrimitive: true
     uid: Bool
   - name: trueOp
-    summary: Den kontrollerbara åtgärd som ska tillämpas när `bit` är `true`.
+    summary: Den kontrollerbara åtgärd som ska tillämpas när `bit` är `true` .
     isOperation: true
     input:
       types:
@@ -30,11 +30,11 @@ input:
     functors:
     - Controlled
   - name: trueInput
-    summary: Indata som ska anges till `trueOp` när `bit` är `true`.
+    summary: Indata som ska anges till `trueOp` när `bit` är `true` .
     uid: "'T"
     isLocal: true
   - name: falseOp
-    summary: Den kontrollerbara åtgärd som ska tillämpas när `bit` är `false`.
+    summary: Den kontrollerbara åtgärd som ska tillämpas när `bit` är `false` .
     isOperation: true
     input:
       types:
@@ -47,7 +47,7 @@ input:
     functors:
     - Controlled
   - name: falseInput
-    summary: Indata som ska anges till `falseOp` när `bit` är `false`.
+    summary: Indata som ska anges till `falseOp` när `bit` är `false` .
     uid: "'U"
     isLocal: true
 output:
@@ -69,9 +69,9 @@ seeAlso:
 - microsoft.quantum.canon.applyifelsera
 - microsoft.quantum.canon.applyifelserca
 metadata:
-  ms.openlocfilehash: c1d7c1fdf83b5ec87b8d5e8b22c45bb00072f69a
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 1cd8df26dabaaa13d39fc194ae958f71e3b618ac
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82674991"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89350395"
