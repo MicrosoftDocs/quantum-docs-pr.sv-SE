@@ -2,12 +2,12 @@
 uid: microsoft.quantum.canon.applyifoneca
 name: ApplyIfOneCA
 type: operation
-namespace: Microsoft.Quantum.Canon
+namespace: microsoft.quantum.canon
 summary: >-
   Använder en åtgärd med ett enhetligt värde som är ett klassiskt resultat värde.
 
 
-  En åtgärd `op` och ett resultat värde `result`gäller `op` för `target` IF. `result` `One` Om `Zero`händer ingenting `target`.
+  En åtgärd `op` och ett resultat värde `result` gäller `op` för `target` IF `result` `One` . Om `Zero` händer ingenting `target` .
 
   Suffixet `CA` anger att åtgärden som ska tillämpas är enhetlig (kan kontrol leras och adjointable).
 syntax: "operation ApplyIfOneCA (result : Result, (op : ('T => Unit is Adj + Ctl), target : 'T)) : Unit"
@@ -52,9 +52,9 @@ seeAlso:
 - microsoft.quantum.canon.applyifonea
 - microsoft.quantum.canon.applyifoneca
 metadata:
-  ms.openlocfilehash: f8837e549ec1fc70b76e8151a211c4bf9f71168e
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 1e4aa4a8b7d4947ee72b322aaccb0b360992f1f9
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82672656"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89358215"

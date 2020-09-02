@@ -2,7 +2,7 @@
 uid: microsoft.quantum.oracles.continuousoracle
 name: ContinuousOracle
 type: newtype
-namespace: Microsoft.Quantum.Oracles
+namespace: microsoft.quantum.oracles
 summary: >-
   Representerar en löpande Oracle-enhet.
 
@@ -10,9 +10,9 @@ summary: >-
   Det här är en Oracle som implementerar $U (\delta t): \ket{\psi (t)} \mapsto \ket{\psi (t + \delta t)} $ för alla tider $t $, där $U $ är en fast åtgärd och där $ \delta t $ är ett icke-negativt reellt tal.
 syntax: newtype ContinuousOracle = ((Double, Qubit[]) => Unit is Adj + Ctl);
 metadata:
-  ms.openlocfilehash: 9c5776dfa2ec4cfbd128a6e20158f1be23680f11
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 0fb357af013d37aeb9576085a6e977a36ac90074
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82681327"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89332154"

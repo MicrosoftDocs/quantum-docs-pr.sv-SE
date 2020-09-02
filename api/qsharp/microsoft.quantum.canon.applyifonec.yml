@@ -2,12 +2,12 @@
 uid: microsoft.quantum.canon.applyifonec
 name: ApplyIfOneC
 type: operation
-namespace: Microsoft.Quantum.Canon
+namespace: microsoft.quantum.canon
 summary: >-
   Använder en åtgärd som kan kontrol leras på ett klassiskt resultat värde som en.
 
 
-  En åtgärd `op` och ett resultat värde `result`gäller `op` för `target` IF. `result` `One` Om `Zero`händer ingenting `target`.
+  En åtgärd `op` och ett resultat värde `result` gäller `op` för `target` IF `result` `One` . Om `Zero` händer ingenting `target` .
 
   Suffixet `C` anger att åtgärden som ska tillämpas är kontrollerbar.
 syntax: "operation ApplyIfOneC (result : Result, (op : ('T => Unit is Ctl), target : 'T)) : Unit"
@@ -50,9 +50,9 @@ seeAlso:
 - microsoft.quantum.canon.applyifonea
 - microsoft.quantum.canon.applyifoneca
 metadata:
-  ms.openlocfilehash: e42bb11c3f3f8cf740bbd619b4388f23c77ed8a5
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 8ec4b6b7baf3571ff259007c15c7c426e502da08
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82672659"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89358232"

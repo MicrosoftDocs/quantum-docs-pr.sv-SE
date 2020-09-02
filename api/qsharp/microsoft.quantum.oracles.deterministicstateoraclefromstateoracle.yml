@@ -2,31 +2,31 @@
 uid: microsoft.quantum.oracles.deterministicstateoraclefromstateoracle
 name: DeterministicStateOracleFromStateOracle
 type: function
-namespace: Microsoft.Quantum.Oracles
-summary: Konverterar en Oracle av typen `StateOracle` till `DeterministicStateOracle`.
+namespace: microsoft.quantum.oracles
+summary: Konverterar en Oracle av typen `StateOracle` till `DeterministicStateOracle` .
 syntax: 'function DeterministicStateOracleFromStateOracle (idxFlagQubit : Int, stateOracle : Microsoft.Quantum.Oracles.StateOracle) : Microsoft.Quantum.Oracles.DeterministicStateOracle'
 input:
   content: '(idxFlagQubit : Int, stateOracle : Microsoft.Quantum.Oracles.StateOracle)'
   types:
   - name: idxFlagQubit
-    summary: '`stateOracle` Indexet till flaggan qubit i $A $, som uttryckligen agerar på två kassor: flaggan $f $ och system $s $, t. ex. $A \ket{0}\_f\ket {\ PSI}\_s $.'
+    summary: 'Indexet till flaggan qubit i `stateOracle` $A $, som uttryckligen agerar på två kassor: flaggan $f $ och system $s $, t. ex. $A \ket {0} \_ f\ket {\ PSI} \_ s $.'
     isPrimitive: true
     uid: Int
   - name: stateOracle
-    summary: En tillstånds förberedelse Oracle-$A $ `StateOracle`av typen.
+    summary: En tillstånds förberedelse Oracle-$A $ av typen `StateOracle` .
     uid: microsoft.quantum.oracles.stateoracle
 output:
   content: Microsoft.Quantum.Oracles.DeterministicStateOracle
   types:
-  - summary: Samma tillstånd som förbereder Oracle $A $, men nu av typ `DeterministicStateOracle`, så den agerar i ett register där $a, s $ inte längre uttryckligen separeras, t. ex.  $A \ket{0\psi}\_{as} $.
+  - summary: Samma tillstånd som förbereder Oracle $A $, men nu av typ `DeterministicStateOracle` , så den agerar i ett register där $a, s $ inte längre uttryckligen separeras, t. ex.  $A \ket{0\psi} \_ {as} $.
     uid: microsoft.quantum.oracles.deterministicstateoracle
 seeAlso:
 - microsoft.quantum.canon.stateoracle
 - microsoft.quantum.canon.deterministicstateoracle
 metadata:
-  ms.openlocfilehash: cf6ddc1f1baff27c986f36d944e67192958a0d3f
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 20ce22cb90be3f7fd3c135e9dccce4482a3e3939
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82681292"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89332069"

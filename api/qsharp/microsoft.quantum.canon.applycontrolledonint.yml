@@ -2,13 +2,13 @@
 uid: microsoft.quantum.canon.applycontrolledonint
 name: ApplyControlledOnInt
 type: operation
-namespace: Microsoft.Quantum.Canon
+namespace: microsoft.quantum.canon
 summary: Använder en enhetlig åtgärd i mål registret om status för kontroll registret motsvarar ett angivet positivt heltal.
 remarks: >-
   Värdet för `numberState` tolkas med en lite-endian-kodning.
 
 
-  `numberState`måste vara högst $2 ^ \texttt{Length (controlRegister)}-$1.
+  `numberState` måste vara högst $2 ^ \texttt{Length (controlRegister)}-$1.
 
   Det kan till exempel `numberState = 537` `oracle` vara som tillämpas om och endast om `controlRegister` är i läget $ \ket {537} $.
 syntax: "operation ApplyControlledOnInt (numberState : Int, oracle : ('T => Unit is Adj + Ctl), controlRegister : Qubit[], targetRegister : 'T) : Unit"
@@ -51,9 +51,9 @@ functors:
 - Adjoint
 - Controlled
 metadata:
-  ms.openlocfilehash: 468886684513035d24b3b4881944f2c18fa65e18
-  ms.sourcegitcommit: a3775921db1dc5c653c97b8fa8fe2c0ddd5261ff
+  ms.openlocfilehash: 00c11c566e74233eeae39b0cefa53f4a8341fcf2
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 07/02/2020
-  ms.locfileid: "85887259"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89350769"
