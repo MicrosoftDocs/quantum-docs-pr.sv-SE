@@ -2,9 +2,9 @@
 uid: microsoft.quantum.arrays.any
 name: Any
 type: function
-namespace: Microsoft.Quantum.Arrays
+namespace: microsoft.quantum.arrays
 summary: Med en matris och ett predikat som har definierats för elementen i matrisen, kontrollerar om minst ett element i matrisen uppfyller predikatet.
-remarks: "Funktionen definieras för generiska typer, dvs. När vi `'T[]` har en matris och en funktion `predicate: 'T -> Bool` kan vi skapa ett `Bool` värde som anger om ett element uppfyller sig. `predicate`"
+remarks: "Funktionen definieras för generiska typer, dvs. När vi har en matris `'T[]` och en funktion `predicate: 'T -> Bool` kan vi skapa ett `Bool` värde som anger om ett element uppfyller sig `predicate` ."
 examples: >-
   ```qsharp
 
@@ -41,7 +41,7 @@ input:
       - isPrimitive: true
         uid: Bool
   - name: array
-    summary: En matris med element över `'T`.
+    summary: En matris med element över `'T` .
     isArray: true
     uid: "'T"
     isLocal: true
@@ -55,9 +55,9 @@ typeParameters:
 - uid: "'T"
   summary: Typ av `array` element.
 metadata:
-  ms.openlocfilehash: 4e80b5c39c83bc5d5b26d4df9ca86b8cbc796aeb
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: eb61be88ccba6392ca70c75f6c506b9b6c1c8bbd
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82676565"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89352605"

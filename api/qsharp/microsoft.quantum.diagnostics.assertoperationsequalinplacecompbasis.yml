@@ -2,7 +2,7 @@
 uid: microsoft.quantum.diagnostics.assertoperationsequalinplacecompbasis
 name: AssertOperationsEqualInPlaceCompBasis
 type: operation
-namespace: Microsoft.Quantum.Diagnostics
+namespace: microsoft.quantum.diagnostics
 summary: >-
   Kontrollerar om åtgärden `givenU` är lika med åtgärden `expectedU` för den angivna indata-storleken genom att kontrol lera åtgärdens åtgärder endast på vektorerna från beräknings basen.
 
@@ -28,7 +28,7 @@ input:
       - isPrimitive: true
         uid: Unit
   - name: expectedU
-    summary: Referens åtgärd på $n $ qubits som `givenU` ska jämföras med.
+    summary: Referens åtgärd på $n $ qubits som ska `givenU` jämföras med.
     isOperation: true
     input:
       types:
@@ -47,9 +47,9 @@ output:
   - isPrimitive: true
     uid: Unit
 metadata:
-  ms.openlocfilehash: c3a98dee80b9e41ea3c27e1e52c3046751307912
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 1c49d1e32852be40d94621da2a8c1fa53b6e666c
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82677275"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89337526"
