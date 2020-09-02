@@ -2,8 +2,8 @@
 uid: microsoft.quantum.arithmetic.computereciprocali
 name: ComputeReciprocalI
 type: operation
-namespace: Microsoft.Quantum.Arithmetic
-summary: Beräknar motsvarande 1/x för ett osignerat heltal x med hjälp av heltals division. Resultatet, som tolkas som ett heltal, blir `floor(2^(2*n-1) / x)`.
+namespace: microsoft.quantum.arithmetic
+summary: Beräknar motsvarande 1/x för ett osignerat heltal x med hjälp av heltals division. Resultatet, som tolkas som ett heltal, blir `floor(2^(2*n-1) / x)` .
 remarks: För indata x = 0 blir utdata alla.
 syntax: 'operation ComputeReciprocalI (xs : Microsoft.Quantum.Arithmetic.LittleEndian, result : Microsoft.Quantum.Arithmetic.LittleEndian) : Unit'
 input:
@@ -13,7 +13,7 @@ input:
     summary: n-bitars osignerat heltal
     uid: microsoft.quantum.arithmetic.littleendian
   - name: result
-    summary: 2N-bitars utdata måste vara i $ \ket{0}$ inlednings vis.
+    summary: 2N-bitars utdata måste vara i $ \ket {0} $ inlednings vis.
     uid: microsoft.quantum.arithmetic.littleendian
 output:
   content: Unit
@@ -24,9 +24,9 @@ functors:
 - Adjoint
 - Controlled
 metadata:
-  ms.openlocfilehash: b371c7c1e7442e49aab01793fdaa9c99bcafa35d
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 824bc89e8d6290c98d505b0b17d4521edaa36384
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82679725"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89342303"

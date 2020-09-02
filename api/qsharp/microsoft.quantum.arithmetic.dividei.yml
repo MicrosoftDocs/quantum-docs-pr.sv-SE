@@ -2,12 +2,12 @@
 uid: microsoft.quantum.arithmetic.dividei
 name: DivideI
 type: operation
-namespace: Microsoft.Quantum.Arithmetic
+namespace: microsoft.quantum.arithmetic
 summary: >-
   Dividerar två Quantum-heltal.
 
 
-  `xs`kommer att hålla resten `xs - floor(xs/ys) * ys` och `result` hållas `floor(xs/ys)`kvar.
+  `xs` kommer att hålla resten `xs - floor(xs/ys) * ys` och `result` hållas kvar `floor(xs/ys)` .
 remarks: >-
   Använder en standard metod för att Shift-och-subtrahera för att implementera divisionen.
 
@@ -23,7 +23,7 @@ input:
     summary: $n $-bit divisor
     uid: microsoft.quantum.arithmetic.littleendian
   - name: result
-    summary: $n $-bit-resultatet måste vara i tillstånd $ \ket{0}$ initialt och kommer att ersättas av resultatet av heltals divisionen.
+    summary: $n $-bit-resultatet måste vara i tillstånd $ \ket {0} $ initialt och kommer att ersättas av resultatet av heltals divisionen.
     uid: microsoft.quantum.arithmetic.littleendian
 output:
   content: Unit
@@ -34,9 +34,9 @@ functors:
 - Adjoint
 - Controlled
 metadata:
-  ms.openlocfilehash: 05f4b6766910af24a956bfa14bca615633ed1031
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 1a426cc92da9db4c1155d2653451031ca37e3965
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82679698"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89342167"

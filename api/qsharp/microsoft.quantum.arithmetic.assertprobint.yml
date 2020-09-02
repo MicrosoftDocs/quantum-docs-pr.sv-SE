@@ -2,16 +2,16 @@
 uid: microsoft.quantum.arithmetic.assertprobint
 name: AssertProbInt
 type: operation
-namespace: Microsoft.Quantum.Arithmetic
+namespace: microsoft.quantum.arithmetic
 summary: >-
   Förutsätter att sannolikheten för ett enskilt tillstånd för ett Quantum-register har det förväntade värdet.
 
 
   Med en $n $-qubit Quantum State $ \ket{\psi} = \sum ^ {2 ^ n-1} _ {j = 0} \ alpha_j \ket{j} $, förutsätter att sannolikheten $ | \ alpha_j | ^ 2 $ för tillstånd $ \ket{j} $ som har indexerats av $j $ har det förväntade värdet.
 examples: >-
-  Anta att `qubits` registret kodar ett 3-qubit Quantum-tillstånd $ \ket{\psi} = \ sqrt {1/8} \ ket{0}+ \ sqrt {7/8} \ ket{6}$ i litet endian-format.
+  Anta att `qubits` registret kodar ett 3-qubit Quantum-tillstånd $ \ket{\psi} = \ sqrt {1/8} \ ket {0} + \ sqrt {7/8} \ ket {6} $ i litet endian-format.
 
-  Det innebär att antalet tillstånd{0}$ \ket \equiv\ket{0}\ket{0}\ket{0}$ och $ \ket{6}\equiv\ket{0}\ket{1}\ket{1}$. Följande kontroller lyckades:
+  Det innebär att antalet tillstånd $ \ket {0} \equiv\ket {0} \ket {0} \ket {0} $ och $ \ket \equiv\ket {6} \ket \ket {0} {1} {1} $. Följande kontroller lyckades:
 
 
   - `AssertProbInt(0,0.125,qubits,10e-10);`
@@ -22,7 +22,7 @@ input:
   content: '(stateIndex : Int, expected : Double, qubits : Microsoft.Quantum.Arithmetic.LittleEndian, tolerance : Double)'
   types:
   - name: stateIndex
-    summary: Index $j $ för tillstånd $ \ket{j} $ som representeras av `LittleEndian` ett register.
+    summary: Index $j $ för tillstånd $ \ket{j} $ som representeras av ett `LittleEndian` register.
     isPrimitive: true
     uid: Int
   - name: expected
@@ -42,9 +42,9 @@ output:
   - isPrimitive: true
     uid: Unit
 metadata:
-  ms.openlocfilehash: 247dcb78921bfe5df96c56b74e251d0413cfab3d
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: e5269b46849da17602447491e77e756e999cb3d9
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82675256"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89342337"
