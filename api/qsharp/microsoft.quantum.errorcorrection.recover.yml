@@ -2,14 +2,14 @@
 uid: microsoft.quantum.errorcorrection.recover
 name: Recover
 type: operation
-namespace: Microsoft.Quantum.ErrorCorrection
-summary: Utför en enskild avrundning av fel korrigering med en Quantum-kod `QECC` som beskrivs av en typ.
+namespace: microsoft.quantum.errorcorrection
+summary: Utför en enskild avrundning av fel korrigering med en Quantum-kod som beskrivs av en `QECC` typ.
 syntax: 'operation Recover (code : Microsoft.Quantum.ErrorCorrection.QECC, fn : Microsoft.Quantum.ErrorCorrection.RecoveryFn, logicalRegister : Microsoft.Quantum.ErrorCorrection.LogicalRegister) : Unit'
 input:
   content: '(code : Microsoft.Quantum.ErrorCorrection.QECC, fn : Microsoft.Quantum.ErrorCorrection.RecoveryFn, logicalRegister : Microsoft.Quantum.ErrorCorrection.LogicalRegister)'
   types:
   - name: code
-    summary: Ett Quantum-fel – korrigering av kod paketerad `QECC` som en typ beskriver kodning och avkodning av Quantum-data och hur fel syndromes ska mätas.
+    summary: Ett Quantum-fel – korrigering av kod paketerad som en `QECC` typ beskriver kodning och avkodning av Quantum-data och hur fel syndromes ska mätas.
     uid: microsoft.quantum.errorcorrection.qecc
   - name: fn
     summary: En `RecoveryFn` som mappar varje fel Syndrome till de `Pauli[]` åtgärder som korrigerar det identifierade felet.
@@ -27,9 +27,9 @@ seeAlso:
 - microsoft.quantum.canon.recoveryfn
 - microsoft.quantum.canon.logicalregister
 metadata:
-  ms.openlocfilehash: 2a873e06c20bf62c998b1096d862d26ff89aa134
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: b61c7255da3c8c22ffbbf7cd9a739ad4c9cca5d4
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82682295"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89349970"

@@ -2,10 +2,10 @@
 uid: microsoft.quantum.canon.applywithinputtransformationca
 name: ApplyWithInputTransformationCA
 type: operation
-namespace: Microsoft.Quantum.Canon
+namespace: microsoft.quantum.canon
 summary: Vid en åtgärd som accepterar vissa indata, en funktion som returnerar en utmatning som är kompatibel med den åtgärden och en indata till den funktionen, används åtgärden med funktionen för att transformera indata till ett formulär som förväntas av åtgärden.
 examples: >-
-  Följande anrop använder för @"Microsoft.Quantum.Arithmetic.LittleEndianAsBigEndian" att tillämpa en åtgärd som har @"Microsoft.Quantum.Arithmetic.BigEndian" utformats för indata till en @"Microsoft.Quantum.Arithmetic.LittleEndian"indata av typen:
+  Följande anrop använder @"Microsoft.Quantum.Arithmetic.LittleEndianAsBigEndian" för att tillämpa en åtgärd som har utformats för @"Microsoft.Quantum.Arithmetic.BigEndian" indata till en indata av typen @"Microsoft.Quantum.Arithmetic.LittleEndian" :
 
 
   ```qsharp
@@ -60,9 +60,9 @@ seeAlso:
 - applywithinputtransformationc
 - transformedoperation
 metadata:
-  ms.openlocfilehash: d49bfe512cc8460aaf9697b545b02ac2b5d96a9f
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 505fd028126c966c9f64123414126b31c02a1ac1
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82676243"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89357110"

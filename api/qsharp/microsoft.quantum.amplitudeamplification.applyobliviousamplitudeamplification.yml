@@ -2,15 +2,15 @@
 uid: microsoft.quantum.amplitudeamplification.applyobliviousamplitudeamplification
 name: ApplyObliviousAmplitudeAmplification
 type: operation
-namespace: Microsoft.Quantum.AmplitudeAmplification
+namespace: microsoft.quantum.amplitudeamplification
 summary: Oblivious amplitud-förstärkning genom att ange partiella reflektioner.
 remarks: >-
-  Angett\_ett särskilt start tillstånd $ \ket{\text{Start}} a $, ett visst hjälp mål tillstånd $ \ket{\text{Target}}\_a $ och alla system tillstånd $ \ket{\psi}\_s $, Antag att \begin{align} O\ket {\ text {Start}}\_a\ket {\ PSI}\_s = \lambda\ket{\text{Target}}\_a U \ket{\psi}\_s + \sqrt{1-| \lambda | ^ 2} \ket{\text{Target} ^ \perp}\_a\cdots \end{align} för en del $U $.
+  Angett ett särskilt start tillstånd $ \ket{\text{Start}} \_ a $, ett visst hjälp mål tillstånd $ \ket{\text{Target}} \_ a $ och alla system tillstånd $ \ket{\psi} \_ s $, Antag att \begin{align} O\ket {\ text {Start}} \_ a\ket {\ PSI} \_ s = \lambda\ket{\text{Target}} \_ a U \ket{\psi} \_ s + \sqrt{1-| \lambda | ^ 2} \ket{\text{Target} ^ \perp} \_ a\cdots \end{align} för en del $U $.
 
   Med en sekvens av reflektioner om start-och mål tillstånden i det extra register som överlämnas av program `signalOracle` och dess intilliggande, kan sannolikheten för att använda U ändras.
 
 
-  I de flesta fall `auxiliaryRegister` initieras status $ \ket{\text{Start}}\_a $.
+  I de flesta fall `auxiliaryRegister` initieras status $ \ket{\text{Start}} \_ a $.
 syntax: 'operation ApplyObliviousAmplitudeAmplification (phases : Microsoft.Quantum.AmplitudeAmplification.ReflectionPhases, startStateReflection : Microsoft.Quantum.Oracles.ReflectionOracle, targetStateReflection : Microsoft.Quantum.Oracles.ReflectionOracle, signalOracle : Microsoft.Quantum.Oracles.ObliviousOracle, auxiliaryRegister : Qubit[], systemRegister : Qubit[]) : Unit'
 references: >-
   Se
@@ -32,7 +32,7 @@ input:
     summary: Reflektions operator om mål tillstånd för hjälp registrering
     uid: microsoft.quantum.oracles.reflectionoracle
   - name: signalOracle
-    summary: Enhetlig Oracle-$O $ av `ObliviousOracle` typ som fungerar tillsammans i hjälp-och system registren.
+    summary: Enhetlig Oracle-$O $ av typ `ObliviousOracle` som fungerar tillsammans i hjälp-och system registren.
     uid: microsoft.quantum.oracles.obliviousoracle
   - name: auxiliaryRegister
     summary: Hjälp register
@@ -53,9 +53,9 @@ functors:
 - Adjoint
 - Controlled
 metadata:
-  ms.openlocfilehash: 7452686a76d9ff89c0eb79290e7dae23347778ac
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 21bdb88716a07c32673425fd4f5276559b56d266
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82672950"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89340535"
