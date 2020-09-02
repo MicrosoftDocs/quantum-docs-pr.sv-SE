@@ -2,9 +2,9 @@
 uid: microsoft.quantum.core.rangestep
 name: RangeStep
 type: function
-namespace: Microsoft.Quantum.Core
+namespace: microsoft.quantum.core
 summary: Returnerar det heltal som anger hur nästa värde i ett intervall beräknas.
-remarks: Det första elementet i ett intervall uttryck `start`är, dess andra element `start+step`, det tredje elementet `start+step+step`är, osv., `end` tills det skickas.
+remarks: Det första elementet i ett intervall uttryck är `start` , dess andra element, det `start+step` tredje elementet är, `start+step+step` osv., tills `end` det skickas.
 syntax: 'function RangeStep (range : Range) : Int'
 input:
   content: '(range : Range)'
@@ -19,9 +19,9 @@ output:
     isPrimitive: true
     uid: Int
 metadata:
-  ms.openlocfilehash: 30f67fba4e263f3b01bec1c360198728087783f2
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 7196f33548767bb47fde9e8bbd6b6dcf720e5f9c
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82677332"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89337951"

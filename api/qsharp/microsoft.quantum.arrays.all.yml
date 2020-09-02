@@ -2,9 +2,9 @@
 uid: microsoft.quantum.arrays.all
 name: All
 type: function
-namespace: Microsoft.Quantum.Arrays
+namespace: microsoft.quantum.arrays
 summary: Tilldelas en matris och ett predikat som har definierats för elementen i matrisen och kontrollerar om alla element i matrisen uppfyller predikatet.
-remarks: "Funktionen definieras för generiska typer, d.v.s. När vi `'T[]` har en matris och en funktion `predicate: 'T -> Bool` kan vi skapa ett `Bool` värde som anger om alla element uppfyller. `predicate`"
+remarks: "Funktionen definieras för generiska typer, d.v.s. När vi har en matris `'T[]` och en funktion `predicate: 'T -> Bool` kan vi skapa ett `Bool` värde som anger om alla element uppfyller `predicate` ."
 examples: >-
   Följande kod kontrollerar om alla element i matrisen inte är noll:
 
@@ -39,7 +39,7 @@ input:
       - isPrimitive: true
         uid: Bool
   - name: array
-    summary: En matris med element över `'T`.
+    summary: En matris med element över `'T` .
     isArray: true
     uid: "'T"
     isLocal: true
@@ -53,9 +53,9 @@ typeParameters:
 - uid: "'T"
   summary: Typ av `array` element.
 metadata:
-  ms.openlocfilehash: 116a2a537c4712c968187785873c0546ec236762
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 515dcb29844277e626158e44da4202fae0e7fd61
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82676588"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89352656"

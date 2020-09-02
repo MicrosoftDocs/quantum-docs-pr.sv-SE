@@ -2,12 +2,12 @@
 uid: microsoft.quantum.diagnostics.dumpregister
 name: DumpRegister
 type: function
-namespace: Microsoft.Quantum.Diagnostics
+namespace: microsoft.quantum.diagnostics
 summary: Dumpar den aktuella mål datorns status som är associerad med den angivna qubits.
 remarks: >-
   Med den här metoden kan du dumpa den information som är associerad med statusen för den aktuella qubits till en fil eller någon annan plats.
 
-  Den faktiska informationen som genereras och semantiken för `location` är specifika för varje måldator. Men att tillhandahålla en tom tupel som en plats (`()`) innebär vanligt vis att generera utdata till-konsolen.
+  Den faktiska informationen som genereras och semantiken för `location` är specifika för varje måldator. Men att tillhandahålla en tom tupel som en plats ( `()` ) innebär vanligt vis att generera utdata till-konsolen.
 
 
   För att den lokala fullständiga tillstånds simulatorn ska distribueras som en del av Quantum Development Kit förväntar den här metoden en sträng med sökvägen till en fil där den skriver den angivna qubits (d.v.s. våg funktionen i motsvarande del system) som en endimensionell matris med komplexa tal, där varje element representerar amplituderna för sannolikheten för att mäta motsvarande tillstånd.
@@ -33,9 +33,9 @@ output:
     isPrimitive: true
     uid: Unit
 metadata:
-  ms.openlocfilehash: 3bf5302364b37cb1ccef651935833b966ff84464
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 384ce2373081545129c569ea6acc6b01733587fc
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82677234"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89337305"

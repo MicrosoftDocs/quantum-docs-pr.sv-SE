@@ -2,12 +2,12 @@
 uid: microsoft.quantum.arithmetic.ripplecarryaddernocarryttk
 name: RippleCarryAdderNoCarryTTK
 type: operation
-namespace: Microsoft.Quantum.Arithmetic
+namespace: microsoft.quantum.arithmetic
 summary: >-
   Reversibel, på plats krusning – tillsats av två heltal utan att utföra.
 
 
-  Med två $n $-bitars heltal som är kodade i `xs` LittleEndian `ys`registrerar och beräknar åtgärden summan av de två heltalen modulo $2 ^ n $, där $n $ är bit storleken för indata `xs` och. `ys` Den utför inte den framfattande biten.
+  Med två $n $-bitars heltal som är kodade i LittleEndian registrerar `xs` och `ys` beräknar åtgärden summan av de två heltalen modulo $2 ^ n $, där $n $ är bit storleken för indata `xs` och `ys` . Den utför inte den framfattande biten.
 remarks: Den här åtgärden har samma funktioner som RippleCarryAdderTTK, men returnerar inte den andra biten.
 syntax: 'operation RippleCarryAdderNoCarryTTK (xs : Microsoft.Quantum.Arithmetic.LittleEndian, ys : Microsoft.Quantum.Arithmetic.LittleEndian) : Unit'
 references: >-
@@ -31,9 +31,9 @@ functors:
 - Adjoint
 - Controlled
 metadata:
-  ms.openlocfilehash: cf6855325edc354d22b0324f5949a435a11ce8bb
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 88ebe0e7799d446d4a3ff668a9abe8dd71601642
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82676686"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89352809"

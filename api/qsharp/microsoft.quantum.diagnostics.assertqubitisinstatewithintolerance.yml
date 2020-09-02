@@ -2,12 +2,12 @@
 uid: microsoft.quantum.diagnostics.assertqubitisinstatewithintolerance
 name: AssertQubitIsInStateWithinTolerance
 type: operation
-namespace: Microsoft.Quantum.Diagnostics
+namespace: microsoft.quantum.diagnostics
 summary: >-
   Förutsätter att en qubit förväntas i det förväntade läget.
 
 
-  `expected`representerar en komplex Vector, $ \ket{\psi} = \begin{bmatrix}a & b\end {bmatrix} ^ {\mathrm{T}} $.
+  `expected` representerar en komplex Vector, $ \ket{\psi} = \begin{bmatrix}a & b\end {bmatrix} ^ {\mathrm{T}} $.
 
   Det första elementet i tuppeln som representerar var och en av $a $, $b $ är den reella delen av det komplexa talet, medan det andra är den imaginära delen.
 
@@ -37,7 +37,7 @@ remarks: >-
   ```
 
 
-  Toleransen\_är $L {\infty} $-avståndet mellan 3 dimensionella verkliga vektorer (x ₂, x-₃, x-₄) som definieras av $\_\langle\psi | \Psi\rangle =\_x 1 I +\_x 2 x +\_x 3 Y + x 4 Z $ och verklig Vector (y ₂, y ₃, y ₄) definieras av ρ = Y ₁ I + y ₂ x + y ₃ Y + y ₄ Z där ρ är densiteten som motsvarar status för registret.
+  Toleransen är $L \_ {\infty} $-avståndet mellan 3 dimensionella verkliga vektorer (x ₂, x-₃, x-₄) som definieras av $ \langle\psi | \psi\rangle = x \_ 1 I + x \_ 2 x + x \_ 3 Y + x \_ 4 Z $ och verklig Vector (y ₂, y ₃, y ₄) definieras av ρ = Y ₁ I + y ₂ x + y ₃ Y + y ₄ Z där ρ är densiteten som motsvarar status för registret.
 
   Detta gäller endast under antagandet att TR (ρ) och tr (| ψ ⟩ ⟨ ψ |) är båda 1 (t. ex. x ₁ = 1/2, y ₁ = 1/2).
 
@@ -60,7 +60,7 @@ input:
   content: '(expected : (Microsoft.Quantum.Math.Complex, Microsoft.Quantum.Math.Complex), register : Qubit, tolerance : Double)'
   types:
   - name: expected
-    summary: Förväntade komplexa amplituder för $ \ket{0}$ respektive $ \ket{1}$.
+    summary: Förväntade komplexa amplituder för $ \ket {0} $ respektive $ \ket {1} $.
     types:
     - uid: microsoft.quantum.math.complex
     - uid: microsoft.quantum.math.complex
@@ -81,9 +81,9 @@ output:
   - isPrimitive: true
     uid: Unit
 metadata:
-  ms.openlocfilehash: 77d28c122a44f39924242dedb6bd6163974e18c1
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 6517c96e87042948d3e6f235e64c7b3e0dc5d387
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82656606"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89337441"
