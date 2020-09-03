@@ -2,7 +2,7 @@
 uid: microsoft.quantum.canon.noop
 name: NoOp
 type: operation
-namespace: Microsoft.Quantum.Canon
+namespace: microsoft.quantum.canon
 summary: >-
   Utför identitets åtgärden (inga-OP) i ett argument.
 
@@ -11,10 +11,10 @@ summary: >-
 
   Detta kan vara användbart när en indatatyp av en åtgärds typ förväntas, men ingen åtgärd vidtas.
 
-  Om till exempel en viss fel korrigering Syndrome anger att det inte har uppstått något fel `NoOp<Qubit[]>` , kan det vara rätt återställnings förfarande.
+  Om till exempel en viss fel korrigering Syndrome anger att det inte har uppstått något fel, `NoOp<Qubit[]>` kan det vara rätt återställnings förfarande.
 
-  Om en åtgärd till exempel förväntar sig en tillstånds förberedelse procedur som `NoOp<Qubit[]>` inmatare, kan användas för att förbereda status $ \ket{0 \cdots 0} $.
-remarks: I nästan alla fall måste typ parametern för `NoOp` anges explicit. `NoOp<Qubit>` Är till exempel identiskt med <xref:microsoft.quantum.intrinsic.i>.
+  Om en åtgärd till exempel förväntar sig en tillstånds förberedelse procedur som inmatare, `NoOp<Qubit[]>` kan användas för att förbereda status $ \ket{0 \cdots 0} $.
+remarks: I nästan alla fall måste typ parametern för `NoOp` anges explicit. Är till exempel `NoOp<Qubit>` identiskt med <xref:microsoft.quantum.intrinsic.i> .
 syntax: "operation NoOp (input : 'T) : Unit"
 input:
   content: "(input : 'T)"
@@ -34,9 +34,9 @@ functors:
 seeAlso:
 - microsoft.quantum.intrinsic.i
 metadata:
-  ms.openlocfilehash: 74c85340e065929feabb81d7e97339f80255c0f6
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 9af76ff7f2c559aef0f940ff3c56e6f8d8cdbb60
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82678726"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89355989"
