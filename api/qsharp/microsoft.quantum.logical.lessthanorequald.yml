@@ -2,7 +2,7 @@
 uid: microsoft.quantum.logical.lessthanorequald
 name: LessThanOrEqualD
 type: function
-namespace: Microsoft.Quantum.Logical
+namespace: microsoft.quantum.logical
 summary: Returnerar true om och endast om ett tal är mindre än eller lika med ett annat tal.
 remarks: >-
   Följande är likvärdiga:
@@ -30,13 +30,13 @@ input:
 output:
   content: Bool
   types:
-  - summary: '`true`om och endast om `a` är mindre än eller lika med `b`.'
+  - summary: '`true` om och endast om `a` är mindre än eller lika med `b` .'
     isPrimitive: true
     uid: Bool
 metadata:
-  ms.openlocfilehash: 54ecd29273391dd51a605f6adaff264fbacbb035
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: a4720ffc71a5f22d0e6600ce57a4b8767bd33932
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82684679"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89345603"
