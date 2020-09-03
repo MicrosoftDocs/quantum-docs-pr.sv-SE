@@ -2,13 +2,13 @@
 uid: microsoft.quantum.canon.decomposedintotimestepsca
 name: DecomposedIntoTimeStepsCA
 type: function
-namespace: Microsoft.Quantum.Canon
+namespace: microsoft.quantum.canon
 summary: Returnerar en åtgärd som implementerar Trotter – Suzuki Integrator för en specifik åtgärd.
 remarks: >-
-  När den här `order` funktionen anropas `1`med samma som, returnerar den här funktionen en åtgärd som kan simuleras av den lägsta ordningen Trotter – Suzuki integrator $ $ \begin{align} S_1 (\lambda) = \ prod_ {j = 1} ^ {m} e ^ {H_j \lambda}, \end{align} $ $ där vi har följt notationen av [Quant-pH/0508139](https://arxiv.org/abs/quant-ph/0508139) och låt $ \lambda $ vara utvecklings tiden (representeras av den returnerade åtgärdens första gång).\{och\}låt $ H_j _ {j = 1} ^ {m} $ vara den uppsättning av dynamiska generatorer för (sned-Hermitian) som `op(j, lambda, _)` är integrerad som simuleras av den enhetliga operatorn $e ^ {H_j \lambda} $.
+  När `order` den här funktionen anropas med samma som `1` , returnerar den här funktionen en åtgärd som kan simuleras av den lägsta ordningen Trotter – Suzuki Integrator $ $ \begin{align} S_1 (\lambda) = \ prod_ {j = 1} ^ {m} e ^ {H_j \lambda}, \end{align} $ $ där vi har följt notationen av [Quant-pH/0508139](https://arxiv.org/abs/quant-ph/0508139) och låt $ \lambda $ vara utvecklings tiden (representeras av den returnerade åtgärdens första gång). och låt $ \{ H_j \} _ {j = 1} ^ {m} $ vara den uppsättning av dynamiska generatorer för (sned-Hermitian) som `op(j, lambda, _)` är integrerad som simuleras av den enhetliga operatorn $e ^ {H_j \lambda} $.
 
 
-  På samma sätt returnerar `order` en `2` av de andra ordningarna symmetrisk Trotter – Suzuki integrator $ $ \begin{align} S_2 (\lambda) = \ prod_ {j = 1} ^ {m} e ^ {H_k \lambda/2} \ prod_ {j ' = m} ^{1} e ^ {H_ {j '} \lambda/2}.
+  På samma sätt `order` returnerar en av `2` de andra ordningarna symmetrisk Trotter – Suzuki Integrator $ $ \begin{align} S_2 (\lambda) = \ prod_ {j = 1} ^ {m} e ^ {H_k \lambda/2} \ prod_ {j ' = m} ^ {1} e ^ {H_ {j '} \lambda/2}.
 
   \end{align} $ $
 
@@ -24,7 +24,7 @@ input:
     isPrimitive: true
     uid: Int
   - name: op
-    summary: En åtgärd som accepterar en index Indatatyp ( `Int`typ) och en tids Indatatyp `Double`(typ) för dekomposition.
+    summary: En åtgärd som accepterar en index Indatatyp (typ `Int` ) och en tids Indatatyp (typ `Double` ) för dekomposition.
     isOperation: true
     input:
       types:
@@ -68,11 +68,11 @@ output:
     - Controlled
 typeParameters:
 - uid: "'T"
-  summary: Typen som varje tidpunkt ska agera på. normalt, antingen `Qubit[]` eller `Qubit`.
+  summary: Typen som varje tidpunkt ska agera på. normalt, antingen `Qubit[]` eller `Qubit` .
 metadata:
-  ms.openlocfilehash: 1fdb15e9a28c24ac58f026a89779951b982edb27
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: e3febe45478ca86a36844d6af75884872cb12680
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82680258"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89356549"
