@@ -2,14 +2,14 @@
 uid: microsoft.quantum.chemistry.jordanwigner.qubitizationoracle
 name: QubitizationOracle
 type: function
-namespace: Microsoft.Quantum.Chemistry.JordanWigner
+namespace: microsoft.quantum.chemistry.jordanwigner
 summary: Returnerar Qubitization-åtgärden och de parametrar som krävs för att köra den.
 syntax: 'function QubitizationOracle (qSharpData : Microsoft.Quantum.Chemistry.JordanWigner.JordanWignerEncodingData) : (Int, (Double, (Qubit[] => Unit is Adj + Ctl)))'
 input:
   content: '(qSharpData : Microsoft.Quantum.Chemistry.JordanWigner.JordanWignerEncodingData)'
   types:
   - name: qSharpData
-    summary: Hamiltonian som beskrivs `JordanWignerEncodingData` i format.
+    summary: Hamiltonian som beskrivs i `JordanWignerEncodingData` format.
     uid: microsoft.quantum.chemistry.jordanwigner.jordanwignerencodingdata
 output:
   content: (Int, (Double, (Qubit[] => Unit is Adj + Ctl)))
@@ -35,9 +35,9 @@ output:
         - Adjoint
         - Controlled
 metadata:
-  ms.openlocfilehash: 9e58837b8f4d59505a321578cbd9f69b4c849627
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: e4aac826537428f5226b83873beb29a06e21dd75
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82663449"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89339175"
