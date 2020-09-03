@@ -2,7 +2,7 @@
 uid: microsoft.quantum.arithmetic.multiplyfxp
 name: MultiplyFxP
 type: operation
-namespace: Microsoft.Quantum.Arithmetic
+namespace: microsoft.quantum.arithmetic
 summary: Multiplicerar två fasta nummer i Quantum-registren.
 remarks: För den aktuella implementeringen krävs tre fasta punkt nummer för samma punkt position och samma antal qubits.
 syntax: 'operation MultiplyFxP (fp1 : Microsoft.Quantum.Arithmetic.FixedPoint, fp2 : Microsoft.Quantum.Arithmetic.FixedPoint, result : Microsoft.Quantum.Arithmetic.FixedPoint) : Unit'
@@ -16,7 +16,7 @@ input:
     summary: Andra fasta punkt nummer.
     uid: microsoft.quantum.arithmetic.fixedpoint
   - name: result
-    summary: Resulterande fast punkt nummer måste vara i tillstånd $ \ket{0}$ initialt.
+    summary: Resulterande fast punkt nummer måste vara i tillstånd $ \ket {0} $ initialt.
     uid: microsoft.quantum.arithmetic.fixedpoint
 output:
   content: Unit
@@ -27,9 +27,9 @@ functors:
 - Adjoint
 - Controlled
 metadata:
-  ms.openlocfilehash: b37ca00a41df323f2cab854eecd40c276696cbe4
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: c19c5333f936f633427b8fc7d1ce4d1892ea47c5
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82679464"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89353421"
