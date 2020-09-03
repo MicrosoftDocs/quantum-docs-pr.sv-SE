@@ -2,7 +2,7 @@
 uid: microsoft.quantum.logical.and
 name: And
 type: function
-namespace: Microsoft.Quantum.Logical
+namespace: microsoft.quantum.logical
 summary: Returnerar den booleska samningen av två värden.
 remarks: >-
   Till skillnad från `and` operatorn är den här funktionen inte en kort krets, så att båda indatana utvärderas fullständigt.
@@ -33,13 +33,13 @@ input:
 output:
   content: Bool
   types:
-  - summary: '`true`om och endast om `a` och `b` är båda `true`.'
+  - summary: '`true` om och endast om `a` och `b` är båda `true` .'
     isPrimitive: true
     uid: Bool
 metadata:
-  ms.openlocfilehash: 01c26ef3804d484d2cfbd6f54261ad80b8f66594
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 79d3e2fb5499e10a73c4ead1c19d36f09b721f98
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82674096"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89346281"

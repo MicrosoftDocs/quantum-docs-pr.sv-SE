@@ -2,12 +2,12 @@
 uid: microsoft.quantum.math.realmod
 name: RealMod
 type: function
-namespace: Microsoft.Quantum.Math
+namespace: microsoft.quantum.math
 summary: Beräknar modulen mellan två reella tal.
 remarks: >-
   Den här funktionen beräknar den verkliga modulen genom att figursätta den verkliga linjen om enhets cirkeln och sedan hitta vinkeln på den enhets cirkel som motsvarar indatan.
 
-  `minValue` Inmatarna anger sedan i praktiken var du vill klippa ut enhets cirkeln.
+  `minValue`Inmatarna anger sedan i praktiken var du vill klippa ut enhets cirkeln.
 examples: >-
   ```qsharp
       // Returns 3 π / 2.
@@ -38,9 +38,9 @@ output:
   - isPrimitive: true
     uid: Double
 metadata:
-  ms.openlocfilehash: 0a35628198ae5d496b093b98542daeac16aced9b
-  ms.sourcegitcommit: db23885adb7ff76cbf8bd1160d401a4f0471e549
+  ms.openlocfilehash: 6738040f8628998a98a69a7e884125ac91228787
+  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82681501"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89333140"
