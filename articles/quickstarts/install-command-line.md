@@ -9,12 +9,12 @@ uid: microsoft.quantum.install.standalone
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 6a287dd76162a05d72af7e9d1e46533425283e2a
-ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
+ms.openlocfilehash: a630b2307f5d95321fb26f480d7a441ddba846fc
+ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88863668"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89358266"
 ---
 # <a name="develop-with-no-locq-applications"></a>Utveckla med Q#-program
 
@@ -41,7 +41,7 @@ Konfigurera Visual Studio:
 Så här konfigurerar du Visual Studio Codespaces:
 
 1. Skapa ett [Azure-konto](https://azure.microsoft.com/free/).
-2. Skapa en Codespaces-miljö. Följ [snabbstartsguiden](https://docs.microsoft.com/visualstudio/online/quickstarts/browser). När du skapar ett codespace rekommenderar vi att du anger `microsoft/Quantum` i fältet Git Repository (Git-lagringsplats) för att läsa in QDK-specifika inställningar.
+2. Skapa en Codespaces-miljö. Följ [snabbstartsguiden](https://docs.microsoft.com/visualstudio/codespaces/quickstarts/browser). När du skapar ett codespace rekommenderar vi att du anger `microsoft/Quantum` i fältet Git Repository (Git-lagringsplats) för att läsa in QDK-specifika inställningar.
 3. Nu kan du starta din nya miljö och börja utveckla i webbläsaren via [VS Codespaces Cloud IDE](https://online.visualstudio.com/environments). Du kan också använda en lokal installation av VS Code och använda Codespaces som en [fjärrmiljö](https://docs.microsoft.com/visualstudio/online/how-to/vscode).
 
 
