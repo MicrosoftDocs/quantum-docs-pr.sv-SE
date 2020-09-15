@@ -9,12 +9,12 @@ uid: microsoft.quantum.write-program
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: d815a9a25b8ba5e9489b6d3d27fb0d64ab4aaa1d
-ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
+ms.openlocfilehash: 3e95f142572e104fe1e133b109d197ed5bb01d9a
+ms.sourcegitcommit: af2e9691c1900ced7e09d6320255617c9939ed55
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88863445"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90063248"
 ---
 # <a name="tutorial-explore-entanglement-with-q"></a>Självstudier: Utforska sammanflätning med Q\#
 
@@ -112,7 +112,7 @@ En Q# åtgärd är en Quantum-underrutin. Det vill säga att det är en rutin so
 
 Argumenten i en åtgärd anges som en tuppel inom parentes.
 
-Returtypen för åtgärden anges efter ett kolon. I det här fallet saknar `SetQubitState`-åtgärden en retur, så den markeras som en retur för `Unit`. Detta är Q# detsamma `unit` som i F #, som är ungefär detsamma som `void` i C# och en tom tupel ( `Tuple[()]` ) i python.
+Returtypen för åtgärden anges efter ett kolon. I det här fallet saknar `SetQubitState`-åtgärden en retur, så den markeras som en retur för `Unit`. Detta är Q# detsamma `unit` som i F #, som är ungefär detsamma som `void` i C# och en tom tupel i python ( `()` som representeras av typ tipset `Tuple[()]` ).
 
 Du har använt två Quantum-åtgärder i din första Q# åtgärd:
 
