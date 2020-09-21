@@ -1,22 +1,22 @@
 ---
-title: Q#Fil struktur
+title: Q# Fil struktur
 description: Beskriver strukturen och syntaxen för en Q# fil.
 author: gillenhaalb
-ms.author: a-gibec@microsoft.com
+ms.author: a-gibec
 ms.date: 03/05/2020
 ms.topic: article
 uid: microsoft.quantum.guide.filestructure
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: ac73962b1a718cd04aa87ee3476c66781fe3ac2b
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 98b3a2e35186989b8191cc566a5d5310bc26eafc
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87867938"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90833312"
 ---
-# <a name="no-locq-file-structure"></a>Q#Fil struktur
+# <a name="no-locq-file-structure"></a>Q# Fil struktur
 
 En Q# fil består av en sekvens med *namn områdes deklarationer*.
 Varje namn områdes deklaration innehåller deklarationer för användardefinierade typer, åtgärder och funktioner och kan innehålla valfritt antal varje typ av deklaration och i vilken ordning som helst.
@@ -76,7 +76,7 @@ Till exempel, med en åtgärd `Op` som heter från `X.Y` namn området:
 Det är vanligt vis bättre att inkludera ett namn område med hjälp av ett `open` direktiv.
 Att använda ett fullständigt kvalificerat namn krävs om två namn rymder definierar konstruktioner med samma namn och den aktuella källan använder konstruktioner från båda.
 
-Q#följer samma regler för namngivning som andra .NET-språk.
+Q# följer samma regler för namngivning som andra .NET-språk.
 Stöder dock Q# inte relativa referenser till namn områden.
 Om namn området till exempel `a.b` är öppet matchas inte en referens till en åtgärd `c.d` med *not* namnet med fullständigt namn `a.b.c.d` .
 
@@ -91,7 +91,7 @@ Undvik att placera flera instruktioner på en enda rad.
 
 ## <a name="statement-blocks"></a>Instruktions block
 
-Q#-instruktioner grupperas i instruktions block, som finns i klammerparenteser `{ }` . Ett instruktions block börjar med en inledande `{` och slutar med en stängning `}` .
+Q# -instruktioner grupperas i instruktions block, som finns i klammerparenteser `{ }` . Ett instruktions block börjar med en inledande `{` och slutar med en stängning `}` .
 
 Ett instruktions block som är lexikalt omslutet i ett annat block anses vara ett under block av det innehåll ande blocket. innehåller och underordnade block kallas även för yttre och inre block.
 

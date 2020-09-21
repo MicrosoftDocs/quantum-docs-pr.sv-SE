@@ -9,12 +9,12 @@ uid: microsoft.quantum.contributing.code
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 956b0957a5261b8a77bf18d776fbcc2853bfbfe7
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: b27d084bbe2cda878efa6250c52c0ae628637850
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87866917"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90834898"
 ---
 # <a name="contributing-code"></a>Bidra med kod
 

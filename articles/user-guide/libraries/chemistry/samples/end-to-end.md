@@ -8,12 +8,12 @@ uid: microsoft.quantum.chemistry.examples.endtoend
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 78d6488ed5e3972f85f1e6cf1ba2d197596c4cc3
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 528c34ea9b28b2f9b8f9a8bad681557f44bfcdaa
+ms.sourcegitcommit: 8256ff463eb9319f1933820a36c0838cf1e024e8
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87869315"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90759723"
 ---
 # <a name="end-to-end-with-nwchem"></a>Slutpunkt till slutpunkt med NWChem #
 
@@ -22,7 +22,7 @@ Innan du fortsätter med det här exemplet ser du till att du har installerat Do
 
 Mer information:
 - [Struktur för NWChem-inmatade däck](https://github.com/nwchemgit/nwchem/wiki/Getting-Started#input-file-structure)
-    - [Kommandon för indataports kort som används med Quantum Development Kit](https://github.com/nwchemgit/nwchem/tree/master/contrib/quasar)
+    - [Kommandon för indataports kort som används med Quantum Development Kit](https://github.com/nwchemgit/nwchem/tree/main/contrib/quasar)
 - [Installera kemi-biblioteket och-beroenden](xref:microsoft.quantum.chemistry.concepts.installation)
 - [Resurs inventering](xref:microsoft.quantum.chemistry.examples.resourcecounts)
 
@@ -65,7 +65,7 @@ Get-Command -Module InvokeNWChem
 ```
 
 Nu ska vi importera `Get-GateCount` kommandot som medföljer **GetGateCount** -exemplet.
-Fullständig information finns i [instruktionerna som medföljer exemplet](https://github.com/Microsoft/Quantum/tree/master/samples/chemistry/GetGateCount).
+Fullständig information finns i [instruktionerna som medföljer exemplet](https://github.com/Microsoft/Quantum/tree/main/samples/chemistry/GetGateCount).
 Kör sedan följande och Ersätt `<runtime>` med antingen `win10-x64` , `osx-x64` eller `linux-x64` , beroende på vilket operativ system du har:
 
 ```powershell
@@ -95,7 +95,7 @@ Först klonar du [nwchemgit/nwchem-lagringsplatsen](https://github.com/nwchemgit
 git clone https://github.com/nwchemgit/nwchem --depth 1
 ```
 
-`nwchemgit/nwchem`Lagrings platsen innehåller en mängd olika ingångs kort som är avsedda att användas med Quantum Development Kit, som visas under [ `QA/chem_library_tests` mappen](https://github.com/nwchemgit/nwchem/tree/master/QA/chem_library_tests).
+`nwchemgit/nwchem`Lagrings platsen innehåller en mängd olika ingångs kort som är avsedda att användas med Quantum Development Kit, som visas under [ `QA/chem_library_tests` mappen](https://github.com/nwchemgit/nwchem/tree/main/QA/chem_library_tests).
 I det här exemplet använder vi `H4` Indataporten:
 
 ```powershell
@@ -167,7 +167,7 @@ Det finns många saker att gå härifrån:
 - Prova olika fördefinierade matnings kort, t. ex. genom att variera parametern `alpha` i `h4_sto6g_alpha.nw` 
 - Försök att ändra däcken genom att redigera NWChem-däcken direkt, t. ex. utforska `STO-nG` modeller för olika val av n, 
 - Testa andra fördefinierade NWChem-indatamasker som är tillgängliga på `nwchem/qa/chem_library_tests` ,
-- Testa en uppsättning fördefinierade Broombridge YAML-benchmarks som genererats från NWChem och är tillgängliga som en del av [Microsoft/Quantum-lagringsplatsen](https://github.com/Microsoft/Quantum/tree/master/samples/chemistry/IntegralData/YAML). Följande riktmärken är: 
+- Testa en uppsättning fördefinierade Broombridge YAML-benchmarks som genererats från NWChem och är tillgängliga som en del av [Microsoft/Quantum-lagringsplatsen](https://github.com/Microsoft/Quantum/tree/main/samples/chemistry/IntegralData/YAML). Följande riktmärken är: 
     - små molekyler som molekyl väte (H2), Beryllium (vara), litium Hydride (LiH).
     - större molekyler som ozon (O3), beta-carotene, cytosine och många fler. 
 - Testa de grafiska frontend- [EMSL pilar](https://arrows.emsl.pnnl.gov/api/qsharp_chem) som innehåller ett gränssnitt till Microsoft Quantum Development Kit. 
@@ -180,7 +180,7 @@ Kom igång med webbaserade EMSL-pilar genom att navigera i en webbläsare [här]
 > [!NOTE]
 > Att köra EMSL-pilar i en webbläsare kräver att Java Script är aktiverat. Se de här [anvisningarna](https://www.enable-javascript.com/) för hur du aktiverar java script i webbläsaren. 
 
-Börja med att ange en molekyl i rutan fråga som säger``Enter an esmiles, esmiles reaction, or other Arrows input, then push the "Run Arrows" button.`` 
+Börja med att ange en molekyl i rutan fråga som säger ``Enter an esmiles, esmiles reaction, or other Arrows input, then push the "Run Arrows" button.`` 
 
 Du kan ange många molekyler efter sitt colloquial namn, till exempel "Caffeine" i stället för "1, 3, 7-Trimethylxanthine". 
 

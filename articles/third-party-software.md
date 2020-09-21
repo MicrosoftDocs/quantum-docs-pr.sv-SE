@@ -4,18 +4,18 @@ description: Microsoft Quantum Development Kit meddelanden och information om pr
 services: service-name-with-dashes-AZURE-ONLY
 keywords: Lägg inte till eller redigera nyckelord utan att först kontakta den SEO-ansvarige.
 author: QuantumWriter
-ms.author: MSFT-alias-person-or-DL
+ms.author: v-benbra
 ms.date: 10/09/2017
 ms.topic: article-type-from-white-list
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 1d76e9c8532dd7818941d182773a8f85a86becee
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 939dc681d6b9a89f02fd1f392b7fd84067d98e8f
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87869757"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90834133"
 ---
 # <a name="third-party-software-notices-and-information"></a>MEDDELANDEN OCH INFORMATION OM PROGRAM FRÅN TREDJE PART
 
@@ -268,7 +268,7 @@ PROGRAM VARAN TILLHANDAHÅLLS I BEFINTLIGT SKICK UTAN GARANTI AV NÅGOT SLAG, VA
 
 Om inget annat anges distribueras FParsec-biblioteket i käll-och binär form under den förenklade BSD-licensen. Den förenklade BSD-licensen (kallas även "2 gång till sats BSD-licens") är en enkel, tillåtande licens som är OSI-kompatibel med gång till. 
 
-FParsec införlivar data som härletts från Unicode-tecken databasen v. 8.0.0, Copyright (c) 1991 \ u20122015 Unicode, Inc., som distribueras enligt följande villkor:http://www.unicode.org/terms_of_use.html#Exhibit1 
+FParsec införlivar data som härletts från Unicode-tecken databasen v. 8.0.0, Copyright (c) 1991 \ u20122015 Unicode, Inc., som distribueras enligt följande villkor: http://www.unicode.org/terms_of_use.html#Exhibit1 
 
 Dokumentationen i mappen dokument licensieras enligt Creative Commons-gång till NonCommercial 3,0-licensen. Den här Creative Commons-licensen tillåter inte att du använder dokumentationen för kommersiella ändamål utan behörighet. Det innebär till exempel att du inte kan sälja dokumentationen i bok form för vinst eller att publicera den på en webb innehålls grupp för att kunna tjäna pengar med annonser. Du kan dock naturligtvis använda dokumentationen i ett kommersiellt sammanhang (t. ex. genom att använda den på intranätet i ett handels bolag), förutsatt att du inte försöker köpa pengar direkt från texten i dokumentationen. 
 
@@ -284,6 +284,6 @@ Den här program varan tillhandahålls av upphovs rätts innehavarna "i befintli
 
 2,2 Creative Commons-behörighet gång till NonCommercial 3,0 olicensierad licens
 
-Draghttps://creativecommons.org/licenses/by-nc/3.0/
+Drag https://creativecommons.org/licenses/by-nc/3.0/
 
-Den fullständiga licens texten:https://creativecommons.org/licenses/by-nc/3.0/legalcode 
+Den fullständiga licens texten: https://creativecommons.org/licenses/by-nc/3.0/legalcode 

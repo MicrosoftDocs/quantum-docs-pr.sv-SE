@@ -1,6 +1,6 @@
 ---
 title: Beskrivning av Pauli mått: Lär dig hur du arbetar med en och flera qubit Pauli mått åtgärder.
-författare: QuantumWriter UID: Microsoft. Quantum. Concepts. Pauli MS. author: nawiebe@microsoft.com MS. Date: 12/11/2017 MS. topic: artikeln No-Loc:
+författare: bradben UID: Microsoft. Quantum. Concepts. Pauli MS. author: v-benbra MS. Date: 12/11/2017 MS. topic: artikeln No-Loc:
 - "Q#"
 - "$$v"
 - "$$"
@@ -143,8 +143,8 @@ Det är också detsamma som att tillämpa $ HS ^ \dagger $ på Vectorn för Quan
 operation MeasureY(qubit : Qubit) : Result {
     mutable result = Zero;
     within {
-        H(q);
         Adjoint S(q);
+        H(q);
     } apply {
         set result = M(q);
     }
@@ -230,7 +230,7 @@ Med måttet $ X \otimes \id $ kan du titta på information som lagras lokalt i d
 Det visar att i Quantum Computing är ofta den information som du vill lära inte lagrad i en enskild qubit utan att i stället lagras lokalt i alla qubits samtidigt, och därför bara genom att titta på den via en gemensam mätning (t. ex. $ z \otimes z $ ) blir den här informationen manifest.
 
 I fel korrigering vill vi till exempel ofta lära sig vilket fel som har inträffat och lära mig ingenting om det tillstånd som vi försöker skydda.
-[Kod exemplet bit-flip](https://github.com/microsoft/Quantum/tree/master/samples/error-correction/bit-flip-code) visar ett exempel på hur du kan göra det med hjälp av mätningar som $ z \otimes z \otimes \id $ och $ \id \otimes z \otimes z $ . < ! --Att göra: ändra detta till en länk till exempel webbläsaren så snart kod exemplet för bit-Flip är på skiva. -->
+[Kod exemplet bit-flip](https://github.com/microsoft/Quantum/tree/main/samples/error-correction/bit-flip-code) visar ett exempel på hur du kan göra det med hjälp av mätningar som $ z \otimes z \otimes \id $ och $ \id \otimes z \otimes z $ . < ! --Att göra: ändra detta till en länk till exempel webbläsaren så snart kod exemplet för bit-Flip är på skiva. -->
 
 Godtyckliga Pauli-operatorer som $ X \otimes Y \otimes Z \otimes \boldone $ kan också mätas.
 Alla sådana Beslags produkter av Pauli-operatörer har bara två Eigenvalues- $ \pm 1 $ och båda eigenspaces utgörs av halva utrymmet i hela vektor utrymmet.

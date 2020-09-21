@@ -1,6 +1,6 @@
 ---
 title: Quantum Oracle-Beskrivning: Lär dig hur du arbetar med och definierar Quantum Oracles, svarta Box-åtgärder som används som inmatade i en annan algoritm.
-författare: cgranade UID: Microsoft. Quantum. Concepts. Oracles MS. author: Christopher.Granade@microsoft.com MS. Date: 07/11/2018 MS. topic: artikeln No-Loc:
+författare: cgranade-UID: Microsoft. Quantum. Concepts. Oracles MS. author: chgranad MS. Date: 07/11/2018 MS. topic: artikeln No-Loc:
 - "Q#"
 - "$$v"
 - "$$"
@@ -140,7 +140,7 @@ O \ket { \psi } & = o \sum _ { x \in \\ { 0, 1 \\ } ^ n, y \in \\ { 0, 1 \\ } ^ 
 $$
 
 ## <a name="phase-oracles"></a>Fas Oracle
-Alternativt kan vi koda $ f $ till en Oracle- $ O $ genom att använda en _fas_ baserat på inmatat på $ O $ . Vi kan till exempel definiera $ O $ så att$$
+Alternativt kan vi koda $ f $ till en Oracle- $ O $ genom att använda en _fas_ baserat på inmatat på $ O $ . Vi kan till exempel definiera $ O $ så att $$
 \begin{align}
     O \ket { x } = (-1) ^ { f (x) } \ket { x } .
 \end{align}
@@ -148,9 +148,9 @@ $$
 Om en fas Oracle agerar i ett register inlednings vis i ett beräknings underlags tillstånd $ \ket { x } $ , är den här fasen en global fas och går därför inte att observera.
 Men en sådan Oracle kan vara en mycket kraftfull resurs om den tillämpas på en överposition eller som en kontrollerad åtgärd.
 Anta till exempel en fas Oracle- $ O_f $ för en qubit funktion $ f $ .
-Dra$$
+Dra $$
 \begin{align}
-    O_f\ket{+}
+    O_f \ket{+}
         &=O_f ( \ket { 0 }  +  \ket { 1 } )/ \sqrt { 2 }\\\\
         &=((-1) ^ { f (0) } \ket { 0 } + (-1) ^ { f (1) } \ket { 1 } )/ \sqrt { 2 }\\\\
         &=(-1) ^ { f (0) } ( \ket { 0 } + (-1) ^ { f (1)-f (0) } \ket { 1 } )/ \sqrt { 2 }\\\\

@@ -2,19 +2,19 @@
 title: Skapa en kvantgenerator för slumptal
 description: Skapa ett Q# projekt som visar grundläggande Quantum-koncept som överposition genom att skapa en Quantum slump tals Generator.
 author: bromeg
-ms.author: megbrow@microsoft.com
+ms.author: megbrow
 ms.date: 10/25/2019
 ms.topic: article
 uid: microsoft.quantum.quickstarts.qrng
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: d80f1c640ac7ddb0104ccbbb6de6d0e26ba05fd6
-ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
+ms.openlocfilehash: a0e8933e6a77d017db914e4bb969ea05f760a443
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88863632"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90834048"
 ---
 # <a name="tutorial-implement-a-quantum-random-number-generator-in-q"></a>Självstudier: Implementera en kvantgenerator för slumptal i Q\#
 
@@ -33,7 +33,7 @@ Ett enkelt exempel på en Quantum-algoritm som Q# är skrivet i är en Quantum s
 
 :::code language="qsharp" source="~/quantum/samples/getting-started/qrng/Qrng.qs" range="3-15,34":::
 
-Som vi nämnde i artikeln [Så här fungerar kvantberäkning](xref:microsoft.quantum.overview.understanding) är en kvantbit en enhet för kvantinformation som kan vara i superposition. När den mäts kan kvantbiten endast vara antingen 0 eller 1. Under körningen representerar dock tillståndet för kvantbiten sannolikheten för att avläsningen blir antingen 0 eller 1 vid en mätning. Detta sannolikhetstillstånd kallas för superposition. Vi kan använda sannolikheten till att generera slumpmässiga tal.
+Som vi nämnde i artikeln [Så här fungerar kvantberäkning](xref:microsoft.quantum.overview.understanding) är en kvantbit en enhet för kvantinformation som kan vara i superposition. När den mäts kan kvantbiten endast vara antingen 0 eller 1. Men när en åtgärd körs representerar qubit status sannolikheten för att läsa antingen 0 eller a 1 med ett mått. Detta sannolikhetstillstånd kallas för superposition. Vi kan använda sannolikheten till att generera slumpmässiga tal.
 
 I vår Q# åtgärd introducerar vi `Qubit` data typen, intern för Q# . Vi kan bara allokera en `Qubit` med en `using`-instruktion. När den tilldelas är kvantbiten alltid  i `Zero`-tillståndet. 
 
@@ -74,11 +74,11 @@ Om du vill skapa hela Q# programmet lägger du till följande start punkt i Q# p
 
 :::code language="qsharp" source="~/quantum/samples/getting-started/qrng/Qrng.qs" range="17-33":::
 
-Den körbara filen kör åtgärden eller funktionen som har markerats med attributet `@EntryPoint()` i en simulator eller i ett resursuppskattningsverktyg, beroende på projektkonfigurationen och kommandoradsalternativen.
+Programmet kommer att köra åtgärden eller funktionen som marker ATS med `@EntryPoint()` attributet på en simulator eller resurs uppskattning, beroende på projekt konfigurationen och kommando rads alternativen.
 
 :::code language="qsharp" source="~/quantum/samples/getting-started/qrng/Qrng.qs" range="3-34":::
 
-Tryck bara på Ctrl+F5 i Visual Studio för att köra skriptet.
+I Visual Studio trycker du helt enkelt på Ctrl + F5 för att köra skriptet.
 
 Skapa Program.qs första gången genom att skriva följande i terminalfönstret i VS Code:
 

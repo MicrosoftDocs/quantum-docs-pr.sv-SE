@@ -9,16 +9,16 @@ uid: microsoft.quantum.chemistry.concepts.installation
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 5fe973d24ceffd413cdbd3c543013dcc7ee379c0
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: f1a7d1d041dab73980d8debc179d6c79acac6d33
+ms.sourcegitcommit: 8256ff463eb9319f1933820a36c0838cf1e024e8
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87869349"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90759807"
 ---
 # <a name="chemistry-library-installation"></a>Installation av kemi-bibliotek
 
-[ **MolecularHydrogen** -exemplet](https://github.com/microsoft/Quantum/tree/master/samples/chemistry/MolecularHydrogen) använder molekyliska indata som har kon figurer ATS manuellt.
+[ **MolecularHydrogen** -exemplet](https://github.com/microsoft/Quantum/tree/main/samples/chemistry/MolecularHydrogen) använder molekyliska indata som har kon figurer ATS manuellt.
 Även om det är bra för små exempel kräver Quantum kemi i skala Hamiltonians med miljon tals eller miljarder villkor.
 Sådana Hamiltonians, som genereras av scalable data kemi-paket, är för stora för att kunna importeras manuellt.
 
@@ -33,7 +33,7 @@ I det här avsnittet beskrivs hur du använder Quantum Development Kit med antin
 
 Använd någon av följande metoder för att komma igång med NWChem tillsammans med Quantum Development Kit:
 
-- Kom igång med att använda befintliga Broombridge-filer som finns i exemplen på [IntegralData/yaml](https://github.com/microsoft/Quantum/tree/master/samples/chemistry/IntegralData/YAML).
+- Kom igång med att använda befintliga Broombridge-filer som finns i exemplen på [IntegralData/yaml](https://github.com/microsoft/Quantum/tree/main/samples/chemistry/IntegralData/YAML).
 - Använd [EMSL Arrows Builder för Microsoft Quantum Development Kit](https://arrows.emsl.pnnl.gov/api/qsharp_chem) som är en webbaserad frontend-fil till NWChem, för att generera nya Broombridge-formaterade molekyl indatafiler.  
 - Använd [Docker-avbildningen](https://hub.docker.com/r/nwchemorg/nwchem-qc/) som tillhandahålls av PNNL för att köra NWChem, eller
 - [Kompilera NWChem](http://www.nwchem-sw.org/index.php/Compiling_NWChem) för din plattform.
@@ -42,9 +42,9 @@ I [slut punkt till slut punkt med NWChem](xref:microsoft.quantum.chemistry.examp
 
 ### <a name="getting-started-using-broombridge-files-provided-with-the-samples"></a>Komma igång med Broombridge-filer som ingår i exemplen
 
-Mappen [IntegralData/yaml](https://github.com/microsoft/Quantum/tree/master/samples/chemistry/IntegralData/YAML) i exempel databasen i Quantum Development Kit innehåller Broombridge-formaterade molekyl data filer.  
+Mappen [IntegralData/yaml](https://github.com/microsoft/Quantum/tree/main/samples/chemistry/IntegralData/YAML) i exempel databasen i Quantum Development Kit innehåller Broombridge-formaterade molekyl data filer.  
 
-Som ett enkelt exempel kan du använda exempel biblioteket kemi Library, [GetGateCount](https://github.com/microsoft/Quantum/tree/master/samples/chemistry/GetGateCount) för att läsa in Hamiltonian från en av Broombridge-filerna och utföra grind uppskattningar av Quantum simulering algorigthms:
+Som ett enkelt exempel kan du använda exempel biblioteket kemi Library, [GetGateCount](https://github.com/microsoft/Quantum/tree/main/samples/chemistry/GetGateCount) för att läsa in Hamiltonian från en av Broombridge-filerna och utföra grind uppskattningar av Quantum simulering algorigthms:
 
 ```bash
 cd Quantum/Chemistry/GetGateCount
@@ -124,7 +124,7 @@ Convert-NWChemToBroombridge -?
 Get-Help Convert-NWChemToBroombridge -Full
 ```
 
-## <a name="using-the-quantum-development-kit-with-qdk-chem"></a>Använda Quantum Development Kit med`qdk-chem`
+## <a name="using-the-quantum-development-kit-with-qdk-chem"></a>Använda Quantum Development Kit med `qdk-chem`
 
 `qdk-chem`Du kan installera genom att använda .net Core SDK på kommando raden:
 

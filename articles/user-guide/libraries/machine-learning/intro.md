@@ -1,19 +1,20 @@
 ---
 title: Bibliotek för kvantmaskininlärning
+description: Lär dig hur Machine Learning används på Quantum Systems
 author: alexeib2
-ms.author: alexei.bocharov@microsoft.com
+ms.author: alexeib
 ms.date: 11/22/2019
 ms.topic: article
 uid: microsoft.quantum.libraries.machine-learning.intro
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 65b0aa6a7f385765933d4d89ce34901f77cf76ec
-ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
+ms.openlocfilehash: 9f7f892fb2b76432942c86163497c22f0c73d51f
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88863105"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90833803"
 ---
 # <a name="introduction-to-quantum-machine-learning"></a>Introduktion till Quantum Machine Learning
 
@@ -74,4 +75,4 @@ En utbildnings väska $ (x, y) \in \mathcal{D} $ betraktas som en *felklassifice
 
 Den här informationen bör vara tillräckligt stor för att börja spela med koden. Men om du vill lära dig mer om den här modellen läser du det ursprungliga förslaget: [ *"kretsbaserade Quantum-klassificerare", Maria Schuld, Alex Bocharov, krysta Svore och Nathan Wiebe*](https://arxiv.org/abs/1804.00633)
 
-Förutom kod exemplet som visas i nästa steg kan du också börja utforska Quantum-klassificeringen i [den här självstudien](https://github.com/microsoft/QuantumKatas/tree/master/tutorials/QuantumClassification) 
+Förutom kod exemplet som visas i nästa steg kan du också börja utforska Quantum-klassificeringen i [den här självstudien](https://github.com/microsoft/QuantumKatas/tree/main/tutorials/QuantumClassification) 

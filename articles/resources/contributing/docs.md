@@ -9,12 +9,12 @@ uid: microsoft.quantum.contributing.docs
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 1110f32a6486de1a346b115fa928a098749b6690
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 20e9f8126a290f52701b6b0e525d7669a605d4c9
+ms.sourcegitcommit: 8256ff463eb9319f1933820a36c0838cf1e024e8
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87866884"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90759687"
 ---
 # <a name="improving-documentation"></a>Förbättra dokumentationen
 
@@ -52,7 +52,7 @@ Om du vill inkludera kod från [exempel databasen](https://github.com/Microsoft/
 :::code language="qsharp" source="~/quantum/samples/algorithms/chsh-game/Game.qs" range="4-8":::
 ```
 
-Det här kommandot importerar rader 4 till 8 av [ `Game.qs` filen från `chsh-game` exemplet](https://github.com/microsoft/Quantum/blob/master/samples/algorithms/chsh-game/Game.qs)och markerar dem som Q# kod för markering av syntax.
+Det här kommandot importerar rader 4 till 8 av [ `Game.qs` filen från `chsh-game` exemplet](https://github.com/microsoft/Quantum/blob/main/samples/algorithms/chsh-game/Game.qs)och markerar dem som Q# kod för markering av syntax.
 Med det här kommandot kan du undvika att duplicera kod mellan konceptuella artiklar och exempel databasen, så att exempel koden i dokumentationen alltid är så aktuell som möjligt.
 
 ## <a name="contributing-to-the-api-references"></a>Bidrag till API-referenser

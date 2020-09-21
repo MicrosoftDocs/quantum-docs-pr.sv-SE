@@ -2,19 +2,19 @@
 title: Skriv och simulera qubit-program i Q#
 description: Stegvisa anvisningar om hur du skriver och simulerar ett Quantum-program som fungerar på individuell qubit-nivå
 author: gillenhaalb
-ms.author: a-gibec@microsoft.com
+ms.author: a-gibec
 ms.date: 10/06/2019
 uid: microsoft.quantum.circuit-tutorial
 ms.topic: tutorial
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 39b2d762c0efbfa4bb3a60a1dcee6bcbe2bd91a9
-ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
+ms.openlocfilehash: 0dbeee8e092c830576ba8f79733035cdeeac11de
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88863337"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90834966"
 ---
 # <a name="tutorial-write-and-simulate-qubit-level-programs-in-q"></a>Självstudie: Skriv och simulera qubit-program i Q\#
 
@@ -116,7 +116,7 @@ Med `using` tilldelas qubits automatiskt i $ \ket {0} $-tillstånd. Vi kan verif
 Därefter tillämpar vi de portar som utgör själva åtgärden.
 Q# innehåller redan många grundläggande Quantum-grindar som åtgärder i [`Microsoft.Quantum.Intrinsic`](xref:microsoft.quantum.intrinsic) namn området och dessa är inget undantag. 
 
-I en Q# åtgärd körs de instruktioner som anropar callables i turordning.
+Under en Q# åtgärd kommer de instruktioner som anropar callables att köras i sekventiell ordning.
 Den första porten som ska tillämpas är därför [`H`](xref:microsoft.quantum.intrinsic.h) (Hadamard) för den första qubit:
 
 <br/>
@@ -134,7 +134,7 @@ En `R1(θ, <qubit>)` åtgärd i allmänhet lämnar $ \ket {0} $-komponenten i qu
 
 #### <a name="controlled-operations"></a>Kontrollerade åtgärder
 
-Q# gör det mycket enkelt att utvärdera körningen av en åtgärd på en eller flera qubits.
+Q# gör det mycket enkelt att villkorligt köra en åtgärd på en eller flera qubits.
 I allmänhet inleder vi bara anropet med `Controlled` och åtgärds argumenten ändras som:
 
  `Op(<normal args>)` $ \to $ `Controlled Op([<control qubits>], (<normal args>))` .
@@ -244,7 +244,7 @@ namespace NamespaceQFT {
 
 När Q# filen och åtgärden har slutförts är vårt Quantum-program klart att anropas och simuleras.
 
-## <a name="execute-the-program"></a>Kör programmet
+## <a name="run-the-program"></a>Köra programmet
 
 När du har definierat vår Q# åtgärd i en `.qs` fil måste vi nu anropa den åtgärden och observera eventuella data som returneras.
 Nu finns det inga returnerade (kom ihåg att vår åtgärd som definierats ovan returnerar `Unit` ), men när vi senare ändrar Q# åtgärden för att returnera en matris med mått resultat ( `Result[]` ), kommer vi att adressera detta.
@@ -269,7 +269,7 @@ Om du vill köra programmet öppnar du terminalen i mappen i projektet och anger
 dotnet run
 ```
 
-Vid körningen bör du se `Message` och `DumpMachine` utmatningarna nedan som skrivs ut i konsolen.
+När du är klar bör du se `Message` och `DumpMachine` utmatningarna nedan som skrivs ut i konsolen.
 
 
 #### <a name="python"></a>[Python](#tab/tabid-python)
@@ -314,8 +314,8 @@ C#-värden består av fyra delar:
     Det finns inga i det här exemplet.
 3. Köra kvantalgoritmen. 
     Varje Q# åtgärd genererar en C#-klass med samma namn. 
-    Den här klassen innehåller en `Run`-metod som **asynkront** utför åtgärden.
-    Körningen är asynkron eftersom körningen på den faktiska maskinvaran kommer att vara asynkron. 
+    Den här klassen har en `Run` metod som kör åtgärden **asynkront**.
+    Körningen är asynkron eftersom körningen av den faktiska maskin varan kommer att vara asynkron. 
     Eftersom `Run` metoden är asynkron anropar vi `Wait()` metoden. Detta blockerar körningen tills aktiviteten har slutförts och returnerar resultatet synkront. 
 4. Bearbeta det returnerade resultatet för åtgärden.
     För tillfället returnerar åtgärden ingenting.
@@ -499,7 +499,7 @@ Den slutgiltiga åtgärds koden bör se ut så här:
 }
 ```
 
-Om du arbetar från kommando tolken skrivs den returnerade matrisen bara ut direkt till-konsolen i slutet av körningen.
+Om du arbetar från kommando tolken visas den returnerade matrisen bara direkt i konsolen i slutet av körningen.
 Annars uppdaterar du värd programmet för att bearbeta den returnerade matrisen.
 
 #### <a name="command-prompt"></a>[Kommando tolk](#tab/tabid-cmdline)

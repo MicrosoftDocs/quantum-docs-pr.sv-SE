@@ -1,24 +1,24 @@
 ---
 title: Grundläggande klassificering med Quantum Machine Learning-biblioteket
-description: Lär dig hur du kör en Quantum-klassificeraren som skrivits i Q# med hjälp av quantum Machine Learning-biblioteket för Microsoft-QDK.
+description: Lär dig hur du kör en Quantum-följd som skrivits i Q# med hjälp av quantum Machine Learning-biblioteket för Microsoft-QDK.
 author: geduardo
-ms.author: v-edsanc@microsoft.com
+ms.author: v-edsanc
 ms.date: 02/16/2020
 ms.topic: article
 uid: microsoft.quantum.libraries.machine-learning.basics
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: f9c3e7ab85c0f0d1a6063e593607d35c5cb76936
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 5dc4614b9992e2c6b9f8ff4b839c0929ec8cab7c
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87868975"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90833720"
 ---
 # <a name="basic-classification-classify-data-with-the-qdk"></a>Grundläggande klassificering: klassificera data med QDK
 
-I den här snabb starten får du lära dig hur du kör en Quantum-klassificeraren som skrivits i Q# med quantum Machine Learning-biblioteket för QDK. 
+I den här snabb starten får du lära dig hur du kör en Quantum-klassificerare som skrivits i Q# med quantum Machine Learning-biblioteket för QDK. 
 
 I den här hand boken kommer vi att använda den halva måne-datauppsättningen med en klassificerings struktur som definierats i Q# .
 
@@ -70,7 +70,7 @@ Ditt värd program består av tre delar:
 
     :::code language="csharp" source="~/quantum/samples/machine-learning/half-moons/Host.cs" range="4-86":::
 
-    Därefter trycker du på F5. Programmet startas och ett nytt fönster med följande resultat visas: 
+    Tryck på F5 och programmet kommer att börja köras. Ett nytt fönster visar följande resultat: 
 
     ```bash
     $ dotnet run
@@ -88,9 +88,9 @@ Vi sparar följande kod i en fil med namnet `Training.qs` .
 
 De viktigaste funktionerna och åtgärderna som definieras i koden ovan är:
 
-- `ClassifierStructure() : ControlledRotation[]`: i den här funktionen ställer vi in strukturen för vår krets modell genom att lägga till lagren i de kontrollerade portar som vi anser. Det här steget är detsamma som deklarationen av lager i neurons i en sekventiell djup inlärnings modell.
-- `TrainHalfMoonModel() : (Double[], Double)`: den här åtgärden är den grundläggande delen av koden och definierar utbildningen. Här läser vi in exemplen från data uppsättningen som ingår i biblioteket, vi ställer in Hyper-parametrarna och de ursprungliga parametrarna för utbildningen och vi startar utbildningen genom att anropa åtgärden som `TrainSequentialClassifier` ingår i biblioteket. Den matar ut parametrarna och den förskjutning som avgör klassificeraren.
-- `ValidateHalfMoonModel(parameters : Double[], bias : Double) : Int`: den här åtgärden definierar verifierings processen för att utvärdera modellen. Här läser vi in exemplen för verifiering, antalet mätningar per prov och toleransen. Den ger ut antalet felklassificeringar för den valda batchen över exempel för verifiering.
+- `ClassifierStructure() : ControlledRotation[]` : i den här funktionen ställer vi in strukturen för vår krets modell genom att lägga till lagren i de kontrollerade portar som vi anser. Det här steget är detsamma som deklarationen av lager i neurons i en sekventiell djup inlärnings modell.
+- `TrainHalfMoonModel() : (Double[], Double)` : den här åtgärden är den grundläggande delen av koden och definierar utbildningen. Här läser vi in exemplen från data uppsättningen som ingår i biblioteket, vi ställer in Hyper-parametrarna och de ursprungliga parametrarna för utbildningen och vi startar utbildningen genom att anropa åtgärden som `TrainSequentialClassifier` ingår i biblioteket. Den matar ut parametrarna och den förskjutning som avgör klassificeraren.
+- `ValidateHalfMoonModel(parameters : Double[], bias : Double) : Int` : den här åtgärden definierar verifierings processen för att utvärdera modellen. Här läser vi in exemplen för verifiering, antalet mätningar per prov och toleransen. Den ger ut antalet felklassificeringar för den valda batchen över exempel för verifiering.
 
 ## <a name="next-steps"></a>Nästa steg
 

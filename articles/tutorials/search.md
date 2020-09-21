@@ -2,19 +2,19 @@
 title: Kör Grover Sök algoritm i Q# Quantum Development Kit
 description: Bygg ett Q# projekt som demonstrerar Grover-algoritmen, en av de kanoniska Quantum-algoritmerna.
 author: cgranade
-ms.author: chgranad@microsoft.com
+ms.author: chgranad
 ms.date: 10/19/2019
 ms.topic: article
 uid: microsoft.quantum.quickstarts.search
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: f2ae56bdca893e8a317c16d0a993da15b9f021b5
-ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
+ms.openlocfilehash: 86c6a651a117b788eb4c8fdd805ead7ab8f54dd7
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88863111"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90834813"
 ---
 # <a name="tutorial-implement-grovers-search-algorithm-in-q"></a>Självstudier: Implementera Grovers sökalgoritm i Q\#
 
@@ -58,9 +58,9 @@ Antalet stegvisa ökningar är färre än antalet objekt i listan. Det här är 
 
 ### <a name="no-locq-applications-with-visual-studio-or-visual-studio-code"></a>Q# program med Visual Studio eller Visual Studio Code
 
-Den körbara filen kör åtgärden eller funktionen som har markerats med attributet `@EntryPoint()` i en simulator eller i ett resursuppskattningsverktyg, beroende på projektkonfigurationen och kommandoradsalternativen.
+Programmet kommer att köra åtgärden eller funktionen som marker ATS med `@EntryPoint()` attributet på en simulator eller resurs uppskattning, beroende på projekt konfigurationen och kommando rads alternativen.
 
-Tryck bara på Ctrl+F5 i Visual Studio för att köra skriptet.
+I Visual Studio trycker du helt enkelt på Ctrl + F5 för att köra skriptet.
 
 Skapa `Program.qs` första gången genom att skriva följande i terminalfönstret i VS Code:
 
@@ -89,7 +89,7 @@ operations.qs [options] [command]
 Commands:
 ```
 
-Det beror på att du inte angav hur många kvantbitar du ville använda. Därför visar terminalfönstret vilka kommandon som är tillgängliga för den körbara filen Om vi vill använda fem kvantbitar skriver vi:
+Detta beror på att du inte angav antalet qubits som du ville använda, så att terminalen visar de kommandon som är tillgängliga för det körbara programmet. Om vi vill använda fem qubits, ska vi skriva:
 
 ```Command line
 dotnet run --n-qubits 5
@@ -110,7 +110,7 @@ Reflecting about marked state...
 Om du gillade den här själv studie kursen kan du läsa mer om hur du kan använda Q# för att skriva egna Quantum-program på några av resurserna nedan.
 
 - [Tillbaka till guiden Komma igång med QDK](xref:microsoft.quantum.welcome)
-- Prova en mer allmän Grover-sökalgoritm [exempel](https://github.com/microsoft/Quantum/tree/master/samples/algorithms/database-search)
+- Prova en mer allmän Grover-sökalgoritm [exempel](https://github.com/microsoft/Quantum/tree/main/samples/algorithms/database-search)
 - [Läs mer om Grovers sökning med Quantum Katas](xref:microsoft.quantum.overview.katas)
 - Läs mer om [Amplitudförstärkning][amplitude-amplification], kvantberäkningstekniken bakom Grovers sökalgoritm
 - [Begrepp inom kvantberäkning](xref:microsoft.quantum.concepts.intro)

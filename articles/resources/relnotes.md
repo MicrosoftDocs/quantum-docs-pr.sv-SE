@@ -2,19 +2,19 @@
 title: Viktig information för Quantum Development Kit
 description: Lär dig mer om de senaste uppdateringarna i förhandsversionen av Microsoft Quantum Development Kit.
 author: bradben
-ms.author: bradben
-ms.date: 5/30/2020
+ms.author: v-benbra
+ms.date: 8/30/2020
 ms.topic: article
 uid: microsoft.quantum.relnotes
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 70d0c9b61e49d4ee6142edbe2767310403885f01
-ms.sourcegitcommit: 11bd357baeb6ab53a402882979e75964d0869b57
+ms.openlocfilehash: 5036b4d401bb775a7fee2252ca26e7725bc19004
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88992266"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90834150"
 ---
 # <a name="microsoft-quantum-development-kit-release-notes"></a>Viktig information för Microsoft Quantum Development Kit
 
@@ -48,7 +48,7 @@ Se den fullständiga listan med stängda pull för [bibliotek](https://github.co
 
 Den här versionen innehåller följande:
 
-- Öppna namn områden i Q# antecknings böcker är nu tillgängliga för alla framtida cell körningar. Detta gör att du till exempel kan öppna namn områden en gång i en cell överst i antecknings boken, i stället för att behöva öppna relevanta namn områden i varje kod cell. Ett nytt `%lsopen` magisk-kommando visar en lista över namn områden som har öppnats för tillfället.
+- Öppna namn områden i Q# antecknings böcker är nu tillgängliga för alla framtida cell beräkningar. Detta gör att du till exempel kan öppna namn områden en gång i en cell överst i antecknings boken, i stället för att behöva öppna relevanta namn områden i varje kod cell. Ett nytt `%lsopen` magisk-kommando visar en lista över namn områden som har öppnats för tillfället.
 
 Se den fullständiga listan med stängda pull för [bibliotek](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed), [kompilator](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+is%3Aclosed), [körning](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+is%3Aclosed), [exempel](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed), [I Q# ](https://github.com/microsoft/iqsharp/pulls?q=is%3Apr+is%3Aclosed) och [Katas](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+is%3Aclosed).  
 
@@ -132,7 +132,7 @@ Se den fullständiga listan med stängda PR:er för [bibliotek](https://github.c
 
 Den här versionen innehåller följande:
 
-- Nytt Quantum Machine Learning-bibliotek, mer information finns på vår [QML-dokumentationssida](https://docs.microsoft.com/quantum/libraries/machine-learning/?view=qsharp-preview)
+- Nytt Quantum Machine Learning-bibliotek, mer information finns på vår [QML-dokumentationssida](xref:microsoft.quantum.machine-learning.concepts.intro)
 - Jag Q# har fel korrigeringar, vilket resulterar i upp till en prestanda ökning på 10 20x vid inläsning av NuGet-paket
 
 Se den fullständiga listan med stängda PR:er för [bibliotek](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed), [kompilator](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+is%3Aclosed), [runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+is%3Aclosed), [exempel](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed) och [Katas](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+is%3Aclosed).  
@@ -144,7 +144,7 @@ Se den fullständiga listan med stängda PR:er för [bibliotek](https://github.c
 Den här versionen innehåller följande:
 
 - Nytt Microsoft.Quantum.SDK NuGet-paket som kommer att ersätta Microsoft.Quantum.Development.Kit NuGet-paketet när nya projekt skapas. Microsoft.Quantum.Development.Kit NuGet-paketet kommer även fortsättningsvis att stödjas för befintliga projekt. 
-- Stöd för Q# kompilator tillägg som aktive ras av den nya Microsoft. Quantum. SDK-NuGet paketet. mer information finns i [dokumentationen på GitHub](https://github.com/microsoft/qsharp-compiler/tree/master/src/QuantumSdk#extending-the-q-compiler), [compiler-exemplet](https://github.com/microsoft/qsharp-compiler/tree/master/examples/CompilerExtensions) och [ Q# dev-bloggen](https://devblogs.microsoft.com/qsharp/extending-the-q-compiler/)
+- Stöd för Q# kompilator tillägg som aktive ras av den nya Microsoft. Quantum. SDK-NuGet paketet. mer information finns i [dokumentationen på GitHub](https://github.com/microsoft/qsharp-compiler/tree/main/src/QuantumSdk#extending-the-q-compiler), [compiler-exemplet](https://github.com/microsoft/qsharp-compiler/tree/main/examples/CompilerExtensions) och [ Q# dev-bloggen](https://devblogs.microsoft.com/qsharp/extending-the-q-compiler/)
 - Stöd för .NET Core 3.1 har lagts till. Vi rekommenderar starkt att ha version 3.1.100 installerat, eftersom om du skapar med äldre .NET Core SDK-versioner kan problem uppstå
 - Nya kompilatoromvandlingar finns tillgängliga under Microsoft.Quantum.QsCompiler.Experimental
 - Nya funktioner för att exponera utmatnings tillstånds vektorer som HTML i IQ#
@@ -160,7 +160,7 @@ Se den fullständiga listan med stängda PR:er för [bibliotek](https://github.c
 Den här versionen innehåller följande:
 
 - Nytt testattribut för Q# enhets testning, se uppdaterad API-dokumentation [här](https://docs.microsoft.com/qsharp/api/qsharp/microsoft.quantum.diagnostics.test) och uppdaterade test & fel söknings guide [här](xref:microsoft.quantum.guide.testingdebugging)
-- Stack spårning har lagts till i händelse av ett Q# program körnings fel
+- Tillagd stack spårning i händelse av ett Q# program körnings fel
 - Stöd för brytpunkter i Visual Studio Code på grund av en uppdatering i [OmniSharp C# Visual Studio Code-tillägget](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp)
 
 Se den fullständiga listan med stängda PR:er för [bibliotek](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed), [kompilator](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+is%3Aclosed), [runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+is%3Aclosed), [exempel](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed) och [Katas](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+is%3Aclosed).  
@@ -182,7 +182,7 @@ Se den fullständiga listan med stängda PR:er för [bibliotek](https://github.c
 
 Den här versionen innehåller följande:
 
-- Uppdateringar av Visual Studio Code- och Visual Studio-tillägg som distribuerar språkservern som en fristående körbar fil, vilket eliminerar beroendet av .NET Core SDK-versionen  
+- Uppdateringar till Visual Studio Code & Visual Studio-tillägg för att distribuera en språk server som en fristående körbar fil, vilket eliminerar beroendet av .NET Core SDK version  
 - Migrering till .NET Core 3.0
 - Banbrytande ändring av Microsoft.Quantum.Simulation.Core.IOperationFactory med den nya `Fail`-metoden. Den påverkar endast anpassade simulatorer som inte utökar SimulatorBase. Mer information finns i [Visa pull-begäran i GitHub](https://github.com/microsoft/qsharp-runtime/pull/59).
 - Nytt stöd för inaktuella attribut
@@ -224,7 +224,7 @@ Se den fullständiga listan med stängda PR:er för [bibliotek](https://github.c
 Den här versionen innehåller följande:
 
 - Nya indexeringsplatser för segmentering av matriser. Mer information finns i [språkreferensen](xref:microsoft.quantum.guide.expressions#array-slices).
-- Du har lagt till Dockerfile som finns på [Microsoft container Registry](https://github.com/microsoft/ContainerRegistry), se [i- Q# lagringsplatsen för mer information](https://github.com/microsoft/iqsharp/blob/master/README.md)
+- Du har lagt till Dockerfile som finns på [Microsoft container Registry](https://github.com/microsoft/ContainerRegistry), se [i- Q# lagringsplatsen för mer information](https://github.com/microsoft/iqsharp/blob/main/README.md)
 - Icke-bakåtkompatibel ändring för [spårningssimulatorn](xref:microsoft.quantum.machines.qc-trace-simulator.intro), uppdatering av konfigurationsinställningar, namnändringar; se [.NET API-webbläsaren för de uppdaterade namnen](https://docs.microsoft.com/dotnet/api/microsoft.quantum.simulation.simulators.qctracesimulators.qctracesimulatorconfiguration).
 
 Se den fullständiga listan med stängda PR:er för [bibliotek](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed) och [exempel](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed).  
@@ -252,14 +252,14 @@ Den här versionen lägger till ny Q# språksyntax:
 
 ### <a name="library"></a>Bibliotek 
 
-Den här versionen lägger till ett numeriskt bibliotek: Lär dig mer om hur du [använder det nya numeriska biblioteket](xref:microsoft.quantum.numerics.usage) och prova [nya exempel](https://github.com/microsoft/quantum/tree/master/Numerics).  [PR #102](https://github.com/Microsoft/QuantumLibraries/pull/102).  
+Den här versionen lägger till ett numeriskt bibliotek: Lär dig mer om hur du [använder det nya numeriska biblioteket](xref:microsoft.quantum.numerics.usage) och prova [nya exempel](https://github.com/microsoft/quantum/tree/main/Numerics).  [PR #102](https://github.com/Microsoft/QuantumLibraries/pull/102).  
 
 Den här versionen omorganiserar, utökar och uppdaterar kemibiblioteket:
 * Förbättrar modulariteten för komponenter, utökningsbarhet och allmän rensning bland koden.  [PR #58](https://github.com/microsoft/QuantumLibraries/pull/58).
 * Lägger till stöd för [vågfunktioner med multireferens](xref:microsoft.quantum.chemistry.concepts.multireference), både vågfunktioner med sparse-multireferens och enkelt kopplat kluster.  [PR #110](https://github.com/Microsoft/QuantumLibraries/pull/110).
 * (Tack!) [1QBit](https://1qbit.com)-deltagare ([@valentinS4t1qbit](https://github.com/ValentinS4t1qbit)): Energiutvärdering med hjälp av variations-ansatz. [PR #120](https://github.com/Microsoft/QuantumLibraries/pull/120).
 * Uppdaterar [Broombridge](xref:microsoft.quantum.libraries.chemistry.schema.broombridge)-schemat till ny [version 0.2](xref:microsoft.quantum.libraries.chemistry.schema.spec_v_0_2) och lade till specifikation för enkelt kopplat kluster. [Problem #65](https://github.com/microsoft/QuantumLibraries/issues/65).
-* Lägger till Python-interoperabilitet i funktionerna i kemibiblioteket. Prova detta [exempel](https://github.com/microsoft/Quantum/tree/master/Chemistry/PythonIntegration). [Problem nr 53](https://github.com/microsoft/QuantumLibraries/issues/53) [PR #110](https://github.com/Microsoft/QuantumLibraries/pull/110).
+* Lägger till Python-interoperabilitet i funktionerna i kemibiblioteket. Prova detta [exempel](https://github.com/microsoft/Quantum/tree/main/Chemistry/PythonIntegration). [Problem nr 53](https://github.com/microsoft/QuantumLibraries/issues/53) [PR #110](https://github.com/Microsoft/QuantumLibraries/pull/110).
 
 ## <a name="version-061905"></a>Version 0.6.1905
 
@@ -349,7 +349,7 @@ Den här versionen innehåller följande:
 
 - Lägger till stöd för Jupyter Notebook, vilket ger ett bra sätt att lära sig mer om Q# .  [Kolla in de nya Jupyter Notebook-exemplen och lär dig att skriva egna notebook-filer](xref:microsoft.quantum.install). 
 
-- Lägger till aritmetik för heltalsadderare i Quantum Canon-biblioteket.  Se även en Jupyter-notebook-fil som [beskriver hur du använder de nya heltalsadderarna](https://github.com/microsoft/Quantum/blob/master/samples/arithmetic/AdderExample.ipynb).
+- Lägger till aritmetik för heltalsadderare i Quantum Canon-biblioteket.  Se även en Jupyter-notebook-fil som [beskriver hur du använder de nya heltalsadderarna](https://github.com/microsoft/Quantum/blob/main/samples/arithmetic/AdderExample.ipynb).
 
 - Buggkorrigering för DumpRegister-problem som rapporterats av communityn ([#148](https://github.com/Microsoft/Quantum/issues/148)).
 
@@ -635,7 +635,7 @@ Den här versionen åtgärdar vissa problem som rapporterats av communityn. Det 
 
 #### <a name="testing"></a>Testning
 
-- Tester måste köras i 64-bitars läge. Om dina tester misslyckas med meddelandet BadImageFormatException går du till testmenyn och väljer Testinställningar > Standardprocessorarkitektur > x64.
+- Testerna måste köras i 64-bitars läge. Om dina tester misslyckas med meddelandet BadImageFormatException går du till testmenyn och väljer Testinställningar > Standardprocessorarkitektur > x64.
 - Vissa tester tar lång tid (möjligen upp till 5 minuter beroende på din dator) att köras. Detta är normalt eftersom vissa av dem använder fler än tjugo kvantbitar. Till exempel körs vår för närvarande största test på 23 kvantbitar.
 
 #### <a name="samples"></a>Exempel

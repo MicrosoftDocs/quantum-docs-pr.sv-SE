@@ -9,12 +9,12 @@ uid: microsoft.quantum.libraries.machine-learning.design
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 60e694e9f7c2f01a6679ef960f5a7774c8bd6a62
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: c87a84654cda04f81115a83684f0e125d23a77bc
+ms.sourcegitcommit: 8256ff463eb9319f1933820a36c0838cf1e024e8
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87868956"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90759229"
 ---
 # <a name="design-your-own-classifier"></a>Utforma din egen klassificerare
 
@@ -30,7 +30,7 @@ Precis som i klassisk djup inlärning finns det ingen allmän regel för att vä
 
 För att bygga en klassificerare ska vi kombinera parametrized kontrollerade rotationer i vår krets modell. För att göra det kan vi använda den typ som [`ControlledRotation`](xref:microsoft.quantum.machinelearning.controlledrotation) definierats i Quantum Machine Learning-biblioteket. Den här typen accepterar fyra argument som avgör: indexet för mål-qubit, matrisen med index-qubits, rotations axeln och index för den associerade parametern i matrisen med parametrar som definierar modellen.
 
-Nu ska vi se ett exempel på en klassificerare. I [exemplen på halv måne](https://github.com/microsoft/Quantum/tree/master/samples/machine-learning/half-moons)kan vi hitta följande klassificerare som definierats i filen `Training.qs` .
+Nu ska vi se ett exempel på en klassificerare. I [exemplen på halv måne](https://github.com/microsoft/Quantum/tree/main/samples/machine-learning/half-moons)kan vi hitta följande klassificerare som definierats i filen `Training.qs` .
 
 ```qsharp
     function ClassifierStructure() : ControlledRotation[] {

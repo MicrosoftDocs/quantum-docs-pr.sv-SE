@@ -1,6 +1,6 @@
 ---
 rubrik: Quantum-kretsar Beskrivning: Lär dig att visuellt återge enkla och komplexa Quantum-åtgärder med Quantum-krets diagram.
-författare: QuantumWriter-UID: Microsoft. Quantum. Concepts. kretsar MS. author: nawiebe@microsoft.com MS. Date: 12/11/2017 MS. topic: artikeln No-Loc:
+författare: QuantumWriter-UID: Microsoft. Quantum. Concepts. kretsar MS. author: v-benbra MS. Date: 12/11/2017 MS. topic: artikel nr-Loc:
 - "Q#"
 - "$$v"
 - "$$"
@@ -156,7 +156,7 @@ För de specialfall där $ G = X $ och $ g = Z $ introducerar vi följande notat
 <!--Kan inte hitta något sätt att enkelt centrera detta... troligen ett tillägg som krävs:-->
 ![Krets diagram för särskilda fall av kontrollerade grindar](~/media/6.svg)
 
-Q#innehåller metoder för att automatiskt generera en kontrollerad version av en åtgärd, vilket sparar programmerare från att behöva gå vidare med dessa åtgärder. Ett exempel på detta visas nedan:
+Q# innehåller metoder för att automatiskt generera en kontrollerad version av en åtgärd, vilket sparar programmerare från att behöva gå vidare med dessa åtgärder. Ett exempel på detta visas nedan:
 
 ```qsharp
 operation PrepareSuperposition(qubit : Qubit) : Unit
@@ -175,7 +175,7 @@ Mer specifikt ser en sådan under krets ut så här:
 <!--Kan inte hitta något sätt att enkelt centrera detta... troligen ett tillägg som krävs:-->
 ![Symbol som representerar en mått åtgärd](~/media/7.svg)
 
-Q#implementerar en [mått operator](xref:microsoft.quantum.intrinsic.measure) för det här ändamålet.
+Q# implementerar en [mått operator](xref:microsoft.quantum.intrinsic.measure) för det här ändamålet.
 Mer information finns i [avsnittet om mått](xref:microsoft.quantum.libraries.standard.prelude#measurements) .
 
 På samma sätt är under kretsen

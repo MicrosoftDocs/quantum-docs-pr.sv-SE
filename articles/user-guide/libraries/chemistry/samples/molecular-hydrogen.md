@@ -9,15 +9,15 @@ uid: microsoft.quantum.chemistry.examples.energyestimate
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: a2df4b829a3f4946c6de6e6b80ad72a5bc192b2c
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 05506f4099de754cd02d81fbd9200f2de091e37e
+ms.sourcegitcommit: 8256ff463eb9319f1933820a36c0838cf1e024e8
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87869213"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90759740"
 ---
 # <a name="obtaining-energy-level-estimates"></a>Få beräkningar av energinivå
-Att uppskatta värdena för energi nivåer är ett av de viktigaste programmen i Quantum kemi. Den här artikeln beskriver hur du kan utföra detta för det kanoniska exemplet på molekylen väte. Exemplet som refereras i det här avsnittet finns [`MolecularHydrogen`](https://github.com/microsoft/Quantum/tree/master/samples/chemistry/MolecularHydrogen) i databasen för kemi-exempel. Ett mer visuellt exempel som ritar utdata är [`MolecularHydrogenGUI`](https://github.com/microsoft/Quantum/tree/master/samples/chemistry/MolecularHydrogenGUI) demonstrationen.
+Att uppskatta värdena för energi nivåer är ett av de viktigaste programmen i Quantum kemi. Den här artikeln beskriver hur du kan utföra detta för det kanoniska exemplet på molekylen väte. Exemplet som refereras i det här avsnittet finns [`MolecularHydrogen`](https://github.com/microsoft/Quantum/tree/main/samples/chemistry/MolecularHydrogen) i databasen för kemi-exempel. Ett mer visuellt exempel som ritar utdata är [`MolecularHydrogenGUI`](https://github.com/microsoft/Quantum/tree/main/samples/chemistry/MolecularHydrogenGUI) demonstrationen.
 
 ## <a name="estimating-the-energy-values-of-molecular-hydrogen"></a>Beräkna energi värden för molekyl väte
 
@@ -65,7 +65,7 @@ Att simulera Hamiltonian kräver att fermion-operatörerna konverteras till qubi
     var qSharpData = QSharpFormat.Convert.ToQSharpFormat(qSharpHamiltonianData, qSharpWavefunctionData);
 ```
 
-Sedan skickar du `qSharpData` , som representerar Hamiltonian, till `TrotterStepOracle` funktionen. `TrotterStepOracle`Returnerar en Quantum-åtgärd som uppskattar real tids utvecklingen av Hamiltonian. Mer information finns i [simulera Hamiltonian Dynamics](xref:microsoft.quantum.chemistry.concepts.simulationalgorithms).
+Sedan skickar du `qSharpData` , som representerar Hamiltonian, till `TrotterStepOracle` funktionen. `TrotterStepOracle` Returnerar en Quantum-åtgärd som uppskattar real tids utvecklingen av Hamiltonian. Mer information finns i [simulera Hamiltonian Dynamics](xref:microsoft.quantum.chemistry.concepts.simulationalgorithms).
 
 ```qsharp
 // qSharpData passed from driver
@@ -156,5 +156,5 @@ using (var qsim = new QuantumSimulator())
 
 Åtgärden returnerar två parametrar: 
 
-- `energyEst`är beräkningen av jord stats energins energi och bör ligga nära `-1.137` i genomsnitt. 
-- `phaseEst`är den råa fasen som returneras av algoritmen för fas uppskattning. Detta är användbart för att diagnostisera alias när det inträffar på grund av ett `trotterStep` värde som är för stort.
+- `energyEst` är beräkningen av jord stats energins energi och bör ligga nära `-1.137` i genomsnitt. 
+- `phaseEst` är den råa fasen som returneras av algoritmen för fas uppskattning. Detta är användbart för att diagnostisera alias när det inträffar på grund av ett `trotterStep` värde som är för stort.

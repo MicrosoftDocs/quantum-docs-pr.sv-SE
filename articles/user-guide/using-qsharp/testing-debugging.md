@@ -2,19 +2,19 @@
 title: Testa och felsöka
 description: Lär dig hur du använder enhets tester, fakta och intyg och dumpa funktioner för att testa och felsöka Quantum-program.
 author: tcNickolas
-ms.author: mamykhai@microsoft.com
+ms.author: mamykhai
 ms.date: 06/01/2020
 ms.topic: article
 uid: microsoft.quantum.guide.testingdebugging
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 2b5276da594ba263177d435c1153f6d96e29c4e8
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 2f2181d388a59c1c6c5a0f13c9aa49d5fa1e51ae
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87867921"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90833172"
 ---
 # <a name="testing-and-debugging"></a>Testa och felsöka
 
@@ -26,7 +26,7 @@ I det här avsnittet tar vi upp de verktyg som erbjuds av Q# för att testa och 
 En vanlig metod för att testa klassiska program är att skriva små program som heter *enhets test*, som kör kod i ett bibliotek och jämför dess utdata med förväntade utdata.
 Du kan till exempel se till att `Square(2)` returer `4` sedan du vet att du vet *en föregående* , $2 ^ 2 = $4.
 
-Q#har stöd för att skapa enhets tester för Quantum-program och som kan köras som tester i [xUnit](https://xunit.github.io/) unit test Framework.
+Q# har stöd för att skapa enhets tester för Quantum-program och som kan köras som tester i [xUnit](https://xunit.github.io/) unit test Framework.
 
 ### <a name="creating-a-test-project"></a>Skapa ett test projekt
 
@@ -69,7 +69,7 @@ Varje Q# åtgärd eller funktion som tar ett argument av typen `Unit` och reture
 ```
 Spara filen och kör alla tester. Det bör nu finnas två enhets test, en där `AllocateQubit` körs på `QuantumSimulator` och en där den körs i `ResourcesEstimator` . 
 
-Q#Kompilatorn känner igen de inbyggda målen `"QuantumSimulator"` , `"ToffoliSimulator"` och `"ResourcesEstimator"` som giltiga körnings mål för enhets tester. Det är också möjligt att ange ett fullständigt kvalificerat namn för att definiera ett anpassat körnings mål. 
+Q#Kompilatorn känner igen de inbyggda målen `"QuantumSimulator"` , `"ToffoliSimulator"` och `"ResourcesEstimator"` som giltiga kör mål för enhets test. Det är också möjligt att ange ett fullständigt kvalificerat namn för att definiera ett anpassat mål för körning. 
 
 ### <a name="running-no-locq-unit-tests"></a>Köra Q# enhets tester
 
@@ -113,7 +113,7 @@ Test Run Successful.
 Test execution time: 1.9607 Seconds
 ```
 
-Enhets test kan filtreras efter namn eller körnings mål:
+Enhets test kan filtreras efter namn eller mål för körning:
 
 ```bash 
 $ dotnet test --filter "Target=QuantumSimulator"
@@ -314,7 +314,7 @@ Följande exempel visar `DumpMachine` för några vanliga tillstånd:
 
 ***
 
-Eftersom <xref:microsoft.quantum.diagnostics.dumpmachine> är en del av <xref:microsoft.quantum.diagnostics> namn området måste du lägga till en `open` instruktion för att få åtkomst till den:
+Eftersom <xref:microsoft.quantum.diagnostics.dumpmachine> är en del av  <xref:microsoft.quantum.diagnostics> namn området måste du lägga till en `open` instruktion för att få åtkomst till den:
 
 ```qsharp
 namespace Samples {
@@ -333,7 +333,7 @@ namespace Samples {
 
 ### <a name="dumpregister"></a>DumpRegister
 
-<xref:microsoft.quantum.diagnostics.dumpregister>fungerar som <xref:microsoft.quantum.diagnostics.dumpmachine> , förutom att det också tar en matris med qubits för att begränsa den mängd information som är relevant för motsvarande qubits.
+<xref:microsoft.quantum.diagnostics.dumpregister> fungerar som <xref:microsoft.quantum.diagnostics.dumpmachine> , förutom att det också tar en matris med qubits för att begränsa den mängd information som är relevant för motsvarande qubits.
 
 Precis som med är <xref:microsoft.quantum.diagnostics.dumpmachine> den information som genereras av <xref:microsoft.quantum.diagnostics.dumpregister> beroende av mål datorn. För den fulla tillstånds Quantum simulatorn skriver den till filen Wave-funktionen till en global fas av det Quantum-underordnade systemet som genererats av den angivna qubits i samma format som <xref:microsoft.quantum.diagnostics.dumpmachine> .  Till exempel ta en gång till en dator med endast två qubits tilldelade och i Quantum State $ $ \begin{align} \ket{\psi} = \frac {1} {\sqrt {2} } \ket {00} -\frac{(1 + i)} {2} \ket {10} =-e ^ {-i \ PI/4} ((\frac {1} {\sqrt {2} } \ket {0} -\frac{(1 + i)} {2} \ket {1} ) \otimes \frac{-(1 + i)} {\sqrt {2} } \ket {0} ), \end{align} $ $ anrop <xref:microsoft.quantum.diagnostics.dumpregister> för `qubit[0]` genererar följande utdata:
 
@@ -384,6 +384,6 @@ namespace app
 
 ## <a name="debugging"></a>Felsökning
 
-Utöver funktionerna och `Assert` `Dump` fungerar har stöd för Q# en delmängd av standard funktioner för Visual Studio-fel sökning: [ställa in rad Bryt punkter](https://docs.microsoft.com/visualstudio/debugger/using-breakpoints), [stega igenom kod med hjälp av F10](https://docs.microsoft.com/visualstudio/debugger/navigating-through-code-with-the-debugger)och [kontrol lera att värden för klassiska variabler](https://docs.microsoft.com/visualstudio/debugger/autos-and-locals-windows) är möjliga vid kod körning i simulatorn.
+Utöver funktionerna och `Assert` `Dump` fungerar har stöd för Q# en delmängd av standard funktioner för Visual Studio-fel sökning: [ställa in rad Bryt punkter](https://docs.microsoft.com/visualstudio/debugger/using-breakpoints), [stega igenom kod med hjälp av F10](https://docs.microsoft.com/visualstudio/debugger/navigating-through-code-with-the-debugger)och [kontrol lera att värden för klassiska variabler](https://docs.microsoft.com/visualstudio/debugger/autos-and-locals-windows) är möjliga när du kör koden i simulatorn.
 
 Fel sökning i Visual Studio Code utnyttjar de fel söknings funktioner som anges i C# för Visual Studio Code-tillägg som drivs av OmniSharp och som kräver installation av den [senaste versionen](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp). 

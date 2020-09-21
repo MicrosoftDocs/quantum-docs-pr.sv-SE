@@ -2,19 +2,19 @@
 title: Djup räknare – Quantum Development Kit
 description: Lär dig mer om räknaren för Microsoft QDK-djupet, som använder Quantum trace Simulator för att samla in antalet djup för varje åtgärd som anropas i ett Q# program.
 author: vadym-kl
-ms.author: vadym@microsoft.com
+ms.author: vadym
 ms.date: 06/25/2020
 ms.topic: article
 uid: microsoft.quantum.machines.qc-trace-simulator.depth-counter
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 5c54f6fc479203d30c68c4958329605d4323f9ea
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 8280783adfcc2867c3a598a6f57d827125aadcfd
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87868329"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90833447"
 ---
 # <a name="quantum-trace-simulator-depth-counter"></a>Quantum trace Simulator: djup räknare
 

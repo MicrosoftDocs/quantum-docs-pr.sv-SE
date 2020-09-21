@@ -1,5 +1,5 @@
 ---
-title: Åtgärder och funktioner iQ#
+title: Åtgärder och funktioner i Q#
 description: Så här definierar och anropar du åtgärder och funktioner, och de kontrollerade och angränsande drifts specialiseringarna.
 author: gillenhaalb
 ms.author: a-gibec@microsoft.com
@@ -9,14 +9,14 @@ uid: microsoft.quantum.guide.operationsfunctions
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 76437c83df894fa86409e680f961d97e267c6869
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: c2ce999ea2a0fe7204f402fedb4cd3a3c15bd44b
+ms.sourcegitcommit: 8256ff463eb9319f1933820a36c0838cf1e024e8
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87867887"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90759432"
 ---
-# <a name="operations-and-functions-in-no-locq"></a>Åtgärder och funktioner iQ#
+# <a name="operations-and-functions-in-no-locq"></a>Åtgärder och funktioner i Q#
 
 ## <a name="defining-new-operations"></a>Definiera nya åtgärder
 
@@ -43,12 +43,12 @@ operation BitFlip(target : Qubit) : Unit {
 Nyckelordet `operation` inleder åtgärds definitionen, följt av namnet. här, `BitFlip` .
 Därefter definieras indatatypen ( `Qubit` ), tillsammans med ett namn, `target` för att referera till indatamängden i den nya åtgärden.
 Till sist `Unit` definierar den här åtgärdens utdata tom.
-`Unit`används på samma sätt som `void` i C# och andra tvingande språk och motsvarar `unit` i F # och andra funktionella språk.
+`Unit` används på samma sätt som `void` i C# och andra tvingande språk och motsvarar `unit` i F # och andra funktionella språk.
 
 Åtgärder kan också returnera fler intressanta typer än `Unit` .
 Till exempel <xref:microsoft.quantum.intrinsic.m> returnerar åtgärden utdata av typen `Result` , vilket representerar att ha utfört ett mått.  Du kan skicka den från en åtgärd till en annan åtgärd eller använda den med `let` nyckelordet för att definiera en ny variabel.
 
-Den här metoden gör det möjligt att representera klassisk beräkning som samverkar med Quantum-åtgärder på låg nivå, t. ex. i [upptätad kod](https://github.com/microsoft/QuantumKatas/tree/master/SuperdenseCoding):
+Den här metoden gör det möjligt att representera klassisk beräkning som samverkar med Quantum-åtgärder på låg nivå, t. ex. i [upptätad kod](https://github.com/microsoft/QuantumKatas/tree/main/SuperdenseCoding):
 
 ```qsharp
 operation DecodeSuperdense(here : Qubit, there : Qubit) : (Result, Result) {
@@ -100,14 +100,14 @@ Använd en Functor genom att använda den för en åtgärd som returnerar en ny 
 Om du till exempel använder `Adjoint` Functor till `Y` åtgärden returneras den nya åtgärden `Adjoint Y` . Du kan anropa den nya åtgärden som vilken annan åtgärd som helst.
 För att en åtgärd ska stödja programmet för `Adjoint` -eller `Controlled` -functors måste dess returtyp nödvändigt vis vara `Unit` . 
 
-#### <a name="adjoint-functor"></a>`Adjoint`functor
+#### <a name="adjoint-functor"></a>`Adjoint` functor
 
 Därför `Adjoint Y(q1)` tillämpar Functor på `Adjoint` `Y` åtgärden för att generera en ny åtgärd och tillämpar den nya åtgärden i `q1` .
 Den nya åtgärden har samma signatur och typ som bas åtgärd `Y` .
 I synnerhet stöder den nya åtgärden även `Adjoint` och stöder `Controlled` om och bara om bas åtgärden utfördes.
 `Adjoint`Functor är en egen invertering, det vill säga är `Adjoint Adjoint Op` alltid detsamma som `Op` .
 
-#### <a name="controlled-functor"></a>`Controlled`functor
+#### <a name="controlled-functor"></a>`Controlled` functor
 
 På samma sätt `Controlled X(controls, target)` tillämpar `Controlled` Functor på `X` åtgärden för att generera en ny åtgärd och tillämpar den nya åtgärden i `controls` och `target` .
 
@@ -123,11 +123,11 @@ Den nya åtgärden stöder `Controlled` och stöder `Adjoint` om och endast om d
 
 Om den ursprungliga åtgärden bara tog ett enda argument, kommer [singleton-tupel](xref:microsoft.quantum.guide.types) att spelas här.
 Till exempel `Controlled X` är den kontrollerade versionen av `X` åtgärden. 
-`X`har typen `(Qubit => Unit is Adj + Ctl)` , så `Controlled X` har typ `((Qubit[], (Qubit)) => Unit is Adj + Ctl)` ; på grund av singleton tuple-motsvarigheten är detta samma som `((Qubit[], Qubit) => Unit is Adj + Ctl)` .
+`X` har typen `(Qubit => Unit is Adj + Ctl)` , så `Controlled X` har typ `((Qubit[], (Qubit)) => Unit is Adj + Ctl)` ; på grund av singleton tuple-motsvarigheten är detta samma som `((Qubit[], Qubit) => Unit is Adj + Ctl)` .
 
 Kom ihåg att omsluta motsvarande argument för den kontrollerade versionen av åtgärden inom parentes för att konvertera dem till en tupel om bas åtgärden tog flera argument.
 Till exempel `Controlled Rz` är den kontrollerade versionen av `Rz` åtgärden. 
-`Rz`har typen `((Double, Qubit) => Unit is Adj + Ctl)` , så `Controlled Rz` har typen `((Qubit[], (Double, Qubit)) => Unit is Adj + Ctl)` .
+`Rz` har typen `((Double, Qubit) => Unit is Adj + Ctl)` , så `Controlled Rz` har typen `((Qubit[], (Double, Qubit)) => Unit is Adj + Ctl)` .
 Därför `Controlled Rz(controls, (0.1, target))` är det ett giltigt anrop till `Controlled Rz` (Observera parenteser runt `0.1, target` ).
 
 Ett annat exempel `CNOT(control, target)` kan implementeras som `Controlled X([control], target)` . Om ett mål ska kontrol leras av två Control qubits (CCNOT), använder du en `Controlled X([control1, control2], target)` instruktion.
@@ -192,7 +192,7 @@ Följande är ett fullständigt utbud av möjligheter, med några exempel på ex
 
 #### <a name="explicit-specialization-declarations"></a>Explicita specialiserings deklarationer
 
-Q#åtgärder kan innehålla följande uttryckliga specialiserings deklarationer:
+Q# åtgärder kan innehålla följande uttryckliga specialiserings deklarationer:
 
 - `body`Specialiseringen anger implementeringen av åtgärden utan att functors tillämpas.
 - `adjoint`Specialiseringen anger implementeringen av åtgärden med `Adjoint` Functor tillämpad.
@@ -329,9 +329,9 @@ För en åtgärd vars brödtext innehåller anrop till andra åtgärder som inte
 
 Använd en åtgärd med ytterligare functors som stöds överallt där du använder en åtgärd med färre functors men samma signatur. Använd till exempel en åtgärd av typen `(Qubit => Unit is Adj)` överallt där du använder en åtgärd av typen `(Qubit => Unit)` .
 
-Q#är *samvariant* med avseende på anrops bara Retur typer: ett anrop som returnerar en typ `'A` är kompatibelt med ett anrop med samma Indatatyp och en resultat typ som är kompatibel med `'A` .
+Q# är *samvariant* med avseende på anrops bara Retur typer: ett anrop som returnerar en typ `'A` är kompatibelt med ett anrop med samma Indatatyp och en resultat typ som är kompatibel med `'A` .
 
-Q#är *contravariant* med avseende på indatatyper: ett anrop som använder en typ `'A` som indatamängd är kompatibelt med ett anrop med samma resultat typ och en indatatyp som är kompatibel med `'A` .
+Q# är *contravariant* med avseende på indatatyper: ett anrop som använder en typ `'A` som indatamängd är kompatibelt med ett anrop med samma resultat typ och en indatatyp som är kompatibel med `'A` .
 
 Det innebär att man får följande definitioner,
 
@@ -360,7 +360,7 @@ Du kan
 - Returnera ett värde av typen `(Qubit[] => Unit is Adj + Ctl)` från `ConjugateInvertWith` .
 
 > [!IMPORTANT]
-> Q#0,3 introducerade en betydande skillnad i beteendet för användardefinierade typer.
+> Q# 0,3 introducerade en betydande skillnad i beteendet för användardefinierade typer.
 
 Användardefinierade typer behandlas som en omsluten version av den underliggande typen, i stället för som en undertyp.
 Det innebär att det inte går att använda ett värde av en användardefinierad typ där du förväntar dig ett värde av den underliggande typen.
@@ -509,7 +509,7 @@ Om du skapar en ny tupel eller UDT måste du dessutom också skapa en ny `Map` f
 Det är dock mycket av detta problem att du inte har gett kompilatorn den information som krävs för att identifiera hur de olika versionerna av `Map` är relaterade.
 I praktiken vill du att kompileraren ska behandla `Map` som en typ av matematisk funktion från Q# *typer* till Q# functions.
 
-Q#formalizes det här begreppet genom att tillåta att funktioner och åtgärder har *typ parametrar*, samt de vanliga tuple-parametrarna.
+Q# formalizes det här begreppet genom att tillåta att funktioner och åtgärder har *typ parametrar*, samt de vanliga tuple-parametrarna.
 I föregående exempel vill du tänka på att `Map` ha typ parametrar `Int, Pauli` i det första fallet och `Double, String` i det andra fallet.
 För det mesta använder du de här typ parametrarna som om de var vanliga typer. Använd värden av typen parametrar för att skapa matriser och tupler, anropa funktioner och åtgärder och tilldela till vanliga variabler eller föränderligt.
 
@@ -657,7 +657,7 @@ I princip skulle den klassiska logiken i `SquareOperation` ha varit mycket mer e
 
 ## <a name="recursion"></a>Rekursion
 
-Q#callables kan vara direkt eller indirekt rekursivt.
+Q# callables kan vara direkt eller indirekt rekursivt.
 Det vill säga en åtgärd eller funktion kan anropa sig själv, eller så kan den anropa ett annat anrop som direkt eller indirekt anropar den anropande åtgärden.
 
 Det finns två viktiga kommentarer om användningen av rekursion, men:

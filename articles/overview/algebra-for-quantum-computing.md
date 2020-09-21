@@ -9,12 +9,12 @@ uid: microsoft.quantum.overview.algebra
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 8b06eba9cadce84aca6f87e4451026ca2ffc794f
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: d7a8dff8d491a9ce6451148d2d27121f1c190ed0
+ms.sourcegitcommit: 8256ff463eb9319f1933820a36c0838cf1e024e8
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87867649"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90759330"
 ---
 # <a name="linear-algebra-for-quantum-computing"></a>Linjär algebra för kvantberäkning
 
@@ -22,8 +22,8 @@ Linjär algebra är språket för kvantberäkning. Du behöver inte kunna det f�
 
 På samma sätt som kunskaper om [de grundläggande begreppen inom kvantfysik](xref:microsoft.quantum.overview.understanding) kan hjälpa dig att förstå kvantberäkning kan grundläggande linjär algebra vara till hjälp när du vill lära dig hur kvantalgoritmer fungerar. Du bör åtminstone ha kunskaper om **vektorer** och **matrismultiplikation**. Om du behöver uppdatera dina kunskaper om dessa algebrabegrepp finns här några självstudier som beskriver grunderna:
 
-- [Jupyter Notebook-självstudie om linjär algebra](https://github.com/microsoft/QuantumKatas/tree/master/tutorials/LinearAlgebra)
-- [Jupyter Notebook-självstudie om komplex aritmetik](https://github.com/microsoft/QuantumKatas/tree/master/tutorials/ComplexArithmetic)
+- [Jupyter Notebook-självstudie om linjär algebra](https://github.com/microsoft/QuantumKatas/tree/main/tutorials/LinearAlgebra)
+- [Jupyter Notebook-självstudie om komplex aritmetik](https://github.com/microsoft/QuantumKatas/tree/main/tutorials/ComplexArithmetic)
 - [Linjär algebra för kvantberäkning](https://cds.cern.ch/record/1522001/files/978-1-4614-6336-8_BookBackMatter.pdf)
 - [Grunderna inom linjär algebra](https://www.math.ubc.ca/~carrell/NB.pdf)
 - [Introduktion till kvantberäkning](https://www.codeproject.com/Articles/5155638/Quantum-Computation-Primer-Part-1#exploring-quantum-superposition)

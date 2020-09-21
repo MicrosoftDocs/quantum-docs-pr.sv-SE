@@ -1,20 +1,20 @@
 ---
 title: Simulera Hamiltonian Dynamics
 description: Lär dig hur du använder Trotter-Suzuki formler och qubitization för att arbeta med Hamiltonian-simuleringar.
-author: nathanwiebe2
-ms.author: nawiebe@microsoft.com
+author: bradben
+ms.author: v-benbra
 ms.date: 10/09/2017
 ms.topic: article-type-from-white-list
 uid: microsoft.quantum.chemistry.concepts.simulationalgorithms
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 40f79a66ae95e20a8b1c19af735eedca5e3c15ef
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 299eb1484a697ad9d1577aabb44ccb61e908bae3
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87869536"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90834014"
 ---
 # <a name="simulating-hamiltonian-dynamics"></a>Simulera Hamiltonian Dynamics
 
@@ -46,9 +46,9 @@ Den enklaste familjen av Hamiltonians och utan tvekan mest användbar, som vi ka
 Pauli-operatörer kan enkelt simuleras eftersom de kan diagonalt med Clifford-åtgärder (som är standard grindar i Quantum Computing).
 Efter att de har blivit diagonala kan deras Eigenvalues hittas genom att pariteten för de qubits som fungerar.
 
-Till exempel $ $ e ^ {-iX\otimes X t} = (H\otimes H) e ^ {-iZ\otimes Z t} (H\otimes H), $ $ WHERE $ $ e ^ {-i Z \otimes Z t} = \begin{bmatrix} e ^ {-IT} & 0 & 0 & 0\\\
-        0 & e ^ {i t} & 0 & 0\\\
-        0 & 0 & e ^ {IT} & 0\\\
+Till exempel $ $ e ^ {-iX\otimes X t} = (H\otimes H) e ^ {-iZ\otimes Z t} (H\otimes H), $ $ WHERE $ $ e ^ {-i Z \otimes Z t} = \begin{bmatrix} e ^ {-IT} & 0 & 0 & 0 \\\
+        0 & e ^ {i t} & 0 & 0 \\\
+        0 & 0 & e ^ {IT} & 0 \\\
         0 & 0 & 0 & e ^ {-IT} \end{bmatrix}.
 $ $ Här, $e ^ {-iHt} \ket {00} = e ^ {IT} \ket {00} $ och $e ^ {-iHt} \ket {01} = e ^ {-IT} \ket {01} $, som kan visas direkt till följd av det faktum att pariteten på $0 $ är $0 $ medan pariteten för bit strängen $1 $ är $1 $.
 
@@ -65,7 +65,7 @@ Exponenter för Pauli-operatörer kan implementeras direkt i Q# med hjälp av <x
 
 För Fermionic Hamiltonians mappar den [Jordanien-Wigner diskompositionen](xref:microsoft.quantum.chemistry.concepts.jordanwigner) enkelt in Hamiltonian i en summa av Pauli-operatörer.
 Det innebär att ovanstående metod enkelt kan anpassas till att simulera kemi.
-I stället för att manuellt loopa över alla Pauli-termer i Wigner-representationen nedan är ett enkelt exempel på hur en sådan simulering i kemi skulle se ut.
+I stället för att manuellt loopa över alla Pauli-termer i Wigner-representationen nedan är ett enkelt exempel på hur en sådan simulering i kemi ser ut.
 Vår start punkt är en [Jordanien – Wigner kodning](xref:microsoft.quantum.chemistry.concepts.jordanwigner) av Fermionic-Hamiltonian, uttryckt i kod som en instans av `JordanWignerEncoding` klassen.
 
 ```csharp
@@ -145,7 +145,7 @@ Detta kan ses från det faktum att $ \operatorname{Select} ^ 2 \ ket {j} \ket{\p
 
 Den andra subrutinen kallas $ \operatorname{Prepare} $.
 Medan Select-åtgärden ger en enhetlig åtkomst till var och en av Hamiltonian termer $H _j $, ger en metod för att komma åt koefficienterna $h _j $, \begin{Equation} \operatorname{Prepare}\ket {0} = \ sum_j \sqrt{\frac{h_j} {| H | _1}} \ket{j}.
-\end{Equation}, med hjälp av en multiplicering-kontrollerad fas grind, ser vi att $ $ \Lambda\ket {0} ^ {\otimes n} = \begin{Cases} \- \ket{x} & \text{IF} x = 0\\\
+\end{Equation}, med hjälp av en multiplicering-kontrollerad fas grind, ser vi att $ $ \Lambda\ket {0} ^ {\otimes n} = \begin{Cases} \- \ket{x} & \text{IF} x = 0 \\\
         \ket{x} & \text{otherwise} \end{cases}.
 $$
 
@@ -157,10 +157,10 @@ Operatorn guida, $W $, kan uttryckas som $ \operatorname{Select} $ och $R $-åtg
 Dessa under rutiner är enkla att konfigurera i Q# .
 Som exempel bör du överväga den enkla qubit-Ising Hamiltonian där $H = X_1 + X_2 + Z_1 Z_2 $.
 I det här fallet Q# anropas kod som implementerar åtgärden $ \operatorname{Select} $ av <xref:microsoft.quantum.canon.multiplexoperations> , medan $ \operatorname{prepare} $-åtgärden kan implementeras med hjälp av <xref:microsoft.quantum.preparation.preparearbitrarystate> .
-Ett exempel som inbegriper simulering av Hubbard-modellen finns som ett [ Q# exempel](https://github.com/microsoft/Quantum/tree/master/samples/simulation/hubbard).
+Ett exempel som inbegriper simulering av Hubbard-modellen finns som ett [ Q# exempel](https://github.com/microsoft/Quantum/tree/main/samples/simulation/hubbard).
 
 Att manuellt ange dessa steg för valfria kemi-problem skulle kräva mycket ansträngning, vilket undviks med hjälp av kemi-biblioteket.
-På samma sätt som för Trotter – Suzuki simulerings algoritmen ovan `JordanWignerEncodingData` skickas till den bekvämlighet `QubitizationOracle` som returnerar en funktions Operator, förutom andra parametrar som krävs för körningen.
+På samma sätt som för Trotter – Suzuki simulerings algoritmen ovan `JordanWignerEncodingData` skickas till den bekvämlighets funktion `QubitizationOracle` som returnerar den guidade operatorn, förutom andra parametrar som krävs för körningen.
 
 ```qsharp
 // qSharpData passed from driver

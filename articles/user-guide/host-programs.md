@@ -9,12 +9,12 @@ uid: microsoft.quantum.guide.host-programs
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: f1eca44dabd72cd107d72d3b9e3ad1081c19c27d
-ms.sourcegitcommit: 11bd357baeb6ab53a402882979e75964d0869b57
+ms.openlocfilehash: f24c608ffc6522cb50f512de1a02b3db4b290e83
+ms.sourcegitcommit: 8256ff463eb9319f1933820a36c0838cf1e024e8
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88992198"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90759824"
 ---
 # <a name="ways-to-run-a-no-locq-program"></a>Sätt att köra ett Q# program
 
@@ -250,7 +250,7 @@ Kärnornas kärna baseras på Q# kompilatorn som gör innehållet i Q# filen til
 En av de främsta fördelarna med att använda ett värd program är att de klassiska data som returneras av Q# programmet kan bearbetas ytterligare på värd språket.
 Detta kan bestå av en avancerad data bearbetning (t. ex. något som inte kan utföras internt i Q# ) och sedan anropa ytterligare Q# åtgärder baserat på dessa resultat eller något så enkelt som att rita Q# resultatet.
 
-Det allmänna schemat visas här och vi diskuterar de olika implementeringarna för python och C# nedan. Ett exempel som använder ett F # Host-program finns i [.net-samverkan exempel](https://github.com/microsoft/Quantum/tree/master/samples/interoperability/dotnet).
+Det allmänna schemat visas här och vi diskuterar de olika implementeringarna för python och C# nedan. Ett exempel som använder ett F # Host-program finns i [.net-samverkan exempel](https://github.com/microsoft/Quantum/tree/main/samples/interoperability/dotnet).
 
 <br/>
 <img src="../media/hostprograms_host_program_diagram.png" alt="Q# program from a host program" width="700">
@@ -409,7 +409,7 @@ using NamespaceName;                              // make the Q# namespace avail
 ```
 
 Härnäst deklarerar vi vårt C#-namnrum, några andra bitar och delar (se hela kod blocket nedan) och sedan en klassisk programmering som vi vill ha (t. ex. beräknings argument för Q# callables).
-Den senare är inte nödvändig i vårt fall, men ett exempel på en sådan användning finns i  [exempel på .net-interoperabilitet](https://github.com/microsoft/Quantum/tree/master/samples/interoperability/dotnet).
+Den senare är inte nödvändig i vårt fall, men ett exempel på en sådan användning finns i  [exempel på .net-interoperabilitet](https://github.com/microsoft/Quantum/tree/main/samples/interoperability/dotnet).
 
 #### <a name="target-machines"></a>Måldatorer
 
@@ -580,7 +580,7 @@ BorrowedWidth   0
 Q# Jupyter Notebooks använder i- Q# kärnan, vilket gör att du kan definiera, kompilera och köra Q# callables i en enda Notebook---alla instruktioner, kommentarer och annat innehåll.
 Det innebär att det är möjligt att importera och använda innehållet i filer, men det är `*.qs` Q# inte nödvändigt i körnings modellen.
 
-Här kommer vi att lära dig hur du kör de Q# åtgärder som definierats ovan, men en mer bred introduktion till att använda Q# Jupyter Notebooks finns i [intro till Q# och Jupyter Notebooks](https://github.com/microsoft/Quantum/blob/master/samples/getting-started/intro-to-iqsharp/Notebook.ipynb).
+Här kommer vi att lära dig hur du kör de Q# åtgärder som definierats ovan, men en mer bred introduktion till att använda Q# Jupyter Notebooks finns i [intro till Q# och Jupyter Notebooks](https://github.com/microsoft/Quantum/blob/main/samples/getting-started/intro-to-iqsharp/Notebook.ipynb).
 
 ### <a name="defining-operations"></a>Definiera åtgärder
 
@@ -591,7 +591,7 @@ När du kör en cell med en sådan instruktion, är definitionerna från dessa n
 
 > [!NOTE]
 > Callables från [Microsoft. Quantum. inneboende](xref:microsoft.quantum.intrinsic) och [Microsoft. Quantum. Canon](xref:microsoft.quantum.canon) (t. ex. [`H`](xref:microsoft.quantum.intrinsic.h) och [`ApplyToEach`](xref:microsoft.quantum.canon.applytoeach) ) är automatiskt tillgängliga för åtgärder som definierats i celler i Q# Jupyter notebook-datorer.
-> Detta gäller dock inte för kod som hämtas från externa Q# källfiler (en process som visas i [intro till Q# och Jupyter Notebooks](https://github.com/microsoft/Quantum/blob/master/samples/getting-started/intro-to-iqsharp/Notebook.ipynb)). 
+> Detta gäller dock inte för kod som hämtas från externa Q# källfiler (en process som visas i [intro till Q# och Jupyter Notebooks](https://github.com/microsoft/Quantum/blob/main/samples/getting-started/intro-to-iqsharp/Notebook.ipynb)). 
 > 
 
 På samma sätt kräver definiering av åtgärder bara att Q# koden skrivs och att cellen körs.

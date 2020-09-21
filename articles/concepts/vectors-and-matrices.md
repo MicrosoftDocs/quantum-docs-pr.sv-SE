@@ -1,6 +1,6 @@
 ---
 rubrik: vektorer och matriser i Beskrivning av Quantum Computing: Lär dig grunderna för hur du arbetar med vektorer och matriser.
-författare: QuantumWriter UID: Microsoft. Quantum. Concepts. Vectors MS. author: nawiebe@microsoft.com MS. Date: 12/11/2017 MS. topic: artikeln No-Loc:
+författare: QuantumWriter-UID: Microsoft. Quantum. Concepts. Vectors MS. author: v-benbra MS. Date: 12/11/2017 MS. topic: artikeln No-Loc:
 - "Q#"
 - "$$v"
 - "$$"
@@ -93,7 +93,7 @@ $$v =\begin{bmatrix}
 v_1\\\\
 v_2\\\\
 \vdots\\\\
-v_n\end{bmatrix}$$
+v_n \end{bmatrix}$$
 
 Normen för en Vector $ v $ definieras som $ \sqrt { \sum \_ i | v \_ i | ^ 2 } $ . En Vector anses vara av enhets norm (eller också kallas den för en [*enhets vektor*](https://en.wikipedia.org/wiki/Unit_vector)) om dess norm är $ 1 $ . Det [*angränsande av en Vector*](https://en.wikipedia.org/wiki/Adjoint_matrix) $ v $ har $ tilldelats v ^ \dagger $ och definieras som följande rad vektor där $ \* $ anger det komplexa konjugatet.
 
@@ -114,12 +114,12 @@ u_1\\\\
 u_2\\\\
 \vdots\\\\
 u_n \end{bmatrix} ~ \mathrm { och}~
-lodrät=\begin{bmatrix}
+lodrät =\begin{bmatrix}
     v_1\\\\
     v_2\\\\
     \vdots\\\\
     V_n \end{bmatrix} och ~ \mathrm { sedan}~
-Au + BV=\begin{bmatrix}
+Au + BV =\begin{bmatrix}
 au_1 + bv_1\\\\
 au_2 + bv_2\\\\
 \vdots\\\\
@@ -128,7 +128,7 @@ $$
 
 En [*matris*](https://en.wikipedia.org/wiki/Matrix_(mathematics)) med storleken $ m \times n $ är en samling med $ mn- $ komplexa tal ordnade i $ m- $ rader och $ n $ kolumner som visas nedan:
 
-$$Avstånd= 
+$$Avstånd = 
 \begin{bmatrix}
 M_ { 11 } ~~ M_ { 12 } ~~ \cdots ~~ M_ { 1N}\\\\
 M_ { 21 } ~~ M_ { 22 } ~~ \cdots ~~ M_ { 2n}\\\\
@@ -183,7 +183,7 @@ En matris $ m $ sa att vara [*Hermitian*](https://en.wikipedia.org/wiki/Hermitia
 Slutligen är bevarans [*produkt*](https://en.wikipedia.org/wiki/Tensor_product) (eller Kronecker produkt) av två matriser $ m $ med storleken $ m \times n $ och $ n $ av storlek $ p \times q $ en större matris $ p = m \otimes n $ av storlek $ MP \times NQ $ och hämtas från $ M $ och $ n $ enligt följande:
 
 \begin{align}
-    M \otimes N&=
+    M \otimes N &=
     \begin{bmatrix}
         M_ { 11 } ~~ \cdots ~~ M_ { 1N }\\\\
         \ddots\\\\
@@ -211,7 +211,7 @@ $$
     \begin{bmatrix}
         a \\\\ b \end{bmatrix} \otimes \begin{bmatrix} c \\\\ d \\\\ e \end{bmatrix}=
     \begin{bmatrix}
-        a \begin{bmatrix} c \\\\ d \\\\ e\end{bmatrix}
+        a \begin{bmatrix} c \\\\ d \\\\ e \end{bmatrix}
         \\\\[1,5 EM] b \begin{bmatrix} c \\\\ d \\\\ e\end{bmatrix}
     \end{bmatrix}
     =\begin{bmatrix}a c a \\\\ d \\\\ a e \\\\ b c \\\\ b d \\\\\end{bmatrix}
@@ -221,26 +221,26 @@ och
 
 $$
     \begin{bmatrix}
-        a \ b \\\\ c \ d\end{bmatrix}
+        a \ b \\\\ c \ d \end{bmatrix}
     \otimes 
     \begin{bmatrix}
-        e \ f \\\\ g \ h\end{bmatrix}
+        e \ f \\\\ g \ h \end{bmatrix}
      =
     \begin{bmatrix}
     en\begin{bmatrix}
-    e \ f \\\\ g \ h\end{bmatrix}
+    e \ f \\\\ g \ h \end{bmatrix}
     t\begin{bmatrix}
-    e \ f \\\\ g \ h\end{bmatrix}
+    e \ f \\\\ g \ h \end{bmatrix}
     \\\\[1em] c\begin{bmatrix}
-    e \ f \\\\ g \ h\end{bmatrix}
+    e \ f \\\\ g \ h \end{bmatrix}
     styr\begin{bmatrix}
-    e \ f \\\\ g \ h\end{bmatrix}
+    e \ f \\\\ g \ h \end{bmatrix}
     \end{bmatrix}
     =
     \begin{bmatrix}
-    AE \ AF \ BF\\\\
-    AG \ Ah \ BG \ BH\\\\
-    CE \ CF \ de \ DF\\\\
+    AE \ AF \ BF \\\\
+    AG \ Ah \ BG \ BH \\\\
+    CE \ CF \ de \ DF \\\\
     CG \ CH \ GD \ DH \end{bmatrix} .
 $$
 

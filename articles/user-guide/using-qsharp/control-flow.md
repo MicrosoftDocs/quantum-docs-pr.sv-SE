@@ -1,5 +1,5 @@
 ---
-title: Kontroll flöde iQ#
+title: Kontroll flöde i Q#
 description: Slingor, villkor osv.
 author: gillenhaalb
 ms.author: a-gibec@microsoft.com
@@ -9,23 +9,23 @@ uid: microsoft.quantum.guide.controlflow
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: fc619d64bfebfc27d7feac6dafb2dd4cf22825d6
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: e8c873868d6f697fc90b23a38c11f35e46b40c4f
+ms.sourcegitcommit: 8256ff463eb9319f1933820a36c0838cf1e024e8
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87867956"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90759670"
 ---
-# <a name="control-flow-in-no-locq"></a>Kontroll flöde iQ#
+# <a name="control-flow-in-no-locq"></a>Kontroll flöde i Q#
 
 I en åtgärd eller funktion körs varje instruktion i ordning, på liknande sätt som andra vanliga tvingande klassiska språk.
 Du kan dock ändra kontroll flödet på tre olika sätt:
 
-* `if`instruktioner
-* `for`slingor
-* `repeat-until-success`slingor
+* `if` instruktioner
+* `for` slingor
+* `repeat-until-success` slingor
 
-`if` `for` Konstruktionerna för och kontroll flödet fortsätter att vara bekanta med de flesta klassiska programmeringsspråk. [`Repeat-until-success`](#repeat-until-success-loop)slingor beskrivs längre fram i den här artikeln.
+`if` `for` Konstruktionerna för och kontroll flödet fortsätter att vara bekanta med de flesta klassiska programmeringsspråk. [`Repeat-until-success`](#repeat-until-success-loop) slingor beskrivs längre fram i den här artikeln.
 
 Det är viktigt `for` att du använder slingor och `if` uttryck i åtgärder för vilka [specialisering](xref:microsoft.quantum.guide.operationsfunctions) genereras automatiskt. I det scenariot kastar det intilliggande av en `for` slinga riktningen och tar det angränsande av varje iteration.
 Den här åtgärden följer principen "skor-och-SOCKS": om du vill ångra att sätta igång på SOCKS och sedan skor måste du ångra att sätta på skor och sedan ångra att sätta igång på SOCKS. 
@@ -68,7 +68,7 @@ if (i == 1) {
 }
 ```
 
-## <a name="for-loop"></a>For-slinga
+## <a name="for-loop"></a>For-loop
 
 `for`Instruktionen stöder iteration över ett heltals intervall eller en matris.
 Instruktionen består av nyckelordet `for` följt av en symbol-eller symbol-tupel, nyckelordet `in` och ett uttryck av typen `Range` eller matris, allt inom parentes och ett instruktions block.
@@ -148,7 +148,7 @@ Fler exempel och mer information finns i [Upprepa-till-Slutför-exempel](#repeat
 > [!TIP]   
 > Undvik att använda repetitions-till-Slutför-slingor inuti functions. Använd *while* -slingor för att tillhandahålla motsvarande funktioner i functions. 
 
-## <a name="while-loop"></a>While-slinga
+## <a name="while-loop"></a>While-loop
 
 Upprepa-tills-lyckad-mönster har en mycket Quantum-speciell connotation. De används ofta i vissa klasser av Quantum-algoritmer – därför den dedikerade språk konstruktionen i Q# . Loopar som bryts baserat på ett villkor och vars körnings längd är således okänd vid kompileringen, hanteras dock med särskild försiktighet i en Quantum-körning. Användningen i functions är dock inte problematisk eftersom dessa slingor bara innehåller kod som körs på konventionell (icke-Quantum) maskin vara. 
 
@@ -248,7 +248,7 @@ fixup {
 }
 ```
 
-### <a name="rus-without-fixup"></a>RU: er utan`fixup`
+### <a name="rus-without-fixup"></a>RU: er utan `fixup`
 
 I det här exemplet visas en ru: er-slinga utan korrigerings steget. Koden är en Probabilistic-krets som implementerar en viktig rotations grind $V _3 = (\boldone + 2 i Z)/\sqrt {5} $ med hjälp av `H` och- `T` grindarna.
 Slingan slutar i $ \frac {8} {5} $-upprepningar i genomsnitt.
@@ -330,7 +330,7 @@ operation PrepareStateUsingRUS(target : Qubit) : Unit {
 }
 ```
 
-Mer information finns i avsnittet [om enhets testning som tillhandahålls med standard biblioteket](https://github.com/microsoft/Quantum/blob/master/samples/diagnostics/unit-testing/RepeatUntilSuccessCircuits.qs):
+Mer information finns i avsnittet [om enhets testning som tillhandahålls med standard biblioteket](https://github.com/microsoft/Quantum/blob/main/samples/diagnostics/unit-testing/RepeatUntilSuccessCircuits.qs):
 
 ## <a name="next-steps"></a>Nästa steg
 
