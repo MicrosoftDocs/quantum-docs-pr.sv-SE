@@ -2,18 +2,18 @@
 title: Exempel på NWChem Quantum program
 description: Använd en NWChem-kortlek och gå igenom ett exempel på hur man hämtar antalet grindar för simulering av Quantum kemi.
 author: cgranade
-ms.author: chgranad@microsoft.com
+ms.author: chgranad
 ms.date: 10/23/2018
 uid: microsoft.quantum.chemistry.examples.endtoend
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 528c34ea9b28b2f9b8f9a8bad681557f44bfcdaa
-ms.sourcegitcommit: 8256ff463eb9319f1933820a36c0838cf1e024e8
+ms.openlocfilehash: 986ff2c2ff144c57bd01ddeea0467d0168fd9334
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90759723"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90835765"
 ---
 # <a name="end-to-end-with-nwchem"></a>Slutpunkt till slutpunkt med NWChem #
 
@@ -46,14 +46,14 @@ Import-Module InvokeNWChem.psm1
 ```
 
 > [!NOTE]
-> Som standard förhindrar Windows körning av skript eller moduler som säkerhets mått.
-> Om du vill tillåta moduler som `Invoke-NWChem.psm1` att köras i Windows kan du behöva ändra körnings principen.
+> Som standard förhindrar Windows att skript eller moduler körs som ett säkerhets mått.
+> Om du vill tillåta moduler som `Invoke-NWChem.psm1` att köras i Windows kan du behöva ändra principen.
 > Det gör du genom att köra `Set-ExecutionPolicy` kommandot:
 > ```powershell
 > Set-ExecutionPolicy RemoteSigned -Scope Process
 > ```
-> Körnings principen kommer sedan att återställas när du avslutar PowerShell.
-> Om du vill spara körnings principen använder du ett annat värde för `-Scope` :
+> Principen kommer att återställas när du avslutar PowerShell.
+> Om du vill spara principen använder du ett annat värde för `-Scope` :
 > ```powershell
 > Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 > ```

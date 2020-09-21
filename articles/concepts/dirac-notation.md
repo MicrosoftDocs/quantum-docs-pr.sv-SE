@@ -1,6 +1,6 @@
 ---
 title: Dirac notation-Beskrivning: Lär dig hur du använder Dirac-notation för att representera Quantum-tillstånd och för att simulera Quantum-åtgärder.
-författare: QuantumWriter UID: Microsoft. Quantum. Concepts. Dirac MS. author: nawiebe@microsoft.com MS. Date: 12/11/2017 MS. topic: artikeln No-Loc:
+författare: QuantumWriter UID: Microsoft. Quantum. Concepts. Dirac MS. author: v-benbra MS. Date: 12/11/2017 MS. topic: artikeln No-Loc:
 - "Q#"
 - "$$v"
 - "$$"
@@ -230,5 +230,5 @@ Det här syftet med att representera statusen som en matris, i stället för en 
 Allmänna Quantum State-operatörer i stället för vektorer är allmänt förekommande i vissa områden av Quantum Computing, men är inte nödvändiga för att förstå grunderna i fältet.
 För den intresserade läsaren rekommenderar vi att du läser en av de referens böcker som finns i [för mer information](xref:microsoft.quantum.more-information).
 
-## <a name="no-locq-gate-sequences-equivalent-to-quantum-states"></a>Q#grindar som motsvarar Quantum-tillstånd
+## <a name="no-locq-gate-sequences-equivalent-to-quantum-states"></a>Q# grindar som motsvarar Quantum-tillstånd
 En slut punkt som kan höja om Quantum-notation och Q# programmeringsspråk: vid början av det här dokumentet nämnde vi att steget Quantum är det grundläggande objektet av information i Quantum Computing.  Det kan sedan bli en överraskning om Q# det inte finns någon begreppet Quantum-tillstånd.  I stället beskrivs alla tillstånd endast av de åtgärder som används för att förbereda dem.  Föregående exempel är en utmärkt illustration av detta.  I stället för att uttrycka en enhetlig överplacering över varje Quantum bit-sträng i ett register kan vi representera resultatet som $ H ^ { \otimes n } \ket { 0 } $ .  Den här exponentiellt kortare beskrivningen av tillstånden har inte bara fördelen att vi kan göra en klassisk orsak till den, men det är också en kortfattad beskrivning av de åtgärder som behövs för att spridas via program varu stacken för att implementera algoritmen.  Därför Q# är det utformat att generera grind sekvenser i stället för Quantum-tillstånd, men på en teoretisk nivå är båda perspektiven likvärdiga.

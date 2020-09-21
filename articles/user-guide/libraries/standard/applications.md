@@ -9,12 +9,12 @@ ms.topic: article
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 4caacaad127f8a4d3b6f77efe35ebe7d3b97cacf
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: a3380627aa196a749dd9487ad603aad29f34ae29
+ms.sourcegitcommit: 8256ff463eb9319f1933820a36c0838cf1e024e8
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87868771"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90759936"
 ---
 # <a name="applications"></a>Program #
 
@@ -52,9 +52,9 @@ I det särskilda fallet där Hamiltonian delas upp i en summa av Hermitian delar
 
 > [!TIP]
 > Program av algoritmen Trotter-Suzuki simulering beskrivs i exemplen.
-> För Ising-modellen som bara använder de inbyggda åtgärder som tillhandahålls av varje måldator, se [ **SimpleIsing** -exemplet](https://github.com/microsoft/Quantum/blob/master/samples/simulation/ising/simple).
-> Ising-modellen med hjälp av Trotter-Suzuki biblioteks kontroll struktur finns i [ **IsingTrotter** -exemplet](https://github.com/microsoft/Quantum/tree/master/samples/simulation/ising/trotter-evolution).
-> För molekyliga väte med Trotter-Suzuki biblioteks kontroll struktur kan du se [exempel på **H2-simulering** ](https://github.com/microsoft/Quantum/tree/master/samples/simulation/h2/command-line).
+> För Ising-modellen som bara använder de inbyggda åtgärder som tillhandahålls av varje måldator, se [ **SimpleIsing** -exemplet](https://github.com/microsoft/Quantum/blob/main/samples/simulation/ising/simple).
+> Ising-modellen med hjälp av Trotter-Suzuki biblioteks kontroll struktur finns i [ **IsingTrotter** -exemplet](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/trotter-evolution).
+> För molekyliga väte med Trotter-Suzuki biblioteks kontroll struktur kan du se [exempel på **H2-simulering** ](https://github.com/microsoft/Quantum/tree/main/samples/simulation/h2/command-line).
 
 I många fall vill vi implementera simulerings algoritmen, men den är inte intresse rad av implementeringens information. Till exempel, den andra ordnings integreraren uppskattar $ $ \begin{align} U (t) & = \left (e ^ {-iH \_ 0 t/2R} e ^ {-IH \_ 1 t/2R} \cdots e ^ {-IH \_ {d-1} t/2R} e ^ {-IH \_ {d-1} t/2R} \cdots e ^ {-IH \_ 1 t/2R} e ^ {-IH \_ 0 t/2R} \right) ^ {r} + \mathcal{O} (d ^ 3 \ max_j \\ | H \_ j \\ | ^ 3 t ^ 3/r ^ 2), \end{align} $ $ med en produkt av $2rd $-villkor. Större beställningar innebär ännu fler villkor och optimerade varianter kan kräva hög icke-trivial ordningsföljd på exponenterna. Andra avancerade algoritmer kan också innebära användning av Ancilla-qubits i mellanliggande steg. Därför har vi paket simulerings algoritmer i filen Canon som användardefinierad typ
 
@@ -87,8 +87,8 @@ function TimeDependentTrotterSimulationAlgorithm(
 ```
 
 > [!TIP]
-> Program för simulerings biblioteket beskrivs i exemplen. För fas uppskattning i Ising-modellen med `SimulationAlgorithm` kan du se [ **IsingPhaseEstimation** -exemplet](https://github.com/microsoft/Quantum/tree/master/samples/simulation/ising/phase-estimation).
-> För förberedelse av adiabatic-tillstånd i Ising `TimeDependentSimulationAlgorithm` -modellen kan du se [exemplet på **AdiabaticIsing** ](https://github.com/microsoft/Quantum/tree/master/samples/simulation/ising/adiabatic).
+> Program för simulerings biblioteket beskrivs i exemplen. För fas uppskattning i Ising-modellen med `SimulationAlgorithm` kan du se [ **IsingPhaseEstimation** -exemplet](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/phase-estimation).
+> För förberedelse av adiabatic-tillstånd i Ising `TimeDependentSimulationAlgorithm` -modellen kan du se [exemplet på **AdiabaticIsing** ](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/adiabatic).
 
 
 ### <a name="adiabatic-state-preparation--phase-estimation"></a>Adiabatic för att förbereda & fas uppskattning ###
@@ -129,14 +129,14 @@ operation EstimateAdiabaticStateEnergy(
 }
 ```
 
-`nQubits`är antalet qubits som används för att koda det inledande Quantum-läget. `statePrepUnitary`förbereder start tillstånd från beräknings basen $ \ket{0\cdots 0} $. `adiabaticUnitary`är en enhetlig åtgärd som implementerar adiabatic-tillstånds förberedelse, till exempel producerad av `InterpolatedEvolution` funktionen. `qpeUnitary`är den enhetliga åtgärd som används för att utföra fas uppskattningar i det resulterande steget. `phaseEstAlgorithm`är vårt val av algoritm för fas uppskattning.
+`nQubits` är antalet qubits som används för att koda det inledande Quantum-läget. `statePrepUnitary` förbereder start tillstånd från beräknings basen $ \ket{0\cdots 0} $. `adiabaticUnitary` är en enhetlig åtgärd som implementerar adiabatic-tillstånds förberedelse, till exempel producerad av  `InterpolatedEvolution` funktionen. `qpeUnitary` är den enhetliga åtgärd som används för att utföra fas uppskattningar i det resulterande steget. `phaseEstAlgorithm` är vårt val av algoritm för fas uppskattning.
 
 > [!TIP]
-> Program för förberedelse av adiabatic-tillstånd beskrivs i exemplen. För Ising-modellen med en manuell implementering av adiabatic-tillstånds förberedelse jämfört med `AdiabaticEvolution` funktionen kan du se [exemplet på **AdiabaticIsing** ](https://github.com/microsoft/Quantum/tree/master/samples/simulation/ising/adiabatic).
-> För fas uppskattning och förberedelse av adiabatic-tillstånd i Ising-modellen, se [exemplet på **IsingPhaseEstimation** ](https://github.com/microsoft/Quantum/tree/master/samples/simulation/ising/phase-estimation).
+> Program för förberedelse av adiabatic-tillstånd beskrivs i exemplen. För Ising-modellen med en manuell implementering av adiabatic-tillstånds förberedelse jämfört med `AdiabaticEvolution` funktionen kan du se [exemplet på **AdiabaticIsing** ](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/adiabatic).
+> För fas uppskattning och förberedelse av adiabatic-tillstånd i Ising-modellen, se [exemplet på **IsingPhaseEstimation** ](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/phase-estimation).
 
 > [!TIP]
-> [Simuleringen av molekylen väte](https://github.com/microsoft/Quantum/tree/master/samples/simulation/h2/command-line) är ett intressant och kort exempel. Modell-och experiment resultaten som rapporteras i [O'Malley et. Al.](https://arxiv.org/abs/1512.06860) kräver bara Pauli-matriser och använder formatet $ \hat H = g \_ {0} I \_ 0i \_ 1 + g \_ 1 {z \_ 0} + g \_ 2 {Z \_ 1} + g \_ 3 {z \_ 0} {z \_ 1} + g \_ 4 {y \_ 0} {y \_ 1} + g \_ 5 {x \_ 0} {x \_ 1} $. Detta är en effektiv Hamiltonian som bara behöver bara två qubits, där konstanterna $g $ beräknas från avståndet $R $ mellan de två väte-atomerna. Med hjälp av Canon functions, konverteras Johan till unitaries och sedan utvecklats över korta tids perioder med hjälp av Trotter-Suzuki-dekompositionen. Det går att skapa en utmärkt uppskattning av $H _2 $ mark State utan att använda adiabatic och så att energi tillståndets energi kan hittas direkt genom att använda fas uppskattning från Canon.
+> [Simuleringen av molekylen väte](https://github.com/microsoft/Quantum/tree/main/samples/simulation/h2/command-line) är ett intressant och kort exempel. Modell-och experiment resultaten som rapporteras i [O'Malley et. Al.](https://arxiv.org/abs/1512.06860) kräver bara Pauli-matriser och använder formatet $ \hat H = g \_ {0} I \_ 0i \_ 1 + g \_ 1 {z \_ 0} + g \_ 2 {Z \_ 1} + g \_ 3 {z \_ 0} {z \_ 1} + g \_ 4 {y \_ 0} {y \_ 1} + g \_ 5 {x \_ 0} {x \_ 1} $. Detta är en effektiv Hamiltonian som bara behöver bara två qubits, där konstanterna $g $ beräknas från avståndet $R $ mellan de två väte-atomerna. Med hjälp av Canon functions, konverteras Johan till unitaries och sedan utvecklats över korta tids perioder med hjälp av Trotter-Suzuki-dekompositionen. Det går att skapa en utmärkt uppskattning av $H _2 $ mark State utan att använda adiabatic och så att energi tillståndets energi kan hittas direkt genom att använda fas uppskattning från Canon.
 
 ## <a name="shors-algorithm"></a>Shors algoritm ##
 Shor-algoritmen är inte en av de viktigaste fördelarna med Quantum Computing eftersom den visade att Quantum Computers kan användas för att lösa viktiga, för närvarande inaktiverade problem.

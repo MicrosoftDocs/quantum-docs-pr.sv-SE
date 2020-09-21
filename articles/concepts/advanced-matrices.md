@@ -1,6 +1,6 @@
 ---
 rubrik: Beskrivning av avancerade Matrix-begrepp: Lär dig mer om eigenvectors, Eigenvalues och matriser, de grundläggande verktyg som används för att beskriva och simulera Quantum-algoritmer.
-författare: QuantumWriter-UID: Microsoft. Quantum. Concepts. Matrix-Advanced MS. author: nawiebe@microsoft.com MS. Date: 12/11/2017 MS. topic: artikeln No-Loc:
+författare: QuantumWriter-UID: Microsoft. Quantum. Concepts. Matrix-Advanced MS. author: v-benbra MS. Date: 12/11/2017 MS. topic: artikeln No-Loc:
 - "Q#"
 - "$$v"
 - "$$"
@@ -93,7 +93,7 @@ Vi utökar nu vår modifiering av matriser till [*Eigenvalues, Eigenvectors*](ht
 
 Låt $ M $ vara en fyrkantig matris och $ v $ vara en Vector som inte är en vektor som inte är noll (dvs. Vector med alla poster som är lika med $ 0 $ ).
 
-Vi säger att $ v $ är en [*eigenvector*](https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors) av $ M $ om $ MV = ka $ för lite nummer $ c $ . Vi antar att $ c $ är den [*eigenvalue*](https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors) som motsvarar eigenvector $ v $ . I allmänhet kan en matris $ M $ transformera en vektor till någon annan Vector, men en eigenvector är speciell eftersom den lämnas oförändrad, förutom om den multipliceras med ett tal. Observera att om $ v $ är en eigenvector med eigenvalue $ c $ , $ är det $ också av en eigenvector (för alla som inte $ är noll a $ ) med samma eigenvalue.
+Vi säger att $ v $ är en [*eigenvector*](https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors) av  $ M $ om $ MV = ka $ för lite nummer $ c $ . Vi antar att $ c $ är den [*eigenvalue*](https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors) som motsvarar eigenvector $ v $ . I allmänhet kan en matris $ M $ transformera en vektor till någon annan Vector, men en eigenvector är speciell eftersom den lämnas oförändrad, förutom om den multipliceras med ett tal. Observera att om $ v $ är en eigenvector med eigenvalue $ c $ , $ är det $ också av en eigenvector (för alla som inte $ är noll a $ ) med samma eigenvalue.
 
 För Identity-matrisen är till exempel $ $ en eigenvector med eigenvalue 1 för varje Vector $ v $ .
 
@@ -108,7 +108,7 @@ Vektorerna
 
 $$\begin{bmatrix}1 \\\\ 0 \\\\ 0 \end{bmatrix} , \begin{bmatrix} 0 \\\\ 1 \\\\ 0 \end{bmatrix} och \begin{bmatrix} 0 \\\\ 0 \\\\ 1\end{bmatrix}$$
 
-är eigenvectors i den här matrisen med Eigenvalues $ D_1 $ , $ D_2 $ $ $ respektive D_3. Om $ D_1 $ , $ D_2 $ och $ D_3 $ är distinkta tal, är dessa vektorer (och deras multiplar) de enda eigenvectors i matrisen $ d $ . I allmänhet är det enkelt att läsa av Eigenvalues och eigenvectors för en diagonal matris. Eigenvalues är alla siffror som visas i diagonalen och deras respektive eigenvectors är enhets vektorerna med en post lika med $ 1 $ och de återstående posterna motsvarar $ 0 $ .
+är eigenvectors i den här matrisen med Eigenvalues  $ D_1 $ , $ D_2 $ $ $ respektive D_3. Om $ D_1 $ , $ D_2 $ och $ D_3 $ är distinkta tal, är dessa vektorer (och deras multiplar) de enda eigenvectors i matrisen $ d $ . I allmänhet är det enkelt att läsa av Eigenvalues och eigenvectors för en diagonal matris. Eigenvalues är alla siffror som visas i diagonalen och deras respektive eigenvectors är enhets vektorerna med en post lika med $ 1 $ och de återstående posterna motsvarar $ 0 $ .
 
 Observera i exemplet ovan att eigenvectors i $ D $ utgör grunden för tredimensionella $ $ vektorer. En basis är en uppsättning vektorer så att alla vektorer kan skrivas som en linjär kombination av dem. Mer explicit, $ v_1 $ , $ v_2 $ och $ v_3 $ form a grund om en Vector $ v $ kan skrivas som $ v = A_1 v_1 + a_2 v_2 + a_3 v_3 $ för vissa siffror $ A_1 $ , $ a_2 $ och $ a_3 $ .
 

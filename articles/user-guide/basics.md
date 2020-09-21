@@ -1,22 +1,22 @@
 ---
-title: Q#Om
-description: Grundläggande begrepp förQ#
+title: Q# Om
+description: Grundläggande begrepp för Q#
 author: gillenhaalb
-ms.author: a-gibec@microsoft.com
+ms.author: a-gibec
 ms.date: 02/28/2020
 ms.topic: article
 uid: microsoft.quantum.guide.basics
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 4f4a75cdaaa070fd763d7f75429b7c39357d25a5
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 86f6538cf383f4e7c14255b38cfb1c141c8f991b
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87869655"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90835527"
 ---
-# <a name="no-locq-basics"></a>Q#Om
+# <a name="no-locq-basics"></a>Q# Om
 
 Den här artikeln innehåller en kort introduktion till de grundläggande Bygg stenarna i Q# .
 
@@ -39,7 +39,7 @@ using (qubit = Qubit()) {
 ```
 Mer information om att initiera eller *allokera*, qubits finns i [arbeta med qubits](xref:microsoft.quantum.guide.qubits).
 
-## <a name="quantum-states-in-no-locq"></a>Quantum-tillstånd iQ#
+## <a name="quantum-states-in-no-locq"></a>Quantum-tillstånd i Q#
 
 Det tidigare programmet refererar inte uttryckligen till tillstånd inom Q# men det beskrivs hur vårt program *omvandlade* statusen.
 Med den här metoden kan du helt oberoende om vad ett Quantum-tillstånd *är* på varje måldator, vilket kan ha olika tolkningar beroende på datorn. 
@@ -53,7 +53,7 @@ Men om mål datorn är en verklig Quantum-dator kan du, men i framtiden, använd
 Ett Q# program kombinerar dessa åtgärder så som de definieras av en mål dator för att skapa nya, högre åtgärder för att uttrycka Quantum-beräkning.
 På det här sättet är det Q# enkelt att uttrycka logiken för de underliggande Quantum-och hybrid Quantum-algoritmerna, samtidigt som det är allmänt vad gäller strukturen i mål datorn eller simulatorn.
 
-## <a name="no-locq-operations-and-functions"></a>Q#åtgärder och funktioner
+## <a name="no-locq-operations-and-functions"></a>Q# åtgärder och funktioner
 
 Konkret, ett Q# program omfattar *åtgärder*, *funktioner*och alla användardefinierade typer. 
 
@@ -65,13 +65,13 @@ I det här fallet `Measure` är en *åtgärd* som instruerar mål datorn att utf
 Åtgärder och funktioner kallas tillsammans *callables*. Deras underliggande struktur och beteende införs och beskrivs i [åtgärder och funktioner i Q# ](xref:microsoft.quantum.guide.operationsfunctions).
 
 
-## <a name="no-locq-syntax-overview"></a>Q#syntax-översikt
+## <a name="no-locq-syntax-overview"></a>Q# syntax-översikt
 
 Syntaxen för ett språk beskriver de olika kombinationer av symboler som utgör ett syntaktiskt korrekt program.
 I Q# klassificeras syntax-element i tre olika grupper: typer, uttryck och uttryck.
 
 ### <a name="types"></a>Typer
-Q#är ett starkt inskrivet språk, så att en noggrann användning av typer kan hjälpa kompilatorn att tillhandahålla starka garantier om Q# program vid kompilering.
+Q# är ett starkt inskrivet språk, så att en noggrann användning av typer kan hjälpa kompilatorn att tillhandahålla starka garantier om Q# program vid kompilering.
 Förutom standard-och Quantum-/regionsspecifika inbyggda primitiva typer, till exempel,,, `Int` `Bool` `Qubit` och `Result` , Q# ger stöd för användardefinierade typer.
 
 För beskrivningar av alla primitiva typer, information om matris-och tupel typer och steg för att definiera nya typer i en Q# fil, se [typer Q# i ](xref:microsoft.quantum.guide.types).
@@ -87,7 +87,7 @@ Till exempel ett annat `Int` uttryck som utvärderas till `5` är `2+3` .
 Mer information om uttryck och kompatibla operatorer i Q# finns i [text uttryck i Q# ](xref:microsoft.quantum.guide.expressions). 
 
 ### <a name="statements"></a>Instruktioner 
-En instruktion är en syntaktisk enhet av ett tvingande programmeringsspråk som uttrycker en åtgärd som ska utföras. Uttryck med uttryck i dessa instruktioner returnerar inte resultat och utförs enbart för deras sido effekter. Uttryck returnerar dock alltid ett resultat och ofta har inte sido effekter alls. I korthet Q# körs instruktioner, medan uttryck utvärderas.
+En instruktion är en syntaktisk enhet av ett tvingande programmeringsspråk som uttrycker en åtgärd som ska utföras. Uttryck med uttryck i dessa instruktioner returnerar inte resultat och körs bara för deras sido effekter. Uttryck returnerar dock alltid ett resultat och har ofta inga sido effekter. I korthet Q# körs instruktioner, medan uttryck utvärderas.
 
 Ett enkelt exempel på en instruktion i Q# är att tilldela en symbol till ett uttryck:
 ```qsharp

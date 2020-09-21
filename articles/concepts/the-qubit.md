@@ -1,6 +1,6 @@
 ---
 rubrik: qubit i Quantum Computing-beskrivningen: Lär dig mer om qubits, den grundläggande informations enheten i Quantum Computing.
-författare: QuantumWriter UID: Microsoft. Quantum. Concepts. qubit MS. author: nawiebe@microsoft.com MS. Date: 12/11/2017 MS. topic: artikeln No-Loc:
+författare: QuantumWriter UID: Microsoft. Quantum. Concepts. qubit MS. author: v-benbra MS. Date: 12/11/2017 MS. topic: artikeln No-Loc:
 - "Q#"
 - "$$v"
 - "$$"
@@ -100,7 +100,7 @@ Quantum-tillståndets vektorer $ \begin{bmatrix} 1 \\\\ 0 \end{bmatrix} $ och $ 
 
 Vi tar dessa två Quantum-tillstånd för att motsvara de två tillstånden i en klassisk bit, nämligen $ 0 $ och $ 1 $ . Standard konventionen är att välja
 
-$$0 \equiv \begin{bmatrix} 1 \\\\ 0 \end{bmatrix} , \qquad 1 \equiv \begin{bmatrix} 0 \\\\ 1 \end{bmatrix} ,$$
+$$0 \equiv \begin{bmatrix} 1 \\\\  0 \end{bmatrix} , \qquad 1 \equiv \begin{bmatrix} 0 \\\\  1 \end{bmatrix} ,$$
 
 även om det motsatta valet kan göras lika bra. Därför, från det oändliga antalet möjliga qubit Quantum State Vectors, är det bara två som motsvarar tillstånd för klassiska bitar. alla andra Quantum-tillstånd gör inte det.
 
@@ -120,7 +120,7 @@ Qubits kan också bildas i $ 3 $ D med hjälp av [*sfär*](https://en.wikipedia.
 ![Bloch-sfär](~/media/concepts_bloch.png)
 
 Pilarna i det här diagrammet visar i vilken riktning som den blinkande läges vektorn pekar och varje omvandling av pilen kan ses som en rotation av en av kardinal axlarna.
-När du funderar på en Quantum-beräkning som en sekvens med rotationer är en kraftfull intuition, så det är svårt att använda den här intuition för att utforma och beskriva algoritmer. Q#minskar problemet genom att tillhandahålla ett språk för att beskriva sådana rotationer.
+När du funderar på en Quantum-beräkning som en sekvens med rotationer är en kraftfull intuition, så det är svårt att använda den här intuition för att utforma och beskriva algoritmer. Q# minskar problemet genom att tillhandahålla ett språk för att beskriva sådana rotationer.
 
 ## <a name="single-qubit-operations"></a>Åtgärder med en qubit
 
@@ -128,7 +128,7 @@ Quantum Computers bearbetar data genom att använda en universell uppsättning Q
 Detta teoretiskt sett är via för begreppet traditionell (dvs. klassisk) data behandling där en grind anses vara universell om varje omvandling av indata-bitar kan utföras med hjälp av en endensitets krets.
 I Quantum Computing är de giltiga omvandlingar som vi kan utföra på en qubit en enhetlig transformering och mätning.
 Den *angränsande åtgärden* eller den komplexa konjugats transponeren är av avgörande betydelse för Quantum Computing eftersom det behövs för att invertera Quantum-omvandlingar.
-Q#återspeglar detta genom att tillhandahålla metoder för att automatiskt kompilera grind sekvenser till deras angränsande, vilket sparar programmeraren från att behöva gå över till hand kod i många fall. Ett exempel på detta visas nedan:
+Q# återspeglar detta genom att tillhandahålla metoder för att automatiskt kompilera grind sekvenser till deras angränsande, vilket sparar programmeraren från att behöva gå över till hand kod i många fall. Ett exempel på detta visas nedan:
 
 ```qsharp
 operation PrepareSuperposition(qubit : Qubit) : Unit
@@ -145,7 +145,7 @@ För Universality kräver vi att en Quantum-dator endast *uppskattar* varje enhe
 Med andra ord är en uppsättning portar en universell grind uppsättning om en enhetlig omvandling kan vara ungefär skriven som en produkt av portar från den här uppsättningen. Vi kräver att för alla före skrivna fel finns det $ G_ { 1 } , G_ { 2 } , \ldots G_N $ från den grind som
 
 $$
-G_N G_ { N-1 } \cdots G_2 G_1 \approx U.$$
+G_N G_ { N-1 } \cdots G_2 G_1 \approx U. $$
 
 Observera att eftersom konventionen för Matrix multiplikation är att multiplicera från höger till vänster om den första gaten i den här sekvensen $ G_N $ , är den sista som tillämpas på den Quantum-tillstånds vektorn. Mer formellt, anta att en sådan grind uppsättning är universell om för varje fel tolerans $ \epsilon > 0 $ finns $ G_1, \ldots, G_N $ så att avståndet mellan $ G_N \ldots G_1 $ och $ U $ är högst $ \epsilon $ . Vi rekommenderar att värdet $ N $ som behövs för att uppnå detta avstånd i $ \epsilon $ skalar Poly-logarithmically med $ 1/\ Epsilon $ .
 

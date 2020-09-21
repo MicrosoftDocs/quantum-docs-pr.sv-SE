@@ -2,19 +2,19 @@
 title: Sätt att köra ett Q# program
 description: Översikt över olika sätt att köra Q# program. Från kommando tolken, Q# Jupyter-anteckningsböcker och klassiska värd program i python eller ett .net-språk.
 author: gillenhaalb
-ms.author: a-gibec@microsoft.com
+ms.author: a-gibec
 ms.date: 05/15/2020
 ms.topic: article
 uid: microsoft.quantum.guide.host-programs
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: f24c608ffc6522cb50f512de1a02b3db4b290e83
-ms.sourcegitcommit: 8256ff463eb9319f1933820a36c0838cf1e024e8
+ms.openlocfilehash: 2cb02617c81ee8b144ffe933f11b476ba6f4a23e
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90759824"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90835969"
 ---
 # <a name="ways-to-run-a-no-locq-program"></a>Sätt att köra ett Q# program
 
@@ -26,9 +26,9 @@ En primär distinktion är att Q# du kan köra:
 - som ett fristående program, där Q# är det enda språk som ingår och programmet anropas direkt. Två metoder är faktiskt i den här kategorin:
   - kommando rads gränssnittet
   - Q# Jupyter-anteckningsböcker
-- med ett ytterligare *värd program*, skrivet i python eller ett .net-språk (t. ex. C# eller F #), som sedan anropar programmet och kan bearbeta returnerade resultat ytterligare.
+- med ett ytterligare *värd program*, skrivet i python eller ett .net-språk (till exempel C# eller F #), som sedan anropar programmet och kan bearbeta returnerade resultat ytterligare.
 
-För att bäst förstå de här processerna och deras skillnader, Överväg vi ett enkelt Q# program och jämför hur det kan utföras.
+Vi rekommenderar ett enkelt Q# program och jämför hur det kan köras för att bäst förstå de här processerna och deras skillnader.
 
 ## <a name="basic-no-locq-program"></a>Basic- Q# program
 
@@ -44,7 +44,7 @@ I Q# kan detta utföras med följande kod:
         }
 ```
 
-Den här koden kan dock inte utföras av Q# .
+Den här koden kan dock endast köras av Q# .
 För att göra det måste du skapa en [Åtgärds](xref:microsoft.quantum.guide.basics#q-operations-and-functions)brödtext, som sedan körs när du anropar---antingen direkt eller av en annan åtgärd. Därför kan du skriva en åtgärd i följande format:
 ```qsharp
     operation MeasureSuperposition() : Result {
@@ -93,43 +93,46 @@ namespace NamespaceName {
 > Ett undantag till allt detta är [`Microsoft.Quantum.Core`](xref:microsoft.quantum.core) namn området, som alltid öppnas automatiskt.
 > Därför kan callables som [`Length`](xref:microsoft.quantum.core.length) alltid användas direkt.
 
-### <a name="execution-on-target-machines"></a>Körning på mål datorer
+### <a name="running-on-target-machines"></a>Körs på mål datorer
 
 Nu är den allmänna körnings modellen för ett Q# program avmarkerad.
 
 <br/>
 <img src="../media/hostprograms_general_execution_model.png" alt="Q# program execution diagram" width="400">
 
-För det första har det speciella anropet att utföras ha åtkomst till alla andra callables och typer som definierats i samma namnrymd.
+För det första har det speciella anropet att köras åtkomst till alla andra callables och typer som definierats i samma namnrymd.
 De kommer även åt dem från alla [ Q# bibliotek](xref:microsoft.quantum.libraries), men de måste refereras antingen via deras fullständiga namn eller genom användning av `open` instruktioner som beskrivs ovan.
 
 Själva anropet körs sedan på en *[måldator](xref:microsoft.quantum.machines)*.
 Sådana mål datorer kan vara faktiska Quantum-maskinvara eller flera simulatorer som är tillgängliga som en del av QDK.
-För våra behov är den mest användbara mål datorn en instans av [hela tillstånds simulatorn](xref:microsoft.quantum.machines.full-state-simulator), `QuantumSimulator` som beräknar programmets beteende som om den kördes på en brus fri dator som är en brus fri.
+För våra behov är den mest användbara mål datorn en instans av [hela tillstånds simulatorn](xref:microsoft.quantum.machines.full-state-simulator), `QuantumSimulator` som beräknar programmets beteende som om det kördes på en dator som är en brus fri.
 
-Hittills har vi beskrivit vad som händer när en speciell Q# anrop utförs.
+Hittills har vi beskrivit vad som händer när en speciell Q# anrop körs.
 Oavsett om används Q# i ett fristående program eller med ett värd program, är den här generella processen mer eller mindre---, och därför är QDK flexibiliteten.
-Skillnaderna mellan olika sätt att anropa i Quantum Development Kit visas därför i *hur* det kan anropas Q# för att utföras och på vilket sätt resultaten returneras.
-Mer specifikt kretsar skiljer sig runt 
-1. indikerar vilket anrop som ska Q# utföras,
-2. Hur potentiella anrops bara argument tillhandahålls,
-3. Ange den måldator där du vill köra den och
-4. hur resultat returneras.
+Skillnaderna mellan olika sätt att anropa i Quantum Development Kit visas därför i *hur* det kan anropas Q# för att köras, och i vilket sätt resultat returneras.
+Mer specifikt kretsar skiljer sig runt:
+
+- Indikerar vilket anrop som ska Q# köras
+- Hur potentiella anrops bara argument anges
+- Ange mål datorn som den ska köras på
+- Hur resultat returneras
 
 Först diskuterar vi hur detta görs med det Q# fristående programmet från kommando tolken och fortsätter sedan att använda python-och C#-värd program.
 Vi reserverar det fristående programmet för Q# Jupyter Notebooks för sista, eftersom till skillnad från de tre första, är den primära funktionen inte en lokal Q# fil.
 
 > [!NOTE]
-> Även om vi inte illustrerar det i de här exemplen, är en gemensam lösning mellan körnings metoderna att alla meddelanden som skrivs ut inifrån Q# programmet (av [`Message`](xref:microsoft.quantum.intrinsic.message) eller till [`DumpMachine`](xref:microsoft.quantum.diagnostics.dumpmachine) exempel) alltid skrivs ut till respektive konsol.
+> Även om vi inte illustrerar det i de här exemplen, är en gemensam lösning mellan körnings metoderna att alla meddelanden som skrivs ut inifrån Q# programmet (av [`Message`](xref:microsoft.quantum.intrinsic.message) eller [`DumpMachine`](xref:microsoft.quantum.diagnostics.dumpmachine) till exempel) alltid skrivs ut till respektive konsol.
 
 ## <a name="no-locq-from-the-command-prompt"></a>Q# från kommando tolken
 Ett av de enklaste sätten att komma igång med att skriva Q# program är att undvika att behöva oroa dig för separata filer och ett andra språk helt och hållet.
 Med hjälp av Visual Studio Code eller Visual Studio med QDK-tillägget kan du använda ett sömlöst arbets flöde där vi kör Q# callables från endast en enda Q# fil.
 
-För detta kommer vi i slut ändan att starta program körningen genom att ange
+För detta kommer vi att köra programmet genom att ange
+
 ```dotnetcli
 dotnet run
 ```
+
 i kommando tolken.
 Det enklaste arbets flödet är när terminalens katalog plats är samma som Q# filen, som enkelt kan hanteras tillsammans Q# med fil redigering genom att använda den integrerade terminalen i vs Code, till exempel.
 [ `dotnet run` Kommandot](https://docs.microsoft.com/dotnet/core/tools/dotnet-run) godkänner dock flera alternativ, och programmet kan också köras från en annan plats genom att bara ange `--project <PATH>` platsen för Q# filen.
@@ -137,7 +140,7 @@ Det enklaste arbets flödet är när terminalens katalog plats är samma som Q# 
 
 ### <a name="add-entry-point-to-no-locq-file"></a>Lägg till Start punkt till Q# fil
 
-De flesta Q# filer kommer att innehålla mer än ett anrops bara, så det är naturligt att låta kompileraren ta reda på *vilket* anrop som kan utföras när vi tillhandahåller `dotnet run` kommandot.
+De flesta Q# filer kommer att innehålla mer än ett anrops bara, så det är naturligt att låta kompileraren ta reda på *vilket* anrop som kan köras när vi tillhandahåller `dotnet run` kommandot.
 Detta görs med en enkel ändring i Q# själva filen: 
     - Lägg till en rad med `@EntryPoint()` direkt föregående anrop.
 
@@ -228,7 +231,7 @@ BorrowedWidth   0
 
 Mer information om vad dessa mått anger finns i [resurs uppskattningen: statistik rapporteras](xref:microsoft.quantum.machines.resources-estimator#metrics-reported).
 
-### <a name="command-line-execution-summary"></a>Sammanfattning av kommando rads körning
+### <a name="command-line-run-summary"></a>Sammanfattning av kommando rads körning
 <br/>
 <img src="../media/hostprograms_command_line_diagram.png" alt="Q# program from command line" width="700">
 
@@ -236,19 +239,19 @@ Mer information om vad dessa mått anger finns i [resurs uppskattningen: statist
 
 Som vi nämnde ovan med `--project` alternativet godkänner [ `dotnet run` kommandot](https://docs.microsoft.com/dotnet/core/tools/dotnet-run) också alternativ som inte är relaterade till de Q# anrops bara argumenten.
 Om du tillhandahåller båda typerna av alternativ `dotnet` måste de-/regionsspecifika alternativen anges först, följt av en avgränsare `--` och sedan de Q# -/regionsspecifika alternativen.
-Till exempel kan specifiying en sökväg tillsammans med en nummer qubits för åtgärden ovan köras via `dotnet run --project <PATH> -- -n <n>` .
+Om du till exempel anger en sökväg tillsammans med en nummer qubits för åtgärden ovan, skulle det köras via `dotnet run --project <PATH> -- -n <n>` .
 
 ## <a name="no-locq-with-host-programs"></a>Q# med värd program
 
 Med vår Q# fil i handen är ett alternativ för att anropa en åtgärd eller funktion direkt från kommando tolken att använda ett *värd program* i ett annat klassiskt språk. Mer specifikt kan detta göras med antingen python eller ett .NET-språk, till exempel C# eller F # (för det kortfattat vi bara detaljerat C# här).
 Lite mer konfiguration krävs för att aktivera samverkan, men informationen finns i [installations guiderna](xref:microsoft.quantum.install).
 
-I en kortfattat så Jenkins innehåller situationen nu en värd program fil (t. ex. `*.py` eller `*.cs` ) på samma plats som vår Q# fil.
-Det är nu *värd* programmet som körs och i samband med körningen kan det anropa vissa Q# åtgärder och funktioner från Q# filen.
+I en kortfattat så Jenkins innehåller situationen nu en värd program fil (till exempel `*.py` eller `*.cs` ) på samma plats som vår Q# fil.
+Det är nu *värd* programmet som körs och när det körs kan den anropa vissa Q# åtgärder och funktioner från Q# filen.
 Kärnornas kärna baseras på Q# kompilatorn som gör innehållet i Q# filen tillgängligt för värd programmet så att de kan anropas.
 
 En av de främsta fördelarna med att använda ett värd program är att de klassiska data som returneras av Q# programmet kan bearbetas ytterligare på värd språket.
-Detta kan bestå av en avancerad data bearbetning (t. ex. något som inte kan utföras internt i Q# ) och sedan anropa ytterligare Q# åtgärder baserat på dessa resultat eller något så enkelt som att rita Q# resultatet.
+Detta kan bestå av en avancerad data bearbetning (till exempel något som inte kan utföras internt i Q# ) och sedan anropa ytterligare Q# åtgärder baserat på dessa resultat eller något som är enkelt som att rita Q# resultaten.
 
 Det allmänna schemat visas här och vi diskuterar de olika implementeringarna för python och C# nedan. Ett exempel som använder ett F # Host-program finns i [.net-samverkan exempel](https://github.com/microsoft/Quantum/tree/main/samples/interoperability/dotnet).
 
@@ -292,7 +295,7 @@ Ett python-värdprogram skapas på följande sätt:
 1. Importera `qsharp` modulen som registrerar modulens inläsare för Q# interoperabilitet. 
     Detta gör Q# att namn områden kan visas som python-moduler, från vilka vi kan importera Q# callables.
     Observera att det tekniskt sett inte är Q# callablest som importeras, men hellre python-stub-stub som tillåter att de anropar dem.
-    De fungerar sedan som objekt i python-klasser, där vi använder metoder för att ange de mål datorer som åtgärden ska skickas till för körning.
+    De fungerar som objekt av python-klasser. Vi använder metoder för dessa objekt för att ange de mål datorer som vi skickar åtgärden till när programmet körs.
 
 2. Importera de Q# callables som vi kommer att anropa direkt---i det här fallet `MeasureSuperposition` och `MeasureSuperpositionArray` .
     ```python
@@ -404,16 +407,16 @@ Först gör vi några klasser som används i vårt värd program `using` som är
 ```csharp
 using System;
 using System.Threading.Tasks;
-using Microsoft.Quantum.Simulation.Simulators;    // contains the target machines (e.g. QuantumSimulator, ResourcesEstimator)
+using Microsoft.Quantum.Simulation.Simulators;    // contains the target machines (for example, QuantumSimulator, ResourcesEstimator)
 using NamespaceName;                              // make the Q# namespace available
 ```
 
-Härnäst deklarerar vi vårt C#-namnrum, några andra bitar och delar (se hela kod blocket nedan) och sedan en klassisk programmering som vi vill ha (t. ex. beräknings argument för Q# callables).
+Härnäst deklarerar vi vårt C#-namnrum, några andra bitar och delar (se hela kod blocket nedan) och sedan en klassisk programmering som vi vill ha (till exempel att beräkna argument för Q# callables).
 Den senare är inte nödvändig i vårt fall, men ett exempel på en sådan användning finns i  [exempel på .net-interoperabilitet](https://github.com/microsoft/Quantum/tree/main/samples/interoperability/dotnet).
 
 #### <a name="target-machines"></a>Måldatorer
 
-Kom tillbaka till Q# , vi måste skapa en instans av den mål dator som vi kommer att köra våra åtgärder på.
+Kom tillbaka till Q# , vi måste skapa en instans av den mål dator vi kommer att köra våra åtgärder på.
 
 ```csharp
             using var sim = new QuantumSimulator();
@@ -431,9 +434,9 @@ De returnerade resultaten kan sedan tilldelas variabler i C#:
 ```
 
 > [!NOTE]
-> `Run`Metoden körs asynkront eftersom det är fallet för verkligt Quantum-maskinvara, och därför `await` blockerar nyckelordet ytterligare körning tills aktiviteten har slutförts.
+> `Run`Metoden körs asynkront eftersom detta är fallet för verkligt Quantum-maskinvara, och därför `await` blockerar nyckelordet ytterligare bearbetning tills aktiviteten har slutförts.
 
-Om Q# anropet inte har några returer (t. ex. har retur typen `Unit` ) kan körningen fortfarande utföras på samma sätt utan att tilldela den till en variabel.
+Om det Q# inte finns några returnerade returer (till exempel om den har retur typen `Unit` ) kan körningen fortfarande göras på samma sätt utan att tilldela den till en variabel.
 I så fall skulle hela raden helt enkelt bestå av 
 ```csharp
 await <callable>.Run(<simulator>);
@@ -441,7 +444,7 @@ await <callable>.Run(<simulator>);
 
 #### <a name="arguments"></a>Argument
 
-Alla argument till Q# anrops bara skickas som ytterligare argument när mål datorn.
+Alla argument till Q# anrops bara skickas som ytterligare argument efter mål datorn.
 Resultatet av `MeasureSuperpositionArray` `n=4` qubits skulle därför hämtas via 
 
 ```csharp
@@ -578,7 +581,7 @@ BorrowedWidth   0
 
 ## <a name="no-locq-jupyter-notebooks"></a>Q# Jupyter-anteckningsböcker
 Q# Jupyter Notebooks använder i- Q# kärnan, vilket gör att du kan definiera, kompilera och köra Q# callables i en enda Notebook---alla instruktioner, kommentarer och annat innehåll.
-Det innebär att det är möjligt att importera och använda innehållet i filer, men det är `*.qs` Q# inte nödvändigt i körnings modellen.
+Det innebär att det är möjligt att importera och använda innehållet i `*.qs` Q# filer, men det är inte nödvändigt i körnings modellen.
 
 Här kommer vi att lära dig hur du kör de Q# åtgärder som definierats ovan, men en mer bred introduktion till att använda Q# Jupyter Notebooks finns i [intro till Q# och Jupyter Notebooks](https://github.com/microsoft/Quantum/blob/main/samples/getting-started/intro-to-iqsharp/Notebook.ipynb).
 
@@ -590,7 +593,7 @@ Därför kan vi aktivera åtkomst till callables från [ Q# standard biblioteken
 När du kör en cell med en sådan instruktion, är definitionerna från dessa namn områden tillgängliga i hela arbets ytan.
 
 > [!NOTE]
-> Callables från [Microsoft. Quantum. inneboende](xref:microsoft.quantum.intrinsic) och [Microsoft. Quantum. Canon](xref:microsoft.quantum.canon) (t. ex. [`H`](xref:microsoft.quantum.intrinsic.h) och [`ApplyToEach`](xref:microsoft.quantum.canon.applytoeach) ) är automatiskt tillgängliga för åtgärder som definierats i celler i Q# Jupyter notebook-datorer.
+> Callables från [Microsoft. Quantum. inneboende](xref:microsoft.quantum.intrinsic) och [Microsoft. Quantum. Canon](xref:microsoft.quantum.canon) (till exempel [`H`](xref:microsoft.quantum.intrinsic.h) och [`ApplyToEach`](xref:microsoft.quantum.canon.applytoeach) ) är automatiskt tillgängliga för åtgärder som definierats i celler i Q# Jupyter-anteckningsböcker.
 > Detta gäller dock inte för kod som hämtas från externa Q# källfiler (en process som visas i [intro till Q# och Jupyter Notebooks](https://github.com/microsoft/Quantum/blob/main/samples/getting-started/intro-to-iqsharp/Notebook.ipynb)). 
 > 
 
@@ -609,7 +612,7 @@ Funktionerna för att köra åtgärder på specifika mål datorer finns via [I Q
 
 ### <a name="passing-inputs-to-functions-and-operations"></a>Skicka in indata till funktioner och åtgärder
 
-Om du vill skicka indata till Q# åtgärder kan argumenten skickas som `key=value` par till kommandot Magic Magic.
+Om du vill skicka indata till Q# åtgärder kan argumenten skickas som `key=value` par till kommandot Run Magic.
 För att kunna köra `MeasureSuperpositionArray` med fyra qubits kan vi köra `%simulate MeasureSuperpositionArray n=4` :
 
 <img src="../media/hostprograms_jupyter_args_sim_crop.png" alt="Jupyter cell simulating a Q# operation with arguments" width="773">

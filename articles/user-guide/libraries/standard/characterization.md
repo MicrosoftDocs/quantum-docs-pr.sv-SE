@@ -9,12 +9,12 @@ ms.topic: article
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 0090fb2b9ac5f3c9d195a3ab02dcd21c848d8ef7
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: b226f355771f2b65399ebe00cc3de9429a3cebb0
+ms.sourcegitcommit: 8256ff463eb9319f1933820a36c0838cf1e024e8
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87868635"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90759917"
 ---
 # <a name="quantum-characterization-and-statistics"></a>Quantum-karakterisering och statistik #
 
@@ -74,7 +74,7 @@ Fas uppskattning av den här orsaken visas i ett antal Quantum-algoritmer som ge
 ### <a name="bayesian-phase-estimation"></a>Bayesian fas uppskattning ###
 
 > [!TIP]
-> Mer information om Bayesian fas uppskattning i praxis finns i [**PhaseEstimation**](https://github.com/microsoft/Quantum/tree/master/samples/characterization/phase-estimation) -exemplet.
+> Mer information om Bayesian fas uppskattning i praxis finns i [**PhaseEstimation**](https://github.com/microsoft/Quantum/tree/main/samples/characterization/phase-estimation) -exemplet.
 
 Idén med uppskattning av Bayesian-fasen är enkel.
 Du samlar in mått statistik från fas beräknings protokollet och bearbetar sedan resultaten med Bayesian-härledning och ger en uppskattning av parametern.
@@ -112,7 +112,7 @@ Den viktigaste funktionen i robust fas uppskattning, som delas med de flesta and
 Andra relevanta uppgifter inkluderar, t. ex. den små utrymmes kostnaden på bara $1 $ Ancilla qubit, eller att proceduren är icke-adaptiv, vilket innebär att den nödvändiga sekvensen av Quantum experiment är oberoende av de mellanliggande Mät resultat. I det här och kommande exempel där valet av algoritmen för fas uppskattning är viktigt bör en bör hänvisa till dokumentationen, till exempel @"microsoft.quantum.characterization.robustphaseestimation" och de refererade publikationerna, för att få mer information och för deras implementering.
 
 > [!TIP]
-> Det finns många exempel där robust fas uppskattning används. För fas uppskattning när du extraherar mark tillstånds energin för olika fysiska system kan du se exempel på [ **H2-simulering** ](https://github.com/microsoft/Quantum/tree/master/samples/simulation/h2/command-line), [ **SimpleIsing** -exemplet](https://github.com/microsoft/Quantum/tree/master/samples/simulation/ising/simple)och [ **Hubbard Model** -exemplet](https://github.com/microsoft/Quantum/tree/master/samples/simulation/hubbard).
+> Det finns många exempel där robust fas uppskattning används. För fas uppskattning när du extraherar mark tillstånds energin för olika fysiska system kan du se exempel på [ **H2-simulering** ](https://github.com/microsoft/Quantum/tree/main/samples/simulation/h2/command-line), [ **SimpleIsing** -exemplet](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/simple)och [ **Hubbard Model** -exemplet](https://github.com/microsoft/Quantum/tree/main/samples/simulation/hubbard).
 
 
 ### <a name="continuous-oracles"></a>Kontinuerliga Oracle ###
@@ -130,7 +130,7 @@ Med hjälp av fas uppskattning med kontinuerliga frågor kan vi alltså lära si
 
 ### <a name="random-walk-phase-estimation"></a>Beräkning av slumpmässig stegvis fas ###
 
-Q#ger en användbar uppskattning av Bayesian-fasens uppskattning avsedd för användning nära Quantum-enheter som fungerar genom att en slumpmässig genom gång av data posten hämtas från en iterativ fas uppskattning.
+Q# ger en användbar uppskattning av Bayesian-fasens uppskattning avsedd för användning nära Quantum-enheter som fungerar genom att en slumpmässig genom gång av data posten hämtas från en iterativ fas uppskattning.
 Den här metoden är både anpassningsbar och helt deterministisk, vilket ger optimal skalning av fel i den uppskattade fasen $ \hat{\phi} $ med mycket låga minnes omkostnader.
 
 Protokollet använder en ungefärlig Bayesian-härlednings metod som förutsätter att den tidigare distributionen är Gaussisk.

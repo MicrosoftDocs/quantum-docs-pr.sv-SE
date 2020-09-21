@@ -1,24 +1,24 @@
 ---
 title: Räknare för primitiva åtgärder – Quantum Development Kit
-description: Lär dig mer om räknaren för primitiva Microsoft-QDK, som använder Quantum trace Simulator för att spåra primitiva körningar som används av åtgärder i ett Q# program.
+description: Lär dig mer om räknaren för primitiva Microsoft-QDK, som använder Quantum trace Simulator för att spåra primitiva processer som används av åtgärder i ett Q# program.
 author: vadym-kl
-ms.author: vadym@microsoft.com
+ms.author: vadym
 ms.date: 06/25/2020
 ms.topic: article
 uid: microsoft.quantum.machines.qc-trace-simulator.primitive-counter
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: ceb70cef6dc0a4530b992b5a529248a8b283c17f
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 8ee9ce25e680112e2f3c68d82ae9267c1b0fb355
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87868244"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90835986"
 ---
 # <a name="quantum-trace-simulator-primitive-operations-counter"></a>Quantum trace Simulator: primitiva åtgärds räknare
 
-Räknaren primitiv åtgärd är en del av Quantum Development Kit [Quantum trace Simulator](xref:microsoft.quantum.machines.qc-trace-simulator.intro). Det räknar antalet primitiva körningar som används av varje åtgärd som anropas i ett Quantum-program. 
+Räknaren primitiv åtgärd är en del av Quantum Development Kit [Quantum trace Simulator](xref:microsoft.quantum.machines.qc-trace-simulator.intro). Det räknar antalet primitiva processer som används av varje åtgärd som anropas i ett Quantum-program. 
 
 Alla <xref:microsoft.quantum.intrinsic> åtgärder uttrycks i form av en qubit rotation, T-åtgärder, qubit Clifford-åtgärder, CNOT-åtgärder och mätningar av multi-qubit Pauli observables. Räknaren för primitiva åtgärder sammanställer och samlar in statistik över alla kanter i åtgärdens [anrops diagram](https://en.wikipedia.org/wiki/Call_graph).
 

@@ -9,12 +9,12 @@ ms.topic: article
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 222fa7d0d33d4ac6c15e9ee9e6e97f380867a145
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 332d9f3134f2b69113668629857af32c814d3263
+ms.sourcegitcommit: 8256ff463eb9319f1933820a36c0838cf1e024e8
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87868532"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90759892"
 ---
 # <a name="data-structures-and-modeling"></a>Data strukturer och modeller #
 
@@ -160,8 +160,8 @@ Den här enhetliga beskrivningen beskrivs av en av två typer av Oracle.
 
 > [!TIP]
 > Båda typerna av Oracle som beskrivs nedan beskrivs i exemplen.
-> Om du vill veta mer om kontinuerliga frågor och Oracle kan du se [ **PhaseEstimation** -exemplet](https://github.com/microsoft/Quantum/tree/master/samples/characterization/phase-estimation).
-> Om du vill veta mer om diskreta frågor och Oracle kan du se [ **IsingPhaseEstimation** -exemplet](https://github.com/microsoft/Quantum/tree/master/samples/simulation/ising/phase-estimation).
+> Om du vill veta mer om kontinuerliga frågor och Oracle kan du se [ **PhaseEstimation** -exemplet](https://github.com/microsoft/Quantum/tree/main/samples/characterization/phase-estimation).
+> Om du vill veta mer om diskreta frågor och Oracle kan du se [ **IsingPhaseEstimation** -exemplet](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/phase-estimation).
 
 Den första typen av Oracle, som vi anropar en diskret fråga i Oracle och representerar den användardefinierade typen <xref:microsoft.quantum.oracles.discreteoracle> , inbegriper helt enkelt en enhetlig matris.
 Om $U $ är den höga vars Eigenvalues vi vill uppskatta, är Oracle för $U $ helt enkelt ett enda sätt att använda en subrutin som implementerar $U $.
@@ -211,8 +211,8 @@ där heltals $r > $0 styr det ungefärliga felet.
 Modell biblioteket för dynamisk generator ger ett ramverk för att systematiskt koda komplicerade generatorer i termer av enklare generatorer. En sådan beskrivning kan sedan skickas till, till exempel bibliotek för simulering för att implementera tids utveckling med en vald simulerings algoritm, med många detaljer som automatiskt tar hand om.
 
 > [!TIP]
-> Det dynamiska Generator biblioteket som beskrivs nedan beskrivs i exemplen. Ett exempel som baseras på Ising-modellen finns i [ **IsingGenerators** -exemplet](https://github.com/microsoft/Quantum/tree/master/samples/simulation/ising/generators).
-> Ett exempel som baseras på molekylen väte finns i exemplen [**H2SimulationCmdLine**](https://github.com/microsoft/Quantum/tree/master/samples/simulation/h2/command-line) och [**H2SimulationGUI**](https://github.com/microsoft/Quantum/tree/master/samples/simulation/h2/gui) .
+> Det dynamiska Generator biblioteket som beskrivs nedan beskrivs i exemplen. Ett exempel som baseras på Ising-modellen finns i [ **IsingGenerators** -exemplet](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/generators).
+> Ett exempel som baseras på molekylen väte finns i exemplen [**H2SimulationCmdLine**](https://github.com/microsoft/Quantum/tree/main/samples/simulation/h2/command-line) och [**H2SimulationGUI**](https://github.com/microsoft/Quantum/tree/main/samples/simulation/h2/gui) .
 
 ### <a name="complete-description-of-a-generator"></a>Fullständig beskrivning av en generator ###
 

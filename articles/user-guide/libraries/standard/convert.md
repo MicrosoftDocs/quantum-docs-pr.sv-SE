@@ -3,21 +3,21 @@ title: Typ konverteringar i Q# standard biblioteken
 description: Lär dig mer om vanliga och användardefinierade typ konverterings funktioner i Q# standard biblioteken.
 author: cgranade
 uid: microsoft.quantum.libraries.convert
-ms.author: chgranad@microsoft.com
+ms.author: chgranad
 ms.topic: article
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 2319bf453f5fbf6bd068859ea65562423d3ff4d0
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: aa8a1ad624067906998d2735c7a95174a163ce97
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87868529"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90835612"
 ---
 # <a name="type-conversions"></a>Typ konverteringar #
 
-Q#är ett **starkt inskrivet** språk.
+Q# är ett **starkt inskrivet** språk.
 I synnerhet är det Q# inte implicit att konvertera mellan olika typer. Till exempel `1 + 2.0` är inte ett giltigt Q# uttryck.
 I stället Q# tillhandahåller en mängd olika typ konverterings funktioner för att skapa nya värden av en specifik typ.
 

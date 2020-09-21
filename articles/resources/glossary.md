@@ -1,6 +1,6 @@
 ---
 rubrik: Quantum Computing ord lista Beskrivning: en ord lista med vanliga termer, åtgärder och objekt som används i Quantum Computing.
-författare: QuantumWriter MS. author: Alan.Geller@microsoft.com MS. Date: 12/11/2017 MS. topic: artikel-UID: Microsoft. Quantum. ordbok No-Loc:
+författare: bradben MS. author: v-benbra MS. Date: 9/1/2020 MS. topic: artikel-UID: Microsoft. Quantum. ordbok No-Loc:
 - "Q#"
 - "$$v"
 - "$$"
@@ -99,7 +99,7 @@ Ett av fyra olika maximally [Entangled](xref:microsoft.quantum.glossary#entangle
 
 ## <a name="bloch-sphere"></a>Bloch-sfär
 
-En grafisk representation av ett[qubit](xref:microsoft.quantum.glossary#qubit) [Quantum-tillstånd](xref:microsoft.quantum.glossary#quantum-state) som en punkt i ett tredimensionellt enhets klot. Mer information finns i [visualisera qubits och omvandlingar med hjälp av Bloch-sfären](xref:microsoft.quantum.concepts.qubit#visualizing-qubits-and-transformations-using-the-bloch-sphere).
+En grafisk representation av ett[qubit](xref:microsoft.quantum.glossary#qubit) [Quantum-tillstånd](xref:microsoft.quantum.glossary#quantum-state) som en punkt i ett tredimensionellt enhets klot. Mer information finns i  [visualisera qubits och omvandlingar med hjälp av Bloch-sfären](xref:microsoft.quantum.concepts.qubit#visualizing-qubits-and-transformations-using-the-bloch-sphere).
 
 ## <a name="callable"></a>Anropningsbara
 
@@ -170,7 +170,7 @@ En etikett för en samling relaterade namn (t. ex. [åtgärder](xref:microsoft.q
 
 ## <a name="operation"></a>Åtgärd
 
-Den grundläggande enheten för Quantum-körning i Q# . Det är ungefär detsamma som en funktion i C, C++ eller python, eller en statisk metod i C# eller Java. Mer information finns i [åtgärder och funktioner](xref:microsoft.quantum.guide.operationsfunctions).
+Den grundläggande enheten för Quantum-beräkning i Q# . Det är ungefär detsamma som en funktion i C, C++ eller python, eller en statisk metod i C# eller Java. Mer information finns i [åtgärder och funktioner](xref:microsoft.quantum.guide.operationsfunctions).
 
 ## <a name="operator-application"></a>Operatörs program
 

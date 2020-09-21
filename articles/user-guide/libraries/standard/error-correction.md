@@ -3,18 +3,18 @@ title: Fel korrigering i Q# standard biblioteken
 description: Lär dig hur du använder fel när du korrigerar koder i dina Q# program samtidigt som du skyddar qubits-tillstånd.
 author: QuantumWriter
 uid: microsoft.quantum.libraries.error-correction
-ms.author: martinro@microsoft.com
+ms.author: martinro
 ms.date: 12/11/2017
 ms.topic: article
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 8b1f008793281121bc547d1a6ac3b960feb082ab
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: dad0db4d2aab27e5ae46d4df10ee050f785d8bb8
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87868499"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90835561"
 ---
 # <a name="error-correction"></a>Fel korrigering #
 
@@ -78,7 +78,7 @@ I det här avsnittet beskriver vi det här ramverket och dess program till någr
 > En fullständig introduktion till stabiliserings-och stabiliserings funktionen ligger utanför det här avsnittets omfattning.
 > Vi refererar till läsare som är intresserade av att lära sig mer till [Gottesman 2009](https://arxiv.org/abs/0904.2557).
 
-## <a name="representing-error-correcting-codes-in-no-locq"></a>Motsvarar fel korrigerings koder iQ# ##
+## <a name="representing-error-correcting-codes-in-no-locq"></a>Motsvarar fel korrigerings koder i Q# ##
 
 För att hjälpa till att ange fel som korrigerar koder Q# ger Canon flera olika användardefinierade typer:
 
@@ -120,6 +120,6 @@ using (scratch = Qubit[nScratch]) {
 }
 ```
 
-Vi utforskar detta mer detaljerat i [kod exemplet bit flip](https://github.com/microsoft/Quantum/tree/master/samples/error-correction/bit-flip-code).
+Vi utforskar detta mer detaljerat i [kod exemplet bit flip](https://github.com/microsoft/Quantum/tree/main/samples/error-correction/bit-flip-code).
 
 Från bit-flip-koden Q# tillhandahålls Canon med implementeringar av den [qubit perfekta koden](https://arxiv.org/abs/quant-ph/9602019), och [koden för sju qubit](https://arxiv.org/abs/quant-ph/9705052), som båda kan åtgärda ett godtyckligt qubit-fel.

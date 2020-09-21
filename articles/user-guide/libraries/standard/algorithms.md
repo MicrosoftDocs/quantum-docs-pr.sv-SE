@@ -1,20 +1,20 @@
 ---
-title: Quantum-algoritmer iQ#
+title: Quantum-algoritmer i Q#
 description: Lär dig mer om grundläggande Quantum Computing-algoritmer, inklusive amplitud-förstärkning, Fourier Transform, Draper och Beauregard Adders och fas uppskattning.
 author: QuantumWriter
-ms.author: martinro@microsoft.com
+ms.author: martinro
 ms.date: 12/11/2017
 ms.topic: article
 uid: microsoft.quantum.libraries.standard.algorithms
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 0b5972480061c460345057285bbfe53305acc122
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 7ce13c5df3795656156cccf28640c0a4b0dcba2e
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87868822"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90835680"
 ---
 # <a name="quantum-algorithms"></a>Quantum-algoritmer #
 
@@ -30,7 +30,7 @@ Logiken bakom amplitud-förstärkningen följer direkt från Eigen-dekomposition
 
 En annan användbar egenskap som kommer från detta är att eigenvalue $ \theta $ är direkt relaterad till sannolikheten att det ursprungliga läget skulle markeras (i det fall där $P _0 $ är en projektor på endast det ursprungliga läget).  Eftersom eigenphases i $Q $ är $2 \ theta = 2 \ sin ^ {-1} (\sqrt{\Pr (lyckades)}) $, följer det sedan på att om vi tillämpar fas uppskattning i $Q $ kan vi lära dig sannolikheten för en enhetlig Quantum-procedur.  Detta är användbart eftersom det kräver kvadratiskt färre program i Quantum-proceduren för att få en bra sannolikhet än vad som annars skulle behövas.
 
-Q#introducerar amplitud-förstärkning som en specialisering av Oblivious amplitud-förstärkning.  Oblivious amplitud-förstärkningen använder denna moniker eftersom projektorn på den ursprungliga eigenspace inte behöver vara en projektor i det ursprungliga läget.  I detta mening är protokollet Oblivious till det ursprungliga läget.  Nyckel tillämpningen av Oblivious amplitud-förstärkning är i vissa *linjära kombinationer av enhetliga* Hamiltonian-simulerings metoder, där start tillstånd är okänt men blir Entangled med en Ancilla-registrering i simulerings protokollet.  Om det här Ancilla-registret skulle mätas som ett fast värde, t. ex. $0 $, tillämpar dessa simulerings metoder den önskade enhetliga omvandlingen för återstående qubits (kallas system registret).  Alla andra mått kommer att leda till ett problem.  Oblivious amplitud-förstärkning gör att det går att öka sannolikheten för att denna mätning ska höjas till $100 \\ % $ med ovanstående orsak.  Dessutom motsvarar den vanliga amplitud förstärkningen det fall där system registret är tomt.  Detta är varför Q# använder Oblivious amplitud-förstärkning som dess grundläggande amplitud förstärknings subrutin.
+Q# introducerar amplitud-förstärkning som en specialisering av Oblivious amplitud-förstärkning.  Oblivious amplitud-förstärkningen använder denna moniker eftersom projektorn på den ursprungliga eigenspace inte behöver vara en projektor i det ursprungliga läget.  I detta mening är protokollet Oblivious till det ursprungliga läget.  Nyckel tillämpningen av Oblivious amplitud-förstärkning är i vissa *linjära kombinationer av enhetliga* Hamiltonian-simulerings metoder, där start tillstånd är okänt men blir Entangled med en Ancilla-registrering i simulerings protokollet.  Om det här Ancilla-registret skulle mätas som ett fast värde, t. ex. $0 $, tillämpar dessa simulerings metoder den önskade enhetliga omvandlingen för återstående qubits (kallas system registret).  Alla andra mått kommer att leda till ett problem.  Oblivious amplitud-förstärkning gör att det går att öka sannolikheten för att denna mätning ska höjas till $100 \\ % $ med ovanstående orsak.  Dessutom motsvarar den vanliga amplitud förstärkningen det fall där system registret är tomt.  Detta är varför Q# använder Oblivious amplitud-förstärkning som dess grundläggande amplitud förstärknings subrutin.
 
 Den allmänna rutinen ( `AmpAmpObliviousByReflectionPhases` ) har två register som vi kallar `ancillaRegister` och `systemRegister` . Den accepterar också två Oracle-uppgifter för nödvändiga reflektioner. De `ReflectionOracle` fungerar bara på de `ancillaRegister` åtgärder som utförs `ObliviousOracle` gemensamt i båda registren. Indatamängden till `ancillaRegister` måste initieras till en-1-eigenstate av den första reflektions operatorn $ \boldone-2P_1 $.
 
@@ -58,7 +58,7 @@ I detta fall alla $Z $-rotationer $2 \ Pi/2 ^ k $ där $k > en $ tas bort från 
 Det är känt att för $k \ge \ log_2 (n) + \ log_2 (1/\epsilon) + $3. en kan vara kopplad till $ \\ | \operatorname{QFT}-\operatorname{AQFT} \\ | < \epsilon $.
 Här $ \\ | \cdot \\ | $ är operator norm, som i det här fallet kvadratroten av den största [eigenvalue](xref:microsoft.quantum.concepts.matrix-advanced) $ (\operatorname{QFT}-\operatorname{AQFT}) (\operatorname{QFT}-\operatorname{AQFT}) ^ \dagger $.
 
-## <a name="arithmetic"></a>Aritmetiska ##
+## <a name="arithmetic"></a>Aritmetisk ##
 
 Precis som aritmetiskt spelar en central roll i klassisk data behandling, är det också inte nödvändigt i Quantum Computing.  Algoritmer som Shor, Quantum simulerings metoder och många Oracular-algoritmer förlitar sig på sammanhängande aritmetiska åtgärder.  De flesta metoder för aritmetiska byggen vid Quantum egenskapsangivning-kretsar.  Den enklaste egenskapsangivning tar en klassisk in$b $ och lägger till värdet i ett Quantum-tillstånd som innehåller ett heltal $ \ket{a} $.  Matematiskt, egenskapsangivning (som vi betecknar $ \operatorname{Add} (b) $ för klassisk in$b $) har egenskapen som
 

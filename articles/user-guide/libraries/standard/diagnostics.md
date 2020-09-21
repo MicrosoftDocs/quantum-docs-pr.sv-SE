@@ -3,17 +3,17 @@ title: Diagnostik i Q# standard biblioteken
 description: Lär dig mer om diagnostiska funktioner och åtgärder i de Q# standard bibliotek som används för att fånga misstag eller fel i Quantum-program.
 author: cgranade
 uid: microsoft.quantum.libraries.diagnostics
-ms.author: chgranad@microsoft.com
+ms.author: chgranad
 ms.topic: article
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 4a98795b2459adaa4e47c888751121fffdc70971
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 11ce1bc86db0c5aa0f81ba7d0f2d6ec3463b178c
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87868550"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90835578"
 ---
 # <a name="diagnostics"></a>Diagnostik #
 
@@ -33,7 +33,7 @@ Message($"About to rotate by an angle of {angle}...");
 ```
 
 > [!NOTE]
-> `Message`har signatur `(String -> Unit)` , återigen som visar att ett fel söknings logg meddelande inte kan observeras inifrån Q# .
+> `Message` har signatur `(String -> Unit)` , återigen som visar att ett fel söknings logg meddelande inte kan observeras inifrån Q# .
 
 <xref:microsoft.quantum.diagnostics.dumpmachine> <xref:microsoft.quantum.diagnostics.dumpregister> Callables instruerar mål datorerna att tillhandahålla diagnostikinformation om alla aktuella allokerade qubits eller om ett särskilt register över qubits.
 Varje måldator varierar i vilken diagnostikinformation som anges som svar på en dump-instruktion.
@@ -67,16 +67,16 @@ Därför kan vi testa enskilda åtgärder på en klassisk Simulator innan du dis
 På mål datorer som inte tillåter utvärdering av intyg kan anrop till <xref:microsoft.quantum.diagnostics.assertmeasurement> ignoreras på ett säkert sätt.
 
 I allmänhet är <xref:microsoft.quantum.diagnostics.assertmeasurement> åtgärden som mäter att mät qubits i angivet Pauli alltid det resultat som visas.
-Om kontrollen Miss lyckas avslutas körningen genom `fail` att anropa med det aktuella meddelandet.
+Om kontrollen Miss lyckas avslutas körningen genom att anropa `fail` med det aktuella meddelandet.
 Den här åtgärden är inte implementerad som standard. simulatorer som har stöd för den bör tillhandahålla en implementering som utför körnings kontroll.
-`AssertMeasurement`har signatur `((Pauli[], Qubit[], Result, String) -> ())` .
+`AssertMeasurement` har signatur `((Pauli[], Qubit[], Result, String) -> ())` .
 Eftersom `AssertMeasurement` är en funktion med en tom tupel som Utdatatyp, kan inga effekter som kan anropas `AssertMeasurement` vara synliga i ett Q# program.
 
 <xref:microsoft.quantum.diagnostics.assertmeasurementprobability>Funktionen funktion förutsätter att mätning av de tilldelade qubits i den aktuella Pauli-grunden har det resultat som har givit den sannolikheten, inom viss tolerans.
-Toleransen är additiv (t. ex. `abs(expected-actual) < tol` ).
-Om kontrollen Miss lyckas avslutas körningen genom `fail` att anropa med det aktuella meddelandet.
+Toleransen är additiv (till exempel `abs(expected-actual) < tol` ).
+Om kontrollen Miss lyckas avslutas körningen genom att anropa `fail` med det aktuella meddelandet.
 Den här åtgärden är inte implementerad som standard. simulatorer som har stöd för den bör tillhandahålla en implementering som utför körnings kontroll.
-`AssertMeasurementProbability`har signatur `((Pauli[], Qubit[], Result, Double, String, Double) -> Unit)` . De första `Double` parametrarna ger den önskade sannolikheten för resultatet och den andra som är toleransen.
+`AssertMeasurementProbability` har signatur `((Pauli[], Qubit[], Result, Double, String, Double) -> Unit)` . De första `Double` parametrarna ger den önskade sannolikheten för resultatet och den andra som är toleransen.
 
 Vi kan göra mer än att kontrol lera en enda mätning, med hjälp av att den klassiska information som används av en simulator för att representera det interna läget för en qubit är lämpar att kopiera, så att vi inte behöver utföra någon mätning för att testa vår kontroll.
 I synnerhet gör detta att vi kan ta del av *inkompatibla* mått som skulle vara omöjliga vid den faktiska maskin varan.

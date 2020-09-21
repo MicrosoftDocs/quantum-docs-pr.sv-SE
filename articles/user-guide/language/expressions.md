@@ -1,32 +1,32 @@
 ---
-title: Uttryck iQ#
+title: Uttryck i Q#
 description: Förstå hur du anger, refererar till och kombinerar konstanter, variabler, operatorer, åtgärder och funktioner som uttryck i Q# .
 author: gillenhaalb
-ms.author: a-gibec@microsoft.com
+ms.author: a-gibec
 ms.date: 03/05/2020
 ms.topic: article
 uid: microsoft.quantum.guide.expressions
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: b6cc97dfee05dc843e213e84f17043714a8a9656
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 9bf28e3854eae1892692d7ca840e1860de2e2934
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87869621"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90835850"
 ---
-# <a name="expressions-in-no-locq"></a>Uttryck iQ#
+# <a name="expressions-in-no-locq"></a>Uttryck i Q#
 
 ## <a name="numeric-expressions"></a>Numeriska uttryck
 
 Numeriska uttryck är uttryck av typen `Int` , `BigInt` eller `Double` .
 Det vill säga att de är antingen heltals-eller flytt ALS nummer.
 
-`Int`litteraler i Q# skrivs som en sekvens med siffror.
+`Int` litteraler i Q# skrivs som en sekvens med siffror.
 Hexadecimala och binära heltal stöds och skrivs med `0x` `0b` prefixet respektive.
 
-`BigInt`litteraler i Q# har ett efterföljande `l` eller `L` suffix.
+`BigInt` litteraler i Q# har ett efterföljande `l` eller `L` suffix.
 Hexadecimala Big-heltal stöds och skrivs med ett "0x"-prefix.
 Det innebär att följande är giltig användning av `BigInt` litteraler:
 
@@ -36,7 +36,7 @@ let bigHex = 0x123456789abcdef123456789abcdefL;
 let bigOne = bigZero + 1L;
 ```
 
-`Double`litteraler i Q# är flytt ALS siffror som skrivs med decimal siffror.
+`Double` litteraler i Q# är flytt ALS siffror som skrivs med decimal siffror.
 De kan skrivas med eller utan ett decimal tecken, `.` eller en exponentiell del som anges med "e" eller "e" (efter vilken endast ett möjligt negativt tecken och decimal siffror är giltiga).
 Följande är giltiga `Double` litteraler: `0.0` , `1.2e5` , `1e-5` .
 
@@ -64,16 +64,14 @@ För både heltals-och Big heltals värden är skiften aritmetiska.
 Om du byter ett negativt värde till vänster eller höger resulterar det i ett negativt tal.
 Det vill säga att flytta ett steg till vänster eller höger är detsamma som att multiplicera eller dividera med 2.
 
-Heltals Division och heltals-Modulus följer samma beteende för negativa tal som C#.
-Det vill säga `a % b` alltid samma tecken som `a` och `b * (a / b) + a % b` alltid lika med `a` .
-Exempel:
+Heltals Division och heltals-Modulus följer samma beteende för negativa tal som C#. Det vill säga `a % b` alltid samma tecken som `a` och `b * (a / b) + a % b` alltid lika med `a` . Exempel:
 
- `A` | `B` | `A / B` | `A % B`
----------|----------|---------|---------
- 5 | 2 | 2 | 1
- 5 | −2 | −2 | 1
- -5 | 2 | −2 | -1
- -5 | −2 | 2 | -1
+|`A` | `B` | `A / B` | `A % B`|
+|:---------:|:----------:|:---------:|:---------:|
+| 5 | 2 | 2 | 1 |
+| 5 | −2 | −2 | 1 |
+| -5 | 2 | −2 | -1 |
+| -5 | −2 | 2 | -1 |
 
 Big Integer-och Modulus-åtgärder fungerar på samma sätt.
 
@@ -113,7 +111,7 @@ Med alla booleska uttryck kan den `not` unära operatorn användas för att skap
 
 ## <a name="string-expressions"></a>Stränguttryck
 
-Q#tillåter att strängar används i `fail` instruktionen (förklaras i [kontroll flödet](xref:microsoft.quantum.guide.controlflow#fail-statement)) och i [`Message`](xref:microsoft.quantum.intrinsic.message) funktionen standard. Det speciella beteendet för den senare beror på vilken simulator som används men skriver vanligt vis ett meddelande till värd konsolen när den anropas under ett Q# program.
+Q# tillåter att strängar används i `fail` instruktionen (förklaras i [kontroll flödet](xref:microsoft.quantum.guide.controlflow#fail-statement)) och i [`Message`](xref:microsoft.quantum.intrinsic.message) funktionen standard. Det speciella beteendet för den senare beror på vilken simulator som används men skriver vanligt vis ett meddelande till värd konsolen när den anropas under ett Q# program.
 
 Strängar i Q# är antingen litteraler eller interpolerade strängar.
 
@@ -156,14 +154,14 @@ Observera att det underförstådda `step` är + 1 även om `stop` är mindre än
 
 Några exempel intervall är:
 
-- `1..3`är intervallet 1, 2, 3.
-- `2..2..5`är intervallet 2, 4.
-- `2..2..6`är intervallet 2, 4, 6.
-- `6..-2..2`är intervallet 6, 4, 2.
-- `2..1`är det tomma intervallet.
-- `2..6..7`är intervallet 2.
-- `2..2..1`är det tomma intervallet.
-- `1..-1..2`är det tomma intervallet.
+- `1..3` är intervallet 1, 2, 3.
+- `2..2..5` är intervallet 2, 4.
+- `2..2..6` är intervallet 2, 4, 6.
+- `6..-2..2` är intervallet 6, 4, 2.
+- `2..1` är det tomma intervallet.
+- `2..6..7` är intervallet 2.
+- `2..2..1` är det tomma intervallet.
+- `1..-1..2` är det tomma intervallet.
 
 ## <a name="qubit-expressions"></a>Qubit-uttryck
 
@@ -207,7 +205,7 @@ För användardefinierade typer som definieras i termer av andra användardefini
 Om `WrappedPair` är en användardefinierad typ med underliggande typ `IntPair` och `t` är en variabel med värde `WrappedPair(IntPair(1,2))` , `t!!` är `(1,2)` det alltså.
 
 `!`Operatören har högre prioritet än andra andra operatorer än `[]` för mat ris indexering och segmentering.
-`!`och `[]` BIND positions läge, som är, `a[i]![3]` läses som `((a[i])!)[3]` : ta det här `i` elementet i `a` , packa upp det och hämta det tredje elementet i det icke-omslutna värdet (som måste vara en matris).
+`!` och `[]` BIND positions läge, som är, `a[i]![3]` läses som `((a[i])!)[3]` : ta det här `i` elementet i `a` , packa upp det och hämta det tredje elementet i det icke-omslutna värdet (som måste vara en matris).
 
 Prioriteten hos `!` operatorn har en effekt som kanske inte är uppenbar.
 Om en funktion eller åtgärd returnerar ett värde som sedan blir omsluten, måste funktionen eller åtgärds anropet omges av parenteser, så att argumentet tupel binder till anropet i stället för att avbrytas.
@@ -253,7 +251,7 @@ Typ | Standardvärde
  `Qubit` | _Ogiltig qubit_
  `Pauli` | `PauliI`
  `Result` | `Zero`
- `Range` | Det tomma intervallet,`1..1..0`
+ `Range` | Det tomma intervallet, `1..1..0`
  `Callable` | _Ogiltigt anrops bara_
  `Array['T]` | `'T[0]`
 
@@ -328,17 +326,17 @@ I praktiken återskapas bara relevanta delar vid behov. Detta påverkar hur du k
 Du kan skapa en ny matris från en befintlig matris via ett *kopierings-och-uppdatera* -uttryck som använder operatorerna `w/` och `<-` .
 Ett kopierings-och-uppdatering-uttryck är ett uttryck i formuläret `expression1 w/ expression2 <- expression3` där
 
-* `expression1`måste vara `T[]` av typen `T` .
-* `expression2`definierar vilka index i matrisen som anges i `expression1` att ändra. `expression2`måste vara antingen typ `Int` eller typ `Range` .
-* `expression3`är de värden som används för att uppdatera element i `expression1` , baserat på de index som anges i `expression2` . Om `expression2` är Type `Int` `expression3` måste vara av typen `T` . Om `expression2` är Type `Range` `expression3` måste vara av typen `T[]` .
+* `expression1` måste vara `T[]` av typen `T` .
+* `expression2` definierar vilka index i matrisen som anges i `expression1` att ändra. `expression2` måste vara antingen typ `Int` eller typ `Range` .
+* `expression3` är de värden som används för att uppdatera element i `expression1` , baserat på de index som anges i `expression2` . Om `expression2` är Type `Int` `expression3` måste vara av typen `T` . Om `expression2` är Type `Range` `expression3` måste vara av typen `T[]` .
 
 Exempel: Copy-och-Update-uttrycket `arr w/ idx <- value` skapar en ny matris med alla element som har angetts till motsvarande element i `arr` , förutom de element som anges av `idx` , vilket är inställt på värdet (erna) i `value` . 
 
 Anges `arr` innehåller matrisen `[0,1,2,3]` och sedan 
 
-- `arr w/ 0 <- 10`är matrisen `[10,1,2,3]` .
-- `arr w/ 2 <- 10`är matrisen `[0,1,10,3]` .
-- `arr w/ 0..2..3 <- [10,12]`är matrisen `[10,1,12,3]` .
+- `arr w/ 0 <- 10` är matrisen `[10,1,2,3]` .
+- `arr w/ 2 <- 10` är matrisen `[0,1,10,3]` .
+- `arr w/ 0..2..3 <- [10,12]` är matrisen `[10,1,12,3]` .
 
 #### <a name="copy-and-update-expressions-for-named-items"></a>Kopiera och uppdatera uttryck för namngivna objekt
 
@@ -376,9 +374,9 @@ Du kan också skapa en matris med callables.
 * Om den gemensamma element typen är en åtgärds-eller funktions typ måste alla element ha samma indata och utdata.
 * Element typen för matrisen stöder alla [functors](xref:microsoft.quantum.guide.operationsfunctions) som stöds av alla element.
 Till exempel, `Op1` `Op2` , och `Op3` alla är `Qubit[] => Unit` åtgärder, men `Op1` stöder `Adjoint` , `Op2` stöder `Controlled` och `Op3` stöder båda:
-  * `[Op1, Op2]`är en matris med `(Qubit[] => Unit)` åtgärder.
-  * `[Op1, Op3]`är en matris med `(Qubit[] => Unit is Adj)` åtgärder.
-  * `[Op2, Op3]`är en matris med `(Qubit[] => Unit is Ctl)` åtgärder.
+  * `[Op1, Op2]` är en matris med `(Qubit[] => Unit)` åtgärder.
+  * `[Op1, Op3]` är en matris med `(Qubit[] => Unit is Adj)` åtgärder.
+  * `[Op2, Op3]` är en matris med `(Qubit[] => Unit is Ctl)` åtgärder.
 
 Men även om åtgärderna `(Qubit[] => Unit is Adj)` och `(Qubit[] => Unit is Ctl)` har den gemensamma bastypen för `(Qubit[] => Unit)` , delar dessa *arrays* åtgärder inte med någon gemensam bastyp.
 
@@ -395,9 +393,9 @@ Om du har två uttryck av samma typ och ett booleskt uttryck bildar du ett villk
 Villkors uttryck kan utvärderas för åtgärder som har samma indata och utdata, men som stöder olika functors. I det här fallet är typen av villkors uttryck en åtgärd med indata och utdata som stöder alla functors som stöds av båda uttrycken.
 Till exempel, `Op1` `Op2` , och `Op3` alla `Qubit[]=>Unit` , men `Op1` stöder `Adjoint` , `Op2` stöder `Controlled` och `Op3` stöder båda:
 
-- `flag ? Op1 | Op2`är en `(Qubit[] => Unit)` åtgärd.
-- `flag ? Op1 | Op3`är en `(Qubit[] => Unit is Adj)` åtgärd.
-- `flag ? Op2 | Op3`är en `(Qubit[] => Unit is Ctl)` åtgärd.
+- `flag ? Op1 | Op2` är en `(Qubit[] => Unit)` åtgärd.
+- `flag ? Op1 | Op3` är en `(Qubit[] => Unit is Adj)` åtgärd.
+- `flag ? Op2 | Op3` är en `(Qubit[] => Unit is Ctl)` åtgärd.
 
 Om något av de två möjliga resultat uttrycken innehåller en funktion eller ett åtgärds anrop, sker bara anropet om det är det som är värdet för anropet. Om t. ex. `a==b ? C(qs) | D(qs)` `a==b` är sant, så `C` anropas åtgärden och om den är false `D` anropas bara åtgärden. Den här metoden liknar *korta kretsar* på andra språk.
 
@@ -472,14 +470,14 @@ Typ specifikationen krävs eftersom `Op3` och `Op1` har olika typer, så att kom
 
 * Parenteser för åtgärds-och funktions anrop binder också före en operator, men efter mat ris indexering och functors.
 
-Q#operatorer i prioritetsordning, från högsta till lägsta:
+Q# operatorer i prioritetsordning, från högsta till lägsta:
 
-Operator | Ariteten | Beskrivning | Operands typer
+Operator | Ariteten | Description | Operands typer
 ---------|----------|---------|---------------
- avslutande`!` | Enställig | Packa upp | Valfri användardefinierad typ
- `-`, `~~~`, `not` | Enställig | Numeriskt negativ, bitvis komplement, logisk negation | `Int`, `BigInt` eller `Double` för `-` , `Int` eller `BigInt` `~~~` för `Bool``not`
- `^` | Binär | Heltals effekt | `Int`eller `BigInt` för basen `Int` för exponenten
- `/`, `*`, `%` | Binär | Division, multiplikation, heltals-modulus | `Int`, `BigInt` eller `Double` för `/` och `*` , `Int` eller `BigInt` för`%`
+ avslutande `!` | Unär | Packa upp | Valfri användardefinierad typ
+ `-`, `~~~`, `not` | Unär | Numeriskt negativ, bitvis komplement, logisk negation | `Int`, `BigInt` eller `Double` för `-` , `Int` eller `BigInt` `~~~` för `Bool``not`
+ `^` | Binär | Heltals effekt | `Int` eller `BigInt` för basen `Int` för exponenten
+ `/`, `*`, `%` | Binär | Division, multiplikation, heltals-modulus | `Int`, `BigInt` eller `Double` för `/` och `*` , `Int` eller `BigInt` för `%`
  `+`, `-` | Binär | Kombination av addition eller sträng och matris, subtraktion | `Int``BigInt`eller `Double` , även `String` eller valfri mat ris typ för`+`
  `<<<`, `>>>` | Binär | Vänster SKIFT, höger Skift | `Int` eller `BigInt`
  `<`, `<=`, `>`, `>=` | Binär | Mindre än, mindre än eller lika med, större än, större än eller-lika med jämförelser | `Int``BigInt`eller`Double`
@@ -490,7 +488,7 @@ Operator | Ariteten | Beskrivning | Operands typer
  `and` | Binär | Logiskt AND | `Bool`
  `or` | Binär | Logiskt OR | `Bool`
  `..` | Binär/ternär | Intervall operator | `Int`
- `?` `|` | Ternär | Villkorsstyrd | `Bool`för den vänstra sidan
+ `?` `|` | Ternär | Villkorsstyrd | `Bool` för den vänstra sidan
 `w/` `<-` | Ternär | Kopiera och uppdatera | Se [Kopiera och uppdatera uttryck](#copy-and-update-expressions)
 
 ## <a name="next-steps"></a>Nästa steg

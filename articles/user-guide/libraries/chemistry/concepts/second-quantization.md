@@ -1,20 +1,20 @@
 ---
 title: Andra kvantifieringsfel
 description: Lär dig mer om den andra kvantifieringsfel-metoden för att utforma elektroniska strukturer i Quantum-programmering.
-author: nathanwiebe2
-ms.author: nawiebe@microsoft.com
+author: bradben
+ms.author: v-benbra
 ms.date: 10/09/2017
 ms.topic: article-type-from-white-list
 uid: microsoft.quantum.chemistry.concepts.secondquantization
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: ba77c499d6830b1f78bba39e20b15c4ebe9433fc
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 6becd348f7b3957cb60b16bbd5a28228527e1d4c
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87869468"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90835816"
 ---
 # <a name="second-quantization"></a>Andra kvantifieringsfel
 
@@ -77,7 +77,7 @@ Quantum kemi-biblioteket kan använda dessa konventioner och rotations banaarna 
 ```
 
 För fermionic-system förhindrar Pauli uteslutnings principen att fler än en Electron förekommer i en rotations-orbital på samma tidpunkt.
-Det innebär att vi kan skriva de två juridiska tillstånden för $ \ psi_1 $ som \begin{Equation} \ psi_1 \rightarrow \begin{Cases} \ket {0} _1 & \text{IF $ \ psi_1 $ inte är upptagna,}\\\
+Det innebär att vi kan skriva de två juridiska tillstånden för $ \ psi_1 $ som \begin{Equation} \ psi_1 \rightarrow \begin{Cases} \ket {0} _1 & \text{IF $ \ psi_1 $ inte är upptagna,} \\\
 \ket {1} _1 & \text{IF $ \ psi_1 $ är upptagen.} \end{Cases} \end{Equation} den här kodningen är perfekt för Quantum Computers eftersom det innebär att vi kan lagra den elektroniska yrket som en enda Quantum-bit.
 
 Yrkes tillstånden för $2N $-rotations banorna kan liknas på samma sätt i $2N $ qubits.

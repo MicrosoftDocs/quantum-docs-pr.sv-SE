@@ -3,18 +3,18 @@ title: Flödes kontroller i Q# standard libararies
 description: Lär dig mer om flödes kontroll åtgärder och funktioner i Microsoft Q# standard-biblioteket.
 author: QuantumWriter
 uid: microsoft.quantum.concepts.control-flow
-ms.author: martinro@microsoft.com
+ms.author: martinro
 ms.date: 12/11/2017
 ms.topic: article
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: a440f1ef2b901b18593816ca27aeadf7ab827104
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 1cfef50cf2bbecd2043972a662edd8120c5570ec
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87868584"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90835629"
 ---
 # <a name="higher-order-control-flow"></a>Kontroll flöde med högre ordning #
 
@@ -86,7 +86,7 @@ Det innebär särskilt att anrop till `ApplyToEachCA` kan visas i åtgärder fö
 På samma sätt <xref:microsoft.quantum.canon.applytoeachindex> är det bra att representera mönster i formuläret `U(0, targets[0]); U(1, targets[1]); ...` och erbjuder versioner för varje kombination av functors som stöds av indata.
 
 > [!TIP]
-> `ApplyToEach`är typ-parameterad så att den kan användas med åtgärder som tar andra indata än `Qubit` .
+> `ApplyToEach` är typ-parameterad så att den kan användas med åtgärder som tar andra indata än `Qubit` .
 > Anta till exempel att `codeBlocks` är en matris med <xref:microsoft.quantum.errorcorrection.logicalregister> värden som behöver återställas.
 > Sedan `ApplyToEach(Recover(code, recoveryFn, _), codeBlocks)` kommer att använda fel korrigerings kod `code` och återställnings funktion `recoveryFn` för varje block oberoende av varandra.
 > Detta omfattar även för klassiska indata: `ApplyToEach(R(_, _, qubit), [(PauliX, PI() / 2.0); (PauliY(), PI() / 3.0]))` en rotation på $ \pi/$2 om $X $ följt av en rotation på $Pi/$3 om $Y $.
@@ -120,7 +120,7 @@ Eftersom styrnings åtgärder kan vara dyra i allmänhet, använder kontrollerad
 
 > [!NOTE]
 > En annan följd av utjämningen $U $ är att vi inte behöver ens veta hur du tillämpar `Controlled` Functor på `U` .
-> `ApplyWithCA`har därför en svagare signatur än vad som kan förväntas:
+> `ApplyWithCA` har därför en svagare signatur än vad som kan förväntas:
 > ```qsharp
 > ApplyWithCA<'T> : (('T => Unit is Adj),
 >     ('T => Unit is Adj + Ctl), 'T) => Unit

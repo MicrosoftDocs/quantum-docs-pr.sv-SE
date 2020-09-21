@@ -2,18 +2,18 @@
 title: I Q# Magic-kommandon
 description: Sidan snabb referens för att I Q# Magic-kommandon med Q# Jupyter-anteckningsböcker
 author: gillenhaalb
-ms.author: a-gibec@microsoft.com
+ms.author: a-gibec
 ms.date: 03/05/2020
 uid: microsoft.quantum.guide.quickref.iqsharp
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 1d2d092588e1a5c69d12e5d50377e3e26412c094
-ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
+ms.openlocfilehash: 75a1e1820e5ca16268c9b11322eb5653094b1a3c
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88863702"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90833568"
 ---
 # <a name="ino-locq-magic-commands"></a>I Q# Magic-kommandon
 
@@ -34,12 +34,12 @@ ms.locfileid: "88863702"
 ### <a name="azure-quantum-integration"></a>Azure Quantum-integrering
 
 - [`%azure.connect`](xref:microsoft.quantum.iqsharp.magic-ref.azure.connect): Ansluter till en Azure Quantum-arbetsyta eller visar aktuell anslutnings status.
-- [`%azure.execute`](xref:microsoft.quantum.iqsharp.magic-ref.azure.execute): Kör ett jobb i en Azure Quantum-arbetsyta.
+- [`%azure.execute`](xref:microsoft.quantum.iqsharp.magic-ref.azure.execute): Kör ett jobb i en Azure-Quantum-arbetsyta.
 - [`%azure.jobs`](xref:microsoft.quantum.iqsharp.magic-ref.azure.jobs): Visar en lista med jobb på den aktuella Azure Quantum-arbetsytan.
 - [`%azure.output`](xref:microsoft.quantum.iqsharp.magic-ref.azure.output): Visar resultat för ett jobb på den aktuella Azure Quantum-arbetsytan.
 - [`%azure.status`](xref:microsoft.quantum.iqsharp.magic-ref.azure.status): Visar status för ett jobb på den aktuella Azure Quantum-arbetsytan.
 - [`%azure.submit`](xref:microsoft.quantum.iqsharp.magic-ref.azure.submit): Skickar ett jobb till en Azure Quantum-arbetsyta.
-- [`%azure.target`](xref:microsoft.quantum.iqsharp.magic-ref.azure.target): Anger eller visar det aktiva körnings målet för Q# jobb överföring i en Azure Quantum-arbetsyta.
+- [`%azure.target`](xref:microsoft.quantum.iqsharp.magic-ref.azure.target): Anger eller visar det aktiva körnings målet för Q# jobb sändningen i en Azure Quantum-arbetsyta.
 
 ### <a name="chemistry-from-microsoftquantumchemistry-package"></a>Kemi (från Microsoft. Quantum. kemi-paketet)
 

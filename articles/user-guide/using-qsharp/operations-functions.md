@@ -2,19 +2,19 @@
 title: Åtgärder och funktioner i Q#
 description: Så här definierar och anropar du åtgärder och funktioner, och de kontrollerade och angränsande drifts specialiseringarna.
 author: gillenhaalb
-ms.author: a-gibec@microsoft.com
+ms.author: a-gibec
 ms.date: 03/05/2020
 ms.topic: article
 uid: microsoft.quantum.guide.operationsfunctions
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: c2ce999ea2a0fe7204f402fedb4cd3a3c15bd44b
-ms.sourcegitcommit: 8256ff463eb9319f1933820a36c0838cf1e024e8
+ms.openlocfilehash: e9a84de2753bc3293f441e66ee53e78559263e5c
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90759432"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90833480"
 ---
 # <a name="operations-and-functions-in-no-locq"></a>Åtgärder och funktioner i Q#
 
@@ -73,9 +73,7 @@ operation DecodeSuperdense(here : Qubit, there : Qubit) : (Result, Result) {
 
 Om en åtgärd implementerar en enhetlig omvandling, vilket är fallet för många åtgärder i Q# , är det möjligt att definiera hur åtgärden fungerar när *adjointed* eller *styrs*. En *angränsande* specialisering av en åtgärd anger hur "invertering" av åtgärden agerar, medan en *kontrollerad* specialisering anger hur en åtgärd agerar när dess program villkoras i tillståndet för en viss Quantum-registrering.
 
-Angränsande av Quantum-åtgärder är avgörande för många aspekter av Quantum Computing. Ett exempel på en sådan situation som diskuteras tillsammans med en användbar Q# programmerings teknik finns i [Conjugations](#conjugations) i den här artikeln. 
-
-Den kontrollerade versionen av en åtgärd är en ny åtgärd som effektivt tillämpar bas åtgärden endast om alla qubits för kontrollen är i ett visst tillstånd.
+Angränsande av Quantum-åtgärder är avgörande för många aspekter av Quantum Computing. Ett exempel på en sådan situation som diskuteras tillsammans med en användbar Q# programmerings teknik finns i [kontroll flöde: Conjugations](xref:microsoft.quantum.guide.controlflow#conjugations). Den kontrollerade versionen av en åtgärd är en ny åtgärd som effektivt tillämpar bas åtgärden endast om alla qubits för kontrollen är i ett visst tillstånd.
 Om kontrollens qubits är i superposition tillämpas bas åtgärden på samma sätt som den aktuella delen av superpositionen.
 Därmed används kontrollerade åtgärder ofta för att generera entanglement.
 
@@ -364,46 +362,6 @@ Du kan
 
 Användardefinierade typer behandlas som en omsluten version av den underliggande typen, i stället för som en undertyp.
 Det innebär att det inte går att använda ett värde av en användardefinierad typ där du förväntar dig ett värde av den underliggande typen.
-
-
-### <a name="conjugations"></a>Conjugations
-
-Till skillnad från klassiska bitar är det något mer engagerande att frigöra Quantum-minne eftersom qubits kan ha oönskade effekter på den återstående beräkningen om qubits fortfarande är Entangled. Dessa effekter kan undvikas genom att du avregistrerar utförda beräkningar innan du frigör minnet. Ett vanligt mönster i Quantum Computing är därför följande: 
-
-```qsharp
-operation ApplyWith<'T>(
-    outerOperation : ('T => Unit is Adj), 
-    innerOperation : ('T => Unit), 
-    target : 'T) 
-: Unit {
-
-    outerOperation(target);
-    innerOperation(target);
-    Adjoint outerOperation(target);
-}
-```
-
-Från och med vår 0,9-version Q# har stöd för en conjugation-instruktion som implementerar föregående omvandling. Med den här instruktionen `ApplyWith` kan åtgärden implementeras på följande sätt:
-
-```qsharp
-operation ApplyWith<'T>(
-    outerOperation : ('T => Unit is Adj), 
-    innerOperation : ('T => Unit), 
-    target : 'T) 
-: Unit {
-
-    within{ 
-        outerOperation(target);
-    }
-    apply {
-        innerOperation(target);
-    }
-}
-```
-En sådan conjugation-instruktion är mycket mer användbar om de yttre och inre omvandlingarna inte är tillgängliga som åtgärder utan är i stället bekväma att beskriva genom ett block som består av flera instruktioner. 
-
-Den inverterade omvandlingen för de instruktioner som definierats inom blocket genereras automatiskt av kompileraren och körs när Apply-blocket har slutförts.
-Eftersom alla föränderligt-variabler som används som en del av inom-blocket inte kan bindas om i Apply-blocket, garanteras den genererade omvandlingen som det angränsande av beräkningen i avsnittet-block. 
 
 
 ## <a name="defining-new-functions"></a>Definiera nya funktioner

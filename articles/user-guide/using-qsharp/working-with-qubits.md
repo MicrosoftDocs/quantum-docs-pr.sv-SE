@@ -1,20 +1,20 @@
 ---
 title: Arbeta med kvantbitar
-description: fyllnings Beskrivning
+description: Lär dig mer om att arbeta med qubits i Q#
 author: gillenhaalb
-ms.author: a-gibec@microsoft.com
+ms.author: a-gibec
 ms.date: 03/05/2020
 ms.topic: article
 uid: microsoft.quantum.guide.qubits
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 6808a852ee0de7d3a38ea44e9637eeaa6bea382a
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: aa942a61280553ae4e51cd5ddcc85c0df935dab1
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87867870"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90835867"
 ---
 # <a name="working-with-qubits"></a>Arbeta med kvantbitar
 
@@ -150,7 +150,7 @@ Mätningar av enskilda qubits kan utföras i olika baser, varje representeras av
 ### <a name="measure-a-single-qubit-in-the-pauliz-basis"></a>Mäta en enskild qubit baserat på `PauliZ`
 
 Använd [`M`](xref:microsoft.quantum.intrinsic.m) åtgärden, som är en inbyggd icke-enhetlig drift, för att mäta en enskild qubit i `PauliZ` grunden och tilldela ett klassiskt värde till resultatet.
-`M`har en reserverad returtyp, `Result` som endast kan ta värden `Zero` eller `One` som motsvarar de uppmätta tillstånden $ \ket {0} $ eller $ \ket {1} $ – vilket indikerar att resultatet inte längre är ett Quantum-tillstånd.
+`M` har en reserverad returtyp, `Result` som endast kan ta värden `Zero` eller `One` som motsvarar de uppmätta tillstånden $ \ket {0} $ eller $ \ket {1} $ – vilket indikerar att resultatet inte längre är ett Quantum-tillstånd.
 
 Ett enkelt exempel är följande åtgärd, som allokerar en qubit i $ \ket {0} $-tillstånd, och sedan tillämpar en Hadamard-åtgärd `H` på den och mäter resultatet på grund av detta `PauliZ` .
 

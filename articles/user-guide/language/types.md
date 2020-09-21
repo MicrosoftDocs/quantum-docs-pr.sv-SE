@@ -1,31 +1,31 @@
 ---
-title: Typer iQ#
+title: Typer i Q#
 description: Lär dig mer om de olika typerna som används i Q# programmeringsspråket.
 author: gillenhaalb
-ms.author: a-gibec@microsoft.com
+ms.author: a-gibec
 ms.date: 03/05/2020
 ms.topic: article
 uid: microsoft.quantum.guide.types
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: b034af0b1d3b967b5680403341813407e4412f93
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: c4a3e6563b8cabee87d1db6b9cb1c1f1c1a7131b
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87869604"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90835833"
 ---
-# <a name="types-in-no-locq"></a>Typer iQ#
+# <a name="types-in-no-locq"></a>Typer i Q#
 
 I den här artikeln beskrivs Q# typ modellen och syntaxen för att ange och arbeta med typer. Mer information om hur du skapar och arbetar med uttryck av dessa typer finns i [typ uttryck](xref:microsoft.quantum.guide.expressions).
 
 Vi noterar att det Q# är ett *starkt inskrivet* språk, så att en noggrann användning av de här typerna kan hjälpa kompileraren att tillhandahålla starka garantier om Q# program vid kompilering.
 För att ge de starkaste garantier som är möjliga Q# måste konverteringen mellan olika typer vara explicit med anrop till funktioner som uttrycker konverteringen. 
-Q#innehåller en rad olika funktioner som en del av <xref:microsoft.quantum.convert> namn området.
+Q# innehåller en rad olika funktioner som en del av <xref:microsoft.quantum.convert> namn området.
 Omsändningar till kompatibla typer, å andra sidan, sker implicit. 
 
-Q#tillhandahåller båda primitiva typer, som används direkt och en mängd olika sätt att skapa nya typer av från andra typer.
+Q# tillhandahåller båda primitiva typer, som används direkt och en mängd olika sätt att skapa nya typer av från andra typer.
 Vi beskriver var och en i resten av den här artikeln.
 
 ## <a name="primitive-types"></a>Primitiva typer
@@ -34,7 +34,7 @@ Q#Språket innehåller följande *primitiva typer*, som du kan använda direkt i
 
 - `Int`Typen representerar ett 64-bitars heltal, till exempel,, `2` `107` `-5` .
 - `BigInt`Typen representerar ett signerat heltal av godtycklig storlek, till exempel, `2L` , `107L` `-5L` .
-   Den här typen baseras på .NET<xref:System.Numerics.BigInteger>
+   Den här typen baseras på .NET <xref:System.Numerics.BigInteger>
    bastyp.
 
 - `Double`Typen representerar ett flyttal med dubbel precision, till exempel,, `0.0` `-1.3` `4e-7` .
@@ -53,7 +53,7 @@ Q#Språket innehåller följande *primitiva typer*, som du kan använda direkt i
    Det är en uppräknings typ som har fyra möjliga värden: `PauliI` , `PauliX` , `PauliY` och `PauliZ` , som är konstanter av typen `Pauli` .
 - `Result`Typen representerar resultatet av ett mått.
    Det är en uppräknad typ med två möjliga värden: `One` och `Zero` , som är konstanter av typen `Result` .
-   `Zero`anger att + 1-eigenvalue mättes; `One`anger att-1-eigenvalue mättes.
+   `Zero` anger att + 1-eigenvalue mättes; `One` anger att-1-eigenvalue mättes.
 
 Konstanterna,,,,, `true` `false` `PauliI` `PauliX` `PauliY` `PauliZ` `One` och `Zero` är alla reserverade symboler i Q# .
 
@@ -65,7 +65,7 @@ Konstanterna,,,,, `true` `false` `PauliI` `PauliX` `PauliY` `PauliZ` `One` och `
 * En matris med matriser är också giltig. Om du expanderar i föregående exempel visas en matris med `(Bool, Pauli)` matriser `(Bool, Pauli)[][]` .
 
 > [!NOTE] 
-> Det här exemplet `(Bool, Pauli)[][]` representerar en potentiellt Taggad matris med matriser och inte en rektangulär tvådimensionell matris. Q#stöder inte rektangulära flerdimensionella matriser.
+> Det här exemplet `(Bool, Pauli)[][]` representerar en potentiellt Taggad matris med matriser och inte en rektangulär tvådimensionell matris. Q# stöder inte rektangulära flerdimensionella matriser.
 
 * Ett mat ris värde kan skrivas i Q# käll koden med hjälp av hakparenteser runt elementen i en matris, som i `[PauliI, PauliX, PauliY, PauliZ]` .
 Den gemensamma bastypen för alla objekt i matrisen bestämmer typen för en mat ris sträng. Därför genererar en matris med element som inte har någon common-bastyp ett fel.  
@@ -98,7 +98,7 @@ Nedsänkta matriser är noll-baserade och måste vara av typ `Int` eller typ `Ra
 Tupler är ett kraftfullt koncept som används i Q# för att samla in värden i ett enda värde, vilket gör det enklare att skicka dem till varandra.
 I synnerhet kan du använda tupel-notation för att uttrycka att varje åtgärd och anrop bara tar exakt en indata och returnerar exakt ett resultat.
 
-* För noll eller flera olika typer `T0` , `T1` ,..., `Tn` kan du *Ange* en ny tupel som `(T0, T1, ..., Tn)` .
+* För noll eller flera olika typer `T0` , `T1` ,..., `Tn` kan du  *Ange* en ny tupel som `(T0, T1, ..., Tn)` .
 De typer som används för att skapa en ny tupel-typ kan själva vara tupleer, som i `(Int, (Qubit, Qubit))` .
 Sådan kapsling är alltid begränsad, men eftersom tuple-typer inte kan under några omständigheter innehålla sig själva.
 
@@ -109,7 +109,7 @@ Det är möjligt att skapa matriser av tupler, tupler av matriser, tupler av und
 * Från och med Q# 0,3, `Unit` är namnet på den tomma tuplens *typ* , `()` används för *värdet* för den tomma tuppeln.
 
 * Tupel-instanser är oföränderliga.
-Q#innehåller ingen mekanism för att ändra innehållet i en tupel när det har skapats.
+Q# innehåller ingen mekanism för att ändra innehållet i en tupel när det har skapats.
 
 
 
@@ -155,10 +155,10 @@ newtype Complex = (Double, Double);
 ```
 Den här instruktionen skapar en ny typ med två anonyma objekt av typen `Double` .   
 
-Förutom anonyma objekt stöder användardefinierade typer även *namngivna objekt* från Q# och med version 0,7 eller högre. Du kan till exempel namnge objekten till `Re` för det dubbla som representerar den verkliga delen av ett komplext tal och `Im` för den imaginära delen: 
+Förutom anonyma objekt stöder användardefinierade typer även *namngivna objekt* från Q# och med version 0,7 eller högre. Du kan till exempel namnge objekten till `Real` för det dubbla som representerar den verkliga delen av ett komplext tal och `Imag` för den imaginära delen: 
 
 ```qsharp
-newtype Complex = (Re : Double, Im : Double);
+newtype Complex = (Real : Double, Imag : Double);
 ```
 Att namnge ett objekt i en användardefinierad typ innebär inte att alla objekt måste vara namngivna – en kombination av namngivna och ej namngivna objekt stöds. Dessutom kan inre objekt också namnges.
 Typen `Nested` , som definieras nedan, till exempel har en underliggande typ `(Double, (Int, String))` , varav endast objekt av typen `Int` heter, och alla andra objekt är anonyma. 
@@ -171,18 +171,18 @@ Namngivna objekt har fördelen att de kan nås direkt via *åtkomst operatören*
 
 ```qsharp
 function ComplexAddition(c1 : Complex, c2 : Complex) : Complex {
-    return Complex(c1::Re + c2::Re, c1::Im + c2::Im);
+    return Complex(c1::Real + c2::Real, c1::Imag + c2::Imag);
 }
 ```
 
 Förutom att tillhandahålla korta alias för potentiellt komplicerade tuple-typer, är en stor fördel med att definiera sådana typer att de kan dokumentera syftet med ett visst värde.
-Till exempel på `Complex` , en kan också ha definierat 2D polär-koordinater som en användardefinierad typ:
+Till exempel på `Complex` , en kan också ha definierat en polär koordinat-represenation som en användardefinierad typ:
 
 ```qsharp
-newtype Polar = (Radius : Double, Phase : Double);
+newtype ComplexPolar = (Magnitude : Double, Argument : Double);
 ```
 
-Även om både `Complex` och `Polar` båda har en underliggande typ `(Double, Double)` , är de två typerna helt inkompatibla i Q# , vilket minimerar risken för att oavsiktligt anropa en komplex matematik funktion med polära koordinater och vice versa.
+Även om både `Complex` och `ComplexPolar` båda har en underliggande typ `(Double, Double)` , är de två typerna helt inkompatibla i Q# , vilket minimerar risken för att oavsiktligt anropa en komplex matematik funktion med polära koordinater och vice versa.
 
 #### <a name="access-anonymous-items-with-the-unwrap-operator"></a>Komma åt anonyma objekt med unwrap-operatorn
 
@@ -259,8 +259,8 @@ I allmänhet kan användardefinierade typer inte ha cykliska beroenden på varan
 
 Utifrån typerna `'Tinput` och `'Tresult` :
 
-* `('Tinput => 'Tresult)`är den grundläggande typen för alla *åtgärder*, till exempel `((Qubit, Pauli) => Result)` .
-* `('Tinput -> 'Tresult)`är den grundläggande typen för alla *funktioner*, till exempel `(Int -> Int)` . 
+* `('Tinput => 'Tresult)` är den grundläggande typen för alla *åtgärder*, till exempel `((Qubit, Pauli) => Result)` .
+* `('Tinput -> 'Tresult)` är den grundläggande typen för alla *funktioner*, till exempel `(Int -> Int)` . 
 
 Dessa kallas *signaturen* för anropbar.
 
@@ -274,13 +274,13 @@ Dessa kallas *signaturen* för anropbar.
 *Funktions* typer anges fullständigt av signaturen. En funktion som beräknar sinus för en vinkel skulle till exempel ha typen `(Double -> Double)` . 
 
 *Åtgärder* har vissa ytterligare egenskaper som uttrycks som en del av åtgärds typen. Dessa egenskaper innehåller information om vilka *functors* som stöds av åtgärden.
-Om till exempel körningen av åtgärden förlitar sig på andra qubits-tillstånd, måste den ha stöd för `Controlled` Functor. om åtgärden har ett Inverse ska den ha stöd för `Adjoint` Functor.
+Om till exempel körningen av åtgärden förlitar sig på andra qubits-tillstånd, måste den ha stöd för `Controlled` Functor. om åtgärden har en invertering, ska den ha stöd för `Adjoint` Functor.
 
 > [!NOTE]
 > Den här artikeln beskriver endast hur functors ändrar signaturen för åtgärden. Mer information om functors och åtgärder finns [i åtgärder och funktioner i Q# ](xref:microsoft.quantum.guide.operationsfunctions). 
 
 Om du behöver stöd för `Controlled` och/eller `Adjoint` Functor i en åtgärds typ måste du lägga till en anteckning som anger motsvarande egenskaper.
-Anteckningen `is Ctl` (till exempel `(Qubit => Unit is Ctl)` ) visar att åtgärden är kontrollerbar. Det vill säga att dess körning är beroende av statusen för en annan qubit eller qubits. På samma sätt betyder anteckningen `is Adj` att åtgärden har ett överordnat objekt, det vill säga att den kan vara "inverterad", så att en åtgärd som sedan är i det angränsande till ett tillstånd lämnar statusen oförändrad. 
+Anteckningen `is Ctl` (till exempel `(Qubit => Unit is Ctl)` ) visar att åtgärden är kontrollerbar. Det innebär att dess körning förlitar sig på statusen för en annan qubit eller qubits. På samma sätt betyder anteckningen `is Adj` att åtgärden har ett överordnat objekt, det vill säga att den kan vara "inverterad", så att en åtgärd som sedan är i det angränsande till ett tillstånd lämnar statusen oförändrad. 
 
 Om du vill kräva att en åtgärd av den typen stöder både- `Adjoint` och `Controlled` Functor kan du uttrycka detta som `(Qubit => Unit is Adj + Ctl)` . Den inbyggda Pauli-åtgärden har till exempel <xref:microsoft.quantum.intrinsic.x> typen `(Qubit => Unit is Adj + Ctl)` . 
 
@@ -298,7 +298,7 @@ På samma sätt har en funktion som returnerar kompositionen av två åtgärder 
 
 När du anropar en typ-parameter anrops bara måste alla argument som har samma typ parameter vara av samma typ.
 
-Q#innehåller ingen mekanism för att begränsa de möjliga typer som en användare kan ersätta för en typ parameter.
+Q# innehåller ingen mekanism för att begränsa de möjliga typer som en användare kan ersätta för en typ parameter.
 
 ## <a name="next-steps"></a>Nästa steg
 

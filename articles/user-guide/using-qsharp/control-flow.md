@@ -2,19 +2,19 @@
 title: Kontroll flöde i Q#
 description: Slingor, villkor osv.
 author: gillenhaalb
-ms.author: a-gibec@microsoft.com
+ms.author: a-gibec
 ms.date: 03/05/2020
 ms.topic: article
 uid: microsoft.quantum.guide.controlflow
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: e8c873868d6f697fc90b23a38c11f35e46b40c4f
-ms.sourcegitcommit: 8256ff463eb9319f1933820a36c0838cf1e024e8
+ms.openlocfilehash: 547c57cab67443e8b487bf817eb79fc922b43cdc
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90759670"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90833520"
 ---
 # <a name="control-flow-in-no-locq"></a>Kontroll flöde i Q#
 
@@ -24,15 +24,16 @@ Du kan dock ändra kontroll flödet på tre olika sätt:
 * `if` instruktioner
 * `for` slingor
 * `repeat-until-success` slingor
+* conjugations ( `apply-within` instruktioner)
 
-`if` `for` Konstruktionerna för och kontroll flödet fortsätter att vara bekanta med de flesta klassiska programmeringsspråk. [`Repeat-until-success`](#repeat-until-success-loop) slingor beskrivs längre fram i den här artikeln.
+`if` `for` Konstruktionerna för och kontroll flödet fortsätter att vara bekanta med de flesta klassiska programmeringsspråk. [`Repeat-until-success`](#repeat-until-success-loop) slingor och [conjugations](#conjugations) diskuteras senare i den här artikeln.
 
 Det är viktigt `for` att du använder slingor och `if` uttryck i åtgärder för vilka [specialisering](xref:microsoft.quantum.guide.operationsfunctions) genereras automatiskt. I det scenariot kastar det intilliggande av en `for` slinga riktningen och tar det angränsande av varje iteration.
 Den här åtgärden följer principen "skor-och-SOCKS": om du vill ångra att sätta igång på SOCKS och sedan skor måste du ångra att sätta på skor och sedan ångra att sätta igång på SOCKS. 
 
 ## <a name="if-else-if-else"></a>Om, annars, annars
 
-`if`Instruktionen stöder villkorlig körning.
+`if`Instruktionen stöder villkorlig bearbetning.
 Det består av nyckelordet `if` , ett booleskt uttryck inom parentes och ett instruktions block ( _then_ -blocket).
 Valfritt antal Else-If-satser kan följa, var och en består av nyckelordet `elif` , ett booleskt uttryck inom parentes och ett instruktions block ( _Else-If-_ block).
 Slutligen kan instruktionen avslutas med en Else-sats som består av nyckelordet `else` följt av ett annat instruktions block ( _Else_ -blocket).
@@ -75,7 +76,7 @@ Instruktionen består av nyckelordet `for` följt av en symbol-eller symbol-tupe
 
 Instruktions blocket (bröd texten i slingan) körs flera gånger, med den definierade symbolen (loop-variabeln) kopplad till varje värde i intervallet eller matrisen.
 Observera att om intervall uttrycket utvärderas till ett tomt intervall eller en matris, körs inte bröd texten alls.
-Uttrycket utvärderas fullständigt innan loopen inleds, och ändras inte när loopen körs.
+Uttrycket utvärderas fullständigt innan loopen inleds och ändras inte när loopen körs.
 
 Loop-variabeln binds vid varje ingång till loop-texten och är obunden i slutet av bröd texten.
 Loop-variabeln är inte kopplad efter att for-slingan har slutförts.
@@ -150,9 +151,10 @@ Fler exempel och mer information finns i [Upprepa-till-Slutför-exempel](#repeat
 
 ## <a name="while-loop"></a>While-loop
 
-Upprepa-tills-lyckad-mönster har en mycket Quantum-speciell connotation. De används ofta i vissa klasser av Quantum-algoritmer – därför den dedikerade språk konstruktionen i Q# . Loopar som bryts baserat på ett villkor och vars körnings längd är således okänd vid kompileringen, hanteras dock med särskild försiktighet i en Quantum-körning. Användningen i functions är dock inte problematisk eftersom dessa slingor bara innehåller kod som körs på konventionell (icke-Quantum) maskin vara. 
+Upprepa-tills-lyckad-mönster har en mycket Quantum-speciell connotation. De används ofta i vissa klasser av Quantum-algoritmer – därför den dedikerade språk konstruktionen i Q# . Loopar som bryts baserat på ett villkor och vars körnings längd är sålunda okänd vid kompileringen, hanteras dock med särskild försiktighet i en Quantum-körning. Användningen i functions är dock inte problematisk eftersom dessa slingor bara innehåller kod som körs på konventionell (icke-Quantum) maskin vara. 
 
-Q#stöder därför endast användningen av while-slingor i functions. En `while` instruktion består av nyckelordet `while` , ett booleskt uttryck inom parentes och ett instruktions block.
+Q#stöder därför endast användningen av while-slingor i functions.
+En `while` instruktion består av nyckelordet `while` , ett booleskt uttryck inom parentes och ett instruktions block.
 Instruktions blocket (bröd texten i slingan) körs så länge villkoret utvärderas till `true` .
 
 ```qsharp
@@ -163,6 +165,45 @@ while (index < Length(arr) && item < 0) {
     set index += 1;
 }
 ```
+
+## <a name="conjugations"></a>Conjugations
+
+Till skillnad från klassiska bitar är det något mer engagerande att frigöra Quantum-minne eftersom qubits kan ha oönskade effekter på den återstående beräkningen om qubits fortfarande är Entangled. Dessa effekter kan undvikas genom att du avregistrerar utförda beräkningar innan du frigör minnet. Ett vanligt mönster i Quantum Computing är därför följande: 
+
+```qsharp
+operation ApplyWith<'T>(
+    outerOperation : ('T => Unit is Adj), 
+    innerOperation : ('T => Unit), 
+    target : 'T) 
+: Unit {
+
+    outerOperation(target);
+    innerOperation(target);
+    Adjoint outerOperation(target);
+}
+```
+
+Q# stöder en conjugation-instruktion som implementerar föregående omvandling. Med den här instruktionen `ApplyWith` kan åtgärden implementeras på följande sätt:
+
+```qsharp
+operation ApplyWith<'T>(
+    outerOperation : ('T => Unit is Adj), 
+    innerOperation : ('T => Unit), 
+    target : 'T) 
+: Unit {
+
+    within{ 
+        outerOperation(target);
+    }
+    apply {
+        innerOperation(target);
+    }
+}
+```
+Ett sådant conjugation-uttryck är användbart om de yttre och inre omvandlingarna inte är tillgängliga som åtgärder, men är i stället bekväma att beskriva genom ett block som består av flera instruktioner. 
+
+Den inverterade omvandlingen för de instruktioner som definierats inom blocket genereras automatiskt av kompileraren och körs när Apply-blocket har slutförts.
+Eftersom alla föränderligt-variabler som används som en del av inom-blocket inte kan bindas om i Apply-blocket, garanteras den genererade omvandlingen som det angränsande av beräkningen i avsnittet-block. 
 
 ## <a name="return-statement"></a>Return-instruktion
 
