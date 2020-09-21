@@ -3,23 +3,23 @@ title: Matematik i Q# standard biblioteken
 description: Lär dig mer om de klassiska matematiska funktionerna i de Q# standard bibliotek som används med de inbyggda data typerna.
 author: cgranade
 uid: microsoft.quantum.libraries.math
-ms.author: chgranad@microsoft.com
+ms.author: chgranad
 ms.topic: article
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 4a3747eaa2c91e482ded3af1279a0e40d922bfb3
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 55b1ef70eed1eb47ab0c6b30e2b8203c38c9a67a
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87868431"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90833601"
 ---
-# <a name="classical-mathematical-functions"></a><span data-ttu-id="b9621-103">Klassiska matematiska funktioner</span><span class="sxs-lookup"><span data-stu-id="b9621-103">Classical Mathematical Functions</span></span> #
+# <a name="classical-mathematical-functions"></a><span data-ttu-id="c304d-103">Klassiska matematiska funktioner</span><span class="sxs-lookup"><span data-stu-id="c304d-103">Classical Mathematical Functions</span></span> #
 
-<span data-ttu-id="b9621-104">Dessa funktioner används främst för att arbeta med de Q# inbyggda data typerna `Int` , `Double` och `Range` .</span><span class="sxs-lookup"><span data-stu-id="b9621-104">These functions are primarily used to work with the Q# built-in data types `Int`, `Double`, and `Range`.</span></span>
+<span data-ttu-id="c304d-104">Dessa funktioner används främst för att arbeta med de Q# inbyggda data typerna `Int` , `Double` och `Range` .</span><span class="sxs-lookup"><span data-stu-id="c304d-104">These functions are primarily used to work with the Q# built-in data types `Int`, `Double`, and `Range`.</span></span>
 
-<span data-ttu-id="b9621-105"><xref:microsoft.quantum.intrinsic.random>Åtgärden har en signatur `(Double[] => Int)` .</span><span class="sxs-lookup"><span data-stu-id="b9621-105">The <xref:microsoft.quantum.intrinsic.random> operation has signature `(Double[] => Int)`.</span></span>
-<span data-ttu-id="b9621-106">Det tar en matris med dubbla värden som indatatyper och returnerar ett slumpmässigt markerat index i matrisen som en `Int` .</span><span class="sxs-lookup"><span data-stu-id="b9621-106">It takes an array of doubles as input, and returns a randomly-selected index into the array as an `Int`.</span></span>
-<span data-ttu-id="b9621-107">Sannolikheten för att välja ett speciellt index är proportionerlig till värdet för mat ris elementet i det indexet.</span><span class="sxs-lookup"><span data-stu-id="b9621-107">The probability of selecting a specific index is proportional to the value of the array element at that index.</span></span> <span data-ttu-id="b9621-108">n mat ris element som är lika med noll ignoreras och deras index returneras aldrig.</span><span class="sxs-lookup"><span data-stu-id="b9621-108">n Array elements that are equal to zero are ignored and their indices are never returned.</span></span>
-<span data-ttu-id="b9621-109">Om något mat ris element är mindre än noll, eller om inget mat ris element är större än noll, så Miss lyckas åtgärden.</span><span class="sxs-lookup"><span data-stu-id="b9621-109">If any array element is less than zero, or if no array element is greater than zero, then the operation fails.</span></span>
+<span data-ttu-id="c304d-105"><xref:microsoft.quantum.intrinsic.random>Åtgärden har en signatur `(Double[] => Int)` .</span><span class="sxs-lookup"><span data-stu-id="c304d-105">The <xref:microsoft.quantum.intrinsic.random> operation has signature `(Double[] => Int)`.</span></span>
+<span data-ttu-id="c304d-106">Det tar en matris med dubbla värden som indatatyper och returnerar ett slumpmässigt markerat index i matrisen som en `Int` .</span><span class="sxs-lookup"><span data-stu-id="c304d-106">It takes an array of doubles as input, and returns a randomly-selected index into the array as an `Int`.</span></span>
+<span data-ttu-id="c304d-107">Sannolikheten för att välja ett speciellt index är proportionerlig till värdet för mat ris elementet i det indexet.</span><span class="sxs-lookup"><span data-stu-id="c304d-107">The probability of selecting a specific index is proportional to the value of the array element at that index.</span></span> <span data-ttu-id="c304d-108">n mat ris element som är lika med noll ignoreras och deras index returneras aldrig.</span><span class="sxs-lookup"><span data-stu-id="c304d-108">n Array elements that are equal to zero are ignored and their indices are never returned.</span></span>
+<span data-ttu-id="c304d-109">Om något mat ris element är mindre än noll, eller om inget mat ris element är större än noll, så Miss lyckas åtgärden.</span><span class="sxs-lookup"><span data-stu-id="c304d-109">If any array element is less than zero, or if no array element is greater than zero, then the operation fails.</span></span>
