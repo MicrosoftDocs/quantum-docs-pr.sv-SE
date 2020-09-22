@@ -3,18 +3,18 @@ title: Data strukturer i Q# standard biblioteken
 description: Lär dig mer om data strukturer, Oracle och dynamiska generatorer i Microsofts Q# standard bibliotek.
 author: QuantumWriter
 uid: microsoft.quantum.libraries.data-structures
-ms.author: martinro@microsoft.com
+ms.author: martinro
 ms.date: 12/11/2017
 ms.topic: article
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 332d9f3134f2b69113668629857af32c814d3263
-ms.sourcegitcommit: 8256ff463eb9319f1933820a36c0838cf1e024e8
+ms.openlocfilehash: 51eb52d0b8ace972f6a425edba400ca9a8916d2e
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90759892"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90835595"
 ---
 # <a name="data-structures-and-modeling"></a>Data strukturer och modeller #
 
