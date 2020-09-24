@@ -2,19 +2,19 @@
 title: Användarhandboken för Q#
 description: Översikt över användarhandbokens syfte och innehåll
 author: gillenhaalb
-ms.author: a-gibec@microsoft.com
+ms.author: a-gibec
 ms.date: 03/05/2020
 ms.topic: article
 uid: microsoft.quantum.guide
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 4fae2949bdcab0c3735b40ef029d70bf7ea3fb9f
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: f0680e773c8233d6c4f1acb742b3cc38dbc069d5
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87869638"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90834762"
 ---
 # <a name="the-no-locq-user-guide"></a>Användarhandboken för Q#
 
@@ -46,7 +46,7 @@ I de olika ämnena i den här guiden går vi igenom huvudbegreppen i språket Q#
 
 - [Arbeta med kvantbitar](xref:microsoft.quantum.guide.qubits): Beskriver de funktioner i Q# som används för enskilda kvantbitar och system med kvantbitar, mer specifikt hur du allokerar dem, utför åtgärder på dem och mäter dem. 
 
-- [Kontrollflöde](xref:microsoft.quantum.guide.controlflow): Beskriver kontrollflödesmönstren för programmering i Q# som har stöd för många standardtekniker (till exempel villkorlig körning, for-loopar och while-loopar) samt det kvantspecifika ”upprepa-tills-lyckas”-mönstret.
+- [Kontrollflöde](xref:microsoft.quantum.guide.controlflow): Beskriver kontrollflödesmönstren för programmering i Q# som har stöd för många standardtekniker (till exempel villkorsstyrd bearbetning, *for*-loopar och *while*-loopar) samt det kvantspecifika *upprepa-tills-lyckas*-mönstret.
 
 - [Testa och felsöka](xref:microsoft.quantum.guide.testingdebugging): Beskriver några tekniker som du kan använda för att se till att koden gör det den ska göra. 
     På grund av den övergripande komplexiteten i kvantinformation, kan det krävas särskilda tekniker när kvantprogram ska felsökas. 

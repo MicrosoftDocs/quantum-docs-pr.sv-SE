@@ -2,19 +2,19 @@
 title: Spårningssimulator för kvantdator – Quantum Development Kit
 description: Lär dig att använda Microsofts spårningssimulator för kvantdatorer som felsöker klassisk kod och beräknar resurskraven för ett Q#-program.
 author: vadym-kl
-ms.author: vadym@microsoft.com
+ms.author: vadym
 ms.date: 06/25/2020
 ms.topic: article
 uid: microsoft.quantum.machines.qc-trace-simulator.intro
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 5d5efef037ff236bd040dfd88e94f7f3dd331aef
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 54a1f63461cfcc8146f7dc4d18d321238d77454d
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87868227"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90833354"
 ---
 # <a name="microsoft-quantum-development-kit-qdk-quantum-trace-simulator"></a>Spårningssimulator för kvantdator i Microsoft Quantum Development Kit (QDK)
 
@@ -86,7 +86,7 @@ QDK:n innehåller fem verktyg som du kan använda med kvantspårningssimulatorn 
 |-----| -----|
 |[Kontroll av distinkta indata](xref:microsoft.quantum.machines.qc-trace-simulator.distinct-inputs) |Söker efter potentiella konflikter med delade kvantbitar |
 |[Kontroll av användning av upphävda kvantbitar](xref:microsoft.quantum.machines.qc-trace-simulator.invalidated-qubits)  |Kontrollerar om programmet tillämpar en åtgärd på en kvantbit som redan har släppts |
-|[Räknare för primitiva åtgärder](xref:microsoft.quantum.machines.qc-trace-simulator.primitive-counter)  | Räknar antalet primitiva körningar som används av varje åtgärd som anropas i ett kvantprogram  |
+|[Räknare för primitiva åtgärder](xref:microsoft.quantum.machines.qc-trace-simulator.primitive-counter)  | Räknar antalet primitiva processer som används av varje åtgärd som anropas i ett kvantprogram  |
 |[Djupräknare](xref:microsoft.quantum.machines.qc-trace-simulator.depth-counter)  |Samlar in antal som representerar de nedre gränserna för djupet i varje åtgärd som anropas i ett kvantprogram   |
 |[Breddräknare](xref:microsoft.quantum.machines.qc-trace-simulator.width-counter)  |Räknar antalet allokerade och lånade kvantbitar för varje åtgärd i ett kvantprogram |
 
