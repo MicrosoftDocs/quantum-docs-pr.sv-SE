@@ -2,23 +2,23 @@
 title: Så här fungerar kvantberäkning
 description: Vad är kvantdatorer och hur använder de principerna för kvantmekanik?
 author: bradben
-ms.author: bradben
+ms.author: v-benbra
 ms.date: 5/5/2020
 ms.topic: overview
 uid: microsoft.quantum.overview.understanding
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 214fe809aaeba759005fa76ba3615f376d402bc9
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: 332afb4ea7de01da5d8f22fee6517032ed4f9fc1
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87866969"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90835000"
 ---
 # <a name="understanding-quantum-computing"></a>Så här fungerar kvantberäkning
 
-Inom kvantberäkning används principerna för kvantmekanik till att bearbeta information. Därför kräver kvantberäkning en annan metod än klassisk beräkning.  Ett exempel på skillnaden är den processor som används i kvantdatorer.  Medan klassiska datorer använder de välbekanta kiselbaserade kretsarna använder kvantdatorer kvantmaterial såsom atomer, joner, fotoner eller elektroner.  
+Inom kvantberäkning används principerna för kvantmekanik till att bearbeta information. Därför kräver kvantberäkning en annan metod än klassisk beräkning. Ett exempel på skillnaden är den processor som används i kvantdatorer. Medan klassiska datorer använder de välbekanta kiselbaserade kretsarna använder kvantdatorer kvantsystem såsom atomer, joner, fotoner eller elektroner. De använder sina kvantegenskaper för att representera bitar som kan förberedas i olika kvantöverpositioner på 1 och 0.  
 
 Kvantmaterial beter sig utefter kvantmekanikens lagar med begrepp såsom probabilistisk beräkning, superposition och sammanflätning. Dessa begrepp utgör grunden för kvantalgoritmer som utnyttjar kraften hos kvantberäkning till att lösa komplexa problem. I den här artikeln beskrivs några av de centrala begreppen inom kvantmekanik som kvantberäkning bygger på.
 

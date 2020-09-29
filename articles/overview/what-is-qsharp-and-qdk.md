@@ -2,23 +2,23 @@
 title: Vad är programmeringsspråket Q# och QDK?
 description: Lär dig mer om Microsoft Quantum Development Kit, programmeringsspråket Q# samt hur du kan skapa kvantprogram.
 author: bradben
-ms.author: bradben
+ms.author: v-benbra
 ms.date: 5/5/2020
 ms.topic: overview
 uid: microsoft.quantum.overview.q-sharp
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 5db574b0380ffa1616cb3959d84925854df4e321
-ms.sourcegitcommit: 75c4edc7c410cc63dc8352e2a5bef44b433ed188
+ms.openlocfilehash: 21adfcc1c5321d87665adb39a3c838bbda0b8861
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88863781"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90834575"
 ---
 # <a name="what-are-the-no-locq-programming-language-and-qdk"></a>Vad är programmeringsspråket Q# och QDK?
 
-Q# är Microsofts programmeringsspråk med öppen källkod för utveckling och körning av kvantalgoritmer. Det ingår i Quantum Development Kit (QDK), som innehåller [Q#-bibliotek](xref:microsoft.quantum.libraries), [kvantsimulatorer](xref:microsoft.quantum.machines), [tillägg för andra programmeringsmiljöer](xref:microsoft.quantum.install) och [API-dokumentation](xref:microsoft.quantum.standardlibsintro). Utöver standardbiblioteket för Q# innehåller QDK även biblioteken för kemi, maskininlärning och tal.
+Q# är Microsofts programmeringsspråk med öppen källkod för utveckling och körning av kvantalgoritmer. Det ingår i Quantum Development Kit (QDK), som innehåller [Q#-bibliotek](xref:microsoft.quantum.libraries), [kvantsimulatorer](xref:microsoft.quantum.machines), [tillägg för andra programmeringsmiljöer](xref:microsoft.quantum.install) och [API-dokumentation](xref:microsoft.quantum.apiref-intro). Utöver standardbiblioteket för Q# innehåller QDK även biblioteken för kemi, maskininlärning och tal.
 
 Som programmeringsspråk omfattar Q# välkända element från Python, C# och F#. Det stöder en grundläggande procedurmodell för skrivande av program med loopar, if/then-instruktioner och vanliga datatyper. Det introducerar även nya kvantspecifika datastrukturer och åtgärder.
 
@@ -54,7 +54,7 @@ När du kompilerar och kör programmet skapar det en instans av kvantsimulatorn 
 
 Isolering av Q#-koden i simulatorn ser till att algoritmerna följer kvantfysikens lagar och att de körs korrekt på kvantdatorer.
 
-![qsharp-code-flow](~/media/qsharp-code-flow.png)
+![Qsharp-kodflöde](~/media/qsharp-code-flow.png)
 
 ## <a name="how-do-i-use-the-qdk"></a>Hur använder jag QDK?
 

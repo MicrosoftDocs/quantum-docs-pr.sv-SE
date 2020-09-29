@@ -1,22 +1,25 @@
 ---
 title: Utveckla med Q#-program
-author: KittyYeungQ
-ms.author: kitty
-ms.date: 4/24/2020
+description: Lär dig hur du skapar ett Q#-program som körs från kommandotolken.
+author: bradben
+ms.author: v-benbra
+ms.date: 8/20/2020
 ms.topic: article
 ms.custom: how-to
 uid: microsoft.quantum.install.standalone
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: a630b2307f5d95321fb26f480d7a441ddba846fc
-ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
+ms.openlocfilehash: 68f530d80e5c5f40dc2bcbb185879c3cb6f93f91
+ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89358266"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90834422"
 ---
 # <a name="develop-with-no-locq-applications"></a>Utveckla med Q#-program
+
+Följ anvisningarna på den flik som motsvarar din miljö.
 
 Q#-program kan köras fristående, utan någon drivrutin på ett värdspråk som C#, F# eller Python.
 
@@ -45,7 +48,7 @@ Så här konfigurerar du Visual Studio Codespaces:
 3. Nu kan du starta din nya miljö och börja utveckla i webbläsaren via [VS Codespaces Cloud IDE](https://online.visualstudio.com/environments). Du kan också använda en lokal installation av VS Code och använda Codespaces som en [fjärrmiljö](https://docs.microsoft.com/visualstudio/online/how-to/vscode).
 
 
-Installera QDK för en annan miljö genom att ange följande i kommandotolken:
+Om du vill installera QDK för en annan miljö skriver du följande i kommandotolken:
 
 ```dotnetcli
 dotnet new -i Microsoft.Quantum.ProjectTemplates
@@ -63,14 +66,14 @@ Skapa ett nytt projekt:
 2. Klicka på **Fristående konsolprogram**.
 3. Gå till platsen där du vill spara projektet och klicka på **Skapa projekt**.
 4. När projektet har skapats klickar du på **Öppna nytt projekt...** längst ned till höger.
-        
+
 Inspektera projektet. Du bör se en källfil med namnet `Program.qs`, vilket är ett Q#-program som definierar en enkel åtgärd för att skriva ut ett meddelande till konsolen.
 
 Så här kör du programmet:
+
 1. Välj **Terminal** -> **Ny terminal**.
 2. I terminalprompten anger du `dotnet run`.
 3. Du bör se följande text i utdatafönstret `Hello quantum world!`
-
 
 > [!NOTE]
 > Arbetsytor med flera rotmappar stöds för närvarande inte av VS Code-tillägget för Q#. Om du har flera projekt på en VS Code-arbetsyta, måste alla projekten finnas i samma rotmapp.
@@ -80,6 +83,7 @@ Så här kör du programmet:
 Verifiera din Visual Studio-installation genom att skapa ett Q#-program för `Hello World`.
 
 Så här skapar du ett nytt Q#-program:
+
 1. Öppna Visual Studio och klicka på **Arkiv** -> **Nytt** -> **Projekt**.
 2. Skriv `Q#` i sökrutan, välj **Q#-program** och klicka på **Nästa**.
 3. Ange ett namn och en plats för programmet och klicka på **Skapa**.
@@ -88,6 +92,7 @@ Så här skapar du ett nytt Q#-program:
 Inspektera projektet. Du bör se en källfil med namnet `Program.qs`, vilket är ett Q#-program som definierar en enkel åtgärd för att skriva ut ett meddelande till konsolen.
 
 Så här kör du programmet:
+
 1. Välj **Felsökning** -> **Starta utan felsökning**.
 2. Du bör se att texten `Hello quantum world!` skrivs till ett konsolfönster.
 
@@ -105,11 +110,13 @@ Verifiera din installation genom att skapa ett Q# `Hello World`-program.
     ```
 
 1. Skapa ett nytt program:
+
     ```dotnetcli
     dotnet new console -lang Q# -o runSayHello
     ```
 
 1. Gå till programkatalogen:
+
     ```dotnetcli
     cd runSayHello
     ```
@@ -117,6 +124,7 @@ Verifiera din installation genom att skapa ett Q# `Hello World`-program.
     Den här katalogen bör du innehålla filen `Program.qs`, vilket är ett Q#-program som definierar en enkel åtgärd för att skriva ut ett meddelande till konsolen. Du kan ändra den här mallen med ett textredigeringsprogram och skriva över den med dina egna kvantprogram. 
 
 1. Kör programmet:
+
     ```dotnetcli
     dotnet run
     ```
