@@ -1,0 +1,59 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.logical.lexographiccomparison
+name: LexographicComparison
+type: function
+namespace: microsoft.quantum.logical
+summary: Med en jämförelse funktion returnerar en ny funktion som lexographically jämför två matriser.
+remarks: >-
+  Lexographic-jämförelsen mellan två matriser `xs` och `ys` definieras av följande procedur. Vi säger att två element `x` och `y` är likvärdiga om `elementComparison(x, y)` och `elementComparison(y, x)` båda är sanna.
+
+
+  - Båda matriserna jämförs element för element tills det första paret element som inte är likvärdigt. Matrisen som innehåller det element som inträffar först enligt `elementComparison` inträffar först i lexographical-ordning.
+
+  - Om inga icke-likvärdiga element hittas och en matris är längre än den andra, sägs att den kortare matrisen inträffar först.
+syntax: "function LexographicComparison (elementComparison : (('T, 'T) -> Bool)) : (('T[], 'T[]) -> Bool)"
+input:
+  content: "(elementComparison : (('T, 'T) -> Bool))"
+  types:
+  - name: elementComparison
+    summary: En funktion som jämför två element `x` och `y` returnerar om `x` är mindre än eller lika med `y` .
+    isFunction: true
+    input:
+      types:
+      - uid: "'T"
+        isLocal: true
+      - uid: "'T"
+        isLocal: true
+    output:
+      types:
+      - isPrimitive: true
+        uid: Bool
+output:
+  content: (('T[], 'T[]) -> Bool)
+  types:
+  - summary: En funktion som jämför två matriser `xs` och `ys` returnerar om `xs` inträffar före eller lika med `ys` i lexographical-ordningen.
+    isFunction: true
+    input:
+      types:
+      - isArray: true
+        uid: "'T"
+        isLocal: true
+      - isArray: true
+        uid: "'T"
+        isLocal: true
+    output:
+      types:
+      - isPrimitive: true
+        uid: Bool
+typeParameters:
+- uid: "'T"
+  summary: Typ av element i de matriser som jämförs.
+seeAlso:
+- microsoft.quantum.arrays.sorted
+metadata:
+  ms.openlocfilehash: c7b1ec454d7a87c344b0297007dff32fb6ee07a6
+  ms.sourcegitcommit: 685a8ab16d7e6a25e63a168d6e7c385fa6e876cc
+  ms.translationtype: MT
+  ms.contentlocale: sv-SE
+  ms.lasthandoff: 09/29/2020
+  ms.locfileid: "91494786"
