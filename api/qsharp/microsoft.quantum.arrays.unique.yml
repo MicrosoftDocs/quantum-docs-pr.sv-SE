@@ -1,0 +1,66 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.arrays.unique
+name: Unique
+type: function
+namespace: microsoft.quantum.arrays
+summary: >-
+  Returnerar en ny matris som inte har lika intilliggande element.
+
+
+  Funktionen returnerar en matris med element och en funktion för att testa likheten. den här funktionen returnerar en ny matris där den relativa ordningen på elementen behålls, men alla intilliggande element som är lika med filtreras till bara ett enda element.
+remarks: Om det finns flera element som är identiska men inte bredvid varandra, kommer det att finnas flera förekomster i den utgående matrisen.  Använd den här funktionen tillsammans med `Sorted` för att hämta en matris med övergripande unika element.
+examples: >-
+  ```Q#
+
+  let unique1 = Unique(EqualI, [1, 1, 3, 3, 2, 5, 5, 5, 7]);
+
+  // same as [1, 3, 2, 5, 7]
+
+  let unique2 = Unique(EqualI, [2, 2, 1, 1, 2, 2, 1, 1]);
+
+  // same as [2, 1, 2, 1];
+
+  let unique3 = Unique(EqualI, Sorted(LessThanOrEqualI, [2, 2, 1, 1, 2, 2, 1, 1]));
+
+  // same as [1, 2];
+
+  ```
+syntax: "function Unique (equal : (('T, 'T) -> Bool), array : 'T[]) : 'T[]"
+input:
+  content: "(equal : (('T, 'T) -> Bool), array : 'T[])"
+  types:
+  - name: equal
+    summary: En funktion som jämför två element som `a` anses vara lika med `b` om `equal(a, b)` är `true` .
+    isFunction: true
+    input:
+      types:
+      - uid: "'T"
+        isLocal: true
+      - uid: "'T"
+        isLocal: true
+    output:
+      types:
+      - isPrimitive: true
+        uid: Bool
+  - name: array
+    summary: Matrisen som ska filtreras för unika element.
+    isArray: true
+    uid: "'T"
+    isLocal: true
+output:
+  content: "'T[]"
+  types:
+  - summary: Matris utan lika intilliggande element.
+    isArray: true
+    uid: "'T"
+    isLocal: true
+typeParameters:
+- uid: "'T"
+  summary: Typen för varje element i `array` .
+metadata:
+  ms.openlocfilehash: a47f41ce4298035bd2ccf23dfd26491349f946f7
+  ms.sourcegitcommit: 685a8ab16d7e6a25e63a168d6e7c385fa6e876cc
+  ms.translationtype: MT
+  ms.contentlocale: sv-SE
+  ms.lasthandoff: 09/29/2020
+  ms.locfileid: "91494558"

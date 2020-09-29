@@ -1,0 +1,63 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.arrays.zipped4
+name: Zipped4
+type: function
+namespace: microsoft.quantum.arrays
+summary: Med fyra matriser returnerar en ny matris med 4-tupler, så att varje 4-tupel innehåller ett element från varje ursprunglig matris.
+syntax: "function Zipped4 (first : 'T1[], second : 'T2[], third : 'T3[], fourth : 'T4[]) : ('T1, 'T2, 'T3, 'T4)[]"
+input:
+  content: "(first : 'T1[], second : 'T2[], third : 'T3[], fourth : 'T4[])"
+  types:
+  - name: first
+    summary: En matris som innehåller värden för det första elementet i varje tupel.
+    isArray: true
+    uid: "'T1"
+    isLocal: true
+  - name: second
+    summary: En matris som innehåller värden för det andra elementet i varje tupel.
+    isArray: true
+    uid: "'T2"
+    isLocal: true
+  - name: third
+    summary: En matris som innehåller värden för det tredje elementet i varje tupel.
+    isArray: true
+    uid: "'T3"
+    isLocal: true
+  - name: fourth
+    summary: En matris som innehåller värden för det fjärde elementet i varje tupel.
+    isArray: true
+    uid: "'T4"
+    isLocal: true
+output:
+  content: ('T1, 'T2, 'T3, 'T4)[]
+  types:
+  - summary: En matris som innehåller 4 tupler av formuläret `(first[idx], second[idx], third[idx], fourth[idx])` för var och en `idx` . Om de fyra matriserna inte är lika långa blir utdata så länge som det kortare indata.
+    isArray: true
+    types:
+    - uid: "'T1"
+      isLocal: true
+    - uid: "'T2"
+      isLocal: true
+    - uid: "'T3"
+      isLocal: true
+    - uid: "'T4"
+      isLocal: true
+typeParameters:
+- uid: "'T1"
+  summary: Typen för de första mat ris elementen.
+- uid: "'T2"
+  summary: Typ av andra mat ris element.
+- uid: "'T3"
+  summary: Typen för de tredje mat ris elementen.
+- uid: "'T4"
+  summary: Typ av fjärde mat ris element.
+seeAlso:
+- microsoft.quantum.arrays.zipped
+- microsoft.quantum.arrays.zipped3
+metadata:
+  ms.openlocfilehash: 12c6501fd173798718b2ab14d14d93b5d53361b6
+  ms.sourcegitcommit: 685a8ab16d7e6a25e63a168d6e7c385fa6e876cc
+  ms.translationtype: MT
+  ms.contentlocale: sv-SE
+  ms.lasthandoff: 09/29/2020
+  ms.locfileid: "91494518"

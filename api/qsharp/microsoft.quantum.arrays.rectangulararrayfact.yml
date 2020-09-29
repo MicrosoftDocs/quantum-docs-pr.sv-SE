@@ -1,0 +1,52 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.arrays.rectangulararrayfact
+name: RectangularArrayFact
+type: function
+namespace: microsoft.quantum.arrays
+summary: >-
+  Representerar ett villkor som en tvådimensionell matris har en rektangulär figur
+
+
+  Den här funktionen förutsätter att varje rad i en matris har samma längd.
+examples: >-
+  ```Q#
+
+  RectangularArrayFact([[1, 2], [3, 4]], "Array is not rectangular");       // okay
+
+  RectangularArrayFact([[1, 2, 3], [4, 5, 6]], "Array is not rectangular"); // okay
+
+  RectangularArrayFact([[1, 2], [3, 4, 5]], "Array is not rectangular");    // will fail
+
+  ```
+syntax: "function RectangularArrayFact (array : 'T[][], message : String) : Unit"
+input:
+  content: "(array : 'T[][], message : String)"
+  types:
+  - name: array
+    summary: En tvådimensionell matris med element
+    isArray: true
+    types:
+    - isArray: true
+      uid: "'T"
+      isLocal: true
+  - name: message
+    summary: Ett meddelande som skrivs ut om matrisen inte är en rektangulär matris
+    isPrimitive: true
+    uid: String
+output:
+  content: Unit
+  types:
+  - isPrimitive: true
+    uid: Unit
+typeParameters:
+- uid: "'T"
+  summary: Typen för varje element i `array` .
+seeAlso:
+- microsoft.quantum.arrays.squarearrayfact
+metadata:
+  ms.openlocfilehash: 607ca2f511c60048553938b747ec7db0308353ad
+  ms.sourcegitcommit: 685a8ab16d7e6a25e63a168d6e7c385fa6e876cc
+  ms.translationtype: MT
+  ms.contentlocale: sv-SE
+  ms.lasthandoff: 09/29/2020
+  ms.locfileid: "91494601"

@@ -1,0 +1,51 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.arrays.unzipped
+name: Unzipped
+type: function
+namespace: microsoft.quantum.arrays
+summary: Med en matris med 2-tupler returnerar en tupel av två matriser, där varje innehåller elementen i tuppeln för den inmatade matrisen.
+examples: >-
+  ```Q#
+
+  // split is same as ([6, 5, 5, 3, 2, 1], [true, false, false, false, true, false])
+
+  let split = Unzipped([(6, true), (5, false), (5, false), (3, false), (2, true), (1, false)]);
+
+  ```
+syntax: "function Unzipped (arr : ('T, 'U)[]) : ('T[], 'U[])"
+input:
+  content: "(arr : ('T, 'U)[])"
+  types:
+  - name: arr
+    summary: En matris som innehåller 2-tupler
+    isArray: true
+    types:
+    - uid: "'T"
+      isLocal: true
+    - uid: "'U"
+      isLocal: true
+output:
+  content: ('T[], 'U[])
+  types:
+  - summary: Två matriser, det första som innehåller alla första element i indatavärdena, den andra som innehåller alla andra element i indatavärdena.
+    types:
+    - isArray: true
+      uid: "'T"
+      isLocal: true
+    - isArray: true
+      uid: "'U"
+      isLocal: true
+typeParameters:
+- uid: "'T"
+  summary: Typen för det första elementet i varje tupel
+- uid: "'U"
+  summary: Typen för det andra elementet i varje tupel
+seeAlso:
+- microsoft.quantum.arrays.zipped
+metadata:
+  ms.openlocfilehash: 2bde9351719a662008abf0db507aca9fee289b6b
+  ms.sourcegitcommit: 685a8ab16d7e6a25e63a168d6e7c385fa6e876cc
+  ms.translationtype: MT
+  ms.contentlocale: sv-SE
+  ms.lasthandoff: 09/29/2020
+  ms.locfileid: "91494551"
