@@ -387,6 +387,22 @@ operations:
     Tillämpar en åtgärd på de två första qubits i registret.
 
     Modifieraren `CA` anger att åtgärden är kontrollerbar och adjointable.
+- uid: microsoft.quantum.canon.applytohead
+  summary: Tillämpar en åtgärd på det första elementet i en matris.
+- uid: microsoft.quantum.canon.applytoheada
+  summary: Tillämpar en åtgärd på det första elementet i en matris.
+- uid: microsoft.quantum.canon.applytoheadc
+  summary: Tillämpar en åtgärd på det första elementet i en matris.
+- uid: microsoft.quantum.canon.applytoheadca
+  summary: Tillämpar en åtgärd på det första elementet i en matris.
+- uid: microsoft.quantum.canon.applytomost
+  summary: Tillämpar en åtgärd på alla utom det sista elementet i en matris.
+- uid: microsoft.quantum.canon.applytomosta
+  summary: Tillämpar en åtgärd på alla utom det sista elementet i en matris.
+- uid: microsoft.quantum.canon.applytomostc
+  summary: Tillämpar en åtgärd på alla utom det sista elementet i en matris.
+- uid: microsoft.quantum.canon.applytomostca
+  summary: Tillämpar en åtgärd på alla utom det sista elementet i en matris.
 - uid: microsoft.quantum.canon.applytopartition
   summary: Använder ett åtgärds par för en viss partition av ett register i två delar.
 - uid: microsoft.quantum.canon.applytopartitiona
@@ -404,6 +420,14 @@ operations:
     Använder ett åtgärds par för en viss partition av ett register i två delar.
 
     Modifieraren `CA` anger att åtgärden är kontrollerbar och adjointable.
+- uid: microsoft.quantum.canon.applytorest
+  summary: Tillämpar en åtgärd på alla utom det första elementet i en matris.
+- uid: microsoft.quantum.canon.applytoresta
+  summary: Tillämpar en åtgärd på alla utom det första elementet i en matris.
+- uid: microsoft.quantum.canon.applytorestc
+  summary: Tillämpar en åtgärd på alla utom det första elementet i en matris.
+- uid: microsoft.quantum.canon.applytorestca
+  summary: Tillämpar en åtgärd på alla utom det första elementet i en matris.
 - uid: microsoft.quantum.canon.applytosubregister
   summary: Tillämpar en åtgärd på ett under register i ett register, där qubits anges av en matris med sina index.
 - uid: microsoft.quantum.canon.applytosubregistera
@@ -421,6 +445,14 @@ operations:
     Tillämpar en åtgärd på ett under register i ett register, där qubits anges av en matris med sina index.
 
     Modifieraren `CA` anger att åtgärden är kontrollerbar och adjointable.
+- uid: microsoft.quantum.canon.applytotail
+  summary: Tillämpar en åtgärd på det sista elementet i en matris.
+- uid: microsoft.quantum.canon.applytotaila
+  summary: Tillämpar en åtgärd på det sista elementet i en matris.
+- uid: microsoft.quantum.canon.applytotailc
+  summary: Tillämpar en åtgärd på det sista elementet i en matris.
+- uid: microsoft.quantum.canon.applytotailca
+  summary: Tillämpar en åtgärd på det sista elementet i en matris.
 - uid: microsoft.quantum.canon.applywith
   summary: Med två åtgärder används en som konjugaten med den andra.
 - uid: microsoft.quantum.canon.applywitha
@@ -581,9 +613,9 @@ newtypes:
 - uid: microsoft.quantum.canon.resultstack
   summary: "\n> [!WARNING]\n> Inaktuell\n\nResultStack är föråldrad."
 metadata:
-  ms.openlocfilehash: 969eec6767f3323e0470b0e968051bafb92d29ae
-  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
+  ms.openlocfilehash: 7346d86d3ff9db2146f37a3f402b60faebe442b7
+  ms.sourcegitcommit: 685a8ab16d7e6a25e63a168d6e7c385fa6e876cc
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 09/02/2020
-  ms.locfileid: "89341572"
+  ms.lasthandoff: 09/29/2020
+  ms.locfileid: "91464444"
