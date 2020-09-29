@@ -1,16 +1,27 @@
 ### YamlMime:QSharpType
-uid: microsoft.quantum.canon.applytoelement
-name: ApplyToElement
+uid: microsoft.quantum.canon.applytotail
+name: ApplyToTail
 type: operation
 namespace: microsoft.quantum.canon
 summary: >-
-  Tillämpar en åtgärd på ett angivet element i en matris.
+  Tillämpar en åtgärd på det sista elementet i en matris.
 
 
-  En åtgärd `op` , ett index `index` och en matris med mål `targets` , gäller `op(targets[index])` .
-syntax: "operation ApplyToElement (op : ('T => Unit), index : Int, targets : 'T[]) : Unit"
+  En specifik åtgärd `op` och en matris med mål `targets` gäller `op(Tail(targets))` .
+examples: >-
+  Följande Q #-kodfragment är likvärdiga:
+
+
+  ```Q#
+
+  ApplyToTail(H, register);
+
+  H(Tail(register));
+
+  ```
+syntax: "operation ApplyToTail (op : ('T => Unit), targets : 'T[]) : Unit"
 input:
-  content: "(op : ('T => Unit), index : Int, targets : 'T[])"
+  content: "(op : ('T => Unit), targets : 'T[])"
   types:
   - name: op
     summary: En åtgärd som ska tillämpas.
@@ -23,10 +34,6 @@ input:
       types:
       - isPrimitive: true
         uid: Unit
-  - name: index
-    summary: Ett index i matrisen med mål.
-    isPrimitive: true
-    uid: Int
   - name: targets
     isArray: true
     uid: "'T"
@@ -40,13 +47,13 @@ typeParameters:
 - uid: "'T"
   summary: Indatatypen för den åtgärd som ska tillämpas.
 seeAlso:
-- microsoft.quantum.canon.applytoelementc
-- microsoft.quantum.canon.applytoelementa
-- microsoft.quantum.canon.applytoelementca
+- microsoft.quantum.canon.applytotaila
+- microsoft.quantum.canon.applytotailc
+- microsoft.quantum.canon.applytotailca
 metadata:
-  ms.openlocfilehash: b7bb8bedfa708439434f7f011adb9ed4c85f997e
+  ms.openlocfilehash: 04d0163247095dea71958c5586edbd9b7ae1850b
   ms.sourcegitcommit: 685a8ab16d7e6a25e63a168d6e7c385fa6e876cc
   ms.translationtype: MT
   ms.contentlocale: sv-SE
   ms.lasthandoff: 09/29/2020
-  ms.locfileid: "91468659"
+  ms.locfileid: "91494381"
