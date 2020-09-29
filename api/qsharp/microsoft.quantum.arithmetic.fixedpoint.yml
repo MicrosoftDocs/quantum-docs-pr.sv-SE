@@ -6,9 +6,9 @@ namespace: microsoft.quantum.arithmetic
 summary: Representerar ett register över qubits-kodning med ett fast punkts nummer. Består av ett heltal som är lika med antalet qubits till vänster om den binära punkten, t. ex. qubits som är större än eller lika med 1 och ett Quantum-register.
 syntax: newtype FixedPoint = (Int, Qubit[]);
 metadata:
-  ms.openlocfilehash: 003fdd7fbf4bf9e9d6252823e54c9fba0f0584e0
-  ms.sourcegitcommit: d6ac6f4345be0dd68f1bcd944f44b08e7a3cf346
+  ms.openlocfilehash: 171cf0aa629c442d69b6efedb22d60f7f6ab0996
+  ms.sourcegitcommit: 685a8ab16d7e6a25e63a168d6e7c385fa6e876cc
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 09/02/2020
-  ms.locfileid: "89342014"
+  ms.lasthandoff: 09/29/2020
+  ms.locfileid: "91461776"
