@@ -1,0 +1,54 @@
+### YamlMime:QSharpType
+uid: microsoft.quantum.arrays.count
+name: Count
+type: function
+namespace: microsoft.quantum.arrays
+summary: Med tanke på en matris och ett predikat som har definierats för elementen i matrisen returnerar antalet element en matris som består av de element som uppfyller predikatet.
+remarks: Funktionen definieras för generiska typer, d.v.s. När vi har en matris `'T[]` och ett predikat `'T -> Bool` kan vi filtrera element.
+examples: >-
+  Följande kod visar funktionen "count".
+
+  Ett predikat definieras med @"microsoft.quantum.logical.greaterthani" funktionen:
+
+
+  ```Q#
+   let predicate = GreaterThanI(_, 5);
+   let count = Count(predicate, [2, 5, 9, 1, 8]);
+   // count = 2
+  ```
+syntax: "function Count (predicate : ('T -> Bool), array : 'T[]) : Int"
+input:
+  content: "(predicate : ('T -> Bool), array : 'T[])"
+  types:
+  - name: predicate
+    summary: En funktion från `'T` till boolesk som används för att filtrera element.
+    isFunction: true
+    input:
+      types:
+      - uid: "'T"
+        isLocal: true
+    output:
+      types:
+      - isPrimitive: true
+        uid: Bool
+  - name: array
+    summary: En matris med element över `'T` .
+    isArray: true
+    uid: "'T"
+    isLocal: true
+output:
+  content: Int
+  types:
+  - summary: Antalet element i `array` som uppfyller predikatet.
+    isPrimitive: true
+    uid: Int
+typeParameters:
+- uid: "'T"
+  summary: Typ av `array` element.
+metadata:
+  ms.openlocfilehash: cac44615a0b871cdb33de827d2ff9bc0c08935d3
+  ms.sourcegitcommit: 685a8ab16d7e6a25e63a168d6e7c385fa6e876cc
+  ms.translationtype: MT
+  ms.contentlocale: sv-SE
+  ms.lasthandoff: 09/29/2020
+  ms.locfileid: "91494750"
