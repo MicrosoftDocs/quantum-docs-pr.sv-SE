@@ -9,12 +9,12 @@ uid: microsoft.quantum.write-program
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 6fd7494d341a83a1354d23a283d21a7ae535e49f
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: ac9c060c157ba5ee3bc66852c42298ac8adcb3b3
+ms.sourcegitcommit: 685a8ab16d7e6a25e63a168d6e7c385fa6e876cc
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90834031"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91492344"
 ---
 # <a name="tutorial-explore-entanglement-with-q"></a>Självstudier: Utforska sammanflätning med Q\#
 
@@ -83,7 +83,7 @@ Vårt mål är att förbereda två qubits i ett särskilt Quantum-tillstånd som
 
 ### <a name="initialize-qubit-using-measurement"></a>Initiera qubit med hjälp av mått
 
-I den första koden nedan visar vi dig hur du arbetar med qubits i Q# .  Vi introducerar två åtgärder [`M`](xref:microsoft.quantum.intrinsic.m) och [`X`](xref:microsoft.quantum.intrinsic.x) som transformerar statusen för en qubit. I det här kodfragmentet definieras åtgärden `SetQubitState` som använder en parameter som kvantbit och en annan parameter, `desired`, som representerar det tillstånd som vi vill att kvantbiten ska ha.  Åtgärden `SetQubitState` utför en mätning på kvantbiten med åtgärden `M`.  I Q# returnerar en qubit-mätning alltid antingen `Zero` eller `One` .  Om mätningen returnerar ett värde som inte är lika med det önskade värdet, `SetQubitState` "vänder" qubit; som är, kör den en `X` åtgärd som ändrar qubit-tillstånd till ett nytt tillstånd där sannolikheten för en mätning returneras `Zero` och `One` blir omvänd. På så sätt `SetQubitState` placeras alltid mål qubit i önskat tillstånd.
+I det första kodfragmentet nedan visar vi dig hur du arbetar med qubits i Q# .  Vi introducerar två åtgärder [`M`](xref:microsoft.quantum.intrinsic.m) och [`X`](xref:microsoft.quantum.intrinsic.x) som transformerar statusen för en qubit. I det här kodfragmentet definieras åtgärden `SetQubitState` som använder en parameter som kvantbit och en annan parameter, `desired`, som representerar det tillstånd som vi vill att kvantbiten ska ha.  Åtgärden `SetQubitState` utför en mätning på kvantbiten med åtgärden `M`.  I Q# returnerar en qubit-mätning alltid antingen `Zero` eller `One` .  Om mätningen returnerar ett värde som inte är lika med det önskade värdet, `SetQubitState` "vänder" qubit; som är, kör den en `X` åtgärd som ändrar qubit-tillstånd till ett nytt tillstånd där sannolikheten för en mätning returneras `Zero` och `One` blir omvänd. På så sätt `SetQubitState` placeras alltid mål qubit i önskat tillstånd.
 
 Ersätt innehållet i `Program.qs` med följande kod:
 
@@ -112,7 +112,7 @@ En Q# åtgärd är en Quantum-underrutin. Det vill säga att det är en rutin so
 
 Argumenten i en åtgärd anges som en tuppel inom parentes.
 
-Returtypen för åtgärden anges efter ett kolon. I det här fallet saknar `SetQubitState`-åtgärden en retur, så den markeras som en retur för `Unit`. Detta är Q# detsamma `unit` som i F #, som är ungefär detsamma som `void` i C# och en tom tupel i python ( `()` som representeras av typ tipset `Tuple[()]` ).
+Returtypen för åtgärden anges efter ett kolon. I det här fallet `SetQubitState` har åtgärden ingen returtyp, så den markeras som retur `Unit` . Detta är Q# detsamma `unit` som i F #, som är ungefär detsamma som `void` i C# och en tom tupel i python ( `()` som representeras av typ tipset `Tuple[()]` ).
 
 Du har använt två Quantum-åtgärder i din första Q# åtgärd:
 
@@ -159,7 +159,7 @@ Observera att vi har lagt till en rad innan `return` du skriver ut ett för klar
 
 Som standard är variabler i Q# inte oföränderliga. deras värde kan inte ändras efter att de har bundits. Nyckelordet `let` används för att ange bindningen för en oföränderlig variabel. Åtgärdsargument är alltid oföränderliga.
 
-Om du behöver en variabel vars värde kan ändras, till exempel `numOnes` i exemplet, kan du deklarera variabeln med nyckelordet `mutable`. Ett värde för en föränderlig variabel kan ändras med hjälp av en `setQubitState`-instruktion.
+Om du behöver en variabel vars värde kan ändras, till exempel `numOnes` i exemplet, kan du deklarera variabeln med nyckelordet `mutable`. Ett värde för en föränderlig variabel kan ändras med hjälp av en `set`-instruktion.
 
 I båda fallen härleds variabeltypen av kompileraren. Q# kräver inte någon typ av kommentarer för variabler.
 
@@ -169,7 +169,7 @@ I båda fallen härleds variabeltypen av kompileraren. Q# kräver inte någon ty
 
 ## <a name="run-the-code-from-the-command-prompt"></a>Kör koden från kommando tolken
 
-För att kunna köra koden måste vi ange vilken kompilator *som* kan anropas för att köras när vi anger `dotnet run` kommandot. Detta görs med en enkel ändring i Q# filen genom att lägga till en rad med `@EntryPoint()` direkt föregående anrop: `TestBellState` åtgärden i det här fallet. Den fullständiga koden ska vara:
+För att kunna köra koden måste vi ange vilken kompilator *som* kan anropas för att köra kommandot när vi tillhandahåller `dotnet run` kommandot. Detta görs med en enkel ändring i Q# filen genom att lägga till en rad med `@EntryPoint()` direkt föregående anrop: `TestBellState` åtgärden i det här fallet. Den fullständiga koden ska vara:
 
 ```qsharp
 namespace Bell {
@@ -237,7 +237,7 @@ Nu ska vi titta på hur Q# uttrycker sätt att placera qubits i superposition.  
 
 ### <a name="x-flips-qubit-state"></a>`X` vänder qubit-tillstånd
 
-Först försöker vi bara att vända kvantbiten (om den är i `Zero`-tillstånd kommer den att vändas till `One` och vice versa). Detta görs genom att köra en `X`-åtgärd innan den mäts i `TestBellState`:
+Först försöker vi bara vända qubit (om qubit är i `Zero` läget vänder den till `One` och vice versa). Detta görs genom att köra en `X`-åtgärd innan den mäts i `TestBellState`:
 
 ```qsharp
 X(qubit);
