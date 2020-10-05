@@ -9,18 +9,18 @@ ms.topic: article
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 1b767313b7f421ddaba62ab2be99fe10b8d0430e
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: 1523bfdfec08fd093f1c7ea999e23e85fc3cfc14
+ms.sourcegitcommit: 685a8ab16d7e6a25e63a168d6e7c385fa6e876cc
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90834558"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91478944"
 ---
 # <a name="quantum-computing-history-and-background"></a>Historik och bakgrund för kvantberäkning
 
 Ett flertal nya datortekniker har växt fram under de senaste åren och kvantberäkning är utan tvekan den teknik som kan medföra det största paradigmskiftet för utvecklarna.  Kvantdatorer presenterades på 1980-talet av [Richard Feynman](https://en.wikipedia.org/wiki/Richard_Feynman) och [Yuri Manin](https://en.wikipedia.org/wiki/Yuri_Manin).  Drivkraften bakom kvantberäkning fanns i det som ofta setts som något av det mest genanta inom fysik: En otrolig vetenskaplig utveckling som står inför en anmärkningsvärd oförmåga att utforma ens de enklaste systemen för den. Kvantmekanik utvecklades mellan 1900 och 1925 och det är fortfarande hörnstenen som kemi, kondenserad materia och teknik för allt från datorchip till LED-ljus vilar på.  Men trots dessa framgångar verkade det vara bortom mänsklig förmåga att skapa modeller med kvantmekanik.  Detta beror på att simulerade system för så lite som några dussin interagerande partiklar, kräver mer datorkraft än vad en konventionell dator kan åstadkomma under tusentals år!
 
-Man kan förklara varför kvantmekanik är så svårt att simulera på flera olika sätt.  Kanske är det enklast att tolka kvantteori av materia som att den, på kvantnivå, finns i olika möjliga konfigurationer (så kallade *tillstånd*) samtidigt.  Till skillnad från klassisk sannolikhetsteori kan de många konfigurationer av kvanttillståndet som kan observeras, påverka varandra som vågor i en tidvattensbassäng.  Denna påverkan förhindrar användningen av statistisk sampling när kvanttillståndskonfigurationer ska hämtas.  Vi måste i stället spåra *varje möjlig* konfiguration som ett kvantsystem kan finnas i om vi vill förstå kvantutvecklingen.  
+Man kan förklara varför kvantmekanik är så svårt att simulera på flera olika sätt.  Kanske är det enklast att tolka kvantteori som så att materia på kvantnivå befinner sig i ett flertal möjliga konfigurationer (som kallas *tillstånd*).  Till skillnad från klassisk sannolikhetsteori kan de många konfigurationer av kvanttillståndet som kan observeras, påverka varandra som vågor i en tidvattensbassäng.  Denna påverkan förhindrar användningen av statistisk sampling när kvanttillståndskonfigurationer ska hämtas.  Vi måste i stället spåra *varje möjlig* konfiguration som ett kvantsystem kan finnas i om vi vill förstå kvantutvecklingen.  
 
 Tänk dig ett system med elektroner där elektronerna kan finnas på någon av $40$ positioner.  Elektronerna kan därför finnas i någon av $2^{40}$ konfigurationer (eftersom det på varje position antingen finns eller inte finns en elektron). Om vi vill lagra kvanttillståndet för elektronerna i ett konventionellt datorminne krävs mer än $130$ GB minne!  Det är mycket, men det ligger inom räckhåll för vissa datorer.  Om vi har tillåtit att partiklarna är i någon av de $41$ positionerna, finns det två gånger så många konfigurationer i $2^{41}$, vilket i sin tur kräver mer än $260$ GB minne för att lagra kvanttillståndet. Det går inte att öka antalet positioner hur mycket som helst om vi vill lagra tillståndet på konventionellt sätt, eftersom vi snabbt överskrider minneskapaciteten hos världens mest kraftfulla datorer.  Vid några hundra elektroner överskrider det minne som krävs för att lagra systemet antalet partiklar i universum. Det finns därför ingen chans att våra konventionella datorer någonsin ska kunna simulera denna kvantdynamik. Och ändå kan det i naturen utvecklas sådana system enligt kvantmekaniska lagar, fullständigt omedvetet om att vi inte kan simulera denna utveckling med konventionell datorkraft.
 
