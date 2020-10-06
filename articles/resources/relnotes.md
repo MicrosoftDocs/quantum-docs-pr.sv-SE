@@ -9,12 +9,12 @@ uid: microsoft.quantum.relnotes
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 28e880445bf61150d7940730009a5482298adae2
-ms.sourcegitcommit: 685a8ab16d7e6a25e63a168d6e7c385fa6e876cc
+ms.openlocfilehash: 27038a86dc4854c397458d95529aca463d493fd6
+ms.sourcegitcommit: d98190988ff03146d9ca2b0d325870cd717d729a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91492361"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91771322"
 ---
 # <a name="microsoft-quantum-development-kit-release-notes"></a>Viktig information för Microsoft Quantum Development Kit
 
@@ -23,6 +23,12 @@ Den här artikeln innehåller information om varje version av Quantum Developmen
 Installationsanvisningar finns i [installationsguiden](xref:microsoft.quantum.install).
 
 Uppdateringsanvisningar finns i [uppdateringsguiden](xref:microsoft.quantum.update).
+
+## <a name="version-01220100504"></a>Version 0.12.20100504
+
+*Utgivnings datum: 5 oktober 2020*
+
+Den här versionen åtgärdar en bugg som påverkar belastningen på Q# antecknings böcker (se [iqsharp # 331](https://github.com/microsoft/iqsharp/pull/331)).
 
 ## <a name="version-01220092803"></a>Version 0.12.20092803
 
@@ -66,7 +72,7 @@ Se den fullständiga listan med stängda pull för [bibliotek](https://github.co
 
 Den här versionen innehåller följande:
 
-- Öppna namn områden i Q# antecknings böcker är nu tillgängliga för alla framtida cell beräkningar. Detta gör att du till exempel kan öppna namn områden en gång i en cell överst i antecknings boken, i stället för att behöva öppna relevanta namn områden i varje kod cell. Ett nytt `%lsopen` magisk-kommando visar en lista över namn områden som har öppnats för tillfället.
+- Öppna namn områden i Q# antecknings böcker är nu tillgängliga när du kör alla framtida celler. Detta gör att du till exempel kan öppna namn områden en gång i en cell överst i antecknings boken, i stället för att behöva öppna relevanta namn områden i varje kod cell. Ett nytt `%lsopen` magisk-kommando visar en lista över namn områden som har öppnats för tillfället.
 
 Se den fullständiga listan med stängda pull för [bibliotek](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed), [kompilator](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+is%3Aclosed), [körning](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+is%3Aclosed), [exempel](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed), [I Q# ](https://github.com/microsoft/iqsharp/pulls?q=is%3Apr+is%3Aclosed) och [Katas](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+is%3Aclosed).  
 

@@ -8,12 +8,12 @@ uid: microsoft.quantum.guide.quickref.iqsharp
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 75a1e1820e5ca16268c9b11322eb5653094b1a3c
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: 4549afb84bf0084160079e3cef3a7f94dffcda3e
+ms.sourcegitcommit: d98190988ff03146d9ca2b0d325870cd717d729a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90833568"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91771338"
 ---
 # <a name="ino-locq-magic-commands"></a>I Q# Magic-kommandon
 
@@ -34,7 +34,7 @@ ms.locfileid: "90833568"
 ### <a name="azure-quantum-integration"></a>Azure Quantum-integrering
 
 - [`%azure.connect`](xref:microsoft.quantum.iqsharp.magic-ref.azure.connect): Ansluter till en Azure Quantum-arbetsyta eller visar aktuell anslutnings status.
-- [`%azure.execute`](xref:microsoft.quantum.iqsharp.magic-ref.azure.execute): Kör ett jobb i en Azure-Quantum-arbetsyta.
+- [`%azure.execute`](xref:microsoft.quantum.iqsharp.magic-ref.azure.execute): Skickar ett jobb till en Azure Quantum-arbetsyta och väntar på att slutföras.
 - [`%azure.jobs`](xref:microsoft.quantum.iqsharp.magic-ref.azure.jobs): Visar en lista med jobb på den aktuella Azure Quantum-arbetsytan.
 - [`%azure.output`](xref:microsoft.quantum.iqsharp.magic-ref.azure.output): Visar resultat för ett jobb på den aktuella Azure Quantum-arbetsytan.
 - [`%azure.status`](xref:microsoft.quantum.iqsharp.magic-ref.azure.status): Visar status för ett jobb på den aktuella Azure Quantum-arbetsytan.
