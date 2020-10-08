@@ -9,12 +9,12 @@ uid: microsoft.quantum.machines.qc-trace-simulator.intro
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 54a1f63461cfcc8146f7dc4d18d321238d77454d
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: 7f5e25aa7b58277642783e03d03854cd75ff4ca3
+ms.sourcegitcommit: d98190988ff03146d9ca2b0d325870cd717d729a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90833354"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91771294"
 ---
 # <a name="microsoft-quantum-development-kit-qdk-quantum-trace-simulator"></a>Spårningssimulator för kvantdator i Microsoft Quantum Development Kit (QDK)
 
@@ -86,7 +86,7 @@ QDK:n innehåller fem verktyg som du kan använda med kvantspårningssimulatorn 
 |-----| -----|
 |[Kontroll av distinkta indata](xref:microsoft.quantum.machines.qc-trace-simulator.distinct-inputs) |Söker efter potentiella konflikter med delade kvantbitar |
 |[Kontroll av användning av upphävda kvantbitar](xref:microsoft.quantum.machines.qc-trace-simulator.invalidated-qubits)  |Kontrollerar om programmet tillämpar en åtgärd på en kvantbit som redan har släppts |
-|[Räknare för primitiva åtgärder](xref:microsoft.quantum.machines.qc-trace-simulator.primitive-counter)  | Räknar antalet primitiva processer som används av varje åtgärd som anropas i ett kvantprogram  |
+|[Räknare för primitiva åtgärder](xref:microsoft.quantum.machines.qc-trace-simulator.primitive-counter)  | Räknar det antal primitiver som används av varje åtgärd som anropas i ett kvantprogram  |
 |[Djupräknare](xref:microsoft.quantum.machines.qc-trace-simulator.depth-counter)  |Samlar in antal som representerar de nedre gränserna för djupet i varje åtgärd som anropas i ett kvantprogram   |
 |[Breddräknare](xref:microsoft.quantum.machines.qc-trace-simulator.width-counter)  |Räknar antalet allokerade och lånade kvantbitar för varje åtgärd i ett kvantprogram |
 

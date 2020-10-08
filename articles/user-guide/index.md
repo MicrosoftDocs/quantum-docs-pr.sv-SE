@@ -9,12 +9,12 @@ uid: microsoft.quantum.guide
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: f0680e773c8233d6c4f1acb742b3cc38dbc069d5
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: 81f31a531a1b50ead332bb578ccf392ddced9e8d
+ms.sourcegitcommit: d98190988ff03146d9ca2b0d325870cd717d729a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90834762"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91771384"
 ---
 # <a name="the-no-locq-user-guide"></a>Användarhandboken för Q#
 
@@ -55,7 +55,7 @@ I de olika ämnena i den här guiden går vi igenom huvudbegreppen i språket Q#
 
 ### <a name="quantum-simulators-and-resource-estimators"></a>Kvantsimulatorer och resursberäknare
 
-- [Kvantsimulatorer och värdprogram](xref:microsoft.quantum.machines): En översikt över de olika tillgängliga simulatorerna samt den generella modellen för körning mellan värdprogram och måldatorer.
+- [Kvantsimulatorer och värdprogram](xref:microsoft.quantum.machines): En översikt av de olika tillgängliga simulatorerna samt hur värdprogram och måldatorer fungerar ihop för körning av Q#-program.
 
 - [Simulator med fullständigt tillstånd](xref:microsoft.quantum.machines.full-state-simulator): Måldatorn som simulerar det fullständiga kvanttillståndet. Användbart för fullständig körning eller felsökning av program i mindre skala (mindre än ett dussintal kvantbitar)
 

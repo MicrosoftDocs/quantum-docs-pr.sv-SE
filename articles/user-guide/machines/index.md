@@ -9,12 +9,12 @@ uid: microsoft.quantum.machines
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 6a2a4bb829301f9db9bd14f3240556a403b9a54f
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: f40c63eed60379aa46a0cd9cfdd7d8de8c22c079
+ms.sourcegitcommit: d98190988ff03146d9ca2b0d325870cd717d729a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90833436"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91771304"
 ---
 # <a name="quantum-simulators"></a>Kvantsimulatorer
 
@@ -24,7 +24,7 @@ Kvantsimulatorer är program som körs på klassiska datorer och fungerar som *m
 
 ## <a name="the-quantum-development-kit-qdk-quantum-simulators"></a>Kvantsimulatorer i Quantum Development Kit (QDK)
 
-Kvantsimulatorn ansvarar för att tillhandahålla implementeringar av kvantprimitiver för en algoritm. Detta inkluderar primitiva åtgärder som t.ex. `H`, `CNOT` och `Measure`, samt hantering och spårning av kvantbitar. QDK innehåller olika klasser av kvantsimulatorer som motsvarar olika körningsmodeller för samma kvantalgoritm. 
+Kvantsimulatorn ansvarar för att tillhandahålla implementeringar av kvantprimitiver för en algoritm. Detta inkluderar primitiva åtgärder som t.ex. `H`, `CNOT` och `Measure`, samt hantering och spårning av kvantbitar. QDK innehåller olika klasser av kvantsimulatorer som representerar olika sätt att simulera samma kvantalgoritm. 
 
 
 Varje typ av kvantsimulator kan ge olika implementeringar av dessa primitiver. Till exempel kör en [simulator med fullständigt tillstånd](xref:microsoft.quantum.machines.full-state-simulator) kvantalgoritmen genom att helt simulera [kvanttillståndsvektorn](xref:microsoft.quantum.glossary#quantum-state), medan [spårningssimulatorn för kvantdatorer](xref:microsoft.quantum.machines.qc-trace-simulator.intro) inte bryr sig om det faktiska kvanttillståndet alls. I stället spårar den grind-, kvantbits- och annan resursanvändning för algoritmen.
