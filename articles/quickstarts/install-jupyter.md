@@ -10,18 +10,18 @@ uid: microsoft.quantum.install.jupyter
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 51de510907ea087d1f23d3ff65d268d6d455a493
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: b34d89ab33a4644c1dd4342949685f9bf84babd8
+ms.sourcegitcommit: d98190988ff03146d9ca2b0d325870cd717d729a
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90834320"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91771391"
 ---
 # <a name="develop-with-no-locq-jupyter-notebooks"></a>Utveckla med Jupyter Notebooks för Q#
 
 Installera QDK för utveckling av Q#-åtgärder i Jupyter Notebooks för Q#.
 
-Jupyter Notebooks möjliggör kodberäkning på plats och innehåller instruktioner, kommentarer och annat innehåll. Den här miljön är idealisk när du vill skriva Q#-kod med inbäddade förklaringar eller skapa interaktiva självstudier för kvantberäkning. Här är det du behöver göra för att börja skapa dina egna Q#-anteckningsböcker.
+Jupyter Notebooks tillåter kodkörning på plats samt instruktioner, anteckningar och annat innehåll. Den här miljön är idealisk när du vill skriva Q#-kod med inbäddade förklaringar eller skapa interaktiva självstudier för kvantberäkning. Här är det du behöver göra för att börja skapa dina egna Q#-anteckningsböcker.
 
 ## <a name="install-the-ino-locq-jupyter-kernel"></a>Installera IQ#-Jupyter-kärnan
 
