@@ -71,7 +71,7 @@ Syntaxen för ett språk beskriver de olika kombinationer av symboler som utgör
 I Q# klassificeras syntax-element i tre olika grupper: typer, uttryck och uttryck.
 
 ### <a name="types"></a>Typer
-Q# är ett starkt inskrivet språk, så att en noggrann användning av typer kan hjälpa kompilatorn att tillhandahålla starka garantier om Q# program vid kompilering.
+Q# är ett starkt typat språk, så att en noggrann användning av typer kan hjälpa kompilatorn att tillhandahålla starka garantier om Q# program vid kompilering.
 Förutom standard-och Quantum-/regionsspecifika inbyggda primitiva typer, till exempel,,, `Int` `Bool` `Qubit` och `Result` , Q# ger stöd för användardefinierade typer.
 
 För beskrivningar av alla primitiva typer, information om matris-och tupel typer och steg för att definiera nya typer i en Q# fil, se [typer Q# i ](xref:microsoft.quantum.guide.types).
