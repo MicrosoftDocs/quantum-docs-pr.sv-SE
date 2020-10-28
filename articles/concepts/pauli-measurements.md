@@ -87,7 +87,7 @@ författare: bradben UID: Microsoft. Quantum. Concepts. Pauli MS. author: v-benb
 
 I de föregående diskussionerna har vi fokuserat på beräknings bas mått.
 I själva verket finns det andra vanliga mätningar som sker i den Quantum-bearbetningen som, från ett och samma perspektiv, är praktiska att uttrycka när det gäller beräknings bas mått.
-När du arbetar med Q# , är den vanligaste typen av mätningar som du kommer att köra i troligen *Pauli mätningar*, som generaliserar beräknings bas mått för att ta med mätningar i andra baser och paritet mellan olika qubits.
+När du arbetar med Q# , är den vanligaste typen av mätningar som du kommer att köra i troligen *Pauli mätningar* , som generaliserar beräknings bas mått för att ta med mätningar i andra baser och paritet mellan olika qubits.
 I sådana fall är det vanligt att diskutera en Pauli-operatör i allmänhet en operator som $ X, Y, z $ eller $ z \otimes z, x \otimes x, x \otimes Y $ och så vidare.
 
 > [!TIP]
@@ -128,7 +128,7 @@ De här måtten anges nedan för bekvämlighet.
 |$ $ X | $H               $                    |
 |$ $ Y | $HS ^               {\dagger}$         |
 
-Med det här språket är "mått $ Y $ " detsamma som att tillämpa $ HS ^ \dagger $ och sedan mäta beräknings grunden, där [`S`](xref:microsoft.quantum.intrinsic.s) är en inbyggd Quantum-åtgärd som ibland kallas "fas grind" och kan simuleras av den enhetliga matrisen
+Med det här språket är "mått $ Y $ " detsamma som att tillämpa $ HS ^ \dagger $ och sedan mäta beräknings grunden, där [`S`](xref:Microsoft.Quantum.Intrinsic.S) är en inbyggd Quantum-åtgärd som ibland kallas "fas grind" och kan simuleras av den enhetliga matrisen
 
 $$
 \begin{align}
@@ -194,7 +194,7 @@ På samma sätt som med ett-qubit-fall kan alla qubits Pauli-mått skrivas som $
 >         0 & 1 & 0 & 0 \\\\
 >0 & 0 & 0 & 1 > \end { matris } \right ) >     \end{align}
 > $$
-> används för att simulera den inbyggda åtgärden [`SWAP`](xref:microsoft.quantum.intrinsic) .
+> används för att simulera den inbyggda åtgärden [`SWAP`](xref:Microsoft.Quantum.Intrinsic) .
 
 |Pauli mått-     | transformering  |
 |----------------------|------------------------|
@@ -214,7 +214,7 @@ På samma sätt som med ett-qubit-fall kan alla qubits Pauli-mått skrivas som $
 |$X \otimes Y $ | $ \operatorname { } \_ { -CNOT 10 } (H \otimes HS ^ \dagger ) $|
 |$Y \otimes Y $ | $ \operatorname { } \_ { -CNOT 10 } (HS ^ \dagger \otimes HS ^ \dagger ) $|
 
-Här [`CNOT`](xref:microsoft.quantum.intrinsic.cnot) visas åtgärden av följande skäl.
+Här [`CNOT`](xref:Microsoft.Quantum.Intrinsic.CNOT) visas åtgärden av följande skäl.
 Varje Pauli-mått som inte omfattar $ \boldone $ matrisen motsvarar en enhetlig till $ z \otimes z $ av ovanstående orsaker.
 Eigenvalues av $ z \otimes z $ är bara beroende av pariteten för qubits som utgör varje beräknings bas vektor och de kontrollerade-inte-åtgärderna kan beräkna denna paritet och lagra den i den första biten.
 När den första biten mäts kan vi återställa identiteten för det resulterande halva utrymmet, vilket motsvarar att mäta Pauli-operatorn.
@@ -223,7 +223,7 @@ Ytterligare en anmärkning: det kan vara frestande att anta att måttet $ z \oti
 Orsaken är att $ z z- \otimes $ projekt har ett Quantum-tillstånd i antingen $ eigenstate + 1 $ eller $ -1 $ för dessa operatörer.
 Mätning $ \otimes \mathbb { av z 1 } $ och sedan $ \mathbb { 1 } \otimes z- $ projekt är den Quantum-tillstånds vektorn först i ett halvt utrymme på $ z \otimes \mathbb { 1 } $ och sedan till ett halvt utrymme på $ \mathbb { 1 } \otimes Z $ . Eftersom det finns fyra beräknings bas vektorer minskar statusen till ett kvartals utrymme och minskar därför den till en enda beräknings bas vektor.
 
-## <a name="correlations-between-qubits"></a>Korrelationer mellan qubits
+## <a name="correlations-between-qubits"></a>Korrelationer mellan qubitar
 Ett annat sätt att titta på mätnings behållar produkter av Pauli-matriser som $ X \otimes x $ eller $ z \otimes z $ är att dessa mätningar gör att du kan titta på information som lagras i korrelationerna mellan de två qubits.
 Med måttet $ X \otimes \id $ kan du titta på information som lagras lokalt i den första qubit.
 Även om båda typerna av mätningar är lika värdefulla i Quantum Computing, lyser den tidigare kraften i Quantum Computing.
@@ -240,16 +240,16 @@ I Q# kan sådana mätningar returnera $ j $ om mätningen ger ett resultat i eig
 Att ha Pauli mätningar som en inbyggd funktion i Q# är till hjälp eftersom du kan mäta sådana operatörer som kräver långa kedjor av kontrollerade, icke-portar och bas omvandlingar för att beskriva hur mycket $ U-grind som $ krävs för att uttrycka åtgärden som en beskrivare produkt i $ Z $ och $ \id $ .
 Genom att kunna ange att du vill göra en av dessa fördefinierade mätningar behöver du inte oroa dig för att du ska kunna omvandla din grund till att en beräknings bas mätning ger nödvändig information.
 Q# hanterar alla transformeringar som behövs automatiskt.
-Mer information finns i [`Measure`](xref:microsoft.quantum.intrinsic.measure) [`MeasurePaulis`](xref:microsoft.quantum.measurement.measurepaulis) åtgärderna och.
+Mer information finns i [`Measure`](xref:Microsoft.Quantum.Intrinsic.Measure) [`MeasurePaulis`](xref:Microsoft.Quantum.Measurement.MeasurePaulis) åtgärderna och.
 
-## <a name="the-no-cloning-theorem"></a>No-Kloningsing-satsen
+## <a name="the-no-cloning-theorem"></a>No-Cloning satsen
 
 Quantum-informationen är kraftfull.
 Det gör det möjligt för oss att göra fantastiska saker som faktor tal exponentiellt snabbare än de bästa kända klassiska algoritmerna, eller att effektivt simulera korrelerade Electron-system som klassiska kräver exponentiell kostnad för att simulera korrekt.
 Det finns dock begränsningar för kraften i Quantum Computing.
-En sådan begränsning anges av *satsen No-kloningsing*.
+En sådan begränsning anges av *satsen No-kloningsing* .
 
-No-Kloningsing-satsen är aptly med namnet.
+No-Cloning-satsen är aptly med namnet.
 Den tillåter inte kloning av generiska Quantum-tillstånd av en Quantum-dator.
 Satsen-beviset är remarkably är enkelt.
 Det fullständiga beviset på No-kloning-satsen är lite för tekniskt för vår diskussion här, men beviset för att det inte finns några ytterligare hjälp qubits inom vår omfattning (hjälp qubits är qubits som används för arbets utrymme under en beräkning och är lätt att använda och hanteras i Q# , se [lånade qubits](xref:microsoft.quantum.guide.qubits#borrowed-qubits)).
@@ -273,15 +273,15 @@ $$
 \end{align}
 $$
 
-Detta ger den grundläggande intuition bakom No-Kloningsing-satsen: alla enheter som kopierar ett okänt Quantum-tillstånd måste orsaka fel på minst några av de tillstånd som den kopierar.
+Detta ger den grundläggande intuition bakom No-Cloning satsen: alla enheter som kopierar ett okänt Quantum-tillstånd måste orsaka fel på minst några av de tillstånd som den kopierar.
 Den nyckel som förutsätter att Klonaren fungerar linjärt i indata-läget kan brytas genom addition och mätning av hjälp-qubits, men sådana interaktioner läcker också information om systemet genom mätnings statistiken och förhindrar exakt kloning i sådana fall.
-För [Mer information](xref:microsoft.quantum.more-information)om ett mer fullständigt korrektur av satsen No-kloningsing finns.
+Mer information om No-Cloning satsen finns i mer [information](xref:microsoft.quantum.more-information).
 
-No-kloning-satsen är viktigt för att ge kvalitativ förståelse för Quantum Computing, eftersom om du skulle kunna klona Quantum-tillstånden på ett mycket bra ställe skulle du ges en Magical möjlighet att lära sig från Quantum-tillstånd.
+No-Cloning satsen är viktigt för att ge kvalitativ förståelse för Quantum Computing, eftersom om du skulle kunna klona Quantum-tillstånd på ett mycket bra ställe skulle du få en Magical möjlighet att lära sig från Quantum-tillstånd.
 I själva verket kan du bryta mot Heisenbergs vaunted osäkerhets princip.
 Alternativt kan du använda en optimal klonare för att ta ett enda exempel från en komplex Quantum-distribution och lära dig allt du kan behöva lära dig mer om distributionen från bara ett exempel.
 Detta skulle vara precis som du vänder på en och samma som när du säger upp en vän om resultatet med att de svarar "Ah-fördelningen av dessa mynt måste vara Bernoulli med $ p = 0.512643 \ ldots $ !"  En sådan instruktion skulle vara icke-sensical eftersom en bit av information (resultatet av huvudena) inte kan ge de många bitar av information som krävs för att koda distributionen utan avsevärd tidigare information.
 På samma sätt kan vi inte helt klona ett Quantum-tillstånd på samma sätt som vi inte kan förbereda en ensemble av sådana mynt utan att veta $ p $ .
 
 Informationen är inte kostnads fri i Quantum Computing.
-Varje qubit uppmätta ger en enskild bit av information och No-klonings satsen visar att det inte finns några bakdörr som kan utnyttjas för att komma runt den grundläggande kompromissen mellan information som vunnits om systemet och den störning som har påbörjats.
+Varje qubit uppmätta ger en enskild bit av information och No-Cloning satsen visar att det inte finns några bakdörr som kan utnyttjas för att komma runt den grundläggande kompromissen mellan information som har vunnits i systemet och den störning som har påbörjats.
