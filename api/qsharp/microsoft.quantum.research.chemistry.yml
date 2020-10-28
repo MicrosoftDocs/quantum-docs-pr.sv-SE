@@ -1,0 +1,57 @@
+### YamlMime:QSharpNamespace
+functions:
+- summary: Representerar en dynamisk generator som en uppsättning simulerade grindar och en expansion i JWOptimized-basen.
+  uid: Microsoft.Quantum.Research.Chemistry.JWOptimizedFermionEvolutionFunction
+- summary: Konverterar en Hamiltonian som beskrivs av `JWOptimizedHTerms` till en `GeneratorSystem` uttryckt i termer av den `GeneratorIndex` konvention som definierats i den här filen.
+  uid: Microsoft.Quantum.Research.Chemistry.JWOptimizedGeneratorSystem
+- summary: Representerar en dynamisk generator som en uppsättning simulerade grindar och en expansion i Pauli-basen.
+  uid: Microsoft.Quantum.Research.Chemistry.JordanWignerOptimizedFermionEvolutionSet
+- summary: Returnerar optimerad Trotter steg-åtgärd och de parametrar som krävs för att köra den.
+  uid: Microsoft.Quantum.Research.Chemistry.OptimizedTrotterStepOracle
+- summary: Klassiskt bearbetnings steg av `ApplyDeltaParity` . Detta beräknar en lista över kontroll-qubits för att utvärdera paritets skillnaden mellan två PQRS... villkor för den jämna längden.
+  uid: Microsoft.Quantum.Research.Chemistry._DeltaParityCNOTbitstring
+name: Microsoft.Quantum.Research.Chemistry
+newtypes: []
+operations:
+- summary: ''
+  uid: Microsoft.Quantum.Research.Chemistry.ApplyBasisChange
+- summary: Beräknar skillnad i paritet mellan en tidigare PQRS... villkor och nästa PQRS... löp. Den här skillnaden beräknas på en extra qubit.
+  uid: Microsoft.Quantum.Research.Chemistry.ApplyDeltaParity
+- summary: Enkel tillstånds förberedelse av utvärderings tillstånd genom att använda rotations banor
+  uid: Microsoft.Quantum.Research.Chemistry.JWOptimizedStatePreparation
+- summary: Används för att ändra grunden för en Z-operator till en Y-operator. conjugation.
+  uid: Microsoft.Quantum.Research.Chemistry.TransformZToX
+- summary: Används för att ändra grunden för en Z-operator till en Y-operator efter conjugation.
+  uid: Microsoft.Quantum.Research.Chemistry.TransformZToY
+- summary: ''
+  uid: Microsoft.Quantum.Research.Chemistry._ApplyOptimizedTrotterStep
+- summary: Använder tid-utveckling med en PQRS-term som beskrivs av en `GeneratorIndex` .
+  uid: Microsoft.Quantum.Research.Chemistry._JWOptimized0123Term
+- summary: Implementerings steg av `JWOptimized0123Term_` ;
+  uid: Microsoft.Quantum.Research.Chemistry._JWOptimized0123TermImpl
+- summary: >-
+    Representerar en dynamisk generator som en uppsättning simulerade grindar och en expansion i JWOptimized-basen.
+
+    Mer information finns i [modeller för dynamisk Generator](../libraries/data-structures#dynamical-generator-modeling) .
+  uid: Microsoft.Quantum.Research.Chemistry._JWOptimizedFermionEvolution
+- summary: Använder tid-utveckling med en PQ-term som beskrivs av en `GeneratorIndex` .
+  uid: Microsoft.Quantum.Research.Chemistry._JWOptimizedHpqTerm
+- summary: Implementerings steg av `JWOptimizedHpqTerm_` .
+  uid: Microsoft.Quantum.Research.Chemistry._JWOptimizedHpqTermImpl
+- summary: Använder tid-utveckling med en PQ-eller PQQR-term som beskrivs av a `GeneratorIndex` .
+  uid: Microsoft.Quantum.Research.Chemistry._JWOptimizedPQandPQQRTerm
+- summary: Använder en RZ rotation, med ett C-inte stick till dubbel fas i fas uppskattning.
+  uid: Microsoft.Quantum.Research.Chemistry._JWOptimizedZ
+- summary: Använder tid-utveckling med en Z-term som beskrivs av a `GeneratorIndex` .
+  uid: Microsoft.Quantum.Research.Chemistry._JWOptimizedZTerm
+- summary: Använder tid-utveckling med en ZZ-term som beskrivs av en `GeneratorIndex` .
+  uid: Microsoft.Quantum.Research.Chemistry._JWOptimizedZZTerm
+summary: Det här namn området innehåller avancerade forsknings metoder för Quantum kemi-simulering.
+uid: Microsoft.Quantum.Research.Chemistry
+metadata:
+  ms.openlocfilehash: 22850f044e31507f72d5ac505ece67112fbdccb9
+  ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+  ms.translationtype: MT
+  ms.contentlocale: sv-SE
+  ms.lasthandoff: 10/27/2020
+  ms.locfileid: "92726622"
