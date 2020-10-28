@@ -9,12 +9,12 @@ uid: microsoft.quantum.chemistry.concepts.simulationalgorithms
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 299eb1484a697ad9d1577aabb44ccb61e908bae3
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: a303d54476e42b98a14c6b452227b0e1346567c8
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90834014"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92691894"
 ---
 # <a name="simulating-hamiltonian-dynamics"></a>Simulera Hamiltonian Dynamics
 
@@ -28,7 +28,7 @@ Idén bakom Trotter – Suzuki formler är enkla: uttrycka Hamiltonian som en su
 I synnerhet ska $H = \ sum_ {j = 1} ^ m H_j $ vara Hamiltonian.
 Sedan $ $ e ^ {-i \ sum_ {j = 1} ^ m H_j t} = \ prod_ {j = 1} ^ m e ^ {-iH_j t} + O (m ^ 2 t ^ 2), $ $, vilket innebär att om $t \ll $1, blir felet i den här uppskattningen försumbar.
 Observera att om $e ^ {-i H t} $ var en vanlig exponent, skulle felet i den här uppskattningen inte vara $O (m ^ 2 t ^ 2) $: det skulle vara noll.
-Det här felet beror på att $e ^ {-iHt} $ är en operator exponentiell och därför att det uppstår ett fel när du använder den här formeln på grund av att $H _j $-villkoren inte går ut (*d.v.s.*$H _J H_k \ne H_k $ i allmänhet).
+Det här felet beror på att $e ^ {-iHt} $ är en operator exponentiell och därför att det uppstår ett fel när du använder den här formeln på grund av att $H _j $-villkoren inte går ut ( *d.v.s.* $H _J H_k \ne H_k $ i allmänhet).
 
 Om $t $ är stor kan Trotter – Suzuki-formler fortfarande användas för att simulera Dynamicset korrekt genom att dela upp det i en sekvens med korta tids steg.
 Låt $r $ vara det antal steg som har vidtagits under tids utvecklingen, så varje gång steg körs för tid $t/r $. Sedan har vi den $ $ e ^ {-i \ sum_ {j = 1} ^ m H_j t} = \left (\ prod_ {j = 1} ^ m e ^ {-iH_j t/r} \ höger) ^ r + O (m ^ 2 t ^ 2/r). $ $ som innebär att om $r $ skalas som $m ^ 2 t ^ 2/\ Epsilon $ kan felet göras högst $ \epsilon $ för alla $ \epsilon>$0.
@@ -52,7 +52,7 @@ Till exempel $ $ e ^ {-iX\otimes X t} = (H\otimes H) e ^ {-iZ\otimes Z t} (H\oti
         0 & 0 & 0 & e ^ {-IT} \end{bmatrix}.
 $ $ Här, $e ^ {-iHt} \ket {00} = e ^ {IT} \ket {00} $ och $e ^ {-iHt} \ket {01} = e ^ {-IT} \ket {01} $, som kan visas direkt till följd av det faktum att pariteten på $0 $ är $0 $ medan pariteten för bit strängen $1 $ är $1 $.
 
-Exponenter för Pauli-operatörer kan implementeras direkt i Q# med hjälp av <xref:microsoft.quantum.intrinsic.exp> åtgärden:
+Exponenter för Pauli-operatörer kan implementeras direkt i Q# med hjälp av <xref:Microsoft.Quantum.Intrinsic.Exp> åtgärden:
 ```qsharp
     using(qubits = Qubit[2]){
         let pauliString = [PauliX, PauliX];
@@ -65,7 +65,7 @@ Exponenter för Pauli-operatörer kan implementeras direkt i Q# med hjälp av <x
 
 För Fermionic Hamiltonians mappar den [Jordanien-Wigner diskompositionen](xref:microsoft.quantum.chemistry.concepts.jordanwigner) enkelt in Hamiltonian i en summa av Pauli-operatörer.
 Det innebär att ovanstående metod enkelt kan anpassas till att simulera kemi.
-I stället för att manuellt loopa över alla Pauli-termer i Wigner-representationen nedan är ett enkelt exempel på hur en sådan simulering i kemi ser ut.
+I stället för att manuellt loopa över alla Pauli-termer i Jordan-Wigner representation, är det ett enkelt exempel på hur en sådan simulering i kemi skulle se ut.
 Vår start punkt är en [Jordanien – Wigner kodning](xref:microsoft.quantum.chemistry.concepts.jordanwigner) av Fermionic-Hamiltonian, uttryckt i kod som en instans av `JordanWignerEncoding` klassen.
 
 ```csharp
@@ -156,7 +156,7 @@ Operatorn guida, $W $, kan uttryckas som $ \operatorname{Select} $ och $R $-åtg
 
 Dessa under rutiner är enkla att konfigurera i Q# .
 Som exempel bör du överväga den enkla qubit-Ising Hamiltonian där $H = X_1 + X_2 + Z_1 Z_2 $.
-I det här fallet Q# anropas kod som implementerar åtgärden $ \operatorname{Select} $ av <xref:microsoft.quantum.canon.multiplexoperations> , medan $ \operatorname{prepare} $-åtgärden kan implementeras med hjälp av <xref:microsoft.quantum.preparation.preparearbitrarystate> .
+I det här fallet Q# anropas kod som implementerar åtgärden $ \operatorname{Select} $ av <xref:Microsoft.Quantum.Canon.MultiplexOperations> , medan $ \operatorname{prepare} $-åtgärden kan implementeras med hjälp av <xref:Microsoft.Quantum.Preparation.PrepareArbitraryState> .
 Ett exempel som inbegriper simulering av Hubbard-modellen finns som ett [ Q# exempel](https://github.com/microsoft/Quantum/tree/main/samples/simulation/hubbard).
 
 Att manuellt ange dessa steg för valfria kemi-problem skulle kräva mycket ansträngning, vilket undviks med hjälp av kemi-biblioteket.
@@ -182,6 +182,6 @@ using(qubits = Qubit[nQubits]){
 }
 ```
 
-Det är viktigt att implementeringen <xref:microsoft.quantum.chemistry.jordanwigner.qubitizationoracle> gäller godtycklig Hamiltonians som anges som en linjär kombination av Pauli-strängar.
-En version som är optimerad för kemi-simuleringar anropas med <xref:microsoft.quantum.chemistry.jordanwigner.optimizedqubitizationoracle> .
+Det är viktigt att implementeringen <xref:Microsoft.Quantum.Chemistry.JordanWigner.QubitizationOracle> gäller godtycklig Hamiltonians som anges som en linjär kombination av Pauli-strängar.
+En version som är optimerad för kemi-simuleringar anropas med <xref:Microsoft.Quantum.Chemistry.JordanWigner.OptimizedQubitizationOracle> .
 Den här versionen är optimerad för att minimera antalet T-portar med hjälp av tekniker som beskrivs i [koda elektroniska Spectra i Quantum-kretsar med linjär T-komplexitet](https://arxiv.org/abs/1805.03662).

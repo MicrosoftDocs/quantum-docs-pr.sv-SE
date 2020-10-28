@@ -9,12 +9,12 @@ uid: microsoft.quantum.machines.qc-trace-simulator.depth-counter
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 8280783adfcc2867c3a598a6f57d827125aadcfd
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: 89d8a2c9f2ecd5c5332215cd4307bcf4a6422036
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90833447"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92692101"
 ---
 # <a name="quantum-trace-simulator-depth-counter"></a>Quantum trace Simulator: djup räknare
 
@@ -23,13 +23,13 @@ Du kan använda den för att samla in antal som representerar den nedre gränser
 
 ## <a name="depth-values"></a>Djup värden
 
-Som standard har alla åtgärder ett djup på **0** förutom `T` åtgärden, som har ett djup på **1**. Det innebär att som standard `T` beräknas endast djupet för åtgärder (vilket är ofta önskvärt). Djup räknaren räknar samman och samlar in statistik över alla kanter i åtgärdens [anrops diagram](https://en.wikipedia.org/wiki/Call_graph).
+Som standard har alla åtgärder ett djup på **0** förutom `T` åtgärden, som har ett djup på **1** . Det innebär att som standard `T` beräknas endast djupet för åtgärder (vilket är ofta önskvärt). Djup räknaren räknar samman och samlar in statistik över alla kanter i åtgärdens [anrops diagram](https://en.wikipedia.org/wiki/Call_graph).
 
-Alla <xref:microsoft.quantum.intrinsic> åtgärder uttrycks i form av en qubit rotation, <xref:microsoft.quantum.intrinsic.t> åtgärder, en qubit Clifford-åtgärd, <xref:microsoft.quantum.intrinsic.cnot> åtgärder och mätningar av multi-qubit Pauli observables. Användare kan ange djupet för varje primitiv åtgärd via `gateTimes` fältet i <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulatorConfiguration> .
+Alla <xref:Microsoft.Quantum.Intrinsic> åtgärder uttrycks i form av en qubit rotation, <xref:Microsoft.Quantum.Intrinsic.T> åtgärder, en qubit Clifford-åtgärd, <xref:Microsoft.Quantum.Intrinsic.CNOT> åtgärder och mätningar av multi-qubit Pauli observables. Användare kan ange djupet för varje primitiv åtgärd via `gateTimes` fältet i <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulatorConfiguration> .
 
 ## <a name="invoking-the-depth-counter"></a>Anropar djup räknaren
 
-Om du vill köra en Quantum trace-simulator med djup räknaren måste du skapa en <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulatorConfiguration> instans, ange `UseDepthCounter` egenskapen till **True**och sedan skapa en ny <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator> instans med `QCTraceSimulatorConfiguration` som-parameter. 
+Om du vill köra en Quantum trace-simulator med djup räknaren måste du skapa en <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulatorConfiguration> instans, ange `UseDepthCounter` egenskapen till **True** och sedan skapa en ny <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator> instans med `QCTraceSimulatorConfiguration` som-parameter. 
 
 ```csharp
 var config = new QCTraceSimulatorConfiguration();
@@ -52,7 +52,7 @@ operation ApplySampleWithCCNOT() : Unit {
 }
 ```
 
-Om du vill kontrol lera att `CCNOT` har `T` djup **5** och `ApplySampleWithCCNOT` `T` djup **6**använder du följande C#-kod:
+Om du vill kontrol lera att `CCNOT` har `T` djup **5** och `ApplySampleWithCCNOT` `T` djup **6** använder du följande C#-kod:
 
 ```csharp
 using Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators;

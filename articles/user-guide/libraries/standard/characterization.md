@@ -9,12 +9,12 @@ ms.topic: article
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 8dddc15354c32808e7ad1310bce233ee3dc93fe8
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: 51e7b3bcf4402a4d0ba5647643f284e9f10c3bb3
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90835646"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92692154"
 ---
 # <a name="quantum-characterization-and-statistics"></a>Quantum-karakterisering och statistik #
 
@@ -39,7 +39,7 @@ Detta har fördelen att vi bara behöver en enda ytterligare qubit för att utf�
 Var och en av de metoder som föreslås nedan använder en annan strategi för att utforma experiment och olika data bearbetnings metoder för att lära dig fasen.  De har en unik fördel som sträcker sig från att ha rigorösa fel gränser, till förmåga att ta med tidigare information, tolerera fel eller köra på minnes limitted klassiska datorer.
 
 I att diskutera iterativa fas uppskattningar kommer vi att betrakta en enhetlig $U $ som en svart Box-åtgärd.
-Som det beskrivs i avsnittet om Oracle i [data strukturer](xref:microsoft.quantum.libraries.data-structures), kan Q# Canon modellera sådana åtgärder av den <xref:microsoft.quantum.oracles.discreteoracle> användardefinierade typen som definieras av tuple-typen `((Int, Qubit[]) => Unit : Adjoint, Controlled)` .
+Som det beskrivs i avsnittet om Oracle i [data strukturer](xref:microsoft.quantum.libraries.data-structures), kan Q# Canon modellera sådana åtgärder av den <xref:Microsoft.Quantum.Oracles.DiscreteOracle> användardefinierade typen som definieras av tuple-typen `((Int, Qubit[]) => Unit : Adjoint, Controlled)` .
 Konkret, om `U : DiscreteOracle` , `U(m)` implementerar $U ^ m $ för `m : Int` .
 
 Med den här definitionen på plats fortsätter varje steg i upprepnings fas uppskattningen genom att förbereda en tilläggs qubit i $ \ket{+} $ State tillsammans med det inledande tillstånd $ \ket{\phi} $ som vi antar är en [eigenvector](xref:microsoft.quantum.concepts.matrix-advanced) av $U (m) $, d.v.s. $U (m) \ket{\phi} = e ^ {im\phi} \ ket {\ Phi} $.  
@@ -99,7 +99,7 @@ Exakt Bayesian-härledning är i praktiken indragbar.
 För att se det här vill vi veta en $n $-bitars variabel $x $.
 Den tidigare distributionen $ \Pr (x) $ har stöd för över $2 ^ n $ hypotetiska värden för $x $.
 Det innebär att om vi behöver en mycket exakt uppskattning av $x $ kan Bayesian-fasen uppskattning kräva minnes-och bearbetnings tid.
-När det gäller vissa program, till exempel Quantum-simulering, utesluter limitted-noggrannheten inte sådana metoder som andra program, till exempel Shor, kan inte använda en exakt Bayesian-härledning inom sitt fas beräknings steg.  Därför ger vi även implementeringar för ungefärliga Bayesian-metoder, till exempel [slumpmässig stegvis uppskattning (RWPE)](xref:microsoft.quantum.research.characterization.randomwalkphaseestimation) och även icke-Bayesian metoder som [robust fas uppskattning](xref:microsoft.quantum.characterization.robustphaseestimation).
+När det gäller vissa program, till exempel Quantum-simulering, utesluter limitted-noggrannheten inte sådana metoder som andra program, till exempel Shor, kan inte använda en exakt Bayesian-härledning inom sitt fas beräknings steg.  Därför ger vi även implementeringar för ungefärliga Bayesian-metoder, till exempel [slumpmässig stegvis uppskattning (RWPE)](xref:Microsoft.Quantum.Research.Characterization.RandomWalkPhaseEstimation) och även icke-Bayesian metoder som [robust fas uppskattning](xref:Microsoft.Quantum.Characterization.RobustPhaseEstimation).
 
 ### <a name="robust-phase-estimation"></a>Robust fas uppskattning ###
 
@@ -112,14 +112,14 @@ Den viktigaste funktionen i robust fas uppskattning, som delas med de flesta and
 Andra relevanta uppgifter inkluderar, t. ex. den små utrymmes kostnaden på bara $1 $ Ancilla qubit, eller att proceduren är icke-adaptiv, vilket innebär att den nödvändiga sekvensen av Quantum experiment är oberoende av de mellanliggande Mät resultat. I det här och kommande exempel där valet av algoritmen för fas uppskattning är viktigt bör en bör hänvisa till dokumentationen, till exempel @"microsoft.quantum.characterization.robustphaseestimation" och de refererade publikationerna, för att få mer information och för deras implementering.
 
 > [!TIP]
-> Det finns många exempel där robust fas uppskattning används. För fas uppskattning när du extraherar mark tillstånds energin för olika fysiska system kan du se exempel på [ **H2-simulering** ](https://github.com/microsoft/Quantum/tree/main/samples/simulation/h2/command-line), [ **SimpleIsing** -exemplet](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/simple)och [ **Hubbard Model** -exemplet](https://github.com/microsoft/Quantum/tree/main/samples/simulation/hubbard).
+> Det finns många exempel där robust fas uppskattning används. För fas uppskattning när du extraherar mark tillstånds energin för olika fysiska system kan du se exempel på [ **H2-simulering**](https://github.com/microsoft/Quantum/tree/main/samples/simulation/h2/command-line), [ **SimpleIsing** -exemplet](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/simple)och [ **Hubbard Model** -exemplet](https://github.com/microsoft/Quantum/tree/main/samples/simulation/hubbard).
 
 
 ### <a name="continuous-oracles"></a>Kontinuerliga Oracle ###
 
-Vi kan också generalisera från den Oracle-modell som används ovan för att tillåta löpande Oracle, som modelleras av typen Canon <xref:microsoft.quantum.oracles.continuousoracle> .
+Vi kan också generalisera från den Oracle-modell som används ovan för att tillåta löpande Oracle, som modelleras av typen Canon <xref:Microsoft.Quantum.Oracles.ContinuousOracle> .
 Tänk på att i stället för en enda enhetlig operatör $U $, har vi en familj med enhetliga operatörer $U (t) $ för $t \in \mathbb{R} $ så att $U (t) U (s) $ = $U (t + s) $.
-Detta är en svagare instruktion än i det diskreta fallet eftersom vi kan konstruera en <xref:microsoft.quantum.oracles.discreteoracle> genom att begränsa $t = m \, \delta t $ för vissa fasta $ \delta t $.
+Detta är en svagare instruktion än i det diskreta fallet eftersom vi kan konstruera en <xref:Microsoft.Quantum.Oracles.DiscreteOracle> genom att begränsa $t = m \, \delta t $ för vissa fasta $ \delta t $.
 I [sten satsen](https://en.wikipedia.org/wiki/Stone%27s_theorem_on_one-parameter_unitary_groups), $U (t) = \exp (i H t) $ för en viss operator $H $, där $ \exp $ är matrisen exponent enligt beskrivningen i [avancerade matriser](xref:microsoft.quantum.concepts.matrix-advanced).
 En eigenstate $ \ket{\phi} $ $H $ så att $H \ket{\phi} = \phi \ket{\phi} $ också är en eigenstate av $U (t) $ för alla $t $, \begin{Equation} U (t) \ket{\phi} = e ^ {i \phi t} \ket{\phi}.
 \end{equation}
@@ -146,14 +146,14 @@ Med möjligheten att gå baklänges kan algoritmen även lära sig även om den 
 
 Varje fas uppskattnings åtgärd som tillhandahålls med Q# Canon tar en annan uppsättning indata som Parameters ATS till den kvalitet som vi tar emot från den slutliga uppskattningen $ \hat{\phi} $.
 Dessa olika indata, men alla delar flera indata, så att partiell program över kvalitets parametrarna resulterar i en gemensam signatur.
-Den <xref:microsoft.quantum.characterization.robustphaseestimation> åtgärd som diskuteras i nästa avsnitt har till exempel följande signatur:
+Den <xref:Microsoft.Quantum.Characterization.RobustPhaseEstimation> åtgärd som diskuteras i nästa avsnitt har till exempel följande signatur:
 
 ```qsharp
 operation RobustPhaseEstimation(bitsPrecision : Int, oracle : DiscreteOracle, eigenstate : Qubit[])  : Double
 ```
 
 `bitsPrecision`Indatamängden är unik för `RobustPhaseEstimation` , medan `oracle` och `eigenstate` är i vanliga.
-Som det visas i **H2Sample**kan en åtgärd på detta sätt acceptera en upprepnings uppskattnings algoritm med indata från formuläret `(DiscreteOracle, Qubit[]) => Unit` så att en användare kan ange godtyckliga algoritmer för fas uppskattning:
+Som det visas i **H2Sample** kan en åtgärd på detta sätt acceptera en upprepnings uppskattnings algoritm med indata från formuläret `(DiscreteOracle, Qubit[]) => Unit` så att en användare kan ange godtyckliga algoritmer för fas uppskattning:
 
 ```qsharp
 operation H2EstimateEnergy(

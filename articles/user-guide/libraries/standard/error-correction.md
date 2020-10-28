@@ -9,12 +9,12 @@ ms.topic: article
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: dad0db4d2aab27e5ae46d4df10ee050f785d8bb8
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: 94251e185cea65c5fc08ed70d5fba9b7b19501e3
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90835561"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92692048"
 ---
 # <a name="error-correction"></a>Fel korrigering #
 
@@ -61,7 +61,7 @@ Vi betecknar resultaten av varje mätning genom tecknet för det eigenvalue som 
 | $X _2 $ | $ \ket {001} $ | $ \ket {110} $ | $+$ | $-$ |
 
 Det innebär att resultaten av de två mätningarna unikt avgör vilken bit-flip-fel som inträffade, men utan att avslöja någon information om vilket tillstånd vi kodade.
-Vi kallar dessa resultat en *Syndrome*och refererar till processen för att mappa en Syndrome tillbaka till det fel som orsakade *återställningen*.
+Vi kallar dessa resultat en *Syndrome* och refererar till processen för att mappa en Syndrome tillbaka till det fel som orsakade *återställningen* .
 I synnerhet betonar vi att återställningen är en *klassisk* härlednings process som tar sig in i den Syndrome som inträffat, och returnerar en recept för att åtgärda eventuella fel som kan ha inträffat.
 
 > [!NOTE]
@@ -70,7 +70,7 @@ I synnerhet betonar vi att återställningen är en *klassisk* härlednings proc
 > På samma sätt kommer du att använda en fas vändning `Z` -åtgärd för att mappa $ \ket{\overline {1} } $ till $-\ket{\overline {1} } $ och därmed mappa $ \ket{\overline{+}} $ till $ \ket{\overline {-} } $.
 > Ofta kan koder skapas för att hantera större antal fel och för att hantera $Z $-fel samt $X $-fel.
 
-Insikter om att vi kan beskriva mätningar i en Quantum-fel korrigering som fungerar på samma sätt i alla kod stater, är grunden för den *stabiliseringsbaserade formaliteten*.
+Insikter om att vi kan beskriva mätningar i en Quantum-fel korrigering som fungerar på samma sätt i alla kod stater, är grunden för den *stabiliseringsbaserade formaliteten* .
 Q#Canon innehåller ett ramverk för att beskriva kodning i och avkodning från stabiliserings koder och för att beskriva hur en återställning av fel uppstår.
 I det här avsnittet beskriver vi det här ramverket och dess program till några vanliga Quantum Error-felkorrigerings koder.
 
@@ -82,14 +82,14 @@ I det här avsnittet beskriver vi det här ramverket och dess program till någr
 
 För att hjälpa till att ange fel som korrigerar koder Q# ger Canon flera olika användardefinierade typer:
 
-- <xref:microsoft.quantum.errorcorrection.logicalregister>`= Qubit[]`: Anger att ett register över qubits ska tolkas som kod block för en felkorrigerande kod.
-- <xref:microsoft.quantum.errorcorrection.syndrome>`= Result[]`: Anger att en matris med mått resultat ska tolkas som Syndrome mätt i ett kodblock.
-- <xref:microsoft.quantum.errorcorrection.recoveryfn>`= (Syndrome -> Pauli[])`: Anger att en *klassisk* funktion ska användas för att tolka en Syndrome och returnera en korrigering som ska tillämpas.
-- <xref:microsoft.quantum.errorcorrection.encodeop>`= ((Qubit[], Qubit[]) => LogicalRegister)`: Anger att en åtgärd tar qubits som representerar data tillsammans med nya Ancilla-qubits för att skapa ett kodblock av en felkorrigerande kod.
-- <xref:microsoft.quantum.errorcorrection.decodeop>`= (LogicalRegister => (Qubit[], Qubit[]))`: Om en åtgärd är indelad i ett kod block av ett fel korrigeras koden i data qubits och Ancilla-qubits som används för att representera Syndrome-information.
-- <xref:microsoft.quantum.errorcorrection.syndromemeasop>`= (LogicalRegister => Syndrome)`: Anger en åtgärd som ska användas för att extrahera Syndrome-information från ett kodblock utan att störa det tillstånd som skyddas av koden.
+- <xref:Microsoft.Quantum.ErrorCorrection.LogicalRegister>`= Qubit[]`: Anger att ett register över qubits ska tolkas som kod block för en felkorrigerande kod.
+- <xref:Microsoft.Quantum.ErrorCorrection.Syndrome>`= Result[]`: Anger att en matris med mått resultat ska tolkas som Syndrome mätt i ett kodblock.
+- <xref:Microsoft.Quantum.ErrorCorrection.RecoveryFn>`= (Syndrome -> Pauli[])`: Anger att en *klassisk* funktion ska användas för att tolka en Syndrome och returnera en korrigering som ska tillämpas.
+- <xref:Microsoft.Quantum.ErrorCorrection.EncodeOp>`= ((Qubit[], Qubit[]) => LogicalRegister)`: Anger att en åtgärd tar qubits som representerar data tillsammans med nya Ancilla-qubits för att skapa ett kodblock av en felkorrigerande kod.
+- <xref:Microsoft.Quantum.ErrorCorrection.DecodeOp>`= (LogicalRegister => (Qubit[], Qubit[]))`: Om en åtgärd är indelad i ett kod block av ett fel korrigeras koden i data qubits och Ancilla-qubits som används för att representera Syndrome-information.
+- <xref:Microsoft.Quantum.ErrorCorrection.SyndromeMeasOp>`= (LogicalRegister => Syndrome)`: Anger en åtgärd som ska användas för att extrahera Syndrome-information från ett kodblock utan att störa det tillstånd som skyddas av koden.
 
-Dessutom tillhandahåller Canon <xref:microsoft.quantum.errorcorrection.qecc> typen för att samla in de andra typerna som krävs för att definiera en kod för Quantum-fel korrigering. Associerad med varje stabiliserings-Quantum-kod är kod längden $n $, antalet $k $ för logiska qubits och minsta avstånd $d $, som ofta grupperas tillsammans i notationen ⟦ $n $, $k $, $d $ ⟧. Funktionen definierar t. ex. <xref:microsoft.quantum.errorcorrection.bitflipcode> ⟦ 3, 1, 1 ⟧ bit flip Code:
+Dessutom tillhandahåller Canon <xref:Microsoft.Quantum.ErrorCorrection.QECC> typen för att samla in de andra typerna som krävs för att definiera en kod för Quantum-fel korrigering. Associerad med varje stabiliserings-Quantum-kod är kod längden $n $, antalet $k $ för logiska qubits och minsta avstånd $d $, som ofta grupperas tillsammans i notationen ⟦ $n $, $k $, $d $ ⟧. Funktionen definierar t. ex. <xref:Microsoft.Quantum.ErrorCorrection.BitFlipCode> ⟦ 3, 1, 1 ⟧ bit flip Code:
 
 ```qsharp
 let encodeOp = EncodeOp(BitFlipEncoder);
@@ -104,7 +104,7 @@ let code = QECC(encodeOp, decodeOp, syndMeasOp);
 Observera att `QECC` typen *inte* innehåller någon återställnings funktion.
 Detta gör att vi kan ändra den återställnings funktion som används i korrigerande fel utan att ändra definitionen för själva koden. den här funktionen är särskilt användbar när du införlivar feedback från karakteriserings mätningar i modellen som antas av återställningen.
 
-När en kod har definierats på det här sättet kan vi använda <xref:microsoft.quantum.errorcorrection.recover> åtgärden för att återställa från fel:
+När en kod har definierats på det här sättet kan vi använda <xref:Microsoft.Quantum.ErrorCorrection.Recover> åtgärden för att återställa från fel:
 
 ```qsharp
 let code = BitFlipCode();
