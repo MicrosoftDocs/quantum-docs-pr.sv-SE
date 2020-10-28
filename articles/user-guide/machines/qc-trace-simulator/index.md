@@ -9,12 +9,12 @@ uid: microsoft.quantum.machines.qc-trace-simulator.intro
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 7f5e25aa7b58277642783e03d03854cd75ff4ca3
-ms.sourcegitcommit: d98190988ff03146d9ca2b0d325870cd717d729a
+ms.openlocfilehash: 2e2d9f8494d8709fba34123793cecce4011b609a
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91771294"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92690840"
 ---
 # <a name="microsoft-quantum-development-kit-qdk-quantum-trace-simulator"></a>Spårningssimulator för kvantdator i Microsoft Quantum Development Kit (QDK)
 
@@ -55,7 +55,7 @@ namespace Quantum.MyProgram
 
 Eftersom kvantspårningssimulatorn inte simulerar det faktiska kvanttillståndet, kan den inte beräkna sannolikheten för mätresultatet i en åtgärd. 
 
-Om en åtgärd inkluderar mätningar måste du därför uttryckligen ange dessa sannolikheter med hjälp av <xref:microsoft.quantum.diagnostics.assertmeasurementprobability>-åtgärden från namnområdet <xref:microsoft.quantum.diagnostics>. Följande exempel illustrerar detta:
+Om en åtgärd inkluderar mätningar måste du därför uttryckligen ange dessa sannolikheter med hjälp av <xref:Microsoft.Quantum.Diagnostics.AssertMeasurementProbability>-åtgärden från namnområdet <xref:Microsoft.Quantum.Diagnostics>. Följande exempel illustrerar detta:
 
 ```qsharp
 operation TeleportQubit(source : Qubit, target : Qubit) : Unit {
@@ -74,7 +74,7 @@ operation TeleportQubit(source : Qubit, target : Qubit) : Unit {
 }
 ```
 
-När kvantspårningssimulatorn påträffar `AssertMeasurementProbability` kommer den registrera att mätning av `PauliZ` i `source` och `q` bör visa ett resultat på `Zero`, med sannolikheten **0,5**. När `M`-åtgärden körs senare hittar den de registrerade värdena i resultatets sannolikhet och `M` returnerar `Zero` eller `One`, med sannolikheten **0,5**. När samma kod körs i en simulator som håller koll på kvanttillståndet, kontrollerar simulatorn att de angivna sannolikheterna i `AssertMeasurementProbability` är korrekta.
+När kvantspårningssimulatorn påträffar `AssertMeasurementProbability` kommer den registrera att mätning av `PauliZ` i `source` och `q` bör visa ett resultat på `Zero`, med sannolikheten **0,5** . När `M`-åtgärden körs senare hittar den de registrerade värdena i resultatets sannolikhet och `M` returnerar `Zero` eller `One`, med sannolikheten **0,5** . När samma kod körs i en simulator som håller koll på kvanttillståndet, kontrollerar simulatorn att de angivna sannolikheterna i `AssertMeasurementProbability` är korrekta.
 
 Observera att om det finns minst en mätningsåtgärd som inte är kommenterad med `AssertMeasurementProbability`, utlöser simulatorn ett [`UnconstrainedMeasurementException`](https://docs.microsoft.com/dotnet/api/microsoft.quantum.simulation.simulators.qctracesimulators.unconstrainedmeasurementexception).
 
