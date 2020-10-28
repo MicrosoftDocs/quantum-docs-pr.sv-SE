@@ -1,0 +1,116 @@
+### YamlMime:QSharpNamespace
+functions:
+- summary: Med hänsyn till en uppsättning koefficienter och en tolerans, returnerar en tillstånds förberedelse åtgärd som förbereder varje koefficient som motsvarande amplitud i ett beräknings bas tillstånd, upp till den angivna toleransen.
+  uid: Microsoft.Quantum.MachineLearning.ApproximateInputEncoder
+- summary: Med en eller flera lager av kontrollerade rotationer, returnerar ett enskilt lager med modell parameter indexet Skift ATS, så att distinkta skikt är parameterstyrda av distinkta modell parametrar.
+  uid: Microsoft.Quantum.MachineLearning.CombinedStructure
+- summary: Returnerar en matris med enstaka kontrollerade rotationer längs en viss axel, som ordnas cykliskt över ett register över qubits och parametriserade av distinkta modell parametrar.
+  uid: Microsoft.Quantum.MachineLearning.CyclicEntanglingLayer
+- summary: Returnerar en standard uppsättning med alternativ för utbildningar för utbildning.
+  uid: Microsoft.Quantum.MachineLearning.DefaultTrainingOptions
+- summary: Returnerar antalet qubits som krävs för att koda en viss funktions vektor.
+  uid: Microsoft.Quantum.MachineLearning.FeatureRegisterSize
+- summary: Med hänsyn till klassificerings sannolikhet och en förskjutning, returnerar etiketten härledd från den sannolikheten.
+  uid: Microsoft.Quantum.MachineLearning.InferredLabel
+- summary: Med tanke på en klassificerings mat ris sannolikhet och en förskjutning, returnerar etiketten härledd från varje sannolikhet.
+  uid: Microsoft.Quantum.MachineLearning.InferredLabels
+- summary: Med hänsyn till en uppsättning koefficienter och en tolerans, returnerar en tillstånds förberedelse åtgärd som förbereder varje koefficient som motsvarande amplitud i ett beräknings grund tillstånd.
+  uid: Microsoft.Quantum.MachineLearning.InputEncoder
+- summary: Returnerar en matris med okontrollerade (Single-qubit) rotationer längs en viss axel, med en rotation för varje qubit i ett register, med parametrar av distinkta modell parametrar.
+  uid: Microsoft.Quantum.MachineLearning.LocalRotationsLayer
+- summary: Om du har fått en uppsättning av uppskjutna etiketter och en uppsättning korrekta etiketter, returnerar index för var varje uppsättning etiketter skiljer sig.
+  uid: Microsoft.Quantum.MachineLearning.Misclassifications
+- summary: Med en uppsättning av uppskjutna etiketter och en uppsättning korrekta etiketter, returnerar antalet index där varje uppsättning etiketter skiljer sig.
+  uid: Microsoft.Quantum.MachineLearning.NMisclassifications
+- summary: Returnerar antalet qubits som krävs för att tillämpa en viss sekventiell klassificerare.
+  uid: Microsoft.Quantum.MachineLearning.NQubitsRequired
+- summary: Returnerar en matris med en qubit rotationer längs en viss axel, parametriserade av distinkta modell parametrar.
+  uid: Microsoft.Quantum.MachineLearning.PartialRotationsLayer
+- summary: Exempel på en specifik matris med det aktuella schemat.
+  uid: Microsoft.Quantum.MachineLearning.Sampled
+- summary: Returnerar antalet element i ett angivet samplings schema.
+  uid: Microsoft.Quantum.MachineLearning.ScheduleLength
+- summary: ''
+  uid: Microsoft.Quantum.MachineLearning._AllNearlyEqualD
+- summary: ''
+  uid: Microsoft.Quantum.MachineLearning._CallFlipped
+- summary: ''
+  uid: Microsoft.Quantum.MachineLearning._CanApplyTwoQubitCase
+- summary: ''
+  uid: Microsoft.Quantum.MachineLearning._EncodeSample
+- summary: ''
+  uid: Microsoft.Quantum.MachineLearning._Features
+- summary: ''
+  uid: Microsoft.Quantum.MachineLearning._Flipped
+- summary: ''
+  uid: Microsoft.Quantum.MachineLearning._Label
+- summary: ''
+  uid: Microsoft.Quantum.MachineLearning._MisclassificationRate
+- summary: ''
+  uid: Microsoft.Quantum.MachineLearning._NegativeLocations
+- summary: ''
+  uid: Microsoft.Quantum.MachineLearning._TailMeasurement
+- summary: ''
+  uid: Microsoft.Quantum.MachineLearning._UncontrolledSpanSequence
+- summary: ''
+  uid: Microsoft.Quantum.MachineLearning._Unnegate
+- summary: Returnerar ett bias-värde som leder till närmaste lägsta värde för felklassificering.
+  uid: Microsoft.Quantum.MachineLearning._UpdatedBias
+name: Microsoft.Quantum.MachineLearning
+newtypes:
+- summary: Beskriver en kontrollerad rotation i termer av mål-och kontroll index, rotations axel och index i en modell parameter vektor.
+  uid: Microsoft.Quantum.MachineLearning.ControlledRotation
+- summary: Ett exempel som kallas för en klass som exemplet tillhör.
+  uid: Microsoft.Quantum.MachineLearning.LabeledSample
+- summary: Ett schema för att rita batchar från en uppsättning exempel.
+  uid: Microsoft.Quantum.MachineLearning.SamplingSchedule
+- summary: Beskriver en Quantum klassificerare-modell som består av en sekvens av parameterstyrda och kontrollerade rotationer, en tilldelning av rotations vinklar och en förskjutning mellan de två klasserna som identifieras av modellen.
+  uid: Microsoft.Quantum.MachineLearning.SequentialModel
+- summary: Beskriver en åtgärd som förbereder en viss Indatatyp för en sekventiell klassificerare.
+  uid: Microsoft.Quantum.MachineLearning.StateGenerator
+- summary: En samling alternativ som ska användas i träna Quantum-klassificerare.
+  uid: Microsoft.Quantum.MachineLearning.TrainingOptions
+- summary: Resultatet från att ha verifierat en klassificerare mot en uppsättning exempel.
+  uid: Microsoft.Quantum.MachineLearning.ValidationResults
+operations:
+- summary: Med hänsyn till struktur-och Parameterisering för en sekventiell klassificerare, tillämpas klassificeraren på ett register över qubits.
+  uid: Microsoft.Quantum.MachineLearning.ApplySequentialClassifier
+- summary: Med en uppsättning exempel och en sekventiell klassificerare beräknar klassificerings sannolikheten för dessa prover genom att upprepade gånger mäta utdata från klassificeraren i varje exempel.
+  uid: Microsoft.Quantum.MachineLearning.EstimateClassificationProbabilities
+- summary: Med ett exempel och en sekventiell klassificerare beräknar klassificerings sannolikheten för det exemplet genom att upprepade gånger mäta utdata från klassificeraren i det angivna exemplet.
+  uid: Microsoft.Quantum.MachineLearning.EstimateClassificationProbability
+- summary: Uppskattar inlärnings toningen för en sekventiell klassificerare i en viss modell och för en viss kodad indatamängd.
+  uid: Microsoft.Quantum.MachineLearning.EstimateGradient
+- summary: Med hänsyn till strukturen för en sekventiell klassificerare, tågen klassificeraren på en viss etikett uppsättning.
+  uid: Microsoft.Quantum.MachineLearning.TrainSequentialClassifier
+- summary: Med hänsyn till strukturen för en sekventiell klassificerare, träna klassificeraren på en viss etikett uppsättning från en viss modell.
+  uid: Microsoft.Quantum.MachineLearning.TrainSequentialClassifierAtModel
+- summary: Verifierar en viss sekventiell klassificerare mot en viss uppsättning förmärkta exempel.
+  uid: Microsoft.Quantum.MachineLearning.ValidateSequentialClassifier
+- summary: ''
+  uid: Microsoft.Quantum.MachineLearning._ApplyLEOperationToRawRegister
+- summary: ''
+  uid: Microsoft.Quantum.MachineLearning._ApplyTwoQubitCase
+- summary: ''
+  uid: Microsoft.Quantum.MachineLearning._EstimateDerivativeWithParameterShift
+- summary: ''
+  uid: Microsoft.Quantum.MachineLearning._PrepareClassification
+- summary: Skalar slumpmässigt om inflödet för att antingen växa eller minska med en specifik faktor.
+  uid: Microsoft.Quantum.MachineLearning._RandomlyRescale
+- summary: ''
+  uid: Microsoft.Quantum.MachineLearning._ReflectAboutNegativeCoefficients
+- summary: Genomför en viss epok av en sekventiell klassificerare utbildning på en delmängd av data exempel.
+  uid: Microsoft.Quantum.MachineLearning._RunSingleTrainingEpoch
+- summary: försöker uppdatera en enskild parameter i riktningen för den nedtonade minitidslinjen
+  uid: Microsoft.Quantum.MachineLearning._RunSingleTrainingStep
+- summary: ''
+  uid: Microsoft.Quantum.MachineLearning._TrainSequentialClassifierAtModel
+summary: Det här namn området innehåller funktioner och åtgärder som används i Quantum Machine Learning-program.
+uid: Microsoft.Quantum.MachineLearning
+metadata:
+  ms.openlocfilehash: 3e77526589c4224697d7f47a5a6dc7e7edf45ef8
+  ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+  ms.translationtype: MT
+  ms.contentlocale: sv-SE
+  ms.lasthandoff: 10/27/2020
+  ms.locfileid: "92731459"

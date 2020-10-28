@@ -1,0 +1,36 @@
+### YamlMime:QSharpNamespace
+functions:
+- summary: Returnerar de bitvisa och två heltalen. Detta utför samma beräkning som den inbyggda `&&&` operatorn.
+  uid: Microsoft.Quantum.Bitwise.And
+- summary: Växlar den bitvisa representationen av ett tal till vänster med ett angivet antal bitar.
+  uid: Microsoft.Quantum.Bitwise.LeftShiftedI
+- summary: Växlar den bitvisa representationen av ett tal till vänster med ett angivet antal bitar.
+  uid: Microsoft.Quantum.Bitwise.LeftShiftedL
+- summary: Returnerar den bitvisa inte ett heltal. Detta utför samma beräkning som den inbyggda `~~~` operatorn.
+  uid: Microsoft.Quantum.Bitwise.Not
+- summary: Returnerar bitvis eller av två heltal. Detta utför samma beräkning som den inbyggda `|||` operatorn.
+  uid: Microsoft.Quantum.Bitwise.Or
+- summary: Returnerar den bitvisa PARITETen för ett heltal (1 om dess binära representation innehåller udda antal och 0 annars).
+  uid: Microsoft.Quantum.Bitwise.Parity
+- summary: Skiftar den bitvisa representationen av ett tal direkt med ett angivet antal bitar.
+  uid: Microsoft.Quantum.Bitwise.RightShiftedI
+- summary: Skiftar den bitvisa representationen av ett tal direkt med ett angivet antal bitar.
+  uid: Microsoft.Quantum.Bitwise.RightShiftedL
+- summary: Returnerar ett heltal som representerar X-bitarna för en matris med Pauli-operatorer.
+  uid: Microsoft.Quantum.Bitwise.XBits
+- summary: Returnerar den bitvisa uteslutande eller (XOR) av två heltal. Detta utför samma beräkning som den inbyggda `^^^` operatorn.
+  uid: Microsoft.Quantum.Bitwise.Xor
+- summary: Returnerar ett heltal som representerar Z-bitarna för en matris med Pauli-operatorer.
+  uid: Microsoft.Quantum.Bitwise.ZBits
+name: Microsoft.Quantum.Bitwise
+newtypes: []
+operations: []
+summary: Det här namn området innehåller funktioner för att agera på den bitvisa representationen av klassiska data typer.
+uid: Microsoft.Quantum.Bitwise
+metadata:
+  ms.openlocfilehash: 6730a0350f56c2356b9c0851b37de1cd277da90f
+  ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+  ms.translationtype: MT
+  ms.contentlocale: sv-SE
+  ms.lasthandoff: 10/27/2020
+  ms.locfileid: "92730246"
