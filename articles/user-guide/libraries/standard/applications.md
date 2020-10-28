@@ -9,12 +9,12 @@ ms.topic: article
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 115cd65621afd8272887b36163b066a4e6a554d7
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: 5a29dcc74c638cb8ecbeb1f924d0e50d40d19f66
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90835663"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92692167"
 ---
 # <a name="applications"></a>Program #
 
@@ -48,13 +48,13 @@ I de flesta praktiska program som ska implementeras på en Quantum-dator måste 
 
 En algoritm för Quantum simulering konverterar en specifik Beskrivning av en Hamiltonian till en sekvens med primitiva Quantum-grindar som, som helhet, närmar sig tids utvecklingen av Hamiltonian.
 
-I det särskilda fallet där Hamiltonian delas upp i en summa av Hermitian delar, är Trotter-Suzuki-dekompositionen en särskilt enkel och intuitiv algoritm för att simulera Hamiltonians som sammanställer till en summa av Hermitian-komponenter. Till exempel är en första order Integrator i den här familjen ungefär $ $ \begin{align} U (t) & = \left (e ^ {-iH \_ 0 t/r} e ^ {-IH \_ 1 t/r} \cdots e ^ {-IH \_ {d-1} t/r} \right) ^ {r} + \mathcal{O} (d ^ 2 \ max_j \\ | H \_ j \\ | ^ 2 t ^ 2/r), \end{align} $ $ med en produkt med $r d $-villkor. 
+I det särskilda fallet där Hamiltonian delas upp i en summa av Hermitian delar, är Trotter-Suzuki dekompositionen en särskilt enkel och intuitiv algoritm för att simulera Hamiltonians som delas upp i en summa av Hermitian-komponenter. Till exempel är en första order Integrator i den här familjen ungefär $ $ \begin{align} U (t) & = \left (e ^ {-iH \_ 0 t/r} e ^ {-IH \_ 1 t/r} \cdots e ^ {-IH \_ {d-1} t/r} \right) ^ {r} + \mathcal{O} (d ^ 2 \ max_j \\ | H \_ j \\ | ^ 2 t ^ 2/r), \end{align} $ $ med en produkt med $r d $-villkor. 
 
 > [!TIP]
-> Program av algoritmen Trotter-Suzuki simulering beskrivs i exemplen.
+> Program av algoritmen för Trotter-Suzuki simulering beskrivs i exemplen.
 > För Ising-modellen som bara använder de inbyggda åtgärder som tillhandahålls av varje måldator, se [ **SimpleIsing** -exemplet](https://github.com/microsoft/Quantum/blob/main/samples/simulation/ising/simple).
-> Ising-modellen med hjälp av Trotter-Suzuki biblioteks kontroll struktur finns i [ **IsingTrotter** -exemplet](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/trotter-evolution).
-> För molekyliga väte med Trotter-Suzuki biblioteks kontroll struktur kan du se [exempel på **H2-simulering** ](https://github.com/microsoft/Quantum/tree/main/samples/simulation/h2/command-line).
+> Ising-modellen med hjälp av kontroll strukturen för Trotter-Suzuki bibliotek finns i [ **IsingTrotter** -exemplet](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/trotter-evolution).
+> För molekylering med Trotter-Suzuki bibliotekets kontroll struktur kan du se exempel på [ **H2-simulering**](https://github.com/microsoft/Quantum/tree/main/samples/simulation/h2/command-line).
 
 I många fall vill vi implementera simulerings algoritmen, men den är inte intresse rad av implementeringens information. Till exempel, den andra ordnings integreraren uppskattar $ $ \begin{align} U (t) & = \left (e ^ {-iH \_ 0 t/2R} e ^ {-IH \_ 1 t/2R} \cdots e ^ {-IH \_ {d-1} t/2R} e ^ {-IH \_ {d-1} t/2R} \cdots e ^ {-IH \_ 1 t/2R} e ^ {-IH \_ 0 t/2R} \right) ^ {r} + \mathcal{O} (d ^ 3 \ max_j \\ | H \_ j \\ | ^ 3 t ^ 3/r ^ 2), \end{align} $ $ med en produkt av $2rd $-villkor. Större beställningar innebär ännu fler villkor och optimerade varianter kan kräva hög icke-trivial ordningsföljd på exponenterna. Andra avancerade algoritmer kan också innebära användning av Ancilla-qubits i mellanliggande steg. Därför har vi paket simulerings algoritmer i filen Canon som användardefinierad typ
 
@@ -68,7 +68,7 @@ Den första parametern `Double` är tiden för simulering, den andra parametern 
 newtype TimeDependentSimulationAlgorithm = ((Double, EvolutionSchedule, Qubit[]) => Unit : Adjoint, Controlled);
 ```
 
-Som exempel kan Trotter-Suzuki diskompositionen anropas med hjälp av följande Canon-funktioner, med parametrar för att `trotterStepSize` ändra varaktigheten för simulering i varje exponentiell, och `trotterOrder` för den önskade integrerande ordningen.
+Som exempel kan Trotter-Suzuki diskompositionen anropas med hjälp av följande Canon-funktioner, med parametrar för att `trotterStepSize` ändra varaktigheten för simulering i varje exponentiell och `trotterOrder` för den önskade integrerans ordning.
 
 ```qsharp
 function TrotterSimulationAlgorithm(
@@ -88,7 +88,7 @@ function TimeDependentTrotterSimulationAlgorithm(
 
 > [!TIP]
 > Program för simulerings biblioteket beskrivs i exemplen. För fas uppskattning i Ising-modellen med `SimulationAlgorithm` kan du se [ **IsingPhaseEstimation** -exemplet](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/phase-estimation).
-> För förberedelse av adiabatic-tillstånd i Ising `TimeDependentSimulationAlgorithm` -modellen kan du se [exemplet på **AdiabaticIsing** ](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/adiabatic).
+> För förberedelse av adiabatic-tillstånd i Ising `TimeDependentSimulationAlgorithm` -modellen kan du se [exemplet på **AdiabaticIsing**](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/adiabatic).
 
 
 ### <a name="adiabatic-state-preparation--phase-estimation"></a>Adiabatic för att förbereda & fas uppskattning ###
@@ -132,15 +132,15 @@ operation EstimateAdiabaticStateEnergy(
 `nQubits` är antalet qubits som används för att koda det inledande Quantum-läget. `statePrepUnitary` förbereder start tillstånd från beräknings basen $ \ket{0\cdots 0} $. `adiabaticUnitary` är en enhetlig åtgärd som implementerar adiabatic-tillstånds förberedelse, till exempel producerad av  `InterpolatedEvolution` funktionen. `qpeUnitary` är den enhetliga åtgärd som används för att utföra fas uppskattningar i det resulterande steget. `phaseEstAlgorithm` är vårt val av algoritm för fas uppskattning.
 
 > [!TIP]
-> Program för förberedelse av adiabatic-tillstånd beskrivs i exemplen. För Ising-modellen med en manuell implementering av adiabatic-tillstånds förberedelse jämfört med `AdiabaticEvolution` funktionen kan du se [exemplet på **AdiabaticIsing** ](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/adiabatic).
-> För fas uppskattning och förberedelse av adiabatic-tillstånd i Ising-modellen, se [exemplet på **IsingPhaseEstimation** ](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/phase-estimation).
+> Program för förberedelse av adiabatic-tillstånd beskrivs i exemplen. För Ising-modellen med en manuell implementering av adiabatic-tillstånds förberedelse jämfört med `AdiabaticEvolution` funktionen kan du se [exemplet på **AdiabaticIsing**](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/adiabatic).
+> För fas uppskattning och förberedelse av adiabatic-tillstånd i Ising-modellen, se [exemplet på **IsingPhaseEstimation**](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/phase-estimation).
 
 > [!TIP]
-> [Simuleringen av molekylen väte](https://github.com/microsoft/Quantum/tree/main/samples/simulation/h2/command-line) är ett intressant och kort exempel. Modell-och experiment resultaten som rapporteras i [O'Malley et. Al.](https://arxiv.org/abs/1512.06860) kräver bara Pauli-matriser och använder formatet $ \hat H = g \_ {0} I \_ 0i \_ 1 + g \_ 1 {z \_ 0} + g \_ 2 {Z \_ 1} + g \_ 3 {z \_ 0} {z \_ 1} + g \_ 4 {y \_ 0} {y \_ 1} + g \_ 5 {x \_ 0} {x \_ 1} $. Detta är en effektiv Hamiltonian som bara behöver bara två qubits, där konstanterna $g $ beräknas från avståndet $R $ mellan de två väte-atomerna. Med hjälp av Canon functions, konverteras Johan till unitaries och sedan utvecklats över korta tids perioder med hjälp av Trotter-Suzuki-dekompositionen. Det går att skapa en utmärkt uppskattning av $H _2 $ mark State utan att använda adiabatic och så att energi tillståndets energi kan hittas direkt genom att använda fas uppskattning från Canon.
+> [Simuleringen av molekylen väte](https://github.com/microsoft/Quantum/tree/main/samples/simulation/h2/command-line) är ett intressant och kort exempel. Modell-och experiment resultaten som rapporteras i [O'Malley et. Al.](https://arxiv.org/abs/1512.06860) kräver bara Pauli-matriser och använder formatet $ \hat H = g \_ {0} I \_ 0i \_ 1 + g \_ 1 {z \_ 0} + g \_ 2 {Z \_ 1} + g \_ 3 {z \_ 0} {z \_ 1} + g \_ 4 {y \_ 0} {y \_ 1} + g \_ 5 {x \_ 0} {x \_ 1} $. Detta är en effektiv Hamiltonian som bara behöver bara två qubits, där konstanterna $g $ beräknas från avståndet $R $ mellan de två väte-atomerna. Med hjälp av Canon functions, konverteras Johan till unitaries och sedan utvecklats under korta tids perioder med hjälp av Trotter-Suzuki diskompositionen. Det går att skapa en utmärkt uppskattning av $H _2 $ mark State utan att använda adiabatic och så att energi tillståndets energi kan hittas direkt genom att använda fas uppskattning från Canon.
 
 ## <a name="shors-algorithm"></a>Shors algoritm ##
 Shor-algoritmen är inte en av de viktigaste fördelarna med Quantum Computing eftersom den visade att Quantum Computers kan användas för att lösa viktiga, för närvarande inaktiverade problem.
-Shor-algoritmen är ett snabbt sätt att väga stora tal med en Quantum-dator, ett problem som kallas för *factoring*.
+Shor-algoritmen är ett snabbt sätt att väga stora tal med en Quantum-dator, ett problem som kallas för *factoring* .
 Säkerheten för många befintliga cryptosystems baseras på antagandet att det inte finns någon snabb algoritm för factoring.
 Därför har Shor-algoritmen haft en Profound inverkan på hur vi tycker om säkerhet i en post-Quantum World.
 
@@ -151,7 +151,7 @@ Vi går igenom de här två stegen nedan.
 
 ### <a name="period-finding"></a>Period sökning ###
 
-Vi har sett hur Quantum Fourier-transformeringen och fas uppskattningen fungerar (se [Quantum-algoritmer](xref:microsoft.quantum.libraries.standard.algorithms)). vi kan använda dessa verktyg för att lösa ett klassiskt hårt beräknings problem som kallas för *period sökning*.  I nästa avsnitt kommer vi att se hur perioden kan användas för att debiteras.
+Vi har sett hur Quantum Fourier-transformeringen och fas uppskattningen fungerar (se [Quantum-algoritmer](xref:microsoft.quantum.libraries.standard.algorithms)). vi kan använda dessa verktyg för att lösa ett klassiskt hårt beräknings problem som kallas för *period sökning* .  I nästa avsnitt kommer vi att se hur perioden kan användas för att debiteras.
 
 Med två heltal $a $ och $N $, där $a<N $, målet för perioden som söker, även kallat order sökning, är att hitta _order_ $r $ $a $ modulo $N $, där $r $ har definierats som minst positivt heltal som $a ^ r \equiv 1 \text{mod} N $.  
 
@@ -178,8 +178,8 @@ Det styrda-$U _a $ Gate Maps $ \ket{x} $ till $ \ket{(AX) \text{mod} N} $ om kon
 För att uppnå $ (a ^ NX) \text{mod} N $ kan vi helt enkelt tillämpa styrd-$U _ {a ^ N} $, där vi beräknar $a ^ N \text{mod} N $ som är klassiska för att ansluta till Quantum-kretsen.  
 Kretsarna för att uppnå sådana modulära beräkningar har beskrivits i den [Quantum-aritmetiska dokumentationen](./algorithms.md#arithmetic), i synnerhet vi kräver en modulär exponent krets för att implementera de kontrollerade-$U \_ {a ^ i} $-åtgärder.
 
-Även om kretsen ovan motsvarar Quantum- [fas-uppskattningen](xref:microsoft.quantum.characterization.quantumphaseestimation) och explicit aktiverar order upptäckt, kan vi minska antalet qubits som krävs. Vi kan antingen följa Beauregard-metoden för order sökning enligt beskrivningen [på sidan 8 i arXiv: Quant-pH/0205095v3](https://arxiv.org/pdf/quant-ph/0205095v3.pdf#page=8)eller använda en av de fas uppskattnings rutiner som finns i Microsoft. Quantum. karakterisering. Till exempel använder [robust fas uppskattning](xref:microsoft.quantum.characterization.robustphaseestimation) också en extra qubit.
- 
+Även om kretsen ovan motsvarar Quantum- [fas-uppskattningen](xref:Microsoft.Quantum.Characterization.QuantumPhaseEstimation) och explicit aktiverar order upptäckt, kan vi minska antalet qubits som krävs. Vi kan antingen följa Beauregard-metoden för order sökning enligt beskrivningen [på sidan 8 i arXiv: Quant-pH/0205095v3](https://arxiv.org/pdf/quant-ph/0205095v3.pdf#page=8)eller använda en av de fas uppskattnings rutiner som finns i Microsoft. Quantum. karakterisering. Till exempel använder [robust fas uppskattning](xref:microsoft.quantum.characterization.robustphaseestimation) också en extra qubit.
+
 ### <a name="factoring"></a>Hänsyn ###
 Syftet med att använda factoring är att fastställa de två viktigaste faktorerna i heltal $N $, där $N $ är ett $n $-bitars nummer.  
 Factoring består av stegen som beskrivs nedan. Stegen delas upp i tre delar: en klassisk för bearbetnings rutin (1-4). en Quantum Computing-rutin för att hitta ordningen på $a \text{mod} N $ (5); och en klassisk postprocessing-rutin för att härleda de viktigaste faktorerna från ordern (6-9).

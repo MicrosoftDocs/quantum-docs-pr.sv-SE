@@ -96,7 +96,7 @@ Alla tvådimensionella kolumn vektorer med reella eller komplexa tal med norm $ 
 
 $$\begin{bmatrix}1 \\\\ 0 \end{bmatrix} , \begin{bmatrix} \\\\ \end{bmatrix} 1 2, 1 2 \begin{bmatrix} \frac { } { \sqrt { } } \\\\ \frac { } { \sqrt { } } \end{bmatrix} , \begin{bmatrix} \frac { 1 } { \sqrt { 2 } } \\\\ \frac { -1 } { \sqrt { 2 } } \end{bmatrix} \text { och } \begin{bmatrix} \frac { 1 } { \sqrt { 2 } } \\\\ \frac { i } { \sqrt { 2 } } \end{bmatrix} .      $$
 
-Quantum-tillståndets vektorer $ \begin{bmatrix} 1 \\\\ 0 \end{bmatrix} $ och $ \begin{bmatrix} 0 \\\\ 1 \end{bmatrix} $ tar en speciell roll. Dessa två vektorer utgör grunden för det vektor utrymme som beskriver qubit status. Det innebär att alla Quantum State Vector kan skrivas som en summa av dessa bas vektorer. Mer specifikt kan vektor $ \begin{bmatrix} x \\\\ y \end{bmatrix} $ skrivas som $ x \begin{bmatrix} 1 \\\\ 0 \end{bmatrix} + y \begin{bmatrix} 0 \\\\ 1 \end{bmatrix} $ . Även om en rotation av dessa vektorer skulle fungera som en perfekt giltig grund för qubit, väljer vi att ge den behörigheten genom att anropa den till *beräknings grunden*.
+Quantum-tillståndets vektorer $ \begin{bmatrix} 1 \\\\ 0 \end{bmatrix} $ och $ \begin{bmatrix} 0 \\\\ 1 \end{bmatrix} $ tar en speciell roll. Dessa två vektorer utgör grunden för det vektor utrymme som beskriver qubit status. Det innebär att alla Quantum State Vector kan skrivas som en summa av dessa bas vektorer. Mer specifikt kan vektor $ \begin{bmatrix} x \\\\ y \end{bmatrix} $ skrivas som $ x \begin{bmatrix} 1 \\\\ 0 \end{bmatrix} + y \begin{bmatrix} 0 \\\\ 1 \end{bmatrix} $ . Även om en rotation av dessa vektorer skulle fungera som en perfekt giltig grund för qubit, väljer vi att ge den behörigheten genom att anropa den till *beräknings grunden* .
 
 Vi tar dessa två Quantum-tillstånd för att motsvara de två tillstånden i en klassisk bit, nämligen $ 0 $ och $ 1 $ . Standard konventionen är att välja
 
@@ -122,7 +122,7 @@ Qubits kan också bildas i $ 3 $ D med hjälp av [*sfär*](https://en.wikipedia.
 Pilarna i det här diagrammet visar i vilken riktning som den blinkande läges vektorn pekar och varje omvandling av pilen kan ses som en rotation av en av kardinal axlarna.
 När du funderar på en Quantum-beräkning som en sekvens med rotationer är en kraftfull intuition, så det är svårt att använda den här intuition för att utforma och beskriva algoritmer. Q# minskar problemet genom att tillhandahålla ett språk för att beskriva sådana rotationer.
 
-## <a name="single-qubit-operations"></a>Åtgärder med en qubit
+## <a name="single-qubit-operations"></a>Single-Qubit åtgärder
 
 Quantum Computers bearbetar data genom att använda en universell uppsättning Quantum-grindar som kan emulera all rotation av den Quantum-tillstånds vektorn.
 Detta teoretiskt sett är via för begreppet traditionell (dvs. klassisk) data behandling där en grind anses vara universell om varje omvandling av indata-bitar kan utföras med hjälp av en endensitets krets.
@@ -137,7 +137,7 @@ is Adj { // Auto-generate the adjoint of the operation
 }
 ```
 
-Även om det här är ett enkelt exempel (eftersom < åtgärden XREF: Microsoft. Quantum. inneboende. h > är självständig) kan du se hur detta blir värdefullt för mer komplexa qubit-åtgärder.
+Även om det här är ett enkelt exempel (eftersom < åtgärden XREF: Microsoft. Quantum. inneboende. H > är självständig) kan du se hur detta blir värdefullt för mer komplexa qubit-åtgärder.
 Mer information finns i [åtgärder och funktioner](xref:microsoft.quantum.guide.operationsfunctions).
 
 Det finns bara fyra funktioner som mappar en bit till en bit på en klassisk dator. Det finns däremot ett obegränsat antal enhetliga omvandlingar för en enda qubit på en Quantum-dator. Därför kan ingen begränsad uppsättning primitiva Quantum-åtgärder, som kallas [*grindar*](https://en.wikipedia.org/wiki/Quantum_logic_gate), exakt replikera den oändliga uppsättningen av enhetliga omvandlingar som tillåts i Quantum Computing. Det innebär till skillnad från klassisk dator användning, men det är omöjligt för en Quantum-dator att implementera alla möjliga Quantum-program exakt med ett begränsat antal portar. Därför kan quantum-datorer inte vara universella i samma mening som klassiska datorer. Det innebär att när vi säger att en uppsättning portar är *universella* för Quantum Computing, betyder det egentligen något något svagt än vad vi menar med klassisk data behandling.
@@ -176,7 +176,7 @@ Den tidigare utgör de mest populära primitiva portarna för att beskriva åtg�
 
 Den enklaste sådan primitiv är den enda qubit. Tre enkla qubit-rotationer anses vanligt vis vara: $ R_x $ , $ R_y $ och $ R_z $ . För att visualisera åtgärden i rotations $ R_x (\theta) $ kan du till exempel föreställa dig ditt högra tumm utmed riktningen på $ x $ -axeln i Bloch-sfären och roterar vektorn med din hand genom en vinkel på $ \ theta/2 $ radianer. Den här förvirrande faktorn $ 2 $ uppstår från det faktum att rätvinkliga vektorer är $ 180 ^ \circ $ , åtskilda när de ritas på Bloch-sfären, men som i själva verket är $ 90 ^ \circ $ grader oberoende av varandra. Motsvarande enhetliga matriser är:
 
-\begin{justera* } 
+\begin{justera *} 
  & R_z (\theta) = e ^ { -i\theta z/2 } = \begin{bmatrix} e ^ { -i \ theta/2 } & 0 \\\\ 0 & e ^ { i \ theta/2 } \end{bmatrix} , \\\\ 
  & R_x (\theta) = e ^ { -i\theta x/2 } = HR_z (\theta) H = \begin{bmatrix} \cos (\ theta/2) & -i\sin (\ theta/2) \\\\ -i\sin (\ theta/2) & \cos (\ theta/2) \end{bmatrix} \\\\ 
  & R_y (\theta) = e ^ { -i\theta y/2 } = SHR_z (\theta) HS ^ \dagger = \begin{bmatrix} \cos (\ theta/2) & -\sin (\ theta/2) \\\\ \sin (\ theta/2) & \cos (\ theta/2) \end{bmatrix} . \end { Justera*}
