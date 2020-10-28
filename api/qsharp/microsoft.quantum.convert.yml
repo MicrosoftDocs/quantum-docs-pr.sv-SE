@@ -1,0 +1,58 @@
+### YamlMime:QSharpNamespace
+functions:
+- summary: Konverterar ett angivet stort heltal till en matris med booleska värden. Elementet 0 i matrisen är den minst signifikanta biten av Big-heltalet.
+  uid: Microsoft.Quantum.Convert.BigIntAsBoolArray
+- summary: Konverterar en matris med booleska värden till ett motsvarande stort heltal. Elementet 0 i matrisen är den minst signifikanta biten av Big-heltalet.
+  uid: Microsoft.Quantum.Convert.BoolArrayAsBigInt
+- summary: Genererar ett positivt heltal från en sträng med bitar i little endian format.
+  uid: Microsoft.Quantum.Convert.BoolArrayAsInt
+- summary: Med en bit-sträng returnerar en qubit Pauli-operator som representeras som en matris med qubit Pauli-operatörer.
+  uid: Microsoft.Quantum.Convert.BoolArrayAsPauli
+- summary: Konverterar en `Bool[]` typ till en `Result[]` typ, där `true` mappas till `One` och `false` mappas till `Zero` .
+  uid: Microsoft.Quantum.Convert.BoolArrayAsResultArray
+- summary: Konverterar en `Bool` typ till en `Result` typ, där `true` mappas till `One` och `false` mappas till `Zero` .
+  uid: Microsoft.Quantum.Convert.BoolAsResult
+- summary: Konverterar ett angivet booleskt värde till en motsvarande sträng representation.
+  uid: Microsoft.Quantum.Convert.BoolAsString
+- summary: Konverterar ett angivet flyttal med dubbel precision till en motsvarande sträng representation.
+  uid: Microsoft.Quantum.Convert.DoubleAsString
+- summary: Konverterar ett angivet flyttal med dubbel precision till en motsvarande sträng representation med angivet format.
+  uid: Microsoft.Quantum.Convert.DoubleAsStringWithFormat
+- summary: Konverterar funktioner till åtgärder.
+  uid: Microsoft.Quantum.Convert.FunctionAsOperation
+- summary: Konverterar ett angivet heltal till ett motsvarande stort heltal.
+  uid: Microsoft.Quantum.Convert.IntAsBigInt
+- summary: Genererar en binär representation av ett positivt heltal med hjälp av en liten endian-representation för den returnerade matrisen.
+  uid: Microsoft.Quantum.Convert.IntAsBoolArray
+- summary: Konverterar ett angivet heltal till ett motsvarande flyttal med dubbel precision.
+  uid: Microsoft.Quantum.Convert.IntAsDouble
+- summary: Konverterar ett angivet heltals värde till en motsvarande sträng representation.
+  uid: Microsoft.Quantum.Convert.IntAsString
+- summary: Konverterar ett angivet heltals värde till en motsvarande sträng representation med angivet format.
+  uid: Microsoft.Quantum.Convert.IntAsStringWithFormat
+- summary: Konverterar ett angivet stort heltal till ett motsvarande heltal, om möjligt. Funktionen returnerar ett par av det resulterande heltalet och en boolesk flagga som är true, om och endast om konverteringen var möjlig.
+  uid: Microsoft.Quantum.Convert.MaybeBigIntAsInt
+- summary: Kodar en qubit Pauli-operatör som representeras som en matris med qubit Pauli-operatörer till ett heltal.
+  uid: Microsoft.Quantum.Convert.PauliArrayAsInt
+- summary: Skapar en matris `arr` med heltal som räknas upp av start.. steg... ändamål.
+  uid: Microsoft.Quantum.Convert.RangeAsIntArray
+- summary: Konverterar en `Result[]` typ till en `Bool[]` typ, där `One` mappas till `true` och `Zero` mappas till `false` .
+  uid: Microsoft.Quantum.Convert.ResultArrayAsBoolArray
+- summary: Genererar ett positivt heltal från en sträng med resultat i little endian format.
+  uid: Microsoft.Quantum.Convert.ResultArrayAsInt
+- summary: Konverterar en `Result` typ till en `Bool` typ, där `One` mappas till `true` och `Zero` mappas till `false` .
+  uid: Microsoft.Quantum.Convert.ResultAsBool
+name: Microsoft.Quantum.Convert
+newtypes: []
+operations:
+- summary: Anropar en funktion med en specifik Indatatyp.
+  uid: Microsoft.Quantum.Convert.Call
+summary: 'Det här namn området innehåller funktioner för att konvertera mellan olika Q #-data typer.'
+uid: Microsoft.Quantum.Convert
+metadata:
+  ms.openlocfilehash: d22f0735b800d2e9a34f8c7ce58353850a4cdded
+  ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+  ms.translationtype: MT
+  ms.contentlocale: sv-SE
+  ms.lasthandoff: 10/27/2020
+  ms.locfileid: "92727693"
