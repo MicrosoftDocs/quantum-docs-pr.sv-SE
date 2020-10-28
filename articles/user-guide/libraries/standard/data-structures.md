@@ -9,21 +9,21 @@ ms.topic: article
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 51eb52d0b8ace972f6a425edba400ca9a8916d2e
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: c3ce5d531618c269d15be3e4eb58ecbb597a022c
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90835595"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92692243"
 ---
 # <a name="data-structures-and-modeling"></a>Data strukturer och modeller #
 
 ## <a name="classical-data-structures"></a>Klassiska data strukturer ##
 
 Tillsammans med användardefinierade typer för att representera Quantum-koncept, innehåller Canon även åtgärder, funktioner och typer för att arbeta med klassiska data som används i kontrollen över Quantum Systems.
-Funktionen tar till exempel <xref:microsoft.quantum.arrays.reversed> en matris som inmatad och returnerar samma matris i omvänd ordning.
+Funktionen tar till exempel <xref:Microsoft.Quantum.Arrays.Reversed> en matris som inmatad och returnerar samma matris i omvänd ordning.
 Detta kan sedan användas på en matris av typen `Qubit[]` för att undvika att behöva tillämpa onödiga $ \operatorname{swap} $-grindar vid konvertering mellan Quantum-representationer av heltal.
-På samma sätt såg vi i föregående avsnitt att typer av formulär `(Int, Int -> T)` kan vara användbara för att representera slumpmässiga åtkomst samlingar, så <xref:microsoft.quantum.arrays.lookupfunction> funktionen ger ett bekvämt sätt att konstruera sådana typer från mat ris typer.
+På samma sätt såg vi i föregående avsnitt att typer av formulär `(Int, Int -> T)` kan vara användbara för att representera slumpmässiga åtkomst samlingar, så <xref:Microsoft.Quantum.Arrays.LookupFunction> funktionen ger ett bekvämt sätt att konstruera sådana typer från mat ris typer.
 
 ### <a name="pairs"></a>Stod ###
 
@@ -38,7 +38,7 @@ ApplyToEach(H, Snd(pair)); // No need to deconstruct to access the register.
 
 Canon innehåller flera funktioner för att ändra matriser.
 Dessa funktioner är Type-parameterd och kan därför användas med matriser av valfri Q# typ.
-Funktionen returnerar till exempel <xref:microsoft.quantum.arrays.reversed> en ny matris vars element är i omvänd ordning från dess Indatatyp.
+Funktionen returnerar till exempel <xref:Microsoft.Quantum.Arrays.Reversed> en ny matris vars element är i omvänd ordning från dess Indatatyp.
 Detta kan användas för att ändra hur ett Quantum-register representeras vid anrop av åtgärder:
 
 ```qsharp
@@ -49,14 +49,14 @@ QFT(BigEndian(Reversed(leRegister!)));
 QFT(LittleEndianAsBigEndian(leRegister));
 ```
 
-På samma sätt <xref:microsoft.quantum.arrays.subarray> kan funktionen användas för att ändra ordning på eller ta med del mängder av elementen i en matris:
+På samma sätt <xref:Microsoft.Quantum.Arrays.Subarray> kan funktionen användas för att ändra ordning på eller ta med del mängder av elementen i en matris:
 
 ```qsharp
 // Applies H to qubits 2 and 5.
 ApplyToEach(H, Subarray([2, 5], register));
 ```
 
-I kombination med Flow-kontroll fungerar mat ris funktioner som exempelvis <xref:microsoft.quantum.arrays.zip> kan ge ett kraftfullt sätt att uttrycka Quantum-program:
+I kombination med Flow-kontroll fungerar mat ris funktioner som exempelvis <xref:Microsoft.Quantum.Arrays.Zipped> kan ge ett kraftfullt sätt att uttrycka Quantum-program:
 
 ```qsharp
 // Applies X₃ Y₁ Z₇ to a register of any size.
@@ -64,7 +64,7 @@ ApplyToEach(
     ApplyPauli(_, register),
     Map(
         EmbedPauli(_, _, Length(register)),
-        Zip([PauliX, PauliY, PauliZ], [3, 1, 7])
+        Zipped([PauliX, PauliY, PauliZ], [3, 1, 7])
     )
 );
 ```
@@ -127,8 +127,8 @@ is Adj + Ctl {
 }
 ```
 
-Den här Oracle är sedan ett specialfall av <xref:microsoft.quantum.canon.rall1> åtgärden, som gör det möjligt att rotera med en godtycklig fas i stället för reflektions väskan $ \phi = \pi $.
-I det här fallet `RAll1` liknar <xref:microsoft.quantum.intrinsic.r1> åtgärden inledning, i så här roterar vi om $ \ket{11\cdots1} $ i stället för qubit-tillstånd $ \ket {1} $.
+Den här Oracle är sedan ett specialfall av <xref:Microsoft.Quantum.Canon.RAll1> åtgärden, som gör det möjligt att rotera med en godtycklig fas i stället för reflektions väskan $ \phi = \pi $.
+I det här fallet `RAll1` liknar <xref:Microsoft.Quantum.Intrinsic.R1> åtgärden inledning, i så här roterar vi om $ \ket{11\cdots1} $ i stället för qubit-tillstånd $ \ket {1} $.
 
 Oracle som markerar det inledande under utrymmet kan skapas på samma sätt.
 I pseudocode:
@@ -139,7 +139,7 @@ I pseudocode:
 4. Använd $X $ Gates för varje qubit.
 5. Använd $H $ Gates för varje qubit.
 
-Den här gången demonstrerar vi också användning <xref:microsoft.quantum.canon.applywith> tillsammans med <xref:microsoft.quantum.canon.rall1> åtgärden som diskuteras ovan:
+Den här gången demonstrerar vi också användning <xref:Microsoft.Quantum.Canon.ApplyWith> tillsammans med <xref:Microsoft.Quantum.Canon.RAll1> åtgärden som diskuteras ovan:
 
 ```qsharp
 operation ReflectAboutInitial(register : Qubit[]) : Unit
@@ -163,7 +163,7 @@ Den här enhetliga beskrivningen beskrivs av en av två typer av Oracle.
 > Om du vill veta mer om kontinuerliga frågor och Oracle kan du se [ **PhaseEstimation** -exemplet](https://github.com/microsoft/Quantum/tree/main/samples/characterization/phase-estimation).
 > Om du vill veta mer om diskreta frågor och Oracle kan du se [ **IsingPhaseEstimation** -exemplet](https://github.com/microsoft/Quantum/tree/main/samples/simulation/ising/phase-estimation).
 
-Den första typen av Oracle, som vi anropar en diskret fråga i Oracle och representerar den användardefinierade typen <xref:microsoft.quantum.oracles.discreteoracle> , inbegriper helt enkelt en enhetlig matris.
+Den första typen av Oracle, som vi anropar en diskret fråga i Oracle och representerar den användardefinierade typen <xref:Microsoft.Quantum.Oracles.DiscreteOracle> , inbegriper helt enkelt en enhetlig matris.
 Om $U $ är den höga vars Eigenvalues vi vill uppskatta, är Oracle för $U $ helt enkelt ett enda sätt att använda en subrutin som implementerar $U $.
 Det kan till exempel ta $U $ att vara den Oracle $Q $ som definieras ovan för amplituds uppskattning.
 Eigenvalues för den här matrisen kan användas för att uppskatta överlappningen mellan de initiala och mål tillstånden, $ \sin ^ 2 (\theta) $, med en kvadratiskt färre sampel än en som annars skulle behövas.
@@ -173,7 +173,7 @@ Med andra ord vill vi uppskatta $ \theta $ för en okänd rotations grind av for
 I sådana fall är underrutinen som vi skulle interagera med för att lära sig detta fasta värde på $ \theta $ för porten $ $ \begin{align} U & = R_z (\theta) \\ \\ & = \begin{bmatrix} e ^ {-i \theta/2} & 0 \\ \\ 0 & e ^ {i \ theta/2} \end{bmatrix}.
 \end{align} $ $
 
-Den andra typen av Oracle som används i fas uppskattning är den kontinuerliga frågan Oracle, som representeras av <xref:microsoft.quantum.oracles.continuousoracle> typen.
+Den andra typen av Oracle som används i fas uppskattning är den kontinuerliga frågan Oracle, som representeras av <xref:Microsoft.Quantum.Oracles.ContinuousOracle> typen.
 En kontinuerlig fråga för beräkning av Oracle för fas tar formuläret $U (t) $ där $t $ är ett klassiskt känt reellt tal.
 Om vi låter $U $ vara en fast enhetlig, tar den kontinuerliga frågan Oracle formen $U (t) = U ^ t $.
 Detta gör att vi kan fråga matriser som $ \sqrt{U} $, som inte kunde implementeras direkt i den diskreta fråge modellen.
@@ -261,7 +261,7 @@ newtype EvolutionUnitary = ((Double, Qubit[]) => Unit is Adj + Ctl);
 
 Den första parametern representerar en tids period som kommer att multipliceras med koefficienten i den `GeneratorIndex` enhetliga utvecklingen. Den andra parametern är den qubit som registrerar de enhetliga åtgärderna på. 
 
-### <a name="time-dependent-generators"></a>Tids beroende generatorer ###
+### <a name="time-dependent-generators"></a>Time-Dependent generatorer ###
 
 I många fall är vi också intresserade av att utforma tids beroende generatorer som kan uppstå i Schrödinger ekvation $ $ \begin{align} i\frac {d \ket{\psi (t)}} {d t} & = \hat H (t) \ket{\psi (t)}, \end{align} $ $ där generatorn $ \hat H (t) $ nu är tids beroende. Det är enkelt att utöka tillägget från tids oberoende generatorer ovan till det här fallet. I stället för att ha en fast `GeneratorSystem` Beskrivning av Hamiltonian för alla tider $t $, har vi i stället den `GeneratorSystemTimeDependent` användardefinierade typen.
 

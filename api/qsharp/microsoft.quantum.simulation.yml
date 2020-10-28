@@ -1,0 +1,178 @@
+### YamlMime:QSharpNamespace
+functions:
+- summary: Lägger till två `GeneratorSystem` s för att skapa en ny `GeneratorSystem` .
+  uid: Microsoft.Quantum.Simulation.AddGeneratorSystems
+- summary: >-
+    Kodar en operatör av intresse till en `BlockEncoding` .
+
+    Detta skapar en `BlockEncoding` enhetlig $U = P\cdot V\cdot P ^ \dagger $ som kodar vissa operatorer $H = \ sum_ {j} | \ alpha_j | U_j $ intresse som är en linjär kombination av unitaries. $P $ är vanligt vis en enhetlig tillstånds förberedelse som $P \ket {0} \_ a = \ sum_j \sqrt{\ alpha_j/ \| \vec\alpha \| \_ 2} \ket{j} \_ a $ och $V = \ sum_ {j} \ket{j}\bra{j} \_ a\otimes U_j $.
+  uid: Microsoft.Quantum.Simulation.BlockEncodingByLCU
+- summary: >-
+    Kodar en operatör av intresse till en `BlockEncodingReflection` .
+
+    Detta skapar en `BlockEncodingReflection` enhetlig $U = P\cdot V\cdot P ^ \dagger $ som kodar vissa operatorer $H = \ sum_ {j} | \ alpha_j | U_j $ intresse som är en linjär kombination av unitaries. $P $ är vanligt vis en enhetlig tillstånds förberedelse som $P \ket {0} \_ a \ sum_j \sqrt{\ alpha_j/ \| \vec\alpha \| \_ 2} \ket{j} \_ a $ och $V = \ sum_ {j} \ket{j}\bra{j} \_ a\otimes U_j $.
+  uid: Microsoft.Quantum.Simulation.BlockEncodingReflectionByLCU
+- summary: >-
+    Konverterar en `BlockEncoding` till motsvarande `BLockEncodingReflection` .
+
+    Det innebär att med en `BlockEncoding` enhetlig $U $ som kodar en viss operatör $H $ of Interest, konverterar den till en `BlockEncodingReflection` $U $ som kodar samma Operator, men den uppfyller också $U ^ \Dagger = U $. Detta ökar storleken på hjälp registren för $U $ med en qubit.
+  uid: Microsoft.Quantum.Simulation.BlockEncodingToReflection
+- summary: Hämtar `GeneratorIndex` funktionen i en `GeneratorSystem` .
+  uid: Microsoft.Quantum.Simulation.GetGeneratorSystemFunction
+- summary: Hämtar antalet villkor i en `GeneratorSystem` .
+  uid: Microsoft.Quantum.Simulation.GetGeneratorSystemNTerms
+- summary: Returnerar ett Generator index som är konsekvent med noll-Hamiltonian, `H = 0` som motsvarar Identity Evolutionary-åtgärden.
+  uid: Microsoft.Quantum.Simulation.IdentityGeneratorIndex
+- summary: Returnerar ett generatorsystem som är konsekvent med noll Hamiltonian `H = 0` , vilket motsvarar åtgärden för identitets utveckling.
+  uid: Microsoft.Quantum.Simulation.IdentityGeneratorSystem
+- summary: Returnerar ett tids beroende Generator system som är konsekvent med Hamiltonian `H(s) = 0` .
+  uid: Microsoft.Quantum.Simulation.IdentityTimeDependentGeneratorSystem
+- summary: Används vid implementering av `PauliBlockEncoding`
+  uid: Microsoft.Quantum.Simulation.IdxToCoeff
+- summary: Används vid implementering av `PauliBlockEncoding`
+  uid: Microsoft.Quantum.Simulation.IdxToUnitary
+- summary: Konverterar ett heltal till en enskild-qubit Pauli-operator.
+  uid: Microsoft.Quantum.Simulation.IntToPauli
+- summary: Returnerar en `TimeDependentGeneratorSystem` som representerar den linjära interpolering mellan två `GeneratorSystem` s.
+  uid: Microsoft.Quantum.Simulation.InterpolateGeneratorSystems
+- summary: Interpolerar linjärt mellan två `GeneratorSystems` enligt en schema parameter `s` mellan 0 och 1 (inklusive).
+  uid: Microsoft.Quantum.Simulation.InterpolateGeneratorSystemsImpl
+- summary: Interpolerar mellan två generatorer med ett enhetligt schema och returnerar en åtgärd som tillämpar simulerad utveckling under den resulterande tids beroende generatorn för en qubit-registrering.
+  uid: Microsoft.Quantum.Simulation.InterpolatedEvolution
+- summary: Konverterar en matris med heltal till en matris med en qubit Pauli-operator.
+  uid: Microsoft.Quantum.Simulation.IntsToPaulis
+- summary: Multiplicerar koefficienten i a `GeneratorIndex` .
+  uid: Microsoft.Quantum.Simulation.MultiplyGeneratorIndex
+- summary: Multiplicerar koefficienten för alla villkor i en `GeneratorSystem` .
+  uid: Microsoft.Quantum.Simulation.MultiplyGeneratorSystem
+- summary: >-
+    Skapar en typ av block kodning för en Hamiltonian.
+
+    Hamiltonian $H = \ sum_ {j} \ alpha_j P_j $ beskrivs av en summa av Pauli-termer $P _j $, var och en med verklig koefficient $ \ alpha_j $.
+  uid: Microsoft.Quantum.Simulation.PauliBlockEncoding
+- summary: Extraherar koefficienten för en Pauli term som beskrivs av en `GeneratorIndex` .
+  uid: Microsoft.Quantum.Simulation.PauliCoefficientFromGenIdx
+- summary: Representerar en dynamisk generator som en uppsättning simulerade grindar och en expansion i Pauli-basen.
+  uid: Microsoft.Quantum.Simulation.PauliEvolutionFunction
+- summary: Representerar en dynamisk generator som en uppsättning simulerade grindar och en expansion i Pauli-basen.
+  uid: Microsoft.Quantum.Simulation.PauliEvolutionSet
+- summary: Används vid implementering av `PauliBlockEncoding`
+  uid: Microsoft.Quantum.Simulation.PauliLCUUnitary
+- summary: Extraherar Pauli-strängen och dess qubit-index för en Pauli-term som beskrivs av en `GeneratorIndex` .
+  uid: Microsoft.Quantum.Simulation.PauliStringFromGenIdx
+- summary: Konverterar en block kodnings reflektion till en Quantum-LED.
+  uid: Microsoft.Quantum.Simulation.QuantumWalkByQubitization
+- summary: Lägger till flera `GeneratorSystem` s för att skapa en ny GeneratorSystem.
+  uid: Microsoft.Quantum.Simulation.SumGeneratorSystems
+- summary: '`TimeDependentSimulationAlgorithm` funktion som använder en Trotter – Suzuki-dekomposition för att approximera en enhetlig operator som matchar tids beroende Schrodinger-ekvationen.'
+  uid: Microsoft.Quantum.Simulation.TimeDependentTrotterSimulationAlgorithm
+- summary: '`SimulationAlgorithm` funktion som använder en Trotter – Suzuki-dekomposition för att uppskatta tids utvecklings operatorn _exp (-iHt)_ .'
+  uid: Microsoft.Quantum.Simulation.TrotterSimulationAlgorithm
+- summary: Implementerar en enda tids period – steg-för-steg-utveckling enligt systemet som beskrivs i `EvolutionGenerator` använda en Trotter – Suzuki-dekomposition.
+  uid: Microsoft.Quantum.Simulation.TrotterStep
+- summary: Lägger till två `GeneratorSystem` s för att skapa en ny `GeneratorSystem` .
+  uid: Microsoft.Quantum.Simulation._AddGeneratorSystems
+- summary: Returnerar ett generatorsystem som är konsekvent med Hamiltonian `H(s) = 0` , där `s` är en schema parameter.
+  uid: Microsoft.Quantum.Simulation._IdentityTimeDependentGeneratorSystem
+- summary: Multiplicerar koefficienten för alla villkor i en `GeneratorSystem` .
+  uid: Microsoft.Quantum.Simulation._MultiplyGeneratorSystem
+- summary: >-
+    Skapar en typ av block kodning för en Hamiltonian.
+
+    Hamiltonian $H = \ sum_ {j} \ alpha_j P_j $ beskrivs av en summa av Pauli-termer $P _j $, var och en med verklig koefficient $ \ alpha_j $.
+  uid: Microsoft.Quantum.Simulation._PauliBlockEncoding
+name: Microsoft.Quantum.Simulation
+newtypes:
+- summary: >-
+    Representerar en topp där en operator av intresse är kodad i det övre vänstra blocket.
+
+    Det vill säga att det är `BlockEncoding` en topp $U $ där en godtycklig operatör $H $ av intresse som agerar på system registret `s` är kodad i det övre vänstra blocket som motsvarar hjälp tillstånd $ \ket {0} _A $. Det vill säga $ $ \begin{align} (\bra {0} _A \otimes I_s) U (\ket {0} _a \otimes I_s) = H \end{align} $ $.
+  uid: Microsoft.Quantum.Simulation.BlockEncoding
+- summary: Representerar en `BlockEncoding` som också är en reflektion.
+  uid: Microsoft.Quantum.Simulation.BlockEncodingReflection
+- summary: >-
+    Representerar en dynamisk generator som en uppsättning simulerade grindar och en utökning med avseende på den basen.
+
+    Sista parameter för antal villkor.
+  uid: Microsoft.Quantum.Simulation.EvolutionGenerator
+- summary: >-
+    Representerar en tids beroende dynamisk Generator.
+
+    `Double`Parametern är ett schema i $ [0, 1] $.
+  uid: Microsoft.Quantum.Simulation.EvolutionSchedule
+- summary: >-
+    Representerar en uppsättning portar som kan implementeras snabbt och användas för att implementera simulerings algoritmer.
+
+    Element i uppsättningen indexeras av en  <xref:microsoft.quantum.simulation.generatorindex> , och varje uppsättning beskrivs av en funktion från `GeneratorIndex` till  <xref:microsoft.quantum.simulation.evolutionunitary> , vilket är åtgärder som parameteras av ett reellt tal som representerar tid
+  uid: Microsoft.Quantum.Simulation.EvolutionSet
+- summary: >-
+    Representerar en enhetlig tids utvecklings operatör.
+
+    Den första parametern är varaktigheten för tids utvecklingen och den andra parametern är qubit-registret som har åtgärd ATS av den enhetliga.
+  uid: Microsoft.Quantum.Simulation.EvolutionUnitary
+- summary: >-
+    Representerar en enda primitiv term i uppsättningen med alla dynamiska generatorer, t. ex. Hermitian-operatörer, för vilka det finns en karta från den generatorn till tids utveckling av generatorn `EvolutionSet` .
+
+    Det första elementet (int [], Double []) är index som en term, men Pauli-strängen XXY med koefficient 0,5 skulle indexeras av ([1, 1, 2], [0,5]). Alternativt kan Hamiltonians parameterstyrda av en kontinuerlig variabel, till exempel X cos φ + Y sin φ, representeras av ([], [φ]). Det andra elementet indexerar under systemet som generatorn agerar på.
+  uid: Microsoft.Quantum.Simulation.GeneratorIndex
+- summary: >-
+    Representerar en samling `GeneratorIndex` es.
+
+    Vi itererar över den här samlingen med ett heltal för ett enda index och storleken på samlingen antas vara känd.
+  uid: Microsoft.Quantum.Simulation.GeneratorSystem
+- summary: >-
+    Representerar en tidshärledd simulerings-algoritm.
+
+    En tids oberoende simulerings teknik omvandlar en <xref:microsoft.quantum.simulation.evolutiongenerator> till enhetlig tids utveckling under en viss tids period.
+  uid: Microsoft.Quantum.Simulation.SimulationAlgorithm
+- summary: >-
+    Representerar en `BlockEncoding` som styrs av en klock registrering.
+
+    Det vill säga att en `TimeDependentBlockEncoding` är en topp $U $ som styrs av ett tillstånd $ \ket{k} _d $ i klock registrering `d` , så att en godtycklig operatör $H _k $ ränta som agerar på system registret `s` är kodad i det övre vänstra blocket som motsvarar hjälp läget $ \ket $ {0} _. Det vill säga $ $ \begin{align} (\bra {0} \_ a\otimes i_ {DS}) U (\ket {0} \_ a\otimes i_ {DS}) = \ sum_ {k} \ket{k}\bra{k} \_ d\otimes H_k. \end{align} $ $.
+  uid: Microsoft.Quantum.Simulation.TimeDependentBlockEncoding
+- summary: Representerar en tids beroende dynamisk generator som en funktion från tiden till värdet för den dynamiska generatorn vid den tidpunkten.
+  uid: Microsoft.Quantum.Simulation.TimeDependentGeneratorSystem
+- summary: >-
+    Representerar en tids beroende simulerings algoritm.
+
+    En tids beroende simulerings teknik konverterar en <xref:microsoft.quantum.simulation.evolutionschedule> till en enhetlig tids utveckling under ett visst tidsintervall.
+  uid: Microsoft.Quantum.Simulation.TimeDependentSimulationAlgorithm
+- summary: Representerar utveckling under en enhetlig operatör.
+  uid: Microsoft.Quantum.Simulation.Unitary
+operations:
+- summary: Utför tillstånds förberedelse genom att använda en `statePrepUnitary` på ingångs läget, följt av adiabatic-tillstånds förberedelse med hjälp av en `adiabaticUnitary` , och slutligen en uppskattning av fasen med avseende `qpeUnitary` på det resulterande läget med hjälp av en `phaseEstAlgorithm` .
+  uid: Microsoft.Quantum.Simulation.AdiabaticStateEnergyUnitary
+- summary: Implementering av `BlockEncodingToReflection` .
+  uid: Microsoft.Quantum.Simulation.ApplyBlockEncodingAsReflection
+- summary: Implementering av `BlockEncodingByLCU` .
+  uid: Microsoft.Quantum.Simulation.ApplyBlockEncodingByLCU
+- summary: Konverteringen av ((LittleEndian, qubit []) => () är just + CTL) till BlockEncoding
+  uid: Microsoft.Quantum.Simulation.ApplyBlockEncodingFromBEandQubit
+- summary: Används vid implementering av `PauliBlockEncoding`
+  uid: Microsoft.Quantum.Simulation.ApplyPauliLCUUnitary
+- summary: Implementering av `Qubitization` .
+  uid: Microsoft.Quantum.Simulation.ApplyQuantumWalkByQubitization
+- summary: Utför tillstånds förberedelse genom att använda en `statePrepUnitary` på en automatiskt tilldelad beräkning av indatatypen med avseende `qpeUnitary` på det resulterande läget med hjälp av en `phaseEstAlgorithm` .
+  uid: Microsoft.Quantum.Simulation.EstimateEnergy
+- summary: Utför tillstånds förberedelse genom att använda ett `statePrepUnitary` på ett automatiskt allokerat ingångs tillstånd, följt av adiabatic-tillstånds förberedelse med hjälp av en `adiabaticUnitary` , och en Finally-fas-uppskattning med avseende `qpeUnitary` på det resulterande läget med `phaseEstAlgorithm`
+  uid: Microsoft.Quantum.Simulation.EstimateEnergyWithAdiabaticEvolution
+- summary: >-
+    Representerar en dynamisk generator som en uppsättning simulerade grindar och en expansion i Pauli-basen.
+
+    Mer information finns i [modeller för dynamisk Generator](/quantum/libraries/data-structures#dynamical-generator-modeling) .
+  uid: Microsoft.Quantum.Simulation.PauliEvolutionImpl
+- summary: Implementering av flera Trotter-steg för att approximera en enhetlig operator som matchar tids beroende Schrödinger-ekvationen.
+  uid: Microsoft.Quantum.Simulation.TimeDependentTrotterSimulationAlgorithmImpl
+- summary: Gör upprepade anrop till `TrotterStep` att uppskatta tids utvecklings operatorn exp ( _-iHt_ ).
+  uid: Microsoft.Quantum.Simulation.TrotterSimulationAlgorithmImpl
+- summary: Implementerar tids utveckling med en term som finns i en `GeneratorSystem` .
+  uid: Microsoft.Quantum.Simulation.TrotterStepImpl
+summary: Det här namn området innehåller funktioner och åtgärder för att enhetligt simulera dynamiken i Quantum Systems.
+uid: Microsoft.Quantum.Simulation
+metadata:
+  ms.openlocfilehash: dd1c6fe3baab8788047020bbe3d5dbe2888dec45
+  ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+  ms.translationtype: MT
+  ms.contentlocale: sv-SE
+  ms.lasthandoff: 10/27/2020
+  ms.locfileid: "92734235"
