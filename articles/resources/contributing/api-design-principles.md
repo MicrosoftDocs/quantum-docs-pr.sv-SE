@@ -9,12 +9,12 @@ uid: microsoft.quantum.contributing.api-design
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 8714d3290e4099f901dab20a9ee9334699c4ad81
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: 6b196cf1be584a3157c7a9eb8cf497fe1121dd7a
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90834921"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92691827"
 ---
 # <a name="no-locq-api-design-principles"></a>Q# Design principer för API
 
@@ -125,7 +125,7 @@ Den här artikeln innehåller de här principerna och ger exempel på hur du kan
       fungerar mest konsekvent med delvis program.
   - Den här vägledningen innebär vanligt vis att placera alla klassiska data innan alla qubits i indata-tupler, men Använd bra omdöme och kontrol lera hur ditt API anropas i praktiken.
 
-## <a name="user-defined-types"></a>Användardefinierade typer
+## <a name="user-defined-types"></a>User-Defined typer
 
 **Nyckel princip:** Använd användardefinierade typer för att hjälpa till att göra API: er mer lättfattliga programspecifika och bekvämt att använda.
 
@@ -224,32 +224,32 @@ Den här artikeln innehåller de här principerna och ger exempel på hur du kan
 
   - **Verb**
 
-    - **Assert**: kontrol lera att ett antagande om status för en måldator och dess qubits innehåller, möjligen med hjälp av fysiska resurser. Åtgärder som använder det här verbet bör alltid vara säkert flyttbara utan att det påverkar funktionerna i bibliotek och körbara program. Observera att till skillnad från fakta, i allmänhet, är beroende av externt tillstånd, t. ex. status för ett qubit register, körnings miljön eller så vidare. Som beroende av extern status är en typ av sido effekt, och försäkrar måste visas som åtgärder i stället för functions.
+    - **Assert** : kontrol lera att ett antagande om status för en måldator och dess qubits innehåller, möjligen med hjälp av fysiska resurser. Åtgärder som använder det här verbet bör alltid vara säkert flyttbara utan att det påverkar funktionerna i bibliotek och körbara program. Observera att till skillnad från fakta, i allmänhet, är beroende av externt tillstånd, t. ex. status för ett qubit register, körnings miljön eller så vidare. Som beroende av extern status är en typ av sido effekt, och försäkrar måste visas som åtgärder i stället för functions.
 
-    - **Uppskattning**: Använd en eller flera eventuellt upprepade mätningar för att beräkna en klassisk kvantitet från mätnings resultaten.
+    - **Uppskattning** : Använd en eller flera eventuellt upprepade mätningar för att beräkna en klassisk kvantitet från mätnings resultaten.
 
       *Exempel:*
       - @"microsoft.quantum.characterization.estimatefrequency"
       - @"microsoft.quantum.characterization.estimateoverlapbetweenstates"
 
-    - **Förbered**: tillämpa en Quantum-åtgärd eller en sekvens med åtgärder för en eller flera qubits som antas starta i ett visst ursprungligt tillstånd (vanligt vis $ \ket{00\cdots 0), vilket gör att tillstånden för dessa qubits utvecklas till ett önskat slut tillstånd. I allmänhet **kan** man på andra stater än det som anges i andra länder leda till en odefinierad allmän omvandling, men **bör** fortfarande bevara en åtgärd och dess angränsande "annullera ut" och tillämpa en no-op.
+    - **Förbered** : tillämpa en Quantum-åtgärd eller en sekvens med åtgärder för en eller flera qubits som antas starta i ett visst ursprungligt tillstånd (vanligt vis $ \ket{00\cdots 0), vilket gör att tillstånden för dessa qubits utvecklas till ett önskat slut tillstånd. I allmänhet **kan** man på andra stater än det som anges i andra länder leda till en odefinierad allmän omvandling, men **bör** fortfarande bevara en åtgärd och dess angränsande "annullera ut" och tillämpa en no-op.
 
       *Exempel:*
       - @"microsoft.quantum.preparation.preparearbitrarystate"
       - @"microsoft.quantum.preparation.prepareuniformsuperposition"
 
-    - **Mått**: tillämpa en Quantum-åtgärd eller en sekvens med åtgärder för en eller flera qubits, och Läs sedan ut klassiska data.
+    - **Mått** : tillämpa en Quantum-åtgärd eller en sekvens med åtgärder för en eller flera qubits, och Läs sedan ut klassiska data.
 
       *Exempel:*
-      - @"microsoft.quantum.intrinsic.measure"
+      - @"Microsoft.Quantum.Intrinsic.Measure"
       - @"microsoft.quantum.arithmetic.measurefxp"
       - @"microsoft.quantum.arithmetic.measureinteger"
 
-    - **Tillämpa**: tillämpa en Quantum-åtgärd eller en sekvens med åtgärder på en eller flera qubits, vilket gör att qubits ändras på ett konsekvent sätt. Det här verbet är det mest generella verbet i Q \# -nomenklaturen och **bör inte** användas när ett mer särskilt verb är direkt relevant.
+    - **Tillämpa** : tillämpa en Quantum-åtgärd eller en sekvens med åtgärder på en eller flera qubits, vilket gör att qubits ändras på ett konsekvent sätt. Det här verbet är det mest generella verbet i Q \# -nomenklaturen och **bör inte** användas när ett mer särskilt verb är direkt relevant.
 
-  - **Substantiv**:
+  - **Substantiv** :
 
-    - **Fakta**: ett booleskt villkor som bara är beroende av sina indata och inte på en måldators tillstånd, dess miljö eller tillståndet för datorns qubits. Till skillnad från en försäkran är ett faktum bara känsligt för de *värden* som anges i detta faktum. Exempel:
+    - **Fakta** : ett booleskt villkor som bara är beroende av sina indata och inte på en måldators tillstånd, dess miljö eller tillståndet för datorns qubits. Till skillnad från en försäkran är ett faktum bara känsligt för de *värden* som anges i detta faktum. Exempel:
 
       *Exempel:*
       - @"microsoft.quantum.diagnostics.equalityfacti": representerar ett likhets faktum mellan två heltals indata; antingen är de heltal som anges som indata lika med varandra, eller inte, oberoende av andra program tillstånd.
@@ -259,9 +259,9 @@ Den här artikeln innehåller de här principerna och ger exempel på hur du kan
       *Exempel:*
       - @"microsoft.quantum.machinelearning.trainingoptions"UDT innehåller namngivna objekt för inlärnings pris, minibatch storlek och andra konfigurerbara parametrar för ml-utbildning.
 
-  - **Adjektiv**:
+  - **Adjektiv** :
 
-    - ⛔️ **nytt**: denna ADJEKTIV **bör inte** användas, för att undvika förvirring med användning som ett verb i många programmeringsspråk (t. ex.: C++, C#, Java, typescript, PowerShell).
+    - ⛔️ **nytt** : denna ADJEKTIV **bör inte** användas, för att undvika förvirring med användning som ett verb i många programmeringsspråk (t. ex.: C++, C#, Java, typescript, PowerShell).
 
   - **Förpositioner:** I vissa fall kan förpositioner användas för att ytterligare disambiguate eller för tydliga roller i Substantiv och verb i funktions-och åtgärds namn. Bryr dig om att göra detta sparsamt och konsekvent.
 

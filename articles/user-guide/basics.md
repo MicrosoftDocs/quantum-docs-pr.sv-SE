@@ -9,12 +9,12 @@ uid: microsoft.quantum.guide.basics
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 86f6538cf383f4e7c14255b38cfb1c141c8f991b
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: b3bc0841eabeac5d3968776f9dab3a02b1a1eef9
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90835527"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92691627"
 ---
 # <a name="no-locq-basics"></a>Q# Om
 
@@ -28,7 +28,7 @@ Från ett tekniskt perspektiv är ett Quantum-program en viss uppsättning klass
 En viktig följd av den vyn är att ett Q# program inte direkt modellerar qubits, utan beskriver i stället hur en klassisk kontrollerad dator interagerar med dessa qubits.
 Enligt design Q# definierar inte Quantum-tillstånd eller andra egenskaper för Quantum Mechanics direkt.
 Anta till exempel att State $ \ket{+} = \left (\ket {0} + \ket {1} \right)/\sqrt {2} $ beskrivs i guiden för [Quantum Computing-koncept](xref:microsoft.quantum.concepts.intro) .
-För att förbereda det här läget i Q# börjar du med de fakta som qubits initieras i $ \ket {0} $ State och att $ \ket{+} = H\ket {0} $, där $H $ är [Hadamard-transformeringen](xref:microsoft.quantum.glossary#hadamard), som implementeras av [ `H` åtgärden](xref:microsoft.quantum.intrinsic.h). Basic Q# -koden för att initiera och transformera en qubit och sedan se ut så här:
+För att förbereda det här läget i Q# börjar du med de fakta som qubits initieras i $ \ket {0} $ State och att $ \ket{+} = H\ket {0} $, där $H $ är [Hadamard-transformeringen](xref:microsoft.quantum.glossary#hadamard), som implementeras av [ `H` åtgärden](xref:Microsoft.Quantum.Intrinsic.H). Basic Q# -koden för att initiera och transformera en qubit och sedan se ut så här:
 
 ```qsharp
 using (qubit = Qubit()) {
@@ -37,7 +37,7 @@ using (qubit = Qubit()) {
     // H is now applied, such that the qubit is in H|0⟩ = |+⟩, as desired.
 }
 ```
-Mer information om att initiera eller *allokera*, qubits finns i [arbeta med qubits](xref:microsoft.quantum.guide.qubits).
+Mer information om att initiera eller *allokera* , qubits finns i [arbeta med qubits](xref:microsoft.quantum.guide.qubits).
 
 ## <a name="quantum-states-in-no-locq"></a>Quantum-tillstånd i Q#
 
@@ -45,7 +45,7 @@ Det tidigare programmet refererar inte uttryckligen till tillstånd inom Q# men 
 Med den här metoden kan du helt oberoende om vad ett Quantum-tillstånd *är* på varje måldator, vilket kan ha olika tolkningar beroende på datorn. 
 
 Ett Q# program kan inte Introspect till status för en qubit.
-I stället kan ett program anropa åtgärder, till exempel [`Measure`](xref:microsoft.quantum.intrinsic.measure) för att lära sig information från en qubit och anropa åtgärder som [`X`](xref:microsoft.quantum.intrinsic.x) och [`H`](xref:microsoft.quantum.intrinsic.h) för att agera för en qubit-status.
+I stället kan ett program anropa åtgärder, till exempel [`Measure`](xref:Microsoft.Quantum.Intrinsic.Measure) för att lära sig information från en qubit och anropa åtgärder som [`X`](xref:Microsoft.Quantum.Intrinsic.X) och [`H`](xref:Microsoft.Quantum.Intrinsic.H) för att agera för en qubit-status.
 De här *åtgärderna faktiskt görs* enbart konkret av mål datorn som används för att köra det aktuella Q# programmet.
 Om du till exempel kör programmet i en [full-State-Simulator](xref:microsoft.quantum.machines.full-state-simulator)utför simulatorn motsvarande matematiska åtgärder till det simulerade Quantum-systemet.
 Men om mål datorn är en verklig Quantum-dator kan du, men i framtiden, använda den här typen av åtgärder för Q# att dirigera datorn från Quantum-datorn för att utföra motsvarande *verkliga* åtgärder på det *verkliga* Quantum-systemet, till exempel exakta Timed laser pulsering.
@@ -55,14 +55,14 @@ På det här sättet är det Q# enkelt att uttrycka logiken för de underliggand
 
 ## <a name="no-locq-operations-and-functions"></a>Q# åtgärder och funktioner
 
-Konkret, ett Q# program omfattar *åtgärder*, *funktioner*och alla användardefinierade typer. 
+Konkret, ett Q# program omfattar *åtgärder* , *funktioner* och alla användardefinierade typer. 
 
 Åtgärder används för att beskriva omvandlingar av Quantum Systems och är de mest grundläggande Bygg stenarna för Q# program. Varje åtgärd som definierats i Q# kan sedan anropa valfritt antal andra åtgärder.
 
 Till skillnad från åtgärder används funktioner för att beskriva rent *deterministiskt* klassiskt klassiskt beteende och har inga effekter, förutom att beräkna klassiska värden. Anta till exempel att du vill mäta qubits i slutet av ett program och lägga till mått resultatet i en matris.
 I det här fallet `Measure` är en *åtgärd* som instruerar mål datorn att utföra en mätning på (verkliga eller simulerade) qubits. På samma gång hanterar *Functions* den klassiska processen för att lägga till de returnerade resultaten i en matris.
 
-Åtgärder och funktioner kallas tillsammans *callables*. Deras underliggande struktur och beteende införs och beskrivs i [åtgärder och funktioner i Q# ](xref:microsoft.quantum.guide.operationsfunctions).
+Åtgärder och funktioner kallas tillsammans *callables* . Deras underliggande struktur och beteende införs och beskrivs i [åtgärder och funktioner i Q# ](xref:microsoft.quantum.guide.operationsfunctions).
 
 
 ## <a name="no-locq-syntax-overview"></a>Q# syntax-översikt
@@ -94,7 +94,7 @@ Ett enkelt exempel på en instruktion i Q# är att tilldela en symbol till ett u
 let count = 5;
 ```
 
-Ett mer intressant exempel är en `for` instruktion som stöder iteration och innehåller ett *instruktions block*.
+Ett mer intressant exempel är en `for` instruktion som stöder iteration och innehåller ett *instruktions block* .
 Anta `qubits` att är symbolen knuten till ett register över qubits (tekniskt av typen `Qubit[]` eller en matris av `Qubit` typer). Dra
 ```qsharp
 for (qubit in qubits) {

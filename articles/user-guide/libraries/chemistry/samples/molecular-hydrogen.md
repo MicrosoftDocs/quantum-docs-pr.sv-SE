@@ -9,12 +9,12 @@ uid: microsoft.quantum.chemistry.examples.energyestimate
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 05506f4099de754cd02d81fbd9200f2de091e37e
-ms.sourcegitcommit: 8256ff463eb9319f1933820a36c0838cf1e024e8
+ms.openlocfilehash: 81fba0c52c854d61f9143659795fb4d3c3cee8b9
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90759740"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92691526"
 ---
 # <a name="obtaining-energy-level-estimates"></a>Få beräkningar av energinivå
 Att uppskatta värdena för energi nivåer är ett av de viktigaste programmen i Quantum kemi. Den här artikeln beskriver hur du kan utföra detta för det kanoniska exemplet på molekylen väte. Exemplet som refereras i det här avsnittet finns [`MolecularHydrogen`](https://github.com/microsoft/Quantum/tree/main/samples/chemistry/MolecularHydrogen) i databasen för kemi-exempel. Ett mer visuellt exempel som ritar utdata är [`MolecularHydrogenGUI`](https://github.com/microsoft/Quantum/tree/main/samples/chemistry/MolecularHydrogenGUI) demonstrationen.
@@ -44,7 +44,7 @@ Det första steget är att skapa Hamiltonian som representerar molekylen väte. 
     var fermionHamiltonian = new OrbitalIntegralHamiltonian(orbitalIntegrals).ToFermionHamiltonian();
 ```
 
-Att simulera Hamiltonian kräver att fermion-operatörerna konverteras till qubit-operatörer. Den här konverteringen utförs via Wigner-kodningen i Jordanien enligt följande:
+Att simulera Hamiltonian kräver att fermion-operatörerna konverteras till qubit-operatörer. Den här konverteringen utförs genom Jordan-Wigner Encoding enligt följande:
 
 ```csharp
     // The Jordan-Wigner encoding converts the fermion Hamiltonian, 
@@ -83,7 +83,7 @@ let integratorOrder = 4;
 let (nQubits, (rescale, oracle)) =  TrotterStepOracle (qSharpData, stepSize, integratorOrder);
 ```
 
-Nu kan du använda standard bibliotekets [algoritmer för fas uppskattning](xref:microsoft.quantum.libraries.characterization) för att lära dig om Energis av mark tillstånd med föregående simulering. Detta kräver att du förbereder en utmärkt uppskattning till Quantum-jordens tillstånd. Förslag på sådana ungefärliger finns i [`Broombridge`](xref:microsoft.quantum.libraries.chemistry.schema.broombridge) schemat. Men det finns inga förslag, standard metoden lägger till ett antal `hamiltonian.NElectrons` electrons för att greedily minimera den diagonala en Electron-period Energies. Fas uppskattnings funktionerna och åtgärderna finns i DocFX-notation i namn området [Microsoft. Quantum. karakterisering](xref:microsoft.quantum.characterization) .
+Nu kan du använda standard bibliotekets [algoritmer för fas uppskattning](xref:microsoft.quantum.libraries.characterization) för att lära dig om Energis av mark tillstånd med föregående simulering. Detta kräver att du förbereder en utmärkt uppskattning till Quantum-jordens tillstånd. Förslag på sådana ungefärliger finns i [`Broombridge`](xref:microsoft.quantum.libraries.chemistry.schema.broombridge) schemat. Men det finns inga förslag, standard metoden lägger till ett antal `hamiltonian.NElectrons` electrons för att greedily minimera den diagonala en Electron-period Energies. Fas uppskattnings funktionerna och åtgärderna finns i DocFX-notation i namn området [Microsoft. Quantum. karakterisering](xref:Microsoft.Quantum.Characterization) .
 
 Följande kodfragment visar hur real tids utvecklingen av kemi-utdata från kemi Simulator Library integreras med uppskattning av Quantum-fasen.
 

@@ -107,7 +107,7 @@ En [funktion](xref:microsoft.quantum.glossary#operation) eller [funktion](xref:m
 
 ## <a name="clifford-group"></a>Clifford-grupp
 
-Den uppsättning åtgärder som upptar octants för Bloch- [sfären](xref:microsoft.quantum.glossary#bloch-sphere) och [Pauli-operatörernas-operatorer](xref:microsoft.quantum.glossary#pauli-operators). Dessa omfattar åtgärderna [ $ X $ ](xref:microsoft.quantum.intrinsic.x), [ $ Y $ ](xref:microsoft.quantum.intrinsic.y), [ $ Z $ ](xref:microsoft.quantum.intrinsic.z), [ $ H $ ](xref:microsoft.quantum.intrinsic.h) och [ $ S $ ](xref:microsoft.quantum.intrinsic.s).
+Den uppsättning åtgärder som upptar octants för Bloch- [sfären](xref:microsoft.quantum.glossary#bloch-sphere) och [Pauli-operatörernas-operatorer](xref:microsoft.quantum.glossary#pauli-operators). Dessa omfattar åtgärderna [ $ X $ ](xref:Microsoft.Quantum.Intrinsic.X), [ $ Y $ ](xref:Microsoft.Quantum.Intrinsic.Y), [ $ Z $ ](xref:Microsoft.Quantum.Intrinsic.Z), [ $ H $ ](xref:Microsoft.Quantum.Intrinsic.H) och [ $ S $ ](xref:Microsoft.Quantum.Intrinsic.S).
 
 ## <a name="controlled"></a>Styr
 
@@ -150,7 +150,7 @@ När två [tillstånd](xref:microsoft.quantum.glossary#quantum-state) är identi
 
 ## <a name="hadamard"></a>Hadamard
 
-Hadamard-åtgärden (kallas även Hadamard-grind eller Transform) agerar på en enskild [qubit](xref:microsoft.quantum.glossary#qubit) och placerar den i en jämnt [överposition](xref:microsoft.quantum.glossary#superposition) på $ \ket { 0 } $ eller $ \ket { 1 } $ om qubit är inlednings vis i $ \ket { status 0 } $ . I Q# tillämpas den här åtgärden av den fördefinierade [`H`](xref:microsoft.quantum.intrinsic.h) åtgärden.
+Hadamard-åtgärden (kallas även Hadamard-grind eller Transform) agerar på en enskild [qubit](xref:microsoft.quantum.glossary#qubit) och placerar den i en jämnt [överposition](xref:microsoft.quantum.glossary#superposition) på $ \ket { 0 } $ eller $ \ket { 1 } $ om qubit är inlednings vis i $ \ket { status 0 } $ . I Q# tillämpas den här åtgärden av den fördefinierade [`H`](xref:Microsoft.Quantum.Intrinsic.H) åtgärden.
 
 ## <a name="immutable"></a>Inte kan ändras
 
@@ -182,11 +182,11 @@ En subrutin som tillhandahåller data beroende information till en Quantum-algor
 
 ## <a name="partial-application"></a>Partiellt program
 
-Anropa en [funktion](xref:microsoft.quantum.glossary#function) eller [åtgärd](xref:microsoft.quantum.glossary#operation) utan alla nödvändiga indata. Detta returnerar en ny [uppringning](xref:microsoft.quantum.glossary#callable) som bara behöver de parametrar som saknas (vilket indikeras av ett under streck) som ska levereras under ett framtida program. Till exempel `MyFunc(x : int, y : int) : int {return x + y;}` kan du använda funktionen för att delvis tillämpa den på en ny funktion `let NewFunc = MyFunc(_, 3)` . Du kan sedan anropa den nya funktionen vid ett senare tillfälle med den saknade parametern `NewFunc(2)` som returnerar värdet *5*.  Mer information finns i [partiellt program](xref:microsoft.quantum.guide.operationsfunctions#partial-application).
+Anropa en [funktion](xref:microsoft.quantum.glossary#function) eller [åtgärd](xref:microsoft.quantum.glossary#operation) utan alla nödvändiga indata. Detta returnerar en ny [uppringning](xref:microsoft.quantum.glossary#callable) som bara behöver de parametrar som saknas (vilket indikeras av ett under streck) som ska levereras under ett framtida program. Till exempel `MyFunc(x : int, y : int) : int {return x + y;}` kan du använda funktionen för att delvis tillämpa den på en ny funktion `let NewFunc = MyFunc(_, 3)` . Du kan sedan anropa den nya funktionen vid ett senare tillfälle med den saknade parametern `NewFunc(2)` som returnerar värdet *5* .  Mer information finns i [partiellt program](xref:microsoft.quantum.guide.operationsfunctions#partial-application).
 
 ## <a name="pauli-operators"></a>Pauli-operatörer
 
-En uppsättning med tre 2 x 2-matriser som kallas `X` , `Y` och Quantum- `Z` åtgärder. Identitets mat ris, $ i $ , ingår ofta även i uppsättningen.  $= \begin{bmatrix} 1 0 & \\\\ 0 & 1 \end{bmatrix} $ , $ X = \begin{bmatrix} 0 & 1 \\\\ 1 & 0 \end{bmatrix} $ , $ Y = \begin{bmatrix} 0 & -i \\\\ & 0 \end{bmatrix} $ , $ Z = \begin{bmatrix} 1 & 0 \\\\ & -1 \end{bmatrix} $ .   Mer information finns i [åtgärder med en qubit](xref:microsoft.quantum.concepts.qubit#single-qubit-operations).
+En uppsättning med 3 2 x 2-matriser som kallas `X` , `Y` och Quantum- `Z` åtgärder. Identitets mat ris, $ i $ , ingår ofta även i uppsättningen.  $= \begin{bmatrix} 1 0 & \\\\ 0 & 1 \end{bmatrix} $ , $ X = \begin{bmatrix} 0 & 1 \\\\ 1 & 0 \end{bmatrix} $ , $ Y = \begin{bmatrix} 0 & -i \\\\ & 0 \end{bmatrix} $ , $ Z = \begin{bmatrix} 1 & 0 \\\\ & -1 \end{bmatrix} $ .   Mer information finns i [åtgärder med en qubit](xref:microsoft.quantum.concepts.qubit#single-qubit-operations).
 
 ## <a name="quantum-circuit-diagram"></a>Diagram över Quantum-krets
 

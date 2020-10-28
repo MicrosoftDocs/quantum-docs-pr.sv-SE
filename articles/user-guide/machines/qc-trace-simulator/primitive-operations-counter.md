@@ -9,22 +9,22 @@ uid: microsoft.quantum.machines.qc-trace-simulator.primitive-counter
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 8ee9ce25e680112e2f3c68d82ae9267c1b0fb355
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: bf75eb94696a489a587316928bc3f33baa4a1785
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90835986"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92690953"
 ---
 # <a name="quantum-trace-simulator-primitive-operations-counter"></a>Quantum trace Simulator: primitiva åtgärds räknare
 
 Räknaren primitiv åtgärd är en del av Quantum Development Kit [Quantum trace Simulator](xref:microsoft.quantum.machines.qc-trace-simulator.intro). Det räknar antalet primitiva processer som används av varje åtgärd som anropas i ett Quantum-program. 
 
-Alla <xref:microsoft.quantum.intrinsic> åtgärder uttrycks i form av en qubit rotation, T-åtgärder, qubit Clifford-åtgärder, CNOT-åtgärder och mätningar av multi-qubit Pauli observables. Räknaren för primitiva åtgärder sammanställer och samlar in statistik över alla kanter i åtgärdens [anrops diagram](https://en.wikipedia.org/wiki/Call_graph).
+Alla <xref:Microsoft.Quantum.Intrinsic> åtgärder uttrycks i form av en qubit rotation, T-åtgärder, qubit Clifford-åtgärder, CNOT-åtgärder och mätningar av multi-qubit Pauli observables. Räknaren för primitiva åtgärder sammanställer och samlar in statistik över alla kanter i åtgärdens [anrops diagram](https://en.wikipedia.org/wiki/Call_graph).
 
 ## <a name="invoking-the-primitive-operation-counter"></a>Anropar den primitiva åtgärds räknaren
 
-Om du vill köra Quantum trace-simulatorn med den primitiva åtgärds räknaren måste du skapa en <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulatorConfiguration> instans, ange `UsePrimitiveOperationsCounter` egenskapen till **True**och sedan skapa en ny <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator> instans med `QCTraceSimulatorConfiguration` som-parameter.
+Om du vill köra Quantum trace-simulatorn med den primitiva åtgärds räknaren måste du skapa en <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulatorConfiguration> instans, ange `UsePrimitiveOperationsCounter` egenskapen till **True** och sedan skapa en ny <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator> instans med `QCTraceSimulatorConfiguration` som-parameter.
 
 ```csharp
 var config = new QCTraceSimulatorConfiguration();
@@ -34,7 +34,7 @@ var sim = new QCTraceSimulator(config);
 
 ## <a name="using-the-primitive-operation-counter-in-a-c-host-program"></a>Använda den primitiva åtgärds räknaren i ett C#-värd program
 
-C#-exemplet som följer i det här avsnittet räknar hur många <xref:microsoft.quantum.intrinsic.t> åtgärder som krävs för att implementera <xref:microsoft.quantum.intrinsic.ccnot> åtgärden, baserat på följande Q# exempel kod:
+C#-exemplet som följer i det här avsnittet räknar hur många <xref:Microsoft.Quantum.Intrinsic.T> åtgärder som krävs för att implementera <xref:Microsoft.Quantum.Intrinsic.ccnot> åtgärden, baserat på följande Q# exempel kod:
 
 ```qsharp
 open Microsoft.Quantum.Intrinsic;

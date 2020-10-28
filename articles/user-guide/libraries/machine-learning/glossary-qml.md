@@ -9,12 +9,12 @@ uid: microsoft.quantum.libraries.machine-learning.training
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 39974af0121a5167f1965e508cd595535178548b
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: 476e93e3737dee6ad8f3a97e8ffbcfb9b0012ee1
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90833904"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92691515"
 ---
 # <a name="quantum-machine-learning-glossary"></a>Quantum Machine Learning-ordlista
 
@@ -30,7 +30,7 @@ Med hänsyn till en kandidat parameter vektor och en klassificerings kompensatio
 
 ## <a name="hyperparameters"></a>Hyperparametrar
 
-Modell inlärnings processen styrs av vissa fördefinierade värden som kallas för mina *parametrar*:
+Modell inlärnings processen styrs av vissa fördefinierade värden som kallas för mina *parametrar* :
 
 ### <a name="learning-rate"></a>Inlärningstakt
 
@@ -56,9 +56,10 @@ Sannolikhets funktionen för klassificeraren är mycket sällan konvex, vilket i
 
 #### <a name="how-to-modify-the-hyperparameters"></a>Ändra de båda parametrarna
 
-I QML-biblioteket är det bästa sättet att ändra de båda parametrarna genom att åsidosätta standardvärdena för UDT [`TrainingOptions`](xref:microsoft.quantum.machinelearning.trainingoptions) . För att göra detta anropar vi den med funktionen [`DefaultTrainingOptions`](xref:microsoft.quantum.machinelearning.defaulttrainingoptions) och använder operatorn `w/` för att åsidosätta standardvärdena. Om du till exempel vill använda 100 000-mått och en inlärnings grad på 0,01:
- ```qsharp
+I QML-biblioteket är det bästa sättet att ändra de båda parametrarna genom att åsidosätta standardvärdena för UDT [`TrainingOptions`](xref:Microsoft.Quantum.MachineLearning.TrainingOptions) . För att göra detta anropar vi den med funktionen [`DefaultTrainingOptions`](xref:Microsoft.Quantum.MachineLearning.DefaultTrainingOptions) och använder operatorn `w/` för att åsidosätta standardvärdena. Om du till exempel vill använda 100 000-mått och en inlärnings grad på 0,01:
+
+```qsharp
 let options = DefaultTrainingOptions()
 w/ LearningRate <- 0.01
 w/ NMeasurements <- 100000;
- ```
+```

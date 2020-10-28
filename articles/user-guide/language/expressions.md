@@ -9,12 +9,12 @@ uid: microsoft.quantum.guide.expressions
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 9bf28e3854eae1892692d7ca840e1860de2e2934
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: e95a7cb9b74136ef9a6f51b4bbc32d1d93c43a0d
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90835850"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92691593"
 ---
 # <a name="expressions-in-no-locq"></a>Uttryck i Q#
 
@@ -40,7 +40,7 @@ let bigOne = bigZero + 1L;
 De kan skrivas med eller utan ett decimal tecken, `.` eller en exponentiell del som anges med "e" eller "e" (efter vilken endast ett möjligt negativt tecken och decimal siffror är giltiga).
 Följande är giltiga `Double` litteraler: `0.0` , `1.2e5` , `1e-5` .
 
-Med ett mat ris uttryck för valfri element typ kan du skapa ett `Int` uttryck med hjälp av den [`Length`](xref:microsoft.quantum.core.length) inbyggda funktionen, med mat ris uttrycket inom parentes.
+Med ett mat ris uttryck för valfri element typ kan du skapa ett `Int` uttryck med hjälp av den [`Length`](xref:Microsoft.Quantum.Core.Length) inbyggda funktionen, med mat ris uttrycket inom parentes.
 Om till exempel `a` är kopplat till en matris, `Length(a)` är ett heltals uttryck.
 Om `b` är en matris med heltals matriser, `Int[][]` `Length(b)` är antalet underordnade matriser i `b` och `Length(b[1])` är antalet heltal i den andra under matrisen i `b` .
 
@@ -69,9 +69,9 @@ Heltals Division och heltals-Modulus följer samma beteende för negativa tal so
 |`A` | `B` | `A / B` | `A % B`|
 |:---------:|:----------:|:---------:|:---------:|
 | 5 | 2 | 2 | 1 |
-| 5 | −2 | −2 | 1 |
-| -5 | 2 | −2 | -1 |
-| -5 | −2 | 2 | -1 |
+| 5 | -2 | -2 | 1 |
+| -5 | 2 | -2 | -1 |
+| -5 | -2 | 2 | -1 |
 
 Big Integer-och Modulus-åtgärder fungerar på samma sätt.
 
@@ -111,7 +111,7 @@ Med alla booleska uttryck kan den `not` unära operatorn användas för att skap
 
 ## <a name="string-expressions"></a>Stränguttryck
 
-Q# tillåter att strängar används i `fail` instruktionen (förklaras i [kontroll flödet](xref:microsoft.quantum.guide.controlflow#fail-statement)) och i [`Message`](xref:microsoft.quantum.intrinsic.message) funktionen standard. Det speciella beteendet för den senare beror på vilken simulator som används men skriver vanligt vis ett meddelande till värd konsolen när den anropas under ett Q# program.
+Q# tillåter att strängar används i `fail` instruktionen (förklaras i [kontroll flödet](xref:microsoft.quantum.guide.controlflow#fail-statement)) och i [`Message`](xref:Microsoft.Quantum.Intrinsic.Message) funktionen standard. Det speciella beteendet för den senare beror på vilken simulator som används men skriver vanligt vis ett meddelande till värd konsolen när den anropas under ett Q# program.
 
 Strängar i Q# är antingen litteraler eller interpolerade strängar.
 
@@ -128,7 +128,7 @@ Q#Syntaxen för String-interpolation är en delmängd av C#-syntaxen. Följande 
 
 * För att identifiera en tecken sträng som en interpolerad sträng, lägga den med `$` symbolen. Det får inte finnas något tomt utrymme mellan `$` och `"` som startar en tecken sträng.
 
-* Följande är ett grundläggande exempel [`Message`](xref:microsoft.quantum.intrinsic.message) som använder funktionen för att skriva resultatet av en mätning till-konsolen, tillsammans med andra Q# uttryck.
+* Följande är ett grundläggande exempel [`Message`](xref:Microsoft.Quantum.Intrinsic.Message) som använder funktionen för att skriva resultatet av en mätning till-konsolen, tillsammans med andra Q# uttryck.
 
 ```qsharp
     let num = 8;       // some Q# expression
@@ -189,7 +189,7 @@ En tupel litteral är en sekvens med element uttryck av lämplig typ, avgränsad
 
 Förutom litteraler är de enda tuple-uttrycken symboler som är kopplade till tuple-värden, mat ris element i tuple-matriser och anrops bara anrop som returnerar tupler.
 
-## <a name="user-defined-type-expressions"></a>Användardefinierade typ uttryck
+## <a name="user-defined-type-expressions"></a>User-Defined typ uttryck
 
 En litteral av en användardefinierad typ består av typ namnet följt av en tupel av typens bastyp.
 Om till exempel `IntPair` är en användardefinierad typ som baseras på `(Int, Int)` , `IntPair(2, 3)` är en giltig litteral av den typen.
@@ -237,11 +237,11 @@ I de flesta fall är detta någon variation på noll.
 
 Det finns inget rimligt standardvärde för qubits och callables, som är referenser till entiteter.
 Därför är standardvärdet en ogiltig referens som du inte kan använda utan att orsaka ett körnings fel som liknar en null-referens i språk som C# eller Java.
-Matriser som innehåller qubits eller callables måste initieras med icke-standardvärden innan du kan använda elementen på ett säkert sätt. För lämpliga initierings rutiner, se <xref:microsoft.quantum.arrays> .
+Matriser som innehåller qubits eller callables måste initieras med icke-standardvärden innan du kan använda elementen på ett säkert sätt. För lämpliga initierings rutiner, se <xref:Microsoft.Quantum.Arrays> .
 
 Standardvärdena för varje typ är:
 
-Typ | Standardvärde
+Typ | Standard
 ---------|----------
  `Int` | `0`
  `BigInt` | `0L`
@@ -472,7 +472,7 @@ Typ specifikationen krävs eftersom `Op3` och `Op1` har olika typer, så att kom
 
 Q# operatorer i prioritetsordning, från högsta till lägsta:
 
-Operator | Ariteten | Description | Operands typer
+Operator | Ariteten | Beskrivning | Operands typer
 ---------|----------|---------|---------------
  avslutande `!` | Unär | Packa upp | Valfri användardefinierad typ
  `-`, `~~~`, `not` | Unär | Numeriskt negativ, bitvis komplement, logisk negation | `Int`, `BigInt` eller `Double` för `-` , `Int` eller `BigInt` `~~~` för `Bool``not`

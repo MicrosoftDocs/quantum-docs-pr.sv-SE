@@ -9,12 +9,12 @@ uid: microsoft.quantum.guide.types
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: c4a3e6563b8cabee87d1db6b9cb1c1f1c1a7131b
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: 349138984387cc564cca18ea09c7bf161524b0b6
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90835833"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92691617"
 ---
 # <a name="types-in-no-locq"></a>Typer i Q#
 
@@ -22,7 +22,7 @@ I den här artikeln beskrivs Q# typ modellen och syntaxen för att ange och arbe
 
 Vi noterar att det Q# är ett *starkt inskrivet* språk, så att en noggrann användning av de här typerna kan hjälpa kompileraren att tillhandahålla starka garantier om Q# program vid kompilering.
 För att ge de starkaste garantier som är möjliga Q# måste konverteringen mellan olika typer vara explicit med anrop till funktioner som uttrycker konverteringen. 
-Q# innehåller en rad olika funktioner som en del av <xref:microsoft.quantum.convert> namn området.
+Q# innehåller en rad olika funktioner som en del av <xref:Microsoft.Quantum.Convert> namn området.
 Omsändningar till kompatibla typer, å andra sidan, sker implicit. 
 
 Q# tillhandahåller båda primitiva typer, som används direkt och en mängd olika sätt att skapa nya typer av från andra typer.
@@ -30,7 +30,7 @@ Vi beskriver var och en i resten av den här artikeln.
 
 ## <a name="primitive-types"></a>Primitiva typer
 
-Q#Språket innehåller följande *primitiva typer*, som du kan använda direkt i Q# program. Du kan också använda dessa primitiva typer för att skapa nya typer.
+Q#Språket innehåller följande *primitiva typer* , som du kan använda direkt i Q# program. Du kan också använda dessa primitiva typer för att skapa nya typer.
 
 - `Int`Typen representerar ett 64-bitars heltal, till exempel,, `2` `107` `-5` .
 - `BigInt`Typen representerar ett signerat heltal av godtycklig storlek, till exempel, `2L` , `107L` `-5L` .
@@ -126,10 +126,10 @@ Till exempel `(7)` är ett uttryck av typen `Int` , `([1,2,3])` är ett uttryck 
 
 Det innebär framför allt att du kan visa en åtgärd eller funktion vars typ av tupel eller utgående tuple-typ har ett fält som ett enda argument eller returnerar ett enda värde.
 
-Vi refererar till denna egenskap som _likhet med singleton-tupel_.
+Vi refererar till denna egenskap som _likhet med singleton-tupel_ .
 
 
-## <a name="user-defined-types"></a>Användardefinierade typer
+## <a name="user-defined-types"></a>User-Defined typer
 
 En användardefinierad typ deklaration består av nyckelordet `newtype` , följt av namnet på den användardefinierade typen, en `=` , en giltig typ specifikation och ett avslutande semikolon.
 
@@ -259,8 +259,8 @@ I allmänhet kan användardefinierade typer inte ha cykliska beroenden på varan
 
 Utifrån typerna `'Tinput` och `'Tresult` :
 
-* `('Tinput => 'Tresult)` är den grundläggande typen för alla *åtgärder*, till exempel `((Qubit, Pauli) => Result)` .
-* `('Tinput -> 'Tresult)` är den grundläggande typen för alla *funktioner*, till exempel `(Int -> Int)` . 
+* `('Tinput => 'Tresult)` är den grundläggande typen för alla *åtgärder* , till exempel `((Qubit, Pauli) => Result)` .
+* `('Tinput -> 'Tresult)` är den grundläggande typen för alla *funktioner* , till exempel `(Int -> Int)` . 
 
 Dessa kallas *signaturen* för anropbar.
 
@@ -282,13 +282,13 @@ Om till exempel körningen av åtgärden förlitar sig på andra qubits-tillstå
 Om du behöver stöd för `Controlled` och/eller `Adjoint` Functor i en åtgärds typ måste du lägga till en anteckning som anger motsvarande egenskaper.
 Anteckningen `is Ctl` (till exempel `(Qubit => Unit is Ctl)` ) visar att åtgärden är kontrollerbar. Det innebär att dess körning förlitar sig på statusen för en annan qubit eller qubits. På samma sätt betyder anteckningen `is Adj` att åtgärden har ett överordnat objekt, det vill säga att den kan vara "inverterad", så att en åtgärd som sedan är i det angränsande till ett tillstånd lämnar statusen oförändrad. 
 
-Om du vill kräva att en åtgärd av den typen stöder både- `Adjoint` och `Controlled` Functor kan du uttrycka detta som `(Qubit => Unit is Adj + Ctl)` . Den inbyggda Pauli-åtgärden har till exempel <xref:microsoft.quantum.intrinsic.x> typen `(Qubit => Unit is Adj + Ctl)` . 
+Om du vill kräva att en åtgärd av den typen stöder både- `Adjoint` och `Controlled` Functor kan du uttrycka detta som `(Qubit => Unit is Adj + Ctl)` . Den inbyggda Pauli-åtgärden har till exempel <xref:Microsoft.Quantum.Intrinsic.X> typen `(Qubit => Unit is Adj + Ctl)` . 
 
 En åtgärds typ som inte har stöd för någon functors anges av enbart indata-och Utdatatyp, utan ytterligare anteckning.
 
-### <a name="type-parameterized-functions-and-operations"></a>Typ-parameter funktioner och åtgärder
+### <a name="type-parameterized-functions-and-operations"></a>Type-Parameterized funktioner och åtgärder
 
-Typer som kan anropas kan innehålla *typ parametrar*.
+Typer som kan anropas kan innehålla *typ parametrar* .
 Använd en symbol som föregås av ett enkelt citat tecken för att indikera en typ parameter. till exempel `'A` är en juridisk typ parameter.
 Mer information och information om hur du definierar callables för typ parametrar finns [i åtgärder och funktioner i Q# ](xref:microsoft.quantum.guide.operationsfunctions#generic-type-parameterized-callables).
 

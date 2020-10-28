@@ -89,7 +89,7 @@ Den här grind serien är av grundläggande betydelse för Quantum Computing eft
 
 $$\mathrm{CNOT } _ { 01 } (H \otimes 1) \ket { 00 } = \frac { 1 } { \sqrt { 2 } } \left ( \ket { 00 }  +  \ket { 11 } \right ),$$
 
-Åtgärder med den här eller större komplexiteten är allmänt förekommande i Quantum-algoritmer och Quantum Error-korrigering, så det bör vara en bra avläsnings metod för att det ska finnas en enkel metod för visualiseringen som kallas ett *Quantum-krets diagram*.
+Åtgärder med den här eller större komplexiteten är allmänt förekommande i Quantum-algoritmer och Quantum Error-korrigering, så det bör vara en bra avläsnings metod för att det ska finnas en enkel metod för visualiseringen som kallas ett *Quantum-krets diagram* .
 Krets diagrammet för att förbereda denna maximally Entangled-Quantum-tillstånd är:
 
 <!--- ![](.\media\1.svg) --->
@@ -109,7 +109,7 @@ Till exempel symbolen
 <!--Kan inte hitta något sätt att enkelt centrera detta... troligen ett tillägg som krävs:-->
 ![Symbol för en Hadamard-åtgärd som agerar på ett enda qubit-register](~/media/2.svg)
 
-är en [Hadamard](xref:microsoft.quantum.intrinsic.h) -åtgärd som agerar på ett enda qubit-register.
+är en [Hadamard](xref:Microsoft.Quantum.Intrinsic.H) -åtgärd som agerar på ett enda qubit-register.
 
 Quantum Gates sorteras i kronologisk ordning med den översta porten som den grind som först appliceras på qubits.
 Om du till exempel har en bild av kablarna som behålls i Quantum-läget, tar kablarna med Quantum-tillstånd genom varje port i diagrammet från vänster till höger.
@@ -150,7 +150,7 @@ I allmänhet beskriver vi sådana kontrollerade åtgärder i krets diagram som
 ![Krets diagram över en enkel kontrollerad grind](~/media/5.svg)
 
 Här anger den svarta cirkeln den Quantum-bit som porten styrs av och en lodrät kabel anger den färg som tillämpas när kontrollen qubit tar värdet $ 1 $ .
-För de specialfall där $ G = X $ och $ g = Z $ introducerar vi följande notation för att beskriva den kontrollerade versionen av grindarna (Observera att den kontrollerade X-porten är [ $ CNOT- $ grind](xref:microsoft.quantum.intrinsic.cnot)):
+För de specialfall där $ G = X $ och $ g = Z $ introducerar vi följande notation för att beskriva den kontrollerade versionen av grindarna (Observera att den kontrollerade X-porten är [ $ CNOT- $ grind](xref:Microsoft.Quantum.Intrinsic.CNOT)):
 
 <!--- ![](.\media\6.svg) --->
 <!--Kan inte hitta något sätt att enkelt centrera detta... troligen ett tillägg som krävs:-->
@@ -175,7 +175,7 @@ Mer specifikt ser en sådan under krets ut så här:
 <!--Kan inte hitta något sätt att enkelt centrera detta... troligen ett tillägg som krävs:-->
 ![Symbol som representerar en mått åtgärd](~/media/7.svg)
 
-Q# implementerar en [mått operator](xref:microsoft.quantum.intrinsic.measure) för det här ändamålet.
+Q# implementerar en [mått operator](xref:Microsoft.Quantum.Intrinsic.Measure) för det här ändamålet.
 Mer information finns i [avsnittet om mått](xref:microsoft.quantum.libraries.standard.prelude#measurements) .
 
 På samma sätt är under kretsen

@@ -9,12 +9,12 @@ uid: microsoft.quantum.write-program
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: ac9c060c157ba5ee3bc66852c42298ac8adcb3b3
-ms.sourcegitcommit: 685a8ab16d7e6a25e63a168d6e7c385fa6e876cc
+ms.openlocfilehash: 7a1a49e18ac9330ca6e3cc89b3e58c96eccb91db
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91492344"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92691662"
 ---
 # <a name="tutorial-explore-entanglement-with-q"></a>Självstudier: Utforska sammanflätning med Q\#
 
@@ -56,9 +56,9 @@ Det första vi behöver göra är att skapa ett nytt Q# projekt. I den här sjä
 
 Så här skapar du ett nytt projekt i VS Code: 
 
-1. Klicka på **Visa** -> **Kommandopalett** och välj **Q#: Skapa nytt projekt**.
-2. Klicka på **Fristående konsolprogram**.
-3. Gå till platsen där du vill spara projektet och klicka på **Skapa projekt**.
+1. Klicka på **Visa** -> **Kommandopalett** och välj **Q#: Skapa nytt projekt** .
+2. Klicka på **Fristående konsolprogram** .
+3. Gå till platsen där du vill spara projektet och klicka på **Skapa projekt** .
 4. När projektet har skapats klickar du på **Öppna nytt projekt...** längst ned till höger.
 
 I det här fallet kallas vi för projektet `Bell` . Detta genererar två filer: `Bell.csproj` , projekt filen och `Program.qs` en mall för ett Q# program som vi ska använda för att skriva vårt program. Innehållet i `Program.qs` ska vara:
@@ -83,7 +83,7 @@ Vårt mål är att förbereda två qubits i ett särskilt Quantum-tillstånd som
 
 ### <a name="initialize-qubit-using-measurement"></a>Initiera qubit med hjälp av mått
 
-I det första kodfragmentet nedan visar vi dig hur du arbetar med qubits i Q# .  Vi introducerar två åtgärder [`M`](xref:microsoft.quantum.intrinsic.m) och [`X`](xref:microsoft.quantum.intrinsic.x) som transformerar statusen för en qubit. I det här kodfragmentet definieras åtgärden `SetQubitState` som använder en parameter som kvantbit och en annan parameter, `desired`, som representerar det tillstånd som vi vill att kvantbiten ska ha.  Åtgärden `SetQubitState` utför en mätning på kvantbiten med åtgärden `M`.  I Q# returnerar en qubit-mätning alltid antingen `Zero` eller `One` .  Om mätningen returnerar ett värde som inte är lika med det önskade värdet, `SetQubitState` "vänder" qubit; som är, kör den en `X` åtgärd som ändrar qubit-tillstånd till ett nytt tillstånd där sannolikheten för en mätning returneras `Zero` och `One` blir omvänd. På så sätt `SetQubitState` placeras alltid mål qubit i önskat tillstånd.
+I det första kodfragmentet nedan visar vi dig hur du arbetar med qubits i Q# .  Vi introducerar två åtgärder [`M`](xref:Microsoft.Quantum.Intrinsic.m) och [`X`](xref:Microsoft.Quantum.Intrinsic.X) som transformerar statusen för en qubit. I det här kodfragmentet definieras åtgärden `SetQubitState` som använder en parameter som kvantbit och en annan parameter, `desired`, som representerar det tillstånd som vi vill att kvantbiten ska ha.  Åtgärden `SetQubitState` utför en mätning på kvantbiten med åtgärden `M`.  I Q# returnerar en qubit-mätning alltid antingen `Zero` eller `One` .  Om mätningen returnerar ett värde som inte är lika med det önskade värdet, `SetQubitState` "vänder" qubit; som är, kör den en `X` åtgärd som ändrar qubit-tillstånd till ett nytt tillstånd där sannolikheten för en mätning returneras `Zero` och `One` blir omvänd. På så sätt `SetQubitState` placeras alltid mål qubit i önskat tillstånd.
 
 Ersätt innehållet i `Program.qs` med följande kod:
 
@@ -116,8 +116,8 @@ Returtypen för åtgärden anges efter ett kolon. I det här fallet `SetQubitSta
 
 Du har använt två Quantum-åtgärder i din första Q# åtgärd:
 
-* [`M`](xref:microsoft.quantum.intrinsic.m)Åtgärden, som mäter status för qubit
-* [`X`](xref:microsoft.quantum.intrinsic.x)Åtgärden, som vänder sig till status för en qubit
+* [`M`](xref:Microsoft.Quantum.Intrinsic.m)Åtgärden, som mäter status för qubit
+* [`X`](xref:Microsoft.Quantum.Intrinsic.X)Åtgärden, som vänder sig till status för en qubit
 
 En kvantåtgärd omvandlar tillståndet för en kvantbit. Ibland pratar man om kvantgrindar i stället för åtgärder, vilket motsvarar klassiska logiska grindar. Detta kommer från när man började använda kvantberäkning och algoritmerna bara var en teoretisk konstruktion som visualiserades som diagram, liknande kretsdiagram i klassisk databehandling.
 
@@ -300,7 +300,7 @@ Detta kallas för **superposition** och ger oss den första verkliga inblicken i
 ## <a name="prepare-entanglement"></a>Förbereda sammanflätning
 
 Nu ska vi titta på hur Q# uttrycker sätt att entangle qubits.
-Först försätter vi den första kvantbiten i det ursprungliga tillståndet och sedan använder vi `H`-åtgärden för att placera den i superposition.  Innan vi mäter den första qubit använder vi en ny åtgärd ( `CNOT` ), som står för *kontrollerad – inte*.  Resultatet av att köra den här åtgärden på två qubits är att vända den andra qubit om den första qubit är `One` .  Nu är de två kvantbitarna sammanflätade.  Vår statistik för den första kvantbiten har inte ändrats (50/50 möjlighet för `Zero` eller `One` efter mätningen), men när vi nu mäter den andra kvantbiten är det __alltid__ samma resultat som för den första kvantbiten. Vår `CNOT` har sammanflätat de två kvantbitarna, vilket innebär att det som händer med en av dem händer även för den andra. Om du skulle omvända mätningarna (den andra kvantbiten före den första), skulle samma sak inträffa. Det första måttet blir slumpmässigt och det andra blir låst med det värde som identifierades för den första mätningen.
+Först försätter vi den första kvantbiten i det ursprungliga tillståndet och sedan använder vi `H`-åtgärden för att placera den i superposition.  Innan vi mäter den första qubit använder vi en ny åtgärd ( `CNOT` ), som står för *kontrollerad – inte* .  Resultatet av att köra den här åtgärden på två qubits är att vända den andra qubit om den första qubit är `One` .  Nu är de två kvantbitarna sammanflätade.  Vår statistik för den första kvantbiten har inte ändrats (50/50 möjlighet för `Zero` eller `One` efter mätningen), men när vi nu mäter den andra kvantbiten är det __alltid__ samma resultat som för den första kvantbiten. Vår `CNOT` har sammanflätat de två kvantbitarna, vilket innebär att det som händer med en av dem händer även för den andra. Om du skulle omvända mätningarna (den andra kvantbiten före den första), skulle samma sak inträffa. Det första måttet blir slumpmässigt och det andra blir låst med det värde som identifierades för den första mätningen.
 
 Det första vi behöver göra är att allokera två qubits i stället för en i `TestBellState` :
 

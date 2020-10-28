@@ -9,12 +9,12 @@ uid: microsoft.quantum.contributing.style
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: fef3cea1c11e4fef49ddbf63adb34e07675049d2
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: 7666974e255d537c8d611d0077b7f9b37a61f918
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90834201"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92691733"
 ---
 # <a name="no-locq-style-guide"></a>Q# Stil guide #
 ## <a name="general-conventions"></a>Allmänna konventioner ##
@@ -68,7 +68,7 @@ Andra verb kan vara användbara även i det här fallet, som i `IterateThroughCa
 | Använd | En åtgärd som angetts som indata kallas |
 | Assert | En hypotes om resultatet av en möjlig Quantum-mätning kontrol leras av en simulator |
 | Uppskattning | Ett klassiskt värde returneras som representerar en uppskattning som skapats från en eller flera mätningar |
-| Mått | En Quantum-mätning utförs och resultatet returneras till användaren |
+| Åtgärd | En Quantum-mätning utförs och resultatet returneras till användaren |
 | Förbereda | Ett visst register av qubits initieras i ett visst tillstånd |
 | Exempel | Ett klassiskt värde returneras slumpmässigt från en distribution |
 
@@ -96,7 +96,7 @@ Vi rekommenderar:
 
 # <a name="examples"></a>[Exempel](#tab/examples)
 
-| &nbsp;  | Name | Beskrivning |
+| &nbsp;  | Namn | Beskrivning |
 |---|------|-------------|
 | ☑ | `operation ReflectAboutStart` | Rensa användningen av ett verb ("reflektera") för att ange hur åtgärden ska fungera. |
 | ☒ | <s>`operation XRotation`</s> | Användning av en Substantiv-fras föreslår funktion i stället för åtgärd. |
@@ -113,7 +113,7 @@ Vi rekommenderar:
 
 ### <a name="entry-points"></a>Startpunkter
 
-När du definierar en start punkt i ett Q# program, Q# identifierar kompileraren [ `@EntryPoint()` attributet](xref:microsoft.quantum.core.entrypoint) och kräver att start punkterna har ett visst namn (t. ex.: `main` , `Main` eller `__main__` ).
+När du definierar en start punkt i ett Q# program, Q# identifierar kompileraren [ `@EntryPoint()` attributet](xref:Microsoft.Quantum.Core.EntryPoint) och kräver att start punkterna har ett visst namn (t. ex.: `main` , `Main` eller `__main__` ).
 Det vill säga från en Q# utvecklares perspektiv är start punkter vanliga åtgärder som är kommenterade `@EntryPoint()` .
 Dessutom Q# kan start punkter vara ingångs punkter för ett helt program (till exempel i Q# fristående körbara program) eller ett gränssnitt mellan ett Q# program och värd programmet för ett program (t. ex.: när du använder Q# med python eller .net), så att namnet "Main" kan vara missvisande när det tillämpas på en Q# Start punkt.
 
@@ -129,12 +129,12 @@ Vi rekommenderar:
 
 # <a name="examples"></a>[Exempel](#tab/examples)
 
-| &nbsp;  | Name | Beskrivning |
+| &nbsp;  | Namn | Beskrivning |
 |---|------|-------------|
 | ☑ | `@EntryPoint() operation RunSimulation` | Kommunicerar tydligt syftet med start punkten via åtgärds namn. |
 | ☒ | <s>`@EntryPoint() operation Main`</s> | Användning av `Main` är inte tydligt syftet med start punkten och är redundant med `@EntryPoint()` attribut. |
 
-***
+**_
 
 ### <a name="shorthand-and-abbreviations"></a>Kort och förkortningar ###
 
@@ -171,7 +171,7 @@ Vi rekommenderar:
 
 # <a name="examples"></a>[Exempel](#tab/examples)
 
-| &nbsp;   | Name | Beskrivning |
+| &nbsp;   | Namn | Beskrivning |
 |---|------|-------------|
 | ☑ | `X` | Välförstått kort för "tillämpa en $X $-transformering" |
 | ☑ | `CNOT` | Välförståttt snabb kort för "styrd-NOT" |
@@ -181,7 +181,7 @@ Vi rekommenderar:
 
 
 
-***
+_*_
 
 
 ### <a name="proper-nouns-in-names"></a>Rätt Substantiv i namn ###
@@ -208,14 +208,14 @@ Vi rekommenderar:
 
 # <a name="examples"></a>[Exempel](#tab/examples)
 
-***
+_*_
 
 ### <a name="type-conversions"></a>Typ konverteringar ###
 
 Eftersom Q# är ett starkt och statiskt språk skrivet, kan ett värde av en typ endast användas som ett värde av en annan typ med hjälp av ett explicit anrop till en typ konverterings funktion.
 Detta är i motsats till språk som tillåter att värden ändrar typer implicit (t. ex.: typ befordran) eller genom databyte.
 Resultatet är att typ konverterings funktioner spelar en viktig roll i Q# biblioteks utveckling och utgör ett av de vanligaste besluten om namngivning.
-Vi noterar dock att eftersom typ konverteringen alltid är _deterministisk_, kan de skrivas som funktioner och därmed omfattas av ovanstående råd.
+Vi noterar dock att eftersom typ konverteringen alltid är _deterministisk_ , kan de skrivas som funktioner och därmed omfattas av ovanstående råd.
 I synnerhet rekommenderar vi att typ konverterings funktioner aldrig ska namnges som verb (t. ex.: `ConvertToX` ) eller adverb-förpositions fraser ( `ToX` ), men ska vara namngivna som adjektiv befattnings fraser som anger käll-och mål typerna ( `XAsY` ).
 När du anger mat ris typer i typ konverterings funktions namn rekommenderar vi kort skrift `Arr` .
 Spärr av exceptionella omständigheter, vi rekommenderar att alla typer av konverterings funktioner får namnet med hjälp av `As` så att de snabbt kan identifieras.
@@ -228,14 +228,14 @@ Vi rekommenderar:
 
 # <a name="examples"></a>[Exempel](#tab/examples)
 
-| &nbsp;   | Name | Beskrivning |
+| &nbsp;   | Namn | Beskrivning |
 |---|------|-------------|
 | ☒ | <s>`ToDouble`</s> | Förpositionen "till" resulterar i en verbfras som indikerar en åtgärd och inte en funktion. |
 | ☒ | <s>`AsDouble`</s> | Indatatypen är inte klar från funktions namnet. |
 | ☒ | <s>`PauliArrFromBoolArr`</s> | Indata-och utmatnings typer visas i fel ordning. |
 | ☑ | `ResultArrAsBoolArr` | Både typerna av indata och utdata är tydliga. |
 
-***
+_*_
 
 ### <a name="private-or-internal-names"></a>Privata eller interna namn ###
 
@@ -251,12 +251,12 @@ Vi rekommenderar:
 
 # <a name="examples"></a>[Exempel](#tab/examples)
 
-| &nbsp;  | Name | Beskrivning |
+| &nbsp;  | Namn | Beskrivning |
 |---|------|-------------|
 | ☒ | <s>`operation _ApplyDecomposedOperation`</s> | Använd inte ett under streck `_` för att ange att den här åtgärden endast är för intern användning. |
 | ☑ | `internal operation ApplyDecomposedOperation` | `internal`Nyckelordet i början visar tydligt att den här åtgärden endast är för intern användning. |
 
-***
+_*_
 ### <a name="variants"></a>Varianter ###
 
 Även om den här begränsningen inte finns kvar i framtida versioner av Q# , är det oftast så att det ofta finns grupper av relaterade åtgärder eller funktioner som särskiljs genom att functors stöd för indata eller av konkreta typer av argument.
@@ -280,7 +280,7 @@ Vi rekommenderar:
 
 # <a name="examples"></a>[Exempel](#tab/examples)
 
-***
+_*_
 
 ### <a name="arguments-and-variables"></a>Argument och variabler ###
 
@@ -305,9 +305,9 @@ Vi rekommenderar:
 
 # <a name="examples"></a>[Exempel](#tab/examples)
 
-***
+_*_
 
-### <a name="user-defined-type-named-items"></a>Användardefinierad typ med namnet objekt ###
+### <a name="user-defined-type-named-items"></a>User-Defined typ med namnet objekt ###
 
 Namngivna objekt i användardefinierade typer ska namnges som `CamelCase` , även i indata till UDT-konstruktörer.
 Detta hjälper till att tydligt separera namngivna objekt från referenser till lokalt begränsade variabler när accessorns notation används (t. ex.: `callable::Apply` ) eller kopia-och-Update-notation ( `set arr w/= Data <- newData` ).
@@ -323,13 +323,13 @@ Vi rekommenderar:
 
 # <a name="examples"></a>[Exempel](#tab/examples)
 
-| &nbsp;  | Kodfragment | Description |
+| &nbsp;  | Kodfragment | Beskrivning |
 |---|---------|-------------|
 | ☑ | `newtype Oracle = (Apply : Qubit[] => Unit is Adj + Ctl)` | Namnet `Apply` är en `CamelCase` formaterad verbfras som föreslår att det namngivna objektet är en åtgärd. |
 | ☒ | <s>`newtype Oracle = (apply : Qubit[] => Unit is Adj + Ctl) `</s> | Namngivna objekt ska börja med en inledande versal bokstav. |
 | ☒ | <s>`newtype Collection = (Length : Int, Get : Int -> (Qubit => Unit)) `</s> | Namngivna objekt som löses till Functions ska namnges som Substantiv fraser, inte som verb fraser. |
 
-***
+_*_
 
 ## <a name="input-conventions"></a>Inmatade konventioner ##
 
@@ -379,7 +379,7 @@ Vi rekommenderar:
 
 # <a name="examples"></a>[Exempel](#tab/examples)
 
-***
+_*_
 
 ## <a name="documentation-conventions"></a>Dokumentations konventioner ##
 
@@ -451,7 +451,7 @@ is Adj + Ctl {
 }
 ```
 
-***
+_*_
 
 ## <a name="formatting-conventions"></a>Formatera konventioner ##
 
@@ -479,11 +479,11 @@ Vi rekommenderar:
 
 # <a name="examples"></a>[Exempel](#tab/examples)
 
-| &nbsp; | Kodfragment | Description |
+| &nbsp; | Kodfragment | Beskrivning |
 |---|---------|-------------|
 | ☒ | <s>`2+3`</s> | Använd blank steg runt binära operatorer. |
 | ☒ | <s>`target:Qubit`</s> | Använd blank steg runt Skriv anteckningens kolon. |
 | ☑ | `Example(a, b, c)` | Objekt i indataströmmen har rätt avstånd för läsbarhet. |
 | ☒ | <s>`Example (a, b, c)`</s> | Blank steg ska undertryckas efter Function-, operation-eller UDT-namn. |
 
-***
+_**

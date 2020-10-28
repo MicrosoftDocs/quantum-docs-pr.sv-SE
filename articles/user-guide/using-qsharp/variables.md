@@ -9,16 +9,16 @@ uid: microsoft.quantum.guide.variables
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: bb87f36d3c9b7df195f64e85151e833d494ea945
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: 67c71c09e004d77360902360fefc7a7752e4a829
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90835884"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92690933"
 ---
 # <a name="variables-in-no-locq"></a>Variabler i Q#
 
-Q# särskiljer mellan föränderligt och oföränderliga symboler, eller *variabler*, som är kopplade/tilldelade till uttryck.
+Q# särskiljer mellan föränderligt och oföränderliga symboler, eller *variabler* , som är kopplade/tilldelade till uttryck.
 I allmänhet uppmuntras användningen av oföränderliga symboler eftersom den tillåter kompilatorn att utföra mer optimeringar.
 
 Den vänstra sidan av en bindning består av en symbol tupel och högra sidan av ett uttryck.
@@ -40,7 +40,7 @@ Detta tilldelar en viss matris av Pauli-operatörer till variabel namnet (eller 
 > [!NOTE]
 > I föregående exempel behöver du inte uttryckligen ange typen för den nya variabeln, eftersom uttrycket till höger i `let` instruktionen är entydigt, och kompilatorn härleder rätt typ. 
 
-Variabler som definieras med `let` är *oföränderliga*, vilket innebär att du inte längre kan ändra det när du har definierat det.
+Variabler som definieras med `let` är *oföränderliga* , vilket innebär att du inte längre kan ändra det när du har definierat det.
 Detta möjliggör flera betalnings optimeringar, inklusive optimering av den klassiska logiken som används i variabler för att sorteras om för att tillämpa `Adjoint` en åtgärds variant.
 
 ## <a name="mutable-variables"></a>Föränderligt-variabler
@@ -92,7 +92,7 @@ for (q in qubits) {
 #### <a name="update-and-reassign-statements"></a>Instruktioner för uppdatering och omtilldelning
 
 Det finns en liknande sammanfogning för [kopierings-och uppdaterings uttryck](xref:microsoft.quantum.guide.expressions#copy-and-update-expressions) på den högra sidan.
-Det finns ett uttryck för *uppdatering och omtilldelning* för *namngivna objekt* i användardefinierade typer samt för *mat ris objekt*.  
+Det finns ett uttryck för *uppdatering och omtilldelning* för *namngivna objekt* i användardefinierade typer samt för *mat ris objekt* .  
 
 ```qsharp
 newtype Complex = (Re : Double, Im : Double);
@@ -110,7 +110,7 @@ function ComplexSum(reals : Double[], ims : Double[]) : Complex[] {
 }
 ```
 
-Om det finns matriser [`Microsoft.Quantum.Arrays`](xref:microsoft.quantum.arrays) Q# innehåller standard biblioteket de verktyg som krävs för många vanliga behov av initiering och manipulering av matris, och därför kan du undvika att behöva uppdatera mat ris objekt på den första platsen. 
+Om det finns matriser [`Microsoft.Quantum.Arrays`](xref:Microsoft.Quantum.Arrays) Q# innehåller standard biblioteket de verktyg som krävs för många vanliga behov av initiering och manipulering av matris, och därför kan du undvika att behöva uppdatera mat ris objekt på den första platsen. 
 
 Uppdaterings-och omtilldelnings instruktioner ger ett alternativ om det behövs:
 
@@ -135,7 +135,7 @@ operation SampleUniformDistrbution(nSamples : Int, nSteps : Int) : Double[] {
 
 ```
 
-Med hjälp av biblioteks verktygen för matriser som finns i [`Microsoft.Quantum.Arrays`](xref:microsoft.quantum.arrays) , kan du till exempel enkelt definiera en funktion som returnerar en matris med `Pauli` typer där elementet i indexet `i` tar ett givet `Pauli` värde, och alla andra poster är identiteten ( `PauliI` ).
+Med hjälp av biblioteks verktygen för matriser som finns i [`Microsoft.Quantum.Arrays`](xref:Microsoft.Quantum.Arrays) , kan du till exempel enkelt definiera en funktion som returnerar en matris med `Pauli` typer där elementet i indexet `i` tar ett givet `Pauli` värde, och alla andra poster är identiteten ( `PauliI` ).
 
 Här följer två definitioner av en sådan funktion, med den andra som drar nytta av verktygen i vårt förfogande.
 
@@ -150,7 +150,7 @@ function PauliEmbedding(pauli : Pauli, length : Int, location : Int) : Pauli[] {
 }
 ```
 
-I stället för att iterera över varje index i matrisen och villkorligt ange det till `PauliI` eller angivet `pauli` , kan du i stället använda `ConstantArray` från [`Microsoft.Quantum.Arrays`](xref:microsoft.quantum.arrays) för att skapa en mat ris `PauliI` typ och sedan bara returnera ett kopierings-och-uppdatera-uttryck där du har ändrat det aktuella värdet vid indexet `location` :
+I stället för att iterera över varje index i matrisen och villkorligt ange det till `PauliI` eller angivet `pauli` , kan du i stället använda `ConstantArray` från [`Microsoft.Quantum.Arrays`](xref:Microsoft.Quantum.Arrays) för att skapa en mat ris `PauliI` typ och sedan bara returnera ett kopierings-och-uppdatera-uttryck där du har ändrat det aktuella värdet vid indexet `location` :
 
 ```qsharp
 function PauliEmbedding(pauli : Pauli, length : Int, location : Int) : Pauli[] {

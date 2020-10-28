@@ -9,12 +9,12 @@ uid: microsoft.quantum.guide.qubits
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: aa942a61280553ae4e51cd5ddcc85c0df935dab1
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: 9a3d7e03016332a04ac9d1610428b6fcd546d1f6
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90835867"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92691588"
 ---
 # <a name="working-with-qubits"></a>Arbeta med kvantbitar
 
@@ -29,14 +29,14 @@ I den här artikeln lär du dig hur du använder och arbetar med qubits i ett Q#
 
 Eftersom fysiska qubits är en värdefull resurs på en Quantum-dator är en del av kompilatorns jobb att se till att de används så effektivt som möjligt.
 Därför måste du ange Q# att *allokera* qubits för användning i ett visst instruktions block.
-Du kan allokera qubits som en enda qubit, eller som en matris med qubits, som kallas *Registrera*. 
+Du kan allokera qubits som en enda qubit, eller som en matris med qubits, som kallas *Registrera* . 
 
 ### <a name="clean-qubits"></a>Rengör qubits
 
 Använd `using` instruktionen för att allokera nya qubits för användning under ett instruktions block.
 
 Instruktionen består av nyckelordet `using` följt av en bindning omgiven av parenteser `( )` och det instruktions block inom vilket qubits är tillgängligt.
-Bindningen följer samma mönster som- `let` instruktioner: antingen en symbol eller en tupel med symboler, följt av ett likhets tecken `=` och antingen ett enda värde eller en matchande tupel av *initierare*.
+Bindningen följer samma mönster som- `let` instruktioner: antingen en symbol eller en tupel med symboler, följt av ett likhets tecken `=` och antingen ett enda värde eller en matchande tupel av *initierare* .
 
 Initierare är tillgängliga antingen för en enskild qubit, anges som `Qubit()` eller en matris med qubits, `Qubit[n]` där `n` är ett `Int` uttryck.
 Exempel:
@@ -95,7 +95,7 @@ I en viss mening är detta allt som ett Q# program kan göra med en qubit, efter
 I den här artikeln beskrivs några användbara Q# åtgärder som du kan använda för att interagera med qubits.
 Mer information om dessa och andra finns i [inbyggda funktioner och funktioner](xref:microsoft.quantum.libraries.standard.prelude). 
 
-Först, qubit Pauli-operatörerna $X $, $Y $ och $Z $, representeras Q# av de inbyggda åtgärderna [`X`](xref:microsoft.quantum.intrinsic.x) , [`Y`](xref:microsoft.quantum.intrinsic.y) och [`Z`](xref:microsoft.quantum.intrinsic.z) , var och en av dessa är av typen `(Qubit => Unit is Adj + Ctl)` .
+Först, qubit Pauli-operatörerna $X $, $Y $ och $Z $, representeras Q# av de inbyggda åtgärderna [`X`](xref:Microsoft.Quantum.Intrinsic.X) , [`Y`](xref:Microsoft.Quantum.Intrinsic.Y) och [`Z`](xref:Microsoft.Quantum.Intrinsic.Z) , var och en av dessa är av typen `(Qubit => Unit is Adj + Ctl)` .
 
 Som det beskrivs i de [inre driften och funktionerna](xref:microsoft.quantum.libraries.standard.prelude)kan du tänka på $X $ och därmed `X` en åtgärd med bit vändning eller inte grind.
 Du kan använda `X` åtgärden för att förbereda statusarna i formatet $ \ket{s_0 s_1 \dots s_n} $ för viss klassisk bit-sträng $s $:
@@ -127,7 +127,7 @@ operation RunExample() : Unit {
 > [!TIP]
 > Senare visas fler kompakta sätt att skriva den här åtgärden som inte kräver manuellt kontroll flöde.
 
-Du kan också förbereda tillstånd som $ \ket{+} = \left (\ket {0} + \ket {1} \right)/\sqrt {2} $ och $ \ket {-} = \left (\ket {0} -\ket {1} \right)/\sqrt {2} $ genom att använda Hadamard Transform $H $, som representeras Q# av den inre åtgärden [`H`](xref:microsoft.quantum.intrinsic.h) (även av typen (qubit => Unit rejust + CTL) '):
+Du kan också förbereda tillstånd som $ \ket{+} = \left (\ket {0} + \ket {1} \right)/\sqrt {2} $ och $ \ket {-} = \left (\ket {0} -\ket {1} \right)/\sqrt {2} $ genom att använda Hadamard Transform $H $, som representeras Q# av den inre åtgärden [`H`](xref:Microsoft.Quantum.Intrinsic.H) (även av typen (qubit => Unit rejust + CTL) '):
 
 ```qsharp
 operation PreparePlusMinusState(bitstring : Bool[], register : Qubit[]) : Unit {
@@ -149,7 +149,7 @@ Mätningar av enskilda qubits kan utföras i olika baser, varje representeras av
 
 ### <a name="measure-a-single-qubit-in-the-pauliz-basis"></a>Mäta en enskild qubit baserat på `PauliZ`
 
-Använd [`M`](xref:microsoft.quantum.intrinsic.m) åtgärden, som är en inbyggd icke-enhetlig drift, för att mäta en enskild qubit i `PauliZ` grunden och tilldela ett klassiskt värde till resultatet.
+Använd [`M`](xref:Microsoft.Quantum.Intrinsic.M) åtgärden, som är en inbyggd icke-enhetlig drift, för att mäta en enskild qubit i `PauliZ` grunden och tilldela ett klassiskt värde till resultatet.
 `M` har en reserverad returtyp, `Result` som endast kan ta värden `Zero` eller `One` som motsvarar de uppmätta tillstånden $ \ket {0} $ eller $ \ket {1} $ – vilket indikerar att resultatet inte längre är ett Quantum-tillstånd.
 
 Ett enkelt exempel är följande åtgärd, som allokerar en qubit i $ \ket {0} $-tillstånd, och sedan tillämpar en Hadamard-åtgärd `H` på den och mäter resultatet på grund av detta `PauliZ` .
@@ -175,7 +175,7 @@ operation MeasureOneQubit() : Result {
 
 ### <a name="measure-one-or-more-qubits-in-specific-bases"></a>Mät en eller flera qubits i vissa baser
 
-Om du vill mäta en matris med en eller flera qubits i vissa baser kan du använda [`Measure`](xref:microsoft.quantum.intrinsic.measure) åtgärden.
+Om du vill mäta en matris med en eller flera qubits i vissa baser kan du använda [`Measure`](xref:Microsoft.Quantum.Intrinsic.Measure) åtgärden.
 
 Indatan till `Measure` är en matris med `Pauli` typer (till exempel `[PauliX, PauliZ, PauliZ]` ) och en matris med qubits.
 

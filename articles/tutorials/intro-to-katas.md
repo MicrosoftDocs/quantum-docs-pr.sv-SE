@@ -9,12 +9,12 @@ uid: microsoft.quantum.overview.katas
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 097d7f70088b6ee84a1e91ee99be59149dd9e15b
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: 6b2eff2a457b809bd168b9b59ab013b7fc7541e6
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90834830"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92691657"
 ---
 # <a name="learn-quantum-computing-with-the-quantum-katas"></a>Lära sig kvantberäkning med Quantum Katas
 
@@ -39,7 +39,7 @@ Utforska grunderna och grunderna i Quantum Computing eller gå djupare till Quan
 
 ### <a name="introduction-to-quantum-computing-concepts"></a>Introduktion till kvantberäkningsbegrepp
 
-| Kata | Description |
+| Kata | Beskrivning |
 |:-----|-------------|
 |[Komplex aritmetik](https://github.com/microsoft/QuantumKatas/tree/main/tutorials/ComplexArithmetic)|I den här självstudien beskrivs en del av den matematiska bakgrunden som krävs för att arbeta med Quantum Computing, till exempel imaginära och komplexa tal.|
 |[Linjär algebra](https://github.com/microsoft/QuantumKatas/tree/main/tutorials/LinearAlgebra)|Linjär algebra används för att representera Quantum-tillstånd och åtgärder i Quantum Computing. I den här självstudien beskrivs grunderna, inklusive matriser och vektorer.|
@@ -50,16 +50,16 @@ Utforska grunderna och grunderna i Quantum Computing eller gå djupare till Quan
 
 ### <a name="quantum-computing-fundamentals"></a>Grunderna i kvantberäkning
 
-| Kata | Description |
+| Kata | Beskrivning |
 |:-----|-------------|
 |[Känna igen kvantgrindar](https://github.com/microsoft/QuantumKatas/tree/main/BasicGates)|En serie övningar utformade för att bekanta dig med de grundläggande Quantum-portarna i Q# . Innehåller övningar för grundläggande qubit-och multi-qubit-portar, intilliggande och kontrollerade portar och hur man använder portar för att ändra tillstånd för en qubit.|
 |[Skapa en kvantsuperposition](https://github.com/microsoft/QuantumKatas/tree/main/Superposition)|Använd de här övningarna för att bekanta dig med begreppet överposition och programmering i Q# . Innehåller övningar för grundläggande qubit-och multi-qubit-portar, superposition och flödes kontroll och rekursion i Q# .|
 |[Särskilja kvanttillstånd med hjälp av mätningar](https://github.com/microsoft/QuantumKatas/tree/main/Measurements)|Lös de här övningarna och lär dig om Quantum-mått och rätvinkliga och icke-rätvinkliga stater. |
-|[Kopplade mätningar](https://github.com/microsoft/QuantumKatas/tree/main/JointMeasurements)|Lär dig mer om gemensamma paritets mätningar och hur du använder [mått](xref:microsoft.quantum.intrinsic.measure) åtgärden för att särskilja Quantum-tillstånd.|
+|[Kopplade mätningar](https://github.com/microsoft/QuantumKatas/tree/main/JointMeasurements)|Lär dig mer om gemensamma paritets mätningar och hur du använder [mått](xref:Microsoft.Quantum.Intrinsic.Measure) åtgärden för att särskilja Quantum-tillstånd.|
 
 ### <a name="algorithms"></a>Algoritmer
 
-| Kata | Description |
+| Kata | Beskrivning |
 |:-----|-------------|
 |[Kvantteleportering](https://github.com/microsoft/QuantumKatas/tree/main/Teleportation)|Den här Kata utforskar Quantum Telecommunication – ett protokoll som gör det möjligt att kommunicera ett Quantum-tillstånd med enbart klassisk kommunikation och tidigare delade Quantum entanglement.|
 |[Superdense-kodning](https://github.com/microsoft/QuantumKatas/tree/main/SuperdenseCoding)|Upptätad kodning är ett protokoll som tillåter överföring av två bitar av klassisk information genom att bara skicka en qubit med hjälp av den tidigare delade Quantum-entanglement.  |
@@ -71,7 +71,7 @@ Utforska grunderna och grunderna i Quantum Computing eller gå djupare till Quan
 
 ### <a name="protocols-and-libraries"></a>Protokoll och bibliotek
 
-| Kata | Description |
+| Kata | Beskrivning |
 |:-----|-------------|
 |[BB84-protokoll för distribution av kvantnycklar](https://github.com/microsoft/QuantumKatas/tree/main/KeyDistribution_BB84)|Läs om och implementera ett Quantum Key Distribution Protocol, [BB84](https://en.wikipedia.org/wiki/BB84), med hjälp av qubits till Exchange-kryptografiska nycklar. |
 |[Bit-flip fel vid korrigering av kod](https://github.com/microsoft/QuantumKatas/tree/main/QEC_BitFlipCode)|Utforska Quantum-felkorrigeringen med den enklaste av Quantum Error-Correction (QEC) Codes (qubit bit-flip kod).|
@@ -80,7 +80,7 @@ Utforska grunderna och grunderna i Quantum Computing eller gå djupare till Quan
 
 ### <a name="entanglement-games"></a>Sammanflätningsspel
 
-| Kata | Description |
+| Kata | Beskrivning |
 |:-----|-------------|
 |[CHSH-spel](https://github.com/microsoft/QuantumKatas/tree/main/CHSHGame)|Utforska Quantum entanglement med en implementering av [CHSH](https://en.wikipedia.org/wiki/CHSH_inequality) -spelet. Detta [icke-lokala](https://en.wikipedia.org/wiki/Quantum_refereed_game) spel visar hur Quantum entanglement kan användas för att öka spelarens chans att vinna mer än vad som skulle vara möjligt med en helt klassisk strategi.|
 |[GHZ-spel](https://github.com/microsoft/QuantumKatas/tree/main/GHZGame)|GHZ-spelet är ett annat icke-lokalt spel, men omfattar tre spelare.|

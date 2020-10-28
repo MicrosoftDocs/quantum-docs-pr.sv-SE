@@ -9,12 +9,12 @@ uid: microsoft.quantum.guide.controlflow
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 547c57cab67443e8b487bf817eb79fc922b43cdc
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: eca37202e5fe9b48dcfdec4eeb4ba6cafaac8723
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90833520"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92691087"
 ---
 # <a name="control-flow-in-no-locq"></a>Kontroll flöde i Q#
 
@@ -38,10 +38,10 @@ Det består av nyckelordet `if` , ett booleskt uttryck inom parentes och ett ins
 Valfritt antal Else-If-satser kan följa, var och en består av nyckelordet `elif` , ett booleskt uttryck inom parentes och ett instruktions block ( _Else-If-_ block).
 Slutligen kan instruktionen avslutas med en Else-sats som består av nyckelordet `else` följt av ett annat instruktions block ( _Else_ -blocket).
 
-`if`Villkoret utvärderas och om det är *Sant*körs blocket. *then*
-Om villkoret är *falskt*utvärderas det första Else-If-villkoret. om detta är sant körs *Else-If-* blocket.
+`if`Villkoret utvärderas och om det är *Sant* körs blocket. *then*
+Om villkoret är *falskt* utvärderas det första Else-If-villkoret. om detta är sant körs *Else-If-* blocket.
 Annars utvärderar det andra-IF-blocket och sedan den tredje, och så vidare tills en sats med ett True-villkor påträffas eller det inte finns några Else If-satser.
-Om det ursprungliga *IF* -villkoret och alla Else-If-satserna evalueras till *false*körs *Else* -blocket om det anges.
+Om det ursprungliga *IF* -villkoret och alla Else-If-satserna evalueras till *false* körs *Else* -blocket om det anges.
 
 Observera att det körs på det egna omfånget.
 Bindningar som görs inuti ett `if` , `elif` eller- `else` block visas inte när blocket slutar.
@@ -129,7 +129,7 @@ var `expression` är ett giltigt uttryck som utvärderas till ett värde av type
 Loop-texten körs och sedan utvärderas villkoret.
 Om villkoret är sant slutförs instruktionen. annars körs korrigeringen och instruktionen körs igen, från och med loop-texten.
 
-Alla tre delar av en ru: er-slinga (bröd texten, testet och korrigeringen) behandlas som ett enda omfång *för varje upprepning*, så symboler som är kopplade till innehållet är tillgängliga i både testet och korrigeringen.
+Alla tre delar av en ru: er-slinga (bröd texten, testet och korrigeringen) behandlas som ett enda omfång *för varje upprepning* , så symboler som är kopplade till innehållet är tillgängliga i både testet och korrigeringen.
 Att slutföra körningen av korrigeringen avslutar dock omfånget för instruktionen, så att symbol bindningar som görs under bröd texten eller korrigeringen inte är tillgängliga i efterföljande upprepningar.
 
 Vidare `fixup` är uttrycket ofta användbart men inte alltid nödvändigt.
@@ -324,7 +324,7 @@ Viktiga programmerings funktioner som visas i den här åtgärden är:
 * En mer komplex `fixup` del av slingan, som inbegriper Quantum-åtgärder. 
 * Användning av `AssertMeasurementProbability` instruktioner för att fastställa sannolikheten för att mäta Quantum-tillstånd vid vissa angivna punkter i programmet.
 
-Mer information om [`AssertMeasurement`](xref:microsoft.quantum.diagnostics.assertmeasurement) [`AssertMeasurementProbability`](xref:microsoft.quantum.diagnostics.assertmeasurementprobability) -och-åtgärder finns i [testa och felsöka](xref:microsoft.quantum.guide.testingdebugging).
+Mer information om [`AssertMeasurement`](xref:Microsoft.Quantum.Diagnostics.assertmeasurement) [`AssertMeasurementProbability`](xref:Microsoft.Quantum.Diagnostics.assertmeasurementprobability) -och-åtgärder finns i [testa och felsöka](xref:microsoft.quantum.guide.testingdebugging).
 
 ```qsharp
 operation PrepareStateUsingRUS(target : Qubit) : Unit {
