@@ -26,6 +26,8 @@
   name: '%chemistry.inputstate.load magiskt kommando'
 - href: config.md
   name: '%config magiskt kommando'
+- href: debug.md
+  name: '%debug magiskt kommando'
 - href: estimate.md
   name: '%estimate magiskt kommando'
 - href: kata.md

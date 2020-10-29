@@ -1,22 +1,23 @@
 ---
 title: Magiska kommandon för IQ#
+description: Visar en lista över de magiska kommandon som är tillgängliga i IQ# Jupyter-kärnan.
 author: rmshaffer
 uid: microsoft.quantum.iqsharp.magic-ref.index
-ms.author: rmshaffer
-ms.date: 09/29/2020
+ms.author: ryansha
+ms.date: 10/26/2020
 ms.topic: article
-ms.openlocfilehash: 934ab18b667797d09d2c8188f727e64b0017e1d5
-ms.sourcegitcommit: 685a8ab16d7e6a25e63a168d6e7c385fa6e876cc
+ms.openlocfilehash: a615c6dac6cdb80ff84cec2b0a3c99fc700efb8e
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91464682"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92691147"
 ---
 # <a name="iq-magic-commands"></a>Magiska kommandon för IQ#
 | Magiskt kommando | Sammanfattning |
 |---------------|---------|
 | [`%azure.connect`](xref:microsoft.quantum.iqsharp.magic-ref.azure.connect) | Ansluter till en Azure Quantum-arbetsyta eller visar aktuell anslutningsstatus. |
-| [`%azure.execute`](xref:microsoft.quantum.iqsharp.magic-ref.azure.execute) | Kör ett jobb på en Azure-Quantum-arbetsyta. |
+| [`%azure.execute`](xref:microsoft.quantum.iqsharp.magic-ref.azure.execute) | Skickar ett jobb till en Azure Quantum-arbetsyta och väntar på slutförande. |
 | [`%azure.jobs`](xref:microsoft.quantum.iqsharp.magic-ref.azure.jobs) | Visar en lista med jobb på den aktuella Azure Quantum-arbetsytan. |
 | [`%azure.output`](xref:microsoft.quantum.iqsharp.magic-ref.azure.output) | Visar resultat för ett jobb på den aktuella Azure Quantum-arbetsytan. |
 | [`%azure.status`](xref:microsoft.quantum.iqsharp.magic-ref.azure.status) | Visar status för ett jobb på den aktuella Azure Quantum-arbetsytan. |
@@ -29,6 +30,7 @@ ms.locfileid: "91464682"
 | [`%chemistry.fh.load`](xref:microsoft.quantum.iqsharp.magic-ref.chemistry.fh.load) | Läser in fermionisk Hamiltonian för ett elektroniskt strukturproblem. Problemet läses in från en fil eller skickas som ett argument. |
 | [`%chemistry.inputstate.load`](xref:microsoft.quantum.iqsharp.magic-ref.chemistry.inputstate.load) | Läser in det elektroniska strukturproblemet (Broombridge) och returnerar valt indatatillstånd. |
 | [`%config`](xref:microsoft.quantum.iqsharp.magic-ref.config) | Tillåter inställning av eller frågor om konfigurationsalternativ. |
+| [`%debug`](xref:microsoft.quantum.iqsharp.magic-ref.debug) | Stegar genom körningen av en viss Q#-åtgärd eller -funktion. |
 | [`%estimate`](xref:microsoft.quantum.iqsharp.magic-ref.estimate) | Kör en given funktion eller åtgärd på ResourcesEstimator-måldatorn. |
 | [`%kata`](xref:microsoft.quantum.iqsharp.magic-ref.kata) | Kör ett enskilt test. |
 | [`%lsmagic`](xref:microsoft.quantum.iqsharp.magic-ref.lsmagic) | Returnerar en lista över alla tillgängliga magiska kommandon. |

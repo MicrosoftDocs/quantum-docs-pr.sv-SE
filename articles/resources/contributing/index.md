@@ -9,12 +9,12 @@ uid: microsoft.quantum.contributing
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 0fbbe127b9f4c6b98bdc2cf0e46098bf40a816e3
-ms.sourcegitcommit: 6bf99d93590d6aa80490e88f2fd74dbbee8e0371
+ms.openlocfilehash: a8a527df59bd7ee038de71e04003cf456b094afb
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87866867"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92691773"
 ---
 # <a name="contributing-to-the-quantum-development-kit"></a>Bidra till Quantum Development Kit
 
@@ -59,6 +59,7 @@ Var och en av dessa delar finns på en särskild lagringsplats, så en av de fö
 - [**microsoft/qsharp-compiler**](https://github.com/microsoft/qsharp-compiler): Q#-kompileraren, Visual Studio-tillägget och Visual Studio Code-tillägget.
 - [**microsoft/qsharp-runtime**](https://github.com/microsoft/qsharp-runtime): Ramverk för simulering, kodgenerering och måldatorer till simulering för Quantum Development Kit.
 - [**microsoft/iqsharp**](https://github.com/microsoft/iqsharp): Jupyter-kernel och Python-värdfunktioner för Q# samt Docker-avbildningar för användning av IQ# i molnmiljöer.
+- [**microsoft/qsharp-language**](https://github.com/microsoft/qsharp-language): Det är här som nya Q#-funktioner utvecklas och anges samt där du kan dela idéer och förslag på den framtida utvecklingen av språket Q# och kärnbibliotek.
 - [**MicrosoftDocs/quantum-docs-pr**](https://github.com/MicrosoftDocs/quantum-docs-pr): Källkoden för den dokumentation som publicerats på https://docs.microsoft.com/quantum.
 
 > [!NOTE]
