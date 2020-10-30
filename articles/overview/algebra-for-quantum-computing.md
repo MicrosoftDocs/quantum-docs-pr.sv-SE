@@ -9,18 +9,18 @@ uid: microsoft.quantum.overview.algebra
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: bff1da475f87278bc9e769805b3fe0fe8704d47a
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: 3e6700acc09adf9e2e771f6289c73ad51aa2cb90
+ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90835136"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92692259"
 ---
 # <a name="linear-algebra-for-quantum-computing"></a>Linjär algebra för kvantberäkning
 
 Linjär algebra är språket för kvantberäkning. Du behöver inte kunna det för att implementera eller skriva kvantprogram, men det används ofta för att beskriva kvantbitstillstånd och kvantåtgärder samt för att förutsäga vad en kvantdator kommer att göra som svar på en sekvens med instruktioner.
 
-På samma sätt som kunskaper om [de grundläggande begreppen inom kvantfysik](xref:microsoft.quantum.overview.understanding) kan hjälpa dig att förstå kvantberäkning kan grundläggande linjär algebra vara till hjälp när du vill lära dig hur kvantalgoritmer fungerar. Du bör åtminstone ha kunskaper om **vektorer** och **matrismultiplikation**. Om du behöver uppdatera dina kunskaper om dessa algebrabegrepp finns här några självstudier som beskriver grunderna:
+På samma sätt som kunskaper om [de grundläggande begreppen inom kvantfysik](xref:microsoft.quantum.overview.understanding) kan hjälpa dig att förstå kvantberäkning kan grundläggande linjär algebra vara till hjälp när du vill lära dig hur kvantalgoritmer fungerar. Du bör åtminstone ha kunskaper om **vektorer** och **matrismultiplikation** . Om du behöver uppdatera dina kunskaper om dessa algebrabegrepp finns här några självstudier som beskriver grunderna:
 
 - [Jupyter Notebook-självstudie om linjär algebra](https://github.com/microsoft/QuantumKatas/tree/main/tutorials/LinearAlgebra)
 - [Jupyter Notebook-självstudie om komplex aritmetik](https://github.com/microsoft/QuantumKatas/tree/main/tutorials/ComplexArithmetic)
@@ -41,7 +41,7 @@ I [Kvantdatorer och kvantsimulatorer](xref:microsoft.quantum.overview.simulators
 Här följer två vanliga kvantåtgärder som representeras med matrismultiplikation.
 
 
-[`X`-åtgärden](xref:microsoft.quantum.intrinsic.x) representeras av Paulipatrisen $X$,
+[`X`-åtgärden](xref:Microsoft.Quantum.Intrinsic.X) representeras av Paulipatrisen $X$,
 
 $$X = \begin{bmatrix} 0 & 1 \\\\ 1 & 0 \end{bmatrix},$$
     
@@ -49,7 +49,7 @@ och används för att ändra status för en kvantbit från 0 till 1 (eller vice 
 
 $$\begin{bmatrix}0 &1\\\\ 1 &0\end{bmatrix}\begin{bmatrix} 1 \\\\  0 \end{bmatrix} = \begin{bmatrix} 0 \\\\  1 \end{bmatrix}.$$
 
-["H"-åtgärden](xref:microsoft.quantum.intrinsic.h) representeras av Hadamardtransformationen $H$,
+["H"-åtgärden](xref:Microsoft.Quantum.Intrinsic.H) representeras av Hadamardtransformationen $H$,
 
 $$H = \dfrac{1}{\sqrt{2}}\begin{bmatrix}1 &1\\\\ 1 &-1\end{bmatrix},$$
 
@@ -57,13 +57,13 @@ $$H = \dfrac{1}{\sqrt{2}}\begin{bmatrix}1 &1\\\\ 1 &-1\end{bmatrix},$$
 
 $$\frac{1}{\sqrt{2}}\begin{bmatrix}1 &1\\\\ 1 &-1\end{bmatrix}\begin{bmatrix} 1 \\\\  0 \end{bmatrix}=\frac{1}{\sqrt{2}}\begin{bmatrix} 1 \\\\  1 \end{bmatrix}=\left(\frac{1}{\sqrt{2}}\right)^2=\frac{1}{2}.$$
 
-En matris som representerar en kvantåtgärd har ett krav – den måste vara en **enhetlig** matris. En matris är enhetlig om **inversen** av matrisen är lika med matrisens **hermiteska konjugat**.
+En matris som representerar en kvantåtgärd har ett krav – den måste vara en **enhetlig** matris. En matris är enhetlig om **inversen** av matrisen är lika med matrisens **hermiteska konjugat** .
 
 ## <a name="representing-two-qubit-states"></a>Representera tillstånd för två kvantbitar
 
 I exemplen ovan beskrevs statusen för en kvantbit med hjälp av matrisen med en enskild kolumn $\begin{bmatrix} a \\\\  b \end{bmatrix}$, och tillämpningen av en åtgärd på den beskrevs genom multiplikation av de två matriserna. Kvantdatorer använder dock fler än en kvantbit, så hur skulle man beskriva de två kvantbitarnas kombinerade tillstånd? 
 
-Kom ihåg att varje kvantbit är ett vektorrum och därför inte kan multipliceras rakt av. I stället använder du en **tensorprodukt**, en relaterad åtgärd som skapar ett nytt vektorrum från enskilda vektorrum. Den representeras av symbolen $\otimes$. Till exempel beräknas tensorprodukten för tillståndet för två kvantbitar $\begin{bmatrix} a \\\\  b \end{bmatrix}$ and $\begin{bmatrix} c \\\\  d \end{bmatrix}$ så här:
+Kom ihåg att varje kvantbit är ett vektorrum och därför inte kan multipliceras rakt av. I stället använder du en **tensorprodukt** , en relaterad åtgärd som skapar ett nytt vektorrum från enskilda vektorrum. Den representeras av symbolen $\otimes$. Till exempel beräknas tensorprodukten för tillståndet för två kvantbitar $\begin{bmatrix} a \\\\  b \end{bmatrix}$ and $\begin{bmatrix} c \\\\  d \end{bmatrix}$ så här:
 
 $$ \begin{bmatrix} a \\\\  b \end{bmatrix} \otimes \begin{bmatrix} c \\\\  d \end{bmatrix} =\begin{bmatrix} a \begin{bmatrix} c \\\\  d \end{bmatrix} \\\\ b \begin{bmatrix}c \\\\  d \end{bmatrix} \end{bmatrix} = \begin{bmatrix} ac \\\\  ad \\\\  bc \\\\  bd \end{bmatrix}. $$
 
