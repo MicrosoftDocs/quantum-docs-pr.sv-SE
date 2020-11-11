@@ -9,12 +9,12 @@ uid: microsoft.quantum.relnotes
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: fae603a81f8edc23ab8dc14277c5e3c4699f2cee
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: d38482be17e67f180441440ee8ccc7f1f64ebc9d
+ms.sourcegitcommit: fb75d8f30f1d91f644b2a594f46867eb5968cfda
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92691683"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94448352"
 ---
 # <a name="microsoft-quantum-development-kit-release-notes"></a>Viktig information för Microsoft Quantum Development Kit
 
@@ -23,6 +23,12 @@ Den här artikeln innehåller information om varje version av Quantum Developmen
 Installationsanvisningar finns i [installationsguiden](xref:microsoft.quantum.install).
 
 Uppdateringsanvisningar finns i [uppdateringsguiden](xref:microsoft.quantum.update).
+
+## <a name="version-01320111004"></a>Version 0.13.20111004
+
+*Utgivnings datum: 10 november 2020*
+
+Den här versionen inaktiverar IntelliSense-funktioner för Q# filer i Visual Studio och Visual Studio Code när det inte finns en projekt fil. Detta löser ett problem där IntelliSense-funktioner kan sluta fungera efter att en ny fil har lagts Q# till i ett projekt (se [qsharp-compile # 720](https://github.com/microsoft/qsharp-compiler/issues/720)).
 
 ## <a name="version-01320102604"></a>Version 0.13.20102604
 
@@ -366,7 +372,7 @@ Om du har befintliga Q# projekt från version 0,5 av Quantum Development Kit fö
 > * För version 0.6 har den språkserver som ingår i Quantum Development Kit inte stöd för flera arbetsytor.
 > * För att du ska kunna arbeta med ett projekt i Visual Studio Code öppnar du den rotmapp som innehåller själva projektet och alla refererade projekt.   
 > * För att du ska kunna arbeta med en lösning i Visual Studio behöver alla projekt som finns i lösningen finnas i samma mapp som lösningen eller i någon av dess undermappar.  
-> * Referenser mellan projekt som migrerats till 0.6 och senare samt projekt som använder äldre paketversioner stöds **inte** .
+> * Referenser mellan projekt som migrerats till 0.6 och senare samt projekt som använder äldre paketversioner stöds **inte**.
 
 ## <a name="version-051904"></a>Version 0.5.1904
 
