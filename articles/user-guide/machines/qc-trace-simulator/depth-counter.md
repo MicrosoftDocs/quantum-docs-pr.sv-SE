@@ -1,14 +1,14 @@
 ---
 title: Djup räknare – Quantum Development Kit
-description: 'Lär dig mer om räknaren för Microsoft QDK-djupet, som använder Quantum trace Simulator för att samla in antalet djup för varje åtgärd som anropas i ett :::no-loc(Q#)::: program.'
+description: 'Lär dig mer om räknaren för Microsoft QDK-djupet, som använder Quantum trace Simulator för att samla in antalet djup för varje åtgärd som anropas i ett Q# program.'
 author: vadym-kl
 ms.author: vadym
 ms.date: 06/25/2020
 ms.topic: article
 uid: microsoft.quantum.machines.qc-trace-simulator.depth-counter
 no-loc:
-- ':::no-loc(Q#):::'
-- ':::no-loc($$v):::'
+- 'Q#'
+- '$$v'
 ms.openlocfilehash: 89d8a2c9f2ecd5c5332215cd4307bcf4a6422036
 ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
@@ -39,7 +39,7 @@ var sim = new QCTraceSimulator(config);
 
 ## <a name="using-the-depth-counter-in-a-c-host-program"></a><span data-ttu-id="db600-114">Använda djup räknaren i ett C#-värd program</span><span class="sxs-lookup"><span data-stu-id="db600-114">Using the depth counter in a C# host program</span></span>
 
-<span data-ttu-id="db600-115">C#-exemplet som följer i det här avsnittet beräknar `T` djupet för `CCNOT` åtgärden, baserat på följande :::no-loc(Q#)::: exempel kod:</span><span class="sxs-lookup"><span data-stu-id="db600-115">The C# example that follows in this section computes the `T` depth of the `CCNOT` operation, based on the following :::no-loc(Q#)::: sample code:</span></span>
+<span data-ttu-id="db600-115">C#-exemplet som följer i det här avsnittet beräknar `T` djupet för `CCNOT` åtgärden, baserat på följande Q# exempel kod:</span><span class="sxs-lookup"><span data-stu-id="db600-115">The C# example that follows in this section computes the `T` depth of the `CCNOT` operation, based on the following Q# sample code:</span></span>
 
 ```qsharp
 open Microsoft.Quantum.Intrinsic;

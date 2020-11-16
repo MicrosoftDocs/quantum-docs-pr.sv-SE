@@ -1,14 +1,14 @@
 ---
-title: 'Data strukturer i :::no-loc(Q#)::: standard biblioteken'
-description: 'Lär dig mer om data strukturer, Oracle och dynamiska generatorer i Microsofts :::no-loc(Q#)::: standard bibliotek.'
+title: 'Data strukturer i Q# standard biblioteken'
+description: 'Lär dig mer om data strukturer, Oracle och dynamiska generatorer i Microsofts Q# standard bibliotek.'
 author: QuantumWriter
 uid: microsoft.quantum.libraries.data-structures
 ms.author: martinro
 ms.date: 12/11/2017
 ms.topic: article
 no-loc:
-- ':::no-loc(Q#):::'
-- ':::no-loc($$v):::'
+- 'Q#'
+- '$$v'
 ms.openlocfilehash: c3ce5d531618c269d15be3e4eb58ecbb597a022c
 ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: MT
@@ -37,7 +37,7 @@ ApplyToEach(H, Snd(pair)); // No need to deconstruct to access the register.
 ### <a name="arrays"></a><span data-ttu-id="d58b4-111">Matriser</span><span class="sxs-lookup"><span data-stu-id="d58b4-111">Arrays</span></span> ###
 
 <span data-ttu-id="d58b4-112">Canon innehåller flera funktioner för att ändra matriser.</span><span class="sxs-lookup"><span data-stu-id="d58b4-112">The canon provides several functions for manipulating arrays.</span></span>
-<span data-ttu-id="d58b4-113">Dessa funktioner är Type-parameterd och kan därför användas med matriser av valfri :::no-loc(Q#)::: typ.</span><span class="sxs-lookup"><span data-stu-id="d58b4-113">These functions are type-parameterized, and thus can be used with arrays of any :::no-loc(Q#)::: type.</span></span>
+<span data-ttu-id="d58b4-113">Dessa funktioner är Type-parameterd och kan därför användas med matriser av valfri Q# typ.</span><span class="sxs-lookup"><span data-stu-id="d58b4-113">These functions are type-parameterized, and thus can be used with arrays of any Q# type.</span></span>
 <span data-ttu-id="d58b4-114">Funktionen returnerar till exempel <xref:Microsoft.Quantum.Arrays.Reversed> en ny matris vars element är i omvänd ordning från dess Indatatyp.</span><span class="sxs-lookup"><span data-stu-id="d58b4-114">For instance, the <xref:Microsoft.Quantum.Arrays.Reversed> function returns a new array whose elements are in reverse order from its input.</span></span>
 <span data-ttu-id="d58b4-115">Detta kan användas för att ändra hur ett Quantum-register representeras vid anrop av åtgärder:</span><span class="sxs-lookup"><span data-stu-id="d58b4-115">This can be used to change how a quantum register is represented when calling operations:</span></span>
 
@@ -75,7 +75,7 @@ ApplyToEach(
 <span data-ttu-id="d58b4-120">Här är termen Oracle en blackbox Quantum-underrutin som agerar på en uppsättning qubits och returnerar svaret som en fas.</span><span class="sxs-lookup"><span data-stu-id="d58b4-120">Here the term oracle refers to a blackbox quantum subroutine that acts upon a set of qubits and returns the answer as a phase.</span></span>
 <span data-ttu-id="d58b4-121">Den här subrutinen kan ofta ses som en inläsning av en Quantum-algoritm som godkänner Oracle, förutom andra parametrar, och som använder en serie Quantum-åtgärder och som behandlar ett anrop till den här Quantum-underrutinen som om det vore en grundläggande grind.</span><span class="sxs-lookup"><span data-stu-id="d58b4-121">This subroutine often can be thought of as an input to a quantum algorithm that accepts the oracle, in addition to some other parameters, and applies a series of quantum operations and treating a call to this quantum subroutine as if it were a fundamental gate.</span></span>
 <span data-ttu-id="d58b4-122">För att du ska kunna implementera den större algoritmen måste en konkret nedbrytning av Oracle till fundamental Gates tillhandahållas, men sådan dekomposition behövs inte för att förstå algoritmen som anropar Oracle.</span><span class="sxs-lookup"><span data-stu-id="d58b4-122">Obviously, in order to actually implement the larger algorithm a concrete decomposition of the oracle into fundamental gates must be provided but such a decomposition is not needed in order to understand the algorithm that calls the oracle.</span></span>
-<span data-ttu-id="d58b4-123">I :::no-loc(Q#)::: representeras den här abstraktionen med hjälp av den här typen av värden i första klass, så att åtgärder kan skickas till implementeringar av Quantum-algoritmer i ett svart-box.</span><span class="sxs-lookup"><span data-stu-id="d58b4-123">In :::no-loc(Q#):::, this abstraction is represented by using that operations are first-class values, such that operations can be passed to implementations of quantum algorithms in a black-box manner.</span></span>
+<span data-ttu-id="d58b4-123">I Q# representeras den här abstraktionen med hjälp av den här typen av värden i första klass, så att åtgärder kan skickas till implementeringar av Quantum-algoritmer i ett svart-box.</span><span class="sxs-lookup"><span data-stu-id="d58b4-123">In Q#, this abstraction is represented by using that operations are first-class values, such that operations can be passed to implementations of quantum algorithms in a black-box manner.</span></span>
 <span data-ttu-id="d58b4-124">Dessutom används användardefinierade typer för att märka olika Oracle-representationer på ett typ säkert sätt, vilket gör det svårt att oavsiktligt dela olika typer av svarta Box-åtgärder.</span><span class="sxs-lookup"><span data-stu-id="d58b4-124">Moreover, user-defined types are used to label the different oracle representations in a type-safe way, making it difficult to accidentally conflate different kinds of black box operations.</span></span>
 
 <span data-ttu-id="d58b4-125">Sådana Oracle visas i ett antal olika kontexter, inklusive berömda-exempel, till exempel [Grover search](https://en.wikipedia.org/wiki/Grover%27s_algorithm) -och Quantum simulering-algoritmer.</span><span class="sxs-lookup"><span data-stu-id="d58b4-125">Such oracles appear in a number of different contexts, including famous examples such as [Grover's search](https://en.wikipedia.org/wiki/Grover%27s_algorithm) and quantum simulation algorithms.</span></span>
@@ -192,7 +192,7 @@ is Adj + Ctl {
 <span data-ttu-id="d58b4-197">I det här sammanhanget kan vi simulera $U (t) $ för alla $t $ med en enda $R _z $-grind och eftersom sådana inte behöver begränsa skapar till enbart diskreta frågor till den enhetliga.</span><span class="sxs-lookup"><span data-stu-id="d58b4-197">In this context, we can simulate $U(t)$ for any $t$ using a single $R_z$ gate and as such do not need to restrict ourselves to only discrete queries to the unitary.</span></span>
 <span data-ttu-id="d58b4-198">En sådan kontinuerlig modell har också egenskapen att frekvenser som är större än $2 \ PI $ kan hämtas från fas uppskattnings processer som använder kontinuerliga frågor, eftersom den information som annars annars skulle maskeras av gren-klippen i logaritm-funktionen kan visas från resultaten av experiment som har utförts på värden som inte ligger i proportion till $t $.</span><span class="sxs-lookup"><span data-stu-id="d58b4-198">Such a continuous model also has the property that frequencies greater than $2\pi$ can be learned from phase estimation processes that use continuous queries because phase information that would otherwise be masked by the branch-cuts of the logarithm function can be revealed from the results of experiments performed on non-commensurate values of $t$.</span></span>
 <span data-ttu-id="d58b4-199">Därför är det inte bara lämpligt för problem som den här kontinuerliga fråg ande frågan för fas uppskattning av Oracle, men det är också bättre än den diskreta fråge modellen.</span><span class="sxs-lookup"><span data-stu-id="d58b4-199">Thus for problems such as this continuous query models for the phase estimation oracle are not only appropriate but are also preferable to the discrete query model.</span></span>
-<span data-ttu-id="d58b4-200">Av den här orsaken :::no-loc(Q#)::: finns funktioner för båda typerna av frågor och lämna dem till användaren för att bestämma en fas uppskattnings algoritm som passar deras behov och vilken typ av Oracle som är tillgänglig.</span><span class="sxs-lookup"><span data-stu-id="d58b4-200">For this reason :::no-loc(Q#)::: has functionality for both forms of queries and leave it to the user to decide upon a phase estimation algorithm to fit their needs and the type of oracle that is available.</span></span>
+<span data-ttu-id="d58b4-200">Av den här orsaken Q# finns funktioner för båda typerna av frågor och lämna dem till användaren för att bestämma en fas uppskattnings algoritm som passar deras behov och vilken typ av Oracle som är tillgänglig.</span><span class="sxs-lookup"><span data-stu-id="d58b4-200">For this reason Q# has functionality for both forms of queries and leave it to the user to decide upon a phase estimation algorithm to fit their needs and the type of oracle that is available.</span></span>
 
 ## <a name="dynamical-generator-modeling"></a><span data-ttu-id="d58b4-201">Modell för dynamisk Generator</span><span class="sxs-lookup"><span data-stu-id="d58b4-201">Dynamical Generator Modeling</span></span> ##
 

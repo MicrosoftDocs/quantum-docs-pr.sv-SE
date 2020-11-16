@@ -1,14 +1,14 @@
 ---
 title: Spårningssimulator för kvantdator – Quantum Development Kit
-description: Lär dig att använda Microsofts spårningssimulator för kvantdatorer som felsöker klassisk kod och beräknar resurskraven för ett :::no-loc(Q#):::-program.
+description: Lär dig att använda Microsofts spårningssimulator för kvantdatorer som felsöker klassisk kod och beräknar resurskraven för ett Q#-program.
 author: vadym-kl
 ms.author: vadym
 ms.date: 06/25/2020
 ms.topic: article
 uid: microsoft.quantum.machines.qc-trace-simulator.intro
 no-loc:
-- ':::no-loc(Q#):::'
-- ':::no-loc($$v):::'
+- 'Q#'
+- '$$v'
 ms.openlocfilehash: 2e2d9f8494d8709fba34123793cecce4011b609a
 ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
 ms.translationtype: HT
@@ -25,7 +25,7 @@ ms.locfileid: "92690840"
 
 ## <a name="invoking-the-quantum-trace-simulator"></a><span data-ttu-id="ab4ed-110">Anropa kvantspårningssimulatorn</span><span class="sxs-lookup"><span data-stu-id="ab4ed-110">Invoking the quantum trace simulator</span></span>
 
-<span data-ttu-id="ab4ed-111">Du kan använda kvantspårningssimulatorn till att köra valfri :::no-loc(Q#):::-åtgärd.</span><span class="sxs-lookup"><span data-stu-id="ab4ed-111">You can use the quantum trace simulator to run any :::no-loc(Q#)::: operation.</span></span>
+<span data-ttu-id="ab4ed-111">Du kan använda kvantspårningssimulatorn till att köra valfri Q#-åtgärd.</span><span class="sxs-lookup"><span data-stu-id="ab4ed-111">You can use the quantum trace simulator to run any Q# operation.</span></span>
 
 <span data-ttu-id="ab4ed-112">Precis som med andra måldatorer skapar du först en instans av klassen `QCTraceSimulator` och skickar den sedan som den första parametern för en åtgärds `Run`-metod.</span><span class="sxs-lookup"><span data-stu-id="ab4ed-112">As with other target machines, you first create an instance of the `QCTraceSimulator` class and then pass it as the first parameter of an operation's `Run` method.</span></span>
 
@@ -94,7 +94,7 @@ operation TeleportQubit(source : Qubit, target : Qubit) : Unit {
 
 ## <a name="qctracesimulator-methods"></a><span data-ttu-id="ab4ed-139">QCTraceSimulator-metoder</span><span class="sxs-lookup"><span data-stu-id="ab4ed-139">QCTraceSimulator methods</span></span>
 
-<span data-ttu-id="ab4ed-140">`QCTraceSimulator` har flera inbyggda metoder för att hämta värdena för de mått som spåras under en kvantåtgärd.</span><span class="sxs-lookup"><span data-stu-id="ab4ed-140">`QCTraceSimulator` has several built-in methods to retrieve the values of the metrics tracked during a quantum operation.</span></span> <span data-ttu-id="ab4ed-141">Exempel på [QCTraceSimulator.GetMetric](https://docs.microsoft.com/dotnet/api/microsoft.quantum.simulation.simulators.qctracesimulators.qctracesimulator.getmetric)- och [QCTraceSimulator.ToCSV](https://docs.microsoft.com/dotnet/api/microsoft.quantum.simulation.simulators.qctracesimulators.qctracesimulator.tocsv)-metoderna finns i artiklarna [Räknare för primitiva åtgärder](xref:microsoft.quantum.machines.qc-trace-simulator.primitive-counter), [Djupräknare](xref:microsoft.quantum.machines.qc-trace-simulator.depth-counter) och [Breddräknare](xref:microsoft.quantum.machines.qc-trace-simulator.width-counter).</span><span class="sxs-lookup"><span data-stu-id="ab4ed-141">Examples of the [QCTraceSimulator.GetMetric](https://docs.microsoft.com/dotnet/api/microsoft.quantum.simulation.simulators.qctracesimulators.qctracesimulator.getmetric) and the [QCTraceSimulator.ToCSV](https://docs.microsoft.com/dotnet/api/microsoft.quantum.simulation.simulators.qctracesimulators.qctracesimulator.tocsv) methods can be found in the [Primitive operations counter](xref:microsoft.quantum.machines.qc-trace-simulator.primitive-counter), [Depth counter](xref:microsoft.quantum.machines.qc-trace-simulator.depth-counter), and [Width counter](xref:microsoft.quantum.machines.qc-trace-simulator.width-counter) articles.</span></span> <span data-ttu-id="ab4ed-142">Mer information om alla tillgängliga metoder finns i [QCTraceSimulator](xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator) i :::no-loc(Q#)::: API-referensen.</span><span class="sxs-lookup"><span data-stu-id="ab4ed-142">For more information on all available methods, see [QCTraceSimulator](xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator) in the :::no-loc(Q#)::: API reference.</span></span>  
+<span data-ttu-id="ab4ed-140">`QCTraceSimulator` har flera inbyggda metoder för att hämta värdena för de mått som spåras under en kvantåtgärd.</span><span class="sxs-lookup"><span data-stu-id="ab4ed-140">`QCTraceSimulator` has several built-in methods to retrieve the values of the metrics tracked during a quantum operation.</span></span> <span data-ttu-id="ab4ed-141">Exempel på [QCTraceSimulator.GetMetric](https://docs.microsoft.com/dotnet/api/microsoft.quantum.simulation.simulators.qctracesimulators.qctracesimulator.getmetric)- och [QCTraceSimulator.ToCSV](https://docs.microsoft.com/dotnet/api/microsoft.quantum.simulation.simulators.qctracesimulators.qctracesimulator.tocsv)-metoderna finns i artiklarna [Räknare för primitiva åtgärder](xref:microsoft.quantum.machines.qc-trace-simulator.primitive-counter), [Djupräknare](xref:microsoft.quantum.machines.qc-trace-simulator.depth-counter) och [Breddräknare](xref:microsoft.quantum.machines.qc-trace-simulator.width-counter).</span><span class="sxs-lookup"><span data-stu-id="ab4ed-141">Examples of the [QCTraceSimulator.GetMetric](https://docs.microsoft.com/dotnet/api/microsoft.quantum.simulation.simulators.qctracesimulators.qctracesimulator.getmetric) and the [QCTraceSimulator.ToCSV](https://docs.microsoft.com/dotnet/api/microsoft.quantum.simulation.simulators.qctracesimulators.qctracesimulator.tocsv) methods can be found in the [Primitive operations counter](xref:microsoft.quantum.machines.qc-trace-simulator.primitive-counter), [Depth counter](xref:microsoft.quantum.machines.qc-trace-simulator.depth-counter), and [Width counter](xref:microsoft.quantum.machines.qc-trace-simulator.width-counter) articles.</span></span> <span data-ttu-id="ab4ed-142">Mer information om alla tillgängliga metoder finns i [QCTraceSimulator](xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator) i Q# API-referensen.</span><span class="sxs-lookup"><span data-stu-id="ab4ed-142">For more information on all available methods, see [QCTraceSimulator](xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator) in the Q# API reference.</span></span>  
 
 ## <a name="see-also"></a><span data-ttu-id="ab4ed-143">Se även</span><span class="sxs-lookup"><span data-stu-id="ab4ed-143">See also</span></span>
 
