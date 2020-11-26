@@ -1,30 +1,30 @@
 ---
 uid: Microsoft.Quantum.Canon.ApplyToHeadCA
 title: ApplyToHeadCA-åtgärd
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Canon
 qsharp.name: ApplyToHeadCA
 qsharp.summary: Applies an operation to the first element of an array.
-ms.openlocfilehash: 5bb016373040b1b66984405ea2bda0b8cb0c5102
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: f28cff599e06090145fac860dbaf8274c966f80a
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92729157"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96208558"
 ---
 # <a name="applytoheadca-operation"></a>ApplyToHeadCA-åtgärd
 
 Namnrymd: [Microsoft. Quantum. Canon](xref:Microsoft.Quantum.Canon)
 
-Paketfilerna [](https://nuget.org/packages/)
+Paket: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Tillämpar en åtgärd på det första elementet i en matris.
 
 ```qsharp
-operation ApplyToHeadCA<'T> (op : ('T => Unit is Adj + Ctl), targets : 'T[]) : Unit
+operation ApplyToHeadCA<'T> (op : ('T => Unit is Adj + Ctl), targets : 'T[]) : Unit is Adj + Ctl
 ```
 
 
@@ -34,7 +34,7 @@ En specifik åtgärd `op` och en matris med mål `targets` gäller `op(Head(targ
 
 ## <a name="input"></a>Indata
 
-### <a name="op--t--unit-adj--ctl"></a>OP: t => [enhet](xref:microsoft.quantum.lang-ref.unit) just + CTL
+### <a name="op--t--unit--is-adj--ctl"></a>OP: t => [enhet](xref:microsoft.quantum.lang-ref.unit)  är just + CTL
 
 En åtgärd som ska tillämpas.
 

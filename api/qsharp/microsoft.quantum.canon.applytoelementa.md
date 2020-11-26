@@ -1,30 +1,30 @@
 ---
 uid: Microsoft.Quantum.Canon.ApplyToElementA
 title: ApplyToElementA-åtgärd
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Canon
 qsharp.name: ApplyToElementA
 qsharp.summary: Applies an operation to a given element of an array.
-ms.openlocfilehash: f34089c2a45de281507cb79bde8a8cb9d2fefe47
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: e8318a7873476ee49d8e1e235e6c917a38ee6200
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92729265"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96208881"
 ---
 # <a name="applytoelementa-operation"></a>ApplyToElementA-åtgärd
 
 Namnrymd: [Microsoft. Quantum. Canon](xref:Microsoft.Quantum.Canon)
 
-Paketfilerna [](https://nuget.org/packages/)
+Paket: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Tillämpar en åtgärd på ett angivet element i en matris.
 
 ```qsharp
-operation ApplyToElementA<'T> (op : ('T => Unit is Adj), index : Int, targets : 'T[]) : Unit
+operation ApplyToElementA<'T> (op : ('T => Unit is Adj), index : Int, targets : 'T[]) : Unit is Adj
 ```
 
 
@@ -34,7 +34,7 @@ En åtgärd `op` , ett index `index` och en matris med mål `targets` , gäller 
 
 ## <a name="input"></a>Indata
 
-### <a name="op--t--unit-adj"></a>OP: t => [enhets](xref:microsoft.quantum.lang-ref.unit) justering
+### <a name="op--t--unit--is-adj"></a>OP: t => [enhet](xref:microsoft.quantum.lang-ref.unit)  är just
 
 En åtgärd som ska tillämpas.
 
