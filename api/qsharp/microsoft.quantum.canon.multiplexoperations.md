@@ -1,7 +1,7 @@
 ---
 uid: Microsoft.Quantum.Canon.MultiplexOperations
 title: MultiplexOperations-åtgärd
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Canon
@@ -12,18 +12,18 @@ qsharp.summary: >-
   That is, applies Multiply-controlled unitary operation $U$ that applies a unitary $V_j$ when controlled by $n$-qubit number state $\ket{j}$.
 
   $U = \sum^{2^n-1}_{j=0}\ket{j}\bra{j}\otimes V_j$.
-ms.openlocfilehash: 267c9c2858090ebe024fd387938e8bd2f8c76867
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: ad66b39fcfacbe5231ec3b9ba96989d6d5d449c1
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92728557"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96206110"
 ---
 # <a name="multiplexoperations-operation"></a>MultiplexOperations-åtgärd
 
 Namnrymd: [Microsoft. Quantum. Canon](xref:Microsoft.Quantum.Canon)
 
-Paketfilerna [](https://nuget.org/packages/)
+Paket: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Tillämpar en matris med åtgärder som styrs av en matris med tal tillstånd.
@@ -33,13 +33,13 @@ Det vill säga använder en multiplicering-kontrollerad enhetlig åtgärd $U $ s
 $U = \sum ^ {2 ^ n-1} _ {j = 0} \ket{j}\bra{j}\otimes V_j $.
 
 ```qsharp
-operation MultiplexOperations<'T> (unitaries : ('T => Unit is Adj + Ctl)[], index : Microsoft.Quantum.Arithmetic.LittleEndian, target : 'T) : Unit
+operation MultiplexOperations<'T> (unitaries : ('T => Unit is Adj + Ctl)[], index : Microsoft.Quantum.Arithmetic.LittleEndian, target : 'T) : Unit is Adj + Ctl
 ```
 
 
 ## <a name="input"></a>Indata
 
-### <a name="unitaries--t--unit-adj--ctl"></a>unitaries: t => [enhets](xref:microsoft.quantum.lang-ref.unit) justering + CTL []
+### <a name="unitaries--t--unit--is-adj--ctl"></a>unitaries: t => [enhet](xref:microsoft.quantum.lang-ref.unit)  är just + CTL []
 
 Matris med upp till $2 ^ n $-åtgärder. $J $ th indexeras av Number State $ \ket{j} $ som kodats i litet endian-format.
 

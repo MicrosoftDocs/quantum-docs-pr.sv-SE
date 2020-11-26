@@ -1,36 +1,36 @@
 ---
 uid: Microsoft.Quantum.Canon.MultiplexOperationsWithAuxRegister
 title: MultiplexOperationsWithAuxRegister-åtgärd
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Canon
 qsharp.name: MultiplexOperationsWithAuxRegister
 qsharp.summary: Implementation step of MultiplexOperations.
-ms.openlocfilehash: f6a90657324f8528aaa2e9e511a7f8cbcd2f540f
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 530e78ba0c5ce6e0627177527daf2ccc56f537eb
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92728539"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96205991"
 ---
 # <a name="multiplexoperationswithauxregister-operation"></a>MultiplexOperationsWithAuxRegister-åtgärd
 
 Namnrymd: [Microsoft. Quantum. Canon](xref:Microsoft.Quantum.Canon)
 
-Paketfilerna [](https://nuget.org/packages/)
+Paket: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Implementerings steg för MultiplexOperations.
 
 ```qsharp
-operation MultiplexOperationsWithAuxRegister<'T> (unitaries : ('T => Unit is Adj + Ctl)[], auxillaryRegister : Qubit[], index : Microsoft.Quantum.Arithmetic.LittleEndian, target : 'T) : Unit
+operation MultiplexOperationsWithAuxRegister<'T> (unitaries : ('T => Unit is Adj + Ctl)[], auxillaryRegister : Qubit[], index : Microsoft.Quantum.Arithmetic.LittleEndian, target : 'T) : Unit is Adj + Ctl
 ```
 
 
 ## <a name="input"></a>Indata
 
-### <a name="unitaries--t--unit-adj--ctl"></a>unitaries: t => [enhets](xref:microsoft.quantum.lang-ref.unit) justering + CTL []
+### <a name="unitaries--t--unit--is-adj--ctl"></a>unitaries: t => [enhet](xref:microsoft.quantum.lang-ref.unit)  är just + CTL []
 
 
 

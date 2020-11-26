@@ -1,30 +1,30 @@
 ---
 uid: Microsoft.Quantum.Canon.TrotterArbitraryImplCA
 title: TrotterArbitraryImplCA-åtgärd
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Canon
 qsharp.name: TrotterArbitraryImplCA
 qsharp.summary: Recursive implementation of even-order Trotter–Suzuki integrator.
-ms.openlocfilehash: 1c094d09ac8bdd71a59ef57d8715a6f90f18efc6
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 2abfbb9d51a98d8ede1b0835875a3771ffda0691
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92728323"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96204733"
 ---
 # <a name="trotterarbitraryimplca-operation"></a>TrotterArbitraryImplCA-åtgärd
 
 Namnrymd: [Microsoft. Quantum. Canon](xref:Microsoft.Quantum.Canon)
 
-Paketfilerna [](https://nuget.org/packages/)
+Paket: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Rekursiv implementering av jämnt Trotter – Suzuki Integrator.
 
 ```qsharp
-operation TrotterArbitraryImplCA<'T> (order : Int, (nSteps : Int, op : ((Int, Double, 'T) => Unit is Adj + Ctl)), stepSize : Double, target : 'T) : Unit
+operation TrotterArbitraryImplCA<'T> (order : Int, (nSteps : Int, op : ((Int, Double, 'T) => Unit is Adj + Ctl)), stepSize : Double, target : 'T) : Unit is Adj + Ctl
 ```
 
 
@@ -40,7 +40,7 @@ Ordning på Trotter-Suzuki Integrator.
 Antalet åtgärder som ska avgränsas i tids stegen.
 
 
-### <a name="op--intdoublet--unit-adj--ctl"></a>OP: ([int](xref:microsoft.quantum.lang-ref.int),[Double](xref:microsoft.quantum.lang-ref.double), t) => [enhets](xref:microsoft.quantum.lang-ref.unit) justering + CTL
+### <a name="op--intdoublet--unit--is-adj--ctl"></a>OP: ([int](xref:microsoft.quantum.lang-ref.int),[Double](xref:microsoft.quantum.lang-ref.double), t) => [enhet](xref:microsoft.quantum.lang-ref.unit)  är just + CTL
 
 En åtgärd som accepterar en index Indatatyp (typ `Int` ) och en tids Indatatyp (typ `Double` ) och ett Quantum-register (typ `'T` ) för dekomposition.
 
