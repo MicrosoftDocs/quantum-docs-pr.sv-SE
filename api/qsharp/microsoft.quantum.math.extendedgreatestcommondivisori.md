@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Math.ExtendedGreatestCommonDivisorI
 title: Funktionen ExtendedGreatestCommonDivisorI
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Math
 qsharp.name: ExtendedGreatestCommonDivisorI
 qsharp.summary: Computes a tuple $(u,v)$ such that $u \cdot a + v \cdot b = \operatorname{GCD}(a, b)$, where $\operatorname{GCD}$ is $a$ greatest common divisor of $a$ and $b$. The GCD is always positive.
-ms.openlocfilehash: 8cb21ae5052ae6c5a8aed8be71d6bd3d32034272
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 365e91e84add0d57d5a3cf203bbf23d96979b251
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92733059"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96195535"
 ---
 # <a name="extendedgreatestcommondivisori-function"></a>Funktionen ExtendedGreatestCommonDivisorI
 
 Namnrymd: [Microsoft. Quantum. matematik](xref:Microsoft.Quantum.Math)
 
-Paketfilerna [](https://nuget.org/packages/)
+Paket: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Beräknar en tupel $ (u, v) $ så att $u \cdot a + v \cdot b = \operatorname{GCD} (a, b) $, där $ \operatorname{GCD} $ är $a $ största gemensamma divisor av $a $ och $b $. GCD är alltid positivt.

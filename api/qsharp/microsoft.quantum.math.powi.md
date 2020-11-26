@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Math.PowI
 title: Funktionen PowI
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Math
 qsharp.name: PowI
 qsharp.summary: Returns a number raised to a given power.
-ms.openlocfilehash: cce48ffdb8172baa938d20cbbfc99d9eb09203ec
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: a0466cbadd324f4aec87ba043f90af99d0d74a10
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92732227"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96194686"
 ---
 # <a name="powi-function"></a>Funktionen PowI
 
 Namnrymd: [Microsoft. Quantum. matematik](xref:Microsoft.Quantum.Math)
 
-Paketfilerna [](https://nuget.org/packages/)
+Paket: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Returnerar ett tal upphöjt till en specifik potens.
