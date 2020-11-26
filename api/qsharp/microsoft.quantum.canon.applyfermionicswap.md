@@ -1,30 +1,30 @@
 ---
 uid: Microsoft.Quantum.Canon.ApplyFermionicSWAP
 title: ApplyFermionicSWAP-åtgärd
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Canon
 qsharp.name: ApplyFermionicSWAP
 qsharp.summary: Applies the Fermionic SWAP.
-ms.openlocfilehash: 25dd91b200700d1474cf27bf1d0fa71d57f2e09b
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 0c470705843a6360df0a72374570d86571397e41
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92729619"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96218809"
 ---
 # <a name="applyfermionicswap-operation"></a>ApplyFermionicSWAP-åtgärd
 
 Namnrymd: [Microsoft. Quantum. Canon](xref:Microsoft.Quantum.Canon)
 
-Paketfilerna [](https://nuget.org/packages/)
+Paket: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Tillämpar Fermionic-VÄXLINGen.
 
 ```qsharp
-operation ApplyFermionicSWAP (qubit1 : Qubit, qubit2 : Qubit) : Unit
+operation ApplyFermionicSWAP (qubit1 : Qubit, qubit2 : Qubit) : Unit is Adj + Ctl
 ```
 
 
@@ -55,7 +55,7 @@ Den andra qubit som ska växlas.
 
 ## <a name="references"></a>Referenser
 
-- [*Ryan Babbush, Nathan Wiebe, Jarrod McClean, Jonas McClain, Hartmut Neven, Garnet Kin-Lic-kanal* , arXiv: 1706.00023](https://arxiv.org/pdf/1706.00023.pdf)
+- [*Ryan Babbush, Nathan Wiebe, Jarrod McClean, Jonas McClain, Hartmut Neven, Garnet Kin-Lic-kanal*, arXiv: 1706.00023](https://arxiv.org/pdf/1706.00023.pdf)
 
 ## <a name="see-also"></a>Se även
 

@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Arrays.Rest
 title: Rest-funktion
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Arrays
 qsharp.name: Rest
 qsharp.summary: Creates an array that is equal to an input array except that the first array element is dropped.
-ms.openlocfilehash: c14e4b2902741d7ea70c895aa715cbcaa849af3e
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 4dd10b6e8839fd906ca9c2e36c89c626d5772149
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92730046"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96220406"
 ---
 # <a name="rest-function"></a>Rest-funktion
 
 Namnrymd: [Microsoft. Quantum. Arrays](xref:Microsoft.Quantum.Arrays)
 
-Paketfilerna [](https://nuget.org/packages/)
+Paket: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Skapar en matris som är lika med en indataparameter förutom att det första mat ris elementet har släppts.

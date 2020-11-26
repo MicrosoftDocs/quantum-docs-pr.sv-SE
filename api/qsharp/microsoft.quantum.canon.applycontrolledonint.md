@@ -1,30 +1,30 @@
 ---
 uid: Microsoft.Quantum.Canon.ApplyControlledOnInt
 title: ApplyControlledOnInt-åtgärd
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Canon
 qsharp.name: ApplyControlledOnInt
 qsharp.summary: Applies a unitary operation on the target register if the control register state corresponds to a specified positive integer.
-ms.openlocfilehash: c8ea76946143967de4b6ac65986a1c4407ecb633
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 3dd17e6bc913e84941a6b81f134e60536a4c4122
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92729670"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96219013"
 ---
 # <a name="applycontrolledonint-operation"></a>ApplyControlledOnInt-åtgärd
 
 Namnrymd: [Microsoft. Quantum. Canon](xref:Microsoft.Quantum.Canon)
 
-Paketfilerna [](https://nuget.org/packages/)
+Paket: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Använder en enhetlig åtgärd i mål registret om status för kontroll registret motsvarar ett angivet positivt heltal.
 
 ```qsharp
-operation ApplyControlledOnInt<'T> (numberState : Int, oracle : ('T => Unit is Adj + Ctl), controlRegister : Qubit[], targetRegister : 'T) : Unit
+operation ApplyControlledOnInt<'T> (numberState : Int, oracle : ('T => Unit is Adj + Ctl), controlRegister : Qubit[], targetRegister : 'T) : Unit is Adj + Ctl
 ```
 
 
@@ -35,7 +35,7 @@ operation ApplyControlledOnInt<'T> (numberState : Int, oracle : ('T => Unit is A
 Ett icke-negativt heltal som åtgärden `oracle` ska kontrol leras på.
 
 
-### <a name="oracle--t--unit-adj--ctl"></a>Oracle: t => [enhet](xref:microsoft.quantum.lang-ref.unit) just + CTL
+### <a name="oracle--t--unit--is-adj--ctl"></a>Oracle: t => [enhet](xref:microsoft.quantum.lang-ref.unit)  är just + CTL
 
 En enhetlig åtgärd som ska kontrol leras.
 

@@ -1,30 +1,30 @@
 ---
 uid: Microsoft.Quantum.Canon.ApplyIfElseBCA
 title: ApplyIfElseBCA-åtgärd
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Canon
 qsharp.name: ApplyIfElseBCA
 qsharp.summary: Applies one of two unitary operations, depending on the value of a classical bit.
-ms.openlocfilehash: 0ebd086f4c8166a8d6b593200b0a3354c1420c6e
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: d36b16298ea177f16b7bbb260f069bfe35b9a72f
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92729568"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96218639"
 ---
 # <a name="applyifelsebca-operation"></a>ApplyIfElseBCA-åtgärd
 
 Namnrymd: [Microsoft. Quantum. Canon](xref:Microsoft.Quantum.Canon)
 
-Paketfilerna [](https://nuget.org/packages/)
+Paket: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Använder en av två enhetliga åtgärder, beroende på värdet för en klassisk bit.
 
 ```qsharp
-operation ApplyIfElseBCA<'T, 'U> (bit : Bool, (trueOp : ('T => Unit is Adj + Ctl), trueInput : 'T), (falseOp : ('U => Unit is Adj + Ctl), falseInput : 'U)) : Unit
+operation ApplyIfElseBCA<'T, 'U> (bit : Bool, (trueOp : ('T => Unit is Adj + Ctl), trueInput : 'T), (falseOp : ('U => Unit is Adj + Ctl), falseInput : 'U)) : Unit is Adj + Ctl
 ```
 
 
@@ -39,7 +39,7 @@ Med en bit `bit` , använder åtgärden `trueOp` med `trueInput` som indatatyp n
 Det booleska värde som används för att avgöra om `trueOp` eller `falseOp` används.
 
 
-### <a name="trueop--t--unit-adj--ctl"></a>trueOp: t => [enhet](xref:microsoft.quantum.lang-ref.unit) just + CTL
+### <a name="trueop--t--unit--is-adj--ctl"></a>trueOp: t => [enhet](xref:microsoft.quantum.lang-ref.unit)  är just + CTL
 
 Den enhetliga åtgärd som ska tillämpas när `bit` är `true` .
 
@@ -49,7 +49,7 @@ Den enhetliga åtgärd som ska tillämpas när `bit` är `true` .
 Indata som ska anges till `trueOp` när `bit` är `true` .
 
 
-### <a name="falseop--u--unit-adj--ctl"></a>falseOp: ' U => [enhet](xref:microsoft.quantum.lang-ref.unit) just + CTL
+### <a name="falseop--u--unit--is-adj--ctl"></a>falseOp: ' U => [enhet](xref:microsoft.quantum.lang-ref.unit)  är just + CTL
 
 Den enhetliga åtgärd som ska tillämpas när `bit` är `false` .
 

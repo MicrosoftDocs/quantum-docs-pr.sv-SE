@@ -1,30 +1,30 @@
 ---
 uid: Microsoft.Quantum.Canon.ApplyCNOTChainWithTarget
 title: ApplyCNOTChainWithTarget-åtgärd
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Canon
 qsharp.name: ApplyCNOTChainWithTarget
 qsharp.summary: Computes the parity of an array of qubits into a target qubit.
-ms.openlocfilehash: fd0a0f3e1db89946aec2c63f3cde7a021608eea5
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 8ec85ce5805b3bbd1e1f7c739f27de3a861bc79e
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92729678"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96219115"
 ---
 # <a name="applycnotchainwithtarget-operation"></a>ApplyCNOTChainWithTarget-åtgärd
 
 Namnrymd: [Microsoft. Quantum. Canon](xref:Microsoft.Quantum.Canon)
 
-Paketfilerna [](https://nuget.org/packages/)
+Paket: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Beräknar pariteten för en matris med qubits i en mål-qubit.
 
 ```qsharp
-operation ApplyCNOTChainWithTarget (qubits : Qubit[], targetQubit : Qubit) : Unit
+operation ApplyCNOTChainWithTarget (qubits : Qubit[], targetQubit : Qubit) : Unit is Adj + Ctl
 ```
 
 
