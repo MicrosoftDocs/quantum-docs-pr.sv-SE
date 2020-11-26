@@ -9,12 +9,12 @@ uid: microsoft.quantum.relnotes
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: d38482be17e67f180441440ee8ccc7f1f64ebc9d
-ms.sourcegitcommit: fb75d8f30f1d91f644b2a594f46867eb5968cfda
+ms.openlocfilehash: 93ece8cbaa2ac8e6e0c9bb417e8f40130cb8a3fa
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94448352"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96192102"
 ---
 # <a name="microsoft-quantum-development-kit-release-notes"></a>Viktig information för Microsoft Quantum Development Kit
 
@@ -23,6 +23,18 @@ Den här artikeln innehåller information om varje version av Quantum Developmen
 Installationsanvisningar finns i [installationsguiden](xref:microsoft.quantum.install).
 
 Uppdateringsanvisningar finns i [uppdateringsguiden](xref:microsoft.quantum.update).
+
+## <a name="version-0142011120240"></a>Version 0.14.2011120240
+
+*Utgivnings datum: 25 november 2020*
+
+- Bättre kompilator prestanda på grund av snabbare referens inläsning.
+- Har lagt till en [antlr Q# -grammatik för](https://github.com/microsoft/qsharp-language/tree/main/Specifications/Language/5_Grammar) i Q# språk specifikationen.
+- Uppdaterade [ `Microsoft.Quantum.Preparation` namn området](xref:Microsoft.Quantum.Preparation) så att det blir mer konsekvent med stil guide och design principer för API, samt stöd för renade blandade tillstånd med ytterligare data (se [förslag](https://github.com/microsoft/QuantumLibraries/issues/344), [Granska anteckningar](https://github.com/microsoft/QuantumLibraries/blob/main/Design/meetings/2020/api-design-2020-11-05.md) och pull [#212](https://github.com/microsoft/QuantumLibraries/pull/212) [#322](https://github.com/microsoft/QuantumLibraries/pull/322), [#375](https://github.com/microsoft/QuantumLibraries/pull/375) [#376](https://github.com/microsoft/QuantumLibraries/pull/376)).
+- Parenteser runt upprepade anrops uttryck är nu valfria: `(Foo(x))(y)` kan skrivas som `Foo(x)(y)` .
+- Användare av Visual Studio-eller Visual Studio Code-tillägg som har installerat .NET 5 eller Visual Studio 16,8 kan uppmanas att installera .NET Core 3,1 för att fortsätta att arbeta med tilläggen.
+
+Se den fullständiga listan med stängda pull för [bibliotek](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+closed%3A2020-10-23..2020-11-18), [kompilator](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+closed%3A2020-10-23..2020-11-18), [körning](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+closed%3A2020-10-23..2020-11-18), [exempel](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+closed%3A2020-10-23..2020-11-18), [I Q# ](https://github.com/microsoft/iqsharp/pulls?q=is%3Apr+closed%3A2020-10-23..2020-11-18) och [Katas](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+closed%3A2020-10-23..2020-11-18).
 
 ## <a name="version-01320111004"></a>Version 0.13.20111004
 
@@ -240,7 +252,7 @@ Den här versionen innehåller följande:
 
 Se den fullständiga listan med stängda PR:er för [bibliotek](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed), [kompilator](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+is%3Aclosed), [runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+is%3Aclosed), [exempel](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed) och [Katas](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+is%3Aclosed).  
 
-## <a name="version-09-packagereference-0919082902"></a>Version 0.9 ( *PackageReference 0.9.1908.2902* )
+## <a name="version-09-packagereference-0919082902"></a>Version 0.9 (*PackageReference 0.9.1908.2902*)
 
 *Utgivningsdatum: 29 augusti 2019*
 
@@ -257,7 +269,7 @@ Se den fullständiga listan med stängda PR:er för [bibliotek](https://github.c
 
 Ändringarna sammanfattas här, och det finns anvisningar för hur du uppgraderar dina befintliga program.  Läs mer om de här ändringarna på [ Q# dev-bloggen](https://devblogs.microsoft.com/qsharp).
 
-## <a name="version-08-packagereference-0819071701"></a>Version 0.8 ( *PackageReference 0.8.1907.1701* )
+## <a name="version-08-packagereference-0819071701"></a>Version 0.8 (*PackageReference 0.8.1907.1701*)
 
 *Utgivningsdatum: 12 juli 2019*
 
@@ -269,7 +281,7 @@ Den här versionen innehåller följande:
 
 Se den fullständiga listan med stängda PR:er för [bibliotek](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed) och [exempel](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed).  
 
-## <a name="version-07-packagereference-0719053109"></a>Version 0.7 ( *PackageReference 0.7.1905.3109* )
+## <a name="version-07-packagereference-0719053109"></a>Version 0.7 (*PackageReference 0.7.1905.3109*)
 
 *Utgivningsdatum: 31 maj 2019*
 

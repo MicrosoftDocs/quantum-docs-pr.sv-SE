@@ -1,30 +1,39 @@
 ---
 uid: Microsoft.Quantum.Preparation.PrepareArbitraryState
 title: PrepareArbitraryState-åtgärd
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Preparation
 qsharp.name: PrepareArbitraryState
-qsharp.summary: Given a set of coefficients and a little-endian encoded quantum register, prepares an state on that register described by the given coefficients.
-ms.openlocfilehash: 18f45da601b02fc5f83936b086323e31a66fc20b
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+qsharp.summary: >-
+  > [!WARNING]
+
+  > PrepareArbitraryState has been deprecated. Please use <xref:Microsoft.Quantum.Preparation.PrepareArbitraryStateCP> instead.
+
+
+  Given a set of coefficients and a little-endian encoded quantum register, prepares an state on that register described by the given coefficients.
+ms.openlocfilehash: 18a1e86f8e110a8f48d7dd50961e1f1f471ffc4e
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92733243"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96190708"
 ---
 # <a name="preparearbitrarystate-operation"></a>PrepareArbitraryState-åtgärd
 
 Namnrymd: [Microsoft. Quantum. Preparation](xref:Microsoft.Quantum.Preparation)
 
-Paketfilerna [](https://nuget.org/packages/)
+Paket: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
+
+> [!WARNING]
+> PrepareArbitraryState är föråldrad. Använd <xref:Microsoft.Quantum.Preparation.PrepareArbitraryStateCP> i stället.
 
 Med hänsyn till en uppsättning koefficienter och ett litet endian-kodat Quantum-register, förbereder ett tillstånd i detta register som beskrivs av de angivna koefficienterna.
 
 ```qsharp
-operation PrepareArbitraryState (coefficients : Microsoft.Quantum.Math.ComplexPolar[], qubits : Microsoft.Quantum.Arithmetic.LittleEndian) : Unit
+operation PrepareArbitraryState (coefficients : Microsoft.Quantum.Math.ComplexPolar[], qubits : Microsoft.Quantum.Arithmetic.LittleEndian) : Unit is Adj + Ctl
 ```
 
 

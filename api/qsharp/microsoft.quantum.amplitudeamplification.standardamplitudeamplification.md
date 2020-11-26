@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.AmplitudeAmplification.StandardAmplitudeAmplification
 title: Funktionen StandardAmplitudeAmplification
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.AmplitudeAmplification
 qsharp.name: StandardAmplitudeAmplification
 qsharp.summary: Standard Amplitude Amplification algorithm
-ms.openlocfilehash: 18228d45c4df280b004c595a7b0f1e2a607b8b2c
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 23a2b3dbe5ea404059994167f69e11458c0c22ea
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92731931"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96191184"
 ---
 # <a name="standardamplitudeamplification-function"></a>Funktionen StandardAmplitudeAmplification
 
 Namnrymd: [Microsoft. Quantum. AmplitudeAmplification](xref:Microsoft.Quantum.AmplitudeAmplification)
 
-Paketfilerna [](https://nuget.org/packages/)
+Paket: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Standardalgoritm för Amplituds förstärkning
@@ -46,7 +46,7 @@ Index för att flagga qubit
 
 
 
-## <a name="output--qubit--unit-adj--ctl"></a>Utdata: [qubit](xref:microsoft.quantum.lang-ref.qubit)[] => [enhet](xref:microsoft.quantum.lang-ref.unit) just + CTL
+## <a name="output--qubit--unit--is-adj--ctl"></a>Output: [qubit](xref:microsoft.quantum.lang-ref.qubit)[] => [enhet](xref:microsoft.quantum.lang-ref.unit)  är just + CTL
 
 En åtgärd som implementerar en Quantum-algoritm för standard amplituds förstärkning
 
