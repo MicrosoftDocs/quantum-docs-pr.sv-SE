@@ -1,19 +1,19 @@
 ---
 uid: Microsoft.Quantum.Extensions.Diagnostics
 title: Namn område för Microsoft. Quantum. Extensions. Diagnostics
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: namespace
 qsharp.name: Microsoft.Quantum.Extensions.Diagnostics
 qsharp.summary: ''
-ms.openlocfilehash: 669c633e5e5d0b83362f63366d97b4373adaf35e
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 6e2599971212d84acf8deb96465d324d8656a124
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92726256"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96213250"
 ---
-# <a name="microsoftquantumextensionsdiagnostics-namespace"></a><span data-ttu-id="58358-102">Namn område för Microsoft. Quantum. Extensions. Diagnostics</span><span class="sxs-lookup"><span data-stu-id="58358-102">Microsoft.Quantum.Extensions.Diagnostics namespace</span></span>
+# <a name="microsoftquantumextensionsdiagnostics-namespace"></a><span data-ttu-id="c25eb-102">Namn område för Microsoft. Quantum. Extensions. Diagnostics</span><span class="sxs-lookup"><span data-stu-id="c25eb-102">Microsoft.Quantum.Extensions.Diagnostics namespace</span></span>
 
 
 

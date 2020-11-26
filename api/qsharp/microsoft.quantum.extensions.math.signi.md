@@ -1,7 +1,7 @@
 ---
 uid: Microsoft.Quantum.Extensions.Math.SignI
 title: Funktionen signi
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Extensions.Math
@@ -14,24 +14,24 @@ qsharp.summary: >-
   >
 
   > Please use @"microsoft.quantum.math.signi".
-ms.openlocfilehash: eac53109e5ce9ff96a50bb124c4d3099cefca0de
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 81aae2c97af14eee4eb70a3c878fdf36c9f63b40
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92726082"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96212706"
 ---
-# <a name="signi-function"></a><span data-ttu-id="a4302-102">Funktionen signi</span><span class="sxs-lookup"><span data-stu-id="a4302-102">SignI function</span></span>
+# <a name="signi-function"></a><span data-ttu-id="d3ce4-102">Funktionen signi</span><span class="sxs-lookup"><span data-stu-id="d3ce4-102">SignI function</span></span>
 
-<span data-ttu-id="a4302-103">Namnrymd: [Microsoft. Quantum. Extensions. math](xref:Microsoft.Quantum.Extensions.Math)</span><span class="sxs-lookup"><span data-stu-id="a4302-103">Namespace: [Microsoft.Quantum.Extensions.Math](xref:Microsoft.Quantum.Extensions.Math)</span></span>
+<span data-ttu-id="d3ce4-103">Namnrymd: [Microsoft. Quantum. Extensions. math](xref:Microsoft.Quantum.Extensions.Math)</span><span class="sxs-lookup"><span data-stu-id="d3ce4-103">Namespace: [Microsoft.Quantum.Extensions.Math](xref:Microsoft.Quantum.Extensions.Math)</span></span>
 
-<span data-ttu-id="a4302-104">Paketfilerna [](https://nuget.org/packages/)</span><span class="sxs-lookup"><span data-stu-id="a4302-104">Package: [](https://nuget.org/packages/)</span></span>
+<span data-ttu-id="d3ce4-104">Paket: [Microsoft. Quantum. QSharp. Core](https://nuget.org/packages/Microsoft.Quantum.QSharp.Core)</span><span class="sxs-lookup"><span data-stu-id="d3ce4-104">Package: [Microsoft.Quantum.QSharp.Core](https://nuget.org/packages/Microsoft.Quantum.QSharp.Core)</span></span>
 
 
 > [!WARNING]
-> <span data-ttu-id="a4302-105">Inloggningen är inaktuell.</span><span class="sxs-lookup"><span data-stu-id="a4302-105">SignI has been deprecated.</span></span> <span data-ttu-id="a4302-106">Använd <xref:Microsoft.Quantum.Math.SignI> i stället.</span><span class="sxs-lookup"><span data-stu-id="a4302-106">Please use <xref:Microsoft.Quantum.Math.SignI> instead.</span></span>
+> <span data-ttu-id="d3ce4-105">Inloggningen är inaktuell.</span><span class="sxs-lookup"><span data-stu-id="d3ce4-105">SignI has been deprecated.</span></span> <span data-ttu-id="d3ce4-106">Använd <xref:Microsoft.Quantum.Math.SignI> i stället.</span><span class="sxs-lookup"><span data-stu-id="d3ce4-106">Please use <xref:Microsoft.Quantum.Math.SignI> instead.</span></span>
 >
-> <span data-ttu-id="a4302-107">Använd @"microsoft.quantum.math.signi".</span><span class="sxs-lookup"><span data-stu-id="a4302-107">Please use @"microsoft.quantum.math.signi".</span></span>
+> <span data-ttu-id="d3ce4-107">Använd @"microsoft.quantum.math.signi".</span><span class="sxs-lookup"><span data-stu-id="d3ce4-107">Please use @"microsoft.quantum.math.signi".</span></span>
 
 
 
@@ -40,13 +40,13 @@ function SignI (a : Int) : Int
 ```
 
 
-## <a name="input"></a><span data-ttu-id="a4302-108">Indata</span><span class="sxs-lookup"><span data-stu-id="a4302-108">Input</span></span>
+## <a name="input"></a><span data-ttu-id="d3ce4-108">Indata</span><span class="sxs-lookup"><span data-stu-id="d3ce4-108">Input</span></span>
 
-### <a name="a--int"></a><span data-ttu-id="a4302-109">a: [int](xref:microsoft.quantum.lang-ref.int)</span><span class="sxs-lookup"><span data-stu-id="a4302-109">a : [Int](xref:microsoft.quantum.lang-ref.int)</span></span>
-
-
+### <a name="a--int"></a><span data-ttu-id="d3ce4-109">a: [int](xref:microsoft.quantum.lang-ref.int)</span><span class="sxs-lookup"><span data-stu-id="d3ce4-109">a : [Int](xref:microsoft.quantum.lang-ref.int)</span></span>
 
 
 
-## <a name="output--int"></a><span data-ttu-id="a4302-110">Utdata: [int](xref:microsoft.quantum.lang-ref.int)</span><span class="sxs-lookup"><span data-stu-id="a4302-110">Output : [Int](xref:microsoft.quantum.lang-ref.int)</span></span>
+
+
+## <a name="output--int"></a><span data-ttu-id="d3ce4-110">Utdata: [int](xref:microsoft.quantum.lang-ref.int)</span><span class="sxs-lookup"><span data-stu-id="d3ce4-110">Output : [Int](xref:microsoft.quantum.lang-ref.int)</span></span>
 
