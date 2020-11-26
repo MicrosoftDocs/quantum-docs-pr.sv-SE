@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Canon.ConjugatedByCA
 title: Funktionen ConjugatedByCA
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Canon
 qsharp.name: ConjugatedByCA
 qsharp.summary: Given outer and inner operations, returns a new operation that conjugates the inner operation by the outer operation.
-ms.openlocfilehash: df29bcf555026bceb13d6896db12e13671a49b9f
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: acd5a9f796f751b9c9c374d841e80de9286fcd24
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92728821"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96207317"
 ---
 # <a name="conjugatedbyca-function"></a>Funktionen ConjugatedByCA
 
 Namnrymd: [Microsoft. Quantum. Canon](xref:Microsoft.Quantum.Canon)
 
-Paketfilerna [](https://nuget.org/packages/)
+Paket: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Vissa yttre och inre åtgärder returnerar en ny åtgärd som konjugaterar den inre åtgärden med den yttre åtgärden.
@@ -30,18 +30,18 @@ function ConjugatedByCA<'T> (outerOperation : ('T => Unit is Adj), innerOperatio
 
 ## <a name="input"></a>Indata
 
-### <a name="outeroperation--t--unit-adj"></a>outerOperation: t => [enhets](xref:microsoft.quantum.lang-ref.unit) justering
+### <a name="outeroperation--t--unit--is-adj"></a>outerOperation: t => [enhet](xref:microsoft.quantum.lang-ref.unit)  är just just
 
 Åtgärden $U $ som ska användas för att konjugata $V $. Observera att den yttre åtgärden $U $ måste vara adjointable, men behöver inte vara kontrollerbar.
 
 
-### <a name="inneroperation--t--unit-adj--ctl"></a>innerOperation: t => [enhet](xref:microsoft.quantum.lang-ref.unit) just + CTL
+### <a name="inneroperation--t--unit--is-adj--ctl"></a>innerOperation: t => [enhet](xref:microsoft.quantum.lang-ref.unit)  är just + CTL
 
 Åtgärden $V $ som är konjugaten.
 
 
 
-## <a name="output--t--unit-adj--ctl"></a>Utdata: t => [enhet](xref:microsoft.quantum.lang-ref.unit) just + CTL
+## <a name="output--t--unit--is-adj--ctl"></a>Utdata: t => [enhet](xref:microsoft.quantum.lang-ref.unit)  är just + CTL
 
 En ny åtgärd vars åtgärd representeras av den enhetliga $U ^ {\dagger} V U $.
 

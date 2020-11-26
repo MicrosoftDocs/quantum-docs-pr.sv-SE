@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Canon.DelayedA
 title: Fördröjd funktion
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Canon
 qsharp.name: DelayedA
 qsharp.summary: Returns an operation that applies given operation with given argument.
-ms.openlocfilehash: 11c11cdd75d80d6324666ef56930f7a522121826
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 33ff4dab36a6c6e17b9496a623f70b814c9f2fed
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92728734"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96207079"
 ---
 # <a name="delayeda-function"></a>Fördröjd funktion
 
 Namnrymd: [Microsoft. Quantum. Canon](xref:Microsoft.Quantum.Canon)
 
-Paketfilerna [](https://nuget.org/packages/)
+Paket: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Returnerar en åtgärd som tillämpar den åtgärd som har angivet argument.
@@ -30,7 +30,7 @@ function DelayedA<'T> (op : ('T => Unit is Adj), arg : 'T) : (Unit => Unit is Ad
 
 ## <a name="input"></a>Indata
 
-### <a name="op--t--unit-adj"></a>OP: t => [enhets](xref:microsoft.quantum.lang-ref.unit) justering
+### <a name="op--t--unit--is-adj"></a>OP: t => [enhet](xref:microsoft.quantum.lang-ref.unit)  är just
 
 En åtgärd som ska tillämpas på grund av att ett retur värde tillämpas
 
@@ -41,7 +41,7 @@ De indatatyper som åtgärden `op` tillämpas på.
 
 
 
-## <a name="output--unit--unit-adj"></a>Utdata: [enhets](xref:microsoft.quantum.lang-ref.unit) => [enhets](xref:microsoft.quantum.lang-ref.unit) justering
+## <a name="output--unit--unit--is-adj"></a>Utdata: [enhets](xref:microsoft.quantum.lang-ref.unit) => [enhet](xref:microsoft.quantum.lang-ref.unit)  är just
 
 En ny åtgärd som gäller `op` för inmatade `arg`
 

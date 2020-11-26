@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Canon.DelayedC
 title: Funktionen DelayedC
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Canon
 qsharp.name: DelayedC
 qsharp.summary: Returns an operation that applies given operation with given argument.
-ms.openlocfilehash: 7cfd77b0bb2d91c5a1c4bb5bc84e052421d733a9
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: d8036397559b1587b806f701d89e892eea2da8f9
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92728719"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96207027"
 ---
 # <a name="delayedc-function"></a>Funktionen DelayedC
 
 Namnrymd: [Microsoft. Quantum. Canon](xref:Microsoft.Quantum.Canon)
 
-Paketfilerna [](https://nuget.org/packages/)
+Paket: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Returnerar en åtgärd som tillämpar den åtgärd som har angivet argument.
@@ -30,7 +30,7 @@ function DelayedC<'T> (op : ('T => Unit is Ctl), arg : 'T) : (Unit => Unit is Ct
 
 ## <a name="input"></a>Indata
 
-### <a name="op--t--unit-ctl"></a>OP: t => [enhet](xref:microsoft.quantum.lang-ref.unit) CTL
+### <a name="op--t--unit--is-ctl"></a>OP: t => [enheten](xref:microsoft.quantum.lang-ref.unit)  är CTL
 
 En åtgärd som ska tillämpas på grund av att ett retur värde tillämpas
 
@@ -41,7 +41,7 @@ De indatatyper som åtgärden `op` tillämpas på.
 
 
 
-## <a name="output--unit--unit-ctl"></a>Utdata: [enhets](xref:microsoft.quantum.lang-ref.unit) => [enhet](xref:microsoft.quantum.lang-ref.unit) , CTL
+## <a name="output--unit--unit--is-ctl"></a>Utdata: [enhets](xref:microsoft.quantum.lang-ref.unit) => [enhet](xref:microsoft.quantum.lang-ref.unit)  är CTL
 
 En ny åtgärd som gäller `op` för inmatade `arg`
 

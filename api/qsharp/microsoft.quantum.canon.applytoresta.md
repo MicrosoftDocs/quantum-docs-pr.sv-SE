@@ -1,30 +1,30 @@
 ---
 uid: Microsoft.Quantum.Canon.ApplyToRestA
 title: ApplyToRestA-åtgärd
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Canon
 qsharp.name: ApplyToRestA
 qsharp.summary: Applies an operation to all but the first element of an array.
-ms.openlocfilehash: 99a18e835115491cc3451a4e3b44a6ff70e9dc6c
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 34cb5071dd939d0831e39bb8f1670670ae1fad31
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92729091"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96208318"
 ---
 # <a name="applytoresta-operation"></a>ApplyToRestA-åtgärd
 
 Namnrymd: [Microsoft. Quantum. Canon](xref:Microsoft.Quantum.Canon)
 
-Paketfilerna [](https://nuget.org/packages/)
+Paket: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Tillämpar en åtgärd på alla utom det första elementet i en matris.
 
 ```qsharp
-operation ApplyToRestA<'T> (op : ('T[] => Unit is Adj), targets : 'T[]) : Unit
+operation ApplyToRestA<'T> (op : ('T[] => Unit is Adj), targets : 'T[]) : Unit is Adj
 ```
 
 
@@ -34,7 +34,7 @@ En specifik åtgärd `op` och en matris med mål `targets` gäller `op(Rest(targ
 
 ## <a name="input"></a>Indata
 
-### <a name="op--t--unit-adj"></a>OP: ' t [] => [enhets](xref:microsoft.quantum.lang-ref.unit) justering
+### <a name="op--t--unit--is-adj"></a>OP: ' t [] => [enhet](xref:microsoft.quantum.lang-ref.unit)  är just
 
 En åtgärd som ska tillämpas.
 
