@@ -87,7 +87,7 @@ författare: bradben MS. author: v-benbra MS. Date: 9/1/2020 MS. topic: artikel-
 
 ## <a name="adjoint"></a>Angränsande
 
-Den komplexa konjugats transponeren för en [åtgärd](xref:microsoft.quantum.glossary#operation). För åtgärder som implementerar en [enhetlig](xref:microsoft.quantum.glossary#unitary-operator) operator är det intilliggande är inversen till åtgärden och anges av en Dagger symbol. Om åtgärden till exempel `U` representerar den enhetliga operatorn $ u $ , `Adjoint U` motsvarar $ u ^ \dagger $ . Mer information finns i [angränsande](xref:microsoft.quantum.guide.operationsfunctions#controlled-and-adjoint-operations).
+Den komplexa konjugats transponeren för en [åtgärd](xref:microsoft.quantum.glossary#operation). För åtgärder som implementerar en [enhetlig](xref:microsoft.quantum.glossary#unitary-operator) operator är det intilliggande är inversen till åtgärden och anges av en Dagger symbol. Om åtgärden till exempel `U` representerar den enhetliga operatorn $ u $ , `Adjoint U` motsvarar $ u ^ \dagger $ . Mer information finns i [Functor-program](xref:microsoft.quantum.qsharp.functorapplication#functor-application).
 
 ## <a name="ancilla"></a>Ancilla
 
@@ -103,7 +103,8 @@ En grafisk representation av ett[qubit](xref:microsoft.quantum.glossary#qubit) [
 
 ## <a name="callable"></a>Anropningsbara
 
-En [funktion](xref:microsoft.quantum.glossary#operation) eller [funktion](xref:microsoft.quantum.glossary#function) på Q# språket. Mer information finns i [åtgärder och funktioner](xref:microsoft.quantum.guide.operationsfunctions).
+En [funktion](xref:microsoft.quantum.glossary#operation) eller [funktion](xref:microsoft.quantum.glossary#function) på [ Q# språket](https://github.com/microsoft/qsharp-language/tree/main/Specifications/Language#q-language).
+Mer information finns i [ Q# program](xref:microsoft.quantum.guide.programs)
 
 ## <a name="clifford-group"></a>Clifford-grupp
 
@@ -111,7 +112,7 @@ Den uppsättning åtgärder som upptar octants för Bloch- [sfären](xref:micros
 
 ## <a name="controlled"></a>Styr
 
-En Quantum- [åtgärd](xref:microsoft.quantum.glossary#operation) som tar en eller flera [qubits](xref:microsoft.quantum.glossary#qubit) som aktiveringar för mål åtgärden. Mer information finns i [kontrollerade och närliggande aktiviteter](xref:microsoft.quantum.guide.operationsfunctions#controlled-and-adjoint-operations).
+En Quantum- [åtgärd](xref:microsoft.quantum.glossary#operation) som tar en eller flera [qubits](xref:microsoft.quantum.glossary#qubit) som aktiveringar för mål åtgärden. Mer information finns i [Functor-program](xref:microsoft.quantum.qsharp.functorapplication#functor-application).
 
 ## <a name="dirac-notation"></a>Dirac-notation
 
@@ -138,11 +139,11 @@ Ett av fyra olika maximally Entangled [Quantum-tillstånd](xref:microsoft.quantu
 Hur ett [Quantum-tillstånd](xref:microsoft.quantum.glossary#quantum-state) ändras med tiden. Mer information finns i [matriss exponentieller](xref:microsoft.quantum.concepts.matrix-advanced#matrix-exponentials).
 
 ## <a name="function"></a>Funktion
-En typ av underrutin på det Q# språk som är rent Klassiskt (icke-Quantum). Medan Functions används i Quantum-algoritmer, kan de inte agera på [qubits](xref:microsoft.quantum.glossary#qubit) -eller anrops [åtgärder](xref:microsoft.quantum.glossary#operation). Mer information finns i [åtgärder och funktioner](xref:microsoft.quantum.guide.operationsfunctions).
+En typ av subrutin på det Q# språk som är rent deterministisk. Medan Functions används i Quantum-algoritmer, kan de inte agera på [qubits](xref:microsoft.quantum.glossary#qubit) -eller anrops [åtgärder](xref:microsoft.quantum.glossary#operation). Mer information finns i [ Q# program](xref:microsoft.quantum.guide.programs)
 
 ## <a name="gate"></a>Gate
 
-En äldre term för en Quantum- [åtgärd](xref:microsoft.quantum.glossary#operation)baserat på begreppet klassiska Logic-grindar. En [Quantum-krets](xref:microsoft.quantum.glossary#quantum-circuit-diagram) är ett nätverk av portar (eller åtgärder), baserat på liknande koncept av klassiska Logic-kretsar.
+En äldre term för vissa inbyggda Quantum- [åtgärder](xref:microsoft.quantum.glossary#operation), baserat på begreppet klassiska Logic-grindar. En [Quantum-krets](xref:microsoft.quantum.glossary#quantum-circuit-diagram) är ett nätverk av portar, baserat på liknande koncept som klassiska Logic-kretsar.
 
 ## <a name="global-phase"></a>Global fas
 
@@ -166,15 +167,11 @@ En variabel vars värde kan ändras efter att det har skapats. En föränderligt
 
 ## <a name="namespace"></a>Namnområde
 
-En etikett för en samling relaterade namn (t. ex. [åtgärder](xref:microsoft.quantum.glossary#operation), [funktioner](xref:microsoft.quantum.glossary#function)och [användardefinierade typer](xref:microsoft.quantum.glossary#user-defined-type)). Till exempel märks namn området [Microsoft. Quantum. Preparation](xref:microsoft.quantum.preparation) med alla symboler som definierats i standard biblioteket som hjälper till att förbereda de ursprungliga tillstånden.
+En etikett för en samling relaterade namn (t. ex. [åtgärder](xref:microsoft.quantum.glossary#operation), [funktioner](xref:microsoft.quantum.glossary#function)och [användardefinierade typer](xref:microsoft.quantum.glossary#user-defined-type)). Till exempel märks namn området [Microsoft. Quantum. Preparation](xref:Microsoft.Quantum.Preparation) med alla symboler som definierats i standard biblioteket som hjälper till att förbereda de ursprungliga tillstånden.
 
 ## <a name="operation"></a>Åtgärd
 
-Den grundläggande enheten för Quantum-beräkning i Q# . Det är ungefär detsamma som en funktion i C, C++ eller python, eller en statisk metod i C# eller Java. Mer information finns i [åtgärder och funktioner](xref:microsoft.quantum.guide.operationsfunctions).
-
-## <a name="operator-application"></a>Operatörs program
-
-Utföra en Quantum-åtgärd. Detta använder vanligt vis en enhetlig matris till den aktuella Quantum-delläges vektorn.
+Den grundläggande enheten för Quantum-beräkning i Q# . Det är ungefär detsamma som en funktion i C, C++ eller python, eller en statisk metod i C# eller Java. Mer information finns i [ Q# program](xref:microsoft.quantum.guide.programs).
 
 ## <a name="oracle"></a>Oracle
 
@@ -182,7 +179,7 @@ En subrutin som tillhandahåller data beroende information till en Quantum-algor
 
 ## <a name="partial-application"></a>Partiellt program
 
-Anropa en [funktion](xref:microsoft.quantum.glossary#function) eller [åtgärd](xref:microsoft.quantum.glossary#operation) utan alla nödvändiga indata. Detta returnerar en ny [uppringning](xref:microsoft.quantum.glossary#callable) som bara behöver de parametrar som saknas (vilket indikeras av ett under streck) som ska levereras under ett framtida program. Till exempel `MyFunc(x : int, y : int) : int {return x + y;}` kan du använda funktionen för att delvis tillämpa den på en ny funktion `let NewFunc = MyFunc(_, 3)` . Du kan sedan anropa den nya funktionen vid ett senare tillfälle med den saknade parametern `NewFunc(2)` som returnerar värdet *5* .  Mer information finns i [partiellt program](xref:microsoft.quantum.guide.operationsfunctions#partial-application).
+Anropa en [funktion](xref:microsoft.quantum.glossary#function) eller [åtgärd](xref:microsoft.quantum.glossary#operation) utan alla nödvändiga indata. Detta returnerar en ny [uppringning](xref:microsoft.quantum.glossary#callable) som bara behöver de parametrar som saknas (vilket indikeras av ett under streck) som ska levereras under ett framtida program. Mer information finns i [partiellt program](xref:microsoft.quantum.qsharp.partialapplication).
 
 ## <a name="pauli-operators"></a>Pauli-operatörer
 
@@ -190,7 +187,7 @@ En uppsättning med 3 2 x 2-matriser som kallas `X` , `Y` och Quantum- `Z` åtg�
 
 ## <a name="quantum-circuit-diagram"></a>Diagram över Quantum-krets
 
-En metod för att grafiskt representera en sekvens med [åtgärder](xref:microsoft.quantum.glossary#operation) (eller [portar](xref:microsoft.quantum.glossary#gate)) för enkla Quantum-program, till exempel 
+En metod för att grafiskt representera sekvensen med [portar](xref:microsoft.quantum.glossary#gate) för enkla Quantum-program, till exempel 
 
 ![Diagram över exempel krets](~/media/qpe.png). 
 
@@ -210,7 +207,7 @@ En grundläggande enhet med Quantum-information som motsvarar en *bit* i klassis
 
 ## <a name="repeat-until-success"></a>Upprepa-tills-lyckades
 
-En Quantum-algoritm som probabilistically lyckas. Vid fel försöker rutinen igen tills den lyckades (eller så har en gräns nåtts). Mer information finns i [Upprepa tills lyckad (ru: er)](xref:microsoft.quantum.guide.controlflow#repeat-until-success-loop)
+Ett begrepp som ofta används i Quantum-algoritmer som består av upprepade gånger att tillämpa en beräkning tills ett visst villkor är uppfyllt. När villkoret inte är uppfyllt krävs ofta en korrigering innan du försöker igen genom att ange nästa iteration. Mer information finns i [ Q# användar handboken](xref:microsoft.quantum.guide)
 
 ## <a name="standard-libraries"></a>Standardbibliotek
 
@@ -230,7 +227,7 @@ En metod för att återskapa data eller Quantum- [tillstånd](xref:microsoft.qua
 
 ## <a name="tuple"></a>Tupel
 
-En samling kommaavgränsade värden som fungerar som ett enda värde. *Typen* av en tupel definieras av de typer av värden som den innehåller. I Q# är tupler [oföränderliga](xref:microsoft.quantum.glossary#immutable) och kan kapslas, innehålla matriser eller användas i en matris. Mer information finns i [tuple-typer](xref:microsoft.quantum.guide.types#tuple-types).
+En samling kommaavgränsade värden som fungerar som ett enda värde. *Typen* av en tupel definieras av de typer av värden som den innehåller. I Q# är tupler [oföränderliga](xref:microsoft.quantum.glossary#immutable) och kan kapslas, innehålla matriser eller användas i en matris. Mer information finns i [tupler](xref:microsoft.quantum.qsharp.valueliterals#tuple-literals).
 
 ## <a name="unitary-operator"></a>Enhetlig operatör
 
@@ -238,4 +235,4 @@ En operator vars motsatta värde är lika med dess [intilliggande](xref:microsof
 
 ## <a name="user-defined-type"></a>Användardefinierad typ
 
-En samling inbyggda eller tidigare definierade typer som kan kallas en enda enhet. Mer information finns i [användardefinierade typer](xref:microsoft.quantum.guide.types#user-defined-types).
+En anpassad typ som kan innehålla ett eller flera namngivna eller anonyma objekt. Mer information finns i [typ deklarationer] Microsoft. Quantum. qsharp. typedeclarations # Type-deklarationer).

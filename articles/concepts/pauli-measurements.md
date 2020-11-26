@@ -87,8 +87,8 @@ författare: bradben UID: Microsoft. Quantum. Concepts. Pauli MS. author: v-benb
 
 I de föregående diskussionerna har vi fokuserat på beräknings bas mått.
 I själva verket finns det andra vanliga mätningar som sker i den Quantum-bearbetningen som, från ett och samma perspektiv, är praktiska att uttrycka när det gäller beräknings bas mått.
-När du arbetar med Q# , är den vanligaste typen av mätningar som du kommer att köra i troligen *Pauli mätningar* , som generaliserar beräknings bas mått för att ta med mätningar i andra baser och paritet mellan olika qubits.
-I sådana fall är det vanligt att diskutera en Pauli-operatör i allmänhet en operator som $ X, Y, z $ eller $ z \otimes z, x \otimes x, x \otimes Y $ och så vidare.
+När du arbetar med Q# , är den vanligaste typen av mätningar som du kommer att köra i troligen *Pauli mätningar*, som generaliserar beräknings bas mått för att ta med mätningar i andra baser och paritet mellan olika qubits.
+I sådana fall är det vanligt att diskutera en Pauli-operatör i allmänhet en operator som $ X, Y, z $ eller $ z \otimes z, x \otimes x, x \otimes Y $ och så vidare. 
 
 > [!TIP]
 > I Q# , representeras qubit Pauli-operatörer vanligt vis av matriser av typen `Pauli[]` .
@@ -247,12 +247,12 @@ Mer information finns i [`Measure`](xref:Microsoft.Quantum.Intrinsic.Measure) [`
 Quantum-informationen är kraftfull.
 Det gör det möjligt för oss att göra fantastiska saker som faktor tal exponentiellt snabbare än de bästa kända klassiska algoritmerna, eller att effektivt simulera korrelerade Electron-system som klassiska kräver exponentiell kostnad för att simulera korrekt.
 Det finns dock begränsningar för kraften i Quantum Computing.
-En sådan begränsning anges av *satsen No-kloningsing* .
+En sådan begränsning anges av *satsen No-kloningsing*.
 
 No-Cloning-satsen är aptly med namnet.
 Den tillåter inte kloning av generiska Quantum-tillstånd av en Quantum-dator.
 Satsen-beviset är remarkably är enkelt.
-Det fullständiga beviset på No-kloning-satsen är lite för tekniskt för vår diskussion här, men beviset för att det inte finns några ytterligare hjälp qubits inom vår omfattning (hjälp qubits är qubits som används för arbets utrymme under en beräkning och är lätt att använda och hanteras i Q# , se [lånade qubits](xref:microsoft.quantum.guide.qubits#borrowed-qubits)).
+Det fullständiga beviset på No-kloning-satsen är lite för tekniskt för vår diskussion här, men beviset för att det inte finns några ytterligare hjälp qubits finns i vår omfattning.
 
 För en sådan Quantum-dator måste klonings åtgärden beskrivas av en enhetlig matris.
 Vi tillåter inte mätningar, eftersom det skulle skada det Quantum-tillstånd som vi försöker klona.

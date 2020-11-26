@@ -9,12 +9,12 @@ uid: microsoft.quantum.contributing.style
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 7666974e255d537c8d611d0077b7f9b37a61f918
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: cfc201a16b1b42c82314220f77ae120076291759
+ms.sourcegitcommit: b930bb59a1ba8f41d2edc9ed98197109aa8c7f1b
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92691733"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96231663"
 ---
 # <a name="no-locq-style-guide"></a>Q# Stil guide #
 ## <a name="general-conventions"></a>Allmänna konventioner ##
@@ -52,7 +52,7 @@ Den här skillnaden antyder att vi namnger åtgärder som verb och fungerar som 
 > Från och med detta perspektiv ska användardefinierade typer namnges som substantiv, så att både själva typen och konstruktorn-funktionen har konsekventa namn.
 
 Om det är rimligt bör du se till att åtgärds namnen börjar med verb som tydligt anger vilken åtgärd som vidtas.
-Exempel:
+Ett exempel:
 
 - `MeasureInteger`
 - `EstimateEnergy`
@@ -68,7 +68,7 @@ Andra verb kan vara användbara även i det här fallet, som i `IterateThroughCa
 | Använd | En åtgärd som angetts som indata kallas |
 | Assert | En hypotes om resultatet av en möjlig Quantum-mätning kontrol leras av en simulator |
 | Uppskattning | Ett klassiskt värde returneras som representerar en uppskattning som skapats från en eller flera mätningar |
-| Åtgärd | En Quantum-mätning utförs och resultatet returneras till användaren |
+| Mått | En Quantum-mätning utförs och resultatet returneras till användaren |
 | Förbereda | Ett visst register av qubits initieras i ett visst tillstånd |
 | Exempel | Ett klassiskt värde returneras slumpmässigt från en distribution |
 
@@ -215,7 +215,7 @@ _*_
 Eftersom Q# är ett starkt och statiskt språk skrivet, kan ett värde av en typ endast användas som ett värde av en annan typ med hjälp av ett explicit anrop till en typ konverterings funktion.
 Detta är i motsats till språk som tillåter att värden ändrar typer implicit (t. ex.: typ befordran) eller genom databyte.
 Resultatet är att typ konverterings funktioner spelar en viktig roll i Q# biblioteks utveckling och utgör ett av de vanligaste besluten om namngivning.
-Vi noterar dock att eftersom typ konverteringen alltid är _deterministisk_ , kan de skrivas som funktioner och därmed omfattas av ovanstående råd.
+Vi noterar dock att eftersom typ konverteringen alltid är _deterministisk_, kan de skrivas som funktioner och därmed omfattas av ovanstående råd.
 I synnerhet rekommenderar vi att typ konverterings funktioner aldrig ska namnges som verb (t. ex.: `ConvertToX` ) eller adverb-förpositions fraser ( `ToX` ), men ska vara namngivna som adjektiv befattnings fraser som anger käll-och mål typerna ( `XAsY` ).
 När du anger mat ris typer i typ konverterings funktions namn rekommenderar vi kort skrift `Arr` .
 Spärr av exceptionella omständigheter, vi rekommenderar att alla typer av konverterings funktioner får namnet med hjälp av `As` så att de snabbt kan identifieras.
@@ -390,7 +390,7 @@ På samma sätt använder den språk server som ingår i Quantum Development Kit
 Genom att använda dokumentations kommentarer kan du därför hjälpa användarna att förstå kod genom att ange en användbar referens för detaljer som inte är lätta att använda i de andra konventionerna i det här dokumentet.
 
 > [!div class="nextstepaction"]
-> [Dokumentation kommentar syntax referens](xref:microsoft.quantum.guide.filestructure#documentation-comments).
+> [Dokumentation kommentar syntax referens](xref:microsoft.quantum.qsharp.comments#documentation-comments).
 
 För att effektivt kunna använda den här funktionen för att hjälpa användarna, rekommenderar vi att du håller några saker i åtanke när du skriver dokumentations kommentarer.
 

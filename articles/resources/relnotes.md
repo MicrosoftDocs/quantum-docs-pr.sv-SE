@@ -9,12 +9,12 @@ uid: microsoft.quantum.relnotes
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 93ece8cbaa2ac8e6e0c9bb417e8f40130cb8a3fa
-ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
+ms.openlocfilehash: 1c3c502b6487482f06820e07425b8516f259fb0d
+ms.sourcegitcommit: b930bb59a1ba8f41d2edc9ed98197109aa8c7f1b
 ms.translationtype: MT
 ms.contentlocale: sv-SE
 ms.lasthandoff: 11/26/2020
-ms.locfileid: "96192102"
+ms.locfileid: "96231799"
 ---
 # <a name="microsoft-quantum-development-kit-release-notes"></a>Viktig information för Microsoft Quantum Development Kit
 
@@ -173,7 +173,7 @@ Den här versionen innehåller några mindre felkorrigeringar för version 0.11.
 
 Den här versionen innehåller följande:
 
-- Nytt stöd för åtkomst modifierare i Q# , mer information finns i [fil strukturer](xref:microsoft.quantum.guide.filestructure)
+- Nytt stöd för åtkomst modifierare i Q# , mer information finns i [åtkomst modifierare](xref:microsoft.quantum.qsharp.accessmodifiers)
 - Uppdaterades till .NET Core SDK 3.1
 
 Se den fullständiga listan med stängda PR:er för [bibliotek](https://github.com/Microsoft/QuantumLibraries/pulls?q=is%3Apr+is%3Aclosed), [kompilator](https://github.com/microsoft/qsharp-compiler/pulls?q=is%3Apr+is%3Aclosed), [runtime](https://github.com/microsoft/qsharp-runtime/pulls?q=is%3Apr+is%3Aclosed), [exempel](https://github.com/Microsoft/Quantum/pulls?q=is%3Apr+is%3Aclosed) och [Katas](https://github.com/microsoft/QuantumKatas/pulls?q=is%3Apr+is%3Aclosed).  
@@ -258,7 +258,7 @@ Se den fullständiga listan med stängda PR:er för [bibliotek](https://github.c
 
 Den här versionen innehåller följande:
 
-- Nytt stöd för [conjugation-instruktioner](xref:microsoft.quantum.guide.operationsfunctions#conjugations) i Q#
+- Nytt stöd för [conjugation-instruktioner](xref:microsoft.quantum.qsharp.conjugations#conjugations) i Q#
 - Nya kodåtgärder i kompilatorn, till exempel ”replace with” (ersätt med), ”add documentation” (lägg till dokumentation) och uppdatering av objekt i enkla matriser
 - Lade till installationsmall och nya projektkommandon i Visual Studio Code-tillägget
 - Lade till nya varianter av ApplyIf-kombinatorn, till exempel [Microsoft.Quantum.Canon.ApplyIfOne](xref:Microsoft.Quantum.Canon.ApplyIfOne)
@@ -275,7 +275,7 @@ Se den fullständiga listan med stängda PR:er för [bibliotek](https://github.c
 
 Den här versionen innehåller följande:
 
-- Nya indexeringsplatser för segmentering av matriser. Mer information finns i [språkreferensen](xref:microsoft.quantum.guide.expressions#array-slices).
+- Ny indexering för segmentering av vektorer [finns i språk referensen](xref:microsoft.quantum.qsharp.contextualexpressions#contextual-and-omitted-expressions) för mer information.
 - Du har lagt till Dockerfile som finns på [Microsoft container Registry](https://github.com/microsoft/ContainerRegistry), se [i- Q# lagringsplatsen för mer information](https://github.com/microsoft/iqsharp/blob/main/README.md)
 - Icke-bakåtkompatibel ändring för [spårningssimulatorn](xref:microsoft.quantum.machines.qc-trace-simulator.intro), uppdatering av konfigurationsinställningar, namnändringar; se [.NET API-webbläsaren för de uppdaterade namnen](https://docs.microsoft.com/dotnet/api/microsoft.quantum.simulation.simulators.qctracesimulators.qctracesimulatorconfiguration).
 
@@ -296,10 +296,10 @@ Se den fullständiga listan med stängda PR:er för [bibliotek](https://github.c
 
 ### <a name="no-locq-language-syntax"></a>Q# språksyntax
 Den här versionen lägger till ny Q# språksyntax:
-* Lägger till namngivna objekt för [användardefinierade typer](xref:microsoft.quantum.guide.types#user-defined-types).  
+* Lägg till namngivna objekt för [användardefinierade typer] Microsoft. Quantum. qsharp. typedeclarations # Type-deklarationer).  
 * Användardefinierade konstruktorer kan nu användas som funktioner.
-* Lägger till stöd för [kopiera och uppdatera](xref:microsoft.quantum.guide.expressions#copy-and-update-expressions) samt [tillämpa och omtilldela](xref:microsoft.quantum.guide.variables#rebinding-of-mutable-symbols) i användardefinierade typer.
-* Korrigeringsblock för [upprepas tills det lyckas](xref:microsoft.quantum.guide.controlflow#repeat-until-success-loop)-loopar är nu valfria.
+* Lägger till stöd för [kopiera och uppdatera](xref:microsoft.quantum.qsharp.copyandupdateexpressions#copy-and-update-expressions) samt [tillämpa och omtilldela](xref:microsoft.quantum.qsharp.variabledeclarationsandreassignments#evaluate-and-reassign-statements) i användardefinierade typer.
+* Korrigeringsblock för [upprepas tills det lyckas](xref:microsoft.quantum.qsharp.conditionalloops#repeat-statement)-loopar är nu valfria.
 * Vi stöder nu while-loopar i funktioner (inte i åtgärder).
 
 ### <a name="library"></a>Bibliotek 
@@ -327,10 +327,10 @@ Den här versionen innehåller följande:
 
 ### <a name="no-locq-language-syntax"></a>Q# språksyntax
 Den här versionen lägger till ny Q# språksyntax:
-* Lägger till ett [kort sätt att uttrycka specialiseringar av kvantåtgärder](xref:microsoft.quantum.guide.operationsfunctions#controlled-and-adjoint-operations) (kontroll och angränsande) med `+`-operatorer.  Den gamla syntaxen är inaktuell.  Program som använder den gamla syntaxen (till exempel `: adjoint`) fortsätter att fungera, men det genereras en varning vid kompileringstid.  
-* Lägger till en ny operator för [kopiera-och-uppdatera](xref:microsoft.quantum.guide.expressions#copy-and-update-expressions), `w/`, som kan användas för att uttrycka skapande av matris som en ändring av en befintlig matris.
-* Lägg till den vanliga [”tillämpa och uppdatera”-instruktionen](xref:microsoft.quantum.guide.variables#rebinding-of-mutable-symbols), till exempel `+=`, `w/=`.
-* Lägger till ett sätt att ange ett kort namn för namnrymder i [öppna direktiv](xref:microsoft.quantum.guide.filestructure#open-directives).
+* Lägger till ett [kort sätt att uttrycka specialiseringar av kvantåtgärder](xref:microsoft.quantum.qsharp.specializationdeclarations) (kontroll och angränsande) med `+`-operatorer.  Den gamla syntaxen är inaktuell.  Program som använder den gamla syntaxen (till exempel `: adjoint`) fortsätter att fungera, men det genereras en varning vid kompileringstid.  
+* Lägg till en ny ternär operator för [Kopiera och uppdatera](xref:microsoft.quantum.qsharp.copyandupdateexpressions#copy-and-update-expressions), `w/` `<-` kan användas för att skapa matriser som en ändring av en befintlig matris.
+* Lägg till den vanliga [Apply-och-Reassign-instruktionen](xref:microsoft.quantum.qsharp.variabledeclarationsandreassignments#evaluate-and-reassign-statements), t. ex., `+=` `w/=` .
+* Lägger till ett sätt att ange ett kort namn för namnrymder i [öppna direktiv](xref:microsoft.quantum.qsharp.namespaces#open-directives).
 
 Från och med den här versionen tillåter vi inte längre att ett matriselement anges på vänster sida av en set-instruktion.  Detta beror på att den syntaxen antyder att matriser är föränderliga, när resultatet av den här åtgärden i själva verket alltid har varit skapandet av en ny matris med ändringen.  I stället genereras ett kompileringsfel med ett förslag om att använda den nya kopiera och uppdatera-operatorn `w/` för att åstadkomma samma resultat.  
 
@@ -405,7 +405,7 @@ Den här versionen innehåller följande:
 
 - Buggkorrigering för DumpRegister-problem som rapporterats av communityn ([#148](https://github.com/Microsoft/Quantum/issues/148)).
 
-- Lade till möjligheten att returnera inifrån en [using-instruktion](xref:microsoft.quantum.guide.qubits#allocating-qubits).
+- Möjlighet att returnera inifrån en [using-och upplåning-instruktion](xref:microsoft.quantum.qsharp.quantummemorymanagement#quantum-memory-management)har lagts till.
 
 - Omarbetade [komma igång-guiden](xref:microsoft.quantum.install).
 
@@ -428,7 +428,7 @@ Den här versionen innehåller följande:
 
 Den här versionen innehåller följande:
 
-- lägger till stöd för en ny primitiv typ, BigInt, som representerar ett heltal med tecken av godtycklig storlek.  Läs mer om [BigInt-typen](xref:microsoft.quantum.guide.types).
+- lägger till stöd för en ny primitiv typ, BigInt, som representerar ett heltal med tecken av godtycklig storlek.  Läs mer om [BigInt](xref:microsoft.quantum.qsharp.valueliterals#bigint-literals).
 - lägger till en ny Toffoli-simulator, en specialiserad snabb simulator som kan simulera X, CNOT och multikontrollerade X-kvantåtgärder med mycket stora antal kvantbitar.  Läs mer om [Toffoli-simulatorn](xref:microsoft.quantum.machines.toffoli-simulator).
 - lägger till en enkel resurs uppskattning som uppskattar de resurser som krävs för att köra en specifik instans av en Q# åtgärd på en Quantum-dator.  Läs mer om [resursuppskattningsverktyget](xref:microsoft.quantum.machines.resources-estimator).
 

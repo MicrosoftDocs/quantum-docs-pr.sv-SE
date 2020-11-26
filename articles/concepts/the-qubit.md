@@ -96,7 +96,7 @@ Alla tvådimensionella kolumn vektorer med reella eller komplexa tal med norm $ 
 
 $$\begin{bmatrix}1 \\\\ 0 \end{bmatrix} , \begin{bmatrix} \\\\ \end{bmatrix} 1 2, 1 2 \begin{bmatrix} \frac { } { \sqrt { } } \\\\ \frac { } { \sqrt { } } \end{bmatrix} , \begin{bmatrix} \frac { 1 } { \sqrt { 2 } } \\\\ \frac { -1 } { \sqrt { 2 } } \end{bmatrix} \text { och } \begin{bmatrix} \frac { 1 } { \sqrt { 2 } } \\\\ \frac { i } { \sqrt { 2 } } \end{bmatrix} .      $$
 
-Quantum-tillståndets vektorer $ \begin{bmatrix} 1 \\\\ 0 \end{bmatrix} $ och $ \begin{bmatrix} 0 \\\\ 1 \end{bmatrix} $ tar en speciell roll. Dessa två vektorer utgör grunden för det vektor utrymme som beskriver qubit status. Det innebär att alla Quantum State Vector kan skrivas som en summa av dessa bas vektorer. Mer specifikt kan vektor $ \begin{bmatrix} x \\\\ y \end{bmatrix} $ skrivas som $ x \begin{bmatrix} 1 \\\\ 0 \end{bmatrix} + y \begin{bmatrix} 0 \\\\ 1 \end{bmatrix} $ . Även om en rotation av dessa vektorer skulle fungera som en perfekt giltig grund för qubit, väljer vi att ge den behörigheten genom att anropa den till *beräknings grunden* .
+Quantum-tillståndets vektorer $ \begin{bmatrix} 1 \\\\ 0 \end{bmatrix} $ och $ \begin{bmatrix} 0 \\\\ 1 \end{bmatrix} $ tar en speciell roll. Dessa två vektorer utgör grunden för det vektor utrymme som beskriver qubit status. Det innebär att alla Quantum State Vector kan skrivas som en summa av dessa bas vektorer. Mer specifikt kan vektor $ \begin{bmatrix} x \\\\ y \end{bmatrix} $ skrivas som $ x \begin{bmatrix} 1 \\\\ 0 \end{bmatrix} + y \begin{bmatrix} 0 \\\\ 1 \end{bmatrix} $ . Även om en rotation av dessa vektorer skulle fungera som en perfekt giltig grund för qubit, väljer vi att ge den behörigheten genom att anropa den till *beräknings grunden*.
 
 Vi tar dessa två Quantum-tillstånd för att motsvara de två tillstånden i en klassisk bit, nämligen $ 0 $ och $ 1 $ . Standard konventionen är att välja
 
@@ -128,17 +128,6 @@ Quantum Computers bearbetar data genom att använda en universell uppsättning Q
 Detta teoretiskt sett är via för begreppet traditionell (dvs. klassisk) data behandling där en grind anses vara universell om varje omvandling av indata-bitar kan utföras med hjälp av en endensitets krets.
 I Quantum Computing är de giltiga omvandlingar som vi kan utföra på en qubit en enhetlig transformering och mätning.
 Den *angränsande åtgärden* eller den komplexa konjugats transponeren är av avgörande betydelse för Quantum Computing eftersom det behövs för att invertera Quantum-omvandlingar.
-Q# återspeglar detta genom att tillhandahålla metoder för att automatiskt kompilera grind sekvenser till deras angränsande, vilket sparar programmeraren från att behöva gå över till hand kod i många fall. Ett exempel på detta visas nedan:
-
-```qsharp
-operation PrepareSuperposition(qubit : Qubit) : Unit
-is Adj { // Auto-generate the adjoint of the operation
-    H(qubit);
-}
-```
-
-Även om det här är ett enkelt exempel (eftersom < åtgärden XREF: Microsoft. Quantum. inneboende. H > är självständig) kan du se hur detta blir värdefullt för mer komplexa qubit-åtgärder.
-Mer information finns i [åtgärder och funktioner](xref:microsoft.quantum.guide.operationsfunctions).
 
 Det finns bara fyra funktioner som mappar en bit till en bit på en klassisk dator. Det finns däremot ett obegränsat antal enhetliga omvandlingar för en enda qubit på en Quantum-dator. Därför kan ingen begränsad uppsättning primitiva Quantum-åtgärder, som kallas [*grindar*](https://en.wikipedia.org/wiki/Quantum_logic_gate), exakt replikera den oändliga uppsättningen av enhetliga omvandlingar som tillåts i Quantum Computing. Det innebär till skillnad från klassisk dator användning, men det är omöjligt för en Quantum-dator att implementera alla möjliga Quantum-program exakt med ett begränsat antal portar. Därför kan quantum-datorer inte vara universella i samma mening som klassiska datorer. Det innebär att när vi säger att en uppsättning portar är *universella* för Quantum Computing, betyder det egentligen något något svagt än vad vi menar med klassisk data behandling.
 För Universality kräver vi att en Quantum-dator endast *uppskattar* varje enhetlig matris inom ett begränsat fel med hjälp av en grind serie med begränsad längd.

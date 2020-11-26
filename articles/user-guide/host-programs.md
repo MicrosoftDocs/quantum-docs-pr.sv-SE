@@ -9,12 +9,12 @@ uid: microsoft.quantum.guide.host-programs
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: f1a4ef0616a8a3f1548b7a7207cf8cbb9dcc7260
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 2c5bdebc826bb85f6d7e0ade6232e15e29e8fb19
+ms.sourcegitcommit: b930bb59a1ba8f41d2edc9ed98197109aa8c7f1b
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92691701"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96231697"
 ---
 # <a name="ways-to-run-a-no-locq-program"></a>Sätt att köra ett Q# program
 
@@ -26,7 +26,7 @@ En primär distinktion är att Q# du kan köra:
 - som ett fristående program, där Q# är det enda språk som ingår och programmet anropas direkt. Två metoder är faktiskt i den här kategorin:
   - kommando rads gränssnittet
   - Q# Jupyter-anteckningsböcker
-- med ett ytterligare *värd program* , skrivet i python eller ett .net-språk (till exempel C# eller F #), som sedan anropar programmet och kan bearbeta returnerade resultat ytterligare.
+- med ett ytterligare *värd program*, skrivet i python eller ett .net-språk (till exempel C# eller F #), som sedan anropar programmet och kan bearbeta returnerade resultat ytterligare.
 
 Vi rekommenderar ett enkelt Q# program och jämför hur det kan köras för att bäst förstå de här processerna och deras skillnader.
 
@@ -45,7 +45,7 @@ I Q# kan detta utföras med följande kod:
 ```
 
 Den här koden kan dock endast köras av Q# .
-För att göra det måste du skapa en [Åtgärds](xref:microsoft.quantum.guide.basics#q-operations-and-functions)brödtext, som sedan körs när du anropar---antingen direkt eller av en annan åtgärd. Därför kan du skriva en åtgärd i följande format:
+För att göra det måste du skapa en [Åtgärds](xref:microsoft.quantum.qsharp.operationsandfunctions)brödtext, som sedan körs när du anropar---antingen direkt eller av en annan åtgärd. Därför kan du skriva en åtgärd i följande format:
 ```qsharp
     operation MeasureSuperposition() : Result {
         using (q = Qubit()) {
@@ -54,9 +54,9 @@ För att göra det måste du skapa en [Åtgärds](xref:microsoft.quantum.guide.b
         }
     }
 ```
-Du har definierat en åtgärd, `MeasureSuperposition` som inte tar några indata och returnerar ett värde av typen [result](xref:microsoft.quantum.guide.types).
+Du har definierat en åtgärd, `MeasureSuperposition` som inte tar några indata och returnerar ett värde av typen [result](xref:microsoft.quantum.qsharp.typesystem-index#available-types).
 
-Även om exemplen på den här sidan bara består av Q# *åtgärder* , kommer alla koncept som vi diskuterar att diskutera är lika med Q# *funktioner* , och därför kan vi se dem gemensamt som *callables* . Skillnaderna beskrivs i [ Q# grunderna: åtgärder och funktioner](xref:microsoft.quantum.guide.basics#q-operations-and-functions), och mer information om hur du definierar dem finns i [åtgärder och funktioner](xref:microsoft.quantum.guide.operationsfunctions).
+Förutom åtgärder Q# kan även kapsla in deterministiska beräkningar i functions. Förutom determinism-garantin som innebär att beräkningar som agerar på qubits måste kapslas in i åtgärder i stället för functions, är det mycket skillnad mellan åtgärder och funktion. Vi refererar till dem tillsammans som *callables*.
 
 ### <a name="callable-defined-in-a-no-locq-file"></a>Det går att anropa i en Q# fil
 
@@ -65,7 +65,7 @@ Det krävs dock några fler tillägg för att omfatta en fullständig `*.qs` Q# 
 
 Alla Q# typer och callables (både de som du definierar och de är inbyggda i språket) definieras i *namn områden* som ger varje fullständigt namn som sedan kan refereras.
 
-Till exempel finns- [`H`](xref:Microsoft.Quantum.Intrinsic.H) och- [`MResetZ`](xref:Microsoft.Quantum.Measurement.MResetZ) åtgärderna i [`Microsoft.Quantum.Instrinsic`](xref:Microsoft.Quantum.Intrinsic) [`Microsoft.Quantum.Measurement`](xref:Microsoft.Quantum.Measurement) namn områdena och (ingår i [ Q# standard biblioteken](xref:microsoft.quantum.qsharplibintro)).
+Till exempel finns- [`H`](xref:Microsoft.Quantum.Intrinsic.H) och- [`MResetZ`](xref:Microsoft.Quantum.Measurement.MResetZ) åtgärderna i [`Microsoft.Quantum.Instrinsic`](xref:Microsoft.Quantum.Intrinsic) [`Microsoft.Quantum.Measurement`](xref:Microsoft.Quantum.Measurement) namn områdena och (ingår i [ Q# standard biblioteken](xref:microsoft.quantum.libraries.standard.intro)).
 Därför kan de alltid anropas via sina *fullständiga* namn `Microsoft.Quantum.Intrinsic.H(<qubit>)` och `Microsoft.Quantum.Measurement.MResetZ(<qubit>)` , men alltid göra detta skulle leda till mycket rörig kod.
 
 I stället kan `open` callables refereras till med en mer koncis kort text som vi har gjort i åtgärds texten ovan.
@@ -103,7 +103,7 @@ Nu är den allmänna körnings modellen för ett Q# program avmarkerad.
 För det första har det speciella anropet att köras åtkomst till alla andra callables och typer som definierats i samma namnrymd.
 De kommer även åt dem från alla [ Q# bibliotek](xref:microsoft.quantum.libraries), men de måste refereras antingen via deras fullständiga namn eller genom användning av `open` instruktioner som beskrivs ovan.
 
-Själva anropet körs sedan på en *[måldator](xref:microsoft.quantum.machines)* .
+Själva anropet körs sedan på en *[måldator](xref:microsoft.quantum.machines)*.
 Sådana mål datorer kan vara faktiska Quantum-maskinvara eller flera simulatorer som är tillgängliga som en del av QDK.
 För våra behov är den mest användbara mål datorn en instans av [hela tillstånds simulatorn](xref:microsoft.quantum.machines.full-state-simulator), `QuantumSimulator` som beräknar programmets beteende som om det kördes på en dator som är en brus fri.
 
@@ -164,7 +164,7 @@ Nu kommer ett anrop `dotnet run` från kommando tolken att `MeasureSuperposition
 Så visas antingen `One` eller `Zero` skrivs ut. 
 
 Observera att det inte spelar någon roll om du har angett fler callables under den, så `MeasureSuperposition` körs endast.
-Dessutom är det inget problem om ditt anrop bara innehåller [dokumentations kommentarer](xref:microsoft.quantum.guide.filestructure#documentation-comments) före dess deklaration, så `@EntryPoint()` kan attributet placeras ovanför dem.
+Dessutom är det inget problem om ditt anrop bara innehåller [dokumentations kommentarer](xref:microsoft.quantum.qsharp.comments#documentation-comments) före dess deklaration, så `@EntryPoint()` kan attributet placeras ovanför dem.
 
 ### <a name="callable-arguments"></a>Anrops bara argument
 
@@ -589,7 +589,7 @@ Här kommer vi att lära dig hur du kör de Q# åtgärder som definierats ovan, 
 
 I en Q# Jupyter Notebook anger du Q# kod på samma sätt som i namn området för en Q# fil.
 
-Därför kan vi aktivera åtkomst till callables från [ Q# standard biblioteken](xref:microsoft.quantum.qsharplibintro) med `open` instruktioner för deras respektive namn rymder.
+Därför kan vi aktivera åtkomst till callables från [ Q# standard biblioteken](xref:microsoft.quantum.libraries.standard.intro) med `open` instruktioner för deras respektive namn rymder.
 När du kör en cell med en sådan instruktion, är definitionerna från dessa namn områden tillgängliga i hela arbets ytan.
 
 > [!NOTE]
