@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Math.GreatestCommonDivisorI
 title: Funktionen GreatestCommonDivisorI
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Math
 qsharp.name: GreatestCommonDivisorI
 qsharp.summary: Computes the greatest common divisor of $a$ and $b$. The GCD is always positive.
-ms.openlocfilehash: 7fd891aa2e4753020ec9ac4e702f8af9edc9df0a
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 2b6ba8a6d5ac78b69e6ee20160f3a3b1df61a879
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92733019"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96228482"
 ---
 # <a name="greatestcommondivisori-function"></a>Funktionen GreatestCommonDivisorI
 
 Namnrymd: [Microsoft. Quantum. matematik](xref:Microsoft.Quantum.Math)
 
-Paketfilerna [](https://nuget.org/packages/)
+Paket: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Beräknar den största gemensamma nämnaren i $a $ och $b $. GCD är alltid positivt.
