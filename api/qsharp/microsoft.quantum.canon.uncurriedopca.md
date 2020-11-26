@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Canon.UncurriedOpCA
 title: Funktionen UncurriedOpCA
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Canon
 qsharp.name: UncurriedOpCA
 qsharp.summary: Given a function which returns operations, returns a new operation which takes both inputs as a tuple. The modifier `CA` indicates that the operations are controllable and adjointable.
-ms.openlocfilehash: 6a0f2e1b345d0ba3ac5c779c5dc2bfffaf659a0b
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 45526c0202e417213aab3fe7819827588e794e23
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92728287"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96216395"
 ---
 # <a name="uncurriedopca-function"></a>Funktionen UncurriedOpCA
 
 Namnrymd: [Microsoft. Quantum. Canon](xref:Microsoft.Quantum.Canon)
 
-Paketfilerna [](https://nuget.org/packages/)
+Paket: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 En funktion som returnerar åtgärder returnerar en ny åtgärd som tar båda indata som en tupel.
@@ -31,13 +31,13 @@ function UncurriedOpCA<'T, 'U> (curriedOp : ('T -> ('U => Unit is Ctl + Adj))) :
 
 ## <a name="input"></a>Indata
 
-### <a name="curriedop--t---u--unit-ctl--adj"></a>curriedOp: ' t-> ' U => [enhet](xref:microsoft.quantum.lang-ref.unit) CTL + just
+### <a name="curriedop--t---u--unit--is-adj--ctl"></a>curriedOp: ' t-> ' U => [enhet](xref:microsoft.quantum.lang-ref.unit)  är just + CTL
 
 En funktion som returnerar åtgärder.
 
 
 
-## <a name="output--tu--unit-ctl--adj"></a>Utdata: (t) => [enhet](xref:microsoft.quantum.lang-ref.unit) CTL + just
+## <a name="output--tu--unit--is-adj--ctl"></a>Utdata: (t) => [enhet](xref:microsoft.quantum.lang-ref.unit)  är just + CTL
 
 En ny åtgärd `op` som `op(t, u)` motsvarar `(curriedOp(t))(u)` .
 

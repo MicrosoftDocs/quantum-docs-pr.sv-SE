@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Canon.ApplyWith
 title: ApplyWith-åtgärd
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Canon
 qsharp.name: ApplyWith
 qsharp.summary: Given two operations, applies one as conjugated with the other.
-ms.openlocfilehash: 61047ea2ea249e5a4d39b5747c542462c9632138
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: fd46f84e30e72672967b90d92f507d2a5c438dba
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92729034"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96217313"
 ---
 # <a name="applywith-operation"></a>ApplyWith-åtgärd
 
 Namnrymd: [Microsoft. Quantum. Canon](xref:Microsoft.Quantum.Canon)
 
-Paketfilerna [](https://nuget.org/packages/)
+Paket: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Med två åtgärder används en som konjugaten med den andra.
@@ -34,7 +34,7 @@ Två åtgärder, som beskrivs av de enhetliga operatörerna $U $ och $V $, till�
 
 ## <a name="input"></a>Indata
 
-### <a name="outeroperation--t--unit-adj"></a>outerOperation: t => [enhets](xref:microsoft.quantum.lang-ref.unit) justering
+### <a name="outeroperation--t--unit--is-adj"></a>outerOperation: t => [enhet](xref:microsoft.quantum.lang-ref.unit)  är just just
 
 Åtgärden $U $ som ska användas för att konjugata $V $. Observera att den yttre åtgärden $U $ måste vara adjointable, men behöver inte vara kontrollerbar.
 

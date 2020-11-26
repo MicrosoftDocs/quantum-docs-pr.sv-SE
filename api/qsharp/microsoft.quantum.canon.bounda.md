@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Canon.BoundA
 title: Bindnings funktion
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Canon
 qsharp.name: BoundA
 qsharp.summary: Given an array of operations acting on a single input, produces a new operation that performs each given operation in sequence. The modifier `A` indicates that all operations in the array are adjointable.
-ms.openlocfilehash: 40c112d0572dc4eebfc284c9ef29f43706e20c64
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 3132bf198e98dd1a2b433f36b000060e7e721865
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92728923"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96216956"
 ---
 # <a name="bounda-function"></a>Bindnings funktion
 
 Namnrymd: [Microsoft. Quantum. Canon](xref:Microsoft.Quantum.Canon)
 
-Paketfilerna [](https://nuget.org/packages/)
+Paket: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Med en matris med åtgärder som agerar på samma indatamängd skapar en ny åtgärd som utför varje åtgärd i följd.
@@ -31,13 +31,13 @@ function BoundA<'T> (operations : ('T => Unit is Adj)[]) : ('T => Unit is Adj)
 
 ## <a name="input"></a>Indata
 
-### <a name="operations--t--unit-adj"></a>åtgärder: t => [enhets](xref:microsoft.quantum.lang-ref.unit) justering []
+### <a name="operations--t--unit--is-adj"></a>åtgärder: ' t => [enhet](xref:microsoft.quantum.lang-ref.unit)  är just []
 
 En sekvens med åtgärder som ska utföras på en specifik Indatatyp.
 
 
 
-## <a name="output--t--unit-adj"></a>Utdata: t => [enhets](xref:microsoft.quantum.lang-ref.unit) justering
+## <a name="output--t--unit--is-adj"></a>Utdata: t => [enhet](xref:microsoft.quantum.lang-ref.unit)  är just
 
 En ny åtgärd som utför varje åtgärd i följd av dess inaktuella Indatatyp.
 

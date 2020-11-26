@@ -1,30 +1,30 @@
 ---
 uid: Microsoft.Quantum.Canon.ApplyToElementC
 title: ApplyToElementC-åtgärd
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Canon
 qsharp.name: ApplyToElementC
 qsharp.summary: Applies an operation to a given element of an array.
-ms.openlocfilehash: bd466ff59e6e962be9a7e58b6d298c60b0d1d90d
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: c8d7841e3846ab435671f7959c724f987d8ad5a0
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92729250"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96217585"
 ---
 # <a name="applytoelementc-operation"></a>ApplyToElementC-åtgärd
 
 Namnrymd: [Microsoft. Quantum. Canon](xref:Microsoft.Quantum.Canon)
 
-Paketfilerna [](https://nuget.org/packages/)
+Paket: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Tillämpar en åtgärd på ett angivet element i en matris.
 
 ```qsharp
-operation ApplyToElementC<'T> (op : ('T => Unit is Ctl), index : Int, targets : 'T[]) : Unit
+operation ApplyToElementC<'T> (op : ('T => Unit is Ctl), index : Int, targets : 'T[]) : Unit is Ctl
 ```
 
 
@@ -34,7 +34,7 @@ En åtgärd `op` , ett index `index` och en matris med mål `targets` , gäller 
 
 ## <a name="input"></a>Indata
 
-### <a name="op--t--unit-ctl"></a>OP: t => [enhet](xref:microsoft.quantum.lang-ref.unit) CTL
+### <a name="op--t--unit--is-ctl"></a>OP: t => [enheten](xref:microsoft.quantum.lang-ref.unit)  är CTL
 
 En åtgärd som ska tillämpas.
 

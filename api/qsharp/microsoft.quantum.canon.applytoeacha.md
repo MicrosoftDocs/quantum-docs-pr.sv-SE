@@ -1,37 +1,37 @@
 ---
 uid: Microsoft.Quantum.Canon.ApplyToEachA
 title: ApplyToEachA-åtgärd
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Canon
 qsharp.name: ApplyToEachA
 qsharp.summary: Applies a single-qubit operation to each element in a register. The modifier `A` indicates that the single-qubit operation is adjointable.
-ms.openlocfilehash: 9485c6549ed4e1a6fb3abdfa3f85ba35579d8b0b
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 9819e78760caf6180edc5c2ca5e402060e3029a5
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92729304"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96217806"
 ---
 # <a name="applytoeacha-operation"></a>ApplyToEachA-åtgärd
 
 Namnrymd: [Microsoft. Quantum. Canon](xref:Microsoft.Quantum.Canon)
 
-Paketfilerna [](https://nuget.org/packages/)
+Paket: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Tillämpar en enskild qubit-åtgärd för varje-element i en register.
 Modifieraren `A` anger att en qubit-åtgärd är adjointable.
 
 ```qsharp
-operation ApplyToEachA<'T> (singleElementOperation : ('T => Unit is Adj), register : 'T[]) : Unit
+operation ApplyToEachA<'T> (singleElementOperation : ('T => Unit is Adj), register : 'T[]) : Unit is Adj
 ```
 
 
 ## <a name="input"></a>Indata
 
-### <a name="singleelementoperation--t--unit-adj"></a>singleElementOperation: t => [enhets](xref:microsoft.quantum.lang-ref.unit) justering
+### <a name="singleelementoperation--t--unit--is-adj"></a>singleElementOperation: t => [enhet](xref:microsoft.quantum.lang-ref.unit)  är just just
 
 Åtgärd att tillämpa på varje qubit.
 

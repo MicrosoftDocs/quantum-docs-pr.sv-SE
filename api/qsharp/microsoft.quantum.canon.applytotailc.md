@@ -1,30 +1,30 @@
 ---
 uid: Microsoft.Quantum.Canon.ApplyToTailC
 title: ApplyToTailC-åtgärd
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Canon
 qsharp.name: ApplyToTailC
 qsharp.summary: Applies an operation to the last element of an array.
-ms.openlocfilehash: 631e08666002d8077c6f8b78525b06b104dd4c7c
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 5a68cae3fd122416cfd064e0078e03f5c00ab492
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92729043"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96217296"
 ---
 # <a name="applytotailc-operation"></a>ApplyToTailC-åtgärd
 
 Namnrymd: [Microsoft. Quantum. Canon](xref:Microsoft.Quantum.Canon)
 
-Paketfilerna [](https://nuget.org/packages/)
+Paket: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Tillämpar en åtgärd på det sista elementet i en matris.
 
 ```qsharp
-operation ApplyToTailC<'T> (op : ('T => Unit is Ctl), targets : 'T[]) : Unit
+operation ApplyToTailC<'T> (op : ('T => Unit is Ctl), targets : 'T[]) : Unit is Ctl
 ```
 
 
@@ -34,7 +34,7 @@ En specifik åtgärd `op` och en matris med mål `targets` gäller `op(Tail(targ
 
 ## <a name="input"></a>Indata
 
-### <a name="op--t--unit-ctl"></a>OP: t => [enhet](xref:microsoft.quantum.lang-ref.unit) CTL
+### <a name="op--t--unit--is-ctl"></a>OP: t => [enheten](xref:microsoft.quantum.lang-ref.unit)  är CTL
 
 En åtgärd som ska tillämpas.
 

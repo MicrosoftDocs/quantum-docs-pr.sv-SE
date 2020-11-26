@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Canon.BoundCA
 title: Funktionen BoundCA
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Canon
 qsharp.name: BoundCA
 qsharp.summary: Given an array of operations acting on a single input, produces a new operation that performs each given operation in sequence. The modifier `CA` indicates that all operations in the array are adjointable and controllable.
-ms.openlocfilehash: d96d33781def10940479ba2eafdcc6711a0c05a5
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 774a6f57566dce75b98290a7e81540b28afea1af
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92728899"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96216890"
 ---
 # <a name="boundca-function"></a>Funktionen BoundCA
 
 Namnrymd: [Microsoft. Quantum. Canon](xref:Microsoft.Quantum.Canon)
 
-Paketfilerna [](https://nuget.org/packages/)
+Paket: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Med en matris med åtgärder som agerar på samma indatamängd skapar en ny åtgärd som utför varje åtgärd i följd.
@@ -31,13 +31,13 @@ function BoundCA<'T> (operations : ('T => Unit is Adj + Ctl)[]) : ('T => Unit is
 
 ## <a name="input"></a>Indata
 
-### <a name="operations--t--unit-adj--ctl"></a>åtgärder: t => [enhet](xref:microsoft.quantum.lang-ref.unit) , just + CTL []
+### <a name="operations--t--unit--is-adj--ctl"></a>åtgärder: ' t => [enhet](xref:microsoft.quantum.lang-ref.unit)  är just + CTL []
 
 En sekvens med åtgärder som ska utföras på en specifik Indatatyp.
 
 
 
-## <a name="output--t--unit-adj--ctl"></a>Utdata: t => [enhet](xref:microsoft.quantum.lang-ref.unit) just + CTL
+## <a name="output--t--unit--is-adj--ctl"></a>Utdata: t => [enhet](xref:microsoft.quantum.lang-ref.unit)  är just + CTL
 
 En ny åtgärd som utför varje åtgärd i följd av dess inaktuella Indatatyp.
 

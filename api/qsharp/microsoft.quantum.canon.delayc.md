@@ -1,30 +1,30 @@
 ---
 uid: Microsoft.Quantum.Canon.DelayC
 title: DelayC-åtgärd
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Canon
 qsharp.name: DelayC
 qsharp.summary: Applies a given operation with a delay.
-ms.openlocfilehash: acb817c3322063353dc08c5d6f8c539391b3bf39
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 7a11c3990802ff36856a90de927b38d2ede8bd9d
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92728752"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96216497"
 ---
 # <a name="delayc-operation"></a>DelayC-åtgärd
 
 Namnrymd: [Microsoft. Quantum. Canon](xref:Microsoft.Quantum.Canon)
 
-Paketfilerna [](https://nuget.org/packages/)
+Paket: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Tillämpar en viss åtgärd med en fördröjning.
 
 ```qsharp
-operation DelayC<'T> (op : ('T => Unit is Ctl), arg : 'T, aux : Unit) : Unit
+operation DelayC<'T> (op : ('T => Unit is Ctl), arg : 'T, aux : Unit) : Unit is Ctl
 ```
 
 
@@ -36,7 +36,7 @@ Uttrycket `Delay(op,arg,_)` kan försena tillämpningen av `op` .
 
 ## <a name="input"></a>Indata
 
-### <a name="op--t--unit-ctl"></a>OP: t => [enhet](xref:microsoft.quantum.lang-ref.unit) CTL
+### <a name="op--t--unit--is-ctl"></a>OP: t => [enheten](xref:microsoft.quantum.lang-ref.unit)  är CTL
 
 En åtgärd som ska tillämpas.
 

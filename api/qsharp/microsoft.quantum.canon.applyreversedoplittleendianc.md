@@ -1,7 +1,7 @@
 ---
 uid: Microsoft.Quantum.Canon.ApplyReversedOpLittleEndianC
 title: ApplyReversedOpLittleEndianC-åtgärd
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Canon
@@ -14,18 +14,18 @@ qsharp.summary: >-
   >
 
   > Please use @"Microsoft.Quantum.Arithmetic.ApplyReversedOpLEC".
-ms.openlocfilehash: fe0dd9ca81d46ec5fee4a7cfb3df42d58b2a2771
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 2b5ce2708dd151f91ca83cd8a4a35418d88323f7
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92729352"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96218095"
 ---
 # <a name="applyreversedoplittleendianc-operation"></a>ApplyReversedOpLittleEndianC-åtgärd
 
 Namnrymd: [Microsoft. Quantum. Canon](xref:Microsoft.Quantum.Canon)
 
-Paketfilerna [](https://nuget.org/packages/)
+Paket: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 > [!WARNING]
@@ -36,13 +36,13 @@ Paketfilerna [](https://nuget.org/packages/)
 
 
 ```qsharp
-operation ApplyReversedOpLittleEndianC (op : (Microsoft.Quantum.Arithmetic.LittleEndian => Unit is Ctl), register : Microsoft.Quantum.Arithmetic.BigEndian) : Unit
+operation ApplyReversedOpLittleEndianC (op : (Microsoft.Quantum.Arithmetic.LittleEndian => Unit is Ctl), register : Microsoft.Quantum.Arithmetic.BigEndian) : Unit is Ctl
 ```
 
 
 ## <a name="input"></a>Indata
 
-### <a name="op--littleendian--unit-ctl"></a>OP: [LittleEndian](xref:Microsoft.Quantum.Arithmetic.LittleEndian) => [enhet](xref:microsoft.quantum.lang-ref.unit) CTL
+### <a name="op--littleendian--unit--is-ctl"></a>OP: [LittleEndian](xref:Microsoft.Quantum.Arithmetic.LittleEndian) => [Unit](xref:microsoft.quantum.lang-ref.unit)  är CTL
 
 
 
