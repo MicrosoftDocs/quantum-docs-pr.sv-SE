@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Simulation.IdentityTimeDependentGeneratorSystem
 title: Funktionen IdentityTimeDependentGeneratorSystem
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Simulation
 qsharp.name: IdentityTimeDependentGeneratorSystem
 qsharp.summary: Returns a time-dependent generator system consistent with the Hamiltonian `H(s) = 0`.
-ms.openlocfilehash: d51794aacbcf13ab567ff6be4f5d6b04581833bd
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: d0c1ba6d7a3c3cbd62a15fec2154a05acb27a35c
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92733515"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96225099"
 ---
 # <a name="identitytimedependentgeneratorsystem-function"></a>Funktionen IdentityTimeDependentGeneratorSystem
 
 Namnrymd: [Microsoft. Quantum. simulering](xref:Microsoft.Quantum.Simulation)
 
-Paketfilerna [](https://nuget.org/packages/)
+Paket: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Returnerar ett tids beroende Generator system som är konsekvent med Hamiltonian `H(s) = 0` .

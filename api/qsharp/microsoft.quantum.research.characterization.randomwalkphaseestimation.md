@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Research.Characterization.RandomWalkPhaseEstimation
 title: RandomWalkPhaseEstimation-åtgärd
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Research.Characterization
 qsharp.name: RandomWalkPhaseEstimation
 qsharp.summary: Performs iterative phase estimation using a random walk to approximate Bayesian inference on the classical measurement results from a given oracle and eigenstate.
-ms.openlocfilehash: 5e0c0871b916ff51b85dec8703111788b5204bc6
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 2c3afdd41da24a1f32f59f36f0f5c5ed29df1f0b
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92726433"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96226170"
 ---
 # <a name="randomwalkphaseestimation-operation"></a>RandomWalkPhaseEstimation-åtgärd
 
 Namnrymd: [Microsoft. Quantum. Research. karakterisering](xref:Microsoft.Quantum.Research.Characterization)
 
-Paketfilerna [](https://nuget.org/packages/)
+Paket: [Microsoft. Quantum. Research. karakterisering](https://nuget.org/packages/Microsoft.Quantum.Research.Characterization)
 
 
 Utför iterativ fas uppskattning med en slumpmässig genom gång för att approximera Bayesian-härledningen på de klassiska mått resultaten från en specifik Oracle och eigenstate.
@@ -80,7 +80,7 @@ Sedan konvergerar periodiska fas uppskattningar till en enda eigenstate enligt b
 
 ### <a name="experiment-design"></a>Experiment design
 
-Mätnings tiderna $t $ och inversions vinklarna $ \theta $ som `oracle` väljs enligt *partikel gissans heuristik* , \Begin{align} \theta \sim \Pr (\phi), \quad t \approx \frac {1} {\variance{\phi}}.
+Mätnings tiderna $t $ och inversions vinklarna $ \theta $ som `oracle` väljs enligt *partikel gissans heuristik*, \Begin{align} \theta \sim \Pr (\phi), \quad t \approx \frac {1} {\variance{\phi}}.
 \end{align} den här heuristiken är optimal för att minska den förväntade föregående avvikelsen i upprepnings fas uppskattningen under antagandet av en normal tidigare period.
 
 ### <a name="optimality"></a>Optimalhet
@@ -93,4 +93,4 @@ Se [uppskattning av Bayesian-fasen](xref:microsoft.quantum.libraries.characteriz
 
 - Uppskjuten *et al.* 2011 [Doi: 10/TFX](https://doi.org/10.1007/s11128-012-0407-6), [arXiv: 1110.3067](https://arxiv.org/abs/1110.3067).
 - Wiebe *et al.* 2013 [Doi: 10/TF3](https://doi.org/10.1103/PhysRevLett.112.190501), [arXiv: 1309.0876](https://arxiv.org/abs/1309.0876)
-- Wiebe och granade 2018 *(i förberedelse)* .
+- Wiebe och granade 2018 *(i förberedelse)*.
