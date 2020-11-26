@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Arithmetic.MeasureInteger
 title: MeasureInteger-åtgärd
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Arithmetic
 qsharp.name: MeasureInteger
 qsharp.summary: Measures the content of a quantum register and converts it to an integer. The measurement is performed with respect to the standard computational basis, i.e., the eigenbasis of `PauliZ`.
-ms.openlocfilehash: 7cd2d93332eb168c7c2be92a3b910033ca8c10ae
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: e3ff06e5cbb2ef8a63e4ad12308b382347c90fc3
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92731414"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96222651"
 ---
 # <a name="measureinteger-operation"></a>MeasureInteger-åtgärd
 
 Namnrymd: [Microsoft. Quantum. aritmetisk](xref:Microsoft.Quantum.Arithmetic)
 
-Paketfilerna [](https://nuget.org/packages/)
+Paket: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Mäter innehållet i ett Quantum-register och konverterar det till ett heltal. Mätningen utförs med avseende på standard beräknings basen, d.v.s. eigenbasis `PauliZ` .

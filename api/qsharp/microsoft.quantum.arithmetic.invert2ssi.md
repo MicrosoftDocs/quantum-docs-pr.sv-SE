@@ -1,30 +1,30 @@
 ---
 uid: Microsoft.Quantum.Arithmetic.Invert2sSI
 title: Invert2sSI-åtgärd
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Arithmetic
 qsharp.name: Invert2sSI
 qsharp.summary: Inverts a given integer modulo 2's complement.
-ms.openlocfilehash: 6cb27477d66320ba741eb902e7c8a9e740a9b3f7
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 86d90fc5406089549de0036fcaebd9dc9d188c40
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92731462"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96222855"
 ---
 # <a name="invert2ssi-operation"></a>Invert2sSI-åtgärd
 
 Namnrymd: [Microsoft. Quantum. aritmetisk](xref:Microsoft.Quantum.Arithmetic)
 
-Paketfilerna [](https://nuget.org/packages/)
+Paket: [Microsoft. Quantum. numeric](https://nuget.org/packages/Microsoft.Quantum.Numerics)
 
 
 Inverterar ett angivet heltal modulo 2-komplement.
 
 ```qsharp
-operation Invert2sSI (xs : Microsoft.Quantum.Arithmetic.SignedLittleEndian) : Unit
+operation Invert2sSI (xs : Microsoft.Quantum.Arithmetic.SignedLittleEndian) : Unit is Adj + Ctl
 ```
 
 
