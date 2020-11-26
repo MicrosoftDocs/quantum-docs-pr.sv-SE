@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Random.DrawRandomInt
 title: DrawRandomInt-åtgärd
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Random
 qsharp.name: DrawRandomInt
 qsharp.summary: Draws a random integer in a given inclusive range.
-ms.openlocfilehash: d9d8d9fbb25587ac5ccbd4edf0e555649380375f
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: f7b6cb75f761e4c45295245ed4bd4fb82c592809
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92733595"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96192918"
 ---
 # <a name="drawrandomint-operation"></a>DrawRandomInt-åtgärd
 
 Namnrymd: [Microsoft. Quantum. Random](xref:Microsoft.Quantum.Random)
 
-Paketfilerna [](https://nuget.org/packages/)
+Paket: [Microsoft. Quantum. QSharp. Core](https://nuget.org/packages/Microsoft.Quantum.QSharp.Core)
 
 
 Ritar ett slumpmässigt heltal i ett angivet inklusivt intervall.
