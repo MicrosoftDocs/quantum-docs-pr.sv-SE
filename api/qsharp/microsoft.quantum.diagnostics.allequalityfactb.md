@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Diagnostics.AllEqualityFactB
 title: Funktionen AllEqualityFactB
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Diagnostics
 qsharp.name: AllEqualityFactB
 qsharp.summary: Asserts that two arrays of boolean values are equal.
-ms.openlocfilehash: 100aacccbfd5b45ac9f859cd89424b0ed4007f72
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 79dcf65956ba9436fb6fdd452f22f35d4852d6f8
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92727375"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96213709"
 ---
 # <a name="allequalityfactb-function"></a>Funktionen AllEqualityFactB
 
 Namnrymd: [Microsoft. Quantum. Diagnostics](xref:Microsoft.Quantum.Diagnostics)
 
-Paketfilerna [](https://nuget.org/packages/)
+Paket: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Förutsätter att två matriser med booleska värden är lika.
