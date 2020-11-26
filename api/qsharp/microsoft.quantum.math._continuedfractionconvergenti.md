@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Math._ContinuedFractionConvergentI
 title: _ContinuedFractionConvergentI funktion
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Math
 qsharp.name: _ContinuedFractionConvergentI
 qsharp.summary: Internal recursive call to calculate the GCD with a bound
-ms.openlocfilehash: 849c3f72fe4c82d7256e91f07af284217f998a63
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 337ef5e90f98b3529ccda628abe203d391877646
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92732883"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96211516"
 ---
 # <a name="_continuedfractionconvergenti-function"></a>_ContinuedFractionConvergentI funktion
 
 Namnrymd: [Microsoft. Quantum. matematik](xref:Microsoft.Quantum.Math)
 
-Paketfilerna [](https://nuget.org/packages/)
+Paket: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Internt rekursivt anrop för att beräkna GCD med en kopplad

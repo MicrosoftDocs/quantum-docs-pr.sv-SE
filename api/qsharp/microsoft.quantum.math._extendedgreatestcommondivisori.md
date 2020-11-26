@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Math._ExtendedGreatestCommonDivisorI
 title: _ExtendedGreatestCommonDivisorI funktion
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Math
 qsharp.name: _ExtendedGreatestCommonDivisorI
 qsharp.summary: Internal recursive call to calculate the GCD.
-ms.openlocfilehash: c942c8bdbad950d051f698f9808c04e7fa6c7454
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: b9acb21d57053b374c3a1831a81820ffc2a78ebb
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92732867"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96211481"
 ---
 # <a name="_extendedgreatestcommondivisori-function"></a>_ExtendedGreatestCommonDivisorI funktion
 
 Namnrymd: [Microsoft. Quantum. matematik](xref:Microsoft.Quantum.Math)
 
-Paketfilerna [](https://nuget.org/packages/)
+Paket: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Internt rekursivt anrop för att beräkna GCD.
