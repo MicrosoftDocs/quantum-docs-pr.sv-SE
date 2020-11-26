@@ -1,39 +1,38 @@
 ---
 uid: Microsoft.Quantum.Environment.GetQubitsAvailableToBorrow
 title: GetQubitsAvailableToBorrow-åtgärd
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Environment
 qsharp.name: GetQubitsAvailableToBorrow
-qsharp.summary: Returns the number of qubits currently available to borrow. This includes unused qubits; that is, this includes the qubits returned by `GetQubitsAvailableToUse`.
-ms.openlocfilehash: cb56ce4aefd7a03c0f0827b8d34688ef17988f56
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+qsharp.summary: Returns the number of qubits currently available to borrow.
+ms.openlocfilehash: 30b97c2b6e1353f008d085c3bae6160763557c67
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92727165"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96201469"
 ---
-# <a name="getqubitsavailabletoborrow-operation"></a><span data-ttu-id="6d6aa-102">GetQubitsAvailableToBorrow-åtgärd</span><span class="sxs-lookup"><span data-stu-id="6d6aa-102">GetQubitsAvailableToBorrow operation</span></span>
+# <a name="getqubitsavailabletoborrow-operation"></a><span data-ttu-id="17bdc-102">GetQubitsAvailableToBorrow-åtgärd</span><span class="sxs-lookup"><span data-stu-id="17bdc-102">GetQubitsAvailableToBorrow operation</span></span>
 
-<span data-ttu-id="6d6aa-103">Namnrymd: [Microsoft. Quantum. Environment](xref:Microsoft.Quantum.Environment)</span><span class="sxs-lookup"><span data-stu-id="6d6aa-103">Namespace: [Microsoft.Quantum.Environment](xref:Microsoft.Quantum.Environment)</span></span>
+<span data-ttu-id="17bdc-103">Namnrymd: [Microsoft. Quantum. Environment](xref:Microsoft.Quantum.Environment)</span><span class="sxs-lookup"><span data-stu-id="17bdc-103">Namespace: [Microsoft.Quantum.Environment](xref:Microsoft.Quantum.Environment)</span></span>
 
-<span data-ttu-id="6d6aa-104">Paketfilerna [](https://nuget.org/packages/)</span><span class="sxs-lookup"><span data-stu-id="6d6aa-104">Package: [](https://nuget.org/packages/)</span></span>
+<span data-ttu-id="17bdc-104">Paket: [Microsoft. Quantum. QSharp. Core](https://nuget.org/packages/Microsoft.Quantum.QSharp.Core)</span><span class="sxs-lookup"><span data-stu-id="17bdc-104">Package: [Microsoft.Quantum.QSharp.Core](https://nuget.org/packages/Microsoft.Quantum.QSharp.Core)</span></span>
 
 
-<span data-ttu-id="6d6aa-105">Returnerar antalet qubits som för närvarande är tillgängliga för lån.</span><span class="sxs-lookup"><span data-stu-id="6d6aa-105">Returns the number of qubits currently available to borrow.</span></span>
-<span data-ttu-id="6d6aa-106">Detta inkluderar oanvända qubits; det vill säga detta inkluderar qubits som returnerades av `GetQubitsAvailableToUse` .</span><span class="sxs-lookup"><span data-stu-id="6d6aa-106">This includes unused qubits; that is, this includes the qubits returned by `GetQubitsAvailableToUse`.</span></span>
+<span data-ttu-id="17bdc-105">Returnerar antalet qubits som för närvarande är tillgängliga för lån.</span><span class="sxs-lookup"><span data-stu-id="17bdc-105">Returns the number of qubits currently available to borrow.</span></span>
 
 ```qsharp
 operation GetQubitsAvailableToBorrow () : Int
 ```
 
 
-## <a name="output--int"></a><span data-ttu-id="6d6aa-107">Utdata: [int](xref:microsoft.quantum.lang-ref.int)</span><span class="sxs-lookup"><span data-stu-id="6d6aa-107">Output : [Int](xref:microsoft.quantum.lang-ref.int)</span></span>
+## <a name="output--int"></a><span data-ttu-id="17bdc-106">Utdata: [int](xref:microsoft.quantum.lang-ref.int)</span><span class="sxs-lookup"><span data-stu-id="17bdc-106">Output : [Int](xref:microsoft.quantum.lang-ref.int)</span></span>
 
-<span data-ttu-id="6d6aa-108">Antalet qubits som kan allokeras i en `borrowing` instruktion.</span><span class="sxs-lookup"><span data-stu-id="6d6aa-108">The number of qubits that could be allocated in a `borrowing` statement.</span></span>
-<span data-ttu-id="6d6aa-109">Om den måldator som används inte anger den här informationen `-1` returneras.</span><span class="sxs-lookup"><span data-stu-id="6d6aa-109">If the target machine being used does not provide this information, then `-1` is returned.</span></span>
+<span data-ttu-id="17bdc-107">Antalet qubits som kan lånas och inte allokeras som en del av en `borrowing` instruktion.</span><span class="sxs-lookup"><span data-stu-id="17bdc-107">The number of qubits that could be borrowed and won't be allocated as part of a `borrowing` statement.</span></span>
+<span data-ttu-id="17bdc-108">Om den måldator som används inte anger den här informationen `-1` returneras.</span><span class="sxs-lookup"><span data-stu-id="17bdc-108">If the target machine being used does not provide this information, then `-1` is returned.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="6d6aa-110">Se även</span><span class="sxs-lookup"><span data-stu-id="6d6aa-110">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="17bdc-109">Se även</span><span class="sxs-lookup"><span data-stu-id="17bdc-109">See Also</span></span>
 
-- [<span data-ttu-id="6d6aa-111">Microsoft. Quantum. Environment. GetQubitsAvailableToUse</span><span class="sxs-lookup"><span data-stu-id="6d6aa-111">Microsoft.Quantum.Environment.GetQubitsAvailableToUse</span></span>](xref:Microsoft.Quantum.Environment.GetQubitsAvailableToUse)
+- [<span data-ttu-id="17bdc-110">Microsoft. Quantum. Environment. GetQubitsAvailableToUse</span><span class="sxs-lookup"><span data-stu-id="17bdc-110">Microsoft.Quantum.Environment.GetQubitsAvailableToUse</span></span>](xref:Microsoft.Quantum.Environment.GetQubitsAvailableToUse)
