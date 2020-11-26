@@ -1,28 +1,27 @@
 ---
 uid: Microsoft.Quantum.Environment.GetQubitsAvailableToBorrow
 title: GetQubitsAvailableToBorrow-åtgärd
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Environment
 qsharp.name: GetQubitsAvailableToBorrow
-qsharp.summary: Returns the number of qubits currently available to borrow. This includes unused qubits; that is, this includes the qubits returned by `GetQubitsAvailableToUse`.
-ms.openlocfilehash: cb56ce4aefd7a03c0f0827b8d34688ef17988f56
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+qsharp.summary: Returns the number of qubits currently available to borrow.
+ms.openlocfilehash: 30b97c2b6e1353f008d085c3bae6160763557c67
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92727165"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96201469"
 ---
 # <a name="getqubitsavailabletoborrow-operation"></a>GetQubitsAvailableToBorrow-åtgärd
 
 Namnrymd: [Microsoft. Quantum. Environment](xref:Microsoft.Quantum.Environment)
 
-Paketfilerna [](https://nuget.org/packages/)
+Paket: [Microsoft. Quantum. QSharp. Core](https://nuget.org/packages/Microsoft.Quantum.QSharp.Core)
 
 
 Returnerar antalet qubits som för närvarande är tillgängliga för lån.
-Detta inkluderar oanvända qubits; det vill säga detta inkluderar qubits som returnerades av `GetQubitsAvailableToUse` .
 
 ```qsharp
 operation GetQubitsAvailableToBorrow () : Int
@@ -31,7 +30,7 @@ operation GetQubitsAvailableToBorrow () : Int
 
 ## <a name="output--int"></a>Utdata: [int](xref:microsoft.quantum.lang-ref.int)
 
-Antalet qubits som kan allokeras i en `borrowing` instruktion.
+Antalet qubits som kan lånas och inte allokeras som en del av en `borrowing` instruktion.
 Om den måldator som används inte anger den här informationen `-1` returneras.
 
 ## <a name="see-also"></a>Se även

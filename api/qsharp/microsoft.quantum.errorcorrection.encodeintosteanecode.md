@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.ErrorCorrection.EncodeIntoSteaneCode
 title: EncodeIntoSteaneCode-åtgärd
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.ErrorCorrection
 qsharp.name: EncodeIntoSteaneCode
 qsharp.summary: An encoding operation that maps an unencoded quantum register to an encoded quantum register under the ⟦7, 1, 3⟧ Steane quantum code.
-ms.openlocfilehash: 39b8ab549413d9d5281f6b84a6e970c45242fca8
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: e74c7fdc5acbb1a8c417bad3eb3630314e3f71bc
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92727081"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96201027"
 ---
 # <a name="encodeintosteanecode-operation"></a>EncodeIntoSteaneCode-åtgärd
 
 Namnrymd: [Microsoft. Quantum. ErrorCorrection](xref:Microsoft.Quantum.ErrorCorrection)
 
-Paketfilerna [](https://nuget.org/packages/)
+Paket: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 En kodnings åtgärd som mappar ett kodat Quantum-register till ett kodat Quantum-register under ⟦ 7, 1, 3 ⟧ Steane Quantum Code.

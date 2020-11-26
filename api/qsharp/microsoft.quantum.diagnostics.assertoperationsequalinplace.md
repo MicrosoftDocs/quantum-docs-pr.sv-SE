@@ -1,7 +1,7 @@
 ---
 uid: Microsoft.Quantum.Diagnostics.AssertOperationsEqualInPlace
 title: AssertOperationsEqualInPlace-åtgärd
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Diagnostics
@@ -12,18 +12,18 @@ qsharp.summary: >-
   This assertion is implemented by checking the action of the operations on all states of the form $V_0 \otimes ... \otimes V_{n-1}$, where $V_k$ is one of the states $\ket{0}$, $\ket{1}$, $\ket{+}$ and $\ket{i}$ (+1 eigenstate of Pauli Y operator).
 
   This assertion uses $n$ qubits and requires multiple calls of the operations being compared.
-ms.openlocfilehash: 407a139da816281346eb06849f81e91b83202653
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 9b17bac9d95baf5a542604892c64130bf35d7f69
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92727330"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96202438"
 ---
 # <a name="assertoperationsequalinplace-operation"></a>AssertOperationsEqualInPlace-åtgärd
 
 Namnrymd: [Microsoft. Quantum. Diagnostics](xref:Microsoft.Quantum.Diagnostics)
 
-Paketfilerna [](https://nuget.org/packages/)
+Paket: [Microsoft. Quantum. QSharp. Core](https://nuget.org/packages/Microsoft.Quantum.QSharp.Core)
 
 
 Två åtgärder förutsätter att de fungerar identiskt för alla ingångs tillstånd.
@@ -49,7 +49,7 @@ Antalet qubits-$n $ som driften `givenU` och `expectedU` arbetar med.
 Åtgärden på $n $ qubits ska kontrol leras.
 
 
-### <a name="expectedu--qubit--unit-adj"></a>expectedU: [qubit](xref:microsoft.quantum.lang-ref.qubit)[] => [enhets](xref:microsoft.quantum.lang-ref.unit) justering
+### <a name="expectedu--qubit--unit--is-adj"></a>expectedU: [qubit](xref:microsoft.quantum.lang-ref.qubit)[] => [enhet](xref:microsoft.quantum.lang-ref.unit)  är just
 
 Referens åtgärd på $n $ qubits som ska `givenU` jämföras med.
 

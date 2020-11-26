@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.ErrorCorrection.BitFlipRecoveryFn
 title: Funktionen BitFlipRecoveryFn
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.ErrorCorrection
 qsharp.name: BitFlipRecoveryFn
 qsharp.summary: Function for recovery Pauli operations for given syndrome measurement by table lookup for the ⟦3, 1, 1⟧ bit flip code.
-ms.openlocfilehash: dad90475b2506187282825e143b11adc5120f453
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: f8d102cd54222f61058c655e72c63e86d2f5af03
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92727126"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96201214"
 ---
 # <a name="bitfliprecoveryfn-function"></a>Funktionen BitFlipRecoveryFn
 
 Namnrymd: [Microsoft. Quantum. ErrorCorrection](xref:Microsoft.Quantum.ErrorCorrection)
 
-Paketfilerna [](https://nuget.org/packages/)
+Paket: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Funktion för återställnings Pauli åtgärder för angivet Syndrome mått efter tabells ökning för ⟦ 3, 1, 1 ⟧ bit flip-kod.
