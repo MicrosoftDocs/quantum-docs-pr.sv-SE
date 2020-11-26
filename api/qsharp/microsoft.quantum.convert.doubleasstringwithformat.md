@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Convert.DoubleAsStringWithFormat
 title: Funktionen DoubleAsStringWithFormat
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Convert
 qsharp.name: DoubleAsStringWithFormat
 qsharp.summary: Converts a given double-precision floating-point number to an equivalent string representation, using the given format.
-ms.openlocfilehash: 2d5caa6172e1b4c66fabd560024f07c7df6dd7e4
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: e2c2f8692d2ef63510c36777aef83699339b774e
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92727564"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96214185"
 ---
 # <a name="doubleasstringwithformat-function"></a>Funktionen DoubleAsStringWithFormat
 
 Namnrymd: [Microsoft. Quantum. convert](xref:Microsoft.Quantum.Convert)
 
-Paketfilerna [](https://nuget.org/packages/)
+Paket: [Microsoft. Quantum. QSharp. Core](https://nuget.org/packages/Microsoft.Quantum.QSharp.Core)
 
 
 Konverterar ett angivet flyttal med dubbel precision till en motsvarande sträng representation med angivet format.

@@ -1,7 +1,7 @@
 ---
 uid: Microsoft.Quantum.Chemistry.JordanWigner._JordanWignerClusterOperatorImpl
 title: _JordanWignerClusterOperatorImpl åtgärd
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Chemistry.JordanWigner
@@ -10,18 +10,18 @@ qsharp.summary: >-
   Represents a dynamical generator as a set of simulatable gates and an expansion in the JordanWigner basis.
 
   See [Dynamical Generator Modeling](../libraries/data-structures#dynamical-generator-modeling) for more details.
-ms.openlocfilehash: 9507558ebe73bce87d9089aad22b94c1d9d579d0
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 9a01742f25790e32d1787cc6cc266407de909c16
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92728029"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96215749"
 ---
 # <a name="_jordanwignerclusteroperatorimpl-operation"></a>_JordanWignerClusterOperatorImpl åtgärd
 
 Namnrymd: [Microsoft. Quantum. kemi. JordanWigner](xref:Microsoft.Quantum.Chemistry.JordanWigner)
 
-Paketfilerna [](https://nuget.org/packages/)
+Paket: [Microsoft. Quantum. kemi](https://nuget.org/packages/Microsoft.Quantum.Chemistry)
 
 
 Representerar en dynamisk generator som en uppsättning simulerade grindar och en expansion i JordanWigner-basen.
@@ -29,7 +29,7 @@ Representerar en dynamisk generator som en uppsättning simulerade grindar och e
 Mer information finns i [modeller för dynamisk Generator](../libraries/data-structures#dynamical-generator-modeling) .
 
 ```qsharp
-operation _JordanWignerClusterOperatorImpl (generatorIndex : Microsoft.Quantum.Simulation.GeneratorIndex, stepSize : Double, qubits : Qubit[]) : Unit
+operation _JordanWignerClusterOperatorImpl (generatorIndex : Microsoft.Quantum.Simulation.GeneratorIndex, stepSize : Double, qubits : Qubit[]) : Unit is Adj + Ctl
 ```
 
 
