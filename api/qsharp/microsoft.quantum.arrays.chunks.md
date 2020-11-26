@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.Arrays.Chunks
 title: Segment funktion
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Arrays
 qsharp.name: Chunks
 qsharp.summary: Splits an array into multiple parts of equal length.
-ms.openlocfilehash: fe10999d35ed05908fd59b9dad8b5c0c51233ae6
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: b323fdab1b207c72a4f46d5ca4cb368ecf0df818
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92730414"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96221614"
 ---
 # <a name="chunks-function"></a>Segment funktion
 
 Namnrymd: [Microsoft. Quantum. Arrays](xref:Microsoft.Quantum.Arrays)
 
-Paketfilerna [](https://nuget.org/packages/)
+Paket: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Delar upp en matris i flera delar med samma längd.

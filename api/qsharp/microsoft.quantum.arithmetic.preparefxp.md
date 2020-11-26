@@ -1,30 +1,30 @@
 ---
 uid: Microsoft.Quantum.Arithmetic.PrepareFxP
 title: PrepareFxP-åtgärd
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Arithmetic
 qsharp.name: PrepareFxP
 qsharp.summary: Initialize a quantum fixed-point number to a classical constant.
-ms.openlocfilehash: 1860f7d2418b9652495fe9d899e8c963816d86ff
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 29ba66700db83d0786a70841c7b03843a9ae6219
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92730587"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96222413"
 ---
 # <a name="preparefxp-operation"></a>PrepareFxP-åtgärd
 
 Namnrymd: [Microsoft. Quantum. aritmetisk](xref:Microsoft.Quantum.Arithmetic)
 
-Paketfilerna [](https://nuget.org/packages/)
+Paket: [Microsoft. Quantum. numeric](https://nuget.org/packages/Microsoft.Quantum.Numerics)
 
 
 Initiera ett Quantum-fast punkt-nummer till en klassisk konstant.
 
 ```qsharp
-operation PrepareFxP (constant : Double, fp : Microsoft.Quantum.Arithmetic.FixedPoint) : Unit
+operation PrepareFxP (constant : Double, fp : Microsoft.Quantum.Arithmetic.FixedPoint) : Unit is Adj + Ctl
 ```
 
 
