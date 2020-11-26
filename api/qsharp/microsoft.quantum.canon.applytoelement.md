@@ -1,67 +1,67 @@
 ---
 uid: Microsoft.Quantum.Canon.ApplyToElement
 title: ApplyToElement-åtgärd
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Canon
 qsharp.name: ApplyToElement
 qsharp.summary: Applies an operation to a given element of an array.
-ms.openlocfilehash: 5c321d95c9b79bc50827c2b50c406b164e143dc6
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 8cbc42a1c43b4c9a037729671eb3c82d365af580
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92729274"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96217635"
 ---
-# <a name="applytoelement-operation"></a><span data-ttu-id="df087-102">ApplyToElement-åtgärd</span><span class="sxs-lookup"><span data-stu-id="df087-102">ApplyToElement operation</span></span>
+# <a name="applytoelement-operation"></a><span data-ttu-id="f2d3d-102">ApplyToElement-åtgärd</span><span class="sxs-lookup"><span data-stu-id="f2d3d-102">ApplyToElement operation</span></span>
 
-<span data-ttu-id="df087-103">Namnrymd: [Microsoft. Quantum. Canon](xref:Microsoft.Quantum.Canon)</span><span class="sxs-lookup"><span data-stu-id="df087-103">Namespace: [Microsoft.Quantum.Canon](xref:Microsoft.Quantum.Canon)</span></span>
+<span data-ttu-id="f2d3d-103">Namnrymd: [Microsoft. Quantum. Canon](xref:Microsoft.Quantum.Canon)</span><span class="sxs-lookup"><span data-stu-id="f2d3d-103">Namespace: [Microsoft.Quantum.Canon](xref:Microsoft.Quantum.Canon)</span></span>
 
-<span data-ttu-id="df087-104">Paketfilerna [](https://nuget.org/packages/)</span><span class="sxs-lookup"><span data-stu-id="df087-104">Package: [](https://nuget.org/packages/)</span></span>
+<span data-ttu-id="f2d3d-104">Paket: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)</span><span class="sxs-lookup"><span data-stu-id="f2d3d-104">Package: [Microsoft.Quantum.Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)</span></span>
 
 
-<span data-ttu-id="df087-105">Tillämpar en åtgärd på ett angivet element i en matris.</span><span class="sxs-lookup"><span data-stu-id="df087-105">Applies an operation to a given element of an array.</span></span>
+<span data-ttu-id="f2d3d-105">Tillämpar en åtgärd på ett angivet element i en matris.</span><span class="sxs-lookup"><span data-stu-id="f2d3d-105">Applies an operation to a given element of an array.</span></span>
 
 ```qsharp
 operation ApplyToElement<'T> (op : ('T => Unit), index : Int, targets : 'T[]) : Unit
 ```
 
 
-## <a name="description"></a><span data-ttu-id="df087-106">Beskrivning</span><span class="sxs-lookup"><span data-stu-id="df087-106">Description</span></span>
+## <a name="description"></a><span data-ttu-id="f2d3d-106">Beskrivning</span><span class="sxs-lookup"><span data-stu-id="f2d3d-106">Description</span></span>
 
-<span data-ttu-id="df087-107">En åtgärd `op` , ett index `index` och en matris med mål `targets` , gäller `op(targets[index])` .</span><span class="sxs-lookup"><span data-stu-id="df087-107">Given an operation `op`, an index `index`, and an array of targets `targets`, applies `op(targets[index])`.</span></span>
+<span data-ttu-id="f2d3d-107">En åtgärd `op` , ett index `index` och en matris med mål `targets` , gäller `op(targets[index])` .</span><span class="sxs-lookup"><span data-stu-id="f2d3d-107">Given an operation `op`, an index `index`, and an array of targets `targets`, applies `op(targets[index])`.</span></span>
 
-## <a name="input"></a><span data-ttu-id="df087-108">Indata</span><span class="sxs-lookup"><span data-stu-id="df087-108">Input</span></span>
+## <a name="input"></a><span data-ttu-id="f2d3d-108">Indata</span><span class="sxs-lookup"><span data-stu-id="f2d3d-108">Input</span></span>
 
-### <a name="op--t--unit"></a><span data-ttu-id="df087-109">OP: t => [enhet](xref:microsoft.quantum.lang-ref.unit)</span><span class="sxs-lookup"><span data-stu-id="df087-109">op : 'T => [Unit](xref:microsoft.quantum.lang-ref.unit)</span></span> 
+### <a name="op--t--unit"></a><span data-ttu-id="f2d3d-109">OP: t => [enhet](xref:microsoft.quantum.lang-ref.unit)</span><span class="sxs-lookup"><span data-stu-id="f2d3d-109">op : 'T => [Unit](xref:microsoft.quantum.lang-ref.unit)</span></span> 
 
-<span data-ttu-id="df087-110">En åtgärd som ska tillämpas.</span><span class="sxs-lookup"><span data-stu-id="df087-110">An operation to be applied.</span></span>
-
-
-### <a name="index--int"></a><span data-ttu-id="df087-111">index: [int](xref:microsoft.quantum.lang-ref.int)</span><span class="sxs-lookup"><span data-stu-id="df087-111">index : [Int](xref:microsoft.quantum.lang-ref.int)</span></span>
-
-<span data-ttu-id="df087-112">Ett index i matrisen med mål.</span><span class="sxs-lookup"><span data-stu-id="df087-112">An index into the array of targets.</span></span>
+<span data-ttu-id="f2d3d-110">En åtgärd som ska tillämpas.</span><span class="sxs-lookup"><span data-stu-id="f2d3d-110">An operation to be applied.</span></span>
 
 
-### <a name="targets--t"></a><span data-ttu-id="df087-113">mål: ' t []</span><span class="sxs-lookup"><span data-stu-id="df087-113">targets : 'T[]</span></span>
+### <a name="index--int"></a><span data-ttu-id="f2d3d-111">index: [int](xref:microsoft.quantum.lang-ref.int)</span><span class="sxs-lookup"><span data-stu-id="f2d3d-111">index : [Int](xref:microsoft.quantum.lang-ref.int)</span></span>
 
-<span data-ttu-id="df087-114">En matris med möjliga mål för `op` .</span><span class="sxs-lookup"><span data-stu-id="df087-114">An array of possible targets for `op`.</span></span>
+<span data-ttu-id="f2d3d-112">Ett index i matrisen med mål.</span><span class="sxs-lookup"><span data-stu-id="f2d3d-112">An index into the array of targets.</span></span>
 
 
+### <a name="targets--t"></a><span data-ttu-id="f2d3d-113">mål: ' t []</span><span class="sxs-lookup"><span data-stu-id="f2d3d-113">targets : 'T[]</span></span>
 
-## <a name="output--unit"></a><span data-ttu-id="df087-115">Utdata: [enhet](xref:microsoft.quantum.lang-ref.unit)</span><span class="sxs-lookup"><span data-stu-id="df087-115">Output : [Unit](xref:microsoft.quantum.lang-ref.unit)</span></span>
+<span data-ttu-id="f2d3d-114">En matris med möjliga mål för `op` .</span><span class="sxs-lookup"><span data-stu-id="f2d3d-114">An array of possible targets for `op`.</span></span>
 
 
 
-## <a name="type-parameters"></a><span data-ttu-id="df087-116">Typparametrar</span><span class="sxs-lookup"><span data-stu-id="df087-116">Type Parameters</span></span>
+## <a name="output--unit"></a><span data-ttu-id="f2d3d-115">Utdata: [enhet](xref:microsoft.quantum.lang-ref.unit)</span><span class="sxs-lookup"><span data-stu-id="f2d3d-115">Output : [Unit](xref:microsoft.quantum.lang-ref.unit)</span></span>
 
-### <a name="t"></a><span data-ttu-id="df087-117">Inte</span><span class="sxs-lookup"><span data-stu-id="df087-117">'T</span></span>
 
-<span data-ttu-id="df087-118">Indatatypen för den åtgärd som ska tillämpas.</span><span class="sxs-lookup"><span data-stu-id="df087-118">The input type of the operation to be applied.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="df087-119">Se även</span><span class="sxs-lookup"><span data-stu-id="df087-119">See Also</span></span>
+## <a name="type-parameters"></a><span data-ttu-id="f2d3d-116">Typparametrar</span><span class="sxs-lookup"><span data-stu-id="f2d3d-116">Type Parameters</span></span>
 
-- [<span data-ttu-id="df087-120">Microsoft. Quantum. Canon. ApplyToElementC</span><span class="sxs-lookup"><span data-stu-id="df087-120">Microsoft.Quantum.Canon.ApplyToElementC</span></span>](xref:Microsoft.Quantum.Canon.ApplyToElementC)
-- [<span data-ttu-id="df087-121">Microsoft. Quantum. Canon. ApplyToElementA</span><span class="sxs-lookup"><span data-stu-id="df087-121">Microsoft.Quantum.Canon.ApplyToElementA</span></span>](xref:Microsoft.Quantum.Canon.ApplyToElementA)
-- [<span data-ttu-id="df087-122">Microsoft. Quantum. Canon. ApplyToElementCA</span><span class="sxs-lookup"><span data-stu-id="df087-122">Microsoft.Quantum.Canon.ApplyToElementCA</span></span>](xref:Microsoft.Quantum.Canon.ApplyToElementCA)
+### <a name="t"></a><span data-ttu-id="f2d3d-117">Inte</span><span class="sxs-lookup"><span data-stu-id="f2d3d-117">'T</span></span>
+
+<span data-ttu-id="f2d3d-118">Indatatypen för den åtgärd som ska tillämpas.</span><span class="sxs-lookup"><span data-stu-id="f2d3d-118">The input type of the operation to be applied.</span></span>
+
+## <a name="see-also"></a><span data-ttu-id="f2d3d-119">Se även</span><span class="sxs-lookup"><span data-stu-id="f2d3d-119">See Also</span></span>
+
+- [<span data-ttu-id="f2d3d-120">Microsoft. Quantum. Canon. ApplyToElementC</span><span class="sxs-lookup"><span data-stu-id="f2d3d-120">Microsoft.Quantum.Canon.ApplyToElementC</span></span>](xref:Microsoft.Quantum.Canon.ApplyToElementC)
+- [<span data-ttu-id="f2d3d-121">Microsoft. Quantum. Canon. ApplyToElementA</span><span class="sxs-lookup"><span data-stu-id="f2d3d-121">Microsoft.Quantum.Canon.ApplyToElementA</span></span>](xref:Microsoft.Quantum.Canon.ApplyToElementA)
+- [<span data-ttu-id="f2d3d-122">Microsoft. Quantum. Canon. ApplyToElementCA</span><span class="sxs-lookup"><span data-stu-id="f2d3d-122">Microsoft.Quantum.Canon.ApplyToElementCA</span></span>](xref:Microsoft.Quantum.Canon.ApplyToElementCA)
