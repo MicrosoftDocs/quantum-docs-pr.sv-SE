@@ -1,7 +1,7 @@
 ---
 uid: Microsoft.Quantum.Extensions.Convert.PauliArrayToInt
 title: Funktionen PauliArrayToInt
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Extensions.Convert
@@ -14,24 +14,24 @@ qsharp.summary: >-
   >
 
   > Please use @"microsoft.quantum.convert.pauliarrayasint".
-ms.openlocfilehash: 93a6ed776d6713b0affae67046595f07d578e58d
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: f059991c2d3ea4d283c539fa057e4aaff6f3830a
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92726856"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96200024"
 ---
-# <a name="pauliarraytoint-function"></a><span data-ttu-id="b8115-102">Funktionen PauliArrayToInt</span><span class="sxs-lookup"><span data-stu-id="b8115-102">PauliArrayToInt function</span></span>
+# <a name="pauliarraytoint-function"></a><span data-ttu-id="0b7cb-102">Funktionen PauliArrayToInt</span><span class="sxs-lookup"><span data-stu-id="0b7cb-102">PauliArrayToInt function</span></span>
 
-<span data-ttu-id="b8115-103">Namnrymd: [Microsoft. Quantum. Extensions. convert](xref:Microsoft.Quantum.Extensions.Convert)</span><span class="sxs-lookup"><span data-stu-id="b8115-103">Namespace: [Microsoft.Quantum.Extensions.Convert](xref:Microsoft.Quantum.Extensions.Convert)</span></span>
+<span data-ttu-id="0b7cb-103">Namnrymd: [Microsoft. Quantum. Extensions. convert](xref:Microsoft.Quantum.Extensions.Convert)</span><span class="sxs-lookup"><span data-stu-id="0b7cb-103">Namespace: [Microsoft.Quantum.Extensions.Convert](xref:Microsoft.Quantum.Extensions.Convert)</span></span>
 
-<span data-ttu-id="b8115-104">Paketfilerna [](https://nuget.org/packages/)</span><span class="sxs-lookup"><span data-stu-id="b8115-104">Package: [](https://nuget.org/packages/)</span></span>
+<span data-ttu-id="0b7cb-104">Paket: [Microsoft. Quantum. QSharp. Core](https://nuget.org/packages/Microsoft.Quantum.QSharp.Core)</span><span class="sxs-lookup"><span data-stu-id="0b7cb-104">Package: [Microsoft.Quantum.QSharp.Core](https://nuget.org/packages/Microsoft.Quantum.QSharp.Core)</span></span>
 
 
 > [!WARNING]
-> <span data-ttu-id="b8115-105">PauliArrayToInt är föråldrad.</span><span class="sxs-lookup"><span data-stu-id="b8115-105">PauliArrayToInt has been deprecated.</span></span> <span data-ttu-id="b8115-106">Använd <xref:Microsoft.Quantum.Convert.PauliArrayAsInt> i stället.</span><span class="sxs-lookup"><span data-stu-id="b8115-106">Please use <xref:Microsoft.Quantum.Convert.PauliArrayAsInt> instead.</span></span>
+> <span data-ttu-id="0b7cb-105">PauliArrayToInt är föråldrad.</span><span class="sxs-lookup"><span data-stu-id="0b7cb-105">PauliArrayToInt has been deprecated.</span></span> <span data-ttu-id="0b7cb-106">Använd <xref:Microsoft.Quantum.Convert.PauliArrayAsInt> i stället.</span><span class="sxs-lookup"><span data-stu-id="0b7cb-106">Please use <xref:Microsoft.Quantum.Convert.PauliArrayAsInt> instead.</span></span>
 >
-> <span data-ttu-id="b8115-107">Använd @"microsoft.quantum.convert.pauliarrayasint".</span><span class="sxs-lookup"><span data-stu-id="b8115-107">Please use @"microsoft.quantum.convert.pauliarrayasint".</span></span>
+> <span data-ttu-id="0b7cb-107">Använd @"microsoft.quantum.convert.pauliarrayasint".</span><span class="sxs-lookup"><span data-stu-id="0b7cb-107">Please use @"microsoft.quantum.convert.pauliarrayasint".</span></span>
 
 
 
@@ -40,13 +40,13 @@ function PauliArrayToInt (paulis : Pauli[]) : Int
 ```
 
 
-## <a name="input"></a><span data-ttu-id="b8115-108">Indata</span><span class="sxs-lookup"><span data-stu-id="b8115-108">Input</span></span>
+## <a name="input"></a><span data-ttu-id="0b7cb-108">Indata</span><span class="sxs-lookup"><span data-stu-id="0b7cb-108">Input</span></span>
 
-### <a name="paulis--pauli"></a><span data-ttu-id="b8115-109">Paulis: [Pauli](xref:microsoft.quantum.lang-ref.pauli)[]</span><span class="sxs-lookup"><span data-stu-id="b8115-109">paulis : [Pauli](xref:microsoft.quantum.lang-ref.pauli)[]</span></span>
-
-
+### <a name="paulis--pauli"></a><span data-ttu-id="0b7cb-109">Paulis: [Pauli](xref:microsoft.quantum.lang-ref.pauli)[]</span><span class="sxs-lookup"><span data-stu-id="0b7cb-109">paulis : [Pauli](xref:microsoft.quantum.lang-ref.pauli)[]</span></span>
 
 
 
-## <a name="output--int"></a><span data-ttu-id="b8115-110">Utdata: [int](xref:microsoft.quantum.lang-ref.int)</span><span class="sxs-lookup"><span data-stu-id="b8115-110">Output : [Int](xref:microsoft.quantum.lang-ref.int)</span></span>
+
+
+## <a name="output--int"></a><span data-ttu-id="0b7cb-110">Utdata: [int](xref:microsoft.quantum.lang-ref.int)</span><span class="sxs-lookup"><span data-stu-id="0b7cb-110">Output : [Int](xref:microsoft.quantum.lang-ref.int)</span></span>
 
