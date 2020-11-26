@@ -1,7 +1,7 @@
 ---
 uid: Microsoft.Quantum.Simulation.TimeDependentBlockEncoding
 title: TimeDependentBlockEncoding-användardefinierad typ
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: udt
 qsharp.namespace: Microsoft.Quantum.Simulation
@@ -12,18 +12,18 @@ qsharp.summary: >-
   That is, a `TimeDependentBlockEncoding` is a unitary $U$ controlled by a state $\ket{k}_d$ in clock register `d` such that an arbitrary operator $H_k$ of interest that acts on the system register `s` is encoded in the top- left block corresponding to auxiliary state $\ket{0}_a$. That is,
 
   $$ \begin{align} (\bra{0}\_a\otimes I_{ds})U(\ket{0}\_a\otimes I_{ds}) = \sum_{k}\ket{k}\bra{k}\_d\otimes H_k. \end{align} $$.
-ms.openlocfilehash: 1cb3a3cf1e16b194eebd1574da6f9934fc34e5f7
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 8fade22dca7af16a567a88f4413c8e9dcc1604b2
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92734222"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96203509"
 ---
 # <a name="timedependentblockencoding-user-defined-type"></a>TimeDependentBlockEncoding-användardefinierad typ
 
 Namnrymd: [Microsoft. Quantum. simulering](xref:Microsoft.Quantum.Simulation)
 
-Paketfilerna [](https://nuget.org/packages/)
+Paket: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)
 
 
 Representerar en `BlockEncoding` som styrs av en klock registrering.
