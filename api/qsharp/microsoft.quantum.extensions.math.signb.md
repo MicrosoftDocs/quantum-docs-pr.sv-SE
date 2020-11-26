@@ -1,7 +1,7 @@
 ---
 uid: Microsoft.Quantum.Extensions.Math.SignB
 title: Funktionen SignB
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Extensions.Math
@@ -14,18 +14,18 @@ qsharp.summary: >-
   >
 
   > Please use @"microsoft.quantum.math.signl".
-ms.openlocfilehash: 6529c0b4052aa8259a30edcebb4317b536a5f351
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: e722304d1025a854f84d9383336e99871a87c59d
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92726094"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96212757"
 ---
 # <a name="signb-function"></a>Funktionen SignB
 
 Namnrymd: [Microsoft. Quantum. Extensions. math](xref:Microsoft.Quantum.Extensions.Math)
 
-Paketfilerna [](https://nuget.org/packages/)
+Paket: [Microsoft. Quantum. QSharp. Core](https://nuget.org/packages/Microsoft.Quantum.QSharp.Core)
 
 
 > [!WARNING]

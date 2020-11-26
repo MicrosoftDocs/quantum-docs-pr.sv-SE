@@ -1,24 +1,24 @@
 ---
 uid: Microsoft.Quantum.MachineLearning.EstimateGradient
 title: EstimateGradient-åtgärd
-ms.date: 10/26/2020 12:00:00 AM
+ms.date: 11/25/2020 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.MachineLearning
 qsharp.name: EstimateGradient
 qsharp.summary: Estimates the training gradient for a sequential classifier at a particular model and for a given encoded input.
-ms.openlocfilehash: f42cc30c98346a25f584d7527227a95cb413c32b
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 79f4abdf131509d4948a3c114e631118329f88d8
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92730750"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96211856"
 ---
 # <a name="estimategradient-operation"></a>EstimateGradient-åtgärd
 
 Namnrymd: [Microsoft. Quantum. MachineLearning](xref:Microsoft.Quantum.MachineLearning)
 
-Paketfilerna [](https://nuget.org/packages/)
+Paket: [Microsoft. Quantum. MachineLearning](https://nuget.org/packages/Microsoft.Quantum.MachineLearning)
 
 
 Uppskattar inlärnings toningen för en sekventiell klassificerare i en viss modell och för en viss kodad indatamängd.
