@@ -10,12 +10,12 @@ uid: microsoft.quantum.install.standalone
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: a6823888dcbe8cf79f0045d2615fe8b889dcc7c3
-ms.sourcegitcommit: a13c7c86fd52a05cbf129b8dd713d6586ca1cc2c
+ms.openlocfilehash: eeb567dedc1b8123b32faf7ed3a42bb51f16a7d2
+ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
 ms.translationtype: HT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93376430"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96228737"
 ---
 # <a name="develop-with-no-locq-applications-in-an-ide"></a>Utveckla med Q#-program i en IDE
 
@@ -63,7 +63,7 @@ Skapa ett nytt projekt:
 
 1. Klicka på **Visa** -> **Kommandopalett** och välj **Q#: Skapa nytt projekt**.
 2. Klicka på **Fristående konsolprogram**.
-3. Gå till platsen där du vill spara projektet och klicka på **Skapa projekt**.
+3. Gå till den plats där du vill spara projektet. Ange projektnamnet och klicka på **Skapa projekt**.
 4. När projektet har skapats klickar du på **Öppna nytt projekt...** längst ned till höger.
 
 Inspektera projektet. Du bör se en källfil med namnet `Program.qs`, vilket är ett Q#-program som definierar en enkel åtgärd för att skriva ut ett meddelande till konsolen.
