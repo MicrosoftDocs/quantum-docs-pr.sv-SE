@@ -9,12 +9,12 @@ uid: microsoft.quantum.machines.resources-estimator
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: e1ec01d85a141b9c8a7a5ba5589663a0773520e7
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 57f6602effd25fff353a8fee7f27acc529ce82af
+ms.sourcegitcommit: c3c892ef35eae6926d0c4339d9d26bfd8be77e9a
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92691872"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96318498"
 ---
 # <a name="quantum-development-kit-qdk-resources-estimator"></a>Uppskatta QDK-resurser (Quantum Development Kit)
 
@@ -123,15 +123,15 @@ namespace Quantum.MyProgram
 
 Resurs uppskattningen spårar följande mått:
 
-|Mått|Beskrivning|
+|Metric|Beskrivning|
 |----|----|
 |__CNOT__    |Antalet körningar av `CNOT` åtgärder (även kallat kontrollerade Pauli X-åtgärder).|
 |__QubitClifford__ |Antalet körningar av alla enskilda qubit Clifford-och Pauli-åtgärder.|
-|__Åtgärd__    |Antalet körningar av alla mätningar.  |
+|__Mått__    |Antalet körningar av alla mätningar.  |
 |__R__    |Antalet körningar av en enskild-qubit rotations, exklusive `T` , Clifford och Pauli åtgärder.  |
 |__T__    |Antalet körningar av `T` åtgärder och deras konjugat, inklusive `T` åtgärderna, T_x = H. T. H och T_y = hy. T. hy.  |
 |__Djuplodande__|Djupet i Quantum-kretsen som körs av Q# åtgärden (se [nedan](#depth-width-and-qubitcount)). Djup måttet räknar som standard bara `T` grindar. Mer information finns i [djup räknare](xref:microsoft.quantum.machines.qc-trace-simulator.depth-counter).   |
-|__LED__|Bredden på den Quantum-krets som körs av Q# åtgärden (se [nedan](#depth-width-and-qubitcount)). Djup måttet räknar som standard bara `T` grindar. Mer information finns i [djup räknare](xref:microsoft.quantum.machines.qc-trace-simulator.depth-counter).   |
+|__LED__|Bredden på den Quantum-krets som körs av Q# åtgärden (se [nedan](#depth-width-and-qubitcount)). Djup måttet räknar som standard bara `T` grindar. Mer information finns i [räknare för bredd](xref:microsoft.quantum.machines.qc-trace-simulator.width-counter).   |
 |__QubitCount__    |Den nedre gränsen för maximalt antal allokerade qubits under körningen av Q# åtgärden. Det här måttet kanske inte är kompatibelt med __djupet__ (se nedan).  |
 |__BorrowedWidth__    |Det maximala antalet qubits som lånas i Q# åtgärden.  |
 
