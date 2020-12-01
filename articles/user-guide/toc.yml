@@ -1,13 +1,13 @@
 - name: Översikt/innehåll
   href: index.md
-- name: Grunderna i Q#
-  href: basics.md
+- name: Q#-program
+  href: programs.md
 - name: Sätt att köra ett Q#-program
   href: host-programs.md
-- name: Q#-språket
+- name: Testa och felsöka
+  href: testing-debugging.md
+- name: Vägledning om Q#-språket
   href: language/toc.yml
-- name: Använda Q#
-  href: using-qsharp/toc.yml
 - name: Simulatorer och resursberäknare
   href: machines/toc.yml
 - name: Q#-bibliotek

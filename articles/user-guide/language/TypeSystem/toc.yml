@@ -1,0 +1,14 @@
+- name: Typsystem i Q#
+  href: index.md
+- name: Kvantumdatatyper
+  href: quantumdatatypes.md
+- name: Oföränderlighet
+  href: immutability.md
+- name: Åtgärder och funktioner
+  href: operationsandfunctions.md
+- name: Jämförelse av enkla tuppeldatabaser
+  href: singletontupleequivalence.md
+- name: Undertyp och varians
+  href: subtypingandvariance.md
+- name: Typparameterisering
+  href: typeparameterizations.md

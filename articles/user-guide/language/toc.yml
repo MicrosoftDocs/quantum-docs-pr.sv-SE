@@ -1,4 +1,12 @@
-- name: Typer i Q#
-  href: types.md
+- name: Översikt
+  href: index.md
+- name: Programstruktur
+  href: programstructure/toc.yml
+- name: Instruktioner
+  href: statements/toc.yml
 - name: Uttryck
-  href: expressions.md
+  href: expressions/toc.yml
+- name: Typsystem
+  href: typesystem/toc.yml
+- name: Grammatik
+  href: grammar.md
