@@ -9,12 +9,12 @@ uid: microsoft.quantum.machines.resources-estimator
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 57f6602effd25fff353a8fee7f27acc529ce82af
-ms.sourcegitcommit: c3c892ef35eae6926d0c4339d9d26bfd8be77e9a
+ms.openlocfilehash: de425c2d91c6528b13c3bedd81acb4b4273ed711
+ms.sourcegitcommit: 7c687495a79d75ae9e029e5a41baec84d9e07bb0
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96318498"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96604651"
 ---
 # <a name="quantum-development-kit-qdk-resources-estimator"></a>Uppskatta QDK-resurser (Quantum Development Kit)
 
@@ -28,9 +28,9 @@ Du kan använda resurs uppskattningen för att köra alla Q# åtgärder. Mer inf
 
 ### <a name="invoking-the-resources-estimator-from-c"></a>Anropar resurs uppskattningen från C # 
 
-Precis som med andra måldatorer skapar du först en instans av klassen `ResourceEstimator` och skickar den sedan som den första parametern för en åtgärds `Run`-metod.
+Precis som med andra måldatorer skapar du först en instans av klassen `ResourcesEstimator` och skickar den sedan som den första parametern för en åtgärds `Run`-metod.
 
-Observera att i motsats till `QuantumSimulator`-klassen implementerar `ResourceEstimator`-klassen inte <xref:System.IDisposable>-gränssnittet och därför behöver du inte ange det i en `using`-instruktion.
+Observera att i motsats till `QuantumSimulator`-klassen implementerar `ResourcesEstimator`-klassen inte <xref:System.IDisposable>-gränssnittet och därför behöver du inte ange det i en `using`-instruktion.
 
 ```csharp
 using Microsoft.Quantum.Simulation.Core;
@@ -123,7 +123,7 @@ namespace Quantum.MyProgram
 
 Resurs uppskattningen spårar följande mått:
 
-|Metric|Beskrivning|
+|Mått|Beskrivning|
 |----|----|
 |__CNOT__    |Antalet körningar av `CNOT` åtgärder (även kallat kontrollerade Pauli X-åtgärder).|
 |__QubitClifford__ |Antalet körningar av alla enskilda qubit Clifford-och Pauli-åtgärder.|
@@ -131,7 +131,7 @@ Resurs uppskattningen spårar följande mått:
 |__R__    |Antalet körningar av en enskild-qubit rotations, exklusive `T` , Clifford och Pauli åtgärder.  |
 |__T__    |Antalet körningar av `T` åtgärder och deras konjugat, inklusive `T` åtgärderna, T_x = H. T. H och T_y = hy. T. hy.  |
 |__Djuplodande__|Djupet i Quantum-kretsen som körs av Q# åtgärden (se [nedan](#depth-width-and-qubitcount)). Djup måttet räknar som standard bara `T` grindar. Mer information finns i [djup räknare](xref:microsoft.quantum.machines.qc-trace-simulator.depth-counter).   |
-|__LED__|Bredden på den Quantum-krets som körs av Q# åtgärden (se [nedan](#depth-width-and-qubitcount)). Djup måttet räknar som standard bara `T` grindar. Mer information finns i [räknare för bredd](xref:microsoft.quantum.machines.qc-trace-simulator.width-counter).   |
+|__Bredd__|Bredden på den Quantum-krets som körs av Q# åtgärden (se [nedan](#depth-width-and-qubitcount)). Djup måttet räknar som standard bara `T` grindar. Mer information finns i [räknare för bredd](xref:microsoft.quantum.machines.qc-trace-simulator.width-counter).   |
 |__QubitCount__    |Den nedre gränsen för maximalt antal allokerade qubits under körningen av Q# åtgärden. Det här måttet kanske inte är kompatibelt med __djupet__ (se nedan).  |
 |__BorrowedWidth__    |Det maximala antalet qubits som lånas i Q# åtgärden.  |
 
