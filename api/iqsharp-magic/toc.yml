@@ -1,3 +1,5 @@
+- href: index.md
+  name: Magiska kommandon för IQ#
 - href: azure.connect.md
   name: '%azure.connect magiskt kommando'
 - href: azure.execute.md
