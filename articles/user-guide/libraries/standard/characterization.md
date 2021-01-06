@@ -9,12 +9,12 @@ ms.topic: article
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 51e7b3bcf4402a4d0ba5647643f284e9f10c3bb3
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 72af3f5517b272d6d8159b158103b5af91d266b5
+ms.sourcegitcommit: c48cdafccb3487bf93d67fa80cdc64768445b691
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92692154"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97940894"
 ---
 # <a name="quantum-characterization-and-statistics"></a>Quantum-karakterisering och statistik #
 
@@ -56,7 +56,7 @@ Vi understryker detta genom att en kort beskrivning av uppskattning av iterativa
 
 Om det finns ett indata-tillstånd som inte är en eigenstate, vilket är att anta att om $U (m) \ket{\phi \_ j} = e ^ {im\phi \_ j} $, så guidar processen för fas uppskattning icke-deterministiskt Quantum State mot en enda energi eigenstate.  Den eigenstate som den slutligen konvergerar till är den eigenstate som är mest sannolik för att producera den observerade `Result` .
 
-Mer specifikt utför ett enda steg i PE följande icke-enhetliga omvandling i en tillstånds \begin{align} \ sum_j \sqrt{\Pr (\phi \_ j)} \ket{\phi \_ j} \mapsto \sum \_ j\frac {\ sqrt {\ PR (\phi \_ j)} \sqrt{\Pr (\text{result} | \phi \_ j)} \Ket{\phi \_ j}} {\sqrt{\Pr (\phi \_ j) \sum \_ j \Pr (\text{result} | \phi \_ j)}}.
+Mer specifikt utför ett enda steg i PE följande icke-enhetliga omvandling i en tillstånds \begin{align} \ sum_j \sqrt{\Pr (\phi \_ j)} \ket{\phi \_ j} \mapsto \sum \_ j\frac {\ sqrt {\ PR (\phi \_ j)} \sqrt{\Pr (\text{result} | \phi \_ j)} \Ket{\phi \_ j}} {\sqrt{\Pr (\phi \_ j) \sum \_ k \Pr (\text{result} | \phi \_ k)}}.
 \end{align} eftersom den här processen itereras över flera `Result` värden, eigenstates som inte har de maximala värdena $ \ prod_k \pr (\text{result} \_ k | \phi \_ j) $ kommer att döljas exponentiellt.
 Som ett resultat kommer processen att konvergera till tillstånd med en enda eigenvalue om experimenten väljs korrekt.
 
