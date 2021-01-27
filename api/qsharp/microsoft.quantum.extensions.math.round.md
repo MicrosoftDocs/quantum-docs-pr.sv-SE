@@ -1,7 +1,7 @@
 ---
 uid: Microsoft.Quantum.Extensions.Math.Round
 title: Funktionen Round
-ms.date: 11/25/2020 12:00:00 AM
+ms.date: 1/23/2021 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Extensions.Math
@@ -14,24 +14,24 @@ qsharp.summary: >-
   >
 
   > Please use @"microsoft.quantum.math.round".
-ms.openlocfilehash: c691e4bdf99a0a19a13a4b3ed3c4dbe6049fadc3
-ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
+ms.openlocfilehash: b7b675e328003731e251566c2f791808d6286d8d
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96199412"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98849601"
 ---
-# <a name="round-function"></a><span data-ttu-id="ae862-102">Funktionen Round</span><span class="sxs-lookup"><span data-stu-id="ae862-102">Round function</span></span>
+# <a name="round-function"></a><span data-ttu-id="3c1cd-102">Funktionen Round</span><span class="sxs-lookup"><span data-stu-id="3c1cd-102">Round function</span></span>
 
-<span data-ttu-id="ae862-103">Namnrymd: [Microsoft. Quantum. Extensions. math](xref:Microsoft.Quantum.Extensions.Math)</span><span class="sxs-lookup"><span data-stu-id="ae862-103">Namespace: [Microsoft.Quantum.Extensions.Math](xref:Microsoft.Quantum.Extensions.Math)</span></span>
+<span data-ttu-id="3c1cd-103">Namnrymd: [Microsoft. Quantum. Extensions. math](xref:Microsoft.Quantum.Extensions.Math)</span><span class="sxs-lookup"><span data-stu-id="3c1cd-103">Namespace: [Microsoft.Quantum.Extensions.Math](xref:Microsoft.Quantum.Extensions.Math)</span></span>
 
-<span data-ttu-id="ae862-104">Paket: [Microsoft. Quantum. QSharp. Core](https://nuget.org/packages/Microsoft.Quantum.QSharp.Core)</span><span class="sxs-lookup"><span data-stu-id="ae862-104">Package: [Microsoft.Quantum.QSharp.Core](https://nuget.org/packages/Microsoft.Quantum.QSharp.Core)</span></span>
+<span data-ttu-id="3c1cd-104">Paket: [Microsoft. Quantum. QSharp. Core](https://nuget.org/packages/Microsoft.Quantum.QSharp.Core)</span><span class="sxs-lookup"><span data-stu-id="3c1cd-104">Package: [Microsoft.Quantum.QSharp.Core](https://nuget.org/packages/Microsoft.Quantum.QSharp.Core)</span></span>
 
 
 > [!WARNING]
-> <span data-ttu-id="ae862-105">Round är föråldrad.</span><span class="sxs-lookup"><span data-stu-id="ae862-105">Round has been deprecated.</span></span> <span data-ttu-id="ae862-106">Använd <xref:Microsoft.Quantum.Math.Round> i stället.</span><span class="sxs-lookup"><span data-stu-id="ae862-106">Please use <xref:Microsoft.Quantum.Math.Round> instead.</span></span>
+> <span data-ttu-id="3c1cd-105">Round är föråldrad.</span><span class="sxs-lookup"><span data-stu-id="3c1cd-105">Round has been deprecated.</span></span> <span data-ttu-id="3c1cd-106">Använd <xref:Microsoft.Quantum.Math.Round> i stället.</span><span class="sxs-lookup"><span data-stu-id="3c1cd-106">Please use <xref:Microsoft.Quantum.Math.Round> instead.</span></span>
 >
-> <span data-ttu-id="ae862-107">Använd @"microsoft.quantum.math.round".</span><span class="sxs-lookup"><span data-stu-id="ae862-107">Please use @"microsoft.quantum.math.round".</span></span>
+> <span data-ttu-id="3c1cd-107">Använd @"microsoft.quantum.math.round".</span><span class="sxs-lookup"><span data-stu-id="3c1cd-107">Please use @"microsoft.quantum.math.round".</span></span>
 
 
 
@@ -40,13 +40,13 @@ function Round (a : Double) : Int
 ```
 
 
-## <a name="input"></a><span data-ttu-id="ae862-108">Indata</span><span class="sxs-lookup"><span data-stu-id="ae862-108">Input</span></span>
+## <a name="input"></a><span data-ttu-id="3c1cd-108">Indata</span><span class="sxs-lookup"><span data-stu-id="3c1cd-108">Input</span></span>
 
-### <a name="a--double"></a><span data-ttu-id="ae862-109">a: [Double](xref:microsoft.quantum.lang-ref.double)</span><span class="sxs-lookup"><span data-stu-id="ae862-109">a : [Double](xref:microsoft.quantum.lang-ref.double)</span></span>
-
-
+### <a name="a--double"></a><span data-ttu-id="3c1cd-109">a: [Double](xref:microsoft.quantum.lang-ref.double)</span><span class="sxs-lookup"><span data-stu-id="3c1cd-109">a : [Double](xref:microsoft.quantum.lang-ref.double)</span></span>
 
 
 
-## <a name="output--int"></a><span data-ttu-id="ae862-110">Utdata: [int](xref:microsoft.quantum.lang-ref.int)</span><span class="sxs-lookup"><span data-stu-id="ae862-110">Output : [Int](xref:microsoft.quantum.lang-ref.int)</span></span>
+
+
+## <a name="output--int"></a><span data-ttu-id="3c1cd-110">Utdata: [int](xref:microsoft.quantum.lang-ref.int)</span><span class="sxs-lookup"><span data-stu-id="3c1cd-110">Output : [Int](xref:microsoft.quantum.lang-ref.int)</span></span>
 
