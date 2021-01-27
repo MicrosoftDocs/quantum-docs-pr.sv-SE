@@ -4,17 +4,17 @@ description: Lär dig hur du läser in en egen data uppsättning för att träna
 author: geduardo
 ms.author: v-edsanc
 ms.date: 02/16/2020
-ms.topic: article
+ms.topic: conceptual
 uid: microsoft.quantum.libraries.machine-learning.load
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: cd6fdb6bb33a65ee02ac8c43f40df9abeff9c841
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: 7ebfe085e50d4647fdb1027250cf3134f8d8f8c2
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90833707"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98856456"
 ---
 # <a name="load-and-classify-your-own-datasets"></a>Läs in och klassificera dina egna data uppsättningar
 
@@ -75,14 +75,14 @@ Dessa datsets kan representeras av en `data.json` fil som liknar följande:
 
 Anta att vi har en liten data uppsättning med höjd och vikt för olika katter och hundar. Den här data uppsättningen är mycket liten för att träna en modell, men det räcker att Visa processen för att läsa in en data uppsättning.
 
-| Höjd (m) | Vikt (kg) | Animalie |
+| Höjd (m) | Weight (kg) | Animalie |
 |-----------|------------|--------|
 | 0,54      | 30         | Hunden    |
-| 0,30      | 8          | Lat    |
+| 0,30      | 8          | Katt    |
 | 0,91      | 44         | Hunden    |
 | 0,86      | 31          | Hunden    |
-| 0,32      | 5         | Lat    |
-| 0,25      | 4          | Lat    |
+| 0,32      | 5         | Katt    |
+| 0,25      | 4          | Katt    |
 
 Processen är:
 

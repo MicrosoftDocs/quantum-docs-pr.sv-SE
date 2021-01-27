@@ -1,6 +1,6 @@
 ---
 rubrik: Quantum Computing ord lista Beskrivning: en ord lista med vanliga termer, åtgärder och objekt som används i Quantum Computing.
-författare: bradben MS. author: v-benbra MS. Date: 9/1/2020 MS. topic: artikel-UID: Microsoft. Quantum. ordbok No-Loc:
+författare: bradben MS. author: v-benbra MS. Date: 9/1/2020 MS. topic: referens-UID: Microsoft. Quantum. ordbok No-Loc:
 - "Q#"
 - "$$v"
 - "$$"
@@ -128,7 +128,7 @@ En Vector vars riktning är oförändrad av en specifik omvandling och vars stor
 
 ## <a name="entanglement"></a>Sammanflätning
 
-Quantum-partiklar, till exempel [qubits](xref:microsoft.quantum.glossary#qubit), kan vara anslutna eller *Entangled* så att de inte kan beskrivas oberoende av varandra. Deras mått resultat korreleras även om de avgränsas oändligt långt bort. Entanglement är viktigt för [measuring](xref:microsoft.quantum.glossary#measurement) att mäta [status](xref:microsoft.quantum.glossary#quantum-state) för en qubit.  Mer information finns i [avancerade mat ris koncept](xref:microsoft.quantum.concepts.matrix-advanced).
+Quantum-partiklar, till exempel [qubits](xref:microsoft.quantum.glossary#qubit), kan vara anslutna eller *Entangled* så att de inte kan beskrivas oberoende av varandra. Deras mått resultat korreleras även om de avgränsas oändligt långt bort. Entanglement är viktigt för [](xref:microsoft.quantum.glossary#measurement) att mäta [status](xref:microsoft.quantum.glossary#quantum-state) för en qubit.  Mer information finns i [avancerade mat ris koncept](xref:microsoft.quantum.concepts.matrix-advanced).
 
 ## <a name="epr-pair"></a>EPR-par
 
@@ -177,7 +177,7 @@ Den grundläggande enheten för Quantum-beräkning i Q# . Det är ungefär detsa
 
 En subrutin som tillhandahåller data beroende information till en Quantum-algoritm vid körning. Målet är vanligt vis att ge en [superposition](xref:microsoft.quantum.glossary#superposition) av utdata som motsvarar indata som är i position. Mer information finns i [Oracles](xref:microsoft.quantum.libraries.data-structures#oracles).
 
-## <a name="partial-application"></a>Partiellt program
+## <a name="partial-application"></a>Delvis tillämpning
 
 Anropa en [funktion](xref:microsoft.quantum.glossary#function) eller [åtgärd](xref:microsoft.quantum.glossary#operation) utan alla nödvändiga indata. Detta returnerar en ny [uppringning](xref:microsoft.quantum.glossary#callable) som bara behöver de parametrar som saknas (vilket indikeras av ett under streck) som ska levereras under ett framtida program. Mer information finns i [partiellt program](xref:microsoft.quantum.qsharp.partialapplication).
 

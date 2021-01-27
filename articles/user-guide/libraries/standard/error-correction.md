@@ -5,16 +5,16 @@ author: QuantumWriter
 uid: microsoft.quantum.libraries.error-correction
 ms.author: martinro
 ms.date: 12/11/2017
-ms.topic: article
+ms.topic: conceptual
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 94251e185cea65c5fc08ed70d5fba9b7b19501e3
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: fc8e46aa22cb2575de42cfc3d4f57c43e5d3f7b0
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92692048"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98857212"
 ---
 # <a name="error-correction"></a>Fel korrigering #
 
@@ -61,7 +61,7 @@ Vi betecknar resultaten av varje mätning genom tecknet för det eigenvalue som 
 | $X _2 $ | $ \ket {001} $ | $ \ket {110} $ | $+$ | $-$ |
 
 Det innebär att resultaten av de två mätningarna unikt avgör vilken bit-flip-fel som inträffade, men utan att avslöja någon information om vilket tillstånd vi kodade.
-Vi kallar dessa resultat en *Syndrome* och refererar till processen för att mappa en Syndrome tillbaka till det fel som orsakade *återställningen* .
+Vi kallar dessa resultat en *Syndrome* och refererar till processen för att mappa en Syndrome tillbaka till det fel som orsakade *återställningen*.
 I synnerhet betonar vi att återställningen är en *klassisk* härlednings process som tar sig in i den Syndrome som inträffat, och returnerar en recept för att åtgärda eventuella fel som kan ha inträffat.
 
 > [!NOTE]
@@ -70,7 +70,7 @@ I synnerhet betonar vi att återställningen är en *klassisk* härlednings proc
 > På samma sätt kommer du att använda en fas vändning `Z` -åtgärd för att mappa $ \ket{\overline {1} } $ till $-\ket{\overline {1} } $ och därmed mappa $ \ket{\overline{+}} $ till $ \ket{\overline {-} } $.
 > Ofta kan koder skapas för att hantera större antal fel och för att hantera $Z $-fel samt $X $-fel.
 
-Insikter om att vi kan beskriva mätningar i en Quantum-fel korrigering som fungerar på samma sätt i alla kod stater, är grunden för den *stabiliseringsbaserade formaliteten* .
+Insikter om att vi kan beskriva mätningar i en Quantum-fel korrigering som fungerar på samma sätt i alla kod stater, är grunden för den *stabiliseringsbaserade formaliteten*.
 Q#Canon innehåller ett ramverk för att beskriva kodning i och avkodning från stabiliserings koder och för att beskriva hur en återställning av fel uppstår.
 I det här avsnittet beskriver vi det här ramverket och dess program till några vanliga Quantum Error-felkorrigerings koder.
 

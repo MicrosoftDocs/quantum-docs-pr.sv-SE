@@ -4,24 +4,24 @@ description: Lär dig hur molekylbaserade elektroniska system simuleras med Quan
 author: bradben
 ms.author: v-benbra
 ms.date: 10/09/2017
-ms.topic: article-type-from-white-list
+ms.topic: conceptual
 uid: microsoft.quantum.chemistry.concepts.quantummodels
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 4ff3d11bfd4dae5489fc4b7efe4da4ccda00882f
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: c12ab277f06bed61991a26af96953ccdbf72b642
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90833929"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98856225"
 ---
 # <a name="quantum-models-for-electronic-systems"></a>Quantum-modeller för elektroniska system
 
 För att kunna simulera elektroniska system måste vi först börja med att ange Hamiltonian, som kan hittas av den kanoniska kvantifieringsfel-proceduren som beskrivs ovan.
 Mer specifikt, för $N _e $ electrons med Momenta $p _i $ (i tre dimensioner) och Mass $m _e $ och positions vektorer $x _i $ tillsammans med probiteringen $Z _k e $ på positionerna $y _k $, Hamiltonian-operatorn läser \begin{Equation} \hat{H} = \sum \_ {i = 1} ^ {N \_ e} \frac{\hat{p} \_ i ^ 2} {2 m \_ e} + \frac {1} {2} \sum \_ {i\ne j} \frac{e ^ 2} {| \hat{x} \_ i-\hat{x} \_ j |}-\sum \_ {i, k} \frac{Z: \_ ^ 2} {| \hat{x} \_ i-{y} \_ k |} + \frac {1} {2} \ sum_ {k\ne k '} \frac{Z \_ kZ \_ {k '} e ^ 2} {| y \_ k-y \_ k ' |}. \label{EQ: Ham} \end{Equation} de Momenta operatorerna $ \hat{p} \_ i ^ 2 $ kan visas i real tid som Laplacian-operatörer, d.v.s. $ \hat{p} \_ i ^ 2 =-\partial \_ {x \_ i} ^ 2-\partial \_ {y \_ i} ^ 2-\partial \_ {z \_ i} ^ 2 $.
 Här har vi gjort det enklare att utföra antagandet att kärnorna är i vila för molekylen.
-Detta kallas för den födda Oppenheimera uppskattningen och är den som är giltig för energi spektrumet för låg energi i $ \hat{H} $ eftersom Electron massa är cirka $1/1836 $ vikten av en Proton.
+Detta kallas för Born-Oppenheimer uppskattning och är i så fall giltigt för energi spektrumet för låg energi i $ \hat{H} $ eftersom Electron massa är cirka $1/1836 $ massan av en Proton.
 Den här Hamiltonian-operatören kan enkelt hittas genom att skriva ut energin för ett system med $N \_ e $ electrons och tillämpa den kanoniska kvantifieringsfel-processen som beskrivs i [Quantum Dynamics](xref:microsoft.quantum.chemistry.concepts.quantumdynamics).
 
 För att kunna konstruera den enhetliga mat ris representationen för $e ^ {-i\hat {H} t} $ måste vi representera operatorn $ \hat{H} $ som en matris.
@@ -36,7 +36,7 @@ Av den anledningen är det viktigt att välja en grund som kan vara ett koncist 
 
 Det finns många lämpliga baseer som kan användas och valet av bra grund för att passa problemet är mycket av den som är en del av Quantum kemi.
 De enklaste de här bas uppsättningarna är t. ex. Slater (sluta) som är (rätvinkliga) lösningar till Schrödinger-ekvationen (t. ex. eigenfunctions av $ \hat{H} $) för väte-liknande atomer.
-Andra grund uppsättningar, t. ex. plan vågor eller banor med Real utrymme, kan användas och mer information finns i den undrar läsaren till standard texten [' molekylen Electronic-Structure teori '](https://onlinelibrary.wiley.com/doi/book/10.1002/9781119019572) med Helgaker.
+Andra grund uppsättningar, t. ex. plan vågor eller banor med Real utrymme, kan användas och mer information finns i den undrar läsaren till standard texten ["molekylen Electronic-Structure teori"](https://onlinelibrary.wiley.com/doi/book/10.1002/9781119019572) av Helgaker.
 
 Även om de tillstånd som används i modellen ovan kan verka godtyckliga, begränsar Quantum Mechanics begränsningar för de tillstånd som kan befunnits i natur.
 I synnerhet måste alla giltiga elektroniska Quantum-tillstånd vara antisymmetriska i utbyte av Electron-etiketter.

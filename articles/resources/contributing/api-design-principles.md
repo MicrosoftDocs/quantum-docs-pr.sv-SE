@@ -4,17 +4,17 @@ description: Q# Design principer för API
 author: cgranade
 ms.author: chgranad
 ms.date: 3/9/2020
-ms.topic: article
+ms.topic: contributor-guide
 uid: microsoft.quantum.contributing.api-design
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: b8623ba7e876c4ccda42d0ddaa07c0012a763292
-ms.sourcegitcommit: b930bb59a1ba8f41d2edc9ed98197109aa8c7f1b
+ms.openlocfilehash: 452b32141dc660acbe8ef28530f1430e5acff9aa
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96231782"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98856691"
 ---
 # <a name="no-locq-api-design-principles"></a>Q# Design principer för API
 
@@ -249,12 +249,12 @@ Den här artikeln innehåller de här principerna och ger exempel på hur du kan
 
   - **Substantiv**:
 
-    - **Fakta**: ett booleskt villkor som bara är beroende av sina indata och inte på en måldators tillstånd, dess miljö eller tillståndet för datorns qubits. Till skillnad från en försäkran är ett faktum bara känsligt för de *värden* som anges i detta faktum. Ett exempel:
+    - **Fakta**: ett booleskt villkor som bara är beroende av sina indata och inte på en måldators tillstånd, dess miljö eller tillståndet för datorns qubits. Till skillnad från en försäkran är ett faktum bara känsligt för de *värden* som anges i detta faktum. Exempel:
 
       *Exempel:*
       - @"microsoft.quantum.diagnostics.equalityfacti": representerar ett likhets faktum mellan två heltals indata; antingen är de heltal som anges som indata lika med varandra, eller inte, oberoende av andra program tillstånd.
 
-    - **Alternativ:** En UDT som innehåller flera namngivna objekt som kan fungera som valfria argument till en funktion eller åtgärd. Ett exempel:
+    - **Alternativ:** En UDT som innehåller flera namngivna objekt som kan fungera som valfria argument till en funktion eller åtgärd. Exempel:
 
       *Exempel:*
       - @"microsoft.quantum.machinelearning.trainingoptions"UDT innehåller namngivna objekt för inlärnings pris, minibatch storlek och andra konfigurerbara parametrar för ml-utbildning.

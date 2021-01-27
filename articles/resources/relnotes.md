@@ -4,17 +4,17 @@ description: Lär dig mer om de senaste uppdateringarna i förhandsversionen av 
 author: bradben
 ms.author: v-benbra
 ms.date: 8/30/2020
-ms.topic: article
+ms.topic: conceptual
 uid: microsoft.quantum.relnotes
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 1c3c502b6487482f06820e07425b8516f259fb0d
-ms.sourcegitcommit: b930bb59a1ba8f41d2edc9ed98197109aa8c7f1b
+ms.openlocfilehash: 8aa6072e9b495db6e127cac350d5bfaec1b090ce
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96231799"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98856666"
 ---
 # <a name="microsoft-quantum-development-kit-release-notes"></a>Viktig information för Microsoft Quantum Development Kit
 
@@ -24,6 +24,16 @@ Installationsanvisningar finns i [installationsguiden](xref:microsoft.quantum.in
 
 Uppdateringsanvisningar finns i [uppdateringsguiden](xref:microsoft.quantum.update).
 
+## <a name="version-0152101125897"></a>Version 0.15.2101125897
+
+*Utgivnings datum: januari 26, 2021*
+
+- Förenklad qubit-allokering, vilket ger smidigare syntax för att allokera qubits [finns i information på Q# språk lagrings platsen](https://github.com/microsoft/qsharp-language/blob/main/Approved/1-implicitly-scoped-qubit-allocation.md).
+- En QDK-Python lagrings plats som innehåller `azure-quantum` , python-klienten för att skicka Quantum-och NWChem optimerings jobb till Azure Quantum-tjänsten, samt `qdk` , inklusive `qdk.chemistry` , ett python-baserat bekvämlighets lager för Q# kemi-biblioteket som innehåller molekyl visualisering och funktioner för att generera indatafiler för flera kemi-paket, till exempel, Psi4 och OpenMolcas.
+- Parenteser är nu valfria för Operations-och funktions typer och `if` -, `elif` - `while` och- `until` instruktioner. Parenteser för `for` `use` och- `borrow` satser är inaktuella.
+- Förbättrade bredd beräkningar för optimalt djup [finns mer information](https://github.com/MicrosoftDocs/quantum-docs-pr/pull/1159).
+- Använd en enhetlig åtgärd som tillhandahålls som en explicit matris med `ApplyUnitary` ([QuantumLibraries # 391](https://github.com/microsoft/QuantumLibraries/pull/391), externt bidrag från Dmytro Fedoriaka)
+- Åtgärdat https://github.com/microsoft/iqsharp/issues/387 genom att minska prestanda påverkan vid Q# kernel-start.
 ## <a name="version-0142011120240"></a>Version 0.14.2011120240
 
 *Utgivnings datum: 25 november 2020*
@@ -486,14 +496,7 @@ Läs mer om [kemibiblioteket för Quantum Development Kit](xref:microsoft.quantu
 
 Med det nya kemibiblioteket delar vi in biblioteken i en ny GitHub-lagringsplats, [Microsoft/QuantumLibraries](https://github.com/Microsoft/QuantumLibraries).  Exemplen finns kvar på lagringsplatsen [Microsoft/Quantum](https://github.com/Microsoft/Quantum).  Vi välkomnar bidrag till båda dessa!
 
-Den här versionen innehåller buggkorrigeringar och funktioner för problem som rapporterats av communityn:
-
-* IntelliSense för Q# ? ([UserVoice](https://quantum.uservoice.com/forums/906943/suggestions/32656918)).
-* .qs-filer ([UserVoice](https://quantum.uservoice.com/forums/906097/suggestions/32593049)).
-* Förbättrar felmeddelandet när klammerparenteser förkortas i en if-instruktion ([UserVoice](https://quantum.uservoice.com/forums/906208/suggestions/34718518)).
-* Stöd för tuppeldekonstruktion vid föränderlig (om)bindning ([UserVoice](https://quantum.uservoice.com/forums/906208/suggestions/35020444)).
-* Fel vid körning av tillhandahållen BitFlipCode ([UserVoice](https://quantum.uservoice.com/forums/906940/suggestions/35008546)).
-* H2SimulationGUI visar stora toppar ibland ([UserVoice](https://quantum.uservoice.com/forums/906946/suggestions/34668370)).
+Den här versionen innehåller fel korrigeringar och funktioner för problem som rapporteras av communityn.
 
 ### <a name="community-contributions"></a>Bidrag från communityn
 
@@ -509,15 +512,7 @@ Vi tackar även Rohit Gupta ([@guptarohit](https://github.com/guptarohit),[PR #9
 
 *Utgivningsdatum: 10 september 2018*
 
-Den här versionen innehåller buggkorrigeringar för problem som rapporterats av communityn. Detta omfattar:
-
-* Shift-operatorn kan inte användas ([GitHub](https://github.com/Microsoft/Quantum/issues/75)).
-* `DumpMachine` / `DumpRegister` misslyckas i `QCTraceSimulator` vid utskrift till konsolen ([UserVoice](https://quantum.uservoice.com/forums/906946/suggestions/34709680)).
-* Tillåt allokering av 0 kvantbitar ([UserVoice](https://quantum.uservoice.com/forums/906208-q-language/suggestions/34768069-allow-allocating-0-qubits)).
-* `AssertQubitState` kräver explicit anrop av Complex() ([UserVoice](https://quantum.uservoice.com/forums/906208-q-language/suggestions/34713733-assertqubitstate-requires-explicit-complex-call)).
-* `Measure`-åtgärden returnerar alltid `One` i macOS ([UserVoice](https://quantum.uservoice.com/forums/906940/suggestions/35008546)).
-
-Tack! 
+Den här versionen innehåller buggkorrigeringar för problem som rapporterats av communityn.
 
 ## <a name="version-0218063001"></a>Version 0.2.1806.3001
 
@@ -670,7 +665,7 @@ Den här versionen åtgärdar vissa problem som rapporterats av communityn. Det 
 
 #### Q#
 
-- IntelliSense visar inte korrekta fel för Q# kod. Se till att du visar build-fel i Visual Studio-Fellista för att se rätt Q# fel. Observera också att Q# fel inte visas förrän du har gjort en version.
+- IntelliSense visar inte korrekta fel för Q# kod. Se till att du visar build-fel i Visual Studio-fellista för att se rätt Q# fel. Observera också att Q# fel inte visas förrän du har gjort en version.
 - Användning av en föränderlig matris i en partiell tillämpning kan leda till oväntat beteende.
 - Bindning av en oföränderlig matris till en föränderlig matris (a = b, där b är en föränderlig matris) kan leda till oväntat beteende.
 - Profilering, kod täckning och andra VS-plugin-program kan inte alltid räkna Q# rader och block på ett korrekt sätt.

@@ -4,17 +4,17 @@ description: Lär dig mer om de inbyggda funktionerna och funktionerna i QDK, in
 author: QuantumWriter
 ms.author: martinro
 ms.date: 12/11/2017
-ms.topic: article
+ms.topic: conceptual
 uid: microsoft.quantum.libraries.standard.prelude
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 4d15226fe46be79b7d3e6f414f33f1debd691f40
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 6ed5b1677a204b9425f229a3ea0855bb789f3f75
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92692115"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98857191"
 ---
 # <a name="the-prelude"></a>Inledning #
 
@@ -109,13 +109,13 @@ Vi börjar med att komma ihåg att vi kan uttrycka en enskild qubit-åtgärd med
 $T $-porten implementeras av <xref:Microsoft.Quantum.Intrinsic.T> åtgärden och har en signatur som `(Qubit => Unit is Adj + Ctl)` anger att det är en enhetlig åtgärd på en enskild-qubit.
 
 Även om detta är i princip tillräckligt för att beskriva en godtycklig enskild qubit-åtgärd kan olika mål datorer ha mer effektiva representationer för rotationer om Pauli-operatörer, till exempel att inledning innehåller en mängd olika sätt att convienently Express sådana rotationer.
-De flesta av dessa är <xref:Microsoft.Quantum.Intrinsic.r> åtgärden, som implementerar en rotation runt en angiven Pauli-axel, \Begin{Equation} R (\sigma, \phi) \mathrel{: =} \exp (-i \phi \sigma/2), \end{Equation} där $ \sigma $ är en Pauli-operatör, $ \phi $ är en vinkel och där $ \exp $ representerar matrisen exponent.
+De flesta av dessa är <xref:Microsoft.Quantum.Intrinsic.R> åtgärden, som implementerar en rotation runt en angiven Pauli-axel, \Begin{Equation} R (\sigma, \phi) \mathrel{: =} \exp (-i \phi \sigma/2), \end{Equation} där $ \sigma $ är en Pauli-operatör, $ \phi $ är en vinkel och där $ \exp $ representerar matrisen exponent.
 Den innehåller en signatur `((Pauli, Double, Qubit) => Unit is Adj + Ctl)` där de första två delarna i indatamängden representerar de klassiska argumenten $ \sigma $ och $ \phi $ som krävs för att ange den enhetliga operatorn $R (\sigma, \phi) $.
 Vi kan delvis använda $ \sigma $ och $ \phi $ för att få en åtgärd vars typ är en enda-qubit-enhetlig.
 Har till exempel `R(PauliZ, PI() / 4, _)` typen `(Qubit => Unit is Adj + Ctl)` .
 
 > [!NOTE]
-> <xref:Microsoft.Quantum.Intrinsic.r>Åtgärden delar upp ingångs vinkeln med 2 och multiplicerar den med-1.
+> <xref:Microsoft.Quantum.Intrinsic.R>Åtgärden delar upp ingångs vinkeln med 2 och multiplicerar den med-1.
 > För $Z $-rotationer innebär detta att $ \ket {0} $ eigenstate roteras av $-\phi/$2 och att $ \ket {1} $ eigenstate roteras med $ \phi/$2, så att $ \ket {1} $ eigenstate roteras med $ \phi $ i förhållande till $ \ket {0} $ eigenstate.
 >
 > Detta innebär särskilt att `T` och `R(PauliZ, PI() / 8, _)` bara skiljer sig från en irrelevant [Global fas](xref:microsoft.quantum.glossary#global-phase).
@@ -217,7 +217,7 @@ För det första, eftersom det är ganska vanligt att utföra qubit mätningar d
 <xref:Microsoft.Quantum.Intrinsic.M>Åtgärden mäter Pauli $Z $-operatorn på en enskild qubit och har signatur `(Qubit => Result)` .
 `M(q)` är ekvivalent med `Measure([PauliZ], [q])`.
 
-<xref:microsoft.quantum.measurement.MultiM>Måtten Pauli $Z $-operatören *var separat* på var och en av qubits, och returnerar *matrisen* med `Result` värden som hämtats för varje qubit.
+<xref:Microsoft.Quantum.Measurement.MultiM>Måtten Pauli $Z $-operatören *var separat* på var och en av qubits, och returnerar *matrisen* med `Result` värden som hämtats för varje qubit.
 I vissa fall kan detta optimeras. Den har signatur ( `Qubit[] => Result[])` .
 `MultiM(qs)` motsvarar:
 
