@@ -1,55 +1,63 @@
 ---
 uid: Microsoft.Quantum.Arrays.FlatMapped
 title: Funktionen FlatMapped
-ms.date: 11/25/2020 12:00:00 AM
+ms.date: 1/23/2021 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Arrays
 qsharp.name: FlatMapped
 qsharp.summary: Given an array and a function that maps an array element to some output array, returns the concatenated output arrays for each array element.
-ms.openlocfilehash: e851e8503b3afcb4572f09fe39079247518c22c4
-ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
+ms.openlocfilehash: bee7002c5a1e80cee7907ff9cb4ebaaedf8e9923
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96221257"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98848645"
 ---
-# <a name="flatmapped-function"></a><span data-ttu-id="2330d-102">Funktionen FlatMapped</span><span class="sxs-lookup"><span data-stu-id="2330d-102">FlatMapped function</span></span>
+# <a name="flatmapped-function"></a><span data-ttu-id="e31df-102">Funktionen FlatMapped</span><span class="sxs-lookup"><span data-stu-id="e31df-102">FlatMapped function</span></span>
 
-<span data-ttu-id="2330d-103">Namnrymd: [Microsoft. Quantum. Arrays](xref:Microsoft.Quantum.Arrays)</span><span class="sxs-lookup"><span data-stu-id="2330d-103">Namespace: [Microsoft.Quantum.Arrays](xref:Microsoft.Quantum.Arrays)</span></span>
+<span data-ttu-id="e31df-103">Namnrymd: [Microsoft. Quantum. Arrays](xref:Microsoft.Quantum.Arrays)</span><span class="sxs-lookup"><span data-stu-id="e31df-103">Namespace: [Microsoft.Quantum.Arrays](xref:Microsoft.Quantum.Arrays)</span></span>
 
-<span data-ttu-id="2330d-104">Paket: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)</span><span class="sxs-lookup"><span data-stu-id="2330d-104">Package: [Microsoft.Quantum.Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)</span></span>
+<span data-ttu-id="e31df-104">Paket: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)</span><span class="sxs-lookup"><span data-stu-id="e31df-104">Package: [Microsoft.Quantum.Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)</span></span>
 
 
-<span data-ttu-id="2330d-105">Med en matris och en funktion som mappar ett mat ris element till vissa utdata, returnerar de sammansatta utmatnings matriserna för varje mat ris element.</span><span class="sxs-lookup"><span data-stu-id="2330d-105">Given an array and a function that maps an array element to some output array, returns the concatenated output arrays for each array element.</span></span>
+<span data-ttu-id="e31df-105">Med en matris och en funktion som mappar ett mat ris element till vissa utdata, returnerar de sammansatta utmatnings matriserna för varje mat ris element.</span><span class="sxs-lookup"><span data-stu-id="e31df-105">Given an array and a function that maps an array element to some output array, returns the concatenated output arrays for each array element.</span></span>
 
 ```qsharp
 function FlatMapped<'TInput, 'TOutput> (mapper : ('TInput -> 'TOutput[]), array : 'TInput[]) : 'TOutput[]
 ```
 
 
-## <a name="input"></a><span data-ttu-id="2330d-106">Indata</span><span class="sxs-lookup"><span data-stu-id="2330d-106">Input</span></span>
+## <a name="input"></a><span data-ttu-id="e31df-106">Indata</span><span class="sxs-lookup"><span data-stu-id="e31df-106">Input</span></span>
 
-### <a name="mapper--tinput---toutput"></a><span data-ttu-id="2330d-107">Mapper: ' TInput-> ' TOutput []</span><span class="sxs-lookup"><span data-stu-id="2330d-107">mapper : 'TInput -> 'TOutput[]</span></span>
+### <a name="mapper--tinput---toutput"></a><span data-ttu-id="e31df-107">Mapper: ' TInput-> ' TOutput []</span><span class="sxs-lookup"><span data-stu-id="e31df-107">mapper : 'TInput -> 'TOutput[]</span></span>
 
-<span data-ttu-id="2330d-108">En funktion från `'TInput` till `'TOutput[]` som används för att mappa mat ris element.</span><span class="sxs-lookup"><span data-stu-id="2330d-108">A function from `'TInput` to `'TOutput[]` that is used to map array elements.</span></span>
-
-
-### <a name="array--tinput"></a><span data-ttu-id="2330d-109">matris: ' TInput []</span><span class="sxs-lookup"><span data-stu-id="2330d-109">array : 'TInput[]</span></span>
-
-<span data-ttu-id="2330d-110">En matris med element.</span><span class="sxs-lookup"><span data-stu-id="2330d-110">An array of elements.</span></span>
+<span data-ttu-id="e31df-108">En funktion från `'TInput` till `'TOutput[]` som används för att mappa mat ris element.</span><span class="sxs-lookup"><span data-stu-id="e31df-108">A function from `'TInput` to `'TOutput[]` that is used to map array elements.</span></span>
 
 
+### <a name="array--tinput"></a><span data-ttu-id="e31df-109">matris: ' TInput []</span><span class="sxs-lookup"><span data-stu-id="e31df-109">array : 'TInput[]</span></span>
 
-## <a name="output--toutput"></a><span data-ttu-id="2330d-111">Utdata: ' TOutput []</span><span class="sxs-lookup"><span data-stu-id="2330d-111">Output : 'TOutput[]</span></span>
+<span data-ttu-id="e31df-110">En matris med element.</span><span class="sxs-lookup"><span data-stu-id="e31df-110">An array of elements.</span></span>
 
-<span data-ttu-id="2330d-112">En matris `'TOutput[]` som är sammanfogningen av alla matriser som genereras av mappnings funktionen.</span><span class="sxs-lookup"><span data-stu-id="2330d-112">An array of `'TOutput[]` which is the concatenation of all arrays generated by the mapping function.</span></span>
 
-## <a name="type-parameters"></a><span data-ttu-id="2330d-113">Typparametrar</span><span class="sxs-lookup"><span data-stu-id="2330d-113">Type Parameters</span></span>
 
-### <a name="tinput"></a><span data-ttu-id="2330d-114">'TInput</span><span class="sxs-lookup"><span data-stu-id="2330d-114">'TInput</span></span>
+## <a name="output--toutput"></a><span data-ttu-id="e31df-111">Utdata: ' TOutput []</span><span class="sxs-lookup"><span data-stu-id="e31df-111">Output : 'TOutput[]</span></span>
 
-<span data-ttu-id="2330d-115">Typ av `array` element.</span><span class="sxs-lookup"><span data-stu-id="2330d-115">The type of `array` elements.</span></span>
-### <a name="toutput"></a><span data-ttu-id="2330d-116">'TOutput</span><span class="sxs-lookup"><span data-stu-id="2330d-116">'TOutput</span></span>
+<span data-ttu-id="e31df-112">En matris `'TOutput[]` som är sammanfogningen av alla matriser som genereras av mappnings funktionen.</span><span class="sxs-lookup"><span data-stu-id="e31df-112">An array of `'TOutput[]` which is the concatenation of all arrays generated by the mapping function.</span></span>
 
-<span data-ttu-id="2330d-117">`mapper`Funktionen returnerar matriser av den här typen.</span><span class="sxs-lookup"><span data-stu-id="2330d-117">The `mapper` function returns arrays of this type.</span></span>
+## <a name="type-parameters"></a><span data-ttu-id="e31df-113">Typparametrar</span><span class="sxs-lookup"><span data-stu-id="e31df-113">Type Parameters</span></span>
+
+### <a name="tinput"></a><span data-ttu-id="e31df-114">'TInput</span><span class="sxs-lookup"><span data-stu-id="e31df-114">'TInput</span></span>
+
+<span data-ttu-id="e31df-115">Typ av `array` element.</span><span class="sxs-lookup"><span data-stu-id="e31df-115">The type of `array` elements.</span></span>
+### <a name="toutput"></a><span data-ttu-id="e31df-116">'TOutput</span><span class="sxs-lookup"><span data-stu-id="e31df-116">'TOutput</span></span>
+
+<span data-ttu-id="e31df-117">`mapper`Funktionen returnerar matriser av den här typen.</span><span class="sxs-lookup"><span data-stu-id="e31df-117">The `mapper` function returns arrays of this type.</span></span>
+
+## <a name="example"></a><span data-ttu-id="e31df-118">Exempel</span><span class="sxs-lookup"><span data-stu-id="e31df-118">Example</span></span>
+
+```qsharp
+let Numbers = SequenceI(1, _); // generates numbers starting from 1
+let values = FlatMapped(Numbers, [1, 2, 3]);
+// values = [1, 1, 2, 1, 2, 3]
+```
