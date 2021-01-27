@@ -1,6 +1,6 @@
 ---
 rubrik: qubit i Quantum Computing-beskrivningen: Lär dig mer om qubits, den grundläggande informations enheten i Quantum Computing.
-författare: QuantumWriter UID: Microsoft. Quantum. Concepts. qubit MS. author: v-benbra MS. Date: 12/11/2017 MS. topic: artikeln No-Loc:
+författare: QuantumWriter-UID: Microsoft. Quantum. Concepts. qubit MS. author: v-benbra MS. Date: 12/11/2017 MS. topic: konceptuell No-Loc:
 - "Q#"
 - "$$v"
 - "$$"

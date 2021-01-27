@@ -1,18 +1,18 @@
 ---
 uid: Microsoft.Quantum.Arithmetic.MultiplyAndAddByModularInteger
 title: MultiplyAndAddByModularInteger-åtgärd
-ms.date: 11/25/2020 12:00:00 AM
+ms.date: 1/23/2021 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Arithmetic
 qsharp.name: MultiplyAndAddByModularInteger
 qsharp.summary: Performs a modular multiply-and-add by integer constants on a qubit register.
-ms.openlocfilehash: 169326879919b5b72d600c33d624776b720cc6bc
-ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
+ms.openlocfilehash: e4de934a5776e80dbf5f0d8334bf806e6a84b743
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96222600"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98846520"
 ---
 # <a name="multiplyandaddbymodularinteger-operation"></a>MultiplyAndAddByModularInteger-åtgärd
 
@@ -28,7 +28,7 @@ operation MultiplyAndAddByModularInteger (constMultiplier : Int, modulus : Int, 
 ```
 
 
-## <a name="description"></a>Beskrivning
+## <a name="description"></a>Description
 
 Implementerar kartan $ $ \begin{align} \ket{x} \ket{b} \mapsto \ket{x} \ket{(b + a \cdot x) \operatorname{mod} N} \end{align} $ $ för en specifik Modulus $N $, konstant multiplikator $a $ och summand $y $.
 
