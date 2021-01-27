@@ -1,18 +1,18 @@
 ---
 uid: Microsoft.Quantum.Canon.ApplyAnd
 title: ApplyAnd-åtgärd
-ms.date: 11/25/2020 12:00:00 AM
+ms.date: 1/23/2021 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Canon
 qsharp.name: ApplyAnd
 qsharp.summary: Inverts a given target qubit if and only if both control qubits are in the 1 state, using measurement to perform the adjoint operation.
-ms.openlocfilehash: b749013584c89273375da002ac36b3575085b7f2
-ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
+ms.openlocfilehash: 39ffb9c598b6345c0d63c0c0d9705d84e101cc47
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96219302"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98845192"
 ---
 # <a name="applyand-operation"></a>ApplyAnd-åtgärd
 
@@ -28,7 +28,7 @@ operation ApplyAnd (control1 : Qubit, control2 : Qubit, target : Qubit) : Unit i
 ```
 
 
-## <a name="description"></a>Beskrivning
+## <a name="description"></a>Description
 
 Inverterar `target` om och endast om båda kontrollerna är 1, men antar att de `target` är i tillstånd 0.  Åtgärden har T-Count 4, T-djup 2 och kräver ingen hjälp-qubit och kan därför vara bättre för en CCNOT-åtgärd, om `target` är känt som 0.  Det angränsande av den här åtgärden är mått baserat och kräver inga T-grindar.
 

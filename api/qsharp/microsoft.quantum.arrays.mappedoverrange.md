@@ -1,18 +1,18 @@
 ---
 uid: Microsoft.Quantum.Arrays.MappedOverRange
 title: Funktionen MappedOverRange
-ms.date: 11/25/2020 12:00:00 AM
+ms.date: 1/23/2021 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Arrays
 qsharp.name: MappedOverRange
 qsharp.summary: Given a range and a function that takes an integer as input, returns a new array that consists of the images of the range values under the function.
-ms.openlocfilehash: b1d73c2503e63ed09a3d6a56421760ca29eb0c3f
-ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
+ms.openlocfilehash: 7093043e2a290e6132774b8fe154d3627a254f27
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96220696"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98845642"
 ---
 # <a name="mappedoverrange-function"></a>Funktionen MappedOverRange
 
@@ -50,6 +50,15 @@ En matris `'T[]` med element som mappas av `mapper` funktionen.
 ### <a name="t"></a>Inte
 
 Resultat typen för `mapper` funktionen.
+
+## <a name="example"></a>Exempel
+
+I det här exemplet läggs 1 till i ett intervall med jämna tal:
+
+```qsharp
+let numbers = MappedOverRange(PlusI(1, _), 0..2..10);
+// numbers = [1, 3, 5, 7, 9, 11]
+```
 
 ## <a name="remarks"></a>Kommentarer
 

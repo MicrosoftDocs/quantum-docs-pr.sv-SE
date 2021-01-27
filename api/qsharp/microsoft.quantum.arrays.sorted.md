@@ -1,18 +1,18 @@
 ---
 uid: Microsoft.Quantum.Arrays.Sorted
 title: Sorterad funktion
-ms.date: 11/25/2020 12:00:00 AM
+ms.date: 1/23/2021 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Arrays
 qsharp.name: Sorted
 qsharp.summary: Given an array, returns the elements of that array sorted by a given comparison function.
-ms.openlocfilehash: bd8b869e03c7f4687c456a944e07a811ae0d2ce2
-ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
+ms.openlocfilehash: cb8a1ef438d798c8201ed9f52677e253770df1d3
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96220237"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98845451"
 ---
 # <a name="sorted-function"></a>Sorterad funktion
 
@@ -51,6 +51,14 @@ Matrisen som ska sorteras.
 
 Typen för varje element i `array` .
 
+## <a name="example"></a>Exempel
+
+Följande kodfragment sorterar en matris med heltal som ska ske i stigande ordning:
+
+```qsharp
+let sortedArray = Sorted(LessThanOrEqualI, [3, 17, 11, -201, -11]);
+```
+
 ## <a name="remarks"></a>Kommentarer
 
 Funktionen `comparison` antas vara transitiv, som IF `comparison(a, b)` och `comparison(b, c)` , sedan `comparison(a, c)` antas. Om den här egenskapen inte finns kan resultatet av den här funktionen vara felaktigt.
@@ -60,7 +68,7 @@ I synnerhet är sorteringen som utförs av den här funktionen säkerställd att
 
 Exempel:
 
-```Q#
+```qsharp
 function LastDigitLessThanOrEqual(left : Int, right : Int) : Bool {
     return LessThanOrEqualI(
         left % 10, right % 10
