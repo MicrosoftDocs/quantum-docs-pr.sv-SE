@@ -4,17 +4,17 @@ description: Lär dig att bidra med konceptuell eller API-innehåll till Microso
 author: cgranade
 ms.author: chgranad
 ms.date: 10/12/2018
-ms.topic: article
+ms.topic: contributor-guide
 uid: microsoft.quantum.contributing.docs
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 2debef858c38b9a8f11264858130ed7cb41543ae
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 8602705d2dd071e822e2ff58a9a44cd0684f77f1
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92691787"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98857363"
 ---
 # <a name="improving-documentation"></a>Förbättra dokumentationen
 
@@ -54,6 +54,19 @@ Om du vill inkludera kod från [exempel databasen](https://github.com/Microsoft/
 
 Det här kommandot importerar rader 4 till 8 av [ `Game.qs` filen från `chsh-game` exemplet](https://github.com/microsoft/Quantum/blob/main/samples/algorithms/chsh-game/Game.qs)och markerar dem som Q# kod för markering av syntax.
 Med det här kommandot kan du undvika att duplicera kod mellan konceptuella artiklar och exempel databasen, så att exempel koden i dokumentationen alltid är så aktuell som möjligt.
+
+### <a name="contributing-image-files"></a>Bild filer som bidrar
+
+**Viktigt**: om du vill att bilderna ska återges korrekt i mörkt läge måste du undvika Oh-filer.
+
+- För. jpg-filer. du behöver inte göra något eftersom. jpg-formatet inte stöder transparenta element.
+- För PNG-filer måste du lägga till en vit bakgrund eller ändra värdet för alfa kanalen till **100**. Det enklaste sättet att göra detta i Windows är att öppna filen i **Paint** och spara den och skriva över den ursprungliga filen.
+- För. SVG-filer måste du lägga till en vit rektangel i det lägsta lagret. Det kan du göra med **Inkscape**:
+  1. Öppna SVG-filen.
+  1. Välj verktyget Square Maker och rita en vit rektangel ovanpå den ursprungliga bilden.
+  1. Välj verktyget **Markera och transformera objekt** genom att klicka på den mörka pilen eller trycka på **F1**.
+  1. När du har valt rektangeln klickar du på verktygsfältets element **nedre markering till nederkant (End)**.
+  1. Justera rektangeln med musen eller piltangenterna.
 
 ## <a name="contributing-to-the-api-references"></a>Bidrag till API-referenser
 

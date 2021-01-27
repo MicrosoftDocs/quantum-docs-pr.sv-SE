@@ -1,6 +1,6 @@
 ---
 title: Dirac notation-Beskrivning: Lär dig hur du använder Dirac-notation för att representera Quantum-tillstånd och för att simulera Quantum-åtgärder.
-författare: QuantumWriter UID: Microsoft. Quantum. Concepts. Dirac MS. author: v-benbra MS. Date: 12/11/2017 MS. topic: artikeln No-Loc:
+författare: QuantumWriter-UID: Microsoft. Quantum. Concepts. Dirac MS. author: v-benbra MS. Date: 12/11/2017 MS. topic: konceptuell No-Loc:
 - "Q#"
 - "$$v"
 - "$$"
@@ -120,6 +120,7 @@ $$
 $$
 
 ### <a name="computational-basis-vectors"></a>Beräknings bas vektorer
+
 Detta visar varför dessa tillstånd ofta kallas för *beräknings grund*: varje Quantum-tillstånd kan alltid uttryckas som summor av beräknings bas vektorer och sådana summor är lätt att uttryckas med Dirac notation.  Omvänt är också sant i att tillstånden $ \ket { + } $ och $ \ket { - } $ även utgör grunden för Quantum-tillstånd.  Du kan se detta från det faktum att
 
 $$
@@ -128,14 +129,20 @@ $$
 
 Som ett exempel på Dirac-notation bör du överväga bromsen $ \braket { 0 | 1 } $ , vilket är den inre produkten mellan $ 0 $ och $ 1 $ .  Den kan skrivas som 
 
-$$\braket{0 | 1 } = \begin{bmatrix} 1 & 0 \end{bmatrix} \begin{bmatrix} \\\\ 1 0 \end{bmatrix} = .$$
+$$
+\braket{0 | 1 } = \begin{bmatrix} 1 & 0 \end{bmatrix} \begin{bmatrix} \\\\ 1 0 \end{bmatrix} = .
+$$
 
 Det betyder att $ \ket { 0 } $ och $ \ket { 1 } $ är rätvinkliga vektorer, vilket innebär att $ \braket { 0 | 1 } = \braket { 1 0 | } = 0 $ .  Även genom definition $ \braket { 0 | 0 } = \braket { 1 | 1 } = $ , vilket innebär att de två beräknings bas vektorerna också kan kallas *orthonormal*.
-Dessa orthonormal-egenskaper är användbara i följande exempel. Om vi har status $ \ket { \psi } = { \frac { 3 } { 5 } } \ket { 1 }  +  { \frac { 4 } { 5 } } \ket { 0, } $ sedan $ \braket { 1 | 0 } = 0, $ är sannolikheten för att mäta $ 1 $  
 
-$$\big|\braket{1 | \psi } \big | ^ 2 = \left | \frac { 3 } { 5 } \braket { 1 | 1 }  + \frac { 4 } { 5 } \braket { 1 | 0 } \right | ^ 2 = \frac { 9 } { 25 } .$$ 
+Dessa orthonormal-egenskaper är användbara i följande exempel. Om vi har status $ \ket { \psi } = { \frac { 3 } { 5 } } \ket { 1 }  +  { \frac { 4 } { 5 } } \ket { 0, } $ sedan $ \braket { 1 | 0 } = 0, $ är sannolikheten för att mäta $ 1 $ 
+
+$$
+\big|\braket{1 | \psi } \big | ^ 2 = \left | \frac { 3 } { 5 } \braket { 1 | 1 }  + \frac { 4 } { 5 } \braket { 1 | 0 } \right | ^ 2 = \frac { 9 } { 25 } .
+$$
 
 ### <a name="tensor-product-notation"></a>Betecknings produkt notation
+
 Dirac notation innehåller också en produkt struktur med implicita beteckningar i den.  Detta är viktigt eftersom i Quantum Computing är den tillstånds vektor som beskrivs av två korrelerade Quantum-register beskrivare i de två tillstånds vektorerna.  En kortfattad beskrivning av produkt strukturen för beskrivare eller brist på detta är viktigt om du vill förklara en Quantum-beräkning.  Produkt strukturen för beskrivare innebär att vi kan skriva $ \psi \otimes \phi $ för två Quantum-tillstånds vektorer $ \phi $ och $ \psi $ $ \ket { \psi } \ket { \phi } $ , ibland uttryckligen skrivna som $ \ket { \psi } \otimes \ket { \phi } $ , trots att konventions skrivningen $ \otimes $ mellan vektorerna är onödigt.  Till exempel anges tillstånd med två qubits som initieras till noll för tillstånd av
 
 $$
@@ -155,6 +162,7 @@ $$
 $$
 
 ### <a name="example-describing-superposition-with-dirac-notation"></a>Exempel: beskriva superposition med Dirac-notation
+
 Ett annat exempel på hur du kan använda Dirac notation för att beskriva ett Quantum-tillstånd, Tänk på följande sätt för att skriva ett Quantum-tillstånd som är lika överplacerat över varje möjlig bit sträng med längden $ n$
 
 $$
@@ -165,6 +173,7 @@ Här kan du undra varför summan går från $ 0 $ till $ 2 ^ { n } -1 $ för $ n
 I det här exemplet har vi i det här exemplet inte använt $ \ket { + } ^ { \otimes n } = \ket { + } $ i analogt till $ \ket { 0 } ^ { \otimes n } = \ket { 0 } $ eftersom den här Notations konventionen vanligt vis är reserverad för beräknings grunden med varje qubit initierad till noll.  Även om en sådan konvention skulle vara lämpliga i det här fallet, används den inte i den Quantum Computing-dokumentationen.
 
 ### <a name="expressing-linearity-with-dirac-notation"></a>Uttrycka linjärhet med Dirac-notation
+
 En annan bra funktion i Dirac notation är att den är linjär.  Om vi vill skriva för alla fyra Quantum-delstats vektorer 
 
 $$( \alpha \ket { \psi }  + \beta \ket { \phi } ) \otimes ( \gamma \ket { \chi }  +  \delta \ket { \omega } ) = \alpha \gamma \ket { \psi } \ket { \chi }  +  \alpha \delta \ket { \psi } \ket { \omega } + \beta \gamma \ket { \phi } \ket { \chi } + \beta \delta \ket { \phi } \ket { \omega } .$$
@@ -180,6 +189,7 @@ $$|\braket{- |\psi}| ^ 2 = \left | \frac { 1 } { \sqrt { 2 } } ( \bra { 0 }  -  
 Det faktum att det negativa tecknet visas i beräkningen av sannolikheten är en manifestning av Quantum interferens, som är en av de mekanismer som har Quantum Computing som ger fördelar jämfört med klassisk data behandling.
 
 ## <a name="ketbra-or-outer-product"></a>ketbra eller yttre produkt
+
 Det slutliga objektet som är värt att diskutera i Dirac-notation är *ketbra* eller yttre produkten.  Den yttre produkten representeras i Dirac-format $ \ket { \psi } \bra { \phi } $ och kallas ibland ketbras eftersom Bras och kets inträffar i motsatt ordning som bromsar.  Den yttre produkten definieras via matrisen multiplikation som $ \ket { \psi } \bra { \phi } = \psi \phi ^ \dagger $ för vektorer med Quantum-tillstånd $ \psi $ och $ \phi $ .  Det enklaste, och utan tvekant vanliga exemplet i den här notationen, är
 
 $$
@@ -231,4 +241,5 @@ Allmänna Quantum State-operatörer i stället för vektorer är allmänt förek
 För den intresserade läsaren rekommenderar vi att du läser en av de referens böcker som finns i [för mer information](xref:microsoft.quantum.more-information).
 
 ## <a name="no-locq-gate-sequences-equivalent-to-quantum-states"></a>Q# grindar som motsvarar Quantum-tillstånd
+
 En slut punkt som kan höja om Quantum-notation och Q# programmeringsspråk: vid början av det här dokumentet nämnde vi att steget Quantum är det grundläggande objektet av information i Quantum Computing.  Det kan sedan bli en överraskning om Q# det inte finns någon begreppet Quantum-tillstånd.  I stället beskrivs alla tillstånd endast av de åtgärder som används för att förbereda dem.  Föregående exempel är en utmärkt illustration av detta.  I stället för att uttrycka en enhetlig överplacering över varje Quantum bit-sträng i ett register kan vi representera resultatet som $ H ^ { \otimes n } \ket { 0 } $ .  Den här exponentiellt kortare beskrivningen av tillstånden har inte bara fördelen att vi kan göra en klassisk orsak till den, men det är också en kortfattad beskrivning av de åtgärder som behövs för att spridas via program varu stacken för att implementera algoritmen.  Därför Q# är det utformat att generera grind sekvenser i stället för Quantum-tillstånd, men på en teoretisk nivå är båda perspektiven likvärdiga.

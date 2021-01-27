@@ -4,17 +4,17 @@ description: Lär dig hur du bidrar med exempel kod till Microsoft Quantum Devel
 author: cgranade
 ms.author: chgranad
 ms.date: 10/12/2018
-ms.topic: article
+ms.topic: contributor-guide
 uid: microsoft.quantum.contributing.samples
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: ae29614cc9c8bf965ea3cb373dc17470aec21252
-ms.sourcegitcommit: 8256ff463eb9319f1933820a36c0838cf1e024e8
+ms.openlocfilehash: 0c940a4cf228c694a899988f469158b1bb6e2425
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90759194"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98847590"
 ---
 # <a name="contributing-samples-to-the-quantum-development-kit"></a>Bidra till exempel i Quantum Development Kit
 
@@ -48,7 +48,7 @@ I mappen för varje ämnes område består varje exempel av en enda mapp som sam
 
 Vi tittar på de filer som utgör varje mapp, låt oss ta en titt på [`algorithms/chsh-game/`](https://github.com/microsoft/Quantum/tree/main/samples/algorithms/chsh-game) exemplet.
 
-| Fil              | Beskrivning                                                |
+| Fil              | Description                                                |
 |-------------------|------------------------------------------------------------|
 | `CHSHGame.csproj` | Q# projekt som används för att bygga exemplet med .NET Core SDK |
 | `Game.qs`         | Q# funktioner och funktioner för exemplet                 |

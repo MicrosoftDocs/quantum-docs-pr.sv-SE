@@ -1,20 +1,20 @@
 ---
 title: Uppskattningar av Quantum Resources-Quantum Development Kit
 description: Lär dig mer om Microsoft QDKs resurs uppskattning, som beräknar de resurser som krävs för att köra en specifik instans av en Q# åtgärd på en Quantum-dator.
-author: anpaz-msft
+author: anpaz
 ms.author: anpaz
 ms.date: 06/26/2020
-ms.topic: article
+ms.topic: conceptual
 uid: microsoft.quantum.machines.resources-estimator
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: de425c2d91c6528b13c3bedd81acb4b4273ed711
-ms.sourcegitcommit: 7c687495a79d75ae9e029e5a41baec84d9e07bb0
+ms.openlocfilehash: c3aa94c8b34ad7247fbdeab4bf4dcb96ce746014
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96604651"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98847468"
 ---
 # <a name="quantum-development-kit-qdk-resources-estimator"></a>Uppskatta QDK-resurser (Quantum Development Kit)
 
@@ -123,7 +123,7 @@ namespace Quantum.MyProgram
 
 Resurs uppskattningen spårar följande mått:
 
-|Mått|Beskrivning|
+|Metric|Beskrivning|
 |----|----|
 |__CNOT__    |Antalet körningar av `CNOT` åtgärder (även kallat kontrollerade Pauli X-åtgärder).|
 |__QubitClifford__ |Antalet körningar av alla enskilda qubit Clifford-och Pauli-åtgärder.|
@@ -143,7 +143,7 @@ Rapporterade djup och bredd beräkningar är kompatibla med varandra.
 
 Följande mått rapporteras:
 
-__Djup:__ För rot åtgärds tiden det tar att utföra den antar vissa grind tider.
+__Djup:__ För rotens drift tid tar det att köra den som antar konfigurerade grind tider.
 För åtgärder som kallas eller efterföljande åtgärds tids skillnad mellan den senaste qubit tillgänglighets tiden i början och slutet av åtgärden.
 
 __Bredd:__ För rot åtgärden – antalet qubits som faktiskt använts för att köra det (och anropet till den).
@@ -157,9 +157,9 @@ För åtgärder som anropas eller efterföljande åtgärder – minsta antal qub
 
 Två drifts lägen stöds. Läge väljs genom att ställa in QCTraceSimulatorConfiguration. OptimizeDepth.
 
-__OptimizeDepth = True:__ QubitManager rekommenderas inte från qubit åter användning och allokerar nya qubit varje gång den begär en qubit. För rot åtgärdens __djup__ blir det minsta djupet (nedre gräns). Kompatibel __Bredd__ rapporteras för det här djupet (båda kan uppnås samtidigt). Observera att den här bredden sannolikt inte är optimalt för detta djup. __QubitCount__ kan vara lägre än bredden för rot åtgärden eftersom den tar återanvända.
+__OptimizeDepth = falskt:__ Detta är standard läget. QubitManager uppmanas att återanvända qubits och återanvända de utgivna qubits innan du allokerar nya. __Bredden__ för rot åtgärden blir den minimala bredden (nedre gränser). Ett kompatibelt __djup__ rapporteras som kan uppnås. __QubitCount__ kommer att vara samma som __bredden__ för rot åtgärden förutsatt att ingen lånar.
 
-__OptimizeDepth = falskt:__ QubitManager uppmanas att återanvända qubits och återanvända de utgivna qubits innan du allokerar nya. __Bredden__ för rot åtgärden blir den minimala bredden (nedre gränser). Ett kompatibelt __djup__ rapporteras som kan uppnås. __QubitCount__ kommer att vara samma som __bredden__ för rot åtgärden förutsatt att ingen lånar.
+__OptimizeDepth = True:__ QubitManager rekommenderas inte för qubit åter användning och heuristisk-baserad optimering för qubit åter användning utförs under och efter körning. För rot åtgärdens __djup__ blir det minsta djupet (nedre gräns). Kompatibel __Bredd__ rapporteras för det här djupet (båda kan uppnås samtidigt). För att optimera bredden kan portar som påträffas senare i programmet schemaläggas innan portarna påträffades tidigare i programmet, men qubits är schemalagda att återanvändas på ett sådant sätt att djupet förblir minimalt. När qubits återanvänds baserat på tids värden, rekommenderar vi att grind tiderna är konfigurerade för att vara heltals värden. __Bredden__ är inte garanterat optimal. Mer information finns i informations dokumentets [bredd och djup i spårningen](https://github.com/microsoft/qsharp-runtime/tree/main/src/Simulation/Simulators/QCTraceSimulator/Docs).
 
 ## <a name="providing-the-probability-of-measurement-outcomes"></a>Ange sannolikheten för mätresultatet
 

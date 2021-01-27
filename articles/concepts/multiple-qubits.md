@@ -1,6 +1,6 @@
 ---
 title: flera qubits-Beskrivning: Lär dig hur du utför åtgärder på två eller fler qubits.
-author: bradben UID: Microsoft. Quantum. Concepts. Multiple-qubits MS. author: v-benbra MS. Date: 12/11/2017 MS. topic: artikeln No-Loc:
+författare: bradben-UID: Microsoft. Quantum. Concepts. Multiple-qubits MS. author: v-benbra MS. Date: 12/11/2017 MS. topic: konceptuell No-Loc:
 - "Q#"
 - "$$v"
 - "$$"
@@ -105,10 +105,10 @@ Detta beror på att beräknings grunden för qubit-tillstånd bildas av behålle
 Det är enkelt att se att mer än Quantum-qubits för $ n- $ representeras av en enhets vektor i dimension $ 2 ^ n $ med denna konstruktion.  Vektorn
 
 $$
-\begin{bmatrix}\alpha _ { 00 } 01 \\\\ 10 \alpha   _ { } \\\\ \alpha _ { 11 } \\\\ \alpha   _ { }  \end{bmatrix}
+\begin{bmatrix}\alpha _{ 00 } 01 \\\\ 10 \alpha_ { } \\\\ \alpha _{ 11 } \\\\ \alpha_ { }  \end{bmatrix}
 $$
 
-representerar ett Quantum-tillstånd på två qubits om $ | \alpha _ { 00 } | ^ 2 | \alpha +_ { 01 } | ^ 2 + | \alpha _ { 10 } | ^ 2 | \alpha +_ { 11 } | ^ 2 = 1 $ . Precis som med enkla qubits innehåller Quantum State-vektorn för flera qubits all information som behövs för att beskriva systemets beteende.
+representerar ett Quantum-tillstånd på två qubits om $ | \alpha _{ 00 } | ^ 2 | \alpha +_ { 01 } | ^ 2 + | \alpha _{ 10 } | ^ 2 | \alpha +_ { 11 } | ^ 2 = 1 $ . Precis som med enkla qubits innehåller Quantum State-vektorn för flera qubits all information som behövs för att beskriva systemets beteende.
 
 Om vi får två separata qubits, en i stadiet $ \begin{bmatrix} \alpha \\\\ \beta \end{bmatrix} $ och en andra qubit i delstaten $ \begin{bmatrix} \gamma \\\\ \delta \end{bmatrix} $ , är motsvarande två qubit-tillstånd    
 
@@ -124,22 +124,22 @@ $$\psi\otimes\phi = \begin{bmatrix} 1/ \sqrt { 2 } \\\\ 0 \\\\ 0 \\\\ 1/ \sqrt {
 
 Ett sådant qubit tillstånd, som inte kan skrivas som en behållar produkt i ett qubit tillstånd, kallas "Entangled State". de två qubits sägs vara [*Entangled*](https://en.wikipedia.org/wiki/Quantum_entanglement).  Det går inte att tala om att Quantum-tillståndet inte kan betraktas som en behållar produkt av enskilda qubit-tillstånd, men den information som tillståndet omfattar är inte begränsad till någon av qubits individuellt.  Informationen lagras i stället inte lokalt i korrelationerna mellan de två tillstånden.  Den här informationen är en av de viktigaste särskiljande funktionerna i Quantum Computing och är viktiga för ett antal Quantum-protokoll, inklusive [Quantum Teleportion](https://github.com/microsoft/Quantum/tree/main/samples/getting-started/teleportation) och [Quantum fel korrigering](xref:microsoft.quantum.libraries.error-correction).
 
-## <a name="measuring-two-qubit-states"></a>Mäta två qubit-tillstånd ##
+## <a name="measuring-two-qubit-states"></a>Mäta Two-Qubit tillstånd ##
 Att mäta två qubit-tillstånd liknar en qubit mått. Mäta status
 
 $$
     \begin{bmatrix}
-        \alpha_ { 00 } 01 \\\\ \alpha _ { }\\\\ 
-        \alpha_ { 10 } 11 \\\\ \alpha _ {}
+        \alpha_{ 00 } 01 \\\\ \alpha_ { }\\\\ 
+        \alpha_{ 10 } 11 \\\\ \alpha_ {}
     \end{bmatrix}
 $$
 
-ger $ 00% $ sannolikhet $ | \alpha _ { 00 } | ^ 2 $ , $ 01 $ med sannolikhet $ | 01 \alpha _ { } | ^ 2 $ , $ 10 $ med sannolikhet $ | \alpha _ { 10 } | ^ 2 $ och $ 11 $ med $ sannolikhet | 11 \alpha _ { } | ^ 2 $ . Variablerna $ \alpha _ { 00 } , \alpha _ { 01 } , \alpha _ { 10 } $ och $ 11 \alpha _ { } $ kallades avsiktligt för att göra den här anslutningen tydlig. Om resultatet är 00 när mätningen är $ 00 är $ det Quantum-läget för det qubit systemet minimerat och är nu
+ger $ 00% $ sannolikhet $ | \alpha _{ 00 } | ^ 2 $ , $ 01 $ med sannolikhet $ | 01 \alpha_ { } | ^ 2 $ , $ 10 $ med sannolikhet $ | \alpha _{ 10 } | ^ 2 $ och $ 11 $ med $ sannolikhet | 11 \alpha_ { } | ^ 2 $ . Variablerna $ \alpha _{ 00 } , \alpha_ { 01 } , \alpha _{ 10 } $ och $ 11 \alpha_ { } $ kallades avsiktligt för att göra den här anslutningen tydlig. Om resultatet är 00 när mätningen är $ 00 är $ det Quantum-läget för det qubit systemet minimerat och är nu
 
 $$
     00 \equiv
     \begin{bmatrix}
-        81.1 \\\\ 
+        1 \\\\ 
         0,0 \\\\ 
         0,0 \\\\ 
         0 \end{bmatrix} .
@@ -193,7 +193,7 @@ $$
 
 återigen i enlighet med våra intuition.
 
-## <a name="two-qubit-operations"></a>Två qubit-åtgärder
+## <a name="two-qubit-operations"></a>Two-Qubit åtgärder
 Precis som i ett qubit-fall är en enhetlig omvandling en giltig åtgärd på qubits. I allmänhet är en enhetlig omvandling på $ n $ qubits en matris $ U $ av storlek $ 2 ^ n \times 2 ^ n $ (så att den fungerar på vektorer med storlek $ 2 ^ n $ ), t. ex. $ u ^ { -1 } = U ^ \dagger $ .
 CNOT (styrd-NOT) är till exempel en ofta använd qubit-grind och representeras av följande enhetliga matris:
 
@@ -240,7 +240,7 @@ Portar kan också styras med klassisk information.  En klassisk styrd icke-grind
 Precis som i qubit-fallet är en qubit-grind universell om någon 4-2- $ \times $ matris kan approximeras av en produkt av grindar från denna uppsättning till godtycklig precision.
 Ett exempel på en universell grind uppsättning är Hadamard-porten, T-porten och CNOT-porten. Genom att ta produkter av de här portarna kan vi approximera en enhetlig matris på två qubits.
 
-## <a name="many-qubit-systems"></a>Många-qubit system
+## <a name="many-qubit-systems"></a>Many-Qubit system
 Vi följer exakt samma mönster som utforskas i två-qubit-fallet för att bygga många-qubit Quantum-tillstånd från mindre system.  Dessa tillstånd skapas genom att bilda flernivå produkter av mindre tillstånd.  Du kan till exempel koda bit-strängen $ 1011001 $ på en Quantum-dator.  Vi kan koda detta som
 
 $$

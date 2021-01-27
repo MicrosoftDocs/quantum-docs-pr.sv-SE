@@ -1,18 +1,18 @@
 ---
 uid: Microsoft.Quantum.Arrays.Unique
 title: Unik funktion
-ms.date: 11/25/2020 12:00:00 AM
+ms.date: 1/23/2021 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Arrays
 qsharp.name: Unique
 qsharp.summary: Returns a new array that has no equal adjacent elements.
-ms.openlocfilehash: 7964d5d41eb68cb05f9414164d69496c1f76eb08
-ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
+ms.openlocfilehash: b3aa03d20195bdd8bb64783a9b68cafac29e68f6
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96220016"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98850910"
 ---
 # <a name="unique-function"></a>Unik funktion
 
@@ -28,7 +28,7 @@ function Unique<'T> (equal : (('T, 'T) -> Bool), array : 'T[]) : 'T[]
 ```
 
 
-## <a name="description"></a>Beskrivning
+## <a name="description"></a>Description
 
 Funktionen returnerar en matris med element och en funktion för att testa likheten. den här funktionen returnerar en ny matris där den relativa ordningen på elementen behålls, men alla intilliggande element som är lika med filtreras till bara ett enda element.
 
@@ -54,6 +54,17 @@ Matris utan lika intilliggande element.
 ### <a name="t"></a>Inte
 
 Typen för varje element i `array` .
+
+## <a name="example"></a>Exempel
+
+```qsharp
+let unique1 = Unique(EqualI, [1, 1, 3, 3, 2, 5, 5, 5, 7]);
+// same as [1, 3, 2, 5, 7]
+let unique2 = Unique(EqualI, [2, 2, 1, 1, 2, 2, 1, 1]);
+// same as [2, 1, 2, 1];
+let unique3 = Unique(EqualI, Sorted(LessThanOrEqualI, [2, 2, 1, 1, 2, 2, 1, 1]));
+// same as [1, 2];
+```
 
 ## <a name="remarks"></a>Kommentarer
 
