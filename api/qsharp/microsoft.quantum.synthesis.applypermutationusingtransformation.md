@@ -1,18 +1,18 @@
 ---
 uid: Microsoft.Quantum.Synthesis.ApplyPermutationUsingTransformation
 title: ApplyPermutationUsingTransformation-åtgärd
-ms.date: 11/25/2020 12:00:00 AM
+ms.date: 1/23/2021 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Synthesis
 qsharp.name: ApplyPermutationUsingTransformation
 qsharp.summary: Permutes the amplitudes in a quantum state given a permutation using transformation-based synthesis.
-ms.openlocfilehash: a05b433eae2612bbf5c87522c4ef251976184aa8
-ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
+ms.openlocfilehash: 79913bec44514d477b7ee0668b43396b297b9ab8
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96192068"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98858985"
 ---
 # <a name="applypermutationusingtransformation-operation"></a>ApplyPermutationUsingTransformation-åtgärd
 
@@ -28,7 +28,7 @@ operation ApplyPermutationUsingTransformation (perm : Int[], qubits : Microsoft.
 ```
 
 
-## <a name="description"></a>Beskrivning
+## <a name="description"></a>Description
 
 I den här proceduren implementeras metoden för enkel omvandling baserad Sammanfattning.  Indatamängden är en permutation $ \pi $ över $2 ^ n $ Elements $ \{ 0, \dots, 2 ^ n-1 \} $, som representerar en $n $-variabel omvänd boolesk funktion.
 Algoritmen utför iterativt följande steg:
@@ -52,6 +52,16 @@ En lista med $n $ qubits som permutationen tillämpas på.
 ## <a name="output--unit"></a>Utdata: [enhet](xref:microsoft.quantum.lang-ref.unit)
 
 
+
+## <a name="example"></a>Exempel
+
+För att syntetisera en `SWAP` åtgärd:
+
+```qsharp
+using (qubits = Qubit[2]) {
+  ApplyPermutationUsingTransformation([0, 2, 1, 3], LittleEndian(qubits));
+}
+```
 
 ## <a name="references"></a>Referenser
 

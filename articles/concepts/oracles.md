@@ -1,6 +1,6 @@
 ---
 title: Quantum Oracle-Beskrivning: Lär dig hur du arbetar med och definierar Quantum Oracles, svarta Box-åtgärder som används som inmatade i en annan algoritm.
-författare: cgranade-UID: Microsoft. Quantum. Concepts. Oracles MS. author: chgranad MS. Date: 07/11/2018 MS. topic: artikeln No-Loc:
+författare: cgranade-UID: Microsoft. Quantum. Concepts. Oracles MS. author: chgranad MS. Date: 07/11/2018 MS. topic: konceptuell No-Loc:
 - "Q#"
 - "$$v"
 - "$$"
@@ -134,7 +134,7 @@ där $ \alpha : \\ { 0, 1 \\ } ^ n \times \\ { 0, 1 \\ } ^ m \to \mathbb { C } $
 
 $$
 \begin{align}
-O \ket { \psi } & = o \sum _ { x \in \\ { 0, 1 \\ } ^ n, y \in \\ { 0, 1 \\ } ^ m } \alpha (x, y) \ket { x } \ket { y } x \\\\ 0 & , = 1 ^ n, y 0, 1 ^ m (x, y) O \sum _ { \in \\ { \\ } \in \\ { \\ } } \alpha \ket { x } \ket { y }\\\\
+O \ket { \psi } & = o \sum _{ x \in \\ { 0, 1 \\ } ^ n, y \in \\ { 0, 1 \\ } ^ m } \alpha (x, y) \ket { x } \ket { y } x \\\\ 0 & , = 1 ^ n, y 0, 1 ^ m (x, y) O \sum_ { \in \\ { \\ } \in \\ { \\ } } \alpha \ket { x } \ket { y }\\\\
              &= \sum _ { x \in \\ { 0, 1 \\ } ^ n, y \in \\ { 0, 1 \\ } ^ m } \alpha (x, y) \ket { x } \ket { y \oplus f (x) } .
 \end{align}
 $$
@@ -157,6 +157,9 @@ Dra $$
         &=(-1) ^ { f (0) } Z ^ { f (0)-f (1) } \ket { + } .
 \end{align}
 $$
+
+> [!NOTE]
+>Observera att $ z ^ { -1 } = Z ^ { \dagger } = Z $ och därför $ z ^ { f (0)-f (1) } = z ^ { f (1)-f (0) } .$
 
 I allmänhet kan båda vyerna i Oracle utökas för att representera klassiska funktioner som returnerar reella tal i stället för bara en enda bit.
 

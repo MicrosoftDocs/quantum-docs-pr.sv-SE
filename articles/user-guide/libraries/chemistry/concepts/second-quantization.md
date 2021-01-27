@@ -4,17 +4,17 @@ description: Lär dig mer om den andra kvantifieringsfel-metoden för att utform
 author: bradben
 ms.author: v-benbra
 ms.date: 10/09/2017
-ms.topic: article-type-from-white-list
+ms.topic: conceptual
 uid: microsoft.quantum.chemistry.concepts.secondquantization
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 6becd348f7b3957cb60b16bbd5a28228527e1d4c
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: a08e20d5b53aa97cb12ead0dc3a36069d0ec5df8
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90835816"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98858842"
 ---
 # <a name="second-quantization"></a>Andra kvantifieringsfel
 
@@ -84,7 +84,7 @@ Yrkes tillstånden för $2N $-rotations banorna kan liknas på samma sätt i $2N
 Exempel: om $N = $2 sedan tillstånd $ $ \ket {0} \ket {1} \ket {1} \ket {0} , $ $
 
 motsvarar rotations banaarna $1 $ och $2 $ som är upptagna med resten tom.
-På samma sätt är tillstånd $ $ \ket {0} \equiv \ket {0} _ {0} \cdots \ket {0} _{N-1}, $ $
+På samma sätt är tillstånd $ $ \ket {0} \equiv \ket {0} _{0} \cdots \ket {0}_{N-1}, $ $
 
 har ingen electrons och kallas vakuum-tillstånd.
 
@@ -211,12 +211,12 @@ Alla sätts `FermionTerm` automatiskt in i den kanoniska ordningen enligt följa
     var signEqual = sign0 == sign1;
 ```
 
-## <a name="second-quantized-fermionic-hamiltonian"></a>Andra – quantized Fermionic-Hamiltonian
+## <a name="second-quantized-fermionic-hamiltonian"></a>Second-Quantized Fermionic Hamiltonian
 
 Det är kanske unsurprising att Hamiltonian i [Quantum-modeller för elektroniska system](xref:microsoft.quantum.chemistry.concepts.quantummodels) kan skrivas i form av skapande-och Annihilation-operatörer.
 I synnerhet, om $ \psi \_ j $ är de rotations banor som utgör grunden
 
-\begin{Equation} \hat{H} = \sum \_ {PQ} H \_ {PQ} a ^ \dagger \_ p a \_ q + \frac {1} {2} \sum \_ {PQRS} H \_ {PQRS} a ^ \dagger \_ p a ^ \dagger \_ q a \_ ra \_ s + h \_ {\textrm NUC}, \label{EQ: totalHam} \end{Equation} där $h \_ {\Textrm NUC} $ är kärn energin (som är konstant under den födda-Oppenheimer-uppskattningen) och
+\begin{Equation} \hat{H} = \sum \_ {PQ} H \_ {PQ} a ^ \dagger \_ p a \_ q + \frac {1} {2} \sum \_ {PQRS} H \_ {PQRS} a ^ \dagger \_ p a ^ \dagger \_ q a \_ ra \_ s + h \_ {\textrm NUC}, \label{EQ: totalHam} \end{Equation} där $h \_ {\textrm NUC} $ är kärn energin (som är konstant under Born-Oppenheimer uppskattning) och
 
 \begin{align} h \_ {PQ} &= \int \_ {-\infty} ^ \infty \psi ^ \* \_ p (x \_ 1) \left (-\Frac{\nabla ^ 2} {2} + V (x \_ 1) \right) \psi \_ q (x \_ 1) \mathrm{d} ^ 3x \_ 1, \end{align}
 

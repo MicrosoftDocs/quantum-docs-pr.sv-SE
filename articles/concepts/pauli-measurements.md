@@ -1,6 +1,6 @@
 ---
 title: Beskrivning av Pauli mått: Lär dig hur du arbetar med en och flera qubit Pauli mått åtgärder.
-författare: bradben UID: Microsoft. Quantum. Concepts. Pauli MS. author: v-benbra MS. Date: 12/11/2017 MS. topic: artikeln No-Loc:
+författare: bradben-UID: Microsoft. Quantum. Concepts. Pauli MS. author: v-benbra MS. Date: 12/11/2017 MS. topic: konceptuell No-Loc:
 - "Q#"
 - "$$v"
 - "$$"
@@ -139,7 +139,7 @@ $$
 
 Det är också detsamma som att tillämpa $ HS ^ \dagger $ på Vectorn för Quantum-tillstånd och sedan mäta $ Z $ , så att följande åtgärd motsvarar `Measure([PauliY], [q])` :
 
-```Q#
+```qsharp
 operation MeasureY(qubit : Qubit) : Result {
     mutable result = Zero;
     within {
