@@ -1,30 +1,30 @@
 ---
-title: Jordanien – Wigner-representation
-description: Lär dig mer om den Jordanien-Wigner-representation som mappar Hamiltonian-operatörer till enhetliga matriser som kan vara enklare att implementera på en Quantum-dator.
+title: Jordan-Wigner representation
+description: Lär dig mer om den Jordan-Wigner representation, som mappar Hamiltonian-operatörer till enhetliga matriser som kan vara enklare att implementera på en Quantum-dator.
 author: bradben
 ms.author: v-benbra
 ms.date: 10/09/2017
-ms.topic: article-type-from-white-list
+ms.topic: conceptual
 uid: microsoft.quantum.chemistry.concepts.jordanwigner
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 29abb4d2ef11239a58af45bc4eee3bd60d20a6c7
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: 738c8262ea66b8a02ea7541e402953237dc2ea48
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90833879"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98844140"
 ---
-# <a name="jordan-wigner-representation"></a>Jordanien – Wigner-representation
+# <a name="jordan-wigner-representation"></a>Jordan-Wigner representation
 
 Andra quantized-Hamiltonians är bekvämt representerade i termer av $a ^ \dagger $ (skapas) och $a $ (Annihilation), men dessa åtgärder är inte grundläggande åtgärder på quantum-datorer.
 Det innebär att om vi vill att det ska implementera dem på en Quantum-dator måste vi mappa operatörerna till enhetliga matriser som kan implementeras på en Quantum-dator.
 The Jordanien – Wigner-representationen ger en sådan karta.
 Andra som Bravyi – Kitaev-representation finns också och har sina egna relativa fördelar och nack delar.
-Den största fördelen med den Jordanien-Wigner-representation är dess enkelhet.
+Den största fördelen med Jordan-Wigner representation är dess enkelhet.
 
-Den Jordanien-Wigner-representation är rakt framåt för att bli härledd.
+Den Jordan-Wignera representationen är direkt framåt för att bli härledd.
 Kom ihåg att ett tillstånd $ \ket {0} _J $ innebär att rotations orbital $j $ är tomt och att $ \ket {1} _J $ indikerar att den är upptagen.
 Det innebär att qubits kan lagra yrket i ett angivet varv orbital.
 Sedan har vi $a ^ \ dagger_j \ket {0} _J = \ket {1} _J $ och $a ^ \ dagger_j \ket {1} _J = $0.
@@ -51,14 +51,14 @@ Den fullständiga konstruktionen är följande:
 \begin{align} a ^ \ dagger_1 &= \left (\frac{X-iY} {2} \right) \otimes 1 \otimes 1 \otimes 1 \otimes \cdots \otimes 1, \\ \\ a ^ \ dagger_2 &= Z\otimes\left (\frac{X-iY} {2} \right) \otimes 1 \ otimes 1 \otimes \cdots \otimes 1, \\ \\ a ^ \ dagger_3 &= Z\otimes Z\otimes \left (\frac{X-iY} {2} \right) \otimes 1 \otimes \cdots \otimes 1, \\ \\ & \Vdots \\ \\ a ^ \ dagger_N &= Z\otimes Z\otimes Z\otimes Z \otimes \cdots \otimes Z\otimes \left (\frac{X-iY} {2} \right). \label{eq:JW} \end{align}
 
 Det är också enkelt att uttrycka antalet operatorer $n _j $, vad gäller Pauli-operatörer.
-Thankfully, strängarna i $Z $-operatörer (kallade Wigner-strängar) avbryts efter att den här ersättningen har utförts.
+Thankfully, strängarna i $Z $-operatörer (kallas Jordan-Wigner-strängar) avbryts efter att den här ersättningen har utförts.
 Efter att ha utfört detta (och återkallar $X _jY_j = iZ_j $) har vi \begin{Equation} n_j = a ^ \ dagger_j a_j = \frac{(1-Z_j)} {2} .
 \end{equation}
 
 
-## <a name="constructing-hamiltonians-in-jordan-wigner-representation"></a>Skapa Hamiltonians i Wigner-representation
+## <a name="constructing-hamiltonians-in-jordan-wigner-representation"></a>Skapa Hamiltonians i Jordan-Wigner representation
 
-När vi har åberopat den Jordanien-Wigner-representation som översätter Hamiltonian till en summa av Pauli-operatörer rakt framåt.
+När vi har anropat Jordan-Wigner representationen som översatts till en summa av Pauli-operatörerna är det rakt framåt.
 Du behöver bara ersätta var och en av de $a ^ \dagger $-och $a $-operatörerna i Fermionic-Hamiltonian med strängarna för Pauli-operatörerna ovan.
 När en utför denna ersättning finns det bara fem villkors klasser inom Hamiltonian.
 Dessa fem klasser motsvarar de olika sätt som vi kan välja mellan $p, q $ och $p, q, r, s $ i en Body-och två-Body-termer i Hamiltonian.

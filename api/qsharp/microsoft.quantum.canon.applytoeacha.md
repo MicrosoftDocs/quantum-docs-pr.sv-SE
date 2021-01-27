@@ -1,18 +1,18 @@
 ---
 uid: Microsoft.Quantum.Canon.ApplyToEachA
 title: ApplyToEachA-åtgärd
-ms.date: 11/25/2020 12:00:00 AM
+ms.date: 1/23/2021 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Canon
 qsharp.name: ApplyToEachA
 qsharp.summary: Applies a single-qubit operation to each element in a register. The modifier `A` indicates that the single-qubit operation is adjointable.
-ms.openlocfilehash: 9819e78760caf6180edc5c2ca5e402060e3029a5
-ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
+ms.openlocfilehash: da901db2bb3c70186bfe0c8812b5710198d1dff3
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96217806"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98844603"
 ---
 # <a name="applytoeacha-operation"></a>ApplyToEachA-åtgärd
 
@@ -51,6 +51,16 @@ Matris för qubits som den aktuella åtgärden ska tillämpas på.
 ### <a name="t"></a>Inte
 
 Målet som åtgärden agerar på.
+
+## <a name="example"></a>Exempel
+
+Förbered ett tre-qubit $ \ket{+} $-tillstånd:
+
+```qsharp
+using (register = Qubit[3]) {
+    ApplyToEach(H, register);
+}
+```
 
 ## <a name="see-also"></a>Se även
 

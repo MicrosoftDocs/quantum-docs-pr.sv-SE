@@ -4,18 +4,17 @@ description: Lär dig hur du skapar ett Q#-program med Python.
 author: bradben
 ms.author: v-benbra
 ms.date: 8/20/2020
-ms.topic: article
-ms.custom: how-to
+ms.topic: quickstart
 uid: microsoft.quantum.install.python
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: f6a2a7d1888cfe458fa3989a27d71fcdeed0f01f
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
-ms.translationtype: HT
+ms.openlocfilehash: 1ec40b6f1b7a8d9144860e3b8cfd554eb51bae81
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
+ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90834167"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98844272"
 ---
 # <a name="develop-with-no-locq-and-python"></a>Utveckla med Q# och Python
 
@@ -72,7 +71,7 @@ Installera QDK:n om du vill utveckla Python-värdprogram som anropar Q#-åtgärd
     > där `/path/to/dotnet-iqsharp` ersätts med den absoluta sökvägen till `dotnet-iqsharp`-verktyget i filsystemet.
     > Den finns vanligtvis under `.dotnet/tools` i användarprofilens mapp.
     
-***
+**_
 
 Klart! Nu har du både Python-paketet `qsharp` och IQ#-kärnan för Jupyter, som tillhandahåller grundläggande funktioner för kompilering och körning av Q#-åtgärder från Python samt ger möjlighet att använda Q#-Jupyter Notebooks.
 
@@ -113,7 +112,7 @@ Nu är du redo att verifiera installationen av Python-paketet `qsharp` genom att
 1. Du bör se resultatet av den åtgärd du anropade. Eftersom åtgärden genererar ett slumpmässigt resultat visas i det här fallet antingen `0` eller `1` på skärmen. Om du kör programmet upprepade gånger bör du se varje resultat ungefär varannan gång.
 
 > [!NOTE]
-> * Python-koden är bara ett vanligt Python-program. Du kan använda valfri Python-miljö, däribland Python-baserade Jupyter Notebooks, för att skriva Python-programmet och anropa Q#-åtgärder. Python-programmet kan importera Q#-åtgärder från .qs-filer som finns i samma mapp som själva Python-koden.
+> _ Python-koden är bara ett vanligt python-program. Du kan använda valfri Python-miljö, däribland Python-baserade Jupyter Notebooks, för att skriva Python-programmet och anropa Q#-åtgärder. Python-programmet kan importera Q#-åtgärder från .qs-filer som finns i samma mapp som själva Python-koden.
 
 ## <a name="next-steps"></a>Nästa steg
 

@@ -4,18 +4,17 @@ description: Lär dig hur du skapar ett Q#-program med .NET-språk.
 author: bradben
 ms.author: v-benbra
 ms.date: 8/20/2020
-ms.topic: article
-ms.custom: how-to
+ms.topic: quickstart
 uid: microsoft.quantum.install.cs
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: e8733918daa02afaea0fc1994d5f0851d4be9b93
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
-ms.translationtype: HT
+ms.openlocfilehash: de79c361331766572f5608c341be766e071e01b5
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
+ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90834337"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98844311"
 ---
 # <a name="develop-with-no-locq-and-net"></a>Utveckla med Q# och .NET
 
@@ -78,11 +77,11 @@ Om du använder ett annat redigeringsprogram än Visual Studio eller VS Code fö
   - Gå till **Arkiv** → **Nytt** → **Projekt**
   - Välj ”Konsolapp (.NET Core”)” för antingen C# eller F#
   - Välj **Nästa**
-  - Under *Lösning*väljer du ”Lägg till i lösning”
+  - Under *Lösning* väljer du ”Lägg till i lösning”
   - Välj ett namn på värdprogrammet
   - Välj **Skapa**
 
-***
+**_
 
 ## <a name="calling-into-no-locq-from-net"></a>Anropa till Q# från .NET
 
@@ -103,7 +102,7 @@ Om du vill anropa den här åtgärden från .NET i en kvantsimulator, kan du anv
 
 :::code language="fsharp" source="~/quantum/samples/interoperability/dotnet/fsharp/Host.fs" range="4-":::
 
-***
+_**
     
 ## <a name="next-steps"></a>Nästa steg
 

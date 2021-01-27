@@ -1,18 +1,18 @@
 ---
 uid: Microsoft.Quantum.Arithmetic.AssertProbInt
 title: AssertProbInt-åtgärd
-ms.date: 11/25/2020 12:00:00 AM
+ms.date: 1/23/2021 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Arithmetic
 qsharp.name: AssertProbInt
 qsharp.summary: Asserts that the probability of a specific state of a quantum register has the expected value.
-ms.openlocfilehash: b95c2c6294dd5a95b7215c22bd6c50a41635f432
-ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
+ms.openlocfilehash: 85ff04bbad9dc2ed0f803db65508fdfbb0d22c56
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96223705"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98843408"
 ---
 # <a name="assertprobint-operation"></a>AssertProbInt-åtgärd
 
@@ -28,7 +28,7 @@ operation AssertProbInt (stateIndex : Int, expected : Double, qubits : Microsoft
 ```
 
 
-## <a name="description"></a>Beskrivning
+## <a name="description"></a>Description
 
 Med en $n $-qubit Quantum State $ \ket{\psi} = \sum ^ {2 ^ n-1} _ {j = 0} \ alpha_j \ket{j} $, förutsätter att sannolikheten $ | \ alpha_j | ^ 2 $ för tillstånd $ \ket{j} $ som har indexerats av $j $ har det förväntade värdet.
 
@@ -57,3 +57,14 @@ Absolut tolerans för skillnaden mellan faktiskt och förväntat värde.
 
 ## <a name="output--unit"></a>Utdata: [enhet](xref:microsoft.quantum.lang-ref.unit)
 
+
+
+## <a name="example"></a>Exempel
+
+Anta att `qubits` registret kodar ett 3-qubit Quantum-tillstånd $ \ket{\psi} = \ sqrt {1/8} \ ket {0} + \ sqrt {7/8} \ ket {6} $ i litet endian-format.
+Det innebär att antalet tillstånd $ \ket {0} \equiv\ket {0} \ket {0} \ket {0} $ och $ \ket \equiv\ket {6} \ket \ket {0} {1} {1} $. Följande kontroller lyckades:
+
+```qsharp
+AssertProbInt(0, 0.125, qubits, 10e-10);
+AssertProbInt(6, 0.875, qubits, 10e-10);
+```

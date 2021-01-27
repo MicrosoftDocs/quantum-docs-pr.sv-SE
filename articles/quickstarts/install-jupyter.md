@@ -4,18 +4,17 @@ description: Lär dig hur du skapar ett Q#-program med Jupyter Notebooks.
 author: bradben
 ms.author: v-benbra
 ms.date: 8/20/2020
-ms.topic: article
-ms.custom: how-to
+ms.topic: quickstart
 uid: microsoft.quantum.install.jupyter
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: b34d89ab33a4644c1dd4342949685f9bf84babd8
-ms.sourcegitcommit: d98190988ff03146d9ca2b0d325870cd717d729a
-ms.translationtype: HT
+ms.openlocfilehash: 4cef9b7252a2199b2ea995c4cf819a3582d9ca8f
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
+ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91771391"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98844283"
 ---
 # <a name="develop-with-no-locq-jupyter-notebooks"></a>Utveckla med Jupyter Notebooks för Q#
 
@@ -69,7 +68,7 @@ IQ# (uttalas i-q-sharp) är ett tillägg som främst används av Jupyter och Pyt
 > där `/path/to/dotnet-iqsharp` ersätts med den absoluta sökvägen till `dotnet-iqsharp`-verktyget i filsystemet.
 > Den finns vanligtvis under `.dotnet/tools` i användarprofilens mapp.
     
-***
+**_
 
 Klart! Nu har du IQ#-kärnan för Jupyter, som tillhandahåller grundläggande funktioner för kompilering och körning av Q#-åtgärder från Jupyter Notebooks för Q#.
 
@@ -85,7 +84,7 @@ Nu är du redo att verifiera installationen av Jupyter Notebook för Q# genom at
 
     - Om Jupyter Notebook inte öppnas automatiskt i webbläsaren kopierar och klistrar du in den URL som finns på kommandoraden till webbläsaren.
 
-1. Välj **Ny → Q#** för att skapa en Jupyter Notebook med en Q#-kernel, och lägg till följande kod i den första Notebook-cellen:
+1. Välj _ *ny → Q#** om du vill skapa en Jupyter Notebook med en Q# kernel och Lägg till följande kod i den första notebook-cellen:
 
     :::code language="qsharp" source="~/quantum/samples/interoperability/qrng/Qrng.qs" range="6-13":::
 

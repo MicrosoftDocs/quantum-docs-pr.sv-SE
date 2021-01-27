@@ -1,18 +1,18 @@
 ---
 uid: Microsoft.Quantum.Canon.ApplyIfOneCA
 title: ApplyIfOneCA-åtgärd
-ms.date: 11/25/2020 12:00:00 AM
+ms.date: 1/23/2021 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Canon
 qsharp.name: ApplyIfOneCA
 qsharp.summary: Applies a unitary operation conditioned on a classical result value being one.
-ms.openlocfilehash: 29801ed0bec08d0ab818f237feb17c2a2a7af1e4
-ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
+ms.openlocfilehash: 8b27a192c66a127fe5a8acfbba7b78314988bf2e
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96218588"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98844914"
 ---
 # <a name="applyifoneca-operation"></a>ApplyIfOneCA-åtgärd
 
@@ -28,7 +28,7 @@ operation ApplyIfOneCA<'T> (result : Result, (op : ('T => Unit is Adj + Ctl), ta
 ```
 
 
-## <a name="description"></a>Beskrivning
+## <a name="description"></a>Description
 
 En åtgärd `op` och ett resultat värde `result` gäller `op` för `target` IF `result` `One` . Om `Zero` händer ingenting `target` .
 Suffixet `CA` anger att åtgärden som ska tillämpas är enhetlig (kan kontrol leras och adjointable).
