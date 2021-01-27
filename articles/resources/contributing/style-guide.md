@@ -4,17 +4,17 @@ description: Lär dig mer om namngivning, indatamängd, dokumentation och format
 author: cgranade
 ms.author: chgranad
 ms.date: 10/12/2018
-ms.topic: article
+ms.topic: contributor-guide
 uid: microsoft.quantum.contributing.style
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: cfc201a16b1b42c82314220f77ae120076291759
-ms.sourcegitcommit: b930bb59a1ba8f41d2edc9ed98197109aa8c7f1b
+ms.openlocfilehash: 2edd6baf7375415e395d15bac422168216bcff9a
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96231663"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98852746"
 ---
 # <a name="no-locq-style-guide"></a>Q# Stil guide #
 ## <a name="general-conventions"></a>Allmänna konventioner ##
@@ -52,7 +52,7 @@ Den här skillnaden antyder att vi namnger åtgärder som verb och fungerar som 
 > Från och med detta perspektiv ska användardefinierade typer namnges som substantiv, så att både själva typen och konstruktorn-funktionen har konsekventa namn.
 
 Om det är rimligt bör du se till att åtgärds namnen börjar med verb som tydligt anger vilken åtgärd som vidtas.
-Ett exempel:
+Exempel:
 
 - `MeasureInteger`
 - `EstimateEnergy`
@@ -96,7 +96,7 @@ Vi rekommenderar:
 
 # <a name="examples"></a>[Exempel](#tab/examples)
 
-| &nbsp;  | Namn | Beskrivning |
+| &nbsp;  | Name | Beskrivning |
 |---|------|-------------|
 | ☑ | `operation ReflectAboutStart` | Rensa användningen av ett verb ("reflektera") för att ange hur åtgärden ska fungera. |
 | ☒ | <s>`operation XRotation`</s> | Användning av en Substantiv-fras föreslår funktion i stället för åtgärd. |
@@ -129,7 +129,7 @@ Vi rekommenderar:
 
 # <a name="examples"></a>[Exempel](#tab/examples)
 
-| &nbsp;  | Namn | Beskrivning |
+| &nbsp;  | Name | Beskrivning |
 |---|------|-------------|
 | ☑ | `@EntryPoint() operation RunSimulation` | Kommunicerar tydligt syftet med start punkten via åtgärds namn. |
 | ☒ | <s>`@EntryPoint() operation Main`</s> | Användning av `Main` är inte tydligt syftet med start punkten och är redundant med `@EntryPoint()` attribut. |
@@ -171,7 +171,7 @@ Vi rekommenderar:
 
 # <a name="examples"></a>[Exempel](#tab/examples)
 
-| &nbsp;   | Namn | Beskrivning |
+| &nbsp;   | Name | Beskrivning |
 |---|------|-------------|
 | ☑ | `X` | Välförstått kort för "tillämpa en $X $-transformering" |
 | ☑ | `CNOT` | Välförståttt snabb kort för "styrd-NOT" |
@@ -228,7 +228,7 @@ Vi rekommenderar:
 
 # <a name="examples"></a>[Exempel](#tab/examples)
 
-| &nbsp;   | Namn | Beskrivning |
+| &nbsp;   | Name | Beskrivning |
 |---|------|-------------|
 | ☒ | <s>`ToDouble`</s> | Förpositionen "till" resulterar i en verbfras som indikerar en åtgärd och inte en funktion. |
 | ☒ | <s>`AsDouble`</s> | Indatatypen är inte klar från funktions namnet. |
@@ -251,7 +251,7 @@ Vi rekommenderar:
 
 # <a name="examples"></a>[Exempel](#tab/examples)
 
-| &nbsp;  | Namn | Beskrivning |
+| &nbsp;  | Name | Beskrivning |
 |---|------|-------------|
 | ☒ | <s>`operation _ApplyDecomposedOperation`</s> | Använd inte ett under streck `_` för att ange att den här åtgärden endast är för intern användning. |
 | ☑ | `internal operation ApplyDecomposedOperation` | `internal`Nyckelordet i början visar tydligt att den här åtgärden endast är för intern användning. |
@@ -323,7 +323,7 @@ Vi rekommenderar:
 
 # <a name="examples"></a>[Exempel](#tab/examples)
 
-| &nbsp;  | Kodfragment | Beskrivning |
+| &nbsp;  | Kodfragment | Description |
 |---|---------|-------------|
 | ☑ | `newtype Oracle = (Apply : Qubit[] => Unit is Adj + Ctl)` | Namnet `Apply` är en `CamelCase` formaterad verbfras som föreslår att det namngivna objektet är en åtgärd. |
 | ☒ | <s>`newtype Oracle = (apply : Qubit[] => Unit is Adj + Ctl) `</s> | Namngivna objekt ska börja med en inledande versal bokstav. |
@@ -479,7 +479,7 @@ Vi rekommenderar:
 
 # <a name="examples"></a>[Exempel](#tab/examples)
 
-| &nbsp; | Kodfragment | Beskrivning |
+| &nbsp; | Kodfragment | Description |
 |---|---------|-------------|
 | ☒ | <s>`2+3`</s> | Använd blank steg runt binära operatorer. |
 | ☒ | <s>`target:Qubit`</s> | Använd blank steg runt Skriv anteckningens kolon. |
