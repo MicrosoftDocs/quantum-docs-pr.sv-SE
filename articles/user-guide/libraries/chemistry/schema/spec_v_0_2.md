@@ -4,17 +4,17 @@ description: Information om specifikationerna för Broombridge Quantum kemi sche
 author: guanghaolow
 ms.author: gulow
 ms.date: 05/28/2019
-ms.topic: article
+ms.topic: conceptual
 uid: microsoft.quantum.libraries.chemistry.schema.spec_v_0_2
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 851d10c0137deecf8e861aad30b5e08a9ae61754
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: 8d26b56d88f365144510692466bfffc7feb71d88
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90833768"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98854070"
 ---
 # <a name="broombridge-specification-v02"></a>Broombridge-specifikation v 0,2 #
 
@@ -171,7 +171,7 @@ Varje problem beskrivnings objekt måste ha en egenskap `coulomb_repulsion` vars
 Varje problem beskrivnings objekt måste ha en egenskap `energy_offet` vars värde är ett enkelt antal objekt.
 > Lägg Värdena för `coulomb_repulsion` och `energy_offet` läggs till tillsammans avbilda identitets perioden för Hamiltonian.
 
-##### <a name="one-electron-integrals-object"></a>Ett-Electron integraler-objekt #####
+##### <a name="one-electron-integrals-object"></a>One-Electron integraler-objekt #####
 
 Det här avsnittet är normativt.
 
@@ -201,7 +201,7 @@ one_electron_integrals:     # required
 > Broombridge använder 1-baserad indexering.
 
 
-##### <a name="two-electron-integrals-object"></a>Två Electron integraler-objekt #####
+##### <a name="two-electron-integrals-object"></a>Two-Electron integraler-objekt #####
 
 Det här avsnittet är normativt.
 

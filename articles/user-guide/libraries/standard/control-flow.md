@@ -5,16 +5,16 @@ author: QuantumWriter
 uid: microsoft.quantum.concepts.control-flow
 ms.author: martinro
 ms.date: 12/11/2017
-ms.topic: article
+ms.topic: conceptual
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: ad107f5c65a4bf368d12d30e4a72786f2076205c
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 8f4b69250ed49bd56c3066d5cd40db4b8abfc9cb
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92690864"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98858708"
 ---
 # <a name="higher-order-control-flow"></a>Higher-Order kontroll flöde #
 
@@ -162,9 +162,9 @@ U(1, time / Float(nSteps), target);
 // ...
 ```
 
-Nu kan vi nu vara orsaken till Trotter – Suzuki-expansionen *utan referens till Quantum Mechanics* .
+Nu kan vi nu vara orsaken till Trotter – Suzuki-expansionen *utan referens till Quantum Mechanics*.
 Expansionen är i praktiken ett särskilt upprepnings mönster som är motiverat av $ \eqref{EQ: Trotter-Suzuki-0} $.
-Detta upprepnings mönster implementeras av <xref:Microsoft.Quantum.Canon.DecomposedIntoTimestepsCA> :
+Detta upprepnings mönster implementeras av <xref:Microsoft.Quantum.Canon.DecomposedIntoTimeStepsCA> :
 
 ```qsharp
 // The 2 indicates how many terms we need to decompose,
@@ -213,7 +213,7 @@ Den här konstruktionen är exakt `ApplyWith` , så vi skriver texten i vår nya
 ```
 
 Här har vi använt <xref:Microsoft.Quantum.Canon.ApplyPauliFromBitString> för att tillämpa $P $, som delvis använder sig av målet för användning med `ApplyWith` .
-Observera dock att vi behöver omvandla *kontroll* registret till vårt önskade formulär, så vi använder delvis den inre åtgärden `(Controlled oracle)` på *målet* .
+Observera dock att vi behöver omvandla *kontroll* registret till vårt önskade formulär, så vi använder delvis den inre åtgärden `(Controlled oracle)` på *målet*.
 Detta `ApplyWith` gör att du får en parentes för kontroll registret med $P $, precis som vi vill.
 
 Vi kan nu vara klara, men det tar på sig att inte uppfylla den nya åtgärden, som att använda `Controlled` Functor.

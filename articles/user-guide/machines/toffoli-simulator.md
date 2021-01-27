@@ -4,17 +4,17 @@ description: Lär dig mer om Microsoft QDKe Toffoli simulator, en speciell funkt
 author: alan-geller
 ms.author: ageller
 ms.date: 6/25/2020
-ms.topic: article
+ms.topic: conceptual
 uid: microsoft.quantum.machines.toffoli-simulator
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 036896a33fa02db671a5fd07421160df164bd41d
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 84b958912ab5116a3181c8eff4f331fc8394604c
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92690788"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98858572"
 ---
 # <a name="quantum-development-kit-qdk-toffoli-simulator"></a>Toffoli Simulator för Quantum Development Kit (QDK)
 
@@ -67,7 +67,7 @@ Använd Q# kommandot Magic [% Toffoli](xref:microsoft.quantum.iqsharp.magic-ref.
 Toffoli Simulator stöder:
 
 * Rotationer och exponentiated Paulis, till exempel `R` och `Exp` , när den resulterande åtgärden är lika med `X` eller identitets mat ris.
-* Mått och [assert](xref:Microsoft.Quantum.Diagnostics.AssertMeasurement) -åtgärder, men endast i Pauli- `Z` basen. Observera att sannolikheten för en mått åtgärd alltid är **0** eller **1** ; Det finns ingen slumpmässighet i Toffoli-simulatorn.
+* Mått och [assert](xref:Microsoft.Quantum.Diagnostics.AssertMeasurement) -åtgärder, men endast i Pauli- `Z` basen. Observera att sannolikheten för en mått åtgärd alltid är **0** eller **1**; Det finns ingen slumpmässighet i Toffoli-simulatorn.
 * `DumpMachine` och- `DumpRegister` funktioner.
 Båda funktionerna utvärderar aktuell `Z` bas status för varje qubit, en qubit per rad.
 

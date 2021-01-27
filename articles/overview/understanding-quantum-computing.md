@@ -9,16 +9,16 @@ uid: microsoft.quantum.overview.understanding
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 332afb4ea7de01da5d8f22fee6517032ed4f9fc1
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
-ms.translationtype: HT
+ms.openlocfilehash: c6c6249fd56c6fb65550c81ffee902eca555b0cd
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
+ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90835000"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98855093"
 ---
 # <a name="understanding-quantum-computing"></a>Så här fungerar kvantberäkning
 
-Inom kvantberäkning används principerna för kvantmekanik till att bearbeta information. Därför kräver kvantberäkning en annan metod än klassisk beräkning. Ett exempel på skillnaden är den processor som används i kvantdatorer. Medan klassiska datorer använder de välbekanta kiselbaserade kretsarna använder kvantdatorer kvantsystem såsom atomer, joner, fotoner eller elektroner. De använder sina kvantegenskaper för att representera bitar som kan förberedas i olika kvantöverpositioner på 1 och 0.  
+Inom kvantberäkning används principerna för kvantmekanik till att bearbeta information. Därför kräver kvantberäkning en annan metod än klassisk beräkning. Ett exempel på skillnaden är den processor som används i kvantdatorer. Där klassiska datorer använder välbekant Silicon-baserad chips använder Quantum-datorer Quantum Systems (system där vi kan styra unika egenskaper och beteenden för Quantum Mechanics) som atomer, joner, photons eller electrons. Även om klassiska datorer använder binära Logic-baserade höga och lägsta värden, d.v.s. 1 och 0, använder Quantum-datorer sina Quantum-egenskaper för att representera bitar som kan förberedas i olika Quantum-överpositioner på 1 och 0.  
 
 Kvantmaterial beter sig utefter kvantmekanikens lagar med begrepp såsom probabilistisk beräkning, superposition och sammanflätning. Dessa begrepp utgör grunden för kvantalgoritmer som utnyttjar kraften hos kvantberäkning till att lösa komplexa problem. I den här artikeln beskrivs några av de centrala begreppen inom kvantmekanik som kvantberäkning bygger på.
 
@@ -52,7 +52,7 @@ Utöver detta ömsesidiga beroende kan partiklar upprätthålla den här kopplin
 
 ### <a name="qubits-and-probability"></a>Kvantbitar och sannolikhet
 
-Klassiska datorer lagrar och bearbetar information i bitar, som kan ha tillståndet 1 eller 0 men aldrig båda. Motsvarigheten inom kvantberäkning är **kvantbiten**, som representerar tillståndet för en kvantpartikel. På grund av superposition kan kvantbitar antingen vara 1 eller 0 eller vad som helst mellan dessa. Beroende på en kvantbits konfiguration har den en viss *sannolikhet* att kollapsa till 1 eller 0. Kvantbitens sannolikhet att kollapsa åt ettdera hållet avgörs av **kvantinterferens**. 
+Klassiska datorer lagrar och bearbetar information i bitar, som kan ha tillståndet 1 eller 0 men aldrig båda. Motsvarigheten inom kvantberäkning är **kvantbiten**, som representerar tillståndet för en kvantpartikel. På grund av superposition kan kvantbitar antingen vara 1 eller 0 eller vad som helst mellan dessa. Beroende på en kvantbits konfiguration har den en viss *sannolikhet* att kollapsa till 1 eller 0. Kvantbitens sannolikhet att kollapsa åt ettdera hållet avgörs av **kvantinterferens**.
 
 Kommer du ihåg din vän som skulle ta en bild på dig? Anta att kameran har specialfilter som kallas *interferensfilter*. Om vännen väljer filtret *70/30* och börjar ta bilder kommer du att titta åt vänster på 70 procent av bilderna och åt höger på 30 procent. Filtret orsakar interferens för kamerans normala tillstånd, vilket påverkar sannolikheten hos dess beteende.
 

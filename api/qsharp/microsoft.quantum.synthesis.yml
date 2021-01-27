@@ -8,6 +8,8 @@ functions:
   uid: Microsoft.Quantum.Synthesis.Extended
 - summary: Beräknar Hadamard-transformering av en boolesk funktion i {-1,1} encoding med Yates-metoden
   uid: Microsoft.Quantum.Synthesis.FastHadamardTransformed
+- summary: För varje toppnivå på 2 nivåer beräknas "Vänd mask", som anger qubits som ska inverteras före och efter att motsvarande 1-qubit-grind tillämpas. För bekvämlighets prepends resultat med 0.
+  uid: Microsoft.Quantum.Synthesis.FlipMasks
 - summary: Skapar en MCMTMask-typ som en singleton-matris om målet inte är 0, annars returnerar en tom matris.
   uid: Microsoft.Quantum.Synthesis.GateMask
 - summary: Beräknar upp till två MCMT-maskar för att omvandla y till x.
@@ -20,6 +22,8 @@ functions:
   uid: Microsoft.Quantum.Synthesis.RMEncoding
 - summary: Justerar sanningen-tabellen från matrisen med booleska värden enligt antalet variabler. en ny matris returneras som en längd `2^numVars` , vilket kan kräva att storleken på utökningen av `table` `false` poster eller trunkerar den till `2^numVars` element.
   uid: Microsoft.Quantum.Synthesis.SizeAdjustedTruthTable
+- summary: Kontrollerar att den aktuella matrisen representerar en fyrkantig matris.
+  uid: Microsoft.Quantum.Synthesis.SquareMatrixFact
 - summary: Beräkna permutationer genom att beräkna grind-masker.
   uid: Microsoft.Quantum.Synthesis.TBSMain
 - summary: Beräknar Gate-masker för att transformera behörigheten [x] till x och uppdaterar aktuell permutation.
@@ -34,6 +38,8 @@ functions:
   uid: Microsoft.Quantum.Synthesis.UpdatedPermutation
 - summary: Infoga en 0-bit i ett heltal
   uid: Microsoft.Quantum.Synthesis.WithZeroInsertedAt
+- summary: ''
+  uid: Microsoft.Quantum.Synthesis._TwoLevelDecomposition
 name: Microsoft.Quantum.Synthesis
 newtypes:
 - summary: Tillstånd under dekompositionen baserat på variabel index
@@ -54,8 +60,15 @@ operations:
   uid: Microsoft.Quantum.Synthesis.ApplyPermutationUsingDecompositionWithVariableOrder
 - summary: Permutes amplituderna i ett Quantum-tillstånd med en permutation med hjälp av Transformations-baserad syntes.
   uid: Microsoft.Quantum.Synthesis.ApplyPermutationUsingTransformation
+- summary: Använder en qubit-grind som definieras av 2x2-matrisen.
+  uid: Microsoft.Quantum.Synthesis.ApplySingleQubitUnitary
 - summary: ''
   uid: Microsoft.Quantum.Synthesis.ApplyTransposition
+- summary: >-
+    Tillämpar den grind som definieras av 2 ^ n x 2 ^ n, enhetlig matris.
+
+    Miss lyckas om matrisen inte är enhetlig eller har fel storlek.
+  uid: Microsoft.Quantum.Synthesis.ApplyUnitary
 - summary: Tillämpar @"microsoft.quantum.intrinsic.x" åtgärden på `target` , om den booleska funktionen `func` utvärderas som sant för den klassiska den klassiska tilldelningen i `controlRegister` .
   uid: Microsoft.Quantum.Synthesis.ApplyXControlledOnTruthTable
 - summary: Tillämpar @"microsoft.quantum.intrinsic.x" åtgärden på `target` , om den booleska funktionen `func` utvärderas som sant för den klassiska den klassiska tilldelningen i `controlRegister` .
@@ -63,9 +76,9 @@ operations:
 summary: Det här namn området innehåller funktioner och åtgärder för att syntetisera Quantum-åtgärder baserat på permutationer och booleska funktioner.
 uid: Microsoft.Quantum.Synthesis
 metadata:
-  ms.openlocfilehash: 2f92f4662252148ff0e093f5392f5f00f26b661f
-  ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+  ms.openlocfilehash: e238fdedcc931bb02c35591014d20b50b695b116
+  ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
   ms.translationtype: MT
   ms.contentlocale: sv-SE
-  ms.lasthandoff: 10/27/2020
-  ms.locfileid: "92734203"
+  ms.lasthandoff: 01/26/2021
+  ms.locfileid: "98855176"

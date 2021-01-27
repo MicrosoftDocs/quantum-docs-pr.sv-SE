@@ -1,6 +1,6 @@
 ---
 rubrik: Quantum-kretsar Beskrivning: Lär dig att visuellt återge enkla och komplexa Quantum-åtgärder med Quantum-krets diagram.
-författare: QuantumWriter-UID: Microsoft. Quantum. Concepts. kretsar MS. author: v-benbra MS. Date: 12/11/2017 MS. topic: artikel nr-Loc:
+författare: QuantumWriter-UID: Microsoft. Quantum. Concepts. kretsar MS. author: v-benbra MS. Date: 12/11/2017 MS. topic: konceptuell No-Loc:
 - "Q#"
 - "$$v"
 - "$$"
@@ -89,7 +89,7 @@ Den här grind serien är av grundläggande betydelse för Quantum Computing eft
 
 $$\mathrm{CNOT } _ { 01 } (H \otimes 1) \ket { 00 } = \frac { 1 } { \sqrt { 2 } } \left ( \ket { 00 }  +  \ket { 11 } \right ),$$
 
-Åtgärder med den här eller större komplexiteten är allmänt förekommande i Quantum-algoritmer och Quantum Error-korrigering, så det bör vara en bra avläsnings metod för att det ska finnas en enkel metod för visualiseringen som kallas ett *Quantum-krets diagram* .
+Åtgärder med den här eller större komplexiteten är allmänt förekommande i Quantum-algoritmer och Quantum Error-korrigering, så det bör vara en bra avläsnings metod för att det ska finnas en enkel metod för visualiseringen som kallas ett *Quantum-krets diagram*.
 Krets diagrammet för att förbereda denna maximally Entangled-Quantum-tillstånd är:
 
 <!--- ![](.\media\1.svg) --->

@@ -4,17 +4,17 @@ description: Lär dig mer om den invaliderade qubits i Microsoft QDK, som använ
 author: vadym-kl
 ms.author: vadym
 ms.date: 06/25/2020
-ms.topic: article
+ms.topic: conceptual
 uid: microsoft.quantum.machines.qc-trace-simulator.invalidated-qubits
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 18371b3798d0eaa12d4e7107f58f44379594619f
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: 9014097ace7c9f19d93a92372da40f71fa7f87ee
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90836003"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98858612"
 ---
 # <a name="quantum-trace-simulator-invalidated-qubits-use-checker"></a>Quantum trace Simulator: ogiltig användnings kontroll för qubits
 
@@ -34,11 +34,11 @@ operation UseReleasedQubit() : Unit {
 }
 ```
 
-När du tillämpar `H` åtgärden på `q[0]` , pekar den på en redan släppt qubit, vilket kan orsaka odefinierat beteende. När den inverifierade qubits-användnings kontrollen är aktive rad, utlöses undantaget `InvalidatedQubitsUseCheckerException` om programmet tillämpar en åtgärd på en redan släppt qubit. Mer information finns i <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.InvalidatedQubitsUseCheckerException>.
+När du tillämpar `H` åtgärden på `q[0]` , pekar den på en redan släppt qubit, vilket kan orsaka odefinierat beteende. När den inverifierade qubits-användnings kontrollen är aktive rad, utlöses undantaget `InvalidatedQubitsUseCheckerException` om programmet tillämpar en åtgärd på en redan släppt qubit. Mer information finns i <xref:Microsoft.Quantum.Simulation.QCTraceSimulatorRuntime.InvalidatedQubitsUseCheckerException>.
 
 ## <a name="invoking-the-invalidated-qubits-use-checker"></a>Anropar den invaliderade qubits-användnings kontrollen
 
-För att köra Quantum trace-simulatorn med den invaliderade qubits-kontrollen måste du skapa en <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulatorConfiguration> instans, ställa in `UseInvalidatedQubitsUseChecker` egenskapen på **True**och sedan skapa en ny <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator> instans med `QCTraceSimulatorConfiguration` som-parameter. 
+För att köra Quantum trace-simulatorn med den invaliderade qubits-kontrollen måste du skapa en <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulatorConfiguration> instans, ställa in `UseInvalidatedQubitsUseChecker` egenskapen på **True** och sedan skapa en ny <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator> instans med `QCTraceSimulatorConfiguration` som-parameter. 
 
 ```csharp
 var config = new QCTraceSimulatorConfiguration();
@@ -78,4 +78,4 @@ namespace Quantum.MyProgram
 - Översikt över Quantum Development Kit-verktyget för [spårnings simulatorn](xref:microsoft.quantum.machines.qc-trace-simulator.intro) .
 - <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator>API-referensen.
 - <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulatorConfiguration>API-referensen.
-- <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.InvalidatedQubitsUseCheckerException>API-referensen.
+- <xref:Microsoft.Quantum.Simulation.QCTraceSimulatorRuntime.InvalidatedQubitsUseCheckerException>API-referensen.

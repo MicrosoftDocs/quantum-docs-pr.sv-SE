@@ -4,16 +4,16 @@ description: Lär dig mer om diagnostiska funktioner och åtgärder i de Q# stan
 author: cgranade
 uid: microsoft.quantum.libraries.diagnostics
 ms.author: chgranad
-ms.topic: article
+ms.topic: conceptual
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 1ab9b77c7536a1860064110810371d3a68e95b40
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: d13122187a24893d297cfdbb3ad4db03eb22ded0
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92690849"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98858690"
 ---
 # <a name="diagnostics"></a>Diagnostik #
 
@@ -27,7 +27,7 @@ Diagnostik om klassiska värden kan erhållas med hjälp av <xref:Microsoft.Quan
 Som standard skriver detta strängen till-konsolen.
 Används tillsammans med interpolerade strängar och <xref:Microsoft.Quantum.Intrinsic.Message> gör det enkelt att rapportera diagnostikinformation om klassiska värden:
 
-```Q#
+```qsharp
 let angle = Microsoft.Quantum.Math.PI() * 2.0 / 3.0;
 Message($"About to rotate by an angle of {angle}...");
 ```
@@ -45,9 +45,9 @@ Som jämförelse ger [Toffoli Simulator](xref:microsoft.quantum.machines.toffoli
 
 ## <a name="facts-and-assertions"></a>Fakta och intyg ##
 
-Som det beskrivs i [test och fel sökning](xref:microsoft.quantum.guide.testingdebugging)kan en funktion eller åtgärd med signatur `Unit -> Unit` eller `Unit => Unit` respektive markeras som ett *enhets test* .
+Som det beskrivs i [test och fel sökning](xref:microsoft.quantum.guide.testingdebugging)kan en funktion eller åtgärd med signatur `Unit -> Unit` eller `Unit => Unit` respektive markeras som ett *enhets test*.
 Varje enhets test består vanligt vis av ett litet Quantum-program, tillsammans med ett eller flera villkor som kontrollerar att programmet är korrekt.
-Dessa villkor kan komma i form av antingen _fakta_ , som kontrollerar värdena för deras indata, eller _intyg_ , som kontrollerar tillstånden för en eller flera qubits som skickas som indata.
+Dessa villkor kan komma i form av antingen _fakta_, som kontrollerar värdena för deras indata, eller _intyg_, som kontrollerar tillstånden för en eller flera qubits som skickas som indata.
 
 Till exempel `EqualityFactI(1 + 1, 2, "1 + 1 != 2")` representerar det matematiska faktum att $1 + 1 = $2, medan `AssertQubit(One, qubit)` representerar det villkor som mäts `qubit` `One` med säkerhet.
 I det förra fallet kan vi kontrol lera att villkoret är korrekt, men i det senare måste vi känna till något om status för qubit för att utvärdera försäkran.
@@ -145,7 +145,7 @@ I de fall där en åtgärd implementerar en klassisk klassisk åtgärd, så att 
 
 Det är dock viktigt att de två metoderna testar olika egenskaper för de åtgärder som utförs under undersökning.
 Eftersom den på plats-kontrollen anropar varje åtgärd flera gånger, en gång för varje ingångs tillstånd, kan eventuella slumpmässiga val och mått resultat ändras mellan anrop.
-Den refererade kontrollen anropar däremot varje åtgärd exakt en gång, så att den kontrollerar att åtgärderna är lika *i en enda bild* .
+Den refererade kontrollen anropar däremot varje åtgärd exakt en gång, så att den kontrollerar att åtgärderna är lika *i en enda bild*.
 Båda dessa tester är användbara för att säkerställa att Quantum program är korrekta.
 
 

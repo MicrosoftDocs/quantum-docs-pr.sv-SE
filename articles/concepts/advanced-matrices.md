@@ -1,6 +1,6 @@
 ---
 rubrik: Beskrivning av avancerade Matrix-begrepp: Lär dig mer om eigenvectors, Eigenvalues och matriser, de grundläggande verktyg som används för att beskriva och simulera Quantum-algoritmer.
-författare: QuantumWriter-UID: Microsoft. Quantum. Concepts. Matrix-Advanced MS. author: v-benbra MS. Date: 12/11/2017 MS. topic: artikeln No-Loc:
+författare: QuantumWriter-UID: Microsoft. Quantum. Concepts. Matrix-Advanced MS. author: v-benbra MS. Date: 12/11/2017 MS. topic: konceptuell No-Loc:
 - "Q#"
 - "$$v"
 - "$$"

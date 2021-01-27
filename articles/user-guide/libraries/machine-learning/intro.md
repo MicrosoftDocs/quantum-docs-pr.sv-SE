@@ -4,17 +4,17 @@ description: Lär dig hur Machine Learning används på Quantum Systems
 author: alexeib2
 ms.author: alexeib
 ms.date: 11/22/2019
-ms.topic: article
+ms.topic: conceptual
 uid: microsoft.quantum.libraries.machine-learning.intro
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 9f7f892fb2b76432942c86163497c22f0c73d51f
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: e2f4a4a63eef40474856426b3b29652b5d3053b2
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90833803"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98854022"
 ---
 # <a name="introduction-to-quantum-machine-learning"></a>Introduktion till Quantum Machine Learning
 
@@ -41,7 +41,7 @@ Det innebär att lösningen är en Quantum analog av en support vektor dator med
 
 En enkel Quantum klassificerare-design kan jämföras med en vanlig SVM-lösning (support Vector Machine). Den här härledningen för ett data exempel $x $ i händelse av SVM görs med ett optimalt kernel-formulär $ \sum \ alpha_j k (x_j, x) $ där $k $ är en viss kernel-funktion.
 
-Däremot använder en Quantum-klassificeraren $p (y │ x, U (\theta)) = 〈 U (\theta) x | M | U (\theta) x 〉 $, som liknar sprit men tekniskt ganska annorlunda. Det innebär att när en enkel amplitud-kodning används, $p (y │ x, U (\theta)) $ är en kvadratisk form i amplituderna för $x $, men koefficienterna för det här formuläret har inte längre lärts oberoende. de sammanställs i stället från mat ris elementen i krets $U (\theta) $, som vanligt vis har betydligt mindre lärt parametrar $ \theta $ än dimensionerna i Vector $x $. Polynom graden av $p (y │ x, U (\theta)) $ i de ursprungliga funktionerna kan höjas till $2 ^ l $ genom att använda en Quantum produkt kodning på $l $ kopior av $x $.
+Som kontrast använder en Quantum-klassificeraren $p (y │ x, U (\theta)) = 〈 U (\theta) x | M | U (\theta) x 〉 $, som liknar sprit men tekniskt ganska annorlunda. Det innebär att när en enkel amplitud-kodning används, $p (y │ x, U (\theta)) $ är en kvadratisk form i amplituderna för $x $, men koefficienterna för det här formuläret har inte längre lärts oberoende. de sammanställs i stället från mat ris elementen i krets $U (\theta) $, som vanligt vis har betydligt mindre lärt parametrar $ \theta $ än dimensionerna i Vector $x $. Polynom graden av $p (y │ x, U (\theta)) $ i de ursprungliga funktionerna kan höjas till $2 ^ l $ genom att använda en Quantum produkt kodning på $l $ kopior av $x $.
 
 Vår arkitektur utforskar relativt lite-kretsar som därför måste vara *snabbt Entangling* för att kunna samla in alla korrelationer mellan data funktionerna i alla intervall. Ett exempel på den mest användbara Entangling krets-komponenten visas på bilden nedan. Även om en krets med den här geometrin bara består av $3 n + 1 $ grindar, säkerställer den enhetliga vikt mat ris som den beräknar betydande kors samtal mellan $2 ^ n $-funktioner.
 

@@ -4,17 +4,17 @@ description: Läs mer om Microsoft QDK DISTINCT Inputs Checker, som använder Qu
 author: vadym-kl
 ms.author: vadym
 ms.date: 06/25/2020
-ms.topic: article
+ms.topic: conceptual
 uid: microsoft.quantum.machines.qc-trace-simulator.distinct-inputs
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: bcb0bc92a546279496d27ad9b8c5f943ac133e2a
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: 8076a705b1960ae8e23be4cea87e613329a24f77
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90833462"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98858645"
 ---
 # <a name="quantum-trace-simulator-distinct-inputs-checker"></a>Quantum trace Simulator: distinkt inmatnings kontroll
 
@@ -50,11 +50,11 @@ operation ApplyWithNonDistinctInputs() : Unit {
 }
 ```
 
-Observera att `op1` och `op2` båda är hämtade med delar av program och delar en qubit. När du anropar `ApplyBoth` i det här exemplet beror resultatet av åtgärden på ordningen på `op1` och `op2` `ApplyBoth` inte vad du förväntar dig. När du aktiverar den distinkta inmatnings kontrollen identifierar den sådana situationer och returnerar en `DistinctInputsCheckerException` . Mer information finns <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.DistinctInputsCheckerException> i i API- Q# biblioteket.
+Observera att `op1` och `op2` båda är hämtade med delar av program och delar en qubit. När du anropar `ApplyBoth` i det här exemplet beror resultatet av åtgärden på ordningen på `op1` och `op2` `ApplyBoth` inte vad du förväntar dig. När du aktiverar den distinkta inmatnings kontrollen identifierar den sådana situationer och returnerar en `DistinctInputsCheckerException` . Mer information finns <xref:Microsoft.Quantum.Simulation.QCTraceSimulatorRuntime.DistinctInputsCheckerException> i i API- Q# biblioteket.
 
 ## <a name="invoking-the-distinct-inputs-checker"></a>Anropar den distinkta inmatnings kontrollen
 
-Om du vill köra en Quantum trace-simulator med den distinkta ingångs kontrollen måste du skapa en <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulatorConfiguration> instans, ställa in `UseDistinctInputsChecker` egenskapen på **True**och sedan skapa en ny <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator> instans med `QCTraceSimulatorConfiguration` som-parameter. 
+Om du vill köra en Quantum trace-simulator med den distinkta ingångs kontrollen måste du skapa en <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulatorConfiguration> instans, ställa in `UseDistinctInputsChecker` egenskapen på **True** och sedan skapa en ny <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator> instans med `QCTraceSimulatorConfiguration` som-parameter. 
 
 ```csharp
 var config = new QCTraceSimulatorConfiguration();
@@ -93,4 +93,4 @@ namespace Quantum.MyProgram
 - Översikt över Quantum Development Kit-verktyget för [spårnings simulatorn](xref:microsoft.quantum.machines.qc-trace-simulator.intro) .
 - <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulator>API-referensen.
 - <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.QCTraceSimulatorConfiguration>API-referensen.
-- <xref:Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators.DistinctInputsCheckerException>API-referensen.
+- <xref:Microsoft.Quantum.Simulation.QCTraceSimulatorRuntime.DistinctInputsCheckerException>API-referensen.
