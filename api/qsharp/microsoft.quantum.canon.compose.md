@@ -1,18 +1,18 @@
 ---
 uid: Microsoft.Quantum.Canon.Compose
 title: Funktionen Skriv
-ms.date: 11/25/2020 12:00:00 AM
+ms.date: 1/23/2021 12:00:00 AM
 ms.topic: article
 qsharp.kind: function
 qsharp.namespace: Microsoft.Quantum.Canon
 qsharp.name: Compose
 qsharp.summary: Returns the composition of two functions.
-ms.openlocfilehash: f8c6ad36220b48be1723c2d91cbf7c0a4947af14
-ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
+ms.openlocfilehash: 73eab66e2e9a9af56d01db927eb7af38bb56a23e
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96216769"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98840914"
 ---
 # <a name="compose-function"></a>Funktionen Skriv
 
@@ -28,7 +28,7 @@ function Compose<'T, 'U, 'V> (outer : ('U -> 'V), inner : ('T -> 'U)) : ('T -> '
 ```
 
 
-## <a name="description"></a>Beskrivning
+## <a name="description"></a>Description
 
 Två Functions $f $ och $g $ returnerar en ny funktion som representerar $f \circ g $.
 

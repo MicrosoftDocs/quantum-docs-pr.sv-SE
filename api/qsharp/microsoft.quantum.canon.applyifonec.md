@@ -1,18 +1,18 @@
 ---
 uid: Microsoft.Quantum.Canon.ApplyIfOneC
 title: ApplyIfOneC-åtgärd
-ms.date: 11/25/2020 12:00:00 AM
+ms.date: 1/23/2021 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Canon
 qsharp.name: ApplyIfOneC
 qsharp.summary: Applies a controllable operation conditioned on a classical result value being one.
-ms.openlocfilehash: 24a00d83c1bbe6b07adb27c58fc70bc76af0a910
-ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
+ms.openlocfilehash: ebeec5b46567892ad30f194ababb42876ba08bcb
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96209426"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98841760"
 ---
 # <a name="applyifonec-operation"></a>ApplyIfOneC-åtgärd
 
@@ -28,7 +28,7 @@ operation ApplyIfOneC<'T> (result : Result, (op : ('T => Unit is Ctl), target : 
 ```
 
 
-## <a name="description"></a>Beskrivning
+## <a name="description"></a>Description
 
 En åtgärd `op` och ett resultat värde `result` gäller `op` för `target` IF `result` `One` . Om `Zero` händer ingenting `target` .
 Suffixet `C` anger att åtgärden som ska tillämpas är kontrollerbar.

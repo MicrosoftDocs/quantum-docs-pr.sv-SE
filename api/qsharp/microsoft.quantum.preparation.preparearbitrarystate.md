@@ -1,7 +1,7 @@
 ---
 uid: Microsoft.Quantum.Preparation.PrepareArbitraryState
 title: PrepareArbitraryState-åtgärd
-ms.date: 11/25/2020 12:00:00 AM
+ms.date: 1/23/2021 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Preparation
@@ -13,12 +13,12 @@ qsharp.summary: >-
 
 
   Given a set of coefficients and a little-endian encoded quantum register, prepares an state on that register described by the given coefficients.
-ms.openlocfilehash: 18a1e86f8e110a8f48d7dd50961e1f1f471ffc4e
-ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
+ms.openlocfilehash: e2e4818e5d30b17dd1984c36da92d76b84403e1c
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96190708"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98842391"
 ---
 # <a name="preparearbitrarystate-operation"></a>PrepareArbitraryState-åtgärd
 
@@ -37,7 +37,7 @@ operation PrepareArbitraryState (coefficients : Microsoft.Quantum.Math.ComplexPo
 ```
 
 
-## <a name="description"></a>Beskrivning
+## <a name="description"></a>Description
 
 Den här åtgärden förbereder ett godtyckligt Quantum-tillstånd $ \ket{\psi} $ med komplexa koefficienter $r _j e ^ {i t_j} $ från $n $-qubit beräknings bas tillstånd $ \ket{0 \cdots 0} $.
 I synnerhet kan åtgärden för den här åtgärden simuleras av en enhetlig omvandling $U $ som fungerar med status all – noll som

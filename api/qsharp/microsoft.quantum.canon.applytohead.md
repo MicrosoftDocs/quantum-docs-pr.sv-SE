@@ -1,18 +1,18 @@
 ---
 uid: Microsoft.Quantum.Canon.ApplyToHead
 title: ApplyToHead-åtgärd
-ms.date: 11/25/2020 12:00:00 AM
+ms.date: 1/23/2021 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Canon
 qsharp.name: ApplyToHead
 qsharp.summary: Applies an operation to the first element of an array.
-ms.openlocfilehash: 35f19cbb1090e974e18f338239764c9c8b854116
-ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
+ms.openlocfilehash: 4e627b467e9354e774c2ead8b89ddd3ff3a42ef7
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96217347"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98841324"
 ---
 # <a name="applytohead-operation"></a>ApplyToHead-åtgärd
 
@@ -28,7 +28,7 @@ operation ApplyToHead<'T> (op : ('T => Unit), targets : 'T[]) : Unit
 ```
 
 
-## <a name="description"></a>Beskrivning
+## <a name="description"></a>Description
 
 En specifik åtgärd `op` och en matris med mål `targets` gäller `op(Head(targets))` .
 
@@ -54,6 +54,15 @@ En matris med mål, varav den första ska tillämpas på `op` .
 ### <a name="t"></a>Inte
 
 Indatatypen för den åtgärd som ska tillämpas.
+
+## <a name="example"></a>Exempel
+
+Följande Q #-kodfragment är likvärdiga:
+
+```qsharp
+ApplyToHead(H, register);
+H(Head(register));
+```
 
 ## <a name="see-also"></a>Se även
 

@@ -1,18 +1,18 @@
 ---
 uid: Microsoft.Quantum.Preparation.ApproximatelyPrepareArbitraryStateD
 title: ApproximatelyPrepareArbitraryStateD-åtgärd
-ms.date: 11/25/2020 12:00:00 AM
+ms.date: 1/23/2021 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Preparation
 qsharp.name: ApproximatelyPrepareArbitraryStateD
 qsharp.summary: Given a set of coefficients and a little-endian encoded quantum register, prepares an state on that register described by the given coefficients, up to a given approximation tolerance.
-ms.openlocfilehash: 822efe08e66c43b7a3128d100e3e58a8c2ce3c2e
-ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
+ms.openlocfilehash: a818ada509bcb34682ac1230eb508f0b71b5d019
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96193598"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98842456"
 ---
 # <a name="approximatelypreparearbitrarystated-operation"></a>ApproximatelyPrepareArbitraryStateD-åtgärd
 
@@ -28,7 +28,7 @@ operation ApproximatelyPrepareArbitraryStateD (tolerance : Double, coefficients 
 ```
 
 
-## <a name="description"></a>Beskrivning
+## <a name="description"></a>Description
 
 Den här åtgärden förbereder ett godtyckligt Quantum-tillstånd $ \ket{\psi} $ med komplexa koefficienter $r _j e ^ {i t_j} $ från $n $-qubit beräknings bas tillstånd $ \ket{0 \cdots 0} $.
 I synnerhet kan åtgärden för den här åtgärden simuleras av en enhetlig omvandling $U $ som fungerar med status all – noll som
