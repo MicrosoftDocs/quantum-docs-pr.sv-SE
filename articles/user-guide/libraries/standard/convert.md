@@ -4,16 +4,16 @@ description: Lär dig mer om vanliga och användardefinierade typ konverterings 
 author: cgranade
 uid: microsoft.quantum.libraries.convert
 ms.author: chgranad
-ms.topic: article
+ms.topic: conceptual
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 9ec3a2ecd2aa59a10a7033e7b3067eb147ce4035
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 67f47339363a52097f342c8ae4e43a8a93d606a8
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92691113"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98858027"
 ---
 # <a name="type-conversions"></a>Typ konverteringar #
 
@@ -45,7 +45,7 @@ let indices = Convert.RangeAsIntArray(0..4); // [0, 1, 2, 3, 4]
 Slutligen Q# tillhandahåller standard biblioteket ett antal användardefinierade typer, till exempel <xref:Microsoft.Quantum.Math.Complex> och <xref:Microsoft.Quantum.Arithmetic.LittleEndian> .
 Tillsammans med de här typerna innehåller standard biblioteket funktioner som <xref:Microsoft.Quantum.Arithmetic.BigEndianAsLittleEndian> :
 
-```Q#
+```qsharp
 open Microsoft.Quantum.Arithmetic as Arithmetic;
 
 let register = Arithmetic.BigEndian(qubits);

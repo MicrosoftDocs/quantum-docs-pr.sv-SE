@@ -4,17 +4,17 @@ description: Information om specifikationerna för Broombridge Quantum kemi sche
 author: cgranade
 ms.author: chgranad
 ms.date: 10/17/2018
-ms.topic: article
+ms.topic: conceptual
 uid: microsoft.quantum.libraries.chemistry.schema.spec_v_0_1
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: b99c90c434958f7b04712580789b203766cd084d
-ms.sourcegitcommit: 9b0d1ffc8752334bd6145457a826505cc31fa27a
+ms.openlocfilehash: 0a306f59a823e76ba0518d023a41f1f9d5670e7a
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90835748"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98858200"
 ---
 # <a name="broombridge-specification-v01"></a>Broombridge-specifikation v 0,1 #
 
@@ -169,7 +169,7 @@ Värdet för `hamiltonian` egenskapen kallas för ett Hamiltonian-objekt och må
 Ett Hamiltonian-objekt kan också ha en egenskap `particle_hole_representation` .
 Om det finns något måste värdet för `particle_hole_representation` följa det format som beskrivs i resten av det här avsnittet.
 
-##### <a name="one-electron-integrals-object"></a>Ett-Electron integraler-objekt #####
+##### <a name="one-electron-integrals-object"></a>One-Electron integraler-objekt #####
 
 Det här avsnittet är normativt.
 
@@ -199,7 +199,7 @@ one_electron_integrals:     # required
 > Broombridge använder 1-baserad indexering.
 
 
-##### <a name="two-electron-integrals-object"></a>Två Electron integraler-objekt #####
+##### <a name="two-electron-integrals-object"></a>Two-Electron integraler-objekt #####
 
 Det här avsnittet är normativt.
 

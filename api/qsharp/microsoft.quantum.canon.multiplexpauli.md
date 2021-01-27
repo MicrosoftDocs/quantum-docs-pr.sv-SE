@@ -1,18 +1,18 @@
 ---
 uid: Microsoft.Quantum.Canon.MultiplexPauli
 title: MultiplexPauli-åtgärd
-ms.date: 11/25/2020 12:00:00 AM
+ms.date: 1/23/2021 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Canon
 qsharp.name: MultiplexPauli
 qsharp.summary: Applies a Pauli rotation conditioned on an array of qubits.
-ms.openlocfilehash: c29f7efa6b10835ce41ca4c535ec1371ac38ab63
-ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
+ms.openlocfilehash: 656b510cb19af69a9a3f0d537d54b0abfe76de4b
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96206041"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98852452"
 ---
 # <a name="multiplexpauli-operation"></a>MultiplexPauli-åtgärd
 
@@ -28,7 +28,7 @@ operation MultiplexPauli (coefficients : Double[], pauli : Pauli, control : Micr
 ```
 
 
-## <a name="description"></a>Beskrivning
+## <a name="description"></a>Description
 
 Detta använder en multiplicering-kontrollerad enhetlig åtgärd som utför rotationer efter vinkeln $ \ theta_j $ om Single-qubit Pauli-operatorn $P $ när den styrs av $n $-qubit Number State $ \ket{j} $.
 I synnerhet representeras åtgärden för den här åtgärden av den enhetliga

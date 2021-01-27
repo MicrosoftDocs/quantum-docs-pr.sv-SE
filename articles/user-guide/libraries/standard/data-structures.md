@@ -5,16 +5,16 @@ author: QuantumWriter
 uid: microsoft.quantum.libraries.data-structures
 ms.author: martinro
 ms.date: 12/11/2017
-ms.topic: article
+ms.topic: conceptual
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: c3ce5d531618c269d15be3e4eb58ecbb597a022c
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: e9b593ba69ed41a9fb3c1298b5b945a4cbe43d5d
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92692243"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98858335"
 ---
 # <a name="data-structures-and-modeling"></a>Data strukturer och modeller #
 
@@ -72,7 +72,7 @@ ApplyToEach(
 ## <a name="oracles"></a>Oracle ##
 
 I steg-för- [steg-uppskattning](https://en.wikipedia.org/wiki/Quantum_phase_estimation_algorithm) och litteratur för [amplitud förstärkning](https://en.wikipedia.org/wiki/Amplitude_amplification) används begreppet Oracle ofta.
-Här är termen Oracle en blackbox Quantum-underrutin som agerar på en uppsättning qubits och returnerar svaret som en fas.
+Här avser termen Oracle en Quantum-underrutin som agerar på en uppsättning qubits och som returnerar svaret som en fas.
 Den här subrutinen kan ofta ses som en inläsning av en Quantum-algoritm som godkänner Oracle, förutom andra parametrar, och som använder en serie Quantum-åtgärder och som behandlar ett anrop till den här Quantum-underrutinen som om det vore en grundläggande grind.
 För att du ska kunna implementera den större algoritmen måste en konkret nedbrytning av Oracle till fundamental Gates tillhandahållas, men sådan dekomposition behövs inte för att förstå algoritmen som anropar Oracle.
 I Q# representeras den här abstraktionen med hjälp av den här typen av värden i första klass, så att åtgärder kan skickas till implementeringar av Quantum-algoritmer i ett svart-box.

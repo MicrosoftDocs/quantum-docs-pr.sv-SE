@@ -1,6 +1,6 @@
 ---
 rubrik: vektorer och matriser i Beskrivning av Quantum Computing: Lär dig grunderna för hur du arbetar med vektorer och matriser.
-författare: QuantumWriter-UID: Microsoft. Quantum. Concepts. Vectors MS. author: v-benbra MS. Date: 12/11/2017 MS. topic: artikeln No-Loc:
+författare: QuantumWriter-UID: Microsoft. Quantum. Concepts. Vectors MS. author: v-benbra MS. Date: 12/11/2017 MS. topic: konceptuell No-Loc:
 - "Q#"
 - "$$v"
 - "$$"
@@ -85,7 +85,7 @@ författare: QuantumWriter-UID: Microsoft. Quantum. Concepts. Vectors MS. author
 
 # <a name="vectors-and-matrices"></a>Vektorer och matriser
 
-En del bekant med vektorer och matriser är viktigt för att förstå Quantum Computing. Vi ger en kort introduktion nedan och intresserade läsare rekommenderas att läsa en standard referens för linjära algebra, till exempel *Strang, G. (1993). Introduktion till linjär algebra (vol. 3). Wellesley, MA: Wellesley-Cambridge press* eller a online Reference, till exempel [linjär algebra](http://joshua.smcvt.edu/linearalgebra/).
+En del bekant med vektorer och matriser är viktigt för att förstå Quantum Computing. Vi ger en kort introduktion nedan och intresserade läsare rekommenderas att läsa en standard referens för linjära algebra, till exempel *Strang, G. (1993). Introduktion till linjär algebra (vol. 3). Wellesley, MA: Wellesley-Cambridge tryck* eller en online-referens, till exempel [linjär algebra](http://joshua.smcvt.edu/linearalgebra/).
 
 En kolumn vektor (eller bara [*Vector*](https://en.wikipedia.org/wiki/Vector_(mathematics_and_physics))) $ v $ av dimension (eller storlek) $ n $ är en samling med $ n $ komplexa tal $ (v_1, v_2, \ldots, V_n) $ ordnade som en kolumn:
 
@@ -162,7 +162,7 @@ P_ { M1 } ~~ P_ { m2 } ~~ \cdots ~~ P_ { MP}
 \end{bmatrix}
 \end{align}
 
-om posterna i $ P $ är $ P_ { IK } = \sum _j M_för { } N_ { JK } $ . Posten $ P_ 11 är till exempel { } $ den inre produkten av den första raden i $ M $ med den första kolumnen i $ N $ . Observera att eftersom en Vector bara är ett specialfall av en matris, sträcker sig denna definition till multiplikation med mat ris vektorer. 
+om posterna i $ P $ är $ P_ { IK } = \sum _j M_ för { } N_ { JK } $ . Posten $ P_ 11 är till exempel { } $ den inre produkten av den första raden i $ M $ med den första kolumnen i $ N $ . Observera att eftersom en Vector bara är ett specialfall av en matris, sträcker sig denna definition till multiplikation med mat ris vektorer. 
 
 Alla matriser vi anser är antingen fyrkantiga matriser, där antalet rader och kolumner är lika med, eller vektorer, som motsvarar endast $ 1 $ kolumn. En speciell klammer är [*identitets mat*](https://en.wikipedia.org/wiki/Identity_matrix)ris, $ \boldone $ som har alla dess diagonala element lika med $ 1 $ och återstående element som är lika med $ 0 $ :
 
@@ -174,7 +174,7 @@ $$\boldone=\begin{bmatrix}
 
 För en fyrkantig matris $ a $ säger vi att en matris $ B $ är [*inversen*](https://en.wikipedia.org/wiki/Invertible_matrix) om $ AB = BA = \boldone $ . Inversen till en matris behöver inte finnas, men när den finns är den unik och vi anger den som $ en ^ { -1 } $ . 
 
-För alla matriser $ m $ är det angränsande eller konjugatet som transponeras till $ M $ en matris $ N $ som $ N_ { } = { Ji: s M_ } ^ \* $ . Det angränsande av $ m $ är vanligt vis betecknat $ m ^ \dagger $ . Vi säger att en matris U är av sin egen $ $ [*unitary*](https://en.wikipedia.org/wiki/Unitary_matrix) om $ UU ^ \dagger = u ^ \dagger u = \boldone $ eller motsvarande, $ u ^ { -1 } = U ^ \dagger $ .  Kanske är den viktigaste egenskapen för enhetliga matriser att de behåller normen i en Vector.  Detta inträffar eftersom 
+För alla matriser $ m $ är det angränsande eller konjugatet som transponeras till $ M $ en matris $ N $ som $ N_ { } = { Ji: s M_ } ^ \* $ . Det angränsande av $ m $ är vanligt vis betecknat $ m ^ \dagger $ . Vi säger att en matris U är av sin egen $ $ [](https://en.wikipedia.org/wiki/Unitary_matrix) om $ UU ^ \dagger = u ^ \dagger u = \boldone $ eller motsvarande, $ u ^ { -1 } = U ^ \dagger $ .  Kanske är den viktigaste egenskapen för enhetliga matriser att de behåller normen i en Vector.  Detta inträffar eftersom 
 
 $$\langlev, v \rangle = v ^ \dagger v = v ^ \dagger u ^ { -1 } U v = v ^ \dagger u ^ \dagger u v = \langle u v, u v \rangle .$$  
 
