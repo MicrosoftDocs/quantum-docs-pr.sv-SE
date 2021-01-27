@@ -1,63 +1,63 @@
 ---
 uid: Microsoft.Quantum.Canon.ApplyAnd
 title: ApplyAnd-åtgärd
-ms.date: 11/25/2020 12:00:00 AM
+ms.date: 1/23/2021 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Canon
 qsharp.name: ApplyAnd
 qsharp.summary: Inverts a given target qubit if and only if both control qubits are in the 1 state, using measurement to perform the adjoint operation.
-ms.openlocfilehash: b749013584c89273375da002ac36b3575085b7f2
-ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
+ms.openlocfilehash: 39ffb9c598b6345c0d63c0c0d9705d84e101cc47
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96219302"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98845192"
 ---
-# <a name="applyand-operation"></a><span data-ttu-id="3deee-102">ApplyAnd-åtgärd</span><span class="sxs-lookup"><span data-stu-id="3deee-102">ApplyAnd operation</span></span>
+# <a name="applyand-operation"></a><span data-ttu-id="a415a-102">ApplyAnd-åtgärd</span><span class="sxs-lookup"><span data-stu-id="a415a-102">ApplyAnd operation</span></span>
 
-<span data-ttu-id="3deee-103">Namnrymd: [Microsoft. Quantum. Canon](xref:Microsoft.Quantum.Canon)</span><span class="sxs-lookup"><span data-stu-id="3deee-103">Namespace: [Microsoft.Quantum.Canon](xref:Microsoft.Quantum.Canon)</span></span>
+<span data-ttu-id="a415a-103">Namnrymd: [Microsoft. Quantum. Canon](xref:Microsoft.Quantum.Canon)</span><span class="sxs-lookup"><span data-stu-id="a415a-103">Namespace: [Microsoft.Quantum.Canon](xref:Microsoft.Quantum.Canon)</span></span>
 
-<span data-ttu-id="3deee-104">Paket: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)</span><span class="sxs-lookup"><span data-stu-id="3deee-104">Package: [Microsoft.Quantum.Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)</span></span>
+<span data-ttu-id="a415a-104">Paket: [Microsoft. Quantum. standard](https://nuget.org/packages/Microsoft.Quantum.Standard)</span><span class="sxs-lookup"><span data-stu-id="a415a-104">Package: [Microsoft.Quantum.Standard](https://nuget.org/packages/Microsoft.Quantum.Standard)</span></span>
 
 
-<span data-ttu-id="3deee-105">Inverterar en specifik mål-qubit, om och bara om båda kontroll qubits är i läget 1, med hjälp av mått för att utföra den angränsande åtgärden.</span><span class="sxs-lookup"><span data-stu-id="3deee-105">Inverts a given target qubit if and only if both control qubits are in the 1 state, using measurement to perform the adjoint operation.</span></span>
+<span data-ttu-id="a415a-105">Inverterar en specifik mål-qubit, om och bara om båda kontroll qubits är i läget 1, med hjälp av mått för att utföra den angränsande åtgärden.</span><span class="sxs-lookup"><span data-stu-id="a415a-105">Inverts a given target qubit if and only if both control qubits are in the 1 state, using measurement to perform the adjoint operation.</span></span>
 
 ```qsharp
 operation ApplyAnd (control1 : Qubit, control2 : Qubit, target : Qubit) : Unit is Adj + Ctl
 ```
 
 
-## <a name="description"></a><span data-ttu-id="3deee-106">Beskrivning</span><span class="sxs-lookup"><span data-stu-id="3deee-106">Description</span></span>
+## <a name="description"></a><span data-ttu-id="a415a-106">Description</span><span class="sxs-lookup"><span data-stu-id="a415a-106">Description</span></span>
 
-<span data-ttu-id="3deee-107">Inverterar `target` om och endast om båda kontrollerna är 1, men antar att de `target` är i tillstånd 0.</span><span class="sxs-lookup"><span data-stu-id="3deee-107">Inverts `target` if and only if both controls are 1, but assumes that `target` is in state 0.</span></span>  <span data-ttu-id="3deee-108">Åtgärden har T-Count 4, T-djup 2 och kräver ingen hjälp-qubit och kan därför vara bättre för en CCNOT-åtgärd, om `target` är känt som 0.</span><span class="sxs-lookup"><span data-stu-id="3deee-108">The operation has T-count 4, T-depth 2 and requires no helper qubit, and may therefore be preferable to a CCNOT operation, if `target` is known to be 0.</span></span>  <span data-ttu-id="3deee-109">Det angränsande av den här åtgärden är mått baserat och kräver inga T-grindar.</span><span class="sxs-lookup"><span data-stu-id="3deee-109">The adjoint of this operation is measurement based and requires no T gates.</span></span>
+<span data-ttu-id="a415a-107">Inverterar `target` om och endast om båda kontrollerna är 1, men antar att de `target` är i tillstånd 0.</span><span class="sxs-lookup"><span data-stu-id="a415a-107">Inverts `target` if and only if both controls are 1, but assumes that `target` is in state 0.</span></span>  <span data-ttu-id="a415a-108">Åtgärden har T-Count 4, T-djup 2 och kräver ingen hjälp-qubit och kan därför vara bättre för en CCNOT-åtgärd, om `target` är känt som 0.</span><span class="sxs-lookup"><span data-stu-id="a415a-108">The operation has T-count 4, T-depth 2 and requires no helper qubit, and may therefore be preferable to a CCNOT operation, if `target` is known to be 0.</span></span>  <span data-ttu-id="a415a-109">Det angränsande av den här åtgärden är mått baserat och kräver inga T-grindar.</span><span class="sxs-lookup"><span data-stu-id="a415a-109">The adjoint of this operation is measurement based and requires no T gates.</span></span>
 
-<span data-ttu-id="3deee-110">Det kontrollerade programmet för den här åtgärden kräver ingen hjälps qubit, `2^c` `Rz` portar och är inte optimerat för djup, där `c` är antalet övergripande kontroll qubits, inklusive de två kontrollerna från `ApplyAnd` åtgärden.</span><span class="sxs-lookup"><span data-stu-id="3deee-110">The controlled application of this operation requires no helper qubit, `2^c` `Rz` gates and is not optimized for depth, where `c` is the number of overall control qubits including the two controls from the `ApplyAnd` operation.</span></span>  <span data-ttu-id="3deee-111">Det intilliggande kontrollerade programmet kräver `2^c - 1` `Rz` portar (med en vinkel som är två gånger så stor som den icke-angränsande), ingen hjälps qubit och inte är optimerad för djupet.</span><span class="sxs-lookup"><span data-stu-id="3deee-111">The adjoint controlled application requires `2^c - 1` `Rz` gates (with an angle twice the size of the non-adjoint operation), no helper qubit and is not optimized for depth.</span></span>
+<span data-ttu-id="a415a-110">Det kontrollerade programmet för den här åtgärden kräver ingen hjälps qubit, `2^c` `Rz` portar och är inte optimerat för djup, där `c` är antalet övergripande kontroll qubits, inklusive de två kontrollerna från `ApplyAnd` åtgärden.</span><span class="sxs-lookup"><span data-stu-id="a415a-110">The controlled application of this operation requires no helper qubit, `2^c` `Rz` gates and is not optimized for depth, where `c` is the number of overall control qubits including the two controls from the `ApplyAnd` operation.</span></span>  <span data-ttu-id="a415a-111">Det intilliggande kontrollerade programmet kräver `2^c - 1` `Rz` portar (med en vinkel som är två gånger så stor som den icke-angränsande), ingen hjälps qubit och inte är optimerad för djupet.</span><span class="sxs-lookup"><span data-stu-id="a415a-111">The adjoint controlled application requires `2^c - 1` `Rz` gates (with an angle twice the size of the non-adjoint operation), no helper qubit and is not optimized for depth.</span></span>
 
-## <a name="input"></a><span data-ttu-id="3deee-112">Indata</span><span class="sxs-lookup"><span data-stu-id="3deee-112">Input</span></span>
+## <a name="input"></a><span data-ttu-id="a415a-112">Indata</span><span class="sxs-lookup"><span data-stu-id="a415a-112">Input</span></span>
 
-### <a name="control1--qubit"></a><span data-ttu-id="3deee-113">control1: [qubit](xref:microsoft.quantum.lang-ref.qubit)</span><span class="sxs-lookup"><span data-stu-id="3deee-113">control1 : [Qubit](xref:microsoft.quantum.lang-ref.qubit)</span></span>
+### <a name="control1--qubit"></a><span data-ttu-id="a415a-113">control1: [qubit](xref:microsoft.quantum.lang-ref.qubit)</span><span class="sxs-lookup"><span data-stu-id="a415a-113">control1 : [Qubit](xref:microsoft.quantum.lang-ref.qubit)</span></span>
 
-<span data-ttu-id="3deee-114">Första kontrollen qubit</span><span class="sxs-lookup"><span data-stu-id="3deee-114">First control qubit</span></span>
-
-
-### <a name="control2--qubit"></a><span data-ttu-id="3deee-115">control2: [qubit](xref:microsoft.quantum.lang-ref.qubit)</span><span class="sxs-lookup"><span data-stu-id="3deee-115">control2 : [Qubit](xref:microsoft.quantum.lang-ref.qubit)</span></span>
-
-<span data-ttu-id="3deee-116">Qubit för andra kontrollen</span><span class="sxs-lookup"><span data-stu-id="3deee-116">Second control qubit</span></span>
+<span data-ttu-id="a415a-114">Första kontrollen qubit</span><span class="sxs-lookup"><span data-stu-id="a415a-114">First control qubit</span></span>
 
 
-### <a name="target--qubit"></a><span data-ttu-id="3deee-117">mål: [qubit](xref:microsoft.quantum.lang-ref.qubit)</span><span class="sxs-lookup"><span data-stu-id="3deee-117">target : [Qubit](xref:microsoft.quantum.lang-ref.qubit)</span></span>
+### <a name="control2--qubit"></a><span data-ttu-id="a415a-115">control2: [qubit](xref:microsoft.quantum.lang-ref.qubit)</span><span class="sxs-lookup"><span data-stu-id="a415a-115">control2 : [Qubit](xref:microsoft.quantum.lang-ref.qubit)</span></span>
 
-<span data-ttu-id="3deee-118">Mål tilläggs qubit; måste vara i tillstånd 0</span><span class="sxs-lookup"><span data-stu-id="3deee-118">Target auxiliary qubit; must be in state 0</span></span>
+<span data-ttu-id="a415a-116">Qubit för andra kontrollen</span><span class="sxs-lookup"><span data-stu-id="a415a-116">Second control qubit</span></span>
 
 
+### <a name="target--qubit"></a><span data-ttu-id="a415a-117">mål: [qubit](xref:microsoft.quantum.lang-ref.qubit)</span><span class="sxs-lookup"><span data-stu-id="a415a-117">target : [Qubit](xref:microsoft.quantum.lang-ref.qubit)</span></span>
 
-## <a name="output--unit"></a><span data-ttu-id="3deee-119">Utdata: [enhet](xref:microsoft.quantum.lang-ref.unit)</span><span class="sxs-lookup"><span data-stu-id="3deee-119">Output : [Unit](xref:microsoft.quantum.lang-ref.unit)</span></span>
+<span data-ttu-id="a415a-118">Mål tilläggs qubit; måste vara i tillstånd 0</span><span class="sxs-lookup"><span data-stu-id="a415a-118">Target auxiliary qubit; must be in state 0</span></span>
 
 
 
-## <a name="references"></a><span data-ttu-id="3deee-120">Referenser</span><span class="sxs-lookup"><span data-stu-id="3deee-120">References</span></span>
+## <a name="output--unit"></a><span data-ttu-id="a415a-119">Utdata: [enhet](xref:microsoft.quantum.lang-ref.unit)</span><span class="sxs-lookup"><span data-stu-id="a415a-119">Output : [Unit](xref:microsoft.quantum.lang-ref.unit)</span></span>
 
-- <span data-ttu-id="3deee-121">Cody Jones: "nya byggen för den feltoleranta Toffoli-porten", inventering. Rev. A 87, 022328, 2013 [arXiv: 1212.5069](https://arxiv.org/abs/1212.5069) Doi: 10.1103/PhysRevA. 87.022328</span><span class="sxs-lookup"><span data-stu-id="3deee-121">Cody Jones: "Novel constructions for the fault-tolerant Toffoli gate", Phys. Rev. A 87, 022328, 2013 [arXiv:1212.5069](https://arxiv.org/abs/1212.5069) doi:10.1103/PhysRevA.87.022328</span></span>
-- <span data-ttu-id="3deee-122">Craig Gidney: "hälften av kostnaden för Quantum addition", Quantum 2, sida 74, 2018 [arXiv: 1709.06648](https://arxiv.org/abs/1709.06648) Doi: 10.1103/PhysRevA. 85.044302</span><span class="sxs-lookup"><span data-stu-id="3deee-122">Craig Gidney: "Halving the cost of quantum addition", Quantum 2, page 74, 2018 [arXiv:1709.06648](https://arxiv.org/abs/1709.06648) doi:10.1103/PhysRevA.85.044302</span></span>
-- <span data-ttu-id="3deee-123">Mathias Soeken: "Quantum Oracle-kretsar och jul träds mönstret", [blogg artikel från 19 December 2019](https://msoeken.github.io/blog_qac.html) (Obs! förklarar den flera styrda konstruktionen)</span><span class="sxs-lookup"><span data-stu-id="3deee-123">Mathias Soeken: "Quantum Oracle Circuits and the Christmas Tree Pattern", [Blog article from December 19, 2019](https://msoeken.github.io/blog_qac.html) (note: explains the multiple controlled construction)</span></span>
+
+
+## <a name="references"></a><span data-ttu-id="a415a-120">Referenser</span><span class="sxs-lookup"><span data-stu-id="a415a-120">References</span></span>
+
+- <span data-ttu-id="a415a-121">Cody Jones: "nya byggen för den feltoleranta Toffoli-porten", inventering. Rev. A 87, 022328, 2013 [arXiv: 1212.5069](https://arxiv.org/abs/1212.5069) Doi: 10.1103/PhysRevA. 87.022328</span><span class="sxs-lookup"><span data-stu-id="a415a-121">Cody Jones: "Novel constructions for the fault-tolerant Toffoli gate", Phys. Rev. A 87, 022328, 2013 [arXiv:1212.5069](https://arxiv.org/abs/1212.5069) doi:10.1103/PhysRevA.87.022328</span></span>
+- <span data-ttu-id="a415a-122">Craig Gidney: "hälften av kostnaden för Quantum addition", Quantum 2, sida 74, 2018 [arXiv: 1709.06648](https://arxiv.org/abs/1709.06648) Doi: 10.1103/PhysRevA. 85.044302</span><span class="sxs-lookup"><span data-stu-id="a415a-122">Craig Gidney: "Halving the cost of quantum addition", Quantum 2, page 74, 2018 [arXiv:1709.06648](https://arxiv.org/abs/1709.06648) doi:10.1103/PhysRevA.85.044302</span></span>
+- <span data-ttu-id="a415a-123">Mathias Soeken: "Quantum Oracle-kretsar och jul träds mönstret", [blogg artikel från 19 December 2019](https://msoeken.github.io/blog_qac.html) (Obs! förklarar den flera styrda konstruktionen)</span><span class="sxs-lookup"><span data-stu-id="a415a-123">Mathias Soeken: "Quantum Oracle Circuits and the Christmas Tree Pattern", [Blog article from December 19, 2019](https://msoeken.github.io/blog_qac.html) (note: explains the multiple controlled construction)</span></span>
