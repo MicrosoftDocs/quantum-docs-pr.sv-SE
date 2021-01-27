@@ -5,16 +5,16 @@ author: QuantumWriter
 uid: microsoft.quantum.libraries.applications
 ms.author: martinro
 ms.date: 12/11/2017
-ms.topic: article
+ms.topic: conceptual
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 5a29dcc74c638cb8ecbeb1f924d0e50d40d19f66
-ms.sourcegitcommit: 29e0d88a30e4166fa580132124b0eb57e1f0e986
+ms.openlocfilehash: 214d584840f235868c66a1fb3ee24d0acab49630
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92692167"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98857246"
 ---
 # <a name="applications"></a>Program #
 
@@ -140,7 +140,7 @@ operation EstimateAdiabaticStateEnergy(
 
 ## <a name="shors-algorithm"></a>Shors algoritm ##
 Shor-algoritmen är inte en av de viktigaste fördelarna med Quantum Computing eftersom den visade att Quantum Computers kan användas för att lösa viktiga, för närvarande inaktiverade problem.
-Shor-algoritmen är ett snabbt sätt att väga stora tal med en Quantum-dator, ett problem som kallas för *factoring* .
+Shor-algoritmen är ett snabbt sätt att väga stora tal med en Quantum-dator, ett problem som kallas för *factoring*.
 Säkerheten för många befintliga cryptosystems baseras på antagandet att det inte finns någon snabb algoritm för factoring.
 Därför har Shor-algoritmen haft en Profound inverkan på hur vi tycker om säkerhet i en post-Quantum World.
 
@@ -151,7 +151,7 @@ Vi går igenom de här två stegen nedan.
 
 ### <a name="period-finding"></a>Period sökning ###
 
-Vi har sett hur Quantum Fourier-transformeringen och fas uppskattningen fungerar (se [Quantum-algoritmer](xref:microsoft.quantum.libraries.standard.algorithms)). vi kan använda dessa verktyg för att lösa ett klassiskt hårt beräknings problem som kallas för *period sökning* .  I nästa avsnitt kommer vi att se hur perioden kan användas för att debiteras.
+Vi har sett hur Quantum Fourier-transformeringen och fas uppskattningen fungerar (se [Quantum-algoritmer](xref:microsoft.quantum.libraries.standard.algorithms)). vi kan använda dessa verktyg för att lösa ett klassiskt hårt beräknings problem som kallas för *period sökning*.  I nästa avsnitt kommer vi att se hur perioden kan användas för att debiteras.
 
 Med två heltal $a $ och $N $, där $a<N $, målet för perioden som söker, även kallat order sökning, är att hitta _order_ $r $ $a $ modulo $N $, där $r $ har definierats som minst positivt heltal som $a ^ r \equiv 1 \text{mod} N $.  
 
@@ -178,7 +178,7 @@ Det styrda-$U _a $ Gate Maps $ \ket{x} $ till $ \ket{(AX) \text{mod} N} $ om kon
 För att uppnå $ (a ^ NX) \text{mod} N $ kan vi helt enkelt tillämpa styrd-$U _ {a ^ N} $, där vi beräknar $a ^ N \text{mod} N $ som är klassiska för att ansluta till Quantum-kretsen.  
 Kretsarna för att uppnå sådana modulära beräkningar har beskrivits i den [Quantum-aritmetiska dokumentationen](./algorithms.md#arithmetic), i synnerhet vi kräver en modulär exponent krets för att implementera de kontrollerade-$U \_ {a ^ i} $-åtgärder.
 
-Även om kretsen ovan motsvarar Quantum- [fas-uppskattningen](xref:Microsoft.Quantum.Characterization.QuantumPhaseEstimation) och explicit aktiverar order upptäckt, kan vi minska antalet qubits som krävs. Vi kan antingen följa Beauregard-metoden för order sökning enligt beskrivningen [på sidan 8 i arXiv: Quant-pH/0205095v3](https://arxiv.org/pdf/quant-ph/0205095v3.pdf#page=8)eller använda en av de fas uppskattnings rutiner som finns i Microsoft. Quantum. karakterisering. Till exempel använder [robust fas uppskattning](xref:microsoft.quantum.characterization.robustphaseestimation) också en extra qubit.
+Även om kretsen ovan motsvarar Quantum- [fas-uppskattningen](xref:Microsoft.Quantum.Characterization.QuantumPhaseEstimation) och explicit aktiverar order upptäckt, kan vi minska antalet qubits som krävs. Vi kan antingen följa Beauregard-metoden för order sökning enligt beskrivningen [på sidan 8 i arXiv: Quant-pH/0205095v3](https://arxiv.org/pdf/quant-ph/0205095v3.pdf#page=8)eller använda en av de fas uppskattnings rutiner som finns i Microsoft. Quantum. karakterisering. Till exempel använder [robust fas uppskattning](xref:Microsoft.Quantum.Characterization.RobustPhaseEstimation) också en extra qubit.
 
 ### <a name="factoring"></a>Hänsyn ###
 Syftet med att använda factoring är att fastställa de två viktigaste faktorerna i heltal $N $, där $N $ är ett $n $-bitars nummer.  

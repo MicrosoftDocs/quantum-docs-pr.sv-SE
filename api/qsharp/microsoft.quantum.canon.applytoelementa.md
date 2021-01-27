@@ -1,18 +1,18 @@
 ---
 uid: Microsoft.Quantum.Canon.ApplyToElementA
 title: ApplyToElementA-åtgärd
-ms.date: 11/25/2020 12:00:00 AM
+ms.date: 1/23/2021 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Canon
 qsharp.name: ApplyToElementA
 qsharp.summary: Applies an operation to a given element of an array.
-ms.openlocfilehash: e8318a7873476ee49d8e1e235e6c917a38ee6200
-ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
+ms.openlocfilehash: 57d870c7fbd099212b13f75bd85e57c046280d73
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96208881"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98850758"
 ---
 # <a name="applytoelementa-operation"></a>ApplyToElementA-åtgärd
 
@@ -28,7 +28,7 @@ operation ApplyToElementA<'T> (op : ('T => Unit is Adj), index : Int, targets : 
 ```
 
 
-## <a name="description"></a>Beskrivning
+## <a name="description"></a>Description
 
 En åtgärd `op` , ett index `index` och en matris med mål `targets` , gäller `op(targets[index])` .
 

@@ -1,18 +1,18 @@
 ---
 uid: Microsoft.Quantum.Canon.ApplyToEachC
 title: ApplyToEachC-åtgärd
-ms.date: 11/25/2020 12:00:00 AM
+ms.date: 1/23/2021 12:00:00 AM
 ms.topic: article
 qsharp.kind: operation
 qsharp.namespace: Microsoft.Quantum.Canon
 qsharp.name: ApplyToEachC
 qsharp.summary: Applies a single-qubit operation to each element in a register. The modifier `C` indicates that the single-qubit operation is controllable.
-ms.openlocfilehash: 535f815503e20b5cee35f3f273a714203a4baf12
-ms.sourcegitcommit: a87c1aa8e7453360025e47ba614f25b02ea84ec3
+ms.openlocfilehash: b8b51e1c8d52c140c3ca1e5a54d0bd4cf4873046
+ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96217789"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98850842"
 ---
 # <a name="applytoeachc-operation"></a>ApplyToEachC-åtgärd
 
@@ -51,6 +51,16 @@ Matris för qubits som den aktuella åtgärden ska tillämpas på.
 ### <a name="t"></a>Inte
 
 Målet som åtgärden agerar på.
+
+## <a name="example"></a>Exempel
+
+Förbered ett tre-qubit $ \ket{+} $-tillstånd:
+
+```qsharp
+using (register = Qubit[3]) {
+    ApplyToEach(H, register);
+}
+```
 
 ## <a name="see-also"></a>Se även
 
