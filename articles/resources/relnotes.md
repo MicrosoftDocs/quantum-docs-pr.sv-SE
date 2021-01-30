@@ -9,12 +9,12 @@ uid: microsoft.quantum.relnotes
 no-loc:
 - Q#
 - $$v
-ms.openlocfilehash: 8aa6072e9b495db6e127cac350d5bfaec1b090ce
-ms.sourcegitcommit: 71605ea9cc630e84e7ef29027e1f0ea06299747e
+ms.openlocfilehash: dd37581dff2a512a29eb7729ecbf81412917b8f8
+ms.sourcegitcommit: e915baf3b84ee3a562004c5b31d157d21533d450
 ms.translationtype: MT
 ms.contentlocale: sv-SE
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98856666"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99101466"
 ---
 # <a name="microsoft-quantum-development-kit-release-notes"></a>Viktig information för Microsoft Quantum Development Kit
 
@@ -23,6 +23,15 @@ Den här artikeln innehåller information om varje version av Quantum Developmen
 Installationsanvisningar finns i [installationsguiden](xref:microsoft.quantum.install).
 
 Uppdateringsanvisningar finns i [uppdateringsguiden](xref:microsoft.quantum.update).
+
+## <a name="version-0152101126807"></a>Version 0.15.2101.126807
+
+*Utgivnings datum: januari 29, 2021*
+
+- Lagt till projektmallar i Q# compiler för körbara filer som mål IonQ och Honeywell-providers
+- Uppdatera I Q# kernel-syntax för att inkludera ändringar i Q# syntaxen som introducerades i version [0.15.2101125897](#version-0152101125897)
+- Bugfix för att stödja överföring av matriser som indataargument till Q# program som skickas till Azure Quantum via `%azure.execute` , se problem [#401](https://github.com/microsoft/iqsharp/issues/401)
+- Åtgärda felet "behörighet nekad" `az` om du använder inifrån `iqsharp-base` Docker-avbildningar, se problem [#404](https://github.com/microsoft/iqsharp/issues/404)
 
 ## <a name="version-0152101125897"></a>Version 0.15.2101125897
 
@@ -34,6 +43,7 @@ Uppdateringsanvisningar finns i [uppdateringsguiden](xref:microsoft.quantum.upda
 - Förbättrade bredd beräkningar för optimalt djup [finns mer information](https://github.com/MicrosoftDocs/quantum-docs-pr/pull/1159).
 - Använd en enhetlig åtgärd som tillhandahålls som en explicit matris med `ApplyUnitary` ([QuantumLibraries # 391](https://github.com/microsoft/QuantumLibraries/pull/391), externt bidrag från Dmytro Fedoriaka)
 - Åtgärdat https://github.com/microsoft/iqsharp/issues/387 genom att minska prestanda påverkan vid Q# kernel-start.
+
 ## <a name="version-0142011120240"></a>Version 0.14.2011120240
 
 *Utgivnings datum: 25 november 2020*
